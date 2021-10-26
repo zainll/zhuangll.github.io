@@ -6,12 +6,16 @@
     <content><![CDATA[<h2 id="GitHub-Pages-使用及配置"><a href="#GitHub-Pages-使用及配置" class="headerlink" title="GitHub Pages 使用及配置"></a>GitHub Pages 使用及配置</h2><p>github上创建一个  username.github.io 的工程，username 必须为github的用户名</p>
 <h2 id="Hexo-安装"><a href="#Hexo-安装" class="headerlink" title="Hexo 安装"></a>Hexo 安装</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 清理缓存</span></span><br><span class="line">hexo clean</span><br><span class="line"><span class="comment"># 生成网页</span></span><br><span class="line">hexo g</span><br><span class="line"><span class="comment"># 启动本地服务端口</span></span><br><span class="line">hexo s</span><br><span class="line"><span class="comment"># 发布到github</span></span><br><span class="line">hexo d</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello world!&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://www.jianshu.com/p/f82c76b90336">https://www.jianshu.com/p/f82c76b90336</a></p>
 <p><a href="https://www.jianshu.com/p/5d0b31032d55">https://www.jianshu.com/p/5d0b31032d55</a></p>
 <p><a href="https://blog.csdn.net/weixin_41922289/article/details/95639870">https://blog.csdn.net/weixin_41922289/article/details/95639870</a></p>
 <p><a href="https://theme-next.org/">https://theme-next.org/</a></p>
+<p><a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
 <p><a href="https://www.jianshu.com/p/3a05351a37dc">https://www.jianshu.com/p/3a05351a37dc</a></p>
+<p><a href="https://www.zhyong.cn/posts/ca02/">https://www.zhyong.cn/posts/ca02/</a></p>
 ]]></content>
       <categories>
         <category>tool</category>
