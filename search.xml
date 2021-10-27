@@ -29,40 +29,6 @@
       </tags>
   </entry>
   <entry>
-    <title>数据结构与算法基础</title>
-    <url>/2021/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h2 id="1-程序性能"><a href="#1-程序性能" class="headerlink" title="1 程序性能"></a>1 程序性能</h2><span id="more"></span>
-
-<h3 id="1-1-空间复杂度"><a href="#1-1-空间复杂度" class="headerlink" title="1.1 空间复杂度"></a>1.1 空间复杂度</h3><h3 id="1-2-时间复杂度"><a href="#1-2-时间复杂度" class="headerlink" title="1.2 时间复杂度"></a>1.2 时间复杂度</h3><h4 id="1-2-1-常见算法大O"><a href="#1-2-1-常见算法大O" class="headerlink" title="1.2.1 常见算法大O"></a>1.2.1 常见算法大O</h4><h4 id="1-2-2-常见数据结构"><a href="#1-2-2-常见数据结构" class="headerlink" title="1.2.2 常见数据结构"></a>1.2.2 常见数据结构</h4><h2 id="2-基本数据结构"><a href="#2-基本数据结构" class="headerlink" title="2 基本数据结构"></a>2 基本数据结构</h2><h3 id="2-1-线性表"><a href="#2-1-线性表" class="headerlink" title="2.1 线性表"></a>2.1 线性表</h3><h4 id="2-1-1-数组"><a href="#2-1-1-数组" class="headerlink" title="2.1.1 数组"></a>2.1.1 数组</h4><h4 id="2-1-2-单链表"><a href="#2-1-2-单链表" class="headerlink" title="2.1.2 单链表"></a>2.1.2 单链表</h4><h4 id="2-1-3-双链表"><a href="#2-1-3-双链表" class="headerlink" title="2.1.3 双链表"></a>2.1.3 双链表</h4><h4 id="2-1-4-跳表"><a href="#2-1-4-跳表" class="headerlink" title="2.1.4 跳表"></a>2.1.4 跳表</h4><h4 id="2-1-5-栈"><a href="#2-1-5-栈" class="headerlink" title="2.1.5 栈"></a>2.1.5 栈</h4><h4 id="2-1-6-队列"><a href="#2-1-6-队列" class="headerlink" title="2.1.6 队列"></a>2.1.6 队列</h4><h4 id="2-1-7-leetcode题目"><a href="#2-1-7-leetcode题目" class="headerlink" title="2.1.7 leetcode题目"></a>2.1.7 leetcode题目</h4><h3 id="2-2-哈希表"><a href="#2-2-哈希表" class="headerlink" title="2.2 哈希表"></a>2.2 哈希表</h3>]]></content>
-      <categories>
-        <category>tool</category>
-      </categories>
-      <tags>
-        <tag>实用教程</tag>
-        <tag>Another Tag</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2021/10/25/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>WSL</title>
     <url>/2021/10/27/WSL/</url>
     <content><![CDATA[<h2 id="安装ubuntu20-04"><a href="#安装ubuntu20-04" class="headerlink" title="安装ubuntu20.04"></a>安装ubuntu20.04</h2><p>安装到非系统盘目录，下载离线安装包，复制到想要安装的目录下，解压，以管理员身份运行ubuntu2004.exe</p>
@@ -98,6 +64,40 @@
 <p><a href="https://blog.csdn.net/cjmqas/article/details/79282847">开源库集成器Vcpkg全教程</a></p>
 <p> Scoop </p>
 ]]></content>
+      <categories>
+        <category>tool</category>
+      </categories>
+      <tags>
+        <tag>实用教程</tag>
+        <tag>Another Tag</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/10/25/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>数据结构与算法基础</title>
+    <url>/2021/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h2 id="1-程序性能"><a href="#1-程序性能" class="headerlink" title="1 程序性能"></a>1 程序性能</h2><span id="more"></span>
+
+<h3 id="1-1-空间复杂度"><a href="#1-1-空间复杂度" class="headerlink" title="1.1 空间复杂度"></a>1.1 空间复杂度</h3><h3 id="1-2-时间复杂度"><a href="#1-2-时间复杂度" class="headerlink" title="1.2 时间复杂度"></a>1.2 时间复杂度</h3><h4 id="1-2-1-常见算法大O"><a href="#1-2-1-常见算法大O" class="headerlink" title="1.2.1 常见算法大O"></a>1.2.1 常见算法大O</h4><h4 id="1-2-2-常见数据结构"><a href="#1-2-2-常见数据结构" class="headerlink" title="1.2.2 常见数据结构"></a>1.2.2 常见数据结构</h4><h2 id="2-基本数据结构"><a href="#2-基本数据结构" class="headerlink" title="2 基本数据结构"></a>2 基本数据结构</h2><h3 id="2-1-线性表"><a href="#2-1-线性表" class="headerlink" title="2.1 线性表"></a>2.1 线性表</h3><h4 id="2-1-1-数组"><a href="#2-1-1-数组" class="headerlink" title="2.1.1 数组"></a>2.1.1 数组</h4><h4 id="2-1-2-单链表"><a href="#2-1-2-单链表" class="headerlink" title="2.1.2 单链表"></a>2.1.2 单链表</h4><h4 id="2-1-3-双链表"><a href="#2-1-3-双链表" class="headerlink" title="2.1.3 双链表"></a>2.1.3 双链表</h4><h4 id="2-1-4-跳表"><a href="#2-1-4-跳表" class="headerlink" title="2.1.4 跳表"></a>2.1.4 跳表</h4><h4 id="2-1-5-栈"><a href="#2-1-5-栈" class="headerlink" title="2.1.5 栈"></a>2.1.5 栈</h4><h4 id="2-1-6-队列"><a href="#2-1-6-队列" class="headerlink" title="2.1.6 队列"></a>2.1.6 队列</h4><h4 id="2-1-7-leetcode题目"><a href="#2-1-7-leetcode题目" class="headerlink" title="2.1.7 leetcode题目"></a>2.1.7 leetcode题目</h4><h3 id="2-2-哈希表"><a href="#2-2-哈希表" class="headerlink" title="2.2 哈希表"></a>2.2 哈希表</h3><h4 id="2-2-1-哈希函数设计"><a href="#2-2-1-哈希函数设计" class="headerlink" title="2.2.1 哈希函数设计"></a>2.2.1 哈希函数设计</h4><h4 id="2-2-2-哈希冲突"><a href="#2-2-2-哈希冲突" class="headerlink" title="2.2.2 哈希冲突"></a>2.2.2 哈希冲突</h4><h4 id="2-2-3-leetcode题目"><a href="#2-2-3-leetcode题目" class="headerlink" title="2.2.3 leetcode题目"></a>2.2.3 leetcode题目</h4><h3 id="2-3-树与二叉树"><a href="#2-3-树与二叉树" class="headerlink" title="2.3 树与二叉树"></a>2.3 树与二叉树</h3><h4 id="2-3-1-概述"><a href="#2-3-1-概述" class="headerlink" title="2.3.1 概述"></a>2.3.1 概述</h4><h4 id="2-3-2-树的种类"><a href="#2-3-2-树的种类" class="headerlink" title="2.3.2 树的种类"></a>2.3.2 树的种类</h4><h4 id="2-3-3-二叉树"><a href="#2-3-3-二叉树" class="headerlink" title="2.3.3 二叉树"></a>2.3.3 二叉树</h4><h4 id="2-3-4-二叉查找树"><a href="#2-3-4-二叉查找树" class="headerlink" title="2.3.4 二叉查找树"></a>2.3.4 二叉查找树</h4><h4 id="2-3-5-平衡树"><a href="#2-3-5-平衡树" class="headerlink" title="2.3.5 平衡树"></a>2.3.5 平衡树</h4><h4 id="2-3-6-堆树"><a href="#2-3-6-堆树" class="headerlink" title="2.3.6 堆树"></a>2.3.6 堆树</h4><h4 id="2-3-7-leetcode题目"><a href="#2-3-7-leetcode题目" class="headerlink" title="2.3.7 leetcode题目"></a>2.3.7 leetcode题目</h4><h2 id="2-4-图"><a href="#2-4-图" class="headerlink" title="2.4 图"></a>2.4 图</h2><h3 id="2-4-1-基础知识"><a href="#2-4-1-基础知识" class="headerlink" title="2.4.1 基础知识"></a>2.4.1 基础知识</h3><h3 id="2-4-2-图表示"><a href="#2-4-2-图表示" class="headerlink" title="2.4.2 图表示"></a>2.4.2 图表示</h3><h3 id="2-4-3-图遍历"><a href="#2-4-3-图遍历" class="headerlink" title="2.4.3 图遍历"></a>2.4.3 图遍历</h3><h3 id="2-4-4-最短路径"><a href="#2-4-4-最短路径" class="headerlink" title="2.4.4 最短路径"></a>2.4.4 最短路径</h3><h3 id="2-4-5-拓扑排序"><a href="#2-4-5-拓扑排序" class="headerlink" title="2.4.5 拓扑排序"></a>2.4.5 拓扑排序</h3><h3 id="2-4-6-leetcode题目"><a href="#2-4-6-leetcode题目" class="headerlink" title="2.4.6 leetcode题目"></a>2.4.6 leetcode题目</h3><h2 id="3-常见算法"><a href="#3-常见算法" class="headerlink" title="3 常见算法"></a>3 常见算法</h2><h3 id="3-1-分治法"><a href="#3-1-分治法" class="headerlink" title="3.1 分治法"></a>3.1 分治法</h3><h4 id="3-1-1-概述"><a href="#3-1-1-概述" class="headerlink" title="3.1.1 概述"></a>3.1.1 概述</h4><h4 id="3-1-2-策略"><a href="#3-1-2-策略" class="headerlink" title="3.1.2 策略"></a>3.1.2 策略</h4><h4 id="3-1-3-应用场景"><a href="#3-1-3-应用场景" class="headerlink" title="3.1.3 应用场景"></a>3.1.3 应用场景</h4><h4 id="3-1-4-步骤"><a href="#3-1-4-步骤" class="headerlink" title="3.1.4 步骤"></a>3.1.4 步骤</h4><h4 id="3-1-5-应用"><a href="#3-1-5-应用" class="headerlink" title="3.1.5 应用"></a>3.1.5 应用</h4><h4 id="3-1-6-leetcode题目"><a href="#3-1-6-leetcode题目" class="headerlink" title="3.1.6 leetcode题目"></a>3.1.6 leetcode题目</h4><h2 id="3-2-排序算法"><a href="#3-2-排序算法" class="headerlink" title="3.2 排序算法"></a>3.2 排序算法</h2><h3 id="3-2-1-冒泡排序"><a href="#3-2-1-冒泡排序" class="headerlink" title="3.2.1 冒泡排序"></a>3.2.1 冒泡排序</h3><h3 id="3-2-2-选择排序"><a href="#3-2-2-选择排序" class="headerlink" title="3.2.2 选择排序"></a>3.2.2 选择排序</h3><h3 id="3-2-3-插入排序"><a href="#3-2-3-插入排序" class="headerlink" title="3.2.3 插入排序"></a>3.2.3 插入排序</h3><h3 id="3-2-4-希尔排序"><a href="#3-2-4-希尔排序" class="headerlink" title="3.2.4 希尔排序"></a>3.2.4 希尔排序</h3><h3 id="3-2-5-归并排序"><a href="#3-2-5-归并排序" class="headerlink" title="3.2.5 归并排序"></a>3.2.5 归并排序</h3><h3 id="3-2-6-快速排序"><a href="#3-2-6-快速排序" class="headerlink" title="3.2.6 快速排序"></a>3.2.6 快速排序</h3><h3 id="3-2-7-堆排序"><a href="#3-2-7-堆排序" class="headerlink" title="3.2.7 堆排序"></a>3.2.7 堆排序</h3><h3 id="3-2-8-leetcode排序"><a href="#3-2-8-leetcode排序" class="headerlink" title="3.2.8 leetcode排序"></a>3.2.8 leetcode排序</h3><h2 id="3-3-贪心算法"><a href="#3-3-贪心算法" class="headerlink" title="3.3 贪心算法"></a>3.3 贪心算法</h2><h3 id="3-3-1-基本概念"><a href="#3-3-1-基本概念" class="headerlink" title="3.3.1 基本概念"></a>3.3.1 基本概念</h3><h3 id="3-3-2-描述"><a href="#3-3-2-描述" class="headerlink" title="3.3.2 描述"></a>3.3.2 描述</h3><h3 id="3-3-3-应用"><a href="#3-3-3-应用" class="headerlink" title="3.3.3. 应用"></a>3.3.3. 应用</h3><h3 id="3-3-4-leetcode题目"><a href="#3-3-4-leetcode题目" class="headerlink" title="3.3.4 leetcode题目"></a>3.3.4 leetcode题目</h3><h2 id="3-4-动态规划"><a href="#3-4-动态规划" class="headerlink" title="3.4 动态规划"></a>3.4 动态规划</h2><h3 id="3-4-1-基本概念"><a href="#3-4-1-基本概念" class="headerlink" title="3.4.1 基本概念"></a>3.4.1 基本概念</h3><h3 id="3-4-2-描述算法"><a href="#3-4-2-描述算法" class="headerlink" title="3.4.2 描述算法"></a>3.4.2 描述算法</h3><h3 id="3-4-3-背包问题"><a href="#3-4-3-背包问题" class="headerlink" title="3.4.3 背包问题"></a>3.4.3 背包问题</h3><h3 id="3-4-4-最长公共子序列"><a href="#3-4-4-最长公共子序列" class="headerlink" title="3.4.4 最长公共子序列"></a>3.4.4 最长公共子序列</h3><h3 id="3-4-5-leetcode题目"><a href="#3-4-5-leetcode题目" class="headerlink" title="3.4.5 leetcode题目"></a>3.4.5 leetcode题目</h3><h2 id="3-5-回溯法"><a href="#3-5-回溯法" class="headerlink" title="3.5 回溯法"></a>3.5 回溯法</h2><h3 id="3-5-1-基本概念"><a href="#3-5-1-基本概念" class="headerlink" title="3.5.1 基本概念"></a>3.5.1 基本概念</h3><h3 id="3-5-2-八皇后问题"><a href="#3-5-2-八皇后问题" class="headerlink" title="3.5.2 八皇后问题"></a>3.5.2 八皇后问题</h3><h3 id="3-5-3-leetcode题目"><a href="#3-5-3-leetcode题目" class="headerlink" title="3.5.3 leetcode题目"></a>3.5.3 leetcode题目</h3><h2 id="4-参考链接"><a href="#4-参考链接" class="headerlink" title="4 参考链接"></a>4 参考链接</h2>]]></content>
       <categories>
         <category>tool</category>
       </categories>
