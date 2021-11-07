@@ -120,8 +120,11 @@
     <content><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a></h2><ul>
 <li>C语言编程魔法书：基于C11标准</li>
 </ul>
+<span id="more"></span>
+
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">@startuml</span><br><span class="line"></span><br><span class="line">Bob -&gt; Alice : Hello, how are you</span><br><span class="line">Alice -&gt; Bob : Fine, thank you, and you?</span><br><span class="line"></span><br><span class="line">@enduml</span><br></pre></td></tr></tbody></table></figure>
 
+<p>@startuml<br>!theme spacelab<br>Bob -&gt; Alice :  hello<br>Bob &lt;- Alice :  $success(“success: hello B.”)<br>Bob -x Alice :  $failure(“failure”)<br>Bob -&gt;&gt; Alice : $warning(“warning”)<br>@enduml</p>
 <img src="http://www.plantuml.com/plantuml/svg/Syp9J4vLqBLJSCfFib9mB2t9ICqhoKnEBCdCprC8IYqiJIqkuGBAAUW2rJY256DHLLoGdrUSoiNbY6fONZvGNP52OaafDaCXYcrqTT5KOpSS0000">]]></content>
       <categories>
         <category>tool</category>
