@@ -32,6 +32,7 @@
 <p>qbittorrent</p>
 <p>grammarly</p>
 <p>剪切板win10自带的有很多剪切记录的快捷键Windows键➕V键</p>
+<p>线上思维导图<br><a href="https://gitmind.cn/app/template">https://gitmind.cn/app/template</a></p>
 <h3 id="windows-ternial"><a href="#windows-ternial" class="headerlink" title="windows ternial"></a>windows ternial</h3><ul>
 <li>添加 git base 到ternial</li>
 </ul>
@@ -128,21 +129,6 @@
       </tags>
   </entry>
   <entry>
-    <title>leetcode题解算法分析</title>
-    <url>/2021/10/27/2021/11/leetcode%E9%A2%98%E8%A7%A3%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h2><span id="more"></span>
-<p>&emsp;单调递增栈，元素进栈过程，若当前进栈的元素a，如果a&gt;栈顶元素，则直接将a进栈，如果a&lt;=栈顶元素，则不断将栈顶元素出栈，直到满足a&gt;栈顶元素。单调递减栈则为a&lt;栈顶元素时进栈。</p>
-<h2 id="单调队列"><a href="#单调队列" class="headerlink" title="单调队列"></a>单调队列</h2><p>&emsp;单调队列与单调栈及其相似，把单调栈先进后出的性质改为先进先出既可。<br>元素进队列的过程对于单调递增队列。<br>对于一个元素a，如果a&gt;队尾元素，那么直接将a扔进队列，如果a&lt;=队尾元素，则将队尾元素出队列，直到满足 a&gt;队尾元素即可。</p>
-<h2 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h2><h2 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h2><h2 id="前缀与哈希"><a href="#前缀与哈希" class="headerlink" title="前缀与哈希"></a>前缀与哈希</h2><h2 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h2><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h2 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h2><h2 id="字典树"><a href="#字典树" class="headerlink" title="字典树"></a>字典树</h2>]]></content>
-      <categories>
-        <category>tool</category>
-      </categories>
-      <tags>
-        <tag>实用教程</tag>
-        <tag>Another Tag</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数据结构与算法基础</title>
     <url>/2021/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h2 id="1-程序性能"><a href="#1-程序性能" class="headerlink" title="1 程序性能"></a>1 程序性能</h2><span id="more"></span>
@@ -216,6 +202,21 @@
 <li>复杂度速查表<br><a href="https://liam.page/2016/06/20/big-O-cheat-sheet/">https://liam.page/2016/06/20/big-O-cheat-sheet/</a></li>
 </ul>
 ]]></content>
+      <categories>
+        <category>tool</category>
+      </categories>
+      <tags>
+        <tag>实用教程</tag>
+        <tag>Another Tag</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode题解算法分析</title>
+    <url>/2021/10/27/2021/11/leetcode%E9%A2%98%E8%A7%A3%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h2><span id="more"></span>
+<p>&emsp;单调递增栈，元素进栈过程，若当前进栈的元素a，如果a&gt;栈顶元素，则直接将a进栈，如果a&lt;=栈顶元素，则不断将栈顶元素出栈，直到满足a&gt;栈顶元素。单调递减栈则为a&lt;栈顶元素时进栈。</p>
+<h2 id="单调队列"><a href="#单调队列" class="headerlink" title="单调队列"></a>单调队列</h2><p>&emsp;单调队列与单调栈及其相似，把单调栈先进后出的性质改为先进先出既可。<br>元素进队列的过程对于单调递增队列。<br>对于一个元素a，如果a&gt;队尾元素，那么直接将a扔进队列，如果a&lt;=队尾元素，则将队尾元素出队列，直到满足 a&gt;队尾元素即可。</p>
+<h2 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h2><h2 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h2><h2 id="前缀与哈希"><a href="#前缀与哈希" class="headerlink" title="前缀与哈希"></a>前缀与哈希</h2><h2 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h2><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h2 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h2><h2 id="字典树"><a href="#字典树" class="headerlink" title="字典树"></a>字典树</h2>]]></content>
       <categories>
         <category>tool</category>
       </categories>
