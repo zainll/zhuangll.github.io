@@ -20,17 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true,"b2t":false,"scrollpercent":true},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="http://example.com/categories/index.html">
+  <meta name="description" content="一、内存&amp;emsp;在计算机中，不同应用程序之间的内存是相互独立的，通过情况下不可以相互访问。 1、内存四区从下到上为：代码区、数据区、堆区、栈区。栈区：存储临时变量的区域，临时变量包括：局部变量、返回值、参数、返回地址。这些变量超出作用域自动弹出。超出栈大小将会栈溢出。堆区：比较大的内存区域，用于动态内存分配，由开放人员申请和释放，在程序结束时未释放，将会右系统自动回收。数据区：主要存放全局变量">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C&#x2F;C++内存管理">
+<meta property="og:url" content="http://example.com/2021/11/07/2021/11/%E5%86%85%E5%AD%98/index.html">
 <meta property="og:site_name" content="liuz">
+<meta property="og:description" content="一、内存&amp;emsp;在计算机中，不同应用程序之间的内存是相互独立的，通过情况下不可以相互访问。 1、内存四区从下到上为：代码区、数据区、堆区、栈区。栈区：存储临时变量的区域，临时变量包括：局部变量、返回值、参数、返回地址。这些变量超出作用域自动弹出。超出栈大小将会栈溢出。堆区：比较大的内存区域，用于动态内存分配，由开放人员申请和释放，在程序结束时未释放，将会右系统自动回收。数据区：主要存放全局变量">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-10-25T17:28:51.000Z">
-<meta property="article:modified_time" content="2021-10-26T15:37:59.021Z">
+<meta property="article:published_time" content="2021-11-06T16:47:53.000Z">
+<meta property="article:modified_time" content="2021-11-06T16:53:53.000Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Another Tag">
+<meta property="article:tag" content="Computer Science">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/categories/">
+<link rel="canonical" href="http://example.com/2021/11/07/2021/11/%E5%86%85%E5%AD%98/">
 
 
 <script id="page-configurations">
@@ -38,13 +42,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>分类 | liuz
-</title>
+  <title>C/C++内存管理 | liuz</title>
   
 
 
@@ -182,51 +185,104 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="zh-CN">
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/07/2021/11/%E5%86%85%E5%AD%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liuz">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C/C++内存管理
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">分类
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
 
-<div class="post-meta">
+              <time title="创建时间：2021-11-07 00:47:53 / 修改时间：00:53:53" itemprop="dateCreated datePublished" datetime="2021-11-07T00:47:53+08:00">2021-11-07</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tool/" itemprop="url" rel="index"><span itemprop="name">tool</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="一、内存"><a href="#一、内存" class="headerlink" title="一、内存"></a>一、内存</h2><p>&emsp;在计算机中，不同应用程序之间的内存是相互独立的，通过情况下不可以相互访问。</p>
+<p>1、内存四区<br>从下到上为：代码区、数据区、堆区、栈区。<br>栈区：存储临时变量的区域，临时变量包括：局部变量、返回值、参数、返回地址。这些变量超出作用域自动弹出。超出栈大小将会栈溢出。<br>堆区：比较大的内存区域，用于动态内存分配，由开放人员申请和释放，在程序结束时未释放，将会右系统自动回收。<br>数据区：主要存放全局变量、常量和静态变量；数据区又可以划分为：全局区和静态区。<br>代码区：主要纯粹可执行代码。属性为只读的。</p>
+<ul>
+<li>参考链接：<br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ">https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Another-Tag/" rel="tag"># Another Tag</a>
+              <a href="/tags/Computer-Science/" rel="tag"># Computer Science</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/10/27/WSL/" rel="prev" title="WSL">
+      <i class="fa fa-chevron-left"></i> WSL
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <div class="category-all-page">
-            <div class="category-all-title">
-              目前共计 1 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/tool/">tool</a><span class="category-list-count">6</span></li></ul>
-            </div>
-          </div>
-        
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
 
 
           </div>
@@ -277,6 +333,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%86%85%E5%AD%98"><span class="nav-text">一、内存</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
