@@ -149,6 +149,5 @@ deploy:
 backup:
     type: git
     repository:
-        github: git@github.com:zhuangll/zhuangll.github.io.git
-        branch: backup
+        github: git@github.com:zhuangll/zhuangll.github.io.git, backup
 
