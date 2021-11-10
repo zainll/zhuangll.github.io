@@ -147,7 +147,8 @@ deploy:
   #message: 自定义提交说明，这个字段可以没有
 
 backup:
-  type: git
-  repository: git@github.com:zhuangll/zhuangll.github.io.git
-  branch: backup
+    type: git
+    repository:
+        github: git@github.com:zhuangll/zhuangll.github.io.git
+        branch: backup
 
