@@ -150,6 +150,5 @@ backup:
   type: git
   theme: material-x-1.2.1
   message: Back up my www.itrhx.com blog
-  repository:
-    github: git@github.com:zhuangll/zhuangll.github.io.git,backup
+  repository: git@github.com:zhuangll/zhuangll.github.io.git,backup
 
