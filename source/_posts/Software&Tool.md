@@ -28,6 +28,9 @@ hexo s
 # 发布到github
 hexo d
 
+
+# 强制推送备份源码分支
+git push -f origin backup
 ```
 
 ## 参考链接
