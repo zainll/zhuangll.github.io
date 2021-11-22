@@ -15,6 +15,7 @@
     "clipboard": "^2.0.8",
     "hexo": "^5.0.0",
     "hexo-asset-image": "^1.0.0",
+    "hexo-blog-encrypt": "^2.0.0",
     "hexo-deployer-git": "^3.0.0",
     "hexo-encrypt": "^0.5.5",
     "hexo-enhancer": "^1.0.10",

@@ -113,13 +113,16 @@ githubEmojis:
   styles:
   customEmojis:
 
+
+# Security
+#encrypt:
+#    
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 #theme: landscape
 theme: next
-
-
 
 # 搜索
 search:
