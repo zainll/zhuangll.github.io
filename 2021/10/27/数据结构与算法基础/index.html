@@ -247,7 +247,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>16k</span>
+              <span>17k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -461,8 +461,21 @@
 <h3 id="3-3-3-应用"><a href="#3-3-3-应用" class="headerlink" title="3.3.3. 应用"></a>3.3.3. 应用</h3><p> 贪心算法经典实践:最小生成树算法</p>
 <p><strong>最小生成树算法</strong></p>
 <p><strong>Prim算法</strong></p>
-<h3 id="3-3-4-leetcode题目"><a href="#3-3-4-leetcode题目" class="headerlink" title="3.3.4 leetcode题目"></a>3.3.4 leetcode题目</h3><h2 id="3-4-动态规划"><a href="#3-4-动态规划" class="headerlink" title="3.4 动态规划"></a>3.4 动态规划</h2><p> 动态规划(DP):是一种通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法.常用于重叠子问题和最优子结构性质的问题,动态规划时间通常远小于朴素解法.</p>
-<h3 id="3-4-1-基本概念"><a href="#3-4-1-基本概念" class="headerlink" title="3.4.1 基本概念"></a>3.4.1 基本概念</h3><h3 id="3-4-2-描述算法"><a href="#3-4-2-描述算法" class="headerlink" title="3.4.2 描述算法"></a>3.4.2 描述算法</h3><h3 id="3-4-3-背包问题"><a href="#3-4-3-背包问题" class="headerlink" title="3.4.3 背包问题"></a>3.4.3 背包问题</h3><h3 id="3-4-4-最长公共子序列"><a href="#3-4-4-最长公共子序列" class="headerlink" title="3.4.4 最长公共子序列"></a>3.4.4 最长公共子序列</h3><h3 id="3-4-5-leetcode题目"><a href="#3-4-5-leetcode题目" class="headerlink" title="3.4.5 leetcode题目"></a>3.4.5 leetcode题目</h3><h2 id="3-5-回溯法"><a href="#3-5-回溯法" class="headerlink" title="3.5 回溯法"></a>3.5 回溯法</h2><h3 id="3-5-1-基本概念"><a href="#3-5-1-基本概念" class="headerlink" title="3.5.1 基本概念"></a>3.5.1 基本概念</h3><h3 id="3-5-2-八皇后问题"><a href="#3-5-2-八皇后问题" class="headerlink" title="3.5.2 八皇后问题"></a>3.5.2 八皇后问题</h3><h3 id="3-5-3-leetcode题目"><a href="#3-5-3-leetcode题目" class="headerlink" title="3.5.3 leetcode题目"></a>3.5.3 leetcode题目</h3><h2 id="4-参考链接"><a href="#4-参考链接" class="headerlink" title="4 参考链接"></a>4 参考链接</h2><ul>
+<h3 id="3-3-4-leetcode题目"><a href="#3-3-4-leetcode题目" class="headerlink" title="3.3.4 leetcode题目"></a>3.3.4 leetcode题目</h3><h2 id="3-4-动态规划"><a href="#3-4-动态规划" class="headerlink" title="3.4 动态规划"></a>3.4 动态规划</h2><p> 动态规划(<code>DP</code>):是一种通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法.常用于重叠子问题和最优子结构性质的问题,动态规划时间通常远小于朴素解法.</p>
+<h3 id="3-4-1-基本概念"><a href="#3-4-1-基本概念" class="headerlink" title="3.4.1 基本概念"></a>3.4.1 基本概念</h3><p> 动态规划:要解一个给定问题,需要解其不同部分(即子问题),再根据子问题的解以得出原问题的解.通常子问题非常相似,子问题解算出后,将其记录.<br> 动态规划过程是:每次决策依赖于当前状态,又随即引起状态转移.一个决策序列就是在变化的状态中产生除留的,这种多阶段最优化决策解决过程称为动态规划.<br> 动态规划与分治法的区别是子问题通常不是独立的.</p>
+<h3 id="3-4-2-描述算法"><a href="#3-4-2-描述算法" class="headerlink" title="3.4.2 描述算法"></a>3.4.2 描述算法</h3><p> 可采用动态规划的问题3个性质:<br> 1) <strong>最优化原理</strong>:如果问题的最优解所包含的子问题的解也是最优的,则称该问题具有最优子结构,即满足最优化原理.<br> 2) <strong>无后效性</strong>:即某阶段状态确定后,就不受之后的决策影响,即某状态以后过程不影响以前的状态,只与当前状态有关.<br> 3) <strong>有重叠子问题</strong>:</p>
+<br>
+ 动态规划所处理的问题是一个多阶段决策问题,由初始状态开始,通过中间阶段决策的选择,达到结束状态.形成一个决策序列.
+
+<p> 动态规划求解三要素:</p>
+<blockquote>
+<p>(1) 问题的节点<br>(2) 每个阶段的状态<br>(3) 从前一个阶段转化到后一个阶段之间的递推关系</p>
+</blockquote>
+<p> <strong>最优决策表</strong></p>
+<blockquote>
+<p>f(n, m) = max{f(n-1, m), f(n-1, m-w[n]) + P(n, m)}</p>
+</blockquote>
+<h3 id="3-4-3-背包问题"><a href="#3-4-3-背包问题" class="headerlink" title="3.4.3 背包问题"></a>3.4.3 背包问题</h3><h3 id="3-4-4-最长公共子序列"><a href="#3-4-4-最长公共子序列" class="headerlink" title="3.4.4 最长公共子序列"></a>3.4.4 最长公共子序列</h3><h3 id="3-4-5-leetcode题目"><a href="#3-4-5-leetcode题目" class="headerlink" title="3.4.5 leetcode题目"></a>3.4.5 leetcode题目</h3><h2 id="3-5-回溯法"><a href="#3-5-回溯法" class="headerlink" title="3.5 回溯法"></a>3.5 回溯法</h2><h3 id="3-5-1-基本概念"><a href="#3-5-1-基本概念" class="headerlink" title="3.5.1 基本概念"></a>3.5.1 基本概念</h3><h3 id="3-5-2-八皇后问题"><a href="#3-5-2-八皇后问题" class="headerlink" title="3.5.2 八皇后问题"></a>3.5.2 八皇后问题</h3><h3 id="3-5-3-leetcode题目"><a href="#3-5-3-leetcode题目" class="headerlink" title="3.5.3 leetcode题目"></a>3.5.3 leetcode题目</h3><h2 id="4-参考链接"><a href="#4-参考链接" class="headerlink" title="4 参考链接"></a>4 参考链接</h2><ul>
 <li>复杂度速查表<br><a target="_blank" rel="noopener" href="https://liam.page/2016/06/20/big-O-cheat-sheet/">https://liam.page/2016/06/20/big-O-cheat-sheet/</a></li>
 </ul>
 

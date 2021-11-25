@@ -98,6 +98,26 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2021/10/25/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>书单</title>
     <url>/2021/10/27/%E4%B9%A6%E5%8D%95/</url>
     <content><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a></h2><ul>
@@ -118,26 +138,6 @@
         <tag>实用教程</tag>
         <tag>Another Tag</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2021/10/25/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>leetcode题解算法分析</title>
@@ -377,8 +377,21 @@
 <h3 id="3-3-3-应用"><a href="#3-3-3-应用" class="headerlink" title="3.3.3. 应用"></a>3.3.3. 应用</h3><p> 贪心算法经典实践:最小生成树算法</p>
 <p><strong>最小生成树算法</strong></p>
 <p><strong>Prim算法</strong></p>
-<h3 id="3-3-4-leetcode题目"><a href="#3-3-4-leetcode题目" class="headerlink" title="3.3.4 leetcode题目"></a>3.3.4 leetcode题目</h3><h2 id="3-4-动态规划"><a href="#3-4-动态规划" class="headerlink" title="3.4 动态规划"></a>3.4 动态规划</h2><p> 动态规划(DP):是一种通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法.常用于重叠子问题和最优子结构性质的问题,动态规划时间通常远小于朴素解法.</p>
-<h3 id="3-4-1-基本概念"><a href="#3-4-1-基本概念" class="headerlink" title="3.4.1 基本概念"></a>3.4.1 基本概念</h3><h3 id="3-4-2-描述算法"><a href="#3-4-2-描述算法" class="headerlink" title="3.4.2 描述算法"></a>3.4.2 描述算法</h3><h3 id="3-4-3-背包问题"><a href="#3-4-3-背包问题" class="headerlink" title="3.4.3 背包问题"></a>3.4.3 背包问题</h3><h3 id="3-4-4-最长公共子序列"><a href="#3-4-4-最长公共子序列" class="headerlink" title="3.4.4 最长公共子序列"></a>3.4.4 最长公共子序列</h3><h3 id="3-4-5-leetcode题目"><a href="#3-4-5-leetcode题目" class="headerlink" title="3.4.5 leetcode题目"></a>3.4.5 leetcode题目</h3><h2 id="3-5-回溯法"><a href="#3-5-回溯法" class="headerlink" title="3.5 回溯法"></a>3.5 回溯法</h2><h3 id="3-5-1-基本概念"><a href="#3-5-1-基本概念" class="headerlink" title="3.5.1 基本概念"></a>3.5.1 基本概念</h3><h3 id="3-5-2-八皇后问题"><a href="#3-5-2-八皇后问题" class="headerlink" title="3.5.2 八皇后问题"></a>3.5.2 八皇后问题</h3><h3 id="3-5-3-leetcode题目"><a href="#3-5-3-leetcode题目" class="headerlink" title="3.5.3 leetcode题目"></a>3.5.3 leetcode题目</h3><h2 id="4-参考链接"><a href="#4-参考链接" class="headerlink" title="4 参考链接"></a>4 参考链接</h2><ul>
+<h3 id="3-3-4-leetcode题目"><a href="#3-3-4-leetcode题目" class="headerlink" title="3.3.4 leetcode题目"></a>3.3.4 leetcode题目</h3><h2 id="3-4-动态规划"><a href="#3-4-动态规划" class="headerlink" title="3.4 动态规划"></a>3.4 动态规划</h2><p> 动态规划(<code>DP</code>):是一种通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法.常用于重叠子问题和最优子结构性质的问题,动态规划时间通常远小于朴素解法.</p>
+<h3 id="3-4-1-基本概念"><a href="#3-4-1-基本概念" class="headerlink" title="3.4.1 基本概念"></a>3.4.1 基本概念</h3><p> 动态规划:要解一个给定问题,需要解其不同部分(即子问题),再根据子问题的解以得出原问题的解.通常子问题非常相似,子问题解算出后,将其记录.<br> 动态规划过程是:每次决策依赖于当前状态,又随即引起状态转移.一个决策序列就是在变化的状态中产生除留的,这种多阶段最优化决策解决过程称为动态规划.<br> 动态规划与分治法的区别是子问题通常不是独立的.</p>
+<h3 id="3-4-2-描述算法"><a href="#3-4-2-描述算法" class="headerlink" title="3.4.2 描述算法"></a>3.4.2 描述算法</h3><p> 可采用动态规划的问题3个性质:<br> 1) <strong>最优化原理</strong>:如果问题的最优解所包含的子问题的解也是最优的,则称该问题具有最优子结构,即满足最优化原理.<br> 2) <strong>无后效性</strong>:即某阶段状态确定后,就不受之后的决策影响,即某状态以后过程不影响以前的状态,只与当前状态有关.<br> 3) <strong>有重叠子问题</strong>:</p>
+<br>
+ 动态规划所处理的问题是一个多阶段决策问题,由初始状态开始,通过中间阶段决策的选择,达到结束状态.形成一个决策序列.
+
+<p> 动态规划求解三要素:</p>
+<blockquote>
+<p>(1) 问题的节点<br>(2) 每个阶段的状态<br>(3) 从前一个阶段转化到后一个阶段之间的递推关系</p>
+</blockquote>
+<p> <strong>最优决策表</strong></p>
+<blockquote>
+<p>f(n, m) = max{f(n-1, m), f(n-1, m-w[n]) + P(n, m)}</p>
+</blockquote>
+<h3 id="3-4-3-背包问题"><a href="#3-4-3-背包问题" class="headerlink" title="3.4.3 背包问题"></a>3.4.3 背包问题</h3><h3 id="3-4-4-最长公共子序列"><a href="#3-4-4-最长公共子序列" class="headerlink" title="3.4.4 最长公共子序列"></a>3.4.4 最长公共子序列</h3><h3 id="3-4-5-leetcode题目"><a href="#3-4-5-leetcode题目" class="headerlink" title="3.4.5 leetcode题目"></a>3.4.5 leetcode题目</h3><h2 id="3-5-回溯法"><a href="#3-5-回溯法" class="headerlink" title="3.5 回溯法"></a>3.5 回溯法</h2><h3 id="3-5-1-基本概念"><a href="#3-5-1-基本概念" class="headerlink" title="3.5.1 基本概念"></a>3.5.1 基本概念</h3><h3 id="3-5-2-八皇后问题"><a href="#3-5-2-八皇后问题" class="headerlink" title="3.5.2 八皇后问题"></a>3.5.2 八皇后问题</h3><h3 id="3-5-3-leetcode题目"><a href="#3-5-3-leetcode题目" class="headerlink" title="3.5.3 leetcode题目"></a>3.5.3 leetcode题目</h3><h2 id="4-参考链接"><a href="#4-参考链接" class="headerlink" title="4 参考链接"></a>4 参考链接</h2><ul>
 <li>复杂度速查表<br><a href="https://liam.page/2016/06/20/big-O-cheat-sheet/">https://liam.page/2016/06/20/big-O-cheat-sheet/</a></li>
 </ul>
 ]]></content>
