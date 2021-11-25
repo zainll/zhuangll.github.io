@@ -54,6 +54,26 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2021/10/25/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>WSL</title>
     <url>/2021/10/27/WSL/</url>
     <content><![CDATA[<h2 id="安装ubuntu20-04"><a href="#安装ubuntu20-04" class="headerlink" title="安装ubuntu20.04"></a>安装ubuntu20.04</h2><p>安装到非系统盘目录，下载离线安装包，复制到想要安装的目录下，解压，以管理员身份运行ubuntu2004.exe</p>
@@ -96,26 +116,6 @@
         <tag>实用教程</tag>
         <tag>Another Tag</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2021/10/25/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>书单</title>
@@ -391,8 +391,13 @@
 <blockquote>
 <p>f(n, m) = max{f(n-1, m), f(n-1, m-w[n]) + P(n, m)}</p>
 </blockquote>
-<h3 id="3-4-3-背包问题"><a href="#3-4-3-背包问题" class="headerlink" title="3.4.3 背包问题"></a>3.4.3 背包问题</h3><h3 id="3-4-4-最长公共子序列"><a href="#3-4-4-最长公共子序列" class="headerlink" title="3.4.4 最长公共子序列"></a>3.4.4 最长公共子序列</h3><h3 id="3-4-5-leetcode题目"><a href="#3-4-5-leetcode题目" class="headerlink" title="3.4.5 leetcode题目"></a>3.4.5 leetcode题目</h3><h2 id="3-5-回溯法"><a href="#3-5-回溯法" class="headerlink" title="3.5 回溯法"></a>3.5 回溯法</h2><h3 id="3-5-1-基本概念"><a href="#3-5-1-基本概念" class="headerlink" title="3.5.1 基本概念"></a>3.5.1 基本概念</h3><h3 id="3-5-2-八皇后问题"><a href="#3-5-2-八皇后问题" class="headerlink" title="3.5.2 八皇后问题"></a>3.5.2 八皇后问题</h3><h3 id="3-5-3-leetcode题目"><a href="#3-5-3-leetcode题目" class="headerlink" title="3.5.3 leetcode题目"></a>3.5.3 leetcode题目</h3><h2 id="4-参考链接"><a href="#4-参考链接" class="headerlink" title="4 参考链接"></a>4 参考链接</h2><ul>
+<h3 id="3-4-3-背包问题"><a href="#3-4-3-背包问题" class="headerlink" title="3.4.3 背包问题"></a>3.4.3 背包问题</h3><p> 状态转移方程:</p>
+<blockquote>
+<p>p[i][j] = max{p[i-1][j-vol] + value[i], p[i-1][j]}</p>
+</blockquote>
+<h3 id="3-4-4-最长公共子序列"><a href="#3-4-4-最长公共子序列" class="headerlink" title="3.4.4 最长公共子序列"></a>3.4.4 最长公共子序列</h3><h3 id="3-4-5-leetcode题目"><a href="#3-4-5-leetcode题目" class="headerlink" title="3.4.5 leetcode题目"></a>3.4.5 leetcode题目</h3><h2 id="3-5-回溯法"><a href="#3-5-回溯法" class="headerlink" title="3.5 回溯法"></a>3.5 回溯法</h2><h3 id="3-5-1-基本概念"><a href="#3-5-1-基本概念" class="headerlink" title="3.5.1 基本概念"></a>3.5.1 基本概念</h3><h3 id="3-5-2-八皇后问题"><a href="#3-5-2-八皇后问题" class="headerlink" title="3.5.2 八皇后问题"></a>3.5.2 八皇后问题</h3><h3 id="3-5-3-leetcode题目"><a href="#3-5-3-leetcode题目" class="headerlink" title="3.5.3 leetcode题目"></a>3.5.3 leetcode题目</h3><h2 id="4-参考链接"><a href="#4-参考链接" class="headerlink" title="4 参考链接"></a>4 参考链接</h2><ul>
 <li>复杂度速查表<br><a href="https://liam.page/2016/06/20/big-O-cheat-sheet/">https://liam.page/2016/06/20/big-O-cheat-sheet/</a></li>
+<li>线性表<br><a href="https://zh.wikipedia.org/wiki/%E7%BA%BF%E6%80%A7%R8%A1%A8">https://zh.wikipedia.org/wiki/%E7%BA%BF%E6%80%A7%R8%A1%A8</a></li>
 </ul>
 ]]></content>
       <categories>
