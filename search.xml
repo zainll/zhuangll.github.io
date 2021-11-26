@@ -99,6 +99,26 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2021/10/25/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>书单</title>
     <url>/2021/10/27/%E4%B9%A6%E5%8D%95/</url>
     <content><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a></h2><ul>
@@ -114,6 +134,46 @@
 <img src="http://www.plantuml.com/plantuml/svg/Syp9J4vLqBLJSCfFib9mB2t9ICqhoKnEBCdCprC8IYqiJIqkuGBAAUW2rJY256DHLLoGdrUSoiNbY6fONZvGNP52OaafDaCXYcrqTT5KOpSS0000">]]></content>
       <categories>
         <category>tool</category>
+      </categories>
+      <tags>
+        <tag>实用教程</tag>
+        <tag>Another Tag</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode题解算法分析</title>
+    <url>/2021/10/27/2021/11/leetcode%E9%A2%98%E8%A7%A3%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h2><span id="more"></span>
+<p> 单调递增栈，元素进栈过程，若当前进栈的元素a，如果a&gt;栈顶元素，则直接将a进栈，如果a&lt;=栈顶元素，则不断将栈顶元素出栈，直到满足a&gt;栈顶元素。单调递减栈则为a&lt;栈顶元素时进栈。</p>
+<blockquote>
+<p>单调递增栈：单调递增栈就是从栈底到栈顶数据是从大到小<br>单调递减栈：单调递减栈就是从栈底到栈顶数据是从小到大</p>
+</blockquote>
+<ul>
+<li>leetcode题目</li>
+</ul>
+<p>84.<a href="https://leetcode-cn.com/problems/largest-rectangle-in-histogram/description/">柱状图中最大的矩形</a></p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">largestRectangleArea</span><span class="params">(<span class="keyword">int</span>* heights, <span class="keyword">int</span> heightsSize)</span> </span>{</span><br><span class="line">    <span class="comment">// 栈顶标记</span></span><br><span class="line">    <span class="keyword">int</span> top = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">int</span> area = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> maxArea = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> *<span class="built_in">stack</span> = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * (heightsSize + <span class="number">2</span>));</span><br><span class="line">    <span class="keyword">int</span> *buf = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * (heightsSize + <span class="number">2</span>));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 增加前哨兵</span></span><br><span class="line">    buf[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= heightsSize; i++) {</span><br><span class="line">        buf[i] = heights[i - <span class="number">1</span>];</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 在最后增加哨兵</span></span><br><span class="line">    buf[heightsSize + <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">stack</span>[++top] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; heightsSize + <span class="number">2</span>; i++) {</span><br><span class="line">        <span class="keyword">while</span> (top &gt; <span class="number">0</span> &amp;&amp; buf[i] &lt; buf[<span class="built_in">stack</span>[top]]) {</span><br><span class="line">            area = (i - <span class="built_in">stack</span>[top - <span class="number">1</span>] - <span class="number">1</span>) * buf[<span class="built_in">stack</span>[top]];</span><br><span class="line">            maxArea = maxArea &gt; area ? maxArea : area;</span><br><span class="line">            top--;</span><br><span class="line">        }</span><br><span class="line">        <span class="comment">// 索引入栈，其他可能是元素入栈</span></span><br><span class="line">        <span class="built_in">stack</span>[++top] = i;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> maxArea;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>leetcode 496、503、739、239<br>42.接雨水<br><a href="https://blog.csdn.net/chongbin007/article/details/112741867?utm_term=%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97leetcode&amp;utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~sobaiduweb~default-0-112741867&amp;spm=3001.4430">https://blog.csdn.net/chongbin007/article/details/112741867?utm_term=%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97leetcode&amp;utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~sobaiduweb~default-0-112741867&amp;spm=3001.4430</a></p>
+<h2 id="单调队列"><a href="#单调队列" class="headerlink" title="单调队列"></a>单调队列</h2><p> 单调队列是指：队列中的元素之间的关系具有单调性，而且，队首和队尾都可以进行出队操作，只有队尾开源进行入队操作。<br> 单调队列与单调栈及其相似，把单调栈先进后出的性质改为先进先出既可。<br>元素进队列的过程对于单调递增队列。<br>对于一个元素a，如果a&gt;队尾元素，那么直接将a扔进队列，如果a&lt;=队尾元素，则将队尾元素出队列，直到满足 a&gt;队尾元素即可。</p>
+<blockquote>
+<p>单调递增队列(从队首到队尾满足递增)<br>单调递减队列(从队首到队尾满足递减)</p>
+</blockquote>
+<ul>
+<li><p>单调队列作用：队列里的元素满足出队的单调性。</p>
+</li>
+<li><p>单调队列操作：去头和删尾</p>
+</li>
+<li><p>leetcode 题目<br><a href="https://leetcode-cn.com/problems/dui-lie-de-zui-da-zhi-lcof/">剑指 Offer 59 - II. 队列的最大值</a></p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> {</span></span><br><span class="line">    <span class="keyword">int</span> arr[<span class="number">20000</span>];</span><br><span class="line">    <span class="keyword">int</span> begin;</span><br><span class="line">    <span class="keyword">int</span> end;</span><br><span class="line">} MaxQueue;</span><br><span class="line"></span><br><span class="line"><span class="function">MaxQueue* <span class="title">maxQueueCreate</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    MaxQueue *tmp = (MaxQueue*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(MaxQueue));</span><br><span class="line">    tmp-&gt;begin = <span class="number">0</span>;</span><br><span class="line">    tmp-&gt;end = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> tmp;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxQueueMax_value</span><span class="params">(MaxQueue* obj)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = obj-&gt;begin; i &lt; obj-&gt;end; i++) {</span><br><span class="line">        ans = fmax(ans, obj-&gt;arr[i]);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">maxQueuPus_back</span><span class="params">(MaxQueue* obj, <span class="keyword">int</span> value)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    obj-&gt;arr[obj-&gt;end++] = value;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxQueuePop_front</span><span class="params">(MaxQueue* obj)</span> </span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">if</span>(obj-&gt;begin==obj-&gt;end)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">return</span> obj-&gt;arr[obj-&gt;begin++];</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">maxQueueFree</span><span class="params">(MaxQueue* obj)</span> </span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    obj-&gt;end=<span class="number">0</span>;</span><br><span class="line">    obj-&gt;begin=<span class="number">0</span>;</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
+<p>239.滑动窗口最大值</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Size=<span class="number">1000005</span>;</span><br><span class="line"><span class="keyword">int</span> a[Size],qmax[Size],qmin[Size],savemax[Size],savemin[Size];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> n,k,cnt=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;n,&amp;k);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    {<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);}</span><br><span class="line">    <span class="keyword">int</span> beg=<span class="number">1</span>,top=<span class="number">0</span>;<span class="comment">//qmax队列的队首指针和队尾指针</span></span><br><span class="line">    <span class="keyword">int</span> st=<span class="number">1</span>,ed=<span class="number">0</span>;<span class="comment">//qmin队列的队首指针和队尾指针</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">while</span>(beg&lt;=top&amp;&amp;a[i]&gt;=a[qmax[top]])</span><br><span class="line">        {top--;}</span><br><span class="line">        qmax[++top]=i;</span><br><span class="line">        <span class="keyword">while</span>(st&lt;=ed&amp;&amp;a[i]&lt;=a[qmin[ed]])</span><br><span class="line">        {ed--;}</span><br><span class="line">        qmin[++ed]=i;</span><br><span class="line">        <span class="keyword">if</span>(i&gt;=k)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">while</span>(qmax[beg]&lt;=i-k)beg++;</span><br><span class="line">            <span class="keyword">while</span>(qmin[st]&lt;=i-k)st++;</span><br><span class="line">            savemax[cnt]=a[qmax[beg]];</span><br><span class="line">            savemin[cnt]=a[qmin[st]];</span><br><span class="line">            cnt++;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt; cnt;i++) {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>,savemin[i]);</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt; cnt;i++) {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>,savemax[i]);</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h2><h2 id="滑动窗口-amp-双指针"><a href="#滑动窗口-amp-双指针" class="headerlink" title="滑动窗口&amp;双指针"></a>滑动窗口&amp;双指针</h2><p><a href="https://www.cnblogs.com/zzcxxoo/p/13216030.html">https://www.cnblogs.com/zzcxxoo/p/13216030.html</a></p>
+<h2 id="前缀与哈希"><a href="#前缀与哈希" class="headerlink" title="前缀与哈希"></a>前缀与哈希</h2><h2 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h2><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h2 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h2><h2 id="字典树"><a href="#字典树" class="headerlink" title="字典树"></a>字典树</h2>]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2021</category>
+        <category>11</category>
       </categories>
       <tags>
         <tag>实用教程</tag>
@@ -177,18 +237,20 @@
 </ul>
 <h3 id="2-2-哈希表"><a href="#2-2-哈希表" class="headerlink" title="2.2 哈希表"></a>2.2 哈希表</h3><p> 哈希表是一种最有效的检索方法，散列，从本质上看，一个哈希表包含一个数组，通过特殊的索引（键）来访问数组中的元素。哈希表主要思想是通过一个哈希函数，在所有可能的键和值直接建立映射表。<br> 每个记录的关键字k通过一种函数H(k)计算出函数值.此函数为哈希函数或散列函数.</p>
 <h4 id="2-2-1-哈希函数设计"><a href="#2-2-1-哈希函数设计" class="headerlink" title="2.2.1 哈希函数设计"></a>2.2.1 哈希函数设计</h4><ul>
-<li><p>直接地址发<br>H(k) = aK*i + b</p>
+<li><p>直接地址法<br>关键字是整数类型的数据,直接地址的哈希函数H直接利用关键字求得哈希地址.<br>H(k) = aK*i + b</p>
 </li>
-<li><p>数字分析法</p>
+<li><p>数字分析法<br>取关键字数中分布均匀的若干作为哈希地址</p>
 </li>
-<li><p>平方取中法</p>
+<li><p>平方取中法<br>取关键字平方中间几位作为散列地址</p>
 </li>
 <li><p>折叠法</p>
 </li>
-<li><p>除留取余法<br>H(K) = K MOD P</p>
+<li><p>除留取余法<br>关键字K除以一个合适的不大于哈希表长度的正整数P,所得余数作为哈希地址.<br>H(K) = K MOD P</p>
 </li>
 </ul>
-<h4 id="2-2-2-哈希冲突"><a href="#2-2-2-哈希冲突" class="headerlink" title="2.2.2 哈希冲突"></a>2.2.2 哈希冲突</h4><ul>
+<h4 id="2-2-2-哈希冲突"><a href="#2-2-2-哈希冲突" class="headerlink" title="2.2.2 哈希冲突"></a>2.2.2 哈希冲突</h4><p> 理想情况下,哈希函数在关键字和地址之间建立一对一关系.但H(k1) = H(k2),即为冲突.</p>
+<p> 解决哈希冲突常用方法:</p>
+<ul>
 <li><p>链地址法<br>将哈希值相同的元素构成一个同义词的单链表,并将单链表头指针存放在哈希表的地i个单元中,查找,插入和删除主要在同义词链表中.</p>
 <h4 id="2-2-3-leetcode题目"><a href="#2-2-3-leetcode题目" class="headerlink" title="2.2.3 leetcode题目"></a>2.2.3 leetcode题目</h4></li>
 <li><p>设计韩信集合 </p>
@@ -199,16 +261,23 @@
 </li>
 </ul>
 <h3 id="2-3-树与二叉树"><a href="#2-3-树与二叉树" class="headerlink" title="2.3 树与二叉树"></a>2.3 树与二叉树</h3><p> 树(tree)是一种用来模拟树状结构的抽象数据结构(ADT);</p>
+<p> 树的特点:</p>
+<ul>
+<li>没有父节点的节点称为根节点</li>
+<li>每个非根节点有且只有一个父节点</li>
+<li>除了根结点外,每个子节点可分为多个不相交的子树</li>
+<li>树中没有环路</li>
+</ul>
 <h4 id="2-3-1-概述"><a href="#2-3-1-概述" class="headerlink" title="2.3.1 概述"></a>2.3.1 概述</h4><ul>
-<li>节点的度</li>
-<li>树的度</li>
-<li>叶节点</li>
+<li>节点的度: 一个节点含有子树的个数</li>
+<li>树的度: 树中最大的节点度</li>
+<li>叶节点: 度为零的节点</li>
 <li>父节点</li>
 <li>子节点</li>
 <li>兄弟节点</li>
 <li>节点的层次</li>
-<li>深度</li>
-<li>高度</li>
+<li>深度: 任意节点n,n的深度为从n到一片树叶的最长路径长,根的深度为0</li>
+<li>高度: 对任意节点n,n的高度为从n到一片树叶的最长路径长,所有树叶的高度为0.</li>
 <li>森林</li>
 </ul>
 <p> 树由称为结点的元素按照层次结构的方式组织而成。最顶端称为根。与根直接相连的结点称为根的子结点。子节点本身也可以有子结点。除根结点外，每个结点都有唯一的父结点。</p>
@@ -257,8 +326,20 @@
 </tr>
 </tbody></table>
 <p> 树有多种结构形式，包括二叉树、。</p>
-<h4 id="2-3-3-二叉树"><a href="#2-3-3-二叉树" class="headerlink" title="2.3.3 二叉树"></a>2.3.3 二叉树</h4><p> 二叉树每个结点最多只有两个与它直接相关联的子结点。直接相连下方的结点称为子结点，每个子结点直接相连的上方结点称为父结点。<br> 二叉树中结点包含三部分：一个数据成员两个左右指针。</p>
+<h4 id="2-3-3-二叉树"><a href="#2-3-3-二叉树" class="headerlink" title="2.3.3 二叉树"></a>2.3.3 二叉树</h4><p> 二叉树两个条件:</p>
+<ul>
+<li>本身是有序树</li>
+<li>树中包含的各个节点的度不能超过2,即只能是0,1或者2</li>
+</ul>
+<p> 二叉树中结点包含三部分：一个数据成员两个左右指针。</p>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BiTreeNode_</span> {</span></span><br><span class="line">    <span class="keyword">void</span> *data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BiTreeNode_</span> *<span class="title">left</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BiTreeNode_</span> *<span class="title">right</span>;</span></span><br><span class="line">}BiTreeNode;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BiTree_</span> {</span></span><br><span class="line">    <span class="keyword">int</span> size;</span><br><span class="line">    <span class="keyword">int</span> (*compare)(<span class="keyword">const</span> <span class="keyword">void</span> *key1, <span class="keyword">const</span> <span class="keyword">void</span> *key2);</span><br><span class="line">    <span class="keyword">void</span> (*destroy)(<span class="keyword">void</span> *data);</span><br><span class="line">    BiTreeNode *root;</span><br><span class="line">}BiTree;</span><br></pre></td></tr></tbody></table></figure>
+<p> 二叉树性质:</p>
+<ul>
+<li>二叉树中,第i层最多有 2^(i-1)个节点</li>
+<li>如果二叉树的深度为K,则二叉树最多有<code>2^K - 1</code>个节点</li>
+</ul>
+<p>满二叉树</p>
+<p>完全二叉树</p>
 <p> 树的周游算法包含先序遍历、中序遍历、后序遍历和层序遍历。</p>
 <ul>
 <li>先序遍历：先访问根结点，然后左子树，最后右子结点。深度优先思想。</li>
@@ -266,15 +347,30 @@
 <li>后序遍历：先访问左子结点，然后右子结点，最后根结点。</li>
 <li>层序遍历：先访问树的根结点，然后依次向下层处理，按照从左向右的顺序访问每层结点。广度优先的策略。</li>
 </ul>
-<h4 id="2-3-4-二叉查找树"><a href="#2-3-4-二叉查找树" class="headerlink" title="2.3.4 二叉查找树"></a>2.3.4 二叉查找树</h4><p> 二叉查找树是由二叉树组成的专用于查找和搜索目的的一种数据结构。二叉搜索树中查找一个结点，从根结点开始一层一层向下查找，当遇到一个比目标结点值大的结点时，顺着该结点左子树继续查找，如果遇到的结点值小于目标结点，则顺着该结点的右子树查找，直到找到目标结点为止。<br> 一颗二叉搜索树要插入一个结点，要从根结点开始，一层一层往下，适当地移动左或右子结点上，当到达树的分支尽头时，执行插入操作。<br> 二叉搜索树是一种用于查找操作的高效数据结构，在最坏情况下，只需查找一个分支上的数据即可。查找操作的复杂度是 O(lgn)，n为树中结点数。<br> 保持一棵树的平衡是指对于给定数量的结点，要使得树的高度尽可能短。</p>
+<h4 id="2-3-4-二叉查找树-BST"><a href="#2-3-4-二叉查找树-BST" class="headerlink" title="2.3.4 二叉查找树(BST)"></a>2.3.4 二叉查找树(BST)</h4><p> 二叉查找树也称二叉搜索树,有序二叉树或排序二叉树,具有性质:</p>
+<ul>
+<li>若任意节点左子树不为空,则左子树上所有节点的值均小于它的根节点的值</li>
+<li>若任意节点的右子树不为空,则右子树所有节点的值均大于根节点的值</li>
+<li>任意节点的左,右子树也分别为二叉查找树</li>
+<li>没有键值相等的节点</li>
+</ul>
+<p> 一颗二叉搜索树要插入一个结点，要从根结点开始，一层一层往下，适当地移动左或右子结点上，当到达树的分支尽头时，执行插入操作。<br> 二叉搜索树是一种用于查找操作的高效数据结构，在最坏情况下，只需查找一个分支上的数据即可。<strong>查找,插入</strong>操作的复杂度是 <code>O(lgn)</code>，<strong>搜索,插入,删除</strong>复杂度等于树高,期望<code>O(logn)</code>,最坏为<code>O(n)</code>,(树退化为线性表)n为树中结点数。<br> 保持一棵树的平衡是指对于给定数量的结点，要使得树的高度尽可能短。</p>
+<p> 二叉查找树是由二叉树组成的专用于查找和搜索目的的一种数据结构。二叉搜索树中查找一个结点，从根结点开始一层一层向下查找，当遇到一个比目标结点值大的结点时，顺着该结点左子树继续查找，如果遇到的结点值小于目标结点，则顺着该结点的右子树查找，直到找到目标结点为止。</p>
+<p> <strong>查找算法</strong></p>
+<p> <strong>插入算法</strong></p>
+<p> <strong>删除算法</strong></p>
+<h4 id="2-3-5-平衡树"><a href="#2-3-5-平衡树" class="headerlink" title="2.3.5 平衡树"></a>2.3.5 平衡树</h4><p> 平衡树是一类改进的二叉查找树,一般二叉查找树的查询复杂度与目标节点到树根的距离(深度)有关,因此当深度较大时,查询均摊复杂度会上升.<br> 平衡树指所有叶子的深度趋于平衡,更广义指树上所有可能查找的均摊复杂度偏低.<br> 平衡树的操作时基于树旋转操作,通过旋转可使树趋于平衡.</p>
 <p> <strong>AVL树</strong><br> 在AVL树中,任一节点对于的两颗子树的最大高度差为1,因此也称为高度平衡树.查找,插入和删除的平均和最坏时间复杂度是O(logn),<br> 高度为h的AVL树,总节点数最多为2^h-1; 当前节点数为N时,高度h最多为:</p>
 <blockquote>
 <p>log(5*0.5 * (N + 1)) - 2</p>
 </blockquote>
 <p><strong>红黑树</strong></p>
 <p>B+树</p>
-<h4 id="2-3-5-平衡树"><a href="#2-3-5-平衡树" class="headerlink" title="2.3.5 平衡树"></a>2.3.5 平衡树</h4><h4 id="2-3-6-堆树和优先队列"><a href="#2-3-6-堆树和优先队列" class="headerlink" title="2.3.6 堆树和优先队列"></a>2.3.6 堆树和优先队列</h4><p> 堆是一颗二叉树，通常其子结点存储的值比父结点的值小，所以，根结点为树中最大的结点(大顶堆)。同样，根结点也可以是树中最小的结点(小顶堆)。能够快速确定包含最大(小)值的特点。<br> 堆时左平衡的树，随着结点增加，树会逐级从左至右增长。一个较好地表示左平衡二叉树的方式是，将结点通过层序遍历方式连续存储到一个数组中。</p>
+<h4 id="2-3-6-堆树和优先队列"><a href="#2-3-6-堆树和优先队列" class="headerlink" title="2.3.6 堆树和优先队列"></a>2.3.6 堆树和优先队列</h4><p> 堆是一颗二叉树，通常其子结点存储的值比父结点的值小，所以，根结点为树中最大的结点(大顶堆)。同样，根结点也可以是树中最小的结点(小顶堆)。能够快速确定包含最大(小)值的特点。<br> 堆时左平衡的树，随着结点增加，树会逐级从左至右增长。一个较好地表示左平衡二叉树的方式是，将结点通过层序遍历方式连续存储到一个数组中。</p>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Heap_</span> {</span></span><br><span class="line">    <span class="keyword">int</span> size;</span><br><span class="line">    <span class="keyword">int</span> (*compare)(<span class="keyword">const</span> <span class="keyword">void</span> *key1, <span class="keyword">const</span> <span class="keyword">void</span> *key2);</span><br><span class="line">    <span class="keyword">void</span> (*destroy)(<span class="keyword">void</span> *data);</span><br><span class="line">    <span class="keyword">void</span> **tree;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
+
 <p> 堆排序，要排序的数据首先存储在一个堆中。从堆中一次取出一个结点。放置到有序数据集的尾部。当取出每个结点时，它的下一个结点就会浮现到堆的顶部。</p>
 <p> 优先队列是从堆衍生的数据结构。在优先队列中，数据保存在一个堆中，可快速确定下一个最高优先级的结点。</p>
 <p> 优先队列将数据按照优先级顺序排列。一个优先队列由许多有序元素构成，所以优先级最高的元素可以有效而快速的确定。</p>
@@ -389,66 +485,6 @@
 ]]></content>
       <categories>
         <category>tool</category>
-      </categories>
-      <tags>
-        <tag>实用教程</tag>
-        <tag>Another Tag</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2021/10/25/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>leetcode题解算法分析</title>
-    <url>/2021/10/27/2021/11/leetcode%E9%A2%98%E8%A7%A3%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h2><span id="more"></span>
-<p> 单调递增栈，元素进栈过程，若当前进栈的元素a，如果a&gt;栈顶元素，则直接将a进栈，如果a&lt;=栈顶元素，则不断将栈顶元素出栈，直到满足a&gt;栈顶元素。单调递减栈则为a&lt;栈顶元素时进栈。</p>
-<blockquote>
-<p>单调递增栈：单调递增栈就是从栈底到栈顶数据是从大到小<br>单调递减栈：单调递减栈就是从栈底到栈顶数据是从小到大</p>
-</blockquote>
-<ul>
-<li>leetcode题目</li>
-</ul>
-<p>84.<a href="https://leetcode-cn.com/problems/largest-rectangle-in-histogram/description/">柱状图中最大的矩形</a></p>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">largestRectangleArea</span><span class="params">(<span class="keyword">int</span>* heights, <span class="keyword">int</span> heightsSize)</span> </span>{</span><br><span class="line">    <span class="comment">// 栈顶标记</span></span><br><span class="line">    <span class="keyword">int</span> top = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">int</span> area = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> maxArea = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> *<span class="built_in">stack</span> = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * (heightsSize + <span class="number">2</span>));</span><br><span class="line">    <span class="keyword">int</span> *buf = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * (heightsSize + <span class="number">2</span>));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 增加前哨兵</span></span><br><span class="line">    buf[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= heightsSize; i++) {</span><br><span class="line">        buf[i] = heights[i - <span class="number">1</span>];</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 在最后增加哨兵</span></span><br><span class="line">    buf[heightsSize + <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">stack</span>[++top] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; heightsSize + <span class="number">2</span>; i++) {</span><br><span class="line">        <span class="keyword">while</span> (top &gt; <span class="number">0</span> &amp;&amp; buf[i] &lt; buf[<span class="built_in">stack</span>[top]]) {</span><br><span class="line">            area = (i - <span class="built_in">stack</span>[top - <span class="number">1</span>] - <span class="number">1</span>) * buf[<span class="built_in">stack</span>[top]];</span><br><span class="line">            maxArea = maxArea &gt; area ? maxArea : area;</span><br><span class="line">            top--;</span><br><span class="line">        }</span><br><span class="line">        <span class="comment">// 索引入栈，其他可能是元素入栈</span></span><br><span class="line">        <span class="built_in">stack</span>[++top] = i;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> maxArea;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p>leetcode 496、503、739、239<br>42.接雨水<br><a href="https://blog.csdn.net/chongbin007/article/details/112741867?utm_term=%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97leetcode&amp;utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~sobaiduweb~default-0-112741867&amp;spm=3001.4430">https://blog.csdn.net/chongbin007/article/details/112741867?utm_term=%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97leetcode&amp;utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~sobaiduweb~default-0-112741867&amp;spm=3001.4430</a></p>
-<h2 id="单调队列"><a href="#单调队列" class="headerlink" title="单调队列"></a>单调队列</h2><p> 单调队列是指：队列中的元素之间的关系具有单调性，而且，队首和队尾都可以进行出队操作，只有队尾开源进行入队操作。<br> 单调队列与单调栈及其相似，把单调栈先进后出的性质改为先进先出既可。<br>元素进队列的过程对于单调递增队列。<br>对于一个元素a，如果a&gt;队尾元素，那么直接将a扔进队列，如果a&lt;=队尾元素，则将队尾元素出队列，直到满足 a&gt;队尾元素即可。</p>
-<blockquote>
-<p>单调递增队列(从队首到队尾满足递增)<br>单调递减队列(从队首到队尾满足递减)</p>
-</blockquote>
-<ul>
-<li><p>单调队列作用：队列里的元素满足出队的单调性。</p>
-</li>
-<li><p>单调队列操作：去头和删尾</p>
-</li>
-<li><p>leetcode 题目<br><a href="https://leetcode-cn.com/problems/dui-lie-de-zui-da-zhi-lcof/">剑指 Offer 59 - II. 队列的最大值</a></p>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> {</span></span><br><span class="line">    <span class="keyword">int</span> arr[<span class="number">20000</span>];</span><br><span class="line">    <span class="keyword">int</span> begin;</span><br><span class="line">    <span class="keyword">int</span> end;</span><br><span class="line">} MaxQueue;</span><br><span class="line"></span><br><span class="line"><span class="function">MaxQueue* <span class="title">maxQueueCreate</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    MaxQueue *tmp = (MaxQueue*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(MaxQueue));</span><br><span class="line">    tmp-&gt;begin = <span class="number">0</span>;</span><br><span class="line">    tmp-&gt;end = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> tmp;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxQueueMax_value</span><span class="params">(MaxQueue* obj)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = obj-&gt;begin; i &lt; obj-&gt;end; i++) {</span><br><span class="line">        ans = fmax(ans, obj-&gt;arr[i]);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">maxQueuPus_back</span><span class="params">(MaxQueue* obj, <span class="keyword">int</span> value)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    obj-&gt;arr[obj-&gt;end++] = value;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxQueuePop_front</span><span class="params">(MaxQueue* obj)</span> </span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">if</span>(obj-&gt;begin==obj-&gt;end)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">return</span> obj-&gt;arr[obj-&gt;begin++];</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">maxQueueFree</span><span class="params">(MaxQueue* obj)</span> </span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    obj-&gt;end=<span class="number">0</span>;</span><br><span class="line">    obj-&gt;begin=<span class="number">0</span>;</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure></li>
-</ul>
-<p>239.滑动窗口最大值</p>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Size=<span class="number">1000005</span>;</span><br><span class="line"><span class="keyword">int</span> a[Size],qmax[Size],qmin[Size],savemax[Size],savemin[Size];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> n,k,cnt=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;n,&amp;k);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    {<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);}</span><br><span class="line">    <span class="keyword">int</span> beg=<span class="number">1</span>,top=<span class="number">0</span>;<span class="comment">//qmax队列的队首指针和队尾指针</span></span><br><span class="line">    <span class="keyword">int</span> st=<span class="number">1</span>,ed=<span class="number">0</span>;<span class="comment">//qmin队列的队首指针和队尾指针</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">while</span>(beg&lt;=top&amp;&amp;a[i]&gt;=a[qmax[top]])</span><br><span class="line">        {top--;}</span><br><span class="line">        qmax[++top]=i;</span><br><span class="line">        <span class="keyword">while</span>(st&lt;=ed&amp;&amp;a[i]&lt;=a[qmin[ed]])</span><br><span class="line">        {ed--;}</span><br><span class="line">        qmin[++ed]=i;</span><br><span class="line">        <span class="keyword">if</span>(i&gt;=k)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">while</span>(qmax[beg]&lt;=i-k)beg++;</span><br><span class="line">            <span class="keyword">while</span>(qmin[st]&lt;=i-k)st++;</span><br><span class="line">            savemax[cnt]=a[qmax[beg]];</span><br><span class="line">            savemin[cnt]=a[qmin[st]];</span><br><span class="line">            cnt++;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt; cnt;i++) {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>,savemin[i]);</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt; cnt;i++) {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>,savemax[i]);</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h2><h2 id="滑动窗口-amp-双指针"><a href="#滑动窗口-amp-双指针" class="headerlink" title="滑动窗口&amp;双指针"></a>滑动窗口&amp;双指针</h2><p><a href="https://www.cnblogs.com/zzcxxoo/p/13216030.html">https://www.cnblogs.com/zzcxxoo/p/13216030.html</a></p>
-<h2 id="前缀与哈希"><a href="#前缀与哈希" class="headerlink" title="前缀与哈希"></a>前缀与哈希</h2><h2 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h2><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h2 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h2><h2 id="字典树"><a href="#字典树" class="headerlink" title="字典树"></a>字典树</h2>]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2021</category>
-        <category>11</category>
       </categories>
       <tags>
         <tag>实用教程</tag>
