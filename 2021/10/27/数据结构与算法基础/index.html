@@ -81,9 +81,9 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="liuz" type="application/atom+xml">
 
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="liuz" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -252,14 +252,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>20k</span>
+              <span>23k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>18 分钟</span>
+              <span>21 分钟</span>
             </span>
 
         </div>
@@ -281,7 +281,8 @@
 <h4 id="1-2-2-常见数据结构"><a href="#1-2-2-常见数据结构" class="headerlink" title="1.2.2 常见数据结构"></a>1.2.2 常见数据结构</h4><h3 id="本章参考："><a href="#本章参考：" class="headerlink" title="本章参考："></a>本章参考：</h3><ul>
 <li>复杂度速查表<br><a target="_blank" rel="noopener" href="https://liam.page/2016/06/20/big-O-cheat-sheet/">https://liam.page/2016/06/20/big-O-cheat-sheet/</a></li>
 </ul>
-<h2 id="2-基本数据结构"><a href="#2-基本数据结构" class="headerlink" title="2 基本数据结构"></a>2 基本数据结构</h2><h3 id="2-1-线性表"><a href="#2-1-线性表" class="headerlink" title="2.1 线性表"></a>2.1 线性表</h3><p> 线性表是n个具有相同特性的数据元素的有序序列。线性表除第一个和最后一个数据元素之外，其他数据元素都是首尾相接的。<br> 数据在实际的物理存储中有两种形式：分散存储和集中存储,常见数据结构有栈、队列、字符串、链表等。<br> 两种情况下数据的存储问题：<br>  数据元素在内存中集中存储，采用顺序表示结构，简称“顺序存储”；<br>  数据元素在内存中分散存储，采用链式表示结构，简称“链式存储”</p>
+<h2 id="2-基本数据结构"><a href="#2-基本数据结构" class="headerlink" title="2 基本数据结构"></a>2 基本数据结构</h2><p>基本数据结构:<br> 字符,字符串:char,string<br> 整型:short,int,long;unsigned<br> 浮点型:float,double<br> 结构体:struct<br> 枚举:enum<br> 联合体:union<br> 自定义数据结构<br> 线性表<br>  数组:array<br>  链表:数据域,指针域<br>  队列<br>  栈<br>  堆<br> </p>
+<h3 id="2-1-线性表"><a href="#2-1-线性表" class="headerlink" title="2.1 线性表"></a>2.1 线性表</h3><p> 线性表是n个具有相同特性的数据元素的有序序列。线性表除第一个和最后一个数据元素之外，其他数据元素都是首尾相接的。<br> 数据在实际的物理存储中有两种形式：分散存储和集中存储,常见数据结构有栈、队列、字符串、链表等。<br> 两种情况下数据的存储问题：<br>  数据元素在内存中集中存储，采用顺序表示结构，简称“顺序存储”；<br>  数据元素在内存中分散存储，采用链式表示结构，简称“链式存储”</p>
 <h4 id="2-1-1-数组"><a href="#2-1-1-数组" class="headerlink" title="2.1.1 数组"></a>2.1.1 数组</h4><p> 数组是一批相同数据的集合。数组的三部分：地址 大小 和 空间。数组的保存形式为线性表。</p>
 <figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[<span class="number">10</span>]; <span class="comment">// /[]内必须是常量/常量表达式(3+8)，不能是一个变量(x...)</span></span><br><span class="line"><span class="comment">// 数组初始化</span></span><br><span class="line"><span class="keyword">int</span> arr1[<span class="number">3</span>] = {<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>};</span><br><span class="line"><span class="keyword">char</span> arr6[] = <span class="string">"abcdef"</span>;</span><br><span class="line"><span class="comment">// 指针</span></span><br><span class="line"><span class="keyword">int</span> *ptr = <span class="literal">NULL</span>;<span class="comment">//定义一个整型的指针变量，初始化为NULL</span></span><br><span class="line"><span class="keyword">char</span> *ptr = <span class="literal">NULL</span>;<span class="comment">//定义一个字符的指针变量，初始化为NULL</span></span><br><span class="line"><span class="comment">// 二维数组</span></span><br><span class="line"><span class="keyword">int</span> arr[<span class="number">3</span>][<span class="number">5</span>] = { <span class="number">0</span> };</span><br><span class="line"><span class="comment">// C 传递数组给函数</span></span><br><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">myFunction</span><span class="params">(<span class="keyword">int</span> *param)</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">myFunction</span><span class="params">(<span class="keyword">int</span> param[<span class="number">10</span>])</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">myFunction</span><span class="params">(<span class="keyword">int</span> param[])</span></span></span><br><span class="line"><span class="function"><span class="comment">// C 从函数返回数组</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> * <span class="title">myFunction</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">...</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <br>
@@ -342,13 +343,13 @@
 <li>链地址法<br>将哈希值相同的元素构成一个同义词的单链表,并将单链表头指针存放在哈希表的地i个单元中,查找,插入和删除主要在同义词链表中.</li>
 </ul>
 <h4 id="2-2-3-uthash"><a href="#2-2-3-uthash" class="headerlink" title="2.2.3 uthash"></a>2.2.3 uthash</h4><p> uthash的插入、查找、删除的操作时间都是常量</p>
-<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"uthash.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">my_struct</span> {</span></span><br><span class="line">    <span class="keyword">int</span> id;            <span class="comment">/* we'll use this field as the key */</span></span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">10</span>];</span><br><span class="line">    UT_hash_handle hh; <span class="comment">/* makes this structure hashable */</span></span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">my_struct</span> *<span class="title">users</span> =</span> <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add_user</span><span class="params">(struct my_struct *s)</span> </span>{</span><br><span class="line">    HASH_ADD_INT( users, id, s );</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"uthash.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">my_struct</span> {</span></span><br><span class="line">    <span class="keyword">int</span> id;            <span class="comment">/* we'll use this field as the key */</span></span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">10</span>];</span><br><span class="line">    UT_hash_handle hh; <span class="comment">/* makes this structure hashable */</span></span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">my_struct</span> *<span class="title">users</span> =</span> <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add_user</span><span class="params">(struct my_struct *s)</span> </span>{</span><br><span class="line">    HASH_ADD_INT(users, id, s );</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 
 <ul>
 <li>参考链接<br>官网:<a target="_blank" rel="noopener" href="https://troydhanson.github.io/uthash/">https://troydhanson.github.io/uthash/</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/fan_h_l/article/details/107241520">https://blog.csdn.net/fan_h_l/article/details/107241520</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/whatday/article/details/95926766">https://blog.csdn.net/whatday/article/details/95926766</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/pam-sh/p/12827658.html">https://www.cnblogs.com/pam-sh/p/12827658.html</a></li>
 </ul>
 <h4 id="2-2-4-leetcode题目"><a href="#2-2-4-leetcode题目" class="headerlink" title="2.2.4 leetcode题目"></a>2.2.4 leetcode题目</h4><ul>
-<li><p>设计韩信集合 </p>
+<li><p>设计哈希集合 </p>
 </li>
 <li><p>设计哈希映射</p>
 </li>
@@ -451,9 +452,9 @@
 </ul>
 <p> 一颗二叉搜索树要插入一个结点，要从根结点开始，一层一层往下，适当地移动左或右子结点上，当到达树的分支尽头时，执行插入操作。<br> 二叉搜索树是一种用于查找操作的高效数据结构，在最坏情况下，只需查找一个分支上的数据即可。<strong>查找,插入</strong>操作的复杂度是 <code>O(lgn)</code>，<strong>搜索,插入,删除</strong>复杂度等于树高,期望<code>O(logn)</code>,最坏为<code>O(n)</code>,(树退化为线性表)n为树中结点数。<br> 保持一棵树的平衡是指对于给定数量的结点，要使得树的高度尽可能短。</p>
 <p> 二叉查找树是由二叉树组成的专用于查找和搜索目的的一种数据结构。二叉搜索树中查找一个结点，从根结点开始一层一层向下查找，当遇到一个比目标结点值大的结点时，顺着该结点左子树继续查找，如果遇到的结点值小于目标结点，则顺着该结点的右子树查找，直到找到目标结点为止。</p>
-<p> <strong>查找算法</strong></p>
-<p> <strong>插入算法</strong></p>
-<p> <strong>删除算法</strong></p>
+<p> <strong>查找算法</strong><br>  1.若b是空树,则搜索失败,否则;<br>  2.若x等于b的根节点的数据域之值,则查找成功;<br>  3.若x小于b的根节点的数据域之值,则搜索左子树<br>  4.查找右子树</p>
+<p> <strong>插入算法</strong><br>  1.若b是空树,则将s所指节点作为根节点插入;否则<br>  2.若<code>s-&gt;data</code>等于b的根节点的数据域值,则返回,否则;<br>  3.若<code>s-&gt;data</code>小于b的根节点的数据域之值,则把s所值节点插入到左子树中,否则<br>  4.把s所指节点插入到右子树中,(新插入节点总是叶子节点)</p>
+<p> <strong>删除算法</strong><br>  1.若*p节点为叶子节点,即PL(左子树)和PR(右子树)均为空树.由于删去叶子节点不破坏整棵树的结构,则只需修改其双亲节点的指针即可.</p>
 <h4 id="2-3-5-平衡树"><a href="#2-3-5-平衡树" class="headerlink" title="2.3.5 平衡树"></a>2.3.5 平衡树</h4><p> 平衡树是一类改进的二叉查找树,一般二叉查找树的查询复杂度与目标节点到树根的距离(深度)有关,因此当深度较大时,查询均摊复杂度会上升.<br> <strong>平衡指所有叶子的深度趋于平衡</strong>,更广义指树上所有可能查找的均摊复杂度偏低.<strong>平衡树的操作时基于树旋转操作,通过旋转可使树趋于平衡</strong>.<br> 对一颗查找树进行查询,新增,删除等操作,所花的时间与树的高度h成比例,并不与树的容量n成比例.</p>
 <ul>
 <li><strong>AVL树</strong></li>
@@ -468,11 +469,13 @@
 <li><strong>红黑树</strong></li>
 </ul>
 <p> 红黑树是一种自平衡二叉查找树,典型的用途是实现关联数组.红黑树实现复制,查找,插入和删除时间复杂度为O(logn)<br> 红黑树相对于AVL树,牺牲了部分平衡性以换取插入\删除操作时少量的旋转操作,整体性能优于AVL树.</p>
-<p> 红黑树与AVL树的相比:</p>
+<p> 红黑树与AVL树的相比:<br>  AVL树在插入,删除节点时要把树调整到完全平衡,红黑树只要调整到大致平衡,因此通常红黑树的插入,删除节点性能稍好.<br>  AVL的查找性能通常比红黑树好<br>  如果节点的增删操作远小于查找操作,则应选择AVL;反之,红黑树可能更好.</p>
+<p> 红黑树是每个节点都带有颜色属性的二叉树,颜色为红色或黑色.在二叉查找树强制一般要求以外,对于任何有效的红黑树我们怎讲了弱小额外要求:<br>  1.节点是红或黑色<br>  2.根是黑色<br>  3.所有叶子都是黑色(叶子是NIL节点)<br>  4.每个红色节点必须右两个黑色的子节点.(从每个叶子到根的所有路径上不能右两个连续的红色节点.)<br>  5.从任一节点到其每个叶子的所有简单路径都包含相同苏后面的黑色节点.<br> 红黑树关键特性:<strong>从根到叶子的最长的可能路径不多于最短的可能路径的两倍长</strong>.红黑树是大致平衡的.插入,删除和查找某个值最坏情况下与树的高度成比例.</p>
 <ul>
-<li><strong>B+树</strong></li>
+<li><strong>B+树</strong><br> B+树通常用于数据库和操作系统的文件系统中.<strong>B+树的特点是能够保持数据稳定有序,其插入与修改拥有较文档的对数时间复杂度</strong>.B+树元素自底向上插入,与二叉树相反.<br> B+树是内部节点可右在预定范围内的可变量目的子节点.因此,B+树不需要像其他自平衡二叉查找树那样重新平衡.</li>
 </ul>
-<h4 id="2-3-6-堆树和优先队列"><a href="#2-3-6-堆树和优先队列" class="headerlink" title="2.3.6 堆树和优先队列"></a>2.3.6 堆树和优先队列</h4><p> 堆是一颗二叉树，通常其子结点存储的值比父结点的值小，所以，根结点为树中最大的结点(大顶堆)。同样，根结点也可以是树中最小的结点(小顶堆)。能够快速确定包含最大(小)值的特点。<br> 堆时左平衡的树，随着结点增加，树会逐级从左至右增长。一个较好地表示左平衡二叉树的方式是，将结点通过层序遍历方式连续存储到一个数组中。</p>
+<h4 id="2-3-6-堆树和优先队列"><a href="#2-3-6-堆树和优先队列" class="headerlink" title="2.3.6 堆树和优先队列"></a>2.3.6 堆树和优先队列</h4><p> 堆(heap)也称为优先队列,堆遵守队列操作模式,在堆底插入元素,在堆顶取出元素,但堆中元素的排列不是按照到来的先后顺序,而是按照一定的有序顺序排列的.<br> 堆的本质是一个完全二叉树,可使用二叉树表示堆,也可使用数组来表示.<br> 堆的特性:<br>  必须是完全二叉树<br>  用数组实现<br>  任一节点的值是其子树所有节点的最大值或最小值<br>   最大值时,称为最大堆,也称大顶堆<br>   最小时,称为最小堆,也称小顶堆.<br> <strong>堆不能保证整棵树都是有序的,堆中的插入和删除操作时时间复杂度为O(log2n)</strong></p>
+<p> 堆是一颗二叉树，通常其子结点存储的值比父结点的值小，所以，根结点为树中最大的结点(大顶堆)。同样，根结点也可以是树中最小的结点(小顶堆)。能够快速确定包含最大(小)值的特点。<br> 堆时左平衡的树，随着结点增加，树会逐级从左至右增长。一个较好地表示左平衡二叉树的方式是，将结点通过层序遍历方式连续存储到一个数组中。</p>
 <figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Heap_</span> {</span></span><br><span class="line">    <span class="keyword">int</span> size;</span><br><span class="line">    <span class="keyword">int</span> (*compare)(<span class="keyword">const</span> <span class="keyword">void</span> *key1, <span class="keyword">const</span> <span class="keyword">void</span> *key2);</span><br><span class="line">    <span class="keyword">void</span> (*destroy)(<span class="keyword">void</span> *data);</span><br><span class="line">    <span class="keyword">void</span> **tree;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 
@@ -483,8 +486,18 @@
 <figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> Heap PQueue;</span><br></pre></td></tr></tbody></table></figure>
 
 
-<h4 id="2-3-7-leetcode题目"><a href="#2-3-7-leetcode题目" class="headerlink" title="2.3.7 leetcode题目"></a>2.3.7 leetcode题目</h4><h3 id="2-4-图"><a href="#2-4-图" class="headerlink" title="2.4 图"></a>2.4 图</h3><p> 图是一种灵活的数据结构，用来定义对象之间关联或联系的模型。对象由顶点表示，而对象直接的关系或关联则通过顶点之间的边来表示。<br> 图的访问方式：广度优先和深度优先。</p>
+<h4 id="2-3-7-leetcode题目"><a href="#2-3-7-leetcode题目" class="headerlink" title="2.3.7 leetcode题目"></a>2.3.7 leetcode题目</h4><ul>
+<li>先序遍历构造二叉树</li>
+<li>从中序与后序遍历构造二叉树</li>
+<li>二叉树的层次遍历</li>
+<li>从二叉搜索树到更大和树</li>
+<li>二叉搜索树的最近公共祖先</li>
+<li>前K个高频单词&lt;堆&gt;</li>
+</ul>
+<h3 id="2-4-图"><a href="#2-4-图" class="headerlink" title="2.4 图"></a>2.4 图</h3><p> 图(Graph)是由顶点的有穷非空集合和顶点之间的边的集合组成,通常表示为:<code>G(V,E)</code>.其中,G表示一个图,V是入G中顶点的集合,E是图G中的集合.</p>
+<p> 图是一种灵活的数据结构，用来定义对象之间关联或联系的模型。对象由顶点表示，而对象直接的关系或关联则通过顶点之间的边来表示。<br> 图的访问方式：广度优先和深度优先。</p>
 <h4 id="2-4-1-基础知识"><a href="#2-4-1-基础知识" class="headerlink" title="2.4.1 基础知识"></a>2.4.1 基础知识</h4><p> 图由两种类型的元素组成：顶点和边，顶点代表对象，边则建立起对象之间的关系或关联。图的边可关联值或权重信息。<br> 图分为有向图和无向图。有向图，边是由两个顶点组成的有序对，具有特定的方向。边也可称为弧。无向图中，边是没有方向的。</p>
+<p> 图可分为连通图和非连通图</p>
 <h4 id="2-4-2-图表示"><a href="#2-4-2-图表示" class="headerlink" title="2.4.2 图表示"></a>2.4.2 图表示</h4><p> 图的表示方法是G=(V, E)，V代表顶点的集合，而E和V之间是二元关系。<br> 图中由两个重要关系邻接(adjacency)和关联(incidence)。邻接是两个顶点之间的关系。关联是顶点和边之间的关系。<br>邻接矩阵表示<br>邻接链表表示</p>
 <figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">AdjList_</span> {</span></span><br><span class="line">    <span class="keyword">void</span> *vertex;</span><br><span class="line">    Set adjacent;</span><br><span class="line">}AdjList;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Graph_</span> {</span></span><br><span class="line">    <span class="keyword">int</span> vcount;</span><br><span class="line">    <span class="keyword">int</span> ecount;</span><br><span class="line">    <span class="keyword">int</span> (*match)(<span class="keyword">const</span> <span class="keyword">void</span> *key1, <span class="keyword">const</span> <span class="keyword">void</span> *key2);</span><br><span class="line">    List adjlists;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
@@ -495,7 +508,10 @@
 <p> 深度优先搜索和广度优先搜索,时间复杂度都为O(n^2)</p>
 <p>深度优先:从初始点出发,不断向前走,如果碰到死路,就往回走一步,尝试另一条路,直到发现目标位置.<br>广度优先:从初始点出发,把所有可能的路径都走一遍,如果里面没有目标位置,则尝试把所有两步能够到的位置都走一遍,看有没有目标位置.</p>
 <h4 id="2-4-4-最短路径"><a href="#2-4-4-最短路径" class="headerlink" title="2.4.4 最短路径"></a>2.4.4 最短路径</h4><p><strong>迪杰斯特拉Dijkstra算法</strong><br> Dijkstra算法适用于权值为正的图.<br> Dijkstra算法属于单源算法,即只能求出某点到其它点最短距离,并不能得出任意两点之间的最短距离.<br> 在源点可达的情况下,Dijkstra算法的时间复杂度时 <code>O(ElogV)</code><br> 算法步骤:<br>  1.将所有边初始化为无穷大<br>  2.旋转一个开始的顶点,添加到优先队列中.<br>  3.对于该点的所有邻接顶点进行判断,如果到该点的距离小于原先的值,则该值进行更新.<br>  4.将该点所有邻接顶点添加到优先队列中.<br>  5.从优先队列中挑选除一个路径值最小的顶点,将其弹出,作为新的顶点,重复步骤3,4,5<br>  6.直到所有点都被处理过一次.</p>
-<p><strong>弗洛伊德Floyd算法</strong></p>
+<p><strong>弗洛伊德Floyd算法</strong><br> Floyd算法是一个经典的动态规划算法.首先目标是寻找从点<code>i</code>到<code>j</code>的最短路径.<br> <strong>Floyd算法可以求出任意两点的最短距离.时间复杂度:</strong><code>O(你^3)</code><br> 从任意节点i到任意节点j的最短路径不外乎2种可能:<br>  1.是之间从i到j<br>  2是从i到经过若干个节点k到j</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; n; k++) {</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) {</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) {</span><br><span class="line">            <span class="keyword">if</span> (A[i][j] &gt; (A[i][k] + A[k][j])) {</span><br><span class="line">                A[i][j] = A[i][k] + A[k][j];</span><br><span class="line">                path[i][j] = k;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
 <h4 id="2-4-5-拓扑排序"><a href="#2-4-5-拓扑排序" class="headerlink" title="2.4.5 拓扑排序"></a>2.4.5 拓扑排序</h4><p> 拓扑排序是一个有向无环图(DAG)的所有顶点的线性序列.且该序列必须满足下面两个条件:</p>
 <ul>
 <li>每个顶点出现且只出现一次</li>
@@ -605,13 +621,30 @@
 <blockquote>
 <p>f(n, m) = max{f(n-1, m), f(n-1, m-w[n]) + P(n, m)}</p>
 </blockquote>
-<h3 id="3-4-3-背包问题"><a href="#3-4-3-背包问题" class="headerlink" title="3.4.3 背包问题"></a>3.4.3 背包问题</h3><p> 状态转移方程:</p>
+<h3 id="3-4-3-背包问题"><a href="#3-4-3-背包问题" class="headerlink" title="3.4.3 背包问题"></a>3.4.3 背包问题</h3><p> 问题描述:<br> 有N件物品和一个体积为V的背包.(每种物品只有一件)第i件物品的体积是volume[i],价值是value[i],求解哪些物品装入背包可使这些物品的体积综合不超过背包体积,且价值总和最大.<br> 解题思路:<br> p[i][j]代表前i件物品组合在容量为j的背包的最优解.将前i件物品放入容量为v的背包中这个子问题,若只考虑第i件物品的策略(放或不放),那么可以转化为一个只牵扯前i-1物品的问题.如果不放第i件物品,那么问题就转化为”前i-1件物品放入容量为v的背包中,价值为p[i-1][v];如果放第i件物品,那么问题就转化为”前i-1物品放入剩下的容量为v-volume[i]的背包中”,此时能获得的最大价值就是p[i-1][j-volume]再加上通过放入第i件物品获得的价值value[i].</p>
+<p> <strong>状态转移方程:</strong></p>
 <blockquote>
-<p>p[i][j] = max{p[i-1][j-vol] + value[i], p[i-1][j]}</p>
+<p>p[i][j] = max{p[i-1][j-vol] + value[i], p[i-1][j]}<br> 伪代码描述:</p>
 </blockquote>
-<h3 id="3-4-4-最长公共子序列"><a href="#3-4-4-最长公共子序列" class="headerlink" title="3.4.4 最长公共子序列"></a>3.4.4 最长公共子序列</h3><h3 id="3-4-5-leetcode题目"><a href="#3-4-5-leetcode题目" class="headerlink" title="3.4.5 leetcode题目"></a>3.4.5 leetcode题目</h3><h2 id="3-5-回溯法"><a href="#3-5-回溯法" class="headerlink" title="3.5 回溯法"></a>3.5 回溯法</h2><h3 id="3-5-1-基本概念"><a href="#3-5-1-基本概念" class="headerlink" title="3.5.1 基本概念"></a>3.5.1 基本概念</h3><h3 id="3-5-2-八皇后问题"><a href="#3-5-2-八皇后问题" class="headerlink" title="3.5.2 八皇后问题"></a>3.5.2 八皇后问题</h3><h3 id="3-5-3-leetcode题目"><a href="#3-5-3-leetcode题目" class="headerlink" title="3.5.3 leetcode题目"></a>3.5.3 leetcode题目</h3><h2 id="4-参考链接"><a href="#4-参考链接" class="headerlink" title="4 参考链接"></a>4 参考链接</h2><ul>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i = <span class="number">1.</span>..N</span><br><span class="line">    <span class="keyword">for</span> j = V..<span class="number">.0</span></span><br><span class="line">        p[j] = max{p[j-volume[i]] + value[i], p[j]};</span><br></pre></td></tr></tbody></table></figure>
+
+
+<h3 id="3-4-4-最长公共子序列"><a href="#3-4-4-最长公共子序列" class="headerlink" title="3.4.4 最长公共子序列"></a>3.4.4 最长公共子序列</h3><p> 问题描述:<br> 一个散列S,如果分别是两个或多个已知数列的子序列,且是所有匹配此条件序列中最长的,则S称为已知序列的最长公共子序列(LCS)<br> 给定两个序列X,Y,求两个序列的最长公共子序列.<br> 截图思路:<br> </p>
+<p> 伪代码:</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">function <span class="title">LCSLength</span><span class="params">(X[<span class="number">1.</span>.m], Y[<span class="number">1.</span>.n])</span></span></span><br><span class="line"><span class="function">    C </span>= <span class="built_in">array</span>(<span class="number">0.</span>.m, <span class="number">0.</span>.n)</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0.</span>.m</span><br><span class="line">        C[i, <span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> j := <span class="number">0.</span>.n</span><br><span class="line">        C[<span class="number">0</span>, j] = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">1.</span>.m</span><br><span class="line">        <span class="keyword">for</span> j := <span class="number">1.</span>.n</span><br><span class="line">            <span class="keyword">if</span> X[i] = Y[j]</span><br><span class="line">                C[i, j] := C[i<span class="number">-1</span>, j<span class="number">-1</span>] + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                C[i, j] := max(C[i, j<span class="number">-1</span>], C[i<span class="number">-1</span>,j])</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> C[m, n]</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="3-4-5-leetcode题目"><a href="#3-4-5-leetcode题目" class="headerlink" title="3.4.5 leetcode题目"></a>3.4.5 leetcode题目</h3><ul>
+<li>最大子序和</li>
+<li>编辑距离</li>
+<li>大礼包</li>
+<li>最长上升子序列</li>
+</ul>
+<h2 id="3-5-回溯法"><a href="#3-5-回溯法" class="headerlink" title="3.5 回溯法"></a>3.5 回溯法</h2><h3 id="3-5-1-基本概念"><a href="#3-5-1-基本概念" class="headerlink" title="3.5.1 基本概念"></a>3.5.1 基本概念</h3><h3 id="3-5-2-八皇后问题"><a href="#3-5-2-八皇后问题" class="headerlink" title="3.5.2 八皇后问题"></a>3.5.2 八皇后问题</h3><h3 id="3-5-3-leetcode题目"><a href="#3-5-3-leetcode题目" class="headerlink" title="3.5.3 leetcode题目"></a>3.5.3 leetcode题目</h3><h2 id="4-参考链接"><a href="#4-参考链接" class="headerlink" title="4 参考链接"></a>4 参考链接</h2><ul>
 <li>复杂度速查表<br><a target="_blank" rel="noopener" href="https://liam.page/2016/06/20/big-O-cheat-sheet/">https://liam.page/2016/06/20/big-O-cheat-sheet/</a></li>
-<li>线性表<br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%BA%BF%E6%80%A7%R8%A1%A8">https://zh.wikipedia.org/wiki/%E7%BA%BF%E6%80%A7%R8%A1%A8</a></li>
+<li>线性表<br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%BA%BF%E6%80%A7%E8%A1%A8">https://zh.wikipedia.org/wiki/%E7%BA%BF%E6%80%A7%E8%A1%A8</a><ul>
+<li>单链表<br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/73f0d8f807aa">https://www.jianshu.com/p/73f0d8f807aa</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -632,12 +665,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/10/26/Software&Tool/" rel="prev" title="Software&Tool">
-      <i class="fa fa-chevron-left"></i> Software&Tool
+    <a href="/2021/10/27/2021/11/leetcode%E9%A2%98%E8%A7%A3%E7%AE%97%E6%B3%95/" rel="prev" title="leetcode题解算法分析">
+      <i class="fa fa-chevron-left"></i> leetcode题解算法分析
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/10/27/2021/11/leetcode%E9%A2%98%E8%A7%A3%E7%AE%97%E6%B3%95/" rel="next" title="leetcode题解算法分析">
-      leetcode题解算法分析 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/10/27/%E4%B9%A6%E5%8D%95/" rel="next" title="书单&电影">
+      书单&电影 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -764,12 +797,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">27k</span>
+    <span title="站点总字数">30k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">24 分钟</span>
+    <span title="站点阅读时长">27 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
