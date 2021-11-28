@@ -1,0 +1,14 @@
+# Site
+title: TITLE
+subtitle: SUBTITLE
+description: DESCRIPTION
+keywords: KEYWORDS
+language: en
+# URL
+#url: https://chanvinxiao.com/en/blog
+url: https://zhuangll.github.io/en/blog
+
+root: /en/blog/
+# Directory
+source_dir: source-en
+public_dir: public-en

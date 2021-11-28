@@ -122,6 +122,15 @@ githubEmojis:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 #theme: landscape
+#Plugins:
+#- hexo-generator-baidu-sitemap
+#- hexo-generator-sitemap
+
+#baidusitemap:
+#    path: baidusitemap.xml
+#sitemap:
+#    path: sitemap.xml
+
 theme: next
 
 # Post wordcount display settings
