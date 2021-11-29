@@ -252,14 +252,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>23k</span>
+              <span>24k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>21 分钟</span>
+              <span>22 分钟</span>
             </span>
 
         </div>
@@ -638,7 +638,22 @@
 <li>大礼包</li>
 <li>最长上升子序列</li>
 </ul>
-<h2 id="3-5-回溯法"><a href="#3-5-回溯法" class="headerlink" title="3.5 回溯法"></a>3.5 回溯法</h2><h3 id="3-5-1-基本概念"><a href="#3-5-1-基本概念" class="headerlink" title="3.5.1 基本概念"></a>3.5.1 基本概念</h3><h3 id="3-5-2-八皇后问题"><a href="#3-5-2-八皇后问题" class="headerlink" title="3.5.2 八皇后问题"></a>3.5.2 八皇后问题</h3><h3 id="3-5-3-leetcode题目"><a href="#3-5-3-leetcode题目" class="headerlink" title="3.5.3 leetcode题目"></a>3.5.3 leetcode题目</h3><h2 id="4-参考链接"><a href="#4-参考链接" class="headerlink" title="4 参考链接"></a>4 参考链接</h2><ul>
+<h2 id="3-5-回溯法"><a href="#3-5-回溯法" class="headerlink" title="3.5 回溯法"></a>3.5 回溯法</h2><h3 id="3-5-1-基本概念"><a href="#3-5-1-基本概念" class="headerlink" title="3.5.1 基本概念"></a>3.5.1 基本概念</h3><p> 回溯算法实际上一个类似枚举的搜索尝试过程,主要是在<strong>搜索尝试过程中寻找问题的解,当发现已不满足求解条件时,就”回溯”返回,尝试别的路径</strong>.<br> 回溯法是一种迭代搜索法,按选优条件详情搜索,以达到目标.但当探索到某一步时,发现原先选择并不优或达不到目标,就退回一步重新选择,这种走不通就退回再走的技术为回溯法,而满足回溯条件的某个状态的点称为”回溯法”.<br> 许多复杂度,规模较大的问题都看看而已使用回溯法,有”同意解题方法”的美称.</p>
+<p> 在包含问题的所有解的解空间树中,按照深度优先的策略,从根节点出发深度探索解空间树.当探索到某一节点时,要先判断该节点是否包含问题的解,如果包含,就从该节点出发继续探索下去,如果该节点不包含问题的解,则逐层向其足协节点回溯.(其实回溯法就是堆隐式图的深度优先搜索算法).<br> 若用回溯法求问题的所有解时,要回溯的根,且根节点的所有可行的子树都要已被搜索遍才结束,而若使用回溯法求任一个解时,只要搜索到问题的一个解就可以结束.<br> 回溯法一般解题步骤:<br> 1.<strong>针对所给问题,确定问题的解空间</strong>;首先应明确定义问题的解空间,解空间应至少包含问题的一个(最优)解.<br> 2.<strong>确定节点的扩展搜索规则</strong><br> 3.<strong>以深度优先方式搜索解空间,并在搜索过程中用剪枝函数避免无效搜索</strong></p>
+<p> 伪代码:</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">iterativeBacktrack</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (t &gt; <span class="number">0</span>) {</span><br><span class="line">        <span class="keyword">if</span> (f(n, t) &lt;= g(n, t)) {</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = f(n,t); i &lt;= g(n,t); i++) {</span><br><span class="line">                x[t] = h(i);</span><br><span class="line">                <span class="keyword">if</span> (constraint(t) &amp;&amp; bound(t)) {</span><br><span class="line">                    <span class="comment">//</span></span><br><span class="line">                    <span class="keyword">if</span> (solution(t)) {</span><br><span class="line">                        output(x);</span><br><span class="line">                    } <span class="keyword">else</span> {</span><br><span class="line">                        t++;</span><br><span class="line">                    }</span><br><span class="line">                } <span class="keyword">else</span> {</span><br><span class="line">                    t--;</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="3-5-2-八皇后问题"><a href="#3-5-2-八皇后问题" class="headerlink" title="3.5.2 八皇后问题"></a>3.5.2 八皇后问题</h3><p> 问题描述<br> 八皇后问题使一个以国际象棋为背景的问题:如何能够在 8<em>8 的国际象棋棋盘上放着八个皇后,使得任何一个皇后都无法直接吃掉其他的皇后?为了达到此目的,任两个皇后都不能处于同一条横行,纵行或斜线上.<br> 转化规则:其实八皇后问题可以推广为更一般的n皇后摆放问题;这时棋盘大小变为n</em>n,而皇后个数也变成n.当且仅当n = 1 或 n &gt;= 4 时间问题有解.</p>
+<p> 伪代码描述</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">queens</span><span class="params">(<span class="keyword">int</span> Queens)</span> </span>{</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="3-5-3-leetcode题目"><a href="#3-5-3-leetcode题目" class="headerlink" title="3.5.3 leetcode题目"></a>3.5.3 leetcode题目</h3><ul>
+<li>N皇后</li>
+<li>括号生成</li>
+<li>单词搜索</li>
+<li>解数独</li>
+</ul>
+<h2 id="4-参考链接"><a href="#4-参考链接" class="headerlink" title="4 参考链接"></a>4 参考链接</h2><ul>
 <li>复杂度速查表<br><a target="_blank" rel="noopener" href="https://liam.page/2016/06/20/big-O-cheat-sheet/">https://liam.page/2016/06/20/big-O-cheat-sheet/</a></li>
 <li>线性表<br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%BA%BF%E6%80%A7%E8%A1%A8">https://zh.wikipedia.org/wiki/%E7%BA%BF%E6%80%A7%E8%A1%A8</a><ul>
 <li>单链表<br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/73f0d8f807aa">https://www.jianshu.com/p/73f0d8f807aa</a></li>
@@ -669,8 +684,8 @@
       <i class="fa fa-chevron-left"></i> leetcode题解算法分析
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/10/27/%E4%B9%A6%E5%8D%95/" rel="next" title="书单&电影">
-      书单&电影 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/10/27/WSL/" rel="next" title="WSL">
+      WSL <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -797,12 +812,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">30k</span>
+    <span title="站点总字数">31k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">27 分钟</span>
+    <span title="站点阅读时长">28 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
