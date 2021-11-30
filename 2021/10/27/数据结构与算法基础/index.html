@@ -340,7 +340,11 @@
 </ul>
 </blockquote>
 
-<h2 id="2-基本数据结构"><a href="#2-基本数据结构" class="headerlink" title="2 基本数据结构"></a>2 基本数据结构</h2><p>基本数据结构:<br> 字符,字符串:char,string<br> 整型:short,int,long;unsigned<br> 浮点型:float,double<br> 结构体:struct<br> 枚举:enum<br> 联合体:union<br> 自定义数据结构<br> 线性表<br>  数组:array<br>  链表:数据域,指针域;单链表,循环链表,双链表<br>  队列<br>  栈<br>  堆 </p>
+<h2 id="2-基本数据结构"><a href="#2-基本数据结构" class="headerlink" title="2 基本数据结构"></a>2 基本数据结构</h2><blockquote class="pullquote mindmap mindmap-md"><p>+[#17ADF1] 数据结构与算法<br>++[#lightgreen] 推荐资料<br>++[#lightblue] 后端技术栈<br>+++_ 项目框架<br>+++_ 数据存储<br>+++_ 运维部署<br>+++_ 其他</p>
+</blockquote>
+
+
+<p>基本数据结构:<br> 字符,字符串:char,string<br> 整型:short,int,long;unsigned<br> 浮点型:float,double<br> 结构体:struct<br> 枚举:enum<br> 联合体:union<br> 自定义数据结构<br> 线性表<br>  数组:array<br>  链表:数据域,指针域;单链表,循环链表,双链表<br>  队列<br>  栈<br>  堆 </p>
 <h3 id="2-1-线性表"><a href="#2-1-线性表" class="headerlink" title="2.1 线性表"></a>2.1 线性表</h3><p> 线性表是n个具有相同特性的数据元素的有序序列。线性表除第一个和最后一个数据元素之外，其他数据元素都是首尾相接的。<br> 数据在实际的物理存储中有两种形式：分散存储和集中存储,常见数据结构有栈、队列、字符串、链表等。<br> 两种情况下数据的存储问题：<br>  数据元素在内存中集中存储，采用顺序表示结构，简称“顺序存储”；<br>  数据元素在内存中分散存储，采用链式表示结构，简称“链式存储”</p>
 <h4 id="2-1-1-数组"><a href="#2-1-1-数组" class="headerlink" title="2.1.1 数组"></a>2.1.1 数组</h4><p> 数组是一批相同数据的集合。数组的三部分：地址 大小 和 空间。数组的保存形式为线性表。</p>
 <figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[<span class="number">10</span>]; <span class="comment">// /[]内必须是常量/常量表达式(3+8)，不能是一个变量(x...)</span></span><br><span class="line"><span class="comment">// 数组初始化</span></span><br><span class="line"><span class="keyword">int</span> arr1[<span class="number">3</span>] = {<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>};</span><br><span class="line"><span class="keyword">char</span> arr6[] = <span class="string">"abcdef"</span>;</span><br><span class="line"><span class="comment">// 指针</span></span><br><span class="line"><span class="keyword">int</span> *ptr = <span class="literal">NULL</span>;<span class="comment">//定义一个整型的指针变量，初始化为NULL</span></span><br><span class="line"><span class="keyword">char</span> *ptr = <span class="literal">NULL</span>;<span class="comment">//定义一个字符的指针变量，初始化为NULL</span></span><br><span class="line"><span class="comment">// 二维数组</span></span><br><span class="line"><span class="keyword">int</span> arr[<span class="number">3</span>][<span class="number">5</span>] = { <span class="number">0</span> };</span><br><span class="line"><span class="comment">// C 传递数组给函数</span></span><br><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">myFunction</span><span class="params">(<span class="keyword">int</span> *param)</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">myFunction</span><span class="params">(<span class="keyword">int</span> param[<span class="number">10</span>])</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">myFunction</span><span class="params">(<span class="keyword">int</span> param[])</span></span></span><br><span class="line"><span class="function"><span class="comment">// C 从函数返回数组</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> * <span class="title">myFunction</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">...</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
@@ -740,12 +744,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/10/27/2021/11/leetcode%E9%A2%98%E8%A7%A3%E7%AE%97%E6%B3%95/" rel="prev" title="leetcode题解算法分析">
-      <i class="fa fa-chevron-left"></i> leetcode题解算法分析
+    <a href="/2021/10/26/Software&Tool/" rel="prev" title="Software&Tool">
+      <i class="fa fa-chevron-left"></i> Software&Tool
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/10/27/%E4%B9%A6%E5%8D%95/" rel="next" title="书单&电影">
-      书单&电影 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/10/27/2021/11/leetcode%E9%A2%98%E8%A7%A3%E7%AE%97%E6%B3%95/" rel="next" title="leetcode题解算法分析">
+      leetcode题解算法分析 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
