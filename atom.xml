@@ -88,31 +88,6 @@
   </entry>
   
   <entry>
-    <title>leetcode题解算法分析</title>
-    <link href="http://example.com/2021/10/27/2021/11/leetcode%E9%A2%98%E8%A7%A3%E7%AE%97%E6%B3%95/"/>
-    <id>http://example.com/2021/10/27/2021/11/leetcode%E9%A2%98%E8%A7%A3%E7%AE%97%E6%B3%95/</id>
-    <published>2021-10-26T16:47:53.000Z</published>
-    <updated>2021-10-26T16:53:53.000Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;单调栈&quot;&gt;&lt;a href=&quot;#单调栈&quot; class=&quot;headerlink&quot; title=&quot;单调栈&quot;&gt;&lt;/a&gt;单调栈&lt;/h2&gt;</summary>
-    
-    
-    
-    <category term="tool" scheme="http://example.com/categories/tool/"/>
-    
-    <category term="2021" scheme="http://example.com/categories/tool/2021/"/>
-    
-    <category term="11" scheme="http://example.com/categories/tool/2021/11/"/>
-    
-    
-    <category term="实用教程" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"/>
-    
-    <category term="Another Tag" scheme="http://example.com/tags/Another-Tag/"/>
-    
-  </entry>
-  
-  <entry>
     <title>数据结构与算法基础</title>
     <link href="http://example.com/2021/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/"/>
     <id>http://example.com/2021/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/</id>
@@ -125,6 +100,38 @@
     
     
     <category term="tool" scheme="http://example.com/categories/tool/"/>
+    
+    
+    <category term="实用教程" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="Another Tag" scheme="http://example.com/tags/Another-Tag/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>leetcode题解算法分析</title>
+    <link href="http://example.com/2021/10/27/2021/11/leetcode%E9%A2%98%E8%A7%A3%E7%AE%97%E6%B3%95/"/>
+    <id>http://example.com/2021/10/27/2021/11/leetcode%E9%A2%98%E8%A7%A3%E7%AE%97%E6%B3%95/</id>
+    <published>2021-10-26T16:47:53.000Z</published>
+    <updated>2021-10-26T16:53:53.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;1-单调栈&quot;&gt;&lt;a href=&quot;#1-单调栈&quot; class=&quot;headerlink&quot; title=&quot;1.单调栈&quot;&gt;&lt;/a&gt;1.单调栈&lt;/h2&gt;&lt;h3 id=&quot;1-1-代表题目-84-柱状图中最大的矩形&quot;&gt;&lt;a href=&quot;#1-1-代表题目-84-柱状图中最大的矩形&quot; class=&quot;headerlink&quot; title=&quot;1.1 代表题目: 84.柱状图中最大的矩形&quot;&gt;&lt;/a&gt;1.1 代表题目: 84.&lt;a href=&quot;https://leetcode-cn.com/problems/largest-rectangle-in-histogram/description/&quot;&gt;柱状图中最大的矩形&lt;/a&gt;&lt;/h3&gt;&lt;details&gt;
+  &lt;summary&gt;柱状图中最大的矩形 c语言&lt;/summary&gt;
+
+&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;largestRectangleArea&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;* heights, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; heightsSize)&lt;/span&gt; &lt;/span&gt;{&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 栈顶标记,单调递减栈&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; top = &lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; area = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; maxArea = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; *&lt;span class=&quot;built_in&quot;&gt;stack&lt;/span&gt; = (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; *)&lt;span class=&quot;built_in&quot;&gt;malloc&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;sizeof&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;) * (heightsSize + &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; *buf = (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; *)&lt;span class=&quot;built_in&quot;&gt;malloc&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;sizeof&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;) * (heightsSize + &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 增加前哨兵&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    buf[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;] = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 在最后增加哨兵&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    buf[heightsSize + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; i &amp;lt;= heightsSize; i++) {&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        buf[i] = heights[i - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    }&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;stack&lt;/span&gt;[++top] = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; i &amp;lt; heightsSize + &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;; i++) {&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; (top &amp;gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &amp;amp;&amp;amp; buf[i] &amp;lt; buf[&lt;span class=&quot;built_in&quot;&gt;stack&lt;/span&gt;[top]]) {&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;comment&quot;&gt;// 注意 i - &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            area = (i - &lt;span class=&quot;built_in&quot;&gt;stack&lt;/span&gt;[top - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) * buf[&lt;span class=&quot;built_in&quot;&gt;stack&lt;/span&gt;[top]];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            maxArea = maxArea &amp;gt; area ? maxArea : area;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            top--;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        }&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 索引入栈，其他可能是元素入栈&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;stack&lt;/span&gt;[++top] = i;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    }&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; maxArea;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;}&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/details&gt;
+
+&lt;br&gt;</summary>
+    
+    
+    
+    <category term="tool" scheme="http://example.com/categories/tool/"/>
+    
+    <category term="2021" scheme="http://example.com/categories/tool/2021/"/>
+    
+    <category term="11" scheme="http://example.com/categories/tool/2021/11/"/>
     
     
     <category term="实用教程" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"/>
