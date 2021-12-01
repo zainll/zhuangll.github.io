@@ -1,6 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/2021/10/25/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+  </entry>
+  <entry>
+    <title>WSL</title>
+    <url>/2021/10/27/WSL/</url>
+    <content><![CDATA[<h2 id="安装ubuntu20-04"><a href="#安装ubuntu20-04" class="headerlink" title="安装ubuntu20.04"></a>安装ubuntu20.04</h2><p>安装到非系统盘目录，下载离线安装包，复制到想要安装的目录下，解压，以管理员身份运行ubuntu2004.exe</p>
+<h2 id="卸载wsl"><a href="#卸载wsl" class="headerlink" title="卸载wsl"></a>卸载wsl</h2><figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">wslconfig /l</span><br><span class="line"><span class="comment"># 从列表中选择要卸载的发行版（例如Ubuntu）并键入命令</span></span><br><span class="line">wslconfig /u Ubuntu</span><br></pre></td></tr></tbody></table></figure>
+<p>参考链接：<a href="https://blog.csdn.net/zhangpeterx/article/details/97616268">WSL系列操作：安装，卸载</a></p>
+<span id="more"></span>
+
+<h2 id="设置wsl"><a href="#设置wsl" class="headerlink" title="设置wsl"></a>设置wsl</h2><figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 更改默认root用户登录</span></span><br><span class="line">ubuntu1804.exe config --default-user root</span><br><span class="line"><span class="comment"># 更改默认登陆目录</span></span><br><span class="line"><span class="comment"># list 中 Ubuntu-20.04 条目中添加</span></span><br><span class="line"><span class="string">"startingDirectory"</span>: <span class="string">"//wsl$/Ubuntu-20.04"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="ubuntu-换源"><a href="#ubuntu-换源" class="headerlink" title="ubuntu 换源"></a>ubuntu 换源</h2><figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 备份</span></span><br><span class="line">cp /etc/apt/sources.list /etc/apt/sources.list.20211013</span><br><span class="line">lsb_release -c</span><br><span class="line">lsb_release -a</span><br><span class="line"><span class="comment"># </span></span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<p>参考链接：<a href="https://blog.csdn.net/qq_33706673/article/details/106869016">ubuntu20.04更改国内镜像源</a></p>
+<h2 id="Read-The-Docs-环境搭建"><a href="#Read-The-Docs-环境搭建" class="headerlink" title="Read The Docs 环境搭建"></a>Read The Docs 环境搭建</h2><figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line">sudo apt-get install python3-pip</span><br><span class="line"></span><br><span class="line">pip install sphinx sphinx-autobuild sphinx_rtd_theme</span><br><span class="line">pip install recommonmark</span><br><span class="line">pip install sphinx-markdown-tables</span><br><span class="line">pip install Pyinstaller -i http://pypi.douban.com/simple --trusted-host pypi.douban.com</span><br><span class="line">（其中的Pyinstaller是你需要下载的库或包名，根据自己需求自行更改即可）</span><br><span class="line"></span><br><span class="line">extensions = [</span><br><span class="line">    <span class="string">'recommonmark'</span>,</span><br><span class="line">    <span class="string">'sphinx_markdown_tables'</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">python3 -m pip freeze &gt; requirements.txt</span><br></pre></td></tr></tbody></table></figure>
+
+<p>参考链接：<br><a href="https://zhuanlan.zhihu.com/p/112919704">VsCode +Read The Docs 环境搭建</a><br><br></p>
+<p><a href="https://zhuanlan.zhihu.com/p/264647009">Sphinx + Read the Docs 从懵逼到入门</a><br><br></p>
+<p><a href="https://zhuanlan.zhihu.com/p/388640347">ReadTheDocs搭建第一本电子书</a></p>
+<p><a href="https://www.jianshu.com/p/8aae1c1453ae">https://www.jianshu.com/p/8aae1c1453ae</a></p>
+<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><p>git push -u origin main</p>
+<p><a href="https://zhuanlan.zhihu.com/p/252505037">玩转WSL(6)之Git配置</a></p>
+<h2 id="PowerShell"><a href="#PowerShell" class="headerlink" title="PowerShell"></a>PowerShell</h2><p>winget search Microsoft.PowerShell</p>
+<ul>
+<li><a href="https://blog.csdn.net/The_Time_Runner/article/details/106038222">Windows Powershell和Windows Terminal的区别</a><br></li>
+</ul>
+<p><a href="https://docs.microsoft.com/zh-cn/windows/terminal/get-started">安装和设置 Windows 终端</a></p>
+<h2 id="windows-包管理工具"><a href="#windows-包管理工具" class="headerlink" title="windows 包管理工具"></a>windows 包管理工具</h2><ul>
+<li><p>winget 官方推出</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 WinGet 安装一遍</span></span><br><span class="line">winget install postman</span><br><span class="line">winget search postman</span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载，再用 Scoop 安装一遍</span></span><br><span class="line">scoop install postman</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>choro</p>
+</li>
+<li><p>vcpkg<br><a href="https://vcpkg.io/en/getting-started.html">Get started with vcpkg</a></p>
+<br></li>
+</ul>
+<p><a href="https://blog.csdn.net/cjmqas/article/details/79282847">开源库集成器Vcpkg全教程</a></p>
+<p> Scoop </p>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+      </categories>
+      <tags>
+        <tag>实用教程</tag>
+        <tag>Another Tag</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Software&amp;Tool</title>
     <url>/2021/10/26/Software&amp;Tool/</url>
     <content><![CDATA[<h2 id="GitHub-Pages-Hexo使用及配置"><a href="#GitHub-Pages-Hexo使用及配置" class="headerlink" title="GitHub Pages + Hexo使用及配置"></a>GitHub Pages + Hexo使用及配置</h2><p>github上创建一个  username.github.io 的工程，username 必须为github的用户名</p>
@@ -57,70 +121,6 @@
       </tags>
   </entry>
   <entry>
-    <title>WSL</title>
-    <url>/2021/10/27/WSL/</url>
-    <content><![CDATA[<h2 id="安装ubuntu20-04"><a href="#安装ubuntu20-04" class="headerlink" title="安装ubuntu20.04"></a>安装ubuntu20.04</h2><p>安装到非系统盘目录，下载离线安装包，复制到想要安装的目录下，解压，以管理员身份运行ubuntu2004.exe</p>
-<h2 id="卸载wsl"><a href="#卸载wsl" class="headerlink" title="卸载wsl"></a>卸载wsl</h2><figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">wslconfig /l</span><br><span class="line"><span class="comment"># 从列表中选择要卸载的发行版（例如Ubuntu）并键入命令</span></span><br><span class="line">wslconfig /u Ubuntu</span><br></pre></td></tr></tbody></table></figure>
-<p>参考链接：<a href="https://blog.csdn.net/zhangpeterx/article/details/97616268">WSL系列操作：安装，卸载</a></p>
-<span id="more"></span>
-
-<h2 id="设置wsl"><a href="#设置wsl" class="headerlink" title="设置wsl"></a>设置wsl</h2><figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 更改默认root用户登录</span></span><br><span class="line">ubuntu1804.exe config --default-user root</span><br><span class="line"><span class="comment"># 更改默认登陆目录</span></span><br><span class="line"><span class="comment"># list 中 Ubuntu-20.04 条目中添加</span></span><br><span class="line"><span class="string">"startingDirectory"</span>: <span class="string">"//wsl$/Ubuntu-20.04"</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="ubuntu-换源"><a href="#ubuntu-换源" class="headerlink" title="ubuntu 换源"></a>ubuntu 换源</h2><figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 备份</span></span><br><span class="line">cp /etc/apt/sources.list /etc/apt/sources.list.20211013</span><br><span class="line">lsb_release -c</span><br><span class="line">lsb_release -a</span><br><span class="line"><span class="comment"># </span></span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<p>参考链接：<a href="https://blog.csdn.net/qq_33706673/article/details/106869016">ubuntu20.04更改国内镜像源</a></p>
-<h2 id="Read-The-Docs-环境搭建"><a href="#Read-The-Docs-环境搭建" class="headerlink" title="Read The Docs 环境搭建"></a>Read The Docs 环境搭建</h2><figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line">sudo apt-get install python3-pip</span><br><span class="line"></span><br><span class="line">pip install sphinx sphinx-autobuild sphinx_rtd_theme</span><br><span class="line">pip install recommonmark</span><br><span class="line">pip install sphinx-markdown-tables</span><br><span class="line">pip install Pyinstaller -i http://pypi.douban.com/simple --trusted-host pypi.douban.com</span><br><span class="line">（其中的Pyinstaller是你需要下载的库或包名，根据自己需求自行更改即可）</span><br><span class="line"></span><br><span class="line">extensions = [</span><br><span class="line">    <span class="string">'recommonmark'</span>,</span><br><span class="line">    <span class="string">'sphinx_markdown_tables'</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">python3 -m pip freeze &gt; requirements.txt</span><br></pre></td></tr></tbody></table></figure>
-
-<p>参考链接：<br><a href="https://zhuanlan.zhihu.com/p/112919704">VsCode +Read The Docs 环境搭建</a><br><br></p>
-<p><a href="https://zhuanlan.zhihu.com/p/264647009">Sphinx + Read the Docs 从懵逼到入门</a><br><br></p>
-<p><a href="https://zhuanlan.zhihu.com/p/388640347">ReadTheDocs搭建第一本电子书</a></p>
-<p><a href="https://www.jianshu.com/p/8aae1c1453ae">https://www.jianshu.com/p/8aae1c1453ae</a></p>
-<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><p>git push -u origin main</p>
-<p><a href="https://zhuanlan.zhihu.com/p/252505037">玩转WSL(6)之Git配置</a></p>
-<h2 id="PowerShell"><a href="#PowerShell" class="headerlink" title="PowerShell"></a>PowerShell</h2><p>winget search Microsoft.PowerShell</p>
-<ul>
-<li><a href="https://blog.csdn.net/The_Time_Runner/article/details/106038222">Windows Powershell和Windows Terminal的区别</a><br></li>
-</ul>
-<p><a href="https://docs.microsoft.com/zh-cn/windows/terminal/get-started">安装和设置 Windows 终端</a></p>
-<h2 id="windows-包管理工具"><a href="#windows-包管理工具" class="headerlink" title="windows 包管理工具"></a>windows 包管理工具</h2><ul>
-<li><p>winget 官方推出</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 WinGet 安装一遍</span></span><br><span class="line">winget install postman</span><br><span class="line">winget search postman</span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载，再用 Scoop 安装一遍</span></span><br><span class="line">scoop install postman</span><br></pre></td></tr></tbody></table></figure></li>
-<li><p>choro</p>
-</li>
-<li><p>vcpkg<br><a href="https://vcpkg.io/en/getting-started.html">Get started with vcpkg</a></p>
-<br></li>
-</ul>
-<p><a href="https://blog.csdn.net/cjmqas/article/details/79282847">开源库集成器Vcpkg全教程</a></p>
-<p> Scoop </p>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-      </categories>
-      <tags>
-        <tag>实用教程</tag>
-        <tag>Another Tag</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2021/10/25/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-  </entry>
-  <entry>
     <title>书单&amp;电影</title>
     <url>/2021/10/27/%E4%B9%A6%E5%8D%95/</url>
     <content><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a></h2><ul>
@@ -143,20 +143,7 @@
 </li>
 </ul>
 <p>教父三部曲</p>
-<pre class="mermaid">graph TD;
-    A--&gt;B;
-    A--&gt;C;
-    B--&gt;D;
-    C--&gt;D;</pre>
-
-
 <p>勇敢的心</p>
-<pre class="mermaid">graph TD
-    B["HEXO支持的流程图"]
-    B--&gt;C[mermaid]
-    B--&gt;D[flowchart];
-    B--&gt;E[sequence];</pre>
-
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">@startuml</span><br><span class="line"></span><br><span class="line">Bob -&gt; Alice : Hello, how are you</span><br><span class="line">Alice -&gt; Bob : Fine, thank you, and you?</span><br><span class="line"></span><br><span class="line">@enduml</span><br></pre></td></tr></tbody></table></figure>
 
 <img src="http://www.plantuml.com/plantuml/svg/Kop9ICrDLIWkI4nEpKbCudBAJrBGjLDmpCbCJbMmKb38ICt9oGUBskWYH5MAIvEJKukBDPIW32k8GWKdFILDY1aLIAhJ4ZDpIejIDPIW39WQEuH5AkM9HNcPUUaQIb26aYO0">
