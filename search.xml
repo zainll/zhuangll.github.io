@@ -47,7 +47,7 @@
 <h2 id="youtube-下载"><a href="#youtube-下载" class="headerlink" title="youtube 下载"></a>youtube 下载</h2><p><a href="https://www.ganbey.com/youtube-download-3774">https://www.ganbey.com/youtube-download-3774</a></p>
 <h2 id="zlog"><a href="#zlog" class="headerlink" title="zlog"></a>zlog</h2><p><a href="https://blog.csdn.net/twd_1991/article/details/80481920">https://blog.csdn.net/twd_1991/article/details/80481920</a></p>
 <p><a href="http://hardysimpson.github.io/zlog/UsersGuide-CN.html">http://hardysimpson.github.io/zlog/UsersGuide-CN.html</a></p>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
       <categories>
         <category>tool</category>
       </categories>
@@ -91,7 +91,7 @@
 </ul>
 <p><a href="https://blog.csdn.net/cjmqas/article/details/79282847">开源库集成器Vcpkg全教程</a></p>
 <p> Scoop </p>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
       <categories>
         <category>tool</category>
       </categories>
@@ -118,7 +118,7 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
   </entry>
   <entry>
     <title>书单&amp;电影</title>
@@ -142,15 +142,25 @@
 </ul>
 </li>
 </ul>
+<pre class="mermaid">graph TD;
+    A--&gt;B;
+    A--&gt;C;
+    B--&gt;D;
+    C--&gt;D;</pre>
+
 <p>教父三部曲<br>勇敢的心</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">graph TD</span><br><span class="line">    B["HEXO支持的流程图"]</span><br><span class="line">    B--&gt;C[mermaid]</span><br><span class="line">    B--&gt;D[flowchart];</span><br><span class="line">    B--&gt;E[sequence];</span><br></pre></td></tr></tbody></table></figure>
+<pre class="mermaid">graph TD
+    B["HEXO支持的流程图"]
+    B--&gt;C[mermaid]
+    B--&gt;D[flowchart];
+    B--&gt;E[sequence];</pre>
 
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">@startuml</span><br><span class="line"></span><br><span class="line">Bob -&gt; Alice : Hello, how are you</span><br><span class="line">Alice -&gt; Bob : Fine, thank you, and you?</span><br><span class="line"></span><br><span class="line">@enduml</span><br></pre></td></tr></tbody></table></figure>
 
 <img src="http://www.plantuml.com/plantuml/svg/Kop9ICrDLIWkI4nEpKbCudBAJrBGjLDmpCbCJbMmKb38ICt9oGUBskWYH5MAIvEJKukBDPIW32k8GWKdFILDY1aLIAhJ4ZDpIejIDPIW39WQEuH5AkM9HNcPUUaQIb26aYO0">
 
 
-<img src="http://www.plantuml.com/plantuml/svg/Syp9J4vLqBLJSCfFib9mB2t9ICqhoKnEBCdCprC8IYqiJIqkuGBAAUW2rJY256DHLLoGdrUSoiNbY6fONZvGNP52OaafDaCXYcrqTT5KOpSS0000"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+<img src="http://www.plantuml.com/plantuml/svg/Syp9J4vLqBLJSCfFib9mB2t9ICqhoKnEBCdCprC8IYqiJIqkuGBAAUW2rJY256DHLLoGdrUSoiNbY6fONZvGNP52OaafDaCXYcrqTT5KOpSS0000"><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
       <categories>
         <category>tool</category>
       </categories>
@@ -717,7 +727,7 @@
 </li>
 </ul>
 <p><a href="http://cocofe.cn/">http://cocofe.cn/</a></p>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
       <categories>
         <category>tool</category>
       </categories>
@@ -771,7 +781,7 @@
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Size=<span class="number">1000005</span>;</span><br><span class="line"><span class="keyword">int</span> a[Size],qmax[Size],qmin[Size],savemax[Size],savemin[Size];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> n,k,cnt=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;n,&amp;k);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    {<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);}</span><br><span class="line">    <span class="keyword">int</span> beg=<span class="number">1</span>,top=<span class="number">0</span>;<span class="comment">//qmax队列的队首指针和队尾指针</span></span><br><span class="line">    <span class="keyword">int</span> st=<span class="number">1</span>,ed=<span class="number">0</span>;<span class="comment">//qmin队列的队首指针和队尾指针</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">while</span>(beg&lt;=top&amp;&amp;a[i]&gt;=a[qmax[top]])</span><br><span class="line">        {top--;}</span><br><span class="line">        qmax[++top]=i;</span><br><span class="line">        <span class="keyword">while</span>(st&lt;=ed&amp;&amp;a[i]&lt;=a[qmin[ed]])</span><br><span class="line">        {ed--;}</span><br><span class="line">        qmin[++ed]=i;</span><br><span class="line">        <span class="keyword">if</span>(i&gt;=k)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">while</span>(qmax[beg]&lt;=i-k)beg++;</span><br><span class="line">            <span class="keyword">while</span>(qmin[st]&lt;=i-k)st++;</span><br><span class="line">            savemax[cnt]=a[qmax[beg]];</span><br><span class="line">            savemin[cnt]=a[qmin[st]];</span><br><span class="line">            cnt++;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt; cnt;i++) {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>,savemin[i]);</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt; cnt;i++) {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>,savemax[i]);</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <p><a href="https://www.cnblogs.com/zzcxxoo/p/13216030.html">https://www.cnblogs.com/zzcxxoo/p/13216030.html</a></p>
-<h2 id="前缀与哈希"><a href="#前缀与哈希" class="headerlink" title="前缀与哈希"></a>前缀与哈希</h2><h2 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h2><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h2 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h2><h2 id="字典树"><a href="#字典树" class="headerlink" title="字典树"></a>字典树</h2><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+<h2 id="前缀与哈希"><a href="#前缀与哈希" class="headerlink" title="前缀与哈希"></a>前缀与哈希</h2><h2 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h2><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h2 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h2><h2 id="字典树"><a href="#字典树" class="headerlink" title="字典树"></a>字典树</h2><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
       <categories>
         <category>tool</category>
         <category>2021</category>
@@ -793,7 +803,7 @@
 <ul>
 <li>参考链接：<br><a href="https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ">https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ</a></li>
 </ul>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
       <categories>
         <category>tool</category>
         <category>2021</category>
