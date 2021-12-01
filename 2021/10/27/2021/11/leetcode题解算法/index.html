@@ -257,14 +257,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.1k</span>
+              <span>5.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
+              <span>5 分钟</span>
             </span>
 
         </div>
@@ -300,8 +300,14 @@
 <p> 省份 是一组直接或间接相连的城市，组内不含其他没有相连的城市。</p>
 <p> 给你一个 n x n 的矩阵 isConnected ，其中 isConnected[i][j] = 1 表示第 i 个城市和第 j 个城市直接相连，而 isConnected[i][j] = 0 表示二者不直接相连。</p>
 <p>返回矩阵中 省份 的数量。</p>
-<h3 id="2-2-并查集介绍"><a href="#2-2-并查集介绍" class="headerlink" title="2.2 并查集介绍"></a>2.2 并查集介绍</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41593390/article/details/81146850">https://blog.csdn.net/qq_41593390/article/details/81146850</a></p>
+<h3 id="2-2-并查集介绍"><a href="#2-2-并查集介绍" class="headerlink" title="2.2 并查集介绍"></a>2.2 并查集介绍</h3><p> 并查集主要用于解决一些元素分组的问题，管理一系列不相交的集合，并支持两种操作：<br><strong>合并（union）：</strong>把两个不相交的集合合并为一个集合。<br><strong>查询（find）：</strong>查询两个元素是否在同一个集合中。<br> 并查集的重要思想在于，用集合中的一个元素代表集合。</p>
+<p> <strong>路径压缩</strong><br>合并的比较方法<br>应当将简单的树向复杂的树上合并，从而使合并后到根节点距离变长的节点个数比较少。</p>
+<p>并查集的时间复杂度<br>查询次数+合并次数 N或以上则平均下来单次查询或合并的平均时间复杂度O(1)</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41593390/article/details/81146850">https://blog.csdn.net/qq_41593390/article/details/81146850</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ziachen/article/details/106315471">https://blog.csdn.net/ziachen/article/details/106315471</a></p>
+<p>题目背景<br>若某个家族人员过于庞大，要判断两个是否是亲戚，确实还很不容易，现在给出某个亲戚关系图，求任意给出的两个人是否具有亲戚关系。<br>题目描述<br>规定：x和y是亲戚，y和z是亲戚，那么x和z也是亲戚。如果x,y是亲戚，那么x的亲戚都是y的亲戚，y的亲戚也都是x的亲戚。<br>输入格式<br>第一行：三个整数n,m,p，（n&lt;=5000,m&lt;=5000,p&lt;=5000），分别表示有n个人，m个亲戚关系，询问p对亲戚关系。<br>以下m行：每行两个数Mi，Mj，1&lt;=Mi，Mj&lt;=N，表示Mi和Mj具有亲戚关系。<br>接下来p行：每行两个数Pi，Pj，询问Pi和Pj是否具有亲戚关系。<br>输出格式<br>P行，每行一个’Yes’或’No’。表示第i个询问的答案为“具有”或“不具有”亲戚关系。</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 5005</span></span><br><span class="line"><span class="keyword">int</span> fa[MAXN], rank[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">    {</span><br><span class="line">        fa[i] = i;</span><br><span class="line">        rank[i] = <span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">return</span> x == fa[x] ? x : (fa[x] = find(fa[x]));</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> x = find(i), y = find(j);</span><br><span class="line">    <span class="keyword">if</span> (rank[x] &lt;= rank[y])</span><br><span class="line">        fa[x] = y;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        fa[y] = x;</span><br><span class="line">    <span class="keyword">if</span> (rank[x] == rank[y] &amp;&amp; x != y)</span><br><span class="line">        rank[y]++;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> n, m, p, x, y;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;n, &amp;m, &amp;p);</span><br><span class="line">    init(n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i)</span><br><span class="line">    {</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;x, &amp;y);</span><br><span class="line">        merge(x, y);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; p; ++i)</span><br><span class="line">    {</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;x, &amp;y);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, find(x) == find(y) ? <span class="string">"Yes"</span> : <span class="string">"No"</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
 <h2 id="滑动窗口-amp-双指针"><a href="#滑动窗口-amp-双指针" class="headerlink" title="滑动窗口&amp;双指针"></a>滑动窗口&amp;双指针</h2><h3 id="单调队列"><a href="#单调队列" class="headerlink" title=".单调队列"></a>.单调队列</h3><p> 单调队列是指：队列中的元素之间的关系具有单调性，而且，队首和队尾都可以进行出队操作，只有队尾开源进行入队操作。<br> 单调队列与单调栈及其相似，把单调栈先进后出的性质改为先进先出既可。<br>元素进队列的过程对于单调递增队列。<br>对于一个元素a，如果a&gt;队尾元素，那么直接将a扔进队列，如果a&lt;=队尾元素，则将队尾元素出队列，直到满足 a&gt;队尾元素即可。</p>
 <blockquote>
 <p>单调递增队列(从队首到队尾满足递增)<br>单调递减队列(从队首到队尾满足递减)</p>
@@ -337,12 +343,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" rel="prev" title="数据结构与算法基础">
-      <i class="fa fa-chevron-left"></i> 数据结构与算法基础
+    <a href="/2021/10/26/Software&Tool/" rel="prev" title="Software&Tool">
+      <i class="fa fa-chevron-left"></i> Software&Tool
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/10/27/%E4%B9%A6%E5%8D%95/" rel="next" title="书单&电影">
-      书单&电影 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" rel="next" title="数据结构与算法基础">
+      数据结构与算法基础 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -469,12 +475,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">32k</span>
+    <span title="站点总字数">34k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">29 分钟</span>
+    <span title="站点阅读时长">31 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
