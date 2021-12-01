@@ -114,10 +114,80 @@ https://blog.csdn.net/chongbin007/article/details/112741867?utm_term=%E5%8D%95%E
 
 ### 2.2 并查集介绍
 
+&ensp;并查集主要用于解决一些元素分组的问题，管理一系列不相交的集合，并支持两种操作：
+**合并（union）：**把两个不相交的集合合并为一个集合。
+**查询（find）：**查询两个元素是否在同一个集合中。
+&ensp;并查集的重要思想在于，用集合中的一个元素代表集合。
+
+&ensp;**路径压缩**
+合并的比较方法
+应当将简单的树向复杂的树上合并，从而使合并后到根节点距离变长的节点个数比较少。
+
+并查集的时间复杂度
+查询次数+合并次数 N或以上则平均下来单次查询或合并的平均时间复杂度O(1)
+
+
 https://blog.csdn.net/qq_41593390/article/details/81146850
 
 https://blog.csdn.net/ziachen/article/details/106315471
 
+
+
+题目背景
+若某个家族人员过于庞大，要判断两个是否是亲戚，确实还很不容易，现在给出某个亲戚关系图，求任意给出的两个人是否具有亲戚关系。
+题目描述
+规定：x和y是亲戚，y和z是亲戚，那么x和z也是亲戚。如果x,y是亲戚，那么x的亲戚都是y的亲戚，y的亲戚也都是x的亲戚。
+输入格式
+第一行：三个整数n,m,p，（n<=5000,m<=5000,p<=5000），分别表示有n个人，m个亲戚关系，询问p对亲戚关系。
+以下m行：每行两个数Mi，Mj，1<=Mi，Mj<=N，表示Mi和Mj具有亲戚关系。
+接下来p行：每行两个数Pi，Pj，询问Pi和Pj是否具有亲戚关系。
+输出格式
+P行，每行一个’Yes’或’No’。表示第i个询问的答案为“具有”或“不具有”亲戚关系。
+
+```c
+#include <cstdio>
+#define MAXN 5005
+int fa[MAXN], rank[MAXN];
+inline void init(int n)
+{
+    for (int i = 1; i <= n; ++i)
+    {
+        fa[i] = i;
+        rank[i] = 1;
+    }
+}
+int find(int x)
+{
+    return x == fa[x] ? x : (fa[x] = find(fa[x]));
+}
+inline void merge(int i, int j)
+{
+    int x = find(i), y = find(j);
+    if (rank[x] <= rank[y])
+        fa[x] = y;
+    else
+        fa[y] = x;
+    if (rank[x] == rank[y] && x != y)
+        rank[y]++;
+}
+int main()
+{
+    int n, m, p, x, y;
+    scanf("%d%d%d", &n, &m, &p);
+    init(n);
+    for (int i = 0; i < m; ++i)
+    {
+        scanf("%d%d", &x, &y);
+        merge(x, y);
+    }
+    for (int i = 0; i < p; ++i)
+    {
+        scanf("%d%d", &x, &y);
+        printf("%s\n", find(x) == find(y) ? "Yes" : "No");
+    }
+    return 0;
+}
+```
 
 ## 滑动窗口&双指针
 

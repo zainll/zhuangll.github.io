@@ -24,6 +24,7 @@
     "hexo-encrypt": "^0.5.5",
     "hexo-enhancer": "^1.0.10",
     "hexo-filter-github-emojis": "^3.0.4",
+    "hexo-filter-mermaid-diagrams": "^1.0.5",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-baidu-sitemap": "^0.1.9",
     "hexo-generator-category": "^1.0.0",
