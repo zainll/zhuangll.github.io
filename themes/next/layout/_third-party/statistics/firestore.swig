@@ -39,6 +39,15 @@
       }
     }
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.4/dist/browser/view.min.js"></script>
+<script>
+    const mindmaps = document.querySelectorAll('.markmap-svg');
+
+    for(const mindmap of mindmaps) {
+        markmap.markmap(mindmap, JSON.parse(mindmap.innerHTML));
+    }
+</script>
   <script{{ pjax }}>
     (function() {
       var db = firebase.firestore();
