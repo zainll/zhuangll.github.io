@@ -142,13 +142,15 @@
 </ul>
 </li>
 </ul>
+<p>教父三部曲</p>
 <pre class="mermaid">graph TD;
     A--&gt;B;
     A--&gt;C;
     B--&gt;D;
     C--&gt;D;</pre>
 
-<p>教父三部曲<br>勇敢的心</p>
+
+<p>勇敢的心</p>
 <pre class="mermaid">graph TD
     B["HEXO支持的流程图"]
     B--&gt;C[mermaid]
