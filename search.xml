@@ -785,7 +785,7 @@
   </entry>
   <entry>
     <title>C/C++内存管理</title>
-    <url>/2021/11/07/2021/11/%E5%86%85%E5%AD%98/</url>
+    <url>/2021/10/07/2021/11/%E5%86%85%E5%AD%98/</url>
     <content><![CDATA[<h2 id="一、内存"><a href="#一、内存" class="headerlink" title="一、内存"></a>一、内存</h2><p> 在计算机中，不同应用程序之间的内存是相互独立的，通常情况下不可以相互访问。</p>
 <span id="more"></span>
 
