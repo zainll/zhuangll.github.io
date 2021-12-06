@@ -775,7 +775,7 @@
 <h3 id="3-2-8-leetcode排序"><a href="#3-2-8-leetcode排序" class="headerlink" title="3.2.8 leetcode排序"></a>3.2.8 leetcode排序</h3><h2 id="3-3-贪心算法"><a href="#3-3-贪心算法" class="headerlink" title="3.3 贪心算法"></a>3.3 贪心算法</h2><h3 id="3-3-1-基本概念"><a href="#3-3-1-基本概念" class="headerlink" title="3.3.1 基本概念"></a>3.3.1 基本概念</h3><p> 贪心算法:在对问题求解时,总是做出在当前是最好的选择,即不考虑整体最优,仅考虑局部最优解.<br> 贪心算法没有固定算法框架,算法关键是贪心策略的选择.他想算法不是所有问题都得到最优解,选择贪心策略必须具备无后效性,即某个状态以后的过程不会影响一起的状态,只与当前状态有关.</p>
 <h3 id="3-3-2-描述"><a href="#3-3-2-描述" class="headerlink" title="3.3.2 描述"></a>3.3.2 描述</h3><p> 贪心算法实现步骤:<br> 1.建立数学模型描述问题<br> 2.把求解的问题分成若干个子问题<br> 3.对每个子问题求解,得到子问题的局部最优解<br> 4.把子问题的解局部最优解合成原来问题的一个解.<br> 实现算法过程:</p>
 <figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (能朝给定总目标前进一步)</span><br><span class="line">{</span><br><span class="line">    利用可行的决策,求出可行解的一个解元素;</span><br><span class="line">}</span><br><span class="line">由所有解元素组合成问题的一个可行解</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="3-3-3-应用"><a href="#3-3-3-应用" class="headerlink" title="3.3.3. 应用"></a>3.3.3. 应用</h3><p><strong>最小生成树算法</strong><br> 贪心算法经典实践:最小生成树算法<br> 设<code>G=(V, E)</code>是无向连通带权图,即一个网络,E中的每一条边<code>(v,w)</code> 的全为 <code>c[v][w]</code>.如果G的字体 G’ 是一颗包含 G 的所有顶点的数,则称 G’ 为 G 的生成树.生成树上各边权的总和称为生成树的耗费.在 G 的所有生成树中,耗费最小的生成树称为 G 的最小生成树.<br> 最小伸出手的性质:<br>  设<code>G=(V, E)</code>是连通带权图, U是V的真子集.如果(u,v)属于E,且u属于E,v属于V-U,且在所有这样的边中,(u,v)的权c[u][v]最小,那么一定存在G的一颗最小生成树,它亦是(u,v)为其中一条边,这个性质有时也称为MST性质.</p>
+<h3 id="3-3-3-应用"><a href="#3-3-3-应用" class="headerlink" title="3.3.3. 应用"></a>3.3.3. 应用</h3><p><strong>最小生成树算法</strong><br> 贪心算法经典实践:最小生成树算法<br> 设<code>G=(V, E)</code>是无向连通带权图,即一个网络,E中的每一条边<code>(v,w)</code> 的全为 <code>c[v][w]</code>.如果G的字体 G’ 是一颗包含 G 的所有顶点的数,则称 G’ 为 G 的生成树.生成树上各边权的总和称为生成树的耗费.在 G 的所有生成树中,耗费最小的生成树称为 G 的最小生成树.<br> 最小生成树的性质:<br>  设<code>G=(V, E)</code>是连通带权图, U是V的真子集.如果(u,v)属于E,且u属于E,v属于V-U,且在所有这样的边中,(u,v)的权c[u][v]最小,那么一定存在G的一颗最小生成树,它亦是(u,v)为其中一条边,这个性质有时也称为MST性质.</p>
 <p><strong>Prim算法</strong><br>  设<code>G=(V, E)</code>是连通带权图, V={1,2,…,n}.构造G的最小生成树Prim算法的基本思想是:**首先置S={1},然后,只有S是V的真子集,就进行如下的贪心选择:选取满足添加i属于S,j属于V-S,且c[i][j]最小的边,将顶点j添加到S中.这个过程一直进行到S=V时为止.在这个过程中选取到的所有边恰好构成G的一颗最小生成树.</p>
 <h3 id="3-3-4-leetcode题目"><a href="#3-3-4-leetcode题目" class="headerlink" title="3.3.4 leetcode题目"></a>3.3.4 leetcode题目</h3><ul>
 <li>柠檬水找零</li>
@@ -855,12 +855,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/10/27/2021/11/leetcode%E9%A2%98%E8%A7%A3%E7%AE%97%E6%B3%95/" rel="prev" title="leetcode题解算法分析">
-      <i class="fa fa-chevron-left"></i> leetcode题解算法分析
+    <a href="/2021/10/26/Software&Tool/" rel="prev" title="Software&Tool">
+      <i class="fa fa-chevron-left"></i> Software&Tool
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/10/27/%E4%B9%A6%E5%8D%95/" rel="next" title="书单&电影">
-      书单&电影 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/10/27/2021/11/leetcode%E9%A2%98%E8%A7%A3%E7%AE%97%E6%B3%95/" rel="next" title="leetcode题解算法分析">
+      leetcode题解算法分析 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
