@@ -134,7 +134,7 @@
 <li>黑炮事件</li>
 <li>乌龟也会飞: 伊拉克,美伊战争</li>
 <li>牧马人: 改编自张贤亮的小说&lt;令与肉&gt;特殊时期,被批判的人遇到善良的爱人.汗水浸过的土地,相濡以沫的.传统女性,自信,高贵.</li>
-<li>最爱 : 章子怡(琴琴),郭富城(得意);卖血,艾滋病村,艾滋病人的人生,爱情.</li>
+<li>最爱 : 章子怡(琴琴),郭富城(得意);卖血,艾滋病村,艾滋病人的人生,爱情.贫穷,人性,善良,荒凉.</li>
 </ul>
 </li>
 </ul>
@@ -731,28 +731,6 @@
       </tags>
   </entry>
   <entry>
-    <title>C/C++内存管理</title>
-    <url>/2021/10/07/2021/11/%E5%86%85%E5%AD%98/</url>
-    <content><![CDATA[<h2 id="一、内存"><a href="#一、内存" class="headerlink" title="一、内存"></a>一、内存</h2><p> 在计算机中，不同应用程序之间的内存是相互独立的，通常情况下不可以相互访问。</p>
-<span id="more"></span>
-
-<p>1、内存四区<br>从下到上为：代码区、数据区、堆区、栈区。<br>栈区：存储临时变量的区域，临时变量包括：局部变量、返回值、参数、返回地址。这些变量超出作用域自动弹出。超出栈大小将会栈溢出。栈从栈顶自上而下，最下端为0x0000。<br>堆区：比较大的内存区域，用于动态内存分配，由开放人员申请和释放，在程序结束时未释放，将会右系统自动回收。<br>数据区：主要存放全局变量、常量和静态变量；数据区又可以划分为：全局区和静态区。<br>代码区：主要纯粹可执行代码。属性为只读的。</p>
-<h2 id="二、malloc和free"><a href="#二、malloc和free" class="headerlink" title="二、malloc和free"></a>二、malloc和free</h2><p> 在 C 语言（不是 C++)中，malloc 和 free 是系统提供的函数，成对使用，用于从堆中分配和释放内存。malloc 的全称是 memory allocation 译为“动态内存分配”。</p>
-<ul>
-<li>参考链接：<br><a href="https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ">https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ</a></li>
-</ul>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2021</category>
-        <category>11</category>
-      </categories>
-      <tags>
-        <tag>Another Tag</tag>
-        <tag>Computer Science</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>leetcode题解算法分析</title>
     <url>/2021/10/27/2021/11/leetcode%E9%A2%98%E8%A7%A3%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h2 id="1-单调栈"><a href="#1-单调栈" class="headerlink" title="1.单调栈"></a>1.单调栈</h2><h3 id="1-1-代表题目-84-柱状图中最大的矩形"><a href="#1-1-代表题目-84-柱状图中最大的矩形" class="headerlink" title="1.1 代表题目: 84.柱状图中最大的矩形"></a>1.1 代表题目: 84.<a href="https://leetcode-cn.com/problems/largest-rectangle-in-histogram/description/">柱状图中最大的矩形</a></h3><details>
@@ -1069,6 +1047,28 @@
       <tags>
         <tag>Another Tag</tag>
         <tag>English</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C/C++内存管理</title>
+    <url>/2021/10/07/2021/11/%E5%86%85%E5%AD%98/</url>
+    <content><![CDATA[<h2 id="一、内存"><a href="#一、内存" class="headerlink" title="一、内存"></a>一、内存</h2><p> 在计算机中，不同应用程序之间的内存是相互独立的，通常情况下不可以相互访问。</p>
+<span id="more"></span>
+
+<p>1、内存四区<br>从下到上为：代码区、数据区、堆区、栈区。<br>栈区：存储临时变量的区域，临时变量包括：局部变量、返回值、参数、返回地址。这些变量超出作用域自动弹出。超出栈大小将会栈溢出。栈从栈顶自上而下，最下端为0x0000。<br>堆区：比较大的内存区域，用于动态内存分配，由开放人员申请和释放，在程序结束时未释放，将会右系统自动回收。<br>数据区：主要存放全局变量、常量和静态变量；数据区又可以划分为：全局区和静态区。<br>代码区：主要纯粹可执行代码。属性为只读的。</p>
+<h2 id="二、malloc和free"><a href="#二、malloc和free" class="headerlink" title="二、malloc和free"></a>二、malloc和free</h2><p> 在 C 语言（不是 C++)中，malloc 和 free 是系统提供的函数，成对使用，用于从堆中分配和释放内存。malloc 的全称是 memory allocation 译为“动态内存分配”。</p>
+<ul>
+<li>参考链接：<br><a href="https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ">https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ</a></li>
+</ul>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2021</category>
+        <category>11</category>
+      </categories>
+      <tags>
+        <tag>Another Tag</tag>
+        <tag>Computer Science</tag>
       </tags>
   </entry>
 </search>
