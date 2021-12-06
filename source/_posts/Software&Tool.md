@@ -144,3 +144,8 @@ https://www.ganbey.com/youtube-download-3774
 https://blog.csdn.net/twd_1991/article/details/80481920
 
 http://hardysimpson.github.io/zlog/UsersGuide-CN.html
+
+
+## gdb
+
+https://leetcode-cn.com/circle/article/7mxorv
