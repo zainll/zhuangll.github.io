@@ -612,14 +612,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>16k</span>
+              <span>18k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>15 分钟</span>
+              <span>17 分钟</span>
             </span>
 
         </div>
@@ -631,14 +631,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="1-单调栈"><a href="#1-单调栈" class="headerlink" title="1.单调栈"></a>1.单调栈</h2><h3 id="1-1-代表题目-84-柱状图中最大的矩形"><a href="#1-1-代表题目-84-柱状图中最大的矩形" class="headerlink" title="1.1 代表题目: 84.柱状图中最大的矩形"></a>1.1 代表题目: 84.<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/largest-rectangle-in-histogram/description/">柱状图中最大的矩形</a></h3><details>
-  <summary>柱状图中最大的矩形 c语言</summary>
-
-<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">largestRectangleArea</span><span class="params">(<span class="keyword">int</span>* heights, <span class="keyword">int</span> heightsSize)</span> </span>{</span><br><span class="line">    <span class="comment">// 栈顶标记,单调递减栈</span></span><br><span class="line">    <span class="keyword">int</span> top = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">int</span> area = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> maxArea = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> *<span class="built_in">stack</span> = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * (heightsSize + <span class="number">2</span>));</span><br><span class="line">    <span class="keyword">int</span> *buf = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * (heightsSize + <span class="number">2</span>));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 增加前哨兵</span></span><br><span class="line">    buf[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 在最后增加哨兵</span></span><br><span class="line">    buf[heightsSize + <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= heightsSize; i++) {</span><br><span class="line">        buf[i] = heights[i - <span class="number">1</span>];</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="built_in">stack</span>[++top] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; heightsSize + <span class="number">2</span>; i++) {</span><br><span class="line">        <span class="keyword">while</span> (top &gt; <span class="number">0</span> &amp;&amp; buf[i] &lt; buf[<span class="built_in">stack</span>[top]]) {</span><br><span class="line">            <span class="comment">// 注意 i - </span></span><br><span class="line">            area = (i - <span class="built_in">stack</span>[top - <span class="number">1</span>] - <span class="number">1</span>) * buf[<span class="built_in">stack</span>[top]];</span><br><span class="line">            maxArea = maxArea &gt; area ? maxArea : area;</span><br><span class="line">            top--;</span><br><span class="line">        }</span><br><span class="line">        <span class="comment">// 索引入栈，其他可能是元素入栈</span></span><br><span class="line">        <span class="built_in">stack</span>[++top] = i;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> maxArea;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-</details>
-
-<br>
+          <h2 id="1-递归思想"><a href="#1-递归思想" class="headerlink" title="1.递归思想"></a>1.递归思想</h2><h3 id="1-1-递归思想"><a href="#1-1-递归思想" class="headerlink" title="1.1 递归思想"></a>1.1 递归思想</h3><p> 递归思想是:将大问题分解为小问题来求解,然后再将小问题分解为更小的问题.逐层分解,直到问题规模被分解到可以直接计算结果.<br> 如果把一层一层分解过程画成图,它其实就是一棵树,称为递归树.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/10/27/2021/11/leetcode%E9%A2%98%E8%A7%A3%E7%AE%97%E6%B3%95/#more" rel="contents">
@@ -1058,12 +1051,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">53k</span>
+    <span title="站点总字数">55k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">49 分钟</span>
+    <span title="站点阅读时长">50 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
