@@ -9,6 +9,123 @@ tags:
     - Another Tag
 ---
 
+## 1.递归思想
+### 1.1 递归思想
+&ensp;递归思想是:将大问题分解为小问题来求解,然后再将小问题分解为更小的问题.逐层分解,直到问题规模被分解到可以直接计算结果.
+&ensp;如果把一层一层分解过程画成图,它其实就是一棵树,称为递归树.
+
+<!--more-->
+
+&ensp;斐波那契数列
+```c
+int fib(int N)
+{
+    if (N < = 1) {
+        return N;
+    }
+    
+    return fib(N-1) + fib(N-2);
+}
+```
+&ensp;递归的过程中,符合**后进先出**规则,所以用一个堆栈的数据结构.函数递归过程中会自动产生栈帧,当函数栈帧的深度越来越大,栈也也越来越大,如果递归没有终止条件,则会爆栈.递归算法第一步要思考的就是**递归终止条件**.
+&ensp;递归思想的两个延申算法:分治算法和动态规划.
+&ensp;递归的一般结构:
+```c
+void func()
+{
+    if (符合边界条件) {
+        ...
+        return ..;
+    }
+    // 某种形式的调用
+    func();
+}
+```
+&ensp;阶乘函数:
+```c
+int factorial(int n)
+{
+    if (n <= 1) {
+        return 1;
+    }
+
+    return n * factorial(n-1);
+}
+```
+
+- 参考链接:https://www.jianshu.com/p/b2d2edb4ba5b
+
+### 1.2 递归基本步骤:
+&ensp;&emsp;1.定义一个函数,明确函数功能
+&ensp;&emsp;2.寻找问题与子问题之间的关系(递推公式)
+&ensp;&emsp;3.将递推公式在定义的函数中实现
+&ensp;&emsp;4.推导时间复杂度,判定是否可以接受,无法接受更换算法.
+
+### 1.3 代表题目
+- 爬楼梯 70
+
+```c
+int climbStairs(int n)
+{
+    int *mem = (int *)malloc(sizeof(int) * (n+1));
+    return climb(n, mem);
+}
+
+int climb(int n, int *mem)
+{
+    if (n == 1) {
+        return 1;
+    }
+    if (n == 2) {
+        return 2;
+    }
+    if (mem[n] > 0) {
+        return mem[n];
+    }
+    mem[0] = climb(n-1, mem) + climb(n-2, mem);
+
+    return mem[n];
+}
+```
+
+- 青蛙跳台阶 10-II
+
+```c
+int numWays(int n)
+{
+    int num[n+1] = {-1};
+    return jump(n, num);
+}
+
+int jump(int n, int *num)
+{
+    if (num[n] != -1) {
+        return num[n];
+    }
+    if (n == 1 || n == 0) {
+        return 1;
+    }
+
+    num[n] = (jump(n-1, num) + jump(n-2, num) % 1e9+7);
+    return num[n];
+}
+```
+
+### 1.4 触类旁通
+- 反转二叉树 226
+
+
+- 路径总和 112
+
+- 细胞分裂
+
+https://www.jianshu.com/p/b2d2edb4ba5b
+
+
+
+## 2. 分治思想
+
+
 ## 1.单调栈
 ### 1.1 代表题目: 84.[柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/description/)
 
@@ -52,7 +169,7 @@ int largestRectangleArea(int* heights, int heightsSize) {
 
 <br>
 
-<!--more-->
+
 ### 1.2 单调栈描述
 
 &ensp;单调栈里面的元素大小按照他们所在栈内的位置,满足一定的单调性.
@@ -61,6 +178,73 @@ int largestRectangleArea(int* heights, int heightsSize) {
 > 单调递减栈：单调递减栈就是从栈底到栈顶数据是从大到小; 可找到左起第一个比当前数字大的元素.
 
 &emsp;单调递增栈，元素进栈过程，若当前进栈的元素a，如果a>栈顶元素，则直接将a进栈，如果a<=栈顶元素，则不断将栈顶元素出栈，直到满足a>栈顶元素。单调递减栈则为a<栈顶元素时进栈。
+
+&ensp;题目分析:给定一个数组,返回一个大小相同的数组,返回的数组的第i个位置的值应当是,对于原数组中的第i个元素,至少往右走多少步,才能遇到一个比自己大的元素(如果没有比自己大的元素,或为最后一个元素,则返回对应位置上为-1).
+&emsp;例如:
+&ensp;&emsp;input: 5, 3, 1, 2, 4
+&ensp;&emsp;return: -1, 3, 1, 1, -1
+&emsp;暴力解法时间复杂度O(n^2)
+
+&ensp;单调栈通常应用在一维数组上,和前后元素大小之间关系有关的问题.单调栈时间复杂度为`O(n)`.
+### 1.3 leetcode题目
+[85.最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/)
+&ensp;给定一个仅包含 0 和 1 、大小为 rows x cols 的二维二进制矩阵，找出只包含 1 的最大矩形，并返回其面积。
+&emsp;思路:对于每一行,构建一个histogram,然后计算.在构建新的histogram的时候,不需要全部遍历,只需对已有的histogram进行略微修改(运用DP的思想)
+
+
+
+```c
+int maximalRectangle(char** matrix, int matrixSize, int* matrixColSize)
+{
+    int m = matrixSize;
+    if (m == 0) {
+        return 0;
+    }
+    int n = matrixColSize[0];
+    int left[m][n];
+    memset(left, 0, sizeof(left));
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            if (matrix[i][j] == '1') {
+                left[i][j] = (j == 0 ? 0 : left[i][j - 1]) + 1;
+            }
+        }
+    }
+
+    int ret = 0;
+    for (int j = 0; j < n; j++) {  // 对于每一列，使用基于柱状图的方法
+        int up[m], down[m];
+        memset(up, 0, sizeof(up));
+        memset(down, 0, sizeof(down));
+        int stk[m], top = 0;
+        for (int i = 0; i < m; i++) {
+            while (top > 0 && left[stk[top - 1]][j] >= left[i][j]) {
+                top--;
+            }
+            up[i] = top == 0 ? -1 : stk[top - 1];
+            stk[top++] = i;
+        }
+        top = 0;
+        for (int i = m - 1; i >= 0; i--) {
+            while (top > 0 && left[stk[top - 1]][j] >= left[i][j]) {
+                top--;
+            }
+            down[i] = top == 0 ? m : stk[top - 1];
+            stk[top++] = i;
+        }
+
+        for (int i = 0; i < m; i++) {
+            int height = down[i] - up[i] - 1;
+            int area = height * left[i][j];
+            ret = fmax(ret, area);
+        }
+    }
+    return ret;
+}
+```
+
+![20211207235410](https://s2.loli.net/2021/12/07/aU8ZQBWRo9dTXMb.png)
+
 
 ```c
 stack<int> st;
@@ -83,14 +267,204 @@ for (遍历这个数组)
 }
 ```
 
-&ensp;题目分析:给定一个数组,返回一个大小相同的数组,返回的数组的第i个位置的值应当是,对于原数组中的第i个元素,至少往右走多少步,才能遇到一个比自己大的元素(如果没有比自己大的元素,或为最后一个元素,则返回对应位置上为-1).
-&emsp;例如:
-&ensp;&emsp;input: 5, 3, 1, 2, 4
-&ensp;&emsp;return: -1, 3, 1, 1, -1
-&emsp;暴力解法时间复杂度O(n^2)
+<details>
+<summary>单调栈</summary>
 
-&ensp;单调栈通常应用在一维数组上,和前后元素大小之间关系有关的问题.单调栈时间复杂度为`O(n)`.
-### 1.3 leetcode题目
+```c
+int largestRectangleArea(int* heights, int heightsSize,int *S,int top){
+    // int*S=(int*)malloc(sizeof(int)*heightsSize); // 初始化栈，栈内保存柱子序号
+    // int top=-1;
+    int start,end,h;
+    int r=0;
+    S[++top]=0; // 入栈第一根柱子
+    for(int i=1;i<=heightsSize-1;i++){ // 遍历所有柱子
+        if(heights[i] >= heights[S[top]] ) S[++top]=i; // 若当前柱子大于栈顶或等于栈顶，直接入栈
+        else{ // 若当前柱子小于栈顶，则依次出栈较高的柱子并计算面积
+            end = S[top]; // 记录最右边最高的柱子位置，之后每次矩形的底边是从出栈位置到最右边最高柱子的位置
+            while(top != -1 && heights[i] < heights[S[top]] ){
+                h = heights[S[top--]]; // 保存当前矩形的高
+                while( top != -1 && heights[S[top]] == h) top--; // 若有相同高的柱子，直接出栈
+                if ( top != -1) start=S[top]; // 避免栈为空
+                else start=-1;
+
+                if(r < (end-start)*h) r=(end-start)*h; // 矩形面积是最高柱子位置减去当前栈顶柱子的位置乘高
+            }
+            S[++top]=i;
+        }
+    }
+    // 此时栈内剩余递增序列，出栈依次计算面积。计算流程同上
+    end = S[top];
+    while(top != -1){
+        h = heights[S[top--]];
+        while( top != -1 && heights[S[top]] == h) top--;
+        if (top != -1) start=S[top];
+        else start=-1;
+
+        if(r < (end-start)*h) r=(end-start)*h;
+    }
+    return r;
+}
+
+int maximalRectangle(char** matrix, int matrixSize, int* matrixColSize){
+    int m=matrixSize;
+    int n=*matrixColSize;
+    if (m==0) return 0;
+    int *heights = (int*)malloc(sizeof(int)*n);
+    int*S=(int*)malloc(sizeof(int)*n); // 初始化栈，栈内保存柱子序号
+    int r=0;
+
+    for(int k=0;k<=n-1;k++) heights[k]=0;
+    for(int i=0;i<=m-1;i++){
+        for(int j=0;j<=n-1;j++){
+            if(matrix[i][j]=='1') heights[j]++;
+            else heights[j]=0;
+        }
+        int top=-1;
+        int cur=largestRectangleArea(heights,n,S,top);
+        if(cur > r) r=cur;
+    }
+    return r;
+}
+
+```
+
+</details>
+
+<details>
+<summary></summary>
+
+```c
+typedef struct {
+    void **data;
+    int top;
+    int size;
+} Stack;
+
+Stack *StackCreate(int stackSize)
+{
+    Stack *stack = (Stack *)malloc(sizeof(Stack));
+    if (stack == NULL) {
+        return NULL;
+    }
+
+    stack->data = (void **)malloc(sizeof(void **) * (stackSize + 1));
+    memset(stack->data, 0, sizeof(void **) * (stackSize + 1));
+    stack->top = -1;
+    stack->size = stackSize;
+    return stack;
+}
+
+void StackFree(Stack *obj)
+{
+    if (obj->data != NULL) {
+        free(obj->data);
+        obj->data = NULL;
+    }
+    free(obj);
+    obj = NULL;
+    return;
+}
+
+bool IsStackEmpty(Stack *obj)
+{
+    return (obj->top == -1);
+}
+
+bool IsStackFull(Stack *obj)
+{
+    return (obj->top ==  obj->size);
+}
+
+void StackPush(Stack *obj, void *data)  // 泛型接口，使用void *
+{
+    if (IsStackFull(obj) == true) {
+        return;
+    }
+    int top = obj->top;
+    obj->data[++top] = data;
+    obj->top = top;
+    return;
+}
+
+void StackPop(Stack *obj)
+{
+    if (IsStackEmpty(obj) == true) {
+        return;
+    }
+    void *data = obj->data[obj->top];
+    free(data);
+    data = NULL;
+    obj->top--;
+    return;
+}
+
+void *StackTop(Stack *obj)
+{
+    if (IsStackEmpty(obj) == true) {
+        return NULL;
+    }
+    return (obj->data[obj->top]);
+}
+
+void StackClear(Stack *obj)
+{
+    if (IsStackEmpty(obj) == true) {
+        return;
+    }
+
+    for (int i = 0; i <= obj->top; i++) {
+        void *data = obj->data[i];
+        if (data != NULL) {
+            free(data);
+            data = NULL;
+        }
+    }
+    obj->top = -1;
+    return;
+}
+
+#define MAX(a, b) ((a) > (b) ? (a) : (b))
+int maximalRectangle(char **matrix, int matrixSize, int *matrixColSize)
+{
+    int **height = (int **)malloc(sizeof(int *) * matrixSize);
+    for (int i = 0; i < matrixSize; i++) {
+        height[i] = (int *)malloc(sizeof(int) * (matrixColSize[i] + 1));
+        for (int j = 0; j < matrixColSize[i]; j++) {
+            if (i == 0) {
+                height[i][j] = (matrix[i][j] == '1') ? 1 : 0;
+            } else {
+                height[i][j] = (matrix[i][j] == '1') ? (height[i - 1][j] + 1) : 0;
+            }
+        }
+        height[i][matrixColSize[i]] = 0;
+    }
+
+    Stack *monotoneStack = StackCreate(matrixSize * matrixSize);
+    int ans = 0;
+    for (int i = 0; i < matrixSize; i++) {
+        for (int j = 0; j <= matrixColSize[i]; j++) {
+            while ((IsStackEmpty(monotoneStack) != true) && 
+                    (height[i][*(int *)monotoneStack->data[monotoneStack->top]] >= height[i][j])) {
+                int h = height[i][*(int *)monotoneStack->data[monotoneStack->top]];
+                StackPop(monotoneStack);
+                int sidx = ((IsStackEmpty(monotoneStack) == true) ? -1 : *(int *)(monotoneStack->data[monotoneStack->top]));
+                ans = MAX(ans, h * (j - sidx - 1));
+            }
+            int *node = (int *)malloc(sizeof(int));
+            *node = j;
+            StackPush(monotoneStack, node); 
+        }
+        StackClear(monotoneStack);
+    }
+
+    StackFree(monotoneStack);
+    return ans;
+}
+```
+
+</details>
+
+
 85 Maximal Reactangle
 leetcode 496、503、739、239
 42.接雨水
@@ -111,12 +485,105 @@ https://blog.csdn.net/chongbin007/article/details/112741867?utm_term=%E5%8D%95%E
 
 返回矩阵中 省份 的数量。
 
+```c
+int *g_test;
+
+bool init(int mSize)
+{
+    int i;
+    if (mSize < 1) {
+        return false;
+    }
+    g_dest = (int *)malloc(mSize * sizeof(int));
+    if (g_dest == NULL) {
+        return false;
+    }
+    
+    fot (i = 0; i < mSize; i++) {
+        g_dest[i] = i;
+    }
+    return true;
+}
+
+int Find(int index)
+{
+    if (g_dest[index] == index) {
+        return index;
+    }
+    return g_dest[index] = Find(g_dest[index]);
+}
+
+int FindRoot(int i)
+{
+    while (g_dest[i] != 0) {
+        i = g_dest[i];
+    }
+    return i;
+}
+
+void ProcCircle(int **m, int mSize)
+{
+    int i, j;
+    int rootI, rootJ;
+    for (i = 0; i < mSize; i++) {
+        for (int j = (i + 1); j < mSize; j++) {
+            if (m[i][j] != 1) {
+                continue;
+            }
+            rootI = FindRoot(i);
+            rootJ = FindRoot(j);
+            if (rootI == rootJ) {
+                continue;
+            }
+            g_dest[rootI] = rootJ;
+        }
+    }
+    return;
+}
+
+int GetCircleNum(int mSize)
+{
+    int sum = 0;
+    for (int i = 0; i < mSize; i++) {
+        if (g_dest[i] == i) {
+            sum++;
+        }
+    }
+    return sum;
+}
+
+void FreeCircle()
+{
+    if (g_dest != NULL) {
+        free(g_dest);
+        g_dest = 0;
+    }
+}
+
+int findCircleNum(int **m, int mSize, int* mColSize)
+{
+    bool rslt;
+    int sum;
+    rslt = Init(mSize);
+    if (!rslt)  {
+        return 0;
+    }
+
+    ProcCicle(m, mSize);
+    sum = GetCircleNum(mSize);
+
+    FreeCircle();
+    return sum;
+}
+
+```
+
 
 ### 2.2 并查集介绍
 
 &ensp;并查集主要用于解决一些元素分组的问题，管理一系列不相交的集合，并支持两种操作：
-**合并(union)**：把两个不相交的集合合并为一个集合。
-**查询(find)**：查询两个元素是否在同一个集合中。
+**合并(union)** :把两个不相交的集合合并为一个集合。
+**查询(find)** :查询两个元素是否在同一个集合中。
 &ensp;并查集的重要思想在于，用集合中的一个元素代表集合。
 
 &ensp;**路径压缩**
@@ -219,6 +686,8 @@ int main()
 }
 ```
 
+
+
 ### 2.3 最小生成树
 
 &ensp;关于图的几个概念定义:
@@ -230,8 +699,10 @@ int main()
 
 
 - 参考链接:https://blog.csdn.net/luoshixian099/article/details/51908175
-## 3.滑动窗口&双指针
 
+
+
+## 3.滑动窗口&双指针
 
 ### 3.1 经典题目 1208.进可能使字符串相等
 
