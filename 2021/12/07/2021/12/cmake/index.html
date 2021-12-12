@@ -264,7 +264,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.6k</span>
+              <span>4.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -289,7 +289,7 @@
 <p> CMake工程简单例子</p>
 <figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cmake_minimum_required(VERSION 3.12)</span><br><span class="line">project(myproj)</span><br><span class="line">find_package(Poco REQUIRED COMPONENTS Net Util)</span><br><span class="line">add_executable(MyExe)</span><br><span class="line">target_source(MyExe PRIVATE <span class="string">"main.cpp"</span>)</span><br><span class="line">target_link_library(MyExe PRIVATE Poco::Net PocoUtil)</span><br><span class="line"></span><br><span class="line">target_complie_definition(MyExe PRIVATE std_cxx_14)</span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="2-Target-和围绕-Target-的配置"><a href="#2-Target-和围绕-Target-的配置" class="headerlink" title="2.Target 和围绕 Target 的配置"></a>2.Target 和围绕 Target 的配置</h2><p> C/C++工程通常都是为了生成可执行程序或者链接库，在现代 CMake 里他们被统称为<code>target</code>，创建命令分别是<code>add_library()</code>和<code>add_executable()</code>。其中链接库的类型又分为很多种，最常用的就是<code>SHARED</code>以及<code>STATIC</code>，在命令中加入关键词进行声明：add_library(MyLib SHARED)，第一个参数为target的名称，后续的配置都需要用到这个名字。<br> 指定target的源文件：<br>target_source(MyLib PRVIATE</p>
+<h2 id="2-Target-和围绕-Target-的配置"><a href="#2-Target-和围绕-Target-的配置" class="headerlink" title="2.Target 和围绕 Target 的配置"></a>2.Target 和围绕 Target 的配置</h2><p> C/C++工程通常都是为了生成可执行程序或者链接库，在现代 CMake 里他们被统称为<code>target</code>，创建命令分别是<code>add_library()</code>和<code>add_executable()</code>。其中链接库的类型又分为很多种，最常用的就是<code>SHARED</code>以及<code>STATIC</code>，在命令中加入关键词进行声明：add_library(MyLib SHARED)，第一个参数为target的名称，后续的配置都需要用到这个名字。<br> 指定target的源文件：</p>
 <figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">target_source(MyLib PRVIATE <span class="string">"main.cpp"</span> <span class="string">"func.cpp"</span>)</span><br></pre></td></tr></tbody></table></figure>
 <p> PRIVATE关键词用于描述参数的“应用范围”，此外还有INTERFACE和PUBLIC两种可能的值</p>
 <p> 较多的源文件，可以使用 CMake 的file命令进行遍历拿到全部的源文件</p>
@@ -485,12 +485,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">55k</span>
+    <span title="站点总字数">61k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">50 分钟</span>
+    <span title="站点阅读时长">55 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
