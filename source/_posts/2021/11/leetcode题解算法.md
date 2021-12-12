@@ -68,6 +68,7 @@ int factorial(int n)
 int climbStairs(int n)
 {
     int *mem = (int *)malloc(sizeof(int) * (n+1));
+    int mem[n] = {};
     return climb(n, mem);
 }
 
@@ -113,9 +114,57 @@ int jump(int n, int *num)
 
 ### 1.4 触类旁通
 - 反转二叉树 226
+&emsp;1).对于根节点`1`来说,假设`2,3`节点下的节点都已经翻转,那么只要翻转`2,2`节点即满足需求.
+&emsp;2).对于`2,3`节点来说,也是翻转其左右节点即可.
+&emsp;依此类推,对每一个节点,依次翻转其左右节点,所以我们可知问题与子问题的关系是翻转(根节点) = 翻转(根节点的左节点) + 翻转(根节点的右节点),即
+> invert(root) = invert(root->left) + invert(root->right)
+&emsp;加号是追加到root上的意思
 
+```c
+typedef struct TreeNode {
+    int data;
+    TreeNode *left;
+    TreeNode *right;
+}
+
+TreeNode invertTree(TreeNode *root)
+{
+    if (root == NULL) {
+        return NULL;
+    }
+
+    TreeNode *left = (struct TreeNode *)malloc(sizeof(TreeNode));
+    TreeNode *right = (struct TreeNode *)malloc(sizeof(TreeNode));
+    left = invertTree(root.left);
+    rgith = invertTree(root.right);
+    root.left = right;
+    root.right = left;
+    return root;
+}
+
+```
 
 - 路径总和 112
+&emsp;给定一个二叉树和一个目标和,判断该树中是否存在根节点到叶子节点的路径,这条路径上所有节点值相加等于目标和.
+```c
+typedef struct TreeNode {
+    int data;
+    struct TreeNode *left;
+    struct TreeNode *right;
+}
+bool hasPathSum(TreeNode *root, int sum)
+{
+    if (root == NULL) {
+        return false;
+    }
+    if (root.left == NULL && root.right == NULL) {
+        return root.data == sum;
+    }
+
+    int remain = sum - root.data;
+    return hasPathSum(root.left, remain) || hashPashSum(root.right, remain);
+}
+```
 
 - 细胞分裂
 
@@ -124,6 +173,15 @@ https://www.jianshu.com/p/b2d2edb4ba5b
 
 
 ## 2. 分治思想
+### 2.1 基本概念
+&emsp;分治法:把一个复杂的问题分成两个或更多的相同或相似的子问题,再把子问题分成更小的子问题...,直到最后子问题可以简单的直接求解,原问题的解即子问题的解的**合并**.分治法思想:排序(快速排序,归并排序),傅里叶变换(快速傅里叶变换
+&emsp;1):数学归纳是使用分治思想.
+&emsp;2):分治思想不一定使用递归结构.
+&ensp;递归结构是循环结构的一种,也是分治思想应用最多的一种程序结构,但不一定使用它.分治法的核心是**如何分**
+
+
+
+
 
 
 ## 1.单调栈
@@ -248,7 +306,7 @@ int maximalRectangle(char** matrix, int matrixSize, int* matrixColSize)
 
 ```c
 stack<int> st;
-//此处一般需要给数组最后添加结束标志符，具体下面例题会有详细讲解
+//此处一般需要给数组最后添加结束标志符，具体下面例题会有详细讲解,单调减栈
 for (遍历这个数组)
 {
 	if (栈空 || 栈顶元素大于等于当前比较元素)
