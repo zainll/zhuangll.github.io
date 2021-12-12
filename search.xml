@@ -163,6 +163,24 @@
       </tags>
   </entry>
   <entry>
+    <title>C/C++</title>
+    <url>/2021/12/07/2021/12/C++/</url>
+    <content><![CDATA[<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><ul>
+<li>开源 C++ 库列表<br><a href="https://zh.cppreference.com/w/cpp/links/libs">https://zh.cppreference.com/w/cpp/links/libs</a></li>
+<li>C 语言<br><a href="https://zh.cppreference.com/w/c/language">https://zh.cppreference.com/w/c/language</a></li>
+</ul>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2021</category>
+        <category>12</category>
+      </categories>
+      <tags>
+        <tag>c/c++</tag>
+        <tag>cs</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据结构与算法基础</title>
     <url>/2021/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h2 id="1-程序性能"><a href="#1-程序性能" class="headerlink" title="1 程序性能"></a>1 程序性能</h2><span id="more"></span>
@@ -586,17 +604,56 @@
 <li>钥匙和房间</li>
 <li>最短路径访问所有节点</li>
 </ul>
-<h2 id="3-常见算法"><a href="#3-常见算法" class="headerlink" title="3 常见算法"></a>3 常见算法</h2><h3 id="3-1-分治法"><a href="#3-1-分治法" class="headerlink" title="3.1 分治法"></a>3.1 分治法</h3><p> 把复杂问题分成两个或者更多相同或相似的子问题，再把子问题分成更小的子问题…，直到可以直接求解，原问题的解为子问题解的合并。<br> 分治法应用：排序算法(快速排序、归并排序);傅里叶变换()。</p>
-<h4 id="3-1-1-概述"><a href="#3-1-1-概述" class="headerlink" title="3.1.1 概述"></a>3.1.1 概述</h4><p> 分治法思想:将一个难以直接解决的大问题,分割成一些规模小的相同问题,分而治之.</p>
-<h4 id="3-1-2-策略"><a href="#3-1-2-策略" class="headerlink" title="3.1.2 策略"></a>3.1.2 策略</h4><p> 分治策略:对于一个规模为n的问题,若该问题可以容易解决则直接解决,否则将其分解为k个规模较小的子问题,子问题之间相互独立且与原问题形式相同,可递归求解.分治通常用递归实现.</p>
-<h4 id="3-1-3-应用场景"><a href="#3-1-3-应用场景" class="headerlink" title="3.1.3 应用场景"></a>3.1.3 应用场景</h4><p> 分治法特征:</p>
+<h2 id="3-常见算法"><a href="#3-常见算法" class="headerlink" title="3 常见算法"></a>3 常见算法</h2><h3 id="3-1-递归思想"><a href="#3-1-递归思想" class="headerlink" title="3.1 递归思想"></a>3.1 递归思想</h3><h4 id="3-1-1-递归思想"><a href="#3-1-1-递归思想" class="headerlink" title="3.1.1 递归思想"></a>3.1.1 递归思想</h4><p> 递归思想是:将大问题分解为小问题来求解,然后再将小问题分解为更小的问题.逐层分解,直到问题规模被分解到可以直接计算结果.<br> 如果把一层一层分解过程画成图,它其实就是一棵树,称为递归树.</p>
+<!--more-->
+
+<p> 斐波那契数列</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> N)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">if</span> (N &lt; = <span class="number">1</span>) {</span><br><span class="line">        <span class="keyword">return</span> N;</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> fib(N<span class="number">-1</span>) + fib(N<span class="number">-2</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p> 递归的过程中,符合<strong>后进先出</strong>规则,所以用一个堆栈的数据结构.函数递归过程中会自动产生栈帧,当函数栈帧的深度越来越大,栈也也越来越大,如果递归没有终止条件,则会爆栈.递归算法第一步要思考的就是<strong>递归终止条件</strong>.<br> 递归思想的两个延申算法:分治算法和动态规划.<br> 递归的一般结构:</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">if</span> (符合边界条件) {</span><br><span class="line">        ...</span><br><span class="line">        <span class="keyword">return</span> ..;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// 某种形式的调用</span></span><br><span class="line">    func();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p> 阶乘函数:</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">factorial</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">1</span>) {</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> n * factorial(n<span class="number">-1</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>参考链接:<a href="https://www.jianshu.com/p/b2d2edb4ba5b">https://www.jianshu.com/p/b2d2edb4ba5b</a></li>
+</ul>
+<h4 id="3-1-2-递归基本步骤"><a href="#3-1-2-递归基本步骤" class="headerlink" title="3.1.2 递归基本步骤:"></a>3.1.2 递归基本步骤:</h4><p>  1.定义一个函数,明确函数功能<br>  2.寻找问题与子问题之间的关系(递推公式)<br>  3.将递推公式在定义的函数中实现<br>  4.推导时间复杂度,判定是否可以接受,无法接受更换算法.</p>
+<h4 id="3-1-3-代表题目"><a href="#3-1-3-代表题目" class="headerlink" title="3.1.3 代表题目"></a>3.1.3 代表题目</h4><ul>
+<li>爬楼梯 70</li>
+</ul>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> *mem = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * (n+<span class="number">1</span>));</span><br><span class="line">    <span class="keyword">int</span> mem[n] = {};</span><br><span class="line">    <span class="keyword">return</span> climb(n, mem);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">climb</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> *mem)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) {</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">2</span>) {</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">if</span> (mem[n] &gt; <span class="number">0</span>) {</span><br><span class="line">        <span class="keyword">return</span> mem[n];</span><br><span class="line">    }</span><br><span class="line">    mem[<span class="number">0</span>] = climb(n<span class="number">-1</span>, mem) + climb(n<span class="number">-2</span>, mem);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> mem[n];</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>青蛙跳台阶 10-II</li>
+</ul>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">numWays</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> num[n+<span class="number">1</span>] = {<span class="number">-1</span>};</span><br><span class="line">    <span class="keyword">return</span> jump(n, num);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">jump</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> *num)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">if</span> (num[n] != <span class="number">-1</span>) {</span><br><span class="line">        <span class="keyword">return</span> num[n];</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span> || n == <span class="number">0</span>) {</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    num[n] = (jump(n<span class="number">-1</span>, num) + jump(n<span class="number">-2</span>, num) % <span class="number">1e9</span>+<span class="number">7</span>);</span><br><span class="line">    <span class="keyword">return</span> num[n];</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="3-1-4-触类旁通"><a href="#3-1-4-触类旁通" class="headerlink" title="3.1.4 触类旁通"></a>3.1.4 触类旁通</h4><ul>
+<li>反转二叉树 226<br> 1).对于根节点<code>1</code>来说,假设<code>2,3</code>节点下的节点都已经翻转,那么只要翻转<code>2,2</code>节点即满足需求.<br> 2).对于<code>2,3</code>节点来说,也是翻转其左右节点即可.<br> 依此类推,对每一个节点,依次翻转其左右节点,所以我们可知问题与子问题的关系是翻转(根节点) = 翻转(根节点的左节点) + 翻转(根节点的右节点),即<blockquote>
+<p>invert(root) = invert(root-&gt;left) + invert(root-&gt;right)<br> 加号是追加到root上的意思</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span> {</span></span><br><span class="line">    <span class="keyword">int</span> data;</span><br><span class="line">    TreeNode *left;</span><br><span class="line">    TreeNode *right;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function">TreeNode <span class="title">invertTree</span><span class="params">(TreeNode *root)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">NULL</span>) {</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    TreeNode *left = (struct TreeNode *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(TreeNode));</span><br><span class="line">    TreeNode *right = (struct TreeNode *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(TreeNode));</span><br><span class="line">    left = invertTree(root.left);</span><br><span class="line">    rgith = invertTree(root.right);</span><br><span class="line">    root.left = right;</span><br><span class="line">    root.right = left;</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li><p>路径总和 112<br> 给定一个二叉树和一个目标和,判断该树中是否存在根节点到叶子节点的路径,这条路径上所有节点值相加等于目标和.</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span> {</span></span><br><span class="line">    <span class="keyword">int</span> data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span> *<span class="title">left</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span> *<span class="title">right</span>;</span></span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">hasPathSum</span><span class="params">(TreeNode *root, <span class="keyword">int</span> sum)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">NULL</span>) {</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">if</span> (root.left == <span class="literal">NULL</span> &amp;&amp; root.right == <span class="literal">NULL</span>) {</span><br><span class="line">        <span class="keyword">return</span> root.data == sum;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> remain = sum - root.data;</span><br><span class="line">    <span class="keyword">return</span> hasPathSum(root.left, remain) || hashPashSum(root.right, remain);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>细胞分裂</p>
+</li>
+</ul>
+<p><a href="https://www.jianshu.com/p/b2d2edb4ba5b">https://www.jianshu.com/p/b2d2edb4ba5b</a></p>
+<h3 id="3-2-分治法"><a href="#3-2-分治法" class="headerlink" title="3.2 分治法"></a>3.2 分治法</h3><p> 把复杂问题分成两个或者更多相同或相似的子问题，再把子问题分成更小的子问题…，直到可以直接求解，原问题的解为子问题解的合并。<br> 分治法应用：排序算法(快速排序、归并排序);傅里叶变换()。</p>
+<h4 id="3-2-1-概述"><a href="#3-2-1-概述" class="headerlink" title="3.2.1 概述"></a>3.2.1 概述</h4><p> 分治法思想:将一个难以直接解决的大问题,分割成一些规模小的相同问题,分而治之.</p>
+<h4 id="3-2-2-策略"><a href="#3-2-2-策略" class="headerlink" title="3.2.2 策略"></a>3.2.2 策略</h4><p> 分治策略:对于一个规模为n的问题,若该问题可以容易解决则直接解决,否则将其分解为k个规模较小的子问题,子问题之间相互独立且与原问题形式相同,可递归求解.分治通常用递归实现.</p>
+<h4 id="3-2-3-应用场景"><a href="#3-2-3-应用场景" class="headerlink" title="3.2.3 应用场景"></a>3.2.3 应用场景</h4><p> 分治法特征:</p>
 <ul>
 <li>问题缩小到一定程度可容易解决.</li>
 <li>问题可分解为若干个规模较小的相同问题,即问题具有最优子结构性质.</li>
 <li>子问题的解可合并为该问题的解.</li>
 <li>问题分解的子问题相互独立,子问题之间不包含公告子问题.</li>
 </ul>
-<h4 id="3-1-4-步骤"><a href="#3-1-4-步骤" class="headerlink" title="3.1.4 步骤"></a>3.1.4 步骤</h4><p> 分治法一层递归步骤:</p>
+<h4 id="3-2-4-步骤"><a href="#3-2-4-步骤" class="headerlink" title="3.2.4 步骤"></a>3.2.4 步骤</h4><p> 分治法一层递归步骤:</p>
 <ul>
 <li><ol>
 <li><strong>分解</strong>:将原问题分解为若干规模较小,相互独立,与原问题形式相同的子问题.</li>
@@ -615,36 +672,36 @@
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 <br>
 
-<h4 id="3-1-5-应用"><a href="#3-1-5-应用" class="headerlink" title="3.1.5 应用"></a>3.1.5 应用</h4><blockquote>
+<h4 id="3-2-5-应用"><a href="#3-2-5-应用" class="headerlink" title="3.2.5 应用"></a>3.2.5 应用</h4><blockquote>
 <p>分治思维方式：二分搜索;大整数乘法;合并排序;快速排序。</p>
 </blockquote>
 <p> 求x的n次幂<br> 对数复杂度O(logn)</p>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">power</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> result;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) {</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">if</span> (n % <span class="number">2</span> == <span class="number">0</span>) {</span><br><span class="line">        result = power(x, n/<span class="number">2</span>) * power(x, n / <span class="number">2</span>);</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        result = power(x, (n + <span class="number">1</span>) / <span class="number">2</span>) * power(x, (n - <span class="number">1</span>) / <span class="number">2</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<h4 id="3-1-6-leetcode题目"><a href="#3-1-6-leetcode题目" class="headerlink" title="3.1.6 leetcode题目"></a>3.1.6 leetcode题目</h4><ul>
+<h4 id="3-2-6-leetcode题目"><a href="#3-2-6-leetcode题目" class="headerlink" title="3.2.6 leetcode题目"></a>3.2.6 leetcode题目</h4><ul>
 <li>搜索二维矩阵II</li>
 <li>求众数</li>
 <li>合并k个排序链表</li>
 </ul>
-<h3 id="3-2-排序算法"><a href="#3-2-排序算法" class="headerlink" title="3.2 排序算法"></a>3.2 排序算法</h3><p> 各种排序算法，主要包括：插入排序、快速排序、归并排序、计数排序和技术排序。二分查找，</p>
-<h4 id="3-2-1-冒泡排序"><a href="#3-2-1-冒泡排序" class="headerlink" title="3.2.1 冒泡排序"></a>3.2.1 冒泡排序</h4><p> 重复地走访过要排序的元素列，依次比较两个相邻的元素，如果他们的顺序（如从大到小、首字母从A到Z）错误就把他们交换过来。<br> <strong>冒泡排序算法复杂度是O(n^2)</strong></p>
+<h3 id="3-3-排序算法"><a href="#3-3-排序算法" class="headerlink" title="3.3 排序算法"></a>3.3 排序算法</h3><p> 各种排序算法，主要包括：插入排序、快速排序、归并排序、计数排序和技术排序。二分查找，</p>
+<h4 id="3-3-1-冒泡排序"><a href="#3-3-1-冒泡排序" class="headerlink" title="3.3.1 冒泡排序"></a>3.3.1 冒泡排序</h4><p> 重复地走访过要排序的元素列，依次比较两个相邻的元素，如果他们的顺序（如从大到小、首字母从A到Z）错误就把他们交换过来。<br> <strong>冒泡排序算法复杂度是O(n^2)</strong></p>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubleSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> size = arr.length;</span><br><span class="line">    <span class="comment">// </span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> out = size - <span class="number">1</span>; out &gt; <span class="number">0</span>; out--) {</span><br><span class="line">        <span class="comment">// </span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> in = <span class="number">0</span>; in &lt; out; in++) {</span><br><span class="line">            <span class="keyword">if</span> (arr[in] &gt; arr[in + <span class="number">1</span>]) {</span><br><span class="line">                swap(arr, in, in + <span class="number">1</span>);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <br>
 
 <figure class="highlight c++"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="comment">//整数或浮点数皆可使用</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bubble_sort</span><span class="params">(T arr[], <span class="keyword">int</span> len)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> i, j; T temp;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) {</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; len - <span class="number">1</span> - i; j++) {</span><br><span class="line">            <span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>]) {</span><br><span class="line">                temp = arr[j];</span><br><span class="line">                arr[j] = arr[j + <span class="number">1</span>];</span><br><span class="line">                arr[j + <span class="number">1</span>] = temp;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<h4 id="3-2-2-选择排序"><a href="#3-2-2-选择排序" class="headerlink" title="3.2.2 选择排序"></a>3.2.2 选择排序</h4><p> 选择排序算法时间复杂度为O(n^2)</p>
+<h4 id="3-3-2-选择排序"><a href="#3-3-2-选择排序" class="headerlink" title="3.3.2 选择排序"></a>3.3.2 选择排序</h4><p> 选择排序算法时间复杂度为O(n^2)</p>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> size = arr.lenght;</span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> out = <span class="number">0</span>; out &lt; size; out++) {</span><br><span class="line">        <span class="keyword">int</span> mixIndex = out;</span><br><span class="line">        <span class="comment">//</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> in = out - <span class="number">1</span>; in &lt; size; in++) {</span><br><span class="line">            <span class="keyword">if</span> (arr[mixIndex] &gt; arr[in]) {</span><br><span class="line">                mixIndex = in;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (mixIndex != out) {</span><br><span class="line">            swap(arr, mixIndex, out);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<h4 id="3-2-3-插入排序"><a href="#3-2-3-插入排序" class="headerlink" title="3.2.3 插入排序"></a>3.2.3 插入排序</h4><p> 插入排序每次从无序数据集合中取出一个元素，插入到已经排好序的数据集中适当位置，使数据集仍然有序。插入排序不需要额外空间。时间复杂度O(n2)</p>
+<h4 id="3-3-3-插入排序"><a href="#3-3-3-插入排序" class="headerlink" title="3.3.3 插入排序"></a>3.3.3 插入排序</h4><p> 插入排序每次从无序数据集合中取出一个元素，插入到已经排好序的数据集中适当位置，使数据集仍然有序。插入排序不需要额外空间。时间复杂度O(n2)</p>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> size = arr.lenght;</span><br><span class="line">    <span class="comment">// </span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> out = <span class="number">1</span>; out &lt; size; out++) {</span><br><span class="line">        <span class="comment">//</span></span><br><span class="line">        <span class="keyword">int</span> temp = arr[out];</span><br><span class="line">        <span class="keyword">int</span> in = out;</span><br><span class="line">        <span class="comment">//</span></span><br><span class="line">        <span class="comment">// </span></span><br><span class="line">        <span class="keyword">while</span> (in - <span class="number">1</span> &gt;= <span class="number">0</span> &amp;&amp; arr[in - <span class="number">1</span>] &gt; temp) {</span><br><span class="line">            arr[in] = arr[in - <span class="number">1</span>];</span><br><span class="line">            in--;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span> (in != out) {</span><br><span class="line">            arr[in] = temp;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">issort</span><span class="params">(<span class="keyword">void</span> *data, <span class="keyword">int</span> size, <span class="keyword">int</span> esize, <span class="keyword">int</span> (*compare)(<span class="keyword">const</span> <span class="keyword">void</span> *key1, <span class="keyword">const</span> <span class="keyword">void</span> *key2))</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">char</span> *a = data;</span><br><span class="line">    <span class="keyword">void</span> *key;</span><br><span class="line">    <span class="keyword">int</span> i, j;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> ((key = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(esize)) == <span class="literal">NULL</span>) {</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (j = <span class="number">1</span>; j &lt; size; j++) {</span><br><span class="line">        i = j - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (i &gt;= <span class="number">0</span> &amp;&amp; compare(&amp;a[i * esize], key) &gt; <span class="number">0</span>) {</span><br><span class="line">            mamcpy(&amp;a[(i + <span class="number">1</span>) * esize], &amp;a[i * esize], esize);</span><br><span class="line">            i--;</span><br><span class="line">        }</span><br><span class="line">        <span class="built_in">memcpy</span>(&amp;a[(i + <span class="number">1</span>) * esize], key, esize);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="built_in">free</span>(key);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="3-2-4-希尔排序"><a href="#3-2-4-希尔排序" class="headerlink" title="3.2.4 希尔排序"></a>3.2.4 希尔排序</h4><p> 希尔排序时间复杂度O(n*(logn)^2)</p>
+<h4 id="3-3-4-希尔排序"><a href="#3-3-4-希尔排序" class="headerlink" title="3.3.4 希尔排序"></a>3.3.4 希尔排序</h4><p> 希尔排序时间复杂度O(n*(logn)^2)</p>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">shellSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> size = arr.lenght;</span><br><span class="line">    <span class="keyword">int</span> h = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (h &lt;= size / <span class="number">3</span>) {</span><br><span class="line">        <span class="comment">//</span></span><br><span class="line">        h = h * <span class="number">3</span> + <span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">while</span> (h &gt; <span class="number">0</span>) {</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> out = h; out &lt; size; out++) {</span><br><span class="line">            <span class="keyword">int</span> temp = arr[out];</span><br><span class="line">            <span class="keyword">int</span> in = out;</span><br><span class="line">            <span class="comment">//</span></span><br><span class="line">            <span class="keyword">while</span> (in - h &gt;= <span class="number">0</span> &amp;&amp; arr[in - h] &gt; temp) {</span><br><span class="line">                arr[in] = arr[in - h];</span><br><span class="line">                in = in - h;</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">if</span> (in != out) {</span><br><span class="line">                arr[in] = temp;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        h = (h - <span class="number">1</span>) / <span class="number">3</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="3-2-5-归并排序"><a href="#3-2-5-归并排序" class="headerlink" title="3.2.5 归并排序"></a>3.2.5 归并排序</h4><p> 归并排序是一种分支排序算法。归并排序需要额外存储空间来完成排序。</p>
+<h4 id="3-3-5-归并排序"><a href="#3-3-5-归并排序" class="headerlink" title="3.3.5 归并排序"></a>3.3.5 归并排序</h4><p> 归并排序是一种分支排序算法。归并排序需要额外存储空间来完成排序。</p>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">min</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">return</span>  x &lt; y ? x : y;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge_sort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> len)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> *a = arr;</span><br><span class="line">    <span class="keyword">int</span> *b = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(len * <span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br><span class="line">    <span class="keyword">int</span> seg, start;</span><br><span class="line">    <span class="keyword">for</span> (seg = <span class="number">1</span>; seg &lt; len; seg += seg) {</span><br><span class="line">        <span class="keyword">for</span> (start )</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="3-2-6-快速排序"><a href="#3-2-6-快速排序" class="headerlink" title="3.2.6 快速排序"></a>3.2.6 快速排序</h4><p> 快速排序是一种分治排序算法。不需要额外存储空间，时间复杂度O(nlgn)</p>
+<h4 id="3-3-6-快速排序"><a href="#3-3-6-快速排序" class="headerlink" title="3.3.6 快速排序"></a>3.3.6 快速排序</h4><p> 快速排序是一种分治排序算法。不需要额外存储空间，时间复杂度O(nlgn)</p>
 <p> 快速排序三个步骤：</p>
 <ul>
 <li>分：设定一个分割值并将数据分为两部分。</li>
@@ -661,23 +718,23 @@
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">qsort</span><span class="params">(<span class="keyword">void</span> *base, <span class="keyword">int</span> nelem, <span class="keyword">int</span> width, <span class="keyword">int</span> (*fcmp)(<span class="keyword">const</span> <span class="keyword">void</span> *, <span class="keyword">const</span> <span class="keyword">void</span> *))</span></span>;</span><br><span class="line"><span class="comment">// 参数:1 带排序数组首地址, nelem 数组中待排元素数量  width 各元素所在空间大小  *fcmp 指向函数的指针</span></span><br></pre></td></tr></tbody></table></figure>
 
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// int 数组</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cmp</span><span class="params">(<span class="keyword">const</span> <span class="keyword">void</span> *a, <span class="keyword">const</span> <span class="keyword">void</span> *b)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">return</span> (*(<span class="keyword">int</span> *)a - *(<span class="keyword">int</span> *)b);</span><br><span class="line">}</span><br><span class="line">qsort(arr, n, <span class="keyword">sizeof</span>(arr[<span class="number">0</span>]), cmp);</span><br><span class="line"></span><br><span class="line"><span class="comment">// char 数组</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">com</span><span class="params">(<span class="keyword">const</span> <span class="keyword">void</span> *a, <span class="keyword">const</span> <span class="keyword">void</span> *b)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">return</span> *(<span class="keyword">char</span> *)a - *(<span class="keyword">char</span> *)b;</span><br><span class="line">}</span><br><span class="line"><span class="keyword">char</span> word[<span class="number">100</span>];</span><br><span class="line">qsort(word, <span class="number">100</span>, <span class="keyword">sizeof</span>(word[<span class="number">0</span>]), cmp);</span><br><span class="line"></span><br><span class="line"><span class="comment">// double 类型</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cmp</span><span class="params">(<span class="keyword">const</span> <span class="keyword">void</span> *a, <span class="keyword">const</span> <span class="keyword">void</span> *b)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">return</span> *(<span class="keyword">double</span> *)a &gt; *(<span class="keyword">double</span>*)b ? <span class="number">1</span> : <span class="number">-1</span>;</span><br><span class="line">}</span><br><span class="line"><span class="keyword">double</span> in[<span class="number">100</span>];</span><br><span class="line">qsort(in, <span class="number">100</span>, <span class="keyword">sizeof</span>(in[<span class="number">00</span>]), cmp);</span><br><span class="line"></span><br><span class="line"><span class="comment">// struct 结构体</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Sample</span> {</span></span><br><span class="line">    <span class="keyword">double</span> data;</span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">}st[<span class="number">100</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cmp</span><span class="params">(<span class="keyword">const</span> <span class="keyword">void</span> *a, <span class="keyword">const</span> <span class="keyword">void</span> *b)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">return</span> (*(Sample *)a).data &gt; (*(Sampel *)b).data ? <span class="number">1</span> : <span class="number">-1</span>;</span><br><span class="line">}</span><br><span class="line">qsort(s, <span class="number">100</span>, <span class="keyword">sizeof</span>(s[<span class="number">0</span>]), cmp);</span><br><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cmp</span><span class="params">(<span class="keyword">const</span> <span class="keyword">void</span> *a, <span class="keyword">const</span> <span class="keyword">void</span> *b)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Sample</span> *<span class="title">c</span> =</span> (Sample *)a;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Sample</span> *<span class="title">d</span> =</span> (Sample *)b;</span><br><span class="line">    <span class="keyword">if</span>(c-&gt;x != d-&gt;x) {</span><br><span class="line">        <span class="keyword">return</span> c-&gt;x - d-&gt;x;</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        <span class="keyword">return</span> d-&gt;y - c-&gt;y;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">qsort(s,<span class="number">100</span>,<span class="keyword">sizeof</span>(s[<span class="number">0</span>]),cmp);</span><br><span class="line"></span><br><span class="line">truct Sample</span><br><span class="line">{</span><br><span class="line">    <span class="keyword">int</span> data;</span><br><span class="line">    <span class="keyword">char</span> str[<span class="number">100</span>];</span><br><span class="line">}s[<span class="number">100</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//按照结构体中字符串str的字典顺序排序</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cmp</span> <span class="params">(<span class="keyword">const</span> <span class="keyword">void</span> *a, <span class="keyword">const</span> <span class="keyword">void</span> *b)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">strcmp</span>((*(Sample *)a)-&gt;str , (*(Sample *)b)-&gt;str);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">qsort(s,<span class="number">100</span>,<span class="keyword">sizeof</span>(s[<span class="number">0</span>]),cmp);</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="3-2-7-堆排序"><a href="#3-2-7-堆排序" class="headerlink" title="3.2.7 堆排序"></a>3.2.7 堆排序</h4><p> 桶排序算法基本原理：把数组中的所有元素分为若干个数据块，也就是若干个桶，然后对每个桶里的数据进行排序，最后将所有桶里的数据依次排列。<br> 存在两个问题：<br> (1)怎样划分数据块，也就是分几个桶，每个桶放哪几个数据。<br> (2)对每个数据块里的数据怎样排序。</p>
+<h4 id="3-3-7-堆排序"><a href="#3-3-7-堆排序" class="headerlink" title="3.3.7 堆排序"></a>3.3.7 堆排序</h4><p> 桶排序算法基本原理：把数组中的所有元素分为若干个数据块，也就是若干个桶，然后对每个桶里的数据进行排序，最后将所有桶里的数据依次排列。<br> 存在两个问题：<br> (1)怎样划分数据块，也就是分几个桶，每个桶放哪几个数据。<br> (2)对每个数据块里的数据怎样排序。</p>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sdtio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span> {</span></span><br><span class="line">    <span class="keyword">int</span> key;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">next</span>;</span></span><br><span class="line">} KeyNode;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bucket_sort</span><span class="params">(<span class="keyword">int</span> keys[], <span class="keyword">int</span> size, <span class="keyword">int</span> bucket_size)</span> </span>{</span><br><span class="line">    <span class="keyword">int</span> i, j;</span><br><span class="line">    KeyNode **bucket_table = (KeyNode **)mallov(bucket_size * <span class="keyword">sizeof</span>(KeyNode*));</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; bucket_size;i++) {</span><br><span class="line">        bucket_table[i] = (KeyNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(KeyNode));</span><br><span class="line">        bucket_table[i]-&gt;key = <span class="number">0</span>;</span><br><span class="line">        bucket_table[i]-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">for</span>(j = <span class="number">0</span>;j &lt; size;j++) {</span><br><span class="line">		KeyNode *node = (KeyNode *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(KeyNode));</span><br><span class="line">		node-&gt;key = keys[j];</span><br><span class="line">		node-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">		<span class="keyword">int</span> index = keys[j]/<span class="number">10</span>;</span><br><span class="line">		KeyNode *p = bucket_table[index];</span><br><span class="line">		<span class="keyword">if</span>(p-&gt;key == <span class="number">0</span>) {</span><br><span class="line">			bucket_table[index]-&gt;next = node;</span><br><span class="line">			(bucket_table[index]-&gt;key)++;</span><br><span class="line">		}<span class="keyword">else</span> {</span><br><span class="line">			<span class="keyword">while</span>(p-&gt;next != <span class="literal">NULL</span> &amp;&amp; p-&gt;next-&gt;key &lt;= node-&gt;key)</span><br><span class="line">				p = p-&gt;next;</span><br><span class="line">			node-&gt;next = p-&gt;next;</span><br><span class="line">			p-&gt;next = node;</span><br><span class="line">			(bucket_table[index]-&gt;key)++;</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="comment">//print result</span></span><br><span class="line">	KeyNode * k = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; bucket_size;i++)</span><br><span class="line">		<span class="keyword">for</span>(k = bucket_table[i]-&gt;next;k!=<span class="literal">NULL</span>;k=k-&gt;next)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d "</span>,k-&gt;key);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> raw[] = {<span class="number">49</span>,<span class="number">38</span>,<span class="number">65</span>,<span class="number">97</span>,<span class="number">76</span>,<span class="number">13</span>,<span class="number">27</span>,<span class="number">49</span>};</span><br><span class="line">	<span class="keyword">int</span> size = <span class="keyword">sizeof</span>(raw)/<span class="keyword">sizeof</span>(<span class="keyword">int</span>);</span><br><span class="line">	bucket_sort(raw,size,<span class="number">10</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Heapify</span><span class="params">(<span class="keyword">int</span> A[], <span class="keyword">int</span> i, <span class="keyword">int</span> size)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> lef_child = <span class="number">2</span> * i + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> right_child = <span class="number">2</span> * i + <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> max = i;</span><br><span class="line">    <span class="keyword">if</span> (lef_child &lt; size &amp;&amp; A[lef_child] &gt; A[max]) {</span><br><span class="line">        max = lef_child;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">if</span> (right_child &lt; size &amp;&amp; A[right_child] &gt; A[max]) {</span><br><span class="line">        max = right_child;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">if</span> (max != i) {</span><br><span class="line">        Swap(A, i max);</span><br><span class="line">        Heapify(A, max, size);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">BuildHeap</span><span class="params">(<span class="keyword">int</span> A[], <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> heap_size = n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = heap_size / w - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) {</span><br><span class="line">        Heapify(A, i, heap_size);</span><br><span class="line">        <span class="keyword">return</span> heap_size;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HeapSort</span><span class="params">(<span class="keyword">int</span> A[], <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> heap_size = BuildHeap(A, n);</span><br><span class="line">    <span class="keyword">while</span> (heap_size &gt; <span class="number">1</span>) {</span><br><span class="line">        Swap(A, <span class="number">0</span>, heap_size);</span><br><span class="line">        Heap(A, <span class="number">0</span>, heap_size);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<h4 id="3-2-8-leetcode排序"><a href="#3-2-8-leetcode排序" class="headerlink" title="3.2.8 leetcode排序"></a>3.2.8 leetcode排序</h4><h3 id="3-3-贪心算法"><a href="#3-3-贪心算法" class="headerlink" title="3.3 贪心算法"></a>3.3 贪心算法</h3><h4 id="3-3-1-基本概念"><a href="#3-3-1-基本概念" class="headerlink" title="3.3.1 基本概念"></a>3.3.1 基本概念</h4><p> 贪心算法:在对问题求解时,总是做出在当前是最好的选择,即不考虑整体最优,仅考虑局部最优解.<br> 贪心算法没有固定算法框架,算法关键是贪心策略的选择.他想算法不是所有问题都得到最优解,选择贪心策略必须具备无后效性,即某个状态以后的过程不会影响一起的状态,只与当前状态有关.</p>
-<h4 id="3-3-2-描述"><a href="#3-3-2-描述" class="headerlink" title="3.3.2 描述"></a>3.3.2 描述</h4><p> 贪心算法实现步骤:<br> 1.建立数学模型描述问题<br> 2.把求解的问题分成若干个子问题<br> 3.对每个子问题求解,得到子问题的局部最优解<br> 4.把子问题的解局部最优解合成原来问题的一个解.<br> 实现算法过程:</p>
+<h4 id="3-3-8-leetcode排序"><a href="#3-3-8-leetcode排序" class="headerlink" title="3.3.8 leetcode排序"></a>3.3.8 leetcode排序</h4><h3 id="3-4-贪心算法"><a href="#3-4-贪心算法" class="headerlink" title="3.4 贪心算法"></a>3.4 贪心算法</h3><h4 id="3-4-1-基本概念"><a href="#3-4-1-基本概念" class="headerlink" title="3.4.1 基本概念"></a>3.4.1 基本概念</h4><p> 贪心算法:在对问题求解时,总是做出在当前是最好的选择,即不考虑整体最优,仅考虑局部最优解.<br> 贪心算法没有固定算法框架,算法关键是贪心策略的选择.他想算法不是所有问题都得到最优解,选择贪心策略必须具备无后效性,即某个状态以后的过程不会影响一起的状态,只与当前状态有关.</p>
+<h4 id="3-4-2-描述"><a href="#3-4-2-描述" class="headerlink" title="3.4.2 描述"></a>3.4.2 描述</h4><p> 贪心算法实现步骤:<br> 1.建立数学模型描述问题<br> 2.把求解的问题分成若干个子问题<br> 3.对每个子问题求解,得到子问题的局部最优解<br> 4.把子问题的解局部最优解合成原来问题的一个解.<br> 实现算法过程:</p>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> (能朝给定总目标前进一步)</span><br><span class="line">{</span><br><span class="line">    利用可行的决策,求出可行解的一个解元素;</span><br><span class="line">}</span><br><span class="line">由所有解元素组合成问题的一个可行解</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="3-3-3-应用"><a href="#3-3-3-应用" class="headerlink" title="3.3.3. 应用"></a>3.3.3. 应用</h4><p><strong>最小生成树算法</strong><br> 贪心算法经典实践:最小生成树算法<br> 设<code>G=(V, E)</code>是无向连通带权图,即一个网络,E中的每一条边<code>(v,w)</code> 的全为 <code>c[v][w]</code>.如果G的字体 G’ 是一颗包含 G 的所有顶点的数,则称 G’ 为 G 的生成树.生成树上各边权的总和称为生成树的耗费.在 G 的所有生成树中,耗费最小的生成树称为 G 的最小生成树.<br> 最小生成树的性质:<br>  设<code>G=(V, E)</code>是连通带权图, U是V的真子集.如果(u,v)属于E,且u属于E,v属于V-U,且在所有这样的边中,(u,v)的权c[u][v]最小,那么一定存在G的一颗最小生成树,它亦是(u,v)为其中一条边,这个性质有时也称为MST性质.</p>
+<h4 id="3-4-3-应用"><a href="#3-4-3-应用" class="headerlink" title="3.4.3 应用"></a>3.4.3 应用</h4><p><strong>最小生成树算法</strong><br> 贪心算法经典实践:最小生成树算法<br> 设<code>G=(V, E)</code>是无向连通带权图,即一个网络,E中的每一条边<code>(v,w)</code> 的全为 <code>c[v][w]</code>.如果G的字体 G’ 是一颗包含 G 的所有顶点的数,则称 G’ 为 G 的生成树.生成树上各边权的总和称为生成树的耗费.在 G 的所有生成树中,耗费最小的生成树称为 G 的最小生成树.<br> 最小生成树的性质:<br>  设<code>G=(V, E)</code>是连通带权图, U是V的真子集.如果(u,v)属于E,且u属于E,v属于V-U,且在所有这样的边中,(u,v)的权c[u][v]最小,那么一定存在G的一颗最小生成树,它亦是(u,v)为其中一条边,这个性质有时也称为MST性质.</p>
 <p><strong>Prim算法</strong><br>  设<code>G=(V, E)</code>是连通带权图, V={1,2,…,n}.构造G的最小生成树Prim算法的基本思想是:**首先置S={1},然后,只有S是V的真子集,就进行如下的贪心选择:选取满足添加i属于S,j属于V-S,且c[i][j]最小的边,将顶点j添加到S中.这个过程一直进行到S=V时为止.在这个过程中选取到的所有边恰好构成G的一颗最小生成树.</p>
-<h4 id="3-3-4-leetcode题目"><a href="#3-3-4-leetcode题目" class="headerlink" title="3.3.4 leetcode题目"></a>3.3.4 leetcode题目</h4><ul>
+<h4 id="3-4-4-leetcode题目"><a href="#3-4-4-leetcode题目" class="headerlink" title="3.4.4 leetcode题目"></a>3.4.4 leetcode题目</h4><ul>
 <li>柠檬水找零</li>
 <li>分发饼干</li>
 </ul>
-<h3 id="3-4-动态规划"><a href="#3-4-动态规划" class="headerlink" title="3.4 动态规划"></a>3.4 动态规划</h3><p> 动态规划(<code>DP</code>):是一种通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法.常用于重叠子问题和最优子结构性质的问题,动态规划时间通常远小于朴素解法.</p>
-<h4 id="3-4-1-基本概念"><a href="#3-4-1-基本概念" class="headerlink" title="3.4.1 基本概念"></a>3.4.1 基本概念</h4><p> 动态规划:要解一个给定问题,需要解其不同部分(即子问题),再根据子问题的解以得出原问题的解.通常子问题非常相似,子问题解算出后,将其记录.<br> 动态规划过程是:每次决策依赖于当前状态,又随即引起状态转移.一个决策序列就是在变化的状态中产生除留的,这种多阶段最优化决策解决过程称为动态规划.<br> 动态规划与分治法的区别是子问题通常不是独立的.</p>
-<h4 id="3-4-2-描述算法"><a href="#3-4-2-描述算法" class="headerlink" title="3.4.2 描述算法"></a>3.4.2 描述算法</h4><p> 可采用动态规划的问题3个性质:<br> 1) <strong>最优化原理</strong>:如果问题的最优解所包含的子问题的解也是最优的,则称该问题具有最优子结构,即满足最优化原理.<br> 2) <strong>无后效性</strong>:即某阶段状态确定后,就不受之后的决策影响,即某状态以后过程不影响以前的状态,只与当前状态有关.<br> 3) <strong>有重叠子问题</strong>:</p>
+<h3 id="3-5-动态规划"><a href="#3-5-动态规划" class="headerlink" title="3.5 动态规划"></a>3.5 动态规划</h3><p> 动态规划(<code>DP</code>):是一种通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法.常用于重叠子问题和最优子结构性质的问题,动态规划时间通常远小于朴素解法.</p>
+<h4 id="3-5-1-基本概念"><a href="#3-5-1-基本概念" class="headerlink" title="3.5.1 基本概念"></a>3.5.1 基本概念</h4><p> 动态规划:要解一个给定问题,需要解其不同部分(即子问题),再根据子问题的解以得出原问题的解.通常子问题非常相似,子问题解算出后,将其记录.<br> 动态规划过程是:每次决策依赖于当前状态,又随即引起状态转移.一个决策序列就是在变化的状态中产生除留的,这种多阶段最优化决策解决过程称为动态规划.<br> 动态规划与分治法的区别是子问题通常不是独立的.</p>
+<h4 id="3-5-2-描述算法"><a href="#3-5-2-描述算法" class="headerlink" title="3.5.2 描述算法"></a>3.5.2 描述算法</h4><p> 可采用动态规划的问题3个性质:<br> 1) <strong>最优化原理</strong>:如果问题的最优解所包含的子问题的解也是最优的,则称该问题具有最优子结构,即满足最优化原理.<br> 2) <strong>无后效性</strong>:即某阶段状态确定后,就不受之后的决策影响,即某状态以后过程不影响以前的状态,只与当前状态有关.<br> 3) <strong>有重叠子问题</strong>:</p>
 <br>
  动态规划所处理的问题是一个多阶段决策问题,由初始状态开始,通过中间阶段决策的选择,达到结束状态.形成一个决策序列.
 
@@ -689,7 +746,7 @@
 <blockquote>
 <p>f(n, m) = max{f(n-1, m), f(n-1, m-w[n]) + P(n, m)}</p>
 </blockquote>
-<h4 id="3-4-3-背包问题"><a href="#3-4-3-背包问题" class="headerlink" title="3.4.3 背包问题"></a>3.4.3 背包问题</h4><p> 问题描述:<br> 有N件物品和一个体积为V的背包.(每种物品只有一件)第i件物品的体积是volume[i],价值是value[i],求解哪些物品装入背包可使这些物品的体积综合不超过背包体积,且价值总和最大.<br> 解题思路:<br> p[i][j]代表前i件物品组合在容量为j的背包的最优解.将前i件物品放入容量为v的背包中这个子问题,若只考虑第i件物品的策略(放或不放),那么可以转化为一个只牵扯前i-1物品的问题.如果不放第i件物品,那么问题就转化为”前i-1件物品放入容量为v的背包中,价值为p[i-1][v];如果放第i件物品,那么问题就转化为”前i-1物品放入剩下的容量为v-volume[i]的背包中”,此时能获得的最大价值就是p[i-1][j-volume]再加上通过放入第i件物品获得的价值value[i].</p>
+<h4 id="3-5-3-背包问题"><a href="#3-5-3-背包问题" class="headerlink" title="3.5.3 背包问题"></a>3.5.3 背包问题</h4><p> 问题描述:<br> 有N件物品和一个体积为V的背包.(每种物品只有一件)第i件物品的体积是volume[i],价值是value[i],求解哪些物品装入背包可使这些物品的体积综合不超过背包体积,且价值总和最大.<br> 解题思路:<br> p[i][j]代表前i件物品组合在容量为j的背包的最优解.将前i件物品放入容量为v的背包中这个子问题,若只考虑第i件物品的策略(放或不放),那么可以转化为一个只牵扯前i-1物品的问题.如果不放第i件物品,那么问题就转化为”前i-1件物品放入容量为v的背包中,价值为p[i-1][v];如果放第i件物品,那么问题就转化为”前i-1物品放入剩下的容量为v-volume[i]的背包中”,此时能获得的最大价值就是p[i-1][j-volume]再加上通过放入第i件物品获得的价值value[i].</p>
 <p> <strong>状态转移方程:</strong></p>
 <blockquote>
 <p>p[i][j] = max{p[i-1][j-vol] + value[i], p[i-1][j]}<br> 伪代码描述:</p>
@@ -697,26 +754,26 @@
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i = <span class="number">1.</span>..N</span><br><span class="line">    <span class="keyword">for</span> j = V..<span class="number">.0</span></span><br><span class="line">        p[j] = max{p[j-volume[i]] + value[i], p[j]};</span><br></pre></td></tr></tbody></table></figure>
 
 
-<h4 id="3-4-4-最长公共子序列"><a href="#3-4-4-最长公共子序列" class="headerlink" title="3.4.4 最长公共子序列"></a>3.4.4 最长公共子序列</h4><p> 问题描述:<br> 一个散列S,如果分别是两个或多个已知数列的子序列,且是所有匹配此条件序列中最长的,则S称为已知序列的最长公共子序列(LCS)<br> 给定两个序列X,Y,求两个序列的最长公共子序列.<br> 截图思路:<br> </p>
+<h4 id="3-5-4-最长公共子序列"><a href="#3-5-4-最长公共子序列" class="headerlink" title="3.5.4 最长公共子序列"></a>3.5.4 最长公共子序列</h4><p> 问题描述:<br> 一个散列S,如果分别是两个或多个已知数列的子序列,且是所有匹配此条件序列中最长的,则S称为已知序列的最长公共子序列(LCS)<br> 给定两个序列X,Y,求两个序列的最长公共子序列.<br> 截图思路:<br> </p>
 <p> 伪代码:</p>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function">function <span class="title">LCSLength</span><span class="params">(X[<span class="number">1.</span>.m], Y[<span class="number">1.</span>.n])</span></span></span><br><span class="line"><span class="function">    C </span>= <span class="built_in">array</span>(<span class="number">0.</span>.m, <span class="number">0.</span>.n)</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0.</span>.m</span><br><span class="line">        C[i, <span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> j := <span class="number">0.</span>.n</span><br><span class="line">        C[<span class="number">0</span>, j] = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">1.</span>.m</span><br><span class="line">        <span class="keyword">for</span> j := <span class="number">1.</span>.n</span><br><span class="line">            <span class="keyword">if</span> X[i] = Y[j]</span><br><span class="line">                C[i, j] := C[i<span class="number">-1</span>, j<span class="number">-1</span>] + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                C[i, j] := max(C[i, j<span class="number">-1</span>], C[i<span class="number">-1</span>,j])</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> C[m, n]</span><br></pre></td></tr></tbody></table></figure>
 
-<h4 id="3-4-5-leetcode题目"><a href="#3-4-5-leetcode题目" class="headerlink" title="3.4.5 leetcode题目"></a>3.4.5 leetcode题目</h4><ul>
+<h4 id="3-5-5-leetcode题目"><a href="#3-5-5-leetcode题目" class="headerlink" title="3.5.5 leetcode题目"></a>3.5.5 leetcode题目</h4><ul>
 <li>最大子序和</li>
 <li>编辑距离</li>
 <li>大礼包</li>
 <li>最长上升子序列</li>
 </ul>
-<h3 id="3-5-回溯法"><a href="#3-5-回溯法" class="headerlink" title="3.5 回溯法"></a>3.5 回溯法</h3><h4 id="3-5-1-基本概念"><a href="#3-5-1-基本概念" class="headerlink" title="3.5.1 基本概念"></a>3.5.1 基本概念</h4><p> 回溯算法实际上一个类似枚举的搜索尝试过程,主要是在<strong>搜索尝试过程中寻找问题的解,当发现已不满足求解条件时,就”回溯”返回,尝试别的路径</strong>.<br> 回溯法是一种迭代搜索法,按选优条件详情搜索,以达到目标.但当探索到某一步时,发现原先选择并不优或达不到目标,就退回一步重新选择,这种走不通就退回再走的技术为回溯法,而满足回溯条件的某个状态的点称为”回溯法”.<br> 许多复杂度,规模较大的问题都看看而已使用回溯法,有”同意解题方法”的美称.</p>
+<h3 id="3-6-回溯法"><a href="#3-6-回溯法" class="headerlink" title="3.6 回溯法"></a>3.6 回溯法</h3><h4 id="3-6-1-基本概念"><a href="#3-6-1-基本概念" class="headerlink" title="3.6.1 基本概念"></a>3.6.1 基本概念</h4><p> 回溯算法实际上一个类似枚举的搜索尝试过程,主要是在<strong>搜索尝试过程中寻找问题的解,当发现已不满足求解条件时,就”回溯”返回,尝试别的路径</strong>.<br> 回溯法是一种迭代搜索法,按选优条件详情搜索,以达到目标.但当探索到某一步时,发现原先选择并不优或达不到目标,就退回一步重新选择,这种走不通就退回再走的技术为回溯法,而满足回溯条件的某个状态的点称为”回溯法”.<br> 许多复杂度,规模较大的问题都看看而已使用回溯法,有”同意解题方法”的美称.</p>
 <p> 在包含问题的所有解的解空间树中,按照深度优先的策略,从根节点出发深度探索解空间树.当探索到某一节点时,要先判断该节点是否包含问题的解,如果包含,就从该节点出发继续探索下去,如果该节点不包含问题的解,则逐层向其足协节点回溯.(其实回溯法就是堆隐式图的深度优先搜索算法).<br> 若用回溯法求问题的所有解时,要回溯的根,且根节点的所有可行的子树都要已被搜索遍才结束,而若使用回溯法求任一个解时,只要搜索到问题的一个解就可以结束.<br> 回溯法一般解题步骤:<br> 1.<strong>针对所给问题,确定问题的解空间</strong>;首先应明确定义问题的解空间,解空间应至少包含问题的一个(最优)解.<br> 2.<strong>确定节点的扩展搜索规则</strong><br> 3.<strong>以深度优先方式搜索解空间,并在搜索过程中用剪枝函数避免无效搜索</strong></p>
 <p> 伪代码:</p>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">iterativeBacktrack</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (t &gt; <span class="number">0</span>) {</span><br><span class="line">        <span class="keyword">if</span> (f(n, t) &lt;= g(n, t)) {</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = f(n,t); i &lt;= g(n,t); i++) {</span><br><span class="line">                x[t] = h(i);</span><br><span class="line">                <span class="keyword">if</span> (constraint(t) &amp;&amp; bound(t)) {</span><br><span class="line">                    <span class="comment">//</span></span><br><span class="line">                    <span class="keyword">if</span> (solution(t)) {</span><br><span class="line">                        output(x);</span><br><span class="line">                    } <span class="keyword">else</span> {</span><br><span class="line">                        t++;</span><br><span class="line">                    }</span><br><span class="line">                } <span class="keyword">else</span> {</span><br><span class="line">                    t--;</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<h4 id="3-5-2-八皇后问题"><a href="#3-5-2-八皇后问题" class="headerlink" title="3.5.2 八皇后问题"></a>3.5.2 八皇后问题</h4><p> 问题描述<br> 八皇后问题使一个以国际象棋为背景的问题:如何能够在 8<em>8 的国际象棋棋盘上放着八个皇后,使得任何一个皇后都无法直接吃掉其他的皇后?为了达到此目的,任两个皇后都不能处于同一条横行,纵行或斜线上.<br> 转化规则:其实八皇后问题可以推广为更一般的n皇后摆放问题;这时棋盘大小变为n</em>n,而皇后个数也变成n.当且仅当n = 1 或 n &gt;= 4 时间问题有解.</p>
+<h4 id="3-6-2-八皇后问题"><a href="#3-6-2-八皇后问题" class="headerlink" title="3.6.2 八皇后问题"></a>3.6.2 八皇后问题</h4><p> 问题描述<br> 八皇后问题使一个以国际象棋为背景的问题:如何能够在 8<em>8 的国际象棋棋盘上放着八个皇后,使得任何一个皇后都无法直接吃掉其他的皇后?为了达到此目的,任两个皇后都不能处于同一条横行,纵行或斜线上.<br> 转化规则:其实八皇后问题可以推广为更一般的n皇后摆放问题;这时棋盘大小变为n</em>n,而皇后个数也变成n.当且仅当n = 1 或 n &gt;= 4 时间问题有解.</p>
 <p> 伪代码描述</p>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">queens</span><span class="params">(<span class="keyword">int</span> Queens)</span> </span>{</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<h4 id="3-5-3-leetcode题目"><a href="#3-5-3-leetcode题目" class="headerlink" title="3.5.3 leetcode题目"></a>3.5.3 leetcode题目</h4><ul>
+<h4 id="3-6-3-leetcode题目"><a href="#3-6-3-leetcode题目" class="headerlink" title="3.6.3 leetcode题目"></a>3.6.3 leetcode题目</h4><ul>
 <li>N皇后</li>
 <li>括号生成</li>
 <li>单词搜索</li>
@@ -737,6 +794,276 @@
       <tags>
         <tag>实用教程</tag>
         <tag>Another Tag</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CMake</title>
+    <url>/2021/12/07/2021/12/cmake/</url>
+    <content><![CDATA[<h2 id="1-camke简述"><a href="#1-camke简述" class="headerlink" title="1.camke简述"></a>1.camke简述</h2><p> CMake是跨平台编译管理工具,为第三方依赖和引入,创建编译系统,程序测试及安装.Cmake工具使用CMakeLists.txt文件,跨平台执行相同编译命令,生成对应平台的可执行程序或者链接库.</p>
+<span id="more"></span>
+
+<p> CMake工程简单例子</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">cmake_minimum_required(VERSION 3.12)</span><br><span class="line">project(myproj)</span><br><span class="line">find_package(Poco REQUIRED COMPONENTS Net Util)</span><br><span class="line">add_executable(MyExe)</span><br><span class="line">target_source(MyExe PRIVATE <span class="string">"main.cpp"</span>)</span><br><span class="line">target_link_library(MyExe PRIVATE Poco::Net PocoUtil)</span><br><span class="line"></span><br><span class="line">target_complie_definition(MyExe PRIVATE std_cxx_14)</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="2-Target-和围绕-Target-的配置"><a href="#2-Target-和围绕-Target-的配置" class="headerlink" title="2.Target 和围绕 Target 的配置"></a>2.Target 和围绕 Target 的配置</h2><p> C/C++工程通常都是为了生成可执行程序或者链接库，在现代 CMake 里他们被统称为<code>target</code>，创建命令分别是<code>add_library()</code>和<code>add_executable()</code>。其中链接库的类型又分为很多种，最常用的就是<code>SHARED</code>以及<code>STATIC</code>，在命令中加入关键词进行声明：add_library(MyLib SHARED)，第一个参数为target的名称，后续的配置都需要用到这个名字。<br> 指定target的源文件：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_source(MyLib PRVIATE <span class="string">"main.cpp"</span> <span class="string">"func.cpp"</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p> PRIVATE关键词用于描述参数的“应用范围”，此外还有INTERFACE和PUBLIC两种可能的值</p>
+<p> 较多的源文件，可以使用 CMake 的file命令进行遍历拿到全部的源文件</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">file(GLOB_RECURSE SRCS <span class="variable">${CMAKE_CURRENT_SOURCE_DIR}</span>/*.cpp)</span><br></pre></td></tr></tbody></table></figure>
+<p> 命令第一个参数GLOB_RECURSE表明递归的查找子文件夹，第二个参数SRCS则是存储结果的变量名，第三个参数为目标文件的匹配模式，找到符合条件的 cpp 文件后，他们的路径会以字符串数组的形式保存在 SRCS 变量中，使用方式如下：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_source(MyLib PRIVATE <span class="variable">${SRCS}</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p> 配置target时通常还需要指定头文件目录：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_include_directories(MyLib PRIVATE <span class="variable">${CMAKE_CURRENT_SOURCE_DIR}</span>/include/)</span><br></pre></td></tr></tbody></table></figure>
+<p> 编译时需要的语言特性：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_features(MyLib PRIVATE std_cxx_14)</span><br></pre></td></tr></tbody></table></figure>
+<p> 编译时的宏定义：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_definitions(MyLib PRIVATE LogLevel=3)</span><br></pre></td></tr></tbody></table></figure>
+<p> 参数想直接传给底层的编译器（比如 gcc, clang, cl），可以使用</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_options(MyLib PRIVATE -Werror -Wall -Wextra)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="3-Build-Specification-和-Usage-Requirement"><a href="#3-Build-Specification-和-Usage-Requirement" class="headerlink" title="3.Build Specification 和 Usage Requirement"></a>3.Build Specification 和 Usage Requirement</h2><p> C/C++通过 include 头文件的方式引入依赖，在动态或静态链接后可以调用依赖实现。一个可执行程序可能会依赖链接库，链接库也同样可能依赖其他的链接库<br> CMake 提供的解决方案是，在对 target 进行配置时，可以规定配置的类型，分为 build specification 和 usage requirement 两类，会影响配置的应用范围。Build specification 类型的配置仅在编译的时候需要满足，通过PRIVATE关键字声明；Usage requirement 类型的配置则是在使用时需要满足，即在其他项目里，使用本项目已编译好的 target 时需要满足，这种类型的配置使用INTERFACE关键词声明。在实际工程中，有很多配置在编译时以及被使用时都需要被满足的，这种配置通过PUBLIC关键词进行声明。</p>
+<p> 一个 library，在编译时静态链接了 Boost，在我们的实现文件中使用了 c++14 的特性，并用到了 Boost 的头文件和函数。随后我们对外发布了这个库，其中有头文件和预编译好的动态链接库。尽管我们的实现代码里用了 C++14，但在对外提供的头文件中只用到 C++03 的语法，也没有引入任何 Boost 的代码。这种情况下，当其他工程在使用我们的 library 时，其使用的编译器不需要开启 C++14 的支持，开发环境下也不需要安装 Boost。我们 library 的 CMake 配置中可以这么写：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_features(MyLib PRIVATE cxx_std_14)</span><br><span class="line">target_link_libraries(MyLib PRIVATE Boost::Format)</span><br></pre></td></tr></tbody></table></figure>
+<p> PRIVATE 说明 c++14 的支持只在编译时需要用到，Boost 库的链接也仅在编译时需要。但如果我们对外提供的头文件中也使用了 C++14，那么就需要使用 PUBLIC 修饰，改为：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_features(MyLib PUBLIC cxx_std_14)</span><br><span class="line">target_link_libraries(MyLib PRIVATE Boost::Format)</span><br></pre></td></tr></tbody></table></figure>
+<p> 当 library 是 header-only 时，我们的工程是不需要单独编译的，因此也就没有 build specification，通过INTERFACE修饰配置即可</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">arget_compile_features(MyLib INTERFACE cxx_std_14)</span><br></pre></td></tr></tbody></table></figure>
+<p> Usage requirement 类型的配置，即通过INTERFACE或是PUBLIC修饰的配置是会传递的，比如 LibA 依赖 LibB 后，会继承 LibB 的 usage requirement，此后 LibC 依赖 LibB 时，LibA 和 libB 的 usage requirement 都会继承下来，</p>
+<h2 id="4-寻找和使用链接库"><a href="#4-寻找和使用链接库" class="headerlink" title="4.寻找和使用链接库"></a>4.寻找和使用链接库</h2><p> C/C++标准没有规范库的安装位置和安装形式，通过 CMake 提供的方案寻找依赖，不光可以定位到头文件目录和链接库路径，还能够获取到库的 usage requirement。<br> 在 CMake 中寻找第三方库的命令为find_package，其背后的工作方式有两种，一种基于 Config File 的查找，另一种则是基于 Find File 的查找。在执行find_package时，实际上 CMake 都是在找这两类文件，找到后从中获取关于库的信息。</p>
+<h3 id="4-1-通过-Config-file-找到依赖"><a href="#4-1-通过-Config-file-找到依赖" class="headerlink" title="4.1 通过 Config file 找到依赖"></a>4.1 通过 Config file 找到依赖</h3><p> Config File 是依赖的开发者提供的 cmake 脚本，通常会随预编译好的二进制一起发布，供下游的使用者使用。在 Config file 里，会对库里包含的 target 进行描述，说明版本信息以及头文件路径、链接库路径、编译选项等 usage requirement</p>
+<p> CMake 对 Config file 的命名是有规定的，对于find_package(ABC)这样一条命令，CMake 只会去寻找ABCConfig.cmake或是abc-config.cmake。CMake 默认寻找的路径和平台有关，在 Linux 下寻找路径包括/usr/lib/cmake以及/usr/lib/local/cmake，在这两个路径下可以发现大量的 Config File，一般在安装某个库时，其自带的 Config file 会被放到这里来。</p>
+<h3 id="4-2-通过-Find-file-找到依赖"><a href="#4-2-通过-Find-file-找到依赖" class="headerlink" title="4.2 通过 Find file 找到依赖"></a>4.2 通过 Find file 找到依赖</h3><p> 对于find_package(ABC)命令，如果 CMake 没有找到 Config file，他还会去试着寻找FindABC.cmake。Find file 在功能上和 Config file 相同，区别在于 Find file 是由其他人编写的，而非库的开发者。如果你使用的某个库没有提供 Config file，你可以去网上搜搜 Find file 或者自己写一个，然后加入到你的 CMake 工程中。</p>
+<p> CMake 官方为我们写好了很多 Find file，在CMake Documentation这一页面可以看到，OpenGL，OpenMP，SDL 这些知名的库官方都为我们写好了 Find 脚本，因此直接调用 find_package 命令即可。但由于库的安装位置并不是固定的，这些 Find 脚本不一定能找到库，此时根据 CMake 报错的提示设置对应变量即可，通常是需要提供安装路径，这样就可以通过 Find file 获取到库的 usage requirement。不论是 Config file 还是 Find file，其目的都不只是找到库这么简单，而是告诉 CMake 如何使用这个库。<br>库 CMake 官方也没有提供 Find file，这时候就要自己写了或者靠搜索了，写好后放到本项目的目录下，修改CMAKE_MODULE_PATH这个 CMAKE 变量：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">list(INSERT CMAKE_MODULE_PATH 0 <span class="variable">${CMAKE_SOURCE_DIR}</span>/cmake)</span><br></pre></td></tr></tbody></table></figure>
+<p> ${CMAKE_SOURCE_DIR}/cmake目录下的 Find file 就可以被 CMake 找到了。<br> 通过 CMake 的find_library和find_path两个命令就可以完成任务：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">find_library(MPI_LIBRARY</span><br><span class="line">  NAMES mpi</span><br><span class="line">  HINTS <span class="string">"<span class="variable">${CMAKE_PREFIX_PATH}</span>/lib"</span> <span class="variable">${MPI_LIB_PATH}</span></span><br><span class="line">  <span class="comment"># 如果默认路径没找到libmpi.so，还会去MPI_LIB_PATH找，下游使用者可以设置这个变量值</span></span><br><span class="line">)</span><br><span class="line">find_path(MPI_INCLUDE_DIR</span><br><span class="line">  NAMES mpi.h</span><br><span class="line">  PATHS <span class="string">"<span class="variable">${CMAKE_PREFIX_PATH}</span>/include"</span> <span class="variable">${MPI_INCLUDE_PATH}</span></span><br><span class="line">  <span class="comment"># 如果默认路径没找到mpi.h，还会去MPI_INCLUDE_PATH找，下游使用者可以设置这个变量值</span></span><br><span class="line">)</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="4-3-find-package-的处理"><a href="#4-3-find-package-的处理" class="headerlink" title="4.3.find_package 的处理"></a>4.3.find_package 的处理</h3><p> find_package这个命令，这个命令可以指定很多参数，比如指定版本，指定具体的模块等等。以 SFML 多媒体库为例，其包含了 network 模块，audio 模块，graphic 模块等等，但我很多时候只用到 graphic 模块，那么其他的模块对应的链接库不需要被链接，于是 CMake 脚本可以这么写：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 要求大版本号为2的SFML库的graphic模块</span></span><br><span class="line">find_package(SFML 2 COMPONENTS graphics REQUIRED)</span><br><span class="line"><span class="comment"># SFML提供的target名字为sfml-graphics</span></span><br><span class="line">target_link_libraries(MyEXE PRIVATE sfml-graphics)</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="5-使用-CMake-来编译"><a href="#5-使用-CMake-来编译" class="headerlink" title="5.使用 CMake 来编译"></a>5.使用 CMake 来编译</h3><p> CMake 生成好编译环境后，底层的 make, ninja, MSBuild 编译命令都是不一样的，但 CMake 提供了一个统一的方法进行编译：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">cmake --build .</span><br></pre></td></tr></tbody></table></figure>
+<p> 使用–buildflag，CMake 就会调用底层的编译命令，在跨平台时十分方便。<br> 对于 Visual Studio，其 Debug 和 Release 环境是基于 configuration 的，因此CMAKE_BUILD_TYPE变量无效，需要在 build 时指定：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">cmake --build . --config Release</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+
+<ul>
+<li>参考链接:<br>cmake<br><a href="https://ukabuer.me/blog/more-modern-cmake/">https://ukabuer.me/blog/more-modern-cmake/</a><br>Makefile</li>
+</ul>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2021</category>
+        <category>12</category>
+      </categories>
+      <tags>
+        <tag>cs</tag>
+        <tag>complier</tag>
+        <tag>cmake</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>英语语法指一</title>
+    <url>/2021/12/02/2021/12/%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95%E4%B8%80/</url>
+    <content><![CDATA[<h2 id="一-简单句子分析"><a href="#一-简单句子分析" class="headerlink" title="一.简单句子分析"></a>一.简单句子分析</h2><p> <strong>英语句子= 主干+修饰成分</strong><br> 分析句子结构:<br>  一个中心 + 两个要点<br>  一个中心: 动词. 句子必须右动词<br>  两个要点: 主语 + 谓语. 谓语是动词,主语为动作的执行者或接受者.<br>  <strong>句子的核心是主谓结构</strong></p>
+<span id="more"></span>
+<p> n个主语+1个谓语 或者 1个主语+n个谓语，就可以组成简单句。其他的定状补语等都是句子的附属成分。主语部分形式比较单一，通常由名词性的结构来担任。谓语部分的形式变化较多，五种基本句型实际就是通过不同的谓语部分结构来表达五种类型的含义。不管谓语部分如何变化，它都由动词起头，并承担主要的表意功能。</p>
+<p> 英语的句子结构分为三种:简单句,并列句,复合句.简单句又分为五种基本句型.</p>
+<blockquote class="pullquote mindmap mindmap-md"><ul>
+<li>英文句子<ul>
+<li>简单句<ul>
+<li>主 + 谓</li>
+<li>主 + 谓 + 宾</li>
+<li>主 + 谓 + 宾 + 宾补</li>
+<li>主 + 谓 + 间宾 + 直宾</li>
+<li>主 + 系 + 表</li>
+</ul>
+</li>
+<li>复合句<ul>
+<li>名词性从句<ul>
+<li>主语从句</li>
+<li>宾语从句</li>
+<li>同位语从句</li>
+<li>表语从句</li>
+</ul>
+</li>
+<li>定语从句</li>
+<li>状语从句<ul>
+<li>时间状语从句</li>
+<li>地点状语从句</li>
+<li>条件状语从句</li>
+<li>结果状语从句</li>
+<li>让步状语从句</li>
+<li>目的状语从句</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>特殊句式<ul>
+<li>强调句</li>
+<li>虚拟语气</li>
+<li>倒装句</li>
+</ul>
+</li>
+<li>类型<ul>
+<li>陈述句</li>
+<li>祈使句</li>
+<li>感叹句</li>
+<li>疑问句</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+
+<p> 英语语法从整体上来讲是通过五部分来组成<br>  1、简单句<br>  2、并列句、复合句<br>  3、三大从句<br>  4、特殊句式<br>  5、类型</p>
+<p>补语<br> 补语是和表意不完全的动词息息相关的。在第三种基本句型中，联系动词将主语和补语在某个意义层面上对等起来。<br> 修饰成分<br>  介词短语<br>  从句<br>  非谓语动词<br>  时间状语<br> 论主语的补语，而后将宾语的补语作为一种变形来讨论</p>
+<h3 id="1-1-S-V-（主-谓）"><a href="#1-1-S-V-（主-谓）" class="headerlink" title="1.1 S + V （主+谓）"></a>1.1 S + V （主+谓）</h3><p> 句子不可或缺的两部分.<br> 名词/代词/不定式/动名词 + 动词<br> 谓语动词可以表达完整的意思，这类动词为不及物动词（vi）.</p>
+<h3 id="1-2-S-V-C-（主-系-表）"><a href="#1-2-S-V-C-（主-系-表）" class="headerlink" title="1.2 S + V + C （主+系+表）"></a>1.2 S + V + C （主+系+表）</h3><p>主语 +系动词 +表语</p>
+<p>表语说明主语的状态和性质，可以是名词，形容词，副词，短语等。</p>
+<p>系动词包括：</p>
+<p>a. be 动词，am, is, are, was, were;</p>
+<p>b. 表感官：feel(摸起来像是), smell, sound(听起来是), taste(尝起来是), look(看起来是);</p>
+<p>c. 表变化：become(成为), grow, turn(转变为), go, get, fall;</p>
+<p>d. 表状态：remain(依旧是), keep, hold, stay(仍然是), seem(似乎是).</p>
+<p>appear 显得像是<br>prove 证实为<br>become 成为<br>make 作为</p>
+<h3 id="1-3-S-V-O-（主-谓-宾）"><a href="#1-3-S-V-O-（主-谓-宾）" class="headerlink" title="1.3 S + V + O （主+谓+宾）"></a>1.3 S + V + O （主+谓+宾）</h3><p>主语+谓语+宾语</p>
+<p>谓语一般为及物动词（vt.），后面必须要跟宾语才能表达完整的意思。宾语是谓语动词动作的承受者。</p>
+<h3 id="1-4-S-V-O-O（主-谓-间宾-人-直宾-物-）"><a href="#1-4-S-V-O-O（主-谓-间宾-人-直宾-物-）" class="headerlink" title="1.4 S + V + O + O（主+谓+间宾(人)+直宾(物)）"></a>1.4 S + V + O + O（主+谓+间宾(人)+直宾(物)）</h3><p>谓语动词必须要跟两个宾语才能表达完整意思。两个宾语分别是动作的直接承受者（一般是物）和间接承受者（一般是人）。<br>e.g.,</p>
+<p>give sb sth = give sth to sb</p>
+<p>tell sb sth = tell sth to sb</p>
+<h3 id="1-5-S-V-O-C（主-谓-宾-宾补）"><a href="#1-5-S-V-O-C（主-谓-宾-宾补）" class="headerlink" title="1.5 S + V + O + C（主+谓+宾+宾补）"></a>1.5 S + V + O + C（主+谓+宾+宾补）</h3><p>此种情况，动词虽然跟了宾语，但句子意思不完整，需要跟上一个补足语，对宾语进行解释说明，句子意思才能完整通顺。<br>主语的补语用来表示主语是什么。类似地，宾语的补语用来表示宾语是什么。在 S + V + O + C 这个句型当中，宾语和补语之间虽然没有动词存在。但是句子可以变形成：S + V + that + O + V + C 的形式，也就是将原本的宾语和补语以从句的形式出现。因此，可以认为宾语和补语之间有「隐藏的」判断动词「是」的存在。</p>
+<p>There be 句型</p>
+<p>There be 句型表示人/物的存在。句子结构，就是There be + 主语+其他部分</p>
+<p>1.主语：句子所陈述的对象。<br>2.谓语：主语发出的动作。一般是有动作意义的动词。<br>3. 宾语：分为动词宾语和介词宾语，属于动作的承受者。<br>4. 系动词：表示状态或状态变化的动词，没有实际的动作意义。如 be, 感官系动词（look, sound, smell, taste 和 feel）、保持类系动词（keep, stay 和 remain）、状态变化类系动词（become、get、turn 和 go）等。<br>5. 表语：紧跟系动词后面的成分。<br>6. 定语：修饰名词或代词的成分。<br>7. 状语： 修饰形容词、副词、动词或句子的成分。<br>8. 补语：分为宾语补足语和主语补足语。是对宾语和主语的补充说明，与其有主动或被动的逻辑关系。</p>
+<ul>
+<li><p>参考链接:<br><a href="https://liam.page/2014/06/21/basic-sentence-and-the-complement/">https://liam.page/2014/06/21/basic-sentence-and-the-complement/</a><br><a href="https://www.zhihu.com/question/30030877/answer/768501967">https://www.zhihu.com/question/30030877/answer/768501967</a></p>
+</li>
+<li><p>参考数据<br>《语法俱乐部》</p>
+</li>
+</ul>
+<p>复杂句:从简单句演化而来</p>
+<p>简单句没有什么句序的调整，所以翻译起来基本没有什么难度。</p>
+<p>英语中的修饰成分，分定语和状语两种情况。<br>英语句子 = 主干(五种基本句型) + 修饰成分(定语+状语)</p>
+<h2 id="二、并列句、复合句"><a href="#二、并列句、复合句" class="headerlink" title="二、并列句、复合句"></a>二、并列句、复合句</h2><p>简单句通过不同的连接词就成为了不同的句子，通过并列词成了并列句，通过从属连词成了复合句。下面我们就一一讲解 ：</p>
+<p>并列句：简单句+并列词+简单句</p>
+<p>并列词一般有：and / or / but / so /while / yet / for / however</p>
+<p>1）：表示并列：and, not only…but also… , neither…nor…</p>
+<p>Her father is a doctor and her mother is a teacher .</p>
+<p>2）：表示选择：or, or else, otherwise, either…or…</p>
+<p>Hurry or you won’t make the train.</p>
+<p>3）：表示对比、转折: but, while , yet , however , never ,</p>
+<p>I like tea while she likes coffee .</p>
+<p>4）：表示原因：for</p>
+<p>I am thirsty , for it is hot .</p>
+<p>复合句：简单句+从属连词+简单句</p>
+<p>从属连词有：that / wether/ if</p>
+<p>复合句其实就是我们常说的三大从句，</p>
+<h2 id="三-三大从句"><a href="#三-三大从句" class="headerlink" title="三.三大从句"></a>三.三大从句</h2><p>1、名词性从句</p>
+<p>当名词性从句作为句子的不同成分时，又被称呼为不同的名字。</p>
+<p>当作为主语时，称为主语从句。</p>
+<p>当称为宾语时，称为宾语从句，同样表语从句以及同位语从句。以下我们来举个栗子 ：</p>
+<p>主语从句 What she said is wrong .</p>
+<p>宾语从句 I said that she was wrong.</p>
+<p>表语从句 The fact is that he doesn’t really try.</p>
+<p>同位语从句 The news that he will come back is ture.</p>
+<p>记住一点，不管什么从句，你把它当成一个”长一点的名词”。</p>
+<p>那如果这个长名词在句子中作主语，就是主语从句，作宾语就是宾语从句。</p>
+<p>同位语从句就是相当于一个长点的名词对另外一个抽象名词进行解释说明。</p>
+<p>2、定语从句</p>
+<p>修饰限定名词，汉语中“的”前面的内容。</p>
+<p>关系代词引导的定语从句</p>
+<p>1.who指人，在从句中做主语 Yesterday I helped an old man who lost his way.</p>
+<p>2. whom指人，在定语从句中充当宾语，常可省略。</p>
+<p>Mr. Ling is just the boy whom I want to see</p>
+<p>3. which指物，在定语从句中做主语或者宾语，做宾语时可省略</p>
+<p>This is the pen (which) he bought yesterday.</p>
+<p>4. that指人时，相当于who 或者whom；指物时，相当于which。</p>
+<p>5. whose通常指人，也可指物，在定语从句中做定语。</p>
+<p>指的是谁的。Do you like the book whose cover is yellow?</p>
+<p>关系副词引导的定语从句</p>
+<p>when where why</p>
+<p>3、状语从句</p>
+<p>修饰动作的发生的时间、地点、原因、方式</p>
+<p>九大状语从句</p>
+<p>1、时间状语从句</p>
+<p>常用引导词：when, as, while, as soon as, before, after, since , till, until</p>
+<p>特殊引导词：the minute, the moment, the second, every time, the day，the instant,</p>
+<p>I was fat when I was a child.</p>
+<p>2、地点状语从句</p>
+<p>常用引导词：where</p>
+<p>特殊引导词：wherever, anywhere, everywhere</p>
+<p>Keep it where you can see it.</p>
+<p>3、原因状语从句</p>
+<p>常用引导词：because, since, as, for</p>
+<p>特殊引导词：seeing that, now that, in that, considering that, given that.</p>
+<p>My friends dislike me because I’m beautiful .</p>
+<p>4、目的状语从句</p>
+<p>常用引导词：so that, in order that</p>
+<p>特殊引导词：lest, in case, for fear that，in the hope that, for the purpose that, to the end that</p>
+<p>study hard so that you can pass the exam.</p>
+<p>5、结果状语从句</p>
+<p>常用引导词：so … that, so… that, such … that,</p>
+<p>特殊引导词：such that, to the degree that, to the extent that, to such a degree that,</p>
+<p>He got up so early that he caught the first bus.</p>
+<p>6、条件状语从句</p>
+<p>常用引导词：if, unless,</p>
+<p>特殊引导词：as/so long as, only if, providing/provided that, supposing that, in case that, on condition that</p>
+<p>If you ask him, he will help you.</p>
+<p>7、方式状语从句</p>
+<p>常用引导词：as, as if, how</p>
+<p>特殊引导词：the way</p>
+<p>Think as i think</p>
+<p>8、比较状语从句</p>
+<p>常用引导词：as(同级比较), than(不同程度的比较)</p>
+<p>特殊引导词：the more … the more … ; just as …， so…; A is to B what /as X is to Y; no … more than; not A so much as B</p>
+<p>The house is three times as big as ours.</p>
+<p>9、让步状语从句</p>
+<p>常用引导词：though, although, even if, even though</p>
+<p>特殊引导词： as(用在让步状语从句中必须要倒装)，while ( 一般用在句首 )，no matter …， in spite of the fact that, while, whatever, whoever, wherever, whenever, however, whichever</p>
+<p>Though I believe it, yet I must consider.</p>
+<h2 id="四-特殊句式"><a href="#四-特殊句式" class="headerlink" title="四.特殊句式"></a>四.特殊句式</h2><p>1、强调句</p>
+<p>It is （名词 / 介宾）指的是被强调的内容that （……..）</p>
+<p>It was she whom we are talking about.</p>
+<p>2、倒装句</p>
+<p>正常句序 ：主谓宾</p>
+<p>倒装句序 ：谓主宾</p>
+<p>we can win only through hard work .</p>
+<p>only through hard work can we win .</p>
+<p>3、虚拟语气，假设不可能发生的事情</p>
+<p>1、对过去情况的虚拟</p>
+<p>从句用 had done</p>
+<p>主句用 would could might should have done</p>
+<p>2、对现在情况的虚拟</p>
+<p>从句用 did , was变成were</p>
+<p>主句用 would could might should do</p>
+<p>3、对将来情况虚拟</p>
+<p>从句用 did ，was 变成 were，should do,were to do</p>
+<p>主句用 would could might should do</p>
+<h2 id="五-类型"><a href="#五-类型" class="headerlink" title="五.类型"></a>五.类型</h2><p>陈述句</p>
+<p>i like English very much . 我非常喜欢英语。</p>
+<p>疑问句</p>
+<p>is this your key ? 这是你的钥匙吗？</p>
+<p>祈使句</p>
+<p>一种是以动词原形开头，在动词原形之前加do (但只限于省略第二人称主语的句子)。</p>
+<p>mind you head 小心碰头！</p>
+<p>第二种祈使句以let开头</p>
+<p>Let’s have another try</p>
+<p>感叹句</p>
+<p>what a brave girl ! 真是个勇敢的女孩子</p>
+<p><a href="https://zhuanlan.zhihu.com/p/400448345">https://zhuanlan.zhihu.com/p/400448345</a></p>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>study</category>
+        <category>2021</category>
+        <category>12</category>
+      </categories>
+      <tags>
+        <tag>Another Tag</tag>
+        <tag>English</tag>
       </tags>
   </entry>
   <entry>
@@ -943,294 +1270,6 @@
       <tags>
         <tag>Another Tag</tag>
         <tag>Computer Science</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C/C++</title>
-    <url>/2021/12/07/2021/12/C++/</url>
-    <content><![CDATA[<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><ul>
-<li>开源 C++ 库列表<br><a href="https://zh.cppreference.com/w/cpp/links/libs">https://zh.cppreference.com/w/cpp/links/libs</a></li>
-<li>C 语言<br><a href="https://zh.cppreference.com/w/c/language">https://zh.cppreference.com/w/c/language</a></li>
-</ul>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2021</category>
-        <category>12</category>
-      </categories>
-      <tags>
-        <tag>c/c++</tag>
-        <tag>cs</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>英语语法指一</title>
-    <url>/2021/12/02/2021/12/%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95%E4%B8%80/</url>
-    <content><![CDATA[<h2 id="一-简单句子分析"><a href="#一-简单句子分析" class="headerlink" title="一.简单句子分析"></a>一.简单句子分析</h2><p> <strong>英语句子= 主干+修饰成分</strong><br> 分析句子结构:<br>  一个中心 + 两个要点<br>  一个中心: 动词. 句子必须右动词<br>  两个要点: 主语 + 谓语. 谓语是动词,主语为动作的执行者或接受者.<br>  <strong>句子的核心是主谓结构</strong></p>
-<span id="more"></span>
-<p> n个主语+1个谓语 或者 1个主语+n个谓语，就可以组成简单句。其他的定状补语等都是句子的附属成分。主语部分形式比较单一，通常由名词性的结构来担任。谓语部分的形式变化较多，五种基本句型实际就是通过不同的谓语部分结构来表达五种类型的含义。不管谓语部分如何变化，它都由动词起头，并承担主要的表意功能。</p>
-<p> 英语的句子结构分为三种:简单句,并列句,复合句.简单句又分为五种基本句型.</p>
-<blockquote class="pullquote mindmap mindmap-md"><ul>
-<li>英文句子<ul>
-<li>简单句<ul>
-<li>主 + 谓</li>
-<li>主 + 谓 + 宾</li>
-<li>主 + 谓 + 宾 + 宾补</li>
-<li>主 + 谓 + 间宾 + 直宾</li>
-<li>主 + 系 + 表</li>
-</ul>
-</li>
-<li>复合句<ul>
-<li>名词性从句<ul>
-<li>主语从句</li>
-<li>宾语从句</li>
-<li>同位语从句</li>
-<li>表语从句</li>
-</ul>
-</li>
-<li>定语从句</li>
-<li>状语从句<ul>
-<li>时间状语从句</li>
-<li>地点状语从句</li>
-<li>条件状语从句</li>
-<li>结果状语从句</li>
-<li>让步状语从句</li>
-<li>目的状语从句</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>特殊句式<ul>
-<li>强调句</li>
-<li>虚拟语气</li>
-<li>倒装句</li>
-</ul>
-</li>
-<li>类型<ul>
-<li>陈述句</li>
-<li>祈使句</li>
-<li>感叹句</li>
-<li>疑问句</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-
-<p> 英语语法从整体上来讲是通过五部分来组成<br>  1、简单句<br>  2、并列句、复合句<br>  3、三大从句<br>  4、特殊句式<br>  5、类型</p>
-<p>补语<br> 补语是和表意不完全的动词息息相关的。在第三种基本句型中，联系动词将主语和补语在某个意义层面上对等起来。<br> 修饰成分<br>  介词短语<br>  从句<br>  非谓语动词<br>  时间状语<br> 论主语的补语，而后将宾语的补语作为一种变形来讨论</p>
-<h3 id="1-1-S-V-（主-谓）"><a href="#1-1-S-V-（主-谓）" class="headerlink" title="1.1 S + V （主+谓）"></a>1.1 S + V （主+谓）</h3><p> 句子不可或缺的两部分.<br> 名词/代词/不定式/动名词 + 动词<br> 谓语动词可以表达完整的意思，这类动词为不及物动词（vi）.</p>
-<h3 id="1-2-S-V-C-（主-系-表）"><a href="#1-2-S-V-C-（主-系-表）" class="headerlink" title="1.2 S + V + C （主+系+表）"></a>1.2 S + V + C （主+系+表）</h3><p>主语 +系动词 +表语</p>
-<p>表语说明主语的状态和性质，可以是名词，形容词，副词，短语等。</p>
-<p>系动词包括：</p>
-<p>a. be 动词，am, is, are, was, were;</p>
-<p>b. 表感官：feel(摸起来像是), smell, sound(听起来是), taste(尝起来是), look(看起来是);</p>
-<p>c. 表变化：become(成为), grow, turn(转变为), go, get, fall;</p>
-<p>d. 表状态：remain(依旧是), keep, hold, stay(仍然是), seem(似乎是).</p>
-<p>appear 显得像是<br>prove 证实为<br>become 成为<br>make 作为</p>
-<h3 id="1-3-S-V-O-（主-谓-宾）"><a href="#1-3-S-V-O-（主-谓-宾）" class="headerlink" title="1.3 S + V + O （主+谓+宾）"></a>1.3 S + V + O （主+谓+宾）</h3><p>主语+谓语+宾语</p>
-<p>谓语一般为及物动词（vt.），后面必须要跟宾语才能表达完整的意思。宾语是谓语动词动作的承受者。</p>
-<h3 id="1-4-S-V-O-O（主-谓-间宾-人-直宾-物-）"><a href="#1-4-S-V-O-O（主-谓-间宾-人-直宾-物-）" class="headerlink" title="1.4 S + V + O + O（主+谓+间宾(人)+直宾(物)）"></a>1.4 S + V + O + O（主+谓+间宾(人)+直宾(物)）</h3><p>谓语动词必须要跟两个宾语才能表达完整意思。两个宾语分别是动作的直接承受者（一般是物）和间接承受者（一般是人）。<br>e.g.,</p>
-<p>give sb sth = give sth to sb</p>
-<p>tell sb sth = tell sth to sb</p>
-<h3 id="1-5-S-V-O-C（主-谓-宾-宾补）"><a href="#1-5-S-V-O-C（主-谓-宾-宾补）" class="headerlink" title="1.5 S + V + O + C（主+谓+宾+宾补）"></a>1.5 S + V + O + C（主+谓+宾+宾补）</h3><p>此种情况，动词虽然跟了宾语，但句子意思不完整，需要跟上一个补足语，对宾语进行解释说明，句子意思才能完整通顺。<br>主语的补语用来表示主语是什么。类似地，宾语的补语用来表示宾语是什么。在 S + V + O + C 这个句型当中，宾语和补语之间虽然没有动词存在。但是句子可以变形成：S + V + that + O + V + C 的形式，也就是将原本的宾语和补语以从句的形式出现。因此，可以认为宾语和补语之间有「隐藏的」判断动词「是」的存在。</p>
-<p>There be 句型</p>
-<p>There be 句型表示人/物的存在。句子结构，就是There be + 主语+其他部分</p>
-<p>1.主语：句子所陈述的对象。<br>2.谓语：主语发出的动作。一般是有动作意义的动词。<br>3. 宾语：分为动词宾语和介词宾语，属于动作的承受者。<br>4. 系动词：表示状态或状态变化的动词，没有实际的动作意义。如 be, 感官系动词（look, sound, smell, taste 和 feel）、保持类系动词（keep, stay 和 remain）、状态变化类系动词（become、get、turn 和 go）等。<br>5. 表语：紧跟系动词后面的成分。<br>6. 定语：修饰名词或代词的成分。<br>7. 状语： 修饰形容词、副词、动词或句子的成分。<br>8. 补语：分为宾语补足语和主语补足语。是对宾语和主语的补充说明，与其有主动或被动的逻辑关系。</p>
-<ul>
-<li><p>参考链接:<br><a href="https://liam.page/2014/06/21/basic-sentence-and-the-complement/">https://liam.page/2014/06/21/basic-sentence-and-the-complement/</a><br><a href="https://www.zhihu.com/question/30030877/answer/768501967">https://www.zhihu.com/question/30030877/answer/768501967</a></p>
-</li>
-<li><p>参考数据<br>《语法俱乐部》</p>
-</li>
-</ul>
-<p>复杂句:从简单句演化而来</p>
-<p>简单句没有什么句序的调整，所以翻译起来基本没有什么难度。</p>
-<p>英语中的修饰成分，分定语和状语两种情况。<br>英语句子 = 主干(五种基本句型) + 修饰成分(定语+状语)</p>
-<h2 id="二、并列句、复合句"><a href="#二、并列句、复合句" class="headerlink" title="二、并列句、复合句"></a>二、并列句、复合句</h2><p>简单句通过不同的连接词就成为了不同的句子，通过并列词成了并列句，通过从属连词成了复合句。下面我们就一一讲解 ：</p>
-<p>并列句：简单句+并列词+简单句</p>
-<p>并列词一般有：and / or / but / so /while / yet / for / however</p>
-<p>1）：表示并列：and, not only…but also… , neither…nor…</p>
-<p>Her father is a doctor and her mother is a teacher .</p>
-<p>2）：表示选择：or, or else, otherwise, either…or…</p>
-<p>Hurry or you won’t make the train.</p>
-<p>3）：表示对比、转折: but, while , yet , however , never ,</p>
-<p>I like tea while she likes coffee .</p>
-<p>4）：表示原因：for</p>
-<p>I am thirsty , for it is hot .</p>
-<p>复合句：简单句+从属连词+简单句</p>
-<p>从属连词有：that / wether/ if</p>
-<p>复合句其实就是我们常说的三大从句，</p>
-<h2 id="三-三大从句"><a href="#三-三大从句" class="headerlink" title="三.三大从句"></a>三.三大从句</h2><p>1、名词性从句</p>
-<p>当名词性从句作为句子的不同成分时，又被称呼为不同的名字。</p>
-<p>当作为主语时，称为主语从句。</p>
-<p>当称为宾语时，称为宾语从句，同样表语从句以及同位语从句。以下我们来举个栗子 ：</p>
-<p>主语从句 What she said is wrong .</p>
-<p>宾语从句 I said that she was wrong.</p>
-<p>表语从句 The fact is that he doesn’t really try.</p>
-<p>同位语从句 The news that he will come back is ture.</p>
-<p>记住一点，不管什么从句，你把它当成一个”长一点的名词”。</p>
-<p>那如果这个长名词在句子中作主语，就是主语从句，作宾语就是宾语从句。</p>
-<p>同位语从句就是相当于一个长点的名词对另外一个抽象名词进行解释说明。</p>
-<p>2、定语从句</p>
-<p>修饰限定名词，汉语中“的”前面的内容。</p>
-<p>关系代词引导的定语从句</p>
-<p>1.who指人，在从句中做主语 Yesterday I helped an old man who lost his way.</p>
-<p>2. whom指人，在定语从句中充当宾语，常可省略。</p>
-<p>Mr. Ling is just the boy whom I want to see</p>
-<p>3. which指物，在定语从句中做主语或者宾语，做宾语时可省略</p>
-<p>This is the pen (which) he bought yesterday.</p>
-<p>4. that指人时，相当于who 或者whom；指物时，相当于which。</p>
-<p>5. whose通常指人，也可指物，在定语从句中做定语。</p>
-<p>指的是谁的。Do you like the book whose cover is yellow?</p>
-<p>关系副词引导的定语从句</p>
-<p>when where why</p>
-<p>3、状语从句</p>
-<p>修饰动作的发生的时间、地点、原因、方式</p>
-<p>九大状语从句</p>
-<p>1、时间状语从句</p>
-<p>常用引导词：when, as, while, as soon as, before, after, since , till, until</p>
-<p>特殊引导词：the minute, the moment, the second, every time, the day，the instant,</p>
-<p>I was fat when I was a child.</p>
-<p>2、地点状语从句</p>
-<p>常用引导词：where</p>
-<p>特殊引导词：wherever, anywhere, everywhere</p>
-<p>Keep it where you can see it.</p>
-<p>3、原因状语从句</p>
-<p>常用引导词：because, since, as, for</p>
-<p>特殊引导词：seeing that, now that, in that, considering that, given that.</p>
-<p>My friends dislike me because I’m beautiful .</p>
-<p>4、目的状语从句</p>
-<p>常用引导词：so that, in order that</p>
-<p>特殊引导词：lest, in case, for fear that，in the hope that, for the purpose that, to the end that</p>
-<p>study hard so that you can pass the exam.</p>
-<p>5、结果状语从句</p>
-<p>常用引导词：so … that, so… that, such … that,</p>
-<p>特殊引导词：such that, to the degree that, to the extent that, to such a degree that,</p>
-<p>He got up so early that he caught the first bus.</p>
-<p>6、条件状语从句</p>
-<p>常用引导词：if, unless,</p>
-<p>特殊引导词：as/so long as, only if, providing/provided that, supposing that, in case that, on condition that</p>
-<p>If you ask him, he will help you.</p>
-<p>7、方式状语从句</p>
-<p>常用引导词：as, as if, how</p>
-<p>特殊引导词：the way</p>
-<p>Think as i think</p>
-<p>8、比较状语从句</p>
-<p>常用引导词：as(同级比较), than(不同程度的比较)</p>
-<p>特殊引导词：the more … the more … ; just as …， so…; A is to B what /as X is to Y; no … more than; not A so much as B</p>
-<p>The house is three times as big as ours.</p>
-<p>9、让步状语从句</p>
-<p>常用引导词：though, although, even if, even though</p>
-<p>特殊引导词： as(用在让步状语从句中必须要倒装)，while ( 一般用在句首 )，no matter …， in spite of the fact that, while, whatever, whoever, wherever, whenever, however, whichever</p>
-<p>Though I believe it, yet I must consider.</p>
-<h2 id="四-特殊句式"><a href="#四-特殊句式" class="headerlink" title="四.特殊句式"></a>四.特殊句式</h2><p>1、强调句</p>
-<p>It is （名词 / 介宾）指的是被强调的内容that （……..）</p>
-<p>It was she whom we are talking about.</p>
-<p>2、倒装句</p>
-<p>正常句序 ：主谓宾</p>
-<p>倒装句序 ：谓主宾</p>
-<p>we can win only through hard work .</p>
-<p>only through hard work can we win .</p>
-<p>3、虚拟语气，假设不可能发生的事情</p>
-<p>1、对过去情况的虚拟</p>
-<p>从句用 had done</p>
-<p>主句用 would could might should have done</p>
-<p>2、对现在情况的虚拟</p>
-<p>从句用 did , was变成were</p>
-<p>主句用 would could might should do</p>
-<p>3、对将来情况虚拟</p>
-<p>从句用 did ，was 变成 were，should do,were to do</p>
-<p>主句用 would could might should do</p>
-<h2 id="五-类型"><a href="#五-类型" class="headerlink" title="五.类型"></a>五.类型</h2><p>陈述句</p>
-<p>i like English very much . 我非常喜欢英语。</p>
-<p>疑问句</p>
-<p>is this your key ? 这是你的钥匙吗？</p>
-<p>祈使句</p>
-<p>一种是以动词原形开头，在动词原形之前加do (但只限于省略第二人称主语的句子)。</p>
-<p>mind you head 小心碰头！</p>
-<p>第二种祈使句以let开头</p>
-<p>Let’s have another try</p>
-<p>感叹句</p>
-<p>what a brave girl ! 真是个勇敢的女孩子</p>
-<p><a href="https://zhuanlan.zhihu.com/p/400448345">https://zhuanlan.zhihu.com/p/400448345</a></p>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>study</category>
-        <category>2021</category>
-        <category>12</category>
-      </categories>
-      <tags>
-        <tag>Another Tag</tag>
-        <tag>English</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CMake</title>
-    <url>/2021/12/07/2021/12/cmake/</url>
-    <content><![CDATA[<h2 id="1-camke简述"><a href="#1-camke简述" class="headerlink" title="1.camke简述"></a>1.camke简述</h2><p> CMake是跨平台编译管理工具,为第三方依赖和引入,创建编译系统,程序测试及安装.Cmake工具使用CMakeLists.txt文件,跨平台执行相同编译命令,生成对应平台的可执行程序或者链接库.</p>
-<span id="more"></span>
-
-<p> CMake工程简单例子</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">cmake_minimum_required(VERSION 3.12)</span><br><span class="line">project(myproj)</span><br><span class="line">find_package(Poco REQUIRED COMPONENTS Net Util)</span><br><span class="line">add_executable(MyExe)</span><br><span class="line">target_source(MyExe PRIVATE <span class="string">"main.cpp"</span>)</span><br><span class="line">target_link_library(MyExe PRIVATE Poco::Net PocoUtil)</span><br><span class="line"></span><br><span class="line">target_complie_definition(MyExe PRIVATE std_cxx_14)</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="2-Target-和围绕-Target-的配置"><a href="#2-Target-和围绕-Target-的配置" class="headerlink" title="2.Target 和围绕 Target 的配置"></a>2.Target 和围绕 Target 的配置</h2><p> C/C++工程通常都是为了生成可执行程序或者链接库，在现代 CMake 里他们被统称为<code>target</code>，创建命令分别是<code>add_library()</code>和<code>add_executable()</code>。其中链接库的类型又分为很多种，最常用的就是<code>SHARED</code>以及<code>STATIC</code>，在命令中加入关键词进行声明：add_library(MyLib SHARED)，第一个参数为target的名称，后续的配置都需要用到这个名字。<br> 指定target的源文件：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_source(MyLib PRVIATE <span class="string">"main.cpp"</span> <span class="string">"func.cpp"</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p> PRIVATE关键词用于描述参数的“应用范围”，此外还有INTERFACE和PUBLIC两种可能的值</p>
-<p> 较多的源文件，可以使用 CMake 的file命令进行遍历拿到全部的源文件</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">file(GLOB_RECURSE SRCS <span class="variable">${CMAKE_CURRENT_SOURCE_DIR}</span>/*.cpp)</span><br></pre></td></tr></tbody></table></figure>
-<p> 命令第一个参数GLOB_RECURSE表明递归的查找子文件夹，第二个参数SRCS则是存储结果的变量名，第三个参数为目标文件的匹配模式，找到符合条件的 cpp 文件后，他们的路径会以字符串数组的形式保存在 SRCS 变量中，使用方式如下：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_source(MyLib PRIVATE <span class="variable">${SRCS}</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p> 配置target时通常还需要指定头文件目录：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_include_directories(MyLib PRIVATE <span class="variable">${CMAKE_CURRENT_SOURCE_DIR}</span>/include/)</span><br></pre></td></tr></tbody></table></figure>
-<p> 编译时需要的语言特性：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_features(MyLib PRIVATE std_cxx_14)</span><br></pre></td></tr></tbody></table></figure>
-<p> 编译时的宏定义：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_definitions(MyLib PRIVATE LogLevel=3)</span><br></pre></td></tr></tbody></table></figure>
-<p> 参数想直接传给底层的编译器（比如 gcc, clang, cl），可以使用</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_options(MyLib PRIVATE -Werror -Wall -Wextra)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="3-Build-Specification-和-Usage-Requirement"><a href="#3-Build-Specification-和-Usage-Requirement" class="headerlink" title="3.Build Specification 和 Usage Requirement"></a>3.Build Specification 和 Usage Requirement</h2><p> C/C++通过 include 头文件的方式引入依赖，在动态或静态链接后可以调用依赖实现。一个可执行程序可能会依赖链接库，链接库也同样可能依赖其他的链接库<br> CMake 提供的解决方案是，在对 target 进行配置时，可以规定配置的类型，分为 build specification 和 usage requirement 两类，会影响配置的应用范围。Build specification 类型的配置仅在编译的时候需要满足，通过PRIVATE关键字声明；Usage requirement 类型的配置则是在使用时需要满足，即在其他项目里，使用本项目已编译好的 target 时需要满足，这种类型的配置使用INTERFACE关键词声明。在实际工程中，有很多配置在编译时以及被使用时都需要被满足的，这种配置通过PUBLIC关键词进行声明。</p>
-<p> 一个 library，在编译时静态链接了 Boost，在我们的实现文件中使用了 c++14 的特性，并用到了 Boost 的头文件和函数。随后我们对外发布了这个库，其中有头文件和预编译好的动态链接库。尽管我们的实现代码里用了 C++14，但在对外提供的头文件中只用到 C++03 的语法，也没有引入任何 Boost 的代码。这种情况下，当其他工程在使用我们的 library 时，其使用的编译器不需要开启 C++14 的支持，开发环境下也不需要安装 Boost。我们 library 的 CMake 配置中可以这么写：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_features(MyLib PRIVATE cxx_std_14)</span><br><span class="line">target_link_libraries(MyLib PRIVATE Boost::Format)</span><br></pre></td></tr></tbody></table></figure>
-<p> PRIVATE 说明 c++14 的支持只在编译时需要用到，Boost 库的链接也仅在编译时需要。但如果我们对外提供的头文件中也使用了 C++14，那么就需要使用 PUBLIC 修饰，改为：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_features(MyLib PUBLIC cxx_std_14)</span><br><span class="line">target_link_libraries(MyLib PRIVATE Boost::Format)</span><br></pre></td></tr></tbody></table></figure>
-<p> 当 library 是 header-only 时，我们的工程是不需要单独编译的，因此也就没有 build specification，通过INTERFACE修饰配置即可</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">arget_compile_features(MyLib INTERFACE cxx_std_14)</span><br></pre></td></tr></tbody></table></figure>
-<p> Usage requirement 类型的配置，即通过INTERFACE或是PUBLIC修饰的配置是会传递的，比如 LibA 依赖 LibB 后，会继承 LibB 的 usage requirement，此后 LibC 依赖 LibB 时，LibA 和 libB 的 usage requirement 都会继承下来，</p>
-<h2 id="4-寻找和使用链接库"><a href="#4-寻找和使用链接库" class="headerlink" title="4.寻找和使用链接库"></a>4.寻找和使用链接库</h2><p> C/C++标准没有规范库的安装位置和安装形式，通过 CMake 提供的方案寻找依赖，不光可以定位到头文件目录和链接库路径，还能够获取到库的 usage requirement。<br> 在 CMake 中寻找第三方库的命令为find_package，其背后的工作方式有两种，一种基于 Config File 的查找，另一种则是基于 Find File 的查找。在执行find_package时，实际上 CMake 都是在找这两类文件，找到后从中获取关于库的信息。</p>
-<h3 id="4-1-通过-Config-file-找到依赖"><a href="#4-1-通过-Config-file-找到依赖" class="headerlink" title="4.1 通过 Config file 找到依赖"></a>4.1 通过 Config file 找到依赖</h3><p> Config File 是依赖的开发者提供的 cmake 脚本，通常会随预编译好的二进制一起发布，供下游的使用者使用。在 Config file 里，会对库里包含的 target 进行描述，说明版本信息以及头文件路径、链接库路径、编译选项等 usage requirement</p>
-<p> CMake 对 Config file 的命名是有规定的，对于find_package(ABC)这样一条命令，CMake 只会去寻找ABCConfig.cmake或是abc-config.cmake。CMake 默认寻找的路径和平台有关，在 Linux 下寻找路径包括/usr/lib/cmake以及/usr/lib/local/cmake，在这两个路径下可以发现大量的 Config File，一般在安装某个库时，其自带的 Config file 会被放到这里来。</p>
-<h3 id="4-2-通过-Find-file-找到依赖"><a href="#4-2-通过-Find-file-找到依赖" class="headerlink" title="4.2 通过 Find file 找到依赖"></a>4.2 通过 Find file 找到依赖</h3><p> 对于find_package(ABC)命令，如果 CMake 没有找到 Config file，他还会去试着寻找FindABC.cmake。Find file 在功能上和 Config file 相同，区别在于 Find file 是由其他人编写的，而非库的开发者。如果你使用的某个库没有提供 Config file，你可以去网上搜搜 Find file 或者自己写一个，然后加入到你的 CMake 工程中。</p>
-<p> CMake 官方为我们写好了很多 Find file，在CMake Documentation这一页面可以看到，OpenGL，OpenMP，SDL 这些知名的库官方都为我们写好了 Find 脚本，因此直接调用 find_package 命令即可。但由于库的安装位置并不是固定的，这些 Find 脚本不一定能找到库，此时根据 CMake 报错的提示设置对应变量即可，通常是需要提供安装路径，这样就可以通过 Find file 获取到库的 usage requirement。不论是 Config file 还是 Find file，其目的都不只是找到库这么简单，而是告诉 CMake 如何使用这个库。<br>库 CMake 官方也没有提供 Find file，这时候就要自己写了或者靠搜索了，写好后放到本项目的目录下，修改CMAKE_MODULE_PATH这个 CMAKE 变量：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">list(INSERT CMAKE_MODULE_PATH 0 <span class="variable">${CMAKE_SOURCE_DIR}</span>/cmake)</span><br></pre></td></tr></tbody></table></figure>
-<p> ${CMAKE_SOURCE_DIR}/cmake目录下的 Find file 就可以被 CMake 找到了。<br> 通过 CMake 的find_library和find_path两个命令就可以完成任务：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">find_library(MPI_LIBRARY</span><br><span class="line">  NAMES mpi</span><br><span class="line">  HINTS <span class="string">"<span class="variable">${CMAKE_PREFIX_PATH}</span>/lib"</span> <span class="variable">${MPI_LIB_PATH}</span></span><br><span class="line">  <span class="comment"># 如果默认路径没找到libmpi.so，还会去MPI_LIB_PATH找，下游使用者可以设置这个变量值</span></span><br><span class="line">)</span><br><span class="line">find_path(MPI_INCLUDE_DIR</span><br><span class="line">  NAMES mpi.h</span><br><span class="line">  PATHS <span class="string">"<span class="variable">${CMAKE_PREFIX_PATH}</span>/include"</span> <span class="variable">${MPI_INCLUDE_PATH}</span></span><br><span class="line">  <span class="comment"># 如果默认路径没找到mpi.h，还会去MPI_INCLUDE_PATH找，下游使用者可以设置这个变量值</span></span><br><span class="line">)</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="4-3-find-package-的处理"><a href="#4-3-find-package-的处理" class="headerlink" title="4.3.find_package 的处理"></a>4.3.find_package 的处理</h3><p> find_package这个命令，这个命令可以指定很多参数，比如指定版本，指定具体的模块等等。以 SFML 多媒体库为例，其包含了 network 模块，audio 模块，graphic 模块等等，但我很多时候只用到 graphic 模块，那么其他的模块对应的链接库不需要被链接，于是 CMake 脚本可以这么写：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 要求大版本号为2的SFML库的graphic模块</span></span><br><span class="line">find_package(SFML 2 COMPONENTS graphics REQUIRED)</span><br><span class="line"><span class="comment"># SFML提供的target名字为sfml-graphics</span></span><br><span class="line">target_link_libraries(MyEXE PRIVATE sfml-graphics)</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="5-使用-CMake-来编译"><a href="#5-使用-CMake-来编译" class="headerlink" title="5.使用 CMake 来编译"></a>5.使用 CMake 来编译</h3><p> CMake 生成好编译环境后，底层的 make, ninja, MSBuild 编译命令都是不一样的，但 CMake 提供了一个统一的方法进行编译：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">cmake --build .</span><br></pre></td></tr></tbody></table></figure>
-<p> 使用–buildflag，CMake 就会调用底层的编译命令，在跨平台时十分方便。<br> 对于 Visual Studio，其 Debug 和 Release 环境是基于 configuration 的，因此CMAKE_BUILD_TYPE变量无效，需要在 build 时指定：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">cmake --build . --config Release</span><br></pre></td></tr></tbody></table></figure>
-
-
-
-
-<ul>
-<li>参考链接:<br>cmake<br><a href="https://ukabuer.me/blog/more-modern-cmake/">https://ukabuer.me/blog/more-modern-cmake/</a><br>Makefile</li>
-</ul>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2021</category>
-        <category>12</category>
-      </categories>
-      <tags>
-        <tag>cs</tag>
-        <tag>complier</tag>
-        <tag>cmake</tag>
       </tags>
   </entry>
 </search>
