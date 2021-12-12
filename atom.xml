@@ -17,6 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>C/C++</title>
+    <link href="http://example.com/2021/12/07/2021/12/C++/"/>
+    <id>http://example.com/2021/12/07/2021/12/C++/</id>
+    <published>2021-12-06T16:47:53.000Z</published>
+    <updated>2021-10-26T16:53:53.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;开源 C++ 库列表&lt;br&gt;&lt;a href=&quot;https://zh.cppreference.com/w/cpp/links/libs&quot;&gt;https://zh.cppreference.com/w/cpp/links/libs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;C</summary>
+        
+      
+    
+    
+    
+    <category term="tool" scheme="http://example.com/categories/tool/"/>
+    
+    <category term="2021" scheme="http://example.com/categories/tool/2021/"/>
+    
+    <category term="12" scheme="http://example.com/categories/tool/2021/12/"/>
+    
+    
+    <category term="c/c++" scheme="http://example.com/tags/c-c/"/>
+    
+    <category term="cs" scheme="http://example.com/tags/cs/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CMake</title>
     <link href="http://example.com/2021/12/07/2021/12/cmake/"/>
     <id>http://example.com/2021/12/07/2021/12/cmake/</id>
@@ -35,9 +68,9 @@
     <category term="12" scheme="http://example.com/categories/tool/2021/12/"/>
     
     
-    <category term="complier" scheme="http://example.com/tags/complier/"/>
-    
     <category term="cs" scheme="http://example.com/tags/cs/"/>
+    
+    <category term="complier" scheme="http://example.com/tags/complier/"/>
     
     <category term="cmake" scheme="http://example.com/tags/cmake/"/>
     
