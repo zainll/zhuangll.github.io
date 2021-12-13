@@ -114,7 +114,11 @@ scoop install postman
 
 - vcpkg
 [Get started with vcpkg](https://vcpkg.io/en/getting-started.html)
+
 <br>
+
+- cget
+https://cget.readthedocs.io/en/latest/#
 
 [开源库集成器Vcpkg全教程](https://blog.csdn.net/cjmqas/article/details/79282847)
 

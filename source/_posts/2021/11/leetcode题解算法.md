@@ -12,6 +12,8 @@ tags:
 ## 1.单调栈
 ### 1.1 代表题目: 84.[柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/description/)
 
+<!--more-->
+
 <details>
   <summary>柱状图中最大的矩形 c语言</summary>
 
@@ -67,8 +69,48 @@ int largestRectangleArea(int* heights, int heightsSize) {
 &ensp;&emsp;input: 5, 3, 1, 2, 4
 &ensp;&emsp;return: -1, 3, 1, 1, -1
 &emsp;暴力解法时间复杂度O(n^2)
+&emsp;暴力解法:
+```c
+int *nextExceed(int *input, int size)
+{
+    int *result = (int *)malloc(sizeof(int) * size);
+    memset(input,-1,size*sizeof(int));
+    for (int i = 0; i < size; i++) {
+        int anchar = input[i];
+        for (int j = i + 1; j < size; j++) {
+            if (input[j] > anchar) {
+                result[j] = j - 1;
+                break;
+            }
+        }
+    }
+    return result;
+}
+```
+&emsp;单调栈:
+```c
+int *nextExceed(int *input, int size)
+{
+    int *result = (int *)malloc(sizeof(int) * size);
+    int *stack = (int *)malloc(sizeof(int) * size);
+    memset(input, -1, size * sizeof(int));
+    int top = 0;
+    for (int i = 0; i < size; i++) {
+        while (top >= 0 && input[i] > input[stack[top]]) {
+            result[stack[top]] = i - stack[top];
+            top--;
+        }
+        stack[++top] = i;
+    }
+    return result;
+}
+```
+
+&emsp;我们维护一个单调递减栈stack,stack内存的是原数组的每个index,当遇到一个比当前栈顶所对应的树大的时候,则栈顶元素出栈.
 
 &ensp;单调栈通常应用在一维数组上,和前后元素大小之间关系有关的问题.单调栈时间复杂度为`O(n)`.
+
+
 ### 1.3 leetcode题目
 [85.最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/)
 &ensp;给定一个仅包含 0 和 1 、大小为 rows x cols 的二维二进制矩阵，找出只包含 1 的最大矩形，并返回其面积。
@@ -464,12 +506,16 @@ int findCircleNum(int **m, int mSize, int* mColSize)
 
 ### 2.2 并查集介绍
 
-&ensp;并查集主要用于解决一些元素分组的问题，管理一系列不相交的集合，并支持两种操作：
-**合并(union)** :把两个不相交的集合合并为一个集合。
-**查询(find)** :查询两个元素是否在同一个集合中。
+&ensp;并查集(DSU)主要用于解决一些元素分组的问题，管理一系列不相交的集合，并支持两种操作：
+&ensp;并查集即**合并集合**和**查找集合**两种操作的算法.但实际并查集的基本操作有三个:
+&emsp;makeSet(size):建立一个新的并查集,其中包含size个单元素集合.
+&emsp;unionSet(x, y)**合并**:把元素x和元素y所在的集合合并,要求x和y所在的集合不相交,如果相交则不合并.
+&emsp;find(x)**查询**:找到元素x所在的集合的代表,该操作也可以用于判断两个元素是否位于同一个集合,只要将它们各自的代表比较一下就可以了. find(x)有两种实现方法,一种是递归,一种是非递归。
 &ensp;并查集的重要思想在于，用集合中的一个元素代表集合。
+&ensp;并查集有两种优化策略:
+&emsp;1.按秩序合并
 
-&ensp;**路径压缩**
+&emsp;2.**路径压缩**
 合并的比较方法
 应当将简单的树向复杂的树上合并，从而使合并后到根节点距离变长的节点个数比较少。
 
@@ -511,6 +557,107 @@ https://blog.csdn.net/qq_41593390/article/details/81146850
 
 https://blog.csdn.net/ziachen/article/details/106315471
 
+
+朋友圈
+
+```c
+int findCircleNum(int **matrix, int size)
+{
+    int *parent = (int *)malloc(sizeof(int)*size);
+    memset(parent, -1, sizeof(int)*size);
+    int rows = size;
+    int clos = matrix[0];
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            if (matrix[i][j] == 1 && i != j) {
+                union(parent, i, j);
+            }
+        }
+    }
+    return countCircleNum(parent, size);
+}
+
+void union(int *parent, int i, int j)
+{
+    int xset = find(parent, i);
+    int yset = find(parent, j);
+    if (xset != yset) {
+        // 合并i和j的两个集合
+        parent[xset] = yset;
+    }
+}
+
+/*
+ 查找集合 i 的源头
+ 如果集合 i 的父亲是 -1, 说明自己就是源头,返回自己的标号
+ 否则查找集合 i 的父亲的源头
+*/
+
+int find(int *parent, int i)
+{
+    if (parent[i] == -1) {
+        // i 的父亲为 -1 时,i就是掌门人
+        return i;
+    }
+    // 使用路径压缩,让这条路径上所有的人的上级直接变为掌门人
+    return find(parent, parent[i]);
+}
+
+int countCircleNum(int *parent, int size)
+{
+    int count = 0;
+    for (int i = 0; i < size; i++) {
+        if (parent[i] == -1) {
+            count++;
+        }
+    }
+    return count;
+}
+
+// find 非递归实现
+int find(int x)
+{
+    while (x != parent[x]) {
+        parent[x] = parent[parent[x]];
+        x = parent[x];
+    }
+    return x;
+}
+
+```
+
+&emsp;DFS实现
+```c
+int findCircleNum(int **matrix, int matrixSize)
+{
+    int rows = matrixSize;
+    int cols = matrix[0];
+    int *visited = (int *)malloc(sizeof(int) * matrixSize);
+    int count = 0;
+    for (int i = 0; i < rows; i++) {
+        if (visited[i] == 0) {
+            dfs(matrix, matrixSize, visite, i);
+            count++;
+        }
+    }
+    return count;
+}
+
+void dfs(int **matrix,  int matrixSize, int *visited, int i)
+{
+    for (int j = 0; j < matrixSize; j++) {
+        if (matrix[i][j] == 1 && visited[j] == 0) {
+            visited[j] = 1;
+            dfs(matrxi, matrixSize, visited, j);
+        }
+    }
+}
+```
+
+&emsp;BFS实现
+```c
+
+```
 
 
 题目背景
@@ -749,9 +896,15 @@ int main()
 
 https://www.cnblogs.com/zzcxxoo/p/13216030.html
 
-## 4.前缀和HASH
+## 4.前缀和(&哈希表优化)
 
-### 前缀和介绍
+### 4.1 前缀和介绍
+&ensp;前缀和(prefix sum)定义:前缀和时一种预处理,能大大降低查询的时间复杂度.结合Hash缓存,能够进一步优化提升算法执行效率.
+&emsp;对数组nums进行前缀和初始化需要O(n)时间
+&emsp;新建数组prefixSum,数组长度定义为 nums.length+1,确保顶第 nums.length个元素存储前面0到nums.length-1个元素的和.将数组nums的累加一层放入数组prefixSum中.
+&emsp;变换公式:
+&ensp;&emsp;1)nums[某一项] = 两个相邻前缀和之差: nums[i] = prefixSum[x] - prefixSum[x-1]
+&ensp;&emsp;2)从left到right的元素和等于: prefixSum[right+1] - prefixSum[left]
 
 假设我们有一个字符串ABCDE，什么是这个单词的前缀，A、AB、ABC、ABCD、ABCDE就是这个单词的前缀，就是从第一个字母开始，依次往后拼接。E、ED、EDC、EDCB、EDCBA被称为这个单词的后缀。
 
@@ -776,6 +929,8 @@ https://www.jianshu.com/p/3021429f38d4
 
 ## 5.差分
 
+### 5.1 差分介绍
+&emsp;差分时一种和前缀和算法相对 的策略,这种策略是,令 b(i) = a(i) - a(i-1),即相邻两数的差.在每一个点上记录变化数值,因为有增加有减少通过求和判断是否有超过指定容量的情况发生,超过则代表无法满足要求.
 
 该算法是前缀和算法的逆运算，可以快速的对数组的某一个区间进行计算。
 
@@ -787,6 +942,8 @@ https://www.jianshu.com/p/3021429f38d4
 
 
 ## 6.拓扑排序
+
+
 
 一、什么是拓扑排序
 在图论中，拓扑排序（Topological Sorting）是一个有向无环图（DAG, Directed Acyclic Graph）的所有顶点的线性序列。且该序列必须满足下面两个条件：
@@ -962,6 +1119,67 @@ https://blog.csdn.net/u013309870/article/details/75193592
 
 
 ## bitmap
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+#define TYPE int
+#define INT_BITS (1<<3) * sizeof(TYPE)
+#define SHIFT (int)(log(INT_BITS)/log(2))
+#define MASK INT_BITS-1
+
+TYPE bitmap[10000];
+
+// 设置
+void setBit(int num);
+// 是否存在
+int containBit(int num);
+// 得到当前位置的第几位
+int getBit(int num);
+// 删除
+int deleteBit(int num);
+
+int main(){
+
+	printf("int_bits = %d, shift = %d, mask = %d\n", INT_BITS, SHIFT, MASK);
+	setBit(2);
+	printf("是否存在%d\n", containBit(2));
+	printf("是否存在%d\n", containBit(3));
+	deleteBit(2);
+	printf("是否存在%d\n", containBit(2));
+	printf("是否存在%d\n", containBit(3));
+	setBit(2);
+	printf("是否存在%d\n", containBit(2));
+	printf("是否存在%d\n", containBit(3));
+
+	printf("2在当前的位置%d\n", getBit(2));
+	setBit(32);
+	printf("32在当前的位置%d\n", getBit(32));
+
+	return 0;
+}
+
+void setBit(int num){
+	 bitmap[num >> SHIFT] |= 1 << (num & MASK);
+	 printf("set --[%d]: %d\n", num >> SHIFT, bitmap[num >> SHIFT]);
+}
+
+int containBit(int num){
+	return (bitmap[num >> SHIFT] & 1 << (num &MASK)) ==  1 << (num &MASK);
+}
+
+int getBit(int num){
+	return num & MASK;
+}
+// 删除
+int deleteBit(int num){
+	bitmap[num >> SHIFT] &= ~(1 << (num & MASK));
+	printf("del -- [%d] : %d\n", num >> SHIFT, bitmap[num >> SHIFT]);
+	return -1;
+}
+```
+
 
 https://www.cnblogs.com/cjsblog/p/11613708.html
 
