@@ -500,7 +500,6 @@ int findCircleNum(int **m, int mSize, int* mColSize)
     FreeCircle();
     return sum;
 }
-
 ```
 
 
@@ -846,7 +845,6 @@ void maxQueueFree(MaxQueue* obj)
     obj->end=0;
     obj->begin=0;
 }
-
 ```
 
 239.滑动窗口最大值
