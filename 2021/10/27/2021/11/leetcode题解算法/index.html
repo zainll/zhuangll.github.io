@@ -254,14 +254,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>23k</span>
+              <span>24k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>21 分钟</span>
+              <span>22 分钟</span>
             </span>
 
         </div>
@@ -410,14 +410,23 @@
 </ul>
 <h2 id="7-字符串"><a href="#7-字符串" class="headerlink" title="7.字符串"></a>7.字符串</h2><p>字符串介绍<br> 字符串可以涉及非常多的考点:如递归,栈,hash,dfs,bfs,动态规划等.需要强制记忆的是”字符串的子串”,”字符串的子序列”.难度比较大的是”子序列”问题.对于任何字符串,可通过删除其中一些字符(也可不删)来构造该字符串的子序列.对于任何字符串,选择任意连续的1到N个字符,形成[i,j]形式的子串,然后利用字符串的子串进行相关的匹配和计算.</p>
 <h2 id="8-二分查找"><a href="#8-二分查找" class="headerlink" title="8.二分查找"></a>8.二分查找</h2><p> 二分查找也称折半查找(Binary Search),它使一种效率较高的查找方法,前提是数据结构必须先排好序.但是,二分查找要求线性表具有随机访问的特点(如数组),也要求线性表能够根据中间元素的特点推测它两侧元素的性质,以达到缩减问题规模的效果.<br> 二分查找问题也是面试中常考问题,虽然它思想简单,但写好二分算法并不容易.</p>
-<h2 id="9-BFS"><a href="#9-BFS" class="headerlink" title="9.BFS"></a>9.BFS</h2><p>BFS（广度优先搜索） 常用来解决最短路径问题。<br>第一次遍历到目的节点时，所经过的路径是最短路径。<br>几个要点：</p>
+<h2 id="9-BFS"><a href="#9-BFS" class="headerlink" title="9.BFS"></a>9.BFS</h2><p>BFS（广度优先搜索） 常用来解决层序遍历,最短路径问题。<br>第一次遍历到目的节点时，所经过的路径是最短路径。<br>几个要点：</p>
 <p>只能用来求解无权图的最短路径问题<br>队列：用来存储每一层遍历得到的节点<br>标记：对于遍历过的结点，应将其标记，以防重复访问</p>
 <p>注:<br>1.广度搜索时候,如果曾经加入过,后续就不用再加入<br>2.加入队列时候,需要标记当前层级,方便后续直接返回目标解.</p>
 <ul>
 <li>参考链接:<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/62884729">https://zhuanlan.zhihu.com/p/62884729</a></li>
 </ul>
-<h2 id="10-DFS"><a href="#10-DFS" class="headerlink" title="10.DFS"></a>10.DFS</h2><p> DFS实质是一种枚举,不过借助递归实现;<br> DFS基本模式:</p>
+<h2 id="10-DFS"><a href="#10-DFS" class="headerlink" title="10.DFS"></a>10.DFS</h2><p> 深度优先搜索算法(DFS):是一种用于遍历或搜索树或图的算法.利用深度优先搜索算法可产生目标图的拓扑排序表,拓扑排序可用于无权最长路径问题等.DFS实质是一种枚举,不过借助递归实现.<br> 回溯搜索时深度优先搜索(DFS)的一种.对于某一个搜索树来说(搜索树时起记录路径和状态判断的作用),回溯和DFS,其主要的区别是,回溯法在求解过程中不保留完整的树结构,而深度优先搜索则记下完整的搜索树.回溯就是通过不同的尝试来生成问题的解,类似于穷举,但和穷举不同的时回溯会”减枝”.为了减少存储空间,在深度优先搜索中,用标志的方法记录访问过的状态,这种处理方法使得深度优先搜索法与回溯法没什么区别.<br> DFS相对于BFS更方便写,空间复杂度更低<br> DFS基本模式:</p>
 <figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> step)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="comment">// 判断边界</span></span><br><span class="line">    ...;</span><br><span class="line">    <span class="comment">// 尝试每一种可能</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; j &lt;= n; ++i) {</span><br><span class="line">        <span class="comment">// 继续下一步</span></span><br><span class="line">        dfs(step + <span class="number">1</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回</span></span><br><span class="line">    ...;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(TreeNode root)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">if</span>(root == <span class="literal">NULL</span>) {</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    }</span><br><span class="line">    dfs(root.left);</span><br><span class="line">    dfs(root.right);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p> 回溯的一般结构</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">backtrack</span><span class="params">(<span class="keyword">int</span> 当前状态)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">if</span> (当前状态为边界状态) {</span><br><span class="line">        记录或输出</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// 横向遍历解答树所有子节点</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) {</span><br><span class="line">        <span class="comment">// 扩展出一个子状态</span></span><br><span class="line">        <span class="comment">// 修改了全局变量</span></span><br><span class="line">        <span class="keyword">if</span> (子状态满足约束条件) {</span><br><span class="line">            backtrack(子状态)</span><br><span class="line">        }</span><br><span class="line">        <span class="comment">// 恢复全局变量//回溯部分</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p> 回溯代码框架:</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">result = {}</span><br><span class="line">def backtrack(路径, 选择列表)</span><br><span class="line">    <span class="keyword">if</span> 满足结束条件</span><br><span class="line">        result.add(路径)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">for</span> 选择 in 选择列表</span><br><span class="line">        做选择</span><br><span class="line">        backtrack(路径,,选择列表)</span><br><span class="line">        撤销选择</span><br></pre></td></tr></tbody></table></figure>
+
 
 
 <h2 id="11-动态规划"><a href="#11-动态规划" class="headerlink" title="11.动态规划"></a>11.动态规划</h2><ul>
@@ -585,7 +594,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:16</span>
+    <span title="站点阅读时长">2:17</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
