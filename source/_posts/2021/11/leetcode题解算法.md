@@ -106,7 +106,7 @@ int *nextExceed(int *input, int size)
 }
 ```
 
-&emsp;我们维护一个单调递减栈stack,stack内存的是原数组的每个index,当遇到一个比当前栈顶所对应的树大的时候,则栈顶元素出栈,并更新它们在返回数组中对应位置的值.
+&emsp;我们维护一个单调递减栈stack,stack内存的是原数组的每个index,当遇到一个比当前栈顶所对应的数大的时候,则栈顶元素出栈,并更新它们在返回数组中对应位置的值.
 
 &ensp;单调栈通常应用在一维数组上,和前后元素大小之间关系有关的问题.单调栈时间复杂度为`O(n)`.
 
@@ -119,7 +119,6 @@ int *nextExceed(int *input, int size)
 [85.最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/)
 &ensp;给定一个仅包含 0 和 1 、大小为 rows x cols 的二维二进制矩阵，找出只包含 1 的最大矩形，并返回其面积。
 &emsp;思路:对于每一行,构建一个histogram,然后计算.在构建新的histogram的时候,不需要全部遍历,只需对已有的histogram进行略微修改(运用DP的思想)
-
 
 
 ```c
@@ -180,19 +179,15 @@ stack<int> st;
 //此处一般需要给数组最后添加结束标志符，具体下面例题会有详细讲解,单调减栈
 for (遍历这个数组)
 {
-	if (栈空 || 栈顶元素大于等于当前比较元素)
-	{
-		入栈;
-	}
-	else
-	{
-		while (栈不为空 && 栈顶元素小于当前元素)
-		{
-			栈顶元素出栈;
-			更新结果;
-		}
-		当前数据入栈;
-	}
+    if (栈空 || 栈顶元素大于等于当前比较元素) {
+        入栈;
+    } else {
+        while (栈不为空 && 栈顶元素小于当前元素) {
+            栈顶元素出栈;
+            更新结果;
+        }
+        当前数据入栈;
+    }
 }
 ```
 
@@ -206,14 +201,15 @@ int largestRectangleArea(int* heights, int heightsSize,int *S,int top){
     int start,end,h;
     int r=0;
     S[++top]=0; // 入栈第一根柱子
-    for(int i=1;i<=heightsSize-1;i++){ // 遍历所有柱子
-        if(heights[i] >= heights[S[top]] ) S[++top]=i; // 若当前柱子大于栈顶或等于栈顶，直接入栈
-        else{ // 若当前柱子小于栈顶，则依次出栈较高的柱子并计算面积
+    for(int i=1;i<=heightsSize-1;i++) { // 遍历所有柱子
+        if(heights[i] >= heights[S[top]]) { 
+            S[++top]=i; // 若当前柱子大于栈顶或等于栈顶，直接入栈
+        } else { // 若当前柱子小于栈顶，则依次出栈较高的柱子并计算面积
             end = S[top]; // 记录最右边最高的柱子位置，之后每次矩形的底边是从出栈位置到最右边最高柱子的位置
-            while(top != -1 && heights[i] < heights[S[top]] ){
+            while(top != -1 && heights[i] < heights[S[top]] ) {
                 h = heights[S[top--]]; // 保存当前矩形的高
-                while( top != -1 && heights[S[top]] == h) top--; // 若有相同高的柱子，直接出栈
-                if ( top != -1) start=S[top]; // 避免栈为空
+                while(top != -1 && heights[S[top]] == h) top--; // 若有相同高的柱子，直接出栈
+                if (top != -1) start=S[top]; // 避免栈为空
                 else start=-1;
 
                 if(r < (end-start)*h) r=(end-start)*h; // 矩形面积是最高柱子位置减去当前栈顶柱子的位置乘高
@@ -223,7 +219,7 @@ int largestRectangleArea(int* heights, int heightsSize,int *S,int top){
     }
     // 此时栈内剩余递增序列，出栈依次计算面积。计算流程同上
     end = S[top];
-    while(top != -1){
+    while(top != -1) {
         h = heights[S[top--]];
         while( top != -1 && heights[S[top]] == h) top--;
         if (top != -1) start=S[top];
@@ -243,8 +239,8 @@ int maximalRectangle(char** matrix, int matrixSize, int* matrixColSize){
     int r=0;
 
     for(int k=0;k<=n-1;k++) heights[k]=0;
-    for(int i=0;i<=m-1;i++){
-        for(int j=0;j<=n-1;j++){
+    for(int i=0;i<=m-1;i++) {
+        for(int j=0;j<=n-1;j++) {
             if(matrix[i][j]=='1') heights[j]++;
             else heights[j]=0;
         }
@@ -494,7 +490,7 @@ int findCircleNum(int **m, int mSize, int* mColSize)
     bool rslt;
     int sum;
     rslt = Init(mSize);
-    if (!rslt)  {
+    if (!rslt) {
         return 0;
     }
 
@@ -509,7 +505,7 @@ int findCircleNum(int **m, int mSize, int* mColSize)
 ### 2.2 并查集介绍
 
 &ensp;并查集(DSU)主要用于解决一些元素分组的问题，管理一系列不相交的集合，并支持两种操作：
-&ensp;并查集即**合并集合**和**查找集合**两种操作的算法.但实际并查集的基本操作有三个:
+&ensp;并查集即**合并集合**和**查找集合中元素**两种操作的算法.但实际并查集的基本操作有三个:
 &emsp;makeSet(size):建立一个新的并查集,其中包含size个单元素集合.
 &emsp;unionSet(x, y)**合并**:把元素x和元素y所在的集合合并,要求x和y所在的集合不相交,如果相交则不合并.
 &emsp;find(x)**查询**:找到元素x所在的集合的代表,该操作也可以用于判断两个元素是否位于同一个集合,只要将它们各自的代表比较一下就可以了. find(x)有两种实现方法,一种是递归,一种是非递归。
@@ -636,7 +632,6 @@ int find(int x)
     }
     return x;
 }
-
 ```
 
 &emsp;DFS实现
@@ -675,7 +670,6 @@ int findCircleNum(int **matrix, int length)
     int count = 0;
 
 }
-
 ```
 
 
@@ -696,38 +690,40 @@ P行，每行一个’Yes’或’No’。表示第i个询问的答案为“具�
 int fa[MAXN], rank[MAXN];
 inline void init(int n)
 {
-    for (int i = 1; i <= n; ++i)
-    {
+    for (int i = 1; i <= n; ++i) {
         fa[i] = i;
         rank[i] = 1;
     }
 }
+
 int find(int x)
 {
     return x == fa[x] ? x : (fa[x] = find(fa[x]));
 }
+
 inline void merge(int i, int j)
 {
     int x = find(i), y = find(j);
-    if (rank[x] <= rank[y])
+    if (rank[x] <= rank[y]) {
         fa[x] = y;
-    else
+    } else {
         fa[y] = x;
-    if (rank[x] == rank[y] && x != y)
+    }
+    if (rank[x] == rank[y] && x != y) {
         rank[y]++;
+    }
 }
+
 int main()
 {
     int n, m, p, x, y;
     scanf("%d%d%d", &n, &m, &p);
     init(n);
-    for (int i = 0; i < m; ++i)
-    {
+    for (int i = 0; i < m; ++i) {
         scanf("%d%d", &x, &y);
         merge(x, y);
     }
-    for (int i = 0; i < p; ++i)
-    {
+    for (int i = 0; i < p; ++i) {
         scanf("%d%d", &x, &y);
         printf("%s\n", find(x) == find(y) ? "Yes" : "No");
     }
@@ -778,13 +774,13 @@ void fun(string s, string t){
       int left=0,right=0;
       int valid;//该变量用来判断是否得到相应的答案了
       
-      while(right<s.size()){
+      while(right<s.size()) {
          char c=s[right];//取出将要移入窗口内的数据
          right++；
          //下面进行窗口更新后一些数据的更新
          .....
 
-         while(判断窗口是否需要收缩){
+         while(判断窗口是否需要收缩) {
               //是否需要进行相应的答案更新
               ......
 
@@ -850,12 +846,9 @@ void maxQueuPus_back(MaxQueue* obj, int value)
 }
 int maxQueuePop_front(MaxQueue* obj) 
 {
-    if(obj->begin==obj->end)
-    {
+    if(obj->begin==obj->end) {
         return -1;
-    }
-    else
-    {
+    } else {
         return obj->arr[obj->begin++];
     }
 }
@@ -883,16 +876,14 @@ int main()
     {scanf("%d",&a[i]);}
     int beg=1,top=0;//qmax队列的队首指针和队尾指针
     int st=1,ed=0;//qmin队列的队首指针和队尾指针
-    for(int i=1;i<=n;i++)
-    {
+    for(int i=1;i<=n;i++) {
         while(beg<=top&&a[i]>=a[qmax[top]])
         {top--;}
         qmax[++top]=i;
         while(st<=ed&&a[i]<=a[qmin[ed]])
         {ed--;}
         qmin[++ed]=i;
-        if(i>=k)
-        {
+        if(i>=k) {
             while(qmax[beg]<=i-k)beg++;
             while(qmin[st]<=i-k)st++;
             savemax[cnt]=a[qmax[beg]];
@@ -992,8 +983,7 @@ https://www.jianshu.com/p/3021429f38d4
 using namespace std;
 
 /************************类声明************************/
-class Graph
-{
+class Graph {
     int V;             // 顶点个数
     list<int> *adj;    // 邻接表
     queue<int> q;      // 维护一个入度为0的顶点的集合
@@ -1035,8 +1025,7 @@ bool Graph::topological_sort()
             q.push(i);         // 将所有入度为0的顶点入队
 
     int count = 0;             // 计数，记录当前已经输出的顶点数 
-    while(!q.empty())
-    {
+    while(!q.empty()) {
         int v = q.front();      // 从队列中取出一个顶点
         q.pop();
 
@@ -1232,20 +1221,20 @@ int main(){
 	return 0;
 }
 
-void setBit(int num){
+void setBit(int num) {
 	 bitmap[num >> SHIFT] |= 1 << (num & MASK);
 	 printf("set --[%d]: %d\n", num >> SHIFT, bitmap[num >> SHIFT]);
 }
 
-int containBit(int num){
+int containBit(int num) {
 	return (bitmap[num >> SHIFT] & 1 << (num &MASK)) ==  1 << (num &MASK);
 }
 
-int getBit(int num){
+int getBit(int num) {
 	return num & MASK;
 }
 // 删除
-int deleteBit(int num){
+int deleteBit(int num) {
 	bitmap[num >> SHIFT] &= ~(1 << (num & MASK));
 	printf("del -- [%d] : %d\n", num >> SHIFT, bitmap[num >> SHIFT]);
 	return -1;
