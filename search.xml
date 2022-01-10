@@ -168,28 +168,6 @@
       </tags>
   </entry>
   <entry>
-    <title>C/C++内存管理</title>
-    <url>/2021/10/07/2021/11/%E5%86%85%E5%AD%98/</url>
-    <content><![CDATA[<h2 id="一、内存"><a href="#一、内存" class="headerlink" title="一、内存"></a>一、内存</h2><p> 在计算机中，不同应用程序之间的内存是相互独立的，通常情况下不可以相互访问。</p>
-<span id="more"></span>
-
-<p>1、内存四区<br>从下到上为：代码区、数据区、堆区、栈区。<br>栈区：存储临时变量的区域，临时变量包括：局部变量、返回值、参数、返回地址。这些变量超出作用域自动弹出。超出栈大小将会栈溢出。栈从栈顶自上而下，最下端为0x0000。<br>堆区：比较大的内存区域，用于动态内存分配，由开放人员申请和释放，在程序结束时未释放，将会右系统自动回收。<br>数据区：主要存放全局变量、常量和静态变量；数据区又可以划分为：全局区和静态区。<br>代码区：主要纯粹可执行代码。属性为只读的。</p>
-<h2 id="二、malloc和free"><a href="#二、malloc和free" class="headerlink" title="二、malloc和free"></a>二、malloc和free</h2><p> 在 C 语言（不是 C++)中，malloc 和 free 是系统提供的函数，成对使用，用于从堆中分配和释放内存。malloc 的全称是 memory allocation 译为“动态内存分配”。</p>
-<ul>
-<li>参考链接：<br><a href="https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ">https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ</a></li>
-</ul>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2021</category>
-        <category>11</category>
-      </categories>
-      <tags>
-        <tag>Another Tag</tag>
-        <tag>Computer Science</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>leetcode题解算法分析</title>
     <url>/2021/10/27/2021/11/leetcode%E9%A2%98%E8%A7%A3%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h2 id="1-单调栈"><a href="#1-单调栈" class="headerlink" title="1.单调栈"></a>1.单调栈</h2><h3 id="1-1-代表题目-84-柱状图中最大的矩形"><a href="#1-1-代表题目-84-柱状图中最大的矩形" class="headerlink" title="1.1 代表题目: 84.柱状图中最大的矩形"></a>1.1 代表题目: 84.<a href="https://leetcode-cn.com/problems/largest-rectangle-in-histogram/description/">柱状图中最大的矩形</a></h3><span id="more"></span>
@@ -214,19 +192,19 @@
 <p> 单调栈:</p>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> *<span class="title">nextExceed</span><span class="params">(<span class="keyword">int</span> *input, <span class="keyword">int</span> size)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> *result = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * size);</span><br><span class="line">    <span class="keyword">int</span> *<span class="built_in">stack</span> = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * size);</span><br><span class="line">    <span class="built_in">memset</span>(input, <span class="number">-1</span>, size * <span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br><span class="line">    <span class="keyword">int</span> top = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++) {</span><br><span class="line">        <span class="keyword">while</span> (top &gt;= <span class="number">0</span> &amp;&amp; input[i] &gt; input[<span class="built_in">stack</span>[top]]) {</span><br><span class="line">            result[<span class="built_in">stack</span>[top]] = i - <span class="built_in">stack</span>[top];</span><br><span class="line">            top--;</span><br><span class="line">        }</span><br><span class="line">        <span class="built_in">stack</span>[++top] = i;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<p> 我们维护一个单调递减栈stack,stack内存的是原数组的每个index,当遇到一个比当前栈顶所对应的树大的时候,则栈顶元素出栈,并更新它们在返回数组中对应位置的值.</p>
+<p> 我们维护一个单调递减栈stack,stack内存的是原数组的每个index,当遇到一个比当前栈顶所对应的数大的时候,则栈顶元素出栈,并更新它们在返回数组中对应位置的值.</p>
 <p> 单调栈通常应用在一维数组上,和前后元素大小之间关系有关的问题.单调栈时间复杂度为<code>O(n)</code>.</p>
 <h3 id="1-3-单调栈的性质"><a href="#1-3-单调栈的性质" class="headerlink" title="1.3 单调栈的性质"></a>1.3 单调栈的性质</h3><p> 1.单调栈里的元素具有单调性,栈中元素只能是单调递增或者单调递减<br> 2.元素加入栈前,会在栈顶把破坏栈单调性的元素都出栈<br> 3.使用单调栈可以找到元素向左遍历第一个比它小的元素,也可以找到元素向左遍历第一个比他大的元素</p>
 <h3 id="1-3-leetcode题目"><a href="#1-3-leetcode题目" class="headerlink" title="1.3 leetcode题目"></a>1.3 leetcode题目</h3><p><a href="https://leetcode-cn.com/problems/maximal-rectangle/">85.最大矩形</a><br> 给定一个仅包含 0 和 1 、大小为 rows x cols 的二维二进制矩阵，找出只包含 1 的最大矩形，并返回其面积。<br> 思路:对于每一行,构建一个histogram,然后计算.在构建新的histogram的时候,不需要全部遍历,只需对已有的histogram进行略微修改(运用DP的思想)</p>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maximalRectangle</span><span class="params">(<span class="keyword">char</span>** matrix, <span class="keyword">int</span> matrixSize, <span class="keyword">int</span>* matrixColSize)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> m = matrixSize;</span><br><span class="line">    <span class="keyword">if</span> (m == <span class="number">0</span>) {</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">int</span> n = matrixColSize[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">int</span> left[m][n];</span><br><span class="line">    <span class="built_in">memset</span>(left, <span class="number">0</span>, <span class="keyword">sizeof</span>(left));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) {</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) {</span><br><span class="line">            <span class="keyword">if</span> (matrix[i][j] == <span class="string">'1'</span>) {</span><br><span class="line">                left[i][j] = (j == <span class="number">0</span> ? <span class="number">0</span> : left[i][j - <span class="number">1</span>]) + <span class="number">1</span>;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) {  <span class="comment">// 对于每一列，使用基于柱状图的方法</span></span><br><span class="line">        <span class="keyword">int</span> up[m], down[m];</span><br><span class="line">        <span class="built_in">memset</span>(up, <span class="number">0</span>, <span class="keyword">sizeof</span>(up));</span><br><span class="line">        <span class="built_in">memset</span>(down, <span class="number">0</span>, <span class="keyword">sizeof</span>(down));</span><br><span class="line">        <span class="keyword">int</span> stk[m], top = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) {</span><br><span class="line">            <span class="keyword">while</span> (top &gt; <span class="number">0</span> &amp;&amp; left[stk[top - <span class="number">1</span>]][j] &gt;= left[i][j]) {</span><br><span class="line">                top--;</span><br><span class="line">            }</span><br><span class="line">            up[i] = top == <span class="number">0</span> ? <span class="number">-1</span> : stk[top - <span class="number">1</span>];</span><br><span class="line">            stk[top++] = i;</span><br><span class="line">        }</span><br><span class="line">        top = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = m - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) {</span><br><span class="line">            <span class="keyword">while</span> (top &gt; <span class="number">0</span> &amp;&amp; left[stk[top - <span class="number">1</span>]][j] &gt;= left[i][j]) {</span><br><span class="line">                top--;</span><br><span class="line">            }</span><br><span class="line">            down[i] = top == <span class="number">0</span> ? m : stk[top - <span class="number">1</span>];</span><br><span class="line">            stk[top++] = i;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) {</span><br><span class="line">            <span class="keyword">int</span> height = down[i] - up[i] - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">int</span> area = height * left[i][j];</span><br><span class="line">            ret = fmax(ret, area);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <p><img src="https://s2.loli.net/2021/12/07/aU8ZQBWRo9dTXMb.png" alt="20211207235410"></p>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; st;</span><br><span class="line"><span class="comment">//此处一般需要给数组最后添加结束标志符，具体下面例题会有详细讲解,单调减栈</span></span><br><span class="line"><span class="keyword">for</span> (遍历这个数组)</span><br><span class="line">{</span><br><span class="line">	<span class="keyword">if</span> (栈空 || 栈顶元素大于等于当前比较元素)</span><br><span class="line">	{</span><br><span class="line">		入栈;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	{</span><br><span class="line">		<span class="keyword">while</span> (栈不为空 &amp;&amp; 栈顶元素小于当前元素)</span><br><span class="line">		{</span><br><span class="line">			栈顶元素出栈;</span><br><span class="line">			更新结果;</span><br><span class="line">		}</span><br><span class="line">		当前数据入栈;</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; st;</span><br><span class="line"><span class="comment">//此处一般需要给数组最后添加结束标志符，具体下面例题会有详细讲解,单调减栈</span></span><br><span class="line"><span class="keyword">for</span> (遍历这个数组)</span><br><span class="line">{</span><br><span class="line">    <span class="keyword">if</span> (栈空 || 栈顶元素大于等于当前比较元素) {</span><br><span class="line">        入栈;</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        <span class="keyword">while</span> (栈不为空 &amp;&amp; 栈顶元素小于当前元素) {</span><br><span class="line">            栈顶元素出栈;</span><br><span class="line">            更新结果;</span><br><span class="line">        }</span><br><span class="line">        当前数据入栈;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <details>
 <summary>单调栈</summary>
 
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">largestRectangleArea</span><span class="params">(<span class="keyword">int</span>* heights, <span class="keyword">int</span> heightsSize,<span class="keyword">int</span> *S,<span class="keyword">int</span> top)</span></span>{</span><br><span class="line">    <span class="comment">// int*S=(int*)malloc(sizeof(int)*heightsSize); // 初始化栈，栈内保存柱子序号</span></span><br><span class="line">    <span class="comment">// int top=-1;</span></span><br><span class="line">    <span class="keyword">int</span> start,end,h;</span><br><span class="line">    <span class="keyword">int</span> r=<span class="number">0</span>;</span><br><span class="line">    S[++top]=<span class="number">0</span>; <span class="comment">// 入栈第一根柱子</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=heightsSize<span class="number">-1</span>;i++){ <span class="comment">// 遍历所有柱子</span></span><br><span class="line">        <span class="keyword">if</span>(heights[i] &gt;= heights[S[top]] ) S[++top]=i; <span class="comment">// 若当前柱子大于栈顶或等于栈顶，直接入栈</span></span><br><span class="line">        <span class="keyword">else</span>{ <span class="comment">// 若当前柱子小于栈顶，则依次出栈较高的柱子并计算面积</span></span><br><span class="line">            end = S[top]; <span class="comment">// 记录最右边最高的柱子位置，之后每次矩形的底边是从出栈位置到最右边最高柱子的位置</span></span><br><span class="line">            <span class="keyword">while</span>(top != <span class="number">-1</span> &amp;&amp; heights[i] &lt; heights[S[top]] ){</span><br><span class="line">                h = heights[S[top--]]; <span class="comment">// 保存当前矩形的高</span></span><br><span class="line">                <span class="keyword">while</span>( top != <span class="number">-1</span> &amp;&amp; heights[S[top]] == h) top--; <span class="comment">// 若有相同高的柱子，直接出栈</span></span><br><span class="line">                <span class="keyword">if</span> ( top != <span class="number">-1</span>) start=S[top]; <span class="comment">// 避免栈为空</span></span><br><span class="line">                <span class="keyword">else</span> start=<span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span>(r &lt; (end-start)*h) r=(end-start)*h; <span class="comment">// 矩形面积是最高柱子位置减去当前栈顶柱子的位置乘高</span></span><br><span class="line">            }</span><br><span class="line">            S[++top]=i;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// 此时栈内剩余递增序列，出栈依次计算面积。计算流程同上</span></span><br><span class="line">    end = S[top];</span><br><span class="line">    <span class="keyword">while</span>(top != <span class="number">-1</span>){</span><br><span class="line">        h = heights[S[top--]];</span><br><span class="line">        <span class="keyword">while</span>( top != <span class="number">-1</span> &amp;&amp; heights[S[top]] == h) top--;</span><br><span class="line">        <span class="keyword">if</span> (top != <span class="number">-1</span>) start=S[top];</span><br><span class="line">        <span class="keyword">else</span> start=<span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(r &lt; (end-start)*h) r=(end-start)*h;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maximalRectangle</span><span class="params">(<span class="keyword">char</span>** matrix, <span class="keyword">int</span> matrixSize, <span class="keyword">int</span>* matrixColSize)</span></span>{</span><br><span class="line">    <span class="keyword">int</span> m=matrixSize;</span><br><span class="line">    <span class="keyword">int</span> n=*matrixColSize;</span><br><span class="line">    <span class="keyword">if</span> (m==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> *heights = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>)*n);</span><br><span class="line">    <span class="keyword">int</span>*S=(<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>)*n); <span class="comment">// 初始化栈，栈内保存柱子序号</span></span><br><span class="line">    <span class="keyword">int</span> r=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;=n<span class="number">-1</span>;k++) heights[k]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=m<span class="number">-1</span>;i++){</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=n<span class="number">-1</span>;j++){</span><br><span class="line">            <span class="keyword">if</span>(matrix[i][j]==<span class="string">'1'</span>) heights[j]++;</span><br><span class="line">            <span class="keyword">else</span> heights[j]=<span class="number">0</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">int</span> top=<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> cur=largestRectangleArea(heights,n,S,top);</span><br><span class="line">        <span class="keyword">if</span>(cur &gt; r) r=cur;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">largestRectangleArea</span><span class="params">(<span class="keyword">int</span>* heights, <span class="keyword">int</span> heightsSize,<span class="keyword">int</span> *S,<span class="keyword">int</span> top)</span></span>{</span><br><span class="line">    <span class="comment">// int*S=(int*)malloc(sizeof(int)*heightsSize); // 初始化栈，栈内保存柱子序号</span></span><br><span class="line">    <span class="comment">// int top=-1;</span></span><br><span class="line">    <span class="keyword">int</span> start,end,h;</span><br><span class="line">    <span class="keyword">int</span> r=<span class="number">0</span>;</span><br><span class="line">    S[++top]=<span class="number">0</span>; <span class="comment">// 入栈第一根柱子</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=heightsSize<span class="number">-1</span>;i++) { <span class="comment">// 遍历所有柱子</span></span><br><span class="line">        <span class="keyword">if</span>(heights[i] &gt;= heights[S[top]]) { </span><br><span class="line">            S[++top]=i; <span class="comment">// 若当前柱子大于栈顶或等于栈顶，直接入栈</span></span><br><span class="line">        } <span class="keyword">else</span> { <span class="comment">// 若当前柱子小于栈顶，则依次出栈较高的柱子并计算面积</span></span><br><span class="line">            end = S[top]; <span class="comment">// 记录最右边最高的柱子位置，之后每次矩形的底边是从出栈位置到最右边最高柱子的位置</span></span><br><span class="line">            <span class="keyword">while</span>(top != <span class="number">-1</span> &amp;&amp; heights[i] &lt; heights[S[top]] ) {</span><br><span class="line">                h = heights[S[top--]]; <span class="comment">// 保存当前矩形的高</span></span><br><span class="line">                <span class="keyword">while</span>(top != <span class="number">-1</span> &amp;&amp; heights[S[top]] == h) top--; <span class="comment">// 若有相同高的柱子，直接出栈</span></span><br><span class="line">                <span class="keyword">if</span> (top != <span class="number">-1</span>) start=S[top]; <span class="comment">// 避免栈为空</span></span><br><span class="line">                <span class="keyword">else</span> start=<span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span>(r &lt; (end-start)*h) r=(end-start)*h; <span class="comment">// 矩形面积是最高柱子位置减去当前栈顶柱子的位置乘高</span></span><br><span class="line">            }</span><br><span class="line">            S[++top]=i;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// 此时栈内剩余递增序列，出栈依次计算面积。计算流程同上</span></span><br><span class="line">    end = S[top];</span><br><span class="line">    <span class="keyword">while</span>(top != <span class="number">-1</span>) {</span><br><span class="line">        h = heights[S[top--]];</span><br><span class="line">        <span class="keyword">while</span>( top != <span class="number">-1</span> &amp;&amp; heights[S[top]] == h) top--;</span><br><span class="line">        <span class="keyword">if</span> (top != <span class="number">-1</span>) start=S[top];</span><br><span class="line">        <span class="keyword">else</span> start=<span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(r &lt; (end-start)*h) r=(end-start)*h;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maximalRectangle</span><span class="params">(<span class="keyword">char</span>** matrix, <span class="keyword">int</span> matrixSize, <span class="keyword">int</span>* matrixColSize)</span></span>{</span><br><span class="line">    <span class="keyword">int</span> m=matrixSize;</span><br><span class="line">    <span class="keyword">int</span> n=*matrixColSize;</span><br><span class="line">    <span class="keyword">if</span> (m==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> *heights = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>)*n);</span><br><span class="line">    <span class="keyword">int</span>*S=(<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>)*n); <span class="comment">// 初始化栈，栈内保存柱子序号</span></span><br><span class="line">    <span class="keyword">int</span> r=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;=n<span class="number">-1</span>;k++) heights[k]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=m<span class="number">-1</span>;i++) {</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=n<span class="number">-1</span>;j++) {</span><br><span class="line">            <span class="keyword">if</span>(matrix[i][j]==<span class="string">'1'</span>) heights[j]++;</span><br><span class="line">            <span class="keyword">else</span> heights[j]=<span class="number">0</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">int</span> top=<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> cur=largestRectangleArea(heights,n,S,top);</span><br><span class="line">        <span class="keyword">if</span>(cur &gt; r) r=cur;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 
 </details>
 
@@ -243,7 +221,7 @@
 <p> 省份 是一组直接或间接相连的城市，组内不含其他没有相连的城市。</p>
 <p> 给你一个 n x n 的矩阵 isConnected ，其中 isConnected[i][j] = 1 表示第 i 个城市和第 j 个城市直接相连，而 isConnected[i][j] = 0 表示二者不直接相连。</p>
 <p>返回矩阵中 省份 的数量。</p>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> *g_test;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> mSize)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">if</span> (mSize &lt; <span class="number">1</span>) {</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    }</span><br><span class="line">    g_dest = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(mSize * <span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br><span class="line">    <span class="keyword">if</span> (g_dest == <span class="literal">NULL</span>) {</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    fot (i = <span class="number">0</span>; i &lt; mSize; i++) {</span><br><span class="line">        g_dest[i] = i;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Find</span><span class="params">(<span class="keyword">int</span> index)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">if</span> (g_dest[index] == index) {</span><br><span class="line">        <span class="keyword">return</span> index;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> g_dest[index] = Find(g_dest[index]);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">FindRoot</span><span class="params">(<span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">while</span> (g_dest[i] != <span class="number">0</span>) {</span><br><span class="line">        i = g_dest[i];</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> i;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ProcCircle</span><span class="params">(<span class="keyword">int</span> **m, <span class="keyword">int</span> mSize)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> i, j;</span><br><span class="line">    <span class="keyword">int</span> rootI, rootJ;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; mSize; i++) {</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = (i + <span class="number">1</span>); j &lt; mSize; j++) {</span><br><span class="line">            <span class="keyword">if</span> (m[i][j] != <span class="number">1</span>) {</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            }</span><br><span class="line">            rootI = FindRoot(i);</span><br><span class="line">            rootJ = FindRoot(j);</span><br><span class="line">            <span class="keyword">if</span> (rootI == rootJ) {</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            }</span><br><span class="line">            g_dest[rootI] = rootJ;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">GetCircleNum</span><span class="params">(<span class="keyword">int</span> mSize)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; mSize; i++) {</span><br><span class="line">        <span class="keyword">if</span> (g_dest[i] == i) {</span><br><span class="line">            sum++;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">FreeCircle</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">if</span> (g_dest != <span class="literal">NULL</span>) {</span><br><span class="line">        <span class="built_in">free</span>(g_dest);</span><br><span class="line">        g_dest = <span class="number">0</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findCircleNum</span><span class="params">(<span class="keyword">int</span> **m, <span class="keyword">int</span> mSize, <span class="keyword">int</span>* mColSize)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">bool</span> rslt;</span><br><span class="line">    <span class="keyword">int</span> sum;</span><br><span class="line">    rslt = Init(mSize);</span><br><span class="line">    <span class="keyword">if</span> (!rslt)  {</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    ProcCicle(m, mSize);</span><br><span class="line">    sum = GetCircleNum(mSize);</span><br><span class="line"></span><br><span class="line">    FreeCircle();</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> *g_test;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> mSize)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">if</span> (mSize &lt; <span class="number">1</span>) {</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    }</span><br><span class="line">    g_dest = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(mSize * <span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br><span class="line">    <span class="keyword">if</span> (g_dest == <span class="literal">NULL</span>) {</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    fot (i = <span class="number">0</span>; i &lt; mSize; i++) {</span><br><span class="line">        g_dest[i] = i;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Find</span><span class="params">(<span class="keyword">int</span> index)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">if</span> (g_dest[index] == index) {</span><br><span class="line">        <span class="keyword">return</span> index;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> g_dest[index] = Find(g_dest[index]);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">FindRoot</span><span class="params">(<span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">while</span> (g_dest[i] != <span class="number">0</span>) {</span><br><span class="line">        i = g_dest[i];</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> i;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ProcCircle</span><span class="params">(<span class="keyword">int</span> **m, <span class="keyword">int</span> mSize)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> i, j;</span><br><span class="line">    <span class="keyword">int</span> rootI, rootJ;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; mSize; i++) {</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = (i + <span class="number">1</span>); j &lt; mSize; j++) {</span><br><span class="line">            <span class="keyword">if</span> (m[i][j] != <span class="number">1</span>) {</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            }</span><br><span class="line">            rootI = FindRoot(i);</span><br><span class="line">            rootJ = FindRoot(j);</span><br><span class="line">            <span class="keyword">if</span> (rootI == rootJ) {</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            }</span><br><span class="line">            g_dest[rootI] = rootJ;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">GetCircleNum</span><span class="params">(<span class="keyword">int</span> mSize)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; mSize; i++) {</span><br><span class="line">        <span class="keyword">if</span> (g_dest[i] == i) {</span><br><span class="line">            sum++;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">FreeCircle</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">if</span> (g_dest != <span class="literal">NULL</span>) {</span><br><span class="line">        <span class="built_in">free</span>(g_dest);</span><br><span class="line">        g_dest = <span class="number">0</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findCircleNum</span><span class="params">(<span class="keyword">int</span> **m, <span class="keyword">int</span> mSize, <span class="keyword">int</span>* mColSize)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">bool</span> rslt;</span><br><span class="line">    <span class="keyword">int</span> sum;</span><br><span class="line">    rslt = Init(mSize);</span><br><span class="line">    <span class="keyword">if</span> (!rslt) {</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    ProcCicle(m, mSize);</span><br><span class="line">    sum = GetCircleNum(mSize);</span><br><span class="line"></span><br><span class="line">    FreeCircle();</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="2-2-并查集介绍"><a href="#2-2-并查集介绍" class="headerlink" title="2.2 并查集介绍"></a>2.2 并查集介绍</h3><p> 并查集(DSU)主要用于解决一些元素分组的问题，管理一系列不相交的集合，并支持两种操作：<br> 并查集即<strong>合并集合</strong>和<strong>查找集合中元素</strong>两种操作的算法.但实际并查集的基本操作有三个:<br> makeSet(size):建立一个新的并查集,其中包含size个单元素集合.<br> unionSet(x, y)<strong>合并</strong>:把元素x和元素y所在的集合合并,要求x和y所在的集合不相交,如果相交则不合并.<br> find(x)<strong>查询</strong>:找到元素x所在的集合的代表,该操作也可以用于判断两个元素是否位于同一个集合,只要将它们各自的代表比较一下就可以了. find(x)有两种实现方法,一种是递归,一种是非递归。</p>
 <p> 并查集的重要思想在于，用集合中的一个元素代表集合。</p>
@@ -266,7 +244,7 @@
 
 
 <p>题目背景<br>若某个家族人员过于庞大，要判断两个是否是亲戚，确实还很不容易，现在给出某个亲戚关系图，求任意给出的两个人是否具有亲戚关系。<br>题目描述<br>规定：x和y是亲戚，y和z是亲戚，那么x和z也是亲戚。如果x,y是亲戚，那么x的亲戚都是y的亲戚，y的亲戚也都是x的亲戚。<br>输入格式<br>第一行：三个整数n,m,p，（n&lt;=5000,m&lt;=5000,p&lt;=5000），分别表示有n个人，m个亲戚关系，询问p对亲戚关系。<br>以下m行：每行两个数Mi，Mj，1&lt;=Mi，Mj&lt;=N，表示Mi和Mj具有亲戚关系。<br>接下来p行：每行两个数Pi，Pj，询问Pi和Pj是否具有亲戚关系。<br>输出格式<br>P行，每行一个’Yes’或’No’。表示第i个询问的答案为“具有”或“不具有”亲戚关系。</p>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 5005</span></span><br><span class="line"><span class="keyword">int</span> fa[MAXN], rank[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">    {</span><br><span class="line">        fa[i] = i;</span><br><span class="line">        rank[i] = <span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">return</span> x == fa[x] ? x : (fa[x] = find(fa[x]));</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> x = find(i), y = find(j);</span><br><span class="line">    <span class="keyword">if</span> (rank[x] &lt;= rank[y]) {</span><br><span class="line">        fa[x] = y;</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        fa[y] = x;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">if</span> (rank[x] == rank[y] &amp;&amp; x != y) {</span><br><span class="line">        rank[y]++;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> n, m, p, x, y;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;n, &amp;m, &amp;p);</span><br><span class="line">    init(n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) {</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;x, &amp;y);</span><br><span class="line">        merge(x, y);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; p; ++i) {</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;x, &amp;y);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, find(x) == find(y) ? <span class="string">"Yes"</span> : <span class="string">"No"</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 5005</span></span><br><span class="line"><span class="keyword">int</span> fa[MAXN], rank[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) {</span><br><span class="line">        fa[i] = i;</span><br><span class="line">        rank[i] = <span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">return</span> x == fa[x] ? x : (fa[x] = find(fa[x]));</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> x = find(i), y = find(j);</span><br><span class="line">    <span class="keyword">if</span> (rank[x] &lt;= rank[y]) {</span><br><span class="line">        fa[x] = y;</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        fa[y] = x;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">if</span> (rank[x] == rank[y] &amp;&amp; x != y) {</span><br><span class="line">        rank[y]++;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> n, m, p, x, y;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;n, &amp;m, &amp;p);</span><br><span class="line">    init(n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) {</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;x, &amp;y);</span><br><span class="line">        merge(x, y);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; p; ++i) {</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;x, &amp;y);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, find(x) == find(y) ? <span class="string">"Yes"</span> : <span class="string">"No"</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 
 
@@ -280,7 +258,7 @@
 <p>窗口：窗口大小并不是固定的，可以不断扩容直到满足一定的条件；也可以不断缩小，直到找到一个满足条件的最小窗口；当然也可以是固定大小。</p>
 <p>滑动窗口是双指针的一种应用，形象点说就是维护一个窗口，在窗口滑动的过程中进行窗口内数据的更新，并判断是否符合答案。、<br>初始时两个指针均指向开头，然后右指针依次向右滑动，在滑动的过程中需要收缩的时候进行左指针的移动，当右指针移出的时候结束循环即可。</p>
 <p>Leetcode 209. 长度最小的子数组<br>给定一个含有 n 个正整数的数组和一个正整数 s ，找出该数组中满足其和 ≥ s 的长度最小的连续子数组。如果不存在符合条件的连续子数组，返回 0。</p>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="built_in">string</span> s, <span class="built_in">string</span> t)</span></span>{</span><br><span class="line">     <span class="built_in">map</span>&lt;<span class="keyword">char</span>,<span class="keyword">int</span>&gt; need,window;</span><br><span class="line">     <span class="comment">//在need中记录相应的信息</span></span><br><span class="line">      .....</span><br><span class="line">      <span class="keyword">int</span> left=<span class="number">0</span>,right=<span class="number">0</span>;</span><br><span class="line">      <span class="keyword">int</span> valid;<span class="comment">//该变量用来判断是否得到相应的答案了</span></span><br><span class="line">      </span><br><span class="line">      <span class="keyword">while</span>(right&lt;s.size()) {</span><br><span class="line">         <span class="keyword">char</span> c=s[right];<span class="comment">//取出将要移入窗口内的数据</span></span><br><span class="line">         right++；</span><br><span class="line">         <span class="comment">//下面进行窗口更新后一些数据的更新</span></span><br><span class="line">         .....</span><br><span class="line"></span><br><span class="line">         <span class="keyword">while</span>(判断窗口是否需要收缩){</span><br><span class="line">              <span class="comment">//是否需要进行相应的答案更新</span></span><br><span class="line">              ......</span><br><span class="line"></span><br><span class="line">              <span class="keyword">char</span> d=s[left];<span class="comment">//将要移出窗口的数据；</span></span><br><span class="line">              left++;<span class="comment">//收缩窗口</span></span><br><span class="line"></span><br><span class="line">              <span class="comment">//窗口收缩后相应数据的更新</span></span><br><span class="line">              .......           </span><br><span class="line">         }   </span><br><span class="line">      }      </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="built_in">string</span> s, <span class="built_in">string</span> t)</span></span>{</span><br><span class="line">     <span class="built_in">map</span>&lt;<span class="keyword">char</span>,<span class="keyword">int</span>&gt; need,window;</span><br><span class="line">     <span class="comment">//在need中记录相应的信息</span></span><br><span class="line">      .....</span><br><span class="line">      <span class="keyword">int</span> left=<span class="number">0</span>,right=<span class="number">0</span>;</span><br><span class="line">      <span class="keyword">int</span> valid;<span class="comment">//该变量用来判断是否得到相应的答案了</span></span><br><span class="line">      </span><br><span class="line">      <span class="keyword">while</span>(right&lt;s.size()) {</span><br><span class="line">         <span class="keyword">char</span> c=s[right];<span class="comment">//取出将要移入窗口内的数据</span></span><br><span class="line">         right++；</span><br><span class="line">         <span class="comment">//下面进行窗口更新后一些数据的更新</span></span><br><span class="line">         .....</span><br><span class="line"></span><br><span class="line">         <span class="keyword">while</span>(判断窗口是否需要收缩) {</span><br><span class="line">              <span class="comment">//是否需要进行相应的答案更新</span></span><br><span class="line">              ......</span><br><span class="line"></span><br><span class="line">              <span class="keyword">char</span> d=s[left];<span class="comment">//将要移出窗口的数据；</span></span><br><span class="line">              left++;<span class="comment">//收缩窗口</span></span><br><span class="line"></span><br><span class="line">              <span class="comment">//窗口收缩后相应数据的更新</span></span><br><span class="line">              .......           </span><br><span class="line">         }   </span><br><span class="line">      }      </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <p>示例: </p>
 <p>输入: s = 7, nums = [2,3,1,2,4,3]<br>输出: 2<br>解释: 子数组 [4,3] 是该条件下的长度最小的连续子数组。</p>
@@ -369,6 +347,28 @@
       </tags>
   </entry>
   <entry>
+    <title>C/C++内存管理</title>
+    <url>/2021/10/07/2021/11/%E5%86%85%E5%AD%98/</url>
+    <content><![CDATA[<h2 id="一、内存"><a href="#一、内存" class="headerlink" title="一、内存"></a>一、内存</h2><p> 在计算机中，不同应用程序之间的内存是相互独立的，通常情况下不可以相互访问。</p>
+<span id="more"></span>
+
+<p>1、内存四区<br>从下到上为：代码区、数据区、堆区、栈区。<br>栈区：存储临时变量的区域，临时变量包括：局部变量、返回值、参数、返回地址。这些变量超出作用域自动弹出。超出栈大小将会栈溢出。栈从栈顶自上而下，最下端为0x0000。<br>堆区：比较大的内存区域，用于动态内存分配，由开放人员申请和释放，在程序结束时未释放，将会右系统自动回收。<br>数据区：主要存放全局变量、常量和静态变量；数据区又可以划分为：全局区和静态区。<br>代码区：主要纯粹可执行代码。属性为只读的。</p>
+<h2 id="二、malloc和free"><a href="#二、malloc和free" class="headerlink" title="二、malloc和free"></a>二、malloc和free</h2><p> 在 C 语言（不是 C++)中，malloc 和 free 是系统提供的函数，成对使用，用于从堆中分配和释放内存。malloc 的全称是 memory allocation 译为“动态内存分配”。</p>
+<ul>
+<li>参考链接：<br><a href="https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ">https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ</a></li>
+</ul>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2021</category>
+        <category>11</category>
+      </categories>
+      <tags>
+        <tag>Another Tag</tag>
+        <tag>Computer Science</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C/C++</title>
     <url>/2021/12/07/2021/12/C++/</url>
     <content><![CDATA[<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><ul>
@@ -452,6 +452,208 @@
         <tag>cs</tag>
         <tag>complier</tag>
         <tag>cmake</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>英语语法指一</title>
+    <url>/2021/12/02/2021/12/%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95%E4%B8%80/</url>
+    <content><![CDATA[<h2 id="一-简单句子分析"><a href="#一-简单句子分析" class="headerlink" title="一.简单句子分析"></a>一.简单句子分析</h2><p> <strong>英语句子= 主干+修饰成分</strong><br> 分析句子结构:<br>  一个中心 + 两个要点<br>  一个中心: 动词. 句子必须右动词<br>  两个要点: 主语 + 谓语. 谓语是动词,主语为动作的执行者或接受者.<br>  <strong>句子的核心是主谓结构</strong></p>
+<span id="more"></span>
+<p> n个主语+1个谓语 或者 1个主语+n个谓语，就可以组成简单句。其他的定状补语等都是句子的附属成分。主语部分形式比较单一，通常由名词性的结构来担任。谓语部分的形式变化较多，五种基本句型实际就是通过不同的谓语部分结构来表达五种类型的含义。不管谓语部分如何变化，它都由动词起头，并承担主要的表意功能。</p>
+<p> 英语的句子结构分为三种:简单句,并列句,复合句.简单句又分为五种基本句型.</p>
+<blockquote class="pullquote mindmap mindmap-md"><ul>
+<li>英文句子<ul>
+<li>简单句<ul>
+<li>主 + 谓</li>
+<li>主 + 谓 + 宾</li>
+<li>主 + 谓 + 宾 + 宾补</li>
+<li>主 + 谓 + 间宾 + 直宾</li>
+<li>主 + 系 + 表</li>
+</ul>
+</li>
+<li>复合句<ul>
+<li>名词性从句<ul>
+<li>主语从句</li>
+<li>宾语从句</li>
+<li>同位语从句</li>
+<li>表语从句</li>
+</ul>
+</li>
+<li>定语从句</li>
+<li>状语从句<ul>
+<li>时间状语从句</li>
+<li>地点状语从句</li>
+<li>条件状语从句</li>
+<li>结果状语从句</li>
+<li>让步状语从句</li>
+<li>目的状语从句</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>特殊句式<ul>
+<li>强调句</li>
+<li>虚拟语气</li>
+<li>倒装句</li>
+</ul>
+</li>
+<li>类型<ul>
+<li>陈述句</li>
+<li>祈使句</li>
+<li>感叹句</li>
+<li>疑问句</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+
+<p> 英语语法从整体上来讲是通过五部分来组成<br>  1、简单句<br>  2、并列句、复合句<br>  3、三大从句<br>  4、特殊句式<br>  5、类型</p>
+<p>补语<br> 补语是和表意不完全的动词息息相关的。在第三种基本句型中，联系动词将主语和补语在某个意义层面上对等起来。<br> 修饰成分<br>  介词短语<br>  从句<br>  非谓语动词<br>  时间状语<br> 论主语的补语，而后将宾语的补语作为一种变形来讨论</p>
+<h3 id="1-1-S-V-（主-谓）"><a href="#1-1-S-V-（主-谓）" class="headerlink" title="1.1 S + V （主+谓）"></a>1.1 S + V （主+谓）</h3><p> 句子不可或缺的两部分.<br> 名词/代词/不定式/动名词 + 动词<br> 谓语动词可以表达完整的意思，这类动词为不及物动词（vi）.</p>
+<h3 id="1-2-S-V-C-（主-系-表）"><a href="#1-2-S-V-C-（主-系-表）" class="headerlink" title="1.2 S + V + C （主+系+表）"></a>1.2 S + V + C （主+系+表）</h3><p>主语 +系动词 +表语</p>
+<p>表语说明主语的状态和性质，可以是名词，形容词，副词，短语等。</p>
+<p>系动词包括：</p>
+<p>a. be 动词，am, is, are, was, were;</p>
+<p>b. 表感官：feel(摸起来像是), smell, sound(听起来是), taste(尝起来是), look(看起来是);</p>
+<p>c. 表变化：become(成为), grow, turn(转变为), go, get, fall;</p>
+<p>d. 表状态：remain(依旧是), keep, hold, stay(仍然是), seem(似乎是).</p>
+<p>appear 显得像是<br>prove 证实为<br>become 成为<br>make 作为</p>
+<h3 id="1-3-S-V-O-（主-谓-宾）"><a href="#1-3-S-V-O-（主-谓-宾）" class="headerlink" title="1.3 S + V + O （主+谓+宾）"></a>1.3 S + V + O （主+谓+宾）</h3><p>主语+谓语+宾语</p>
+<p>谓语一般为及物动词（vt.），后面必须要跟宾语才能表达完整的意思。宾语是谓语动词动作的承受者。</p>
+<h3 id="1-4-S-V-O-O（主-谓-间宾-人-直宾-物-）"><a href="#1-4-S-V-O-O（主-谓-间宾-人-直宾-物-）" class="headerlink" title="1.4 S + V + O + O（主+谓+间宾(人)+直宾(物)）"></a>1.4 S + V + O + O（主+谓+间宾(人)+直宾(物)）</h3><p>谓语动词必须要跟两个宾语才能表达完整意思。两个宾语分别是动作的直接承受者（一般是物）和间接承受者（一般是人）。<br>e.g.,</p>
+<p>give sb sth = give sth to sb</p>
+<p>tell sb sth = tell sth to sb</p>
+<h3 id="1-5-S-V-O-C（主-谓-宾-宾补）"><a href="#1-5-S-V-O-C（主-谓-宾-宾补）" class="headerlink" title="1.5 S + V + O + C（主+谓+宾+宾补）"></a>1.5 S + V + O + C（主+谓+宾+宾补）</h3><p>此种情况，动词虽然跟了宾语，但句子意思不完整，需要跟上一个补足语，对宾语进行解释说明，句子意思才能完整通顺。<br>主语的补语用来表示主语是什么。类似地，宾语的补语用来表示宾语是什么。在 S + V + O + C 这个句型当中，宾语和补语之间虽然没有动词存在。但是句子可以变形成：S + V + that + O + V + C 的形式，也就是将原本的宾语和补语以从句的形式出现。因此，可以认为宾语和补语之间有「隐藏的」判断动词「是」的存在。</p>
+<p>There be 句型</p>
+<p>There be 句型表示人/物的存在。句子结构，就是There be + 主语+其他部分</p>
+<p>1.主语：句子所陈述的对象。<br>2.谓语：主语发出的动作。一般是有动作意义的动词。<br>3. 宾语：分为动词宾语和介词宾语，属于动作的承受者。<br>4. 系动词：表示状态或状态变化的动词，没有实际的动作意义。如 be, 感官系动词（look, sound, smell, taste 和 feel）、保持类系动词（keep, stay 和 remain）、状态变化类系动词（become、get、turn 和 go）等。<br>5. 表语：紧跟系动词后面的成分。<br>6. 定语：修饰名词或代词的成分。<br>7. 状语： 修饰形容词、副词、动词或句子的成分。<br>8. 补语：分为宾语补足语和主语补足语。是对宾语和主语的补充说明，与其有主动或被动的逻辑关系。</p>
+<ul>
+<li><p>参考链接:<br><a href="https://liam.page/2014/06/21/basic-sentence-and-the-complement/">https://liam.page/2014/06/21/basic-sentence-and-the-complement/</a><br><a href="https://www.zhihu.com/question/30030877/answer/768501967">https://www.zhihu.com/question/30030877/answer/768501967</a></p>
+</li>
+<li><p>参考数据<br>《语法俱乐部》</p>
+</li>
+</ul>
+<p>复杂句:从简单句演化而来</p>
+<p>简单句没有什么句序的调整，所以翻译起来基本没有什么难度。</p>
+<p>英语中的修饰成分，分定语和状语两种情况。<br>英语句子 = 主干(五种基本句型) + 修饰成分(定语+状语)</p>
+<h2 id="二、并列句、复合句"><a href="#二、并列句、复合句" class="headerlink" title="二、并列句、复合句"></a>二、并列句、复合句</h2><p>简单句通过不同的连接词就成为了不同的句子，通过并列词成了并列句，通过从属连词成了复合句。下面我们就一一讲解 ：</p>
+<p>并列句：简单句+并列词+简单句</p>
+<p>并列词一般有：and / or / but / so /while / yet / for / however</p>
+<p>1）：表示并列：and, not only…but also… , neither…nor…</p>
+<p>Her father is a doctor and her mother is a teacher .</p>
+<p>2）：表示选择：or, or else, otherwise, either…or…</p>
+<p>Hurry or you won’t make the train.</p>
+<p>3）：表示对比、转折: but, while , yet , however , never ,</p>
+<p>I like tea while she likes coffee .</p>
+<p>4）：表示原因：for</p>
+<p>I am thirsty , for it is hot .</p>
+<p>复合句：简单句+从属连词+简单句</p>
+<p>从属连词有：that / wether/ if</p>
+<p>复合句其实就是我们常说的三大从句，</p>
+<h2 id="三-三大从句"><a href="#三-三大从句" class="headerlink" title="三.三大从句"></a>三.三大从句</h2><p>1、名词性从句</p>
+<p>当名词性从句作为句子的不同成分时，又被称呼为不同的名字。</p>
+<p>当作为主语时，称为主语从句。</p>
+<p>当称为宾语时，称为宾语从句，同样表语从句以及同位语从句。以下我们来举个栗子 ：</p>
+<p>主语从句 What she said is wrong .</p>
+<p>宾语从句 I said that she was wrong.</p>
+<p>表语从句 The fact is that he doesn’t really try.</p>
+<p>同位语从句 The news that he will come back is ture.</p>
+<p>记住一点，不管什么从句，你把它当成一个”长一点的名词”。</p>
+<p>那如果这个长名词在句子中作主语，就是主语从句，作宾语就是宾语从句。</p>
+<p>同位语从句就是相当于一个长点的名词对另外一个抽象名词进行解释说明。</p>
+<p>2、定语从句</p>
+<p>修饰限定名词，汉语中“的”前面的内容。</p>
+<p>关系代词引导的定语从句</p>
+<p>1.who指人，在从句中做主语 Yesterday I helped an old man who lost his way.</p>
+<p>2. whom指人，在定语从句中充当宾语，常可省略。</p>
+<p>Mr. Ling is just the boy whom I want to see</p>
+<p>3. which指物，在定语从句中做主语或者宾语，做宾语时可省略</p>
+<p>This is the pen (which) he bought yesterday.</p>
+<p>4. that指人时，相当于who 或者whom；指物时，相当于which。</p>
+<p>5. whose通常指人，也可指物，在定语从句中做定语。</p>
+<p>指的是谁的。Do you like the book whose cover is yellow?</p>
+<p>关系副词引导的定语从句</p>
+<p>when where why</p>
+<p>3、状语从句</p>
+<p>修饰动作的发生的时间、地点、原因、方式</p>
+<p>九大状语从句</p>
+<p>1、时间状语从句</p>
+<p>常用引导词：when, as, while, as soon as, before, after, since , till, until</p>
+<p>特殊引导词：the minute, the moment, the second, every time, the day，the instant,</p>
+<p>I was fat when I was a child.</p>
+<p>2、地点状语从句</p>
+<p>常用引导词：where</p>
+<p>特殊引导词：wherever, anywhere, everywhere</p>
+<p>Keep it where you can see it.</p>
+<p>3、原因状语从句</p>
+<p>常用引导词：because, since, as, for</p>
+<p>特殊引导词：seeing that, now that, in that, considering that, given that.</p>
+<p>My friends dislike me because I’m beautiful .</p>
+<p>4、目的状语从句</p>
+<p>常用引导词：so that, in order that</p>
+<p>特殊引导词：lest, in case, for fear that，in the hope that, for the purpose that, to the end that</p>
+<p>study hard so that you can pass the exam.</p>
+<p>5、结果状语从句</p>
+<p>常用引导词：so … that, so… that, such … that,</p>
+<p>特殊引导词：such that, to the degree that, to the extent that, to such a degree that,</p>
+<p>He got up so early that he caught the first bus.</p>
+<p>6、条件状语从句</p>
+<p>常用引导词：if, unless,</p>
+<p>特殊引导词：as/so long as, only if, providing/provided that, supposing that, in case that, on condition that</p>
+<p>If you ask him, he will help you.</p>
+<p>7、方式状语从句</p>
+<p>常用引导词：as, as if, how</p>
+<p>特殊引导词：the way</p>
+<p>Think as i think</p>
+<p>8、比较状语从句</p>
+<p>常用引导词：as(同级比较), than(不同程度的比较)</p>
+<p>特殊引导词：the more … the more … ; just as …， so…; A is to B what /as X is to Y; no … more than; not A so much as B</p>
+<p>The house is three times as big as ours.</p>
+<p>9、让步状语从句</p>
+<p>常用引导词：though, although, even if, even though</p>
+<p>特殊引导词： as(用在让步状语从句中必须要倒装)，while ( 一般用在句首 )，no matter …， in spite of the fact that, while, whatever, whoever, wherever, whenever, however, whichever</p>
+<p>Though I believe it, yet I must consider.</p>
+<h2 id="四-特殊句式"><a href="#四-特殊句式" class="headerlink" title="四.特殊句式"></a>四.特殊句式</h2><p>1、强调句</p>
+<p>It is （名词 / 介宾）指的是被强调的内容that （……..）</p>
+<p>It was she whom we are talking about.</p>
+<p>2、倒装句</p>
+<p>正常句序 ：主谓宾</p>
+<p>倒装句序 ：谓主宾</p>
+<p>we can win only through hard work .</p>
+<p>only through hard work can we win .</p>
+<p>3、虚拟语气，假设不可能发生的事情</p>
+<p>1、对过去情况的虚拟</p>
+<p>从句用 had done</p>
+<p>主句用 would could might should have done</p>
+<p>2、对现在情况的虚拟</p>
+<p>从句用 did , was变成were</p>
+<p>主句用 would could might should do</p>
+<p>3、对将来情况虚拟</p>
+<p>从句用 did ，was 变成 were，should do,were to do</p>
+<p>主句用 would could might should do</p>
+<h2 id="五-类型"><a href="#五-类型" class="headerlink" title="五.类型"></a>五.类型</h2><p>陈述句</p>
+<p>i like English very much . 我非常喜欢英语。</p>
+<p>疑问句</p>
+<p>is this your key ? 这是你的钥匙吗？</p>
+<p>祈使句</p>
+<p>一种是以动词原形开头，在动词原形之前加do (但只限于省略第二人称主语的句子)。</p>
+<p>mind you head 小心碰头！</p>
+<p>第二种祈使句以let开头</p>
+<p>Let’s have another try</p>
+<p>感叹句</p>
+<p>what a brave girl ! 真是个勇敢的女孩子</p>
+<p><a href="https://zhuanlan.zhihu.com/p/400448345">https://zhuanlan.zhihu.com/p/400448345</a></p>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>study</category>
+        <category>2021</category>
+        <category>12</category>
+      </categories>
+      <tags>
+        <tag>Another Tag</tag>
+        <tag>English</tag>
       </tags>
   </entry>
   <entry>
@@ -1206,6 +1408,12 @@
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> (能朝给定总目标前进一步)</span><br><span class="line">{</span><br><span class="line">    利用可行的决策,求出可行解的一个解元素;</span><br><span class="line">}</span><br><span class="line">由所有解元素组合成问题的一个可行解</span><br></pre></td></tr></tbody></table></figure>
 <h4 id="3-4-3-应用"><a href="#3-4-3-应用" class="headerlink" title="3.4.3 应用"></a>3.4.3 应用</h4><p><strong>最小生成树算法</strong><br> 贪心算法经典实践:最小生成树算法<br> 设<code>G=(V, E)</code>是无向连通带权图,即一个网络,E中的每一条边<code>(v,w)</code> 的全为 <code>c[v][w]</code>.如果G的字体 G’ 是一颗包含 G 的所有顶点的数,则称 G’ 为 G 的生成树.生成树上各边权的总和称为生成树的耗费.在 G 的所有生成树中,耗费最小的生成树称为 G 的最小生成树.<br> 最小生成树的性质:<br>  设<code>G=(V, E)</code>是连通带权图, U是V的真子集.如果(u,v)属于E,且u属于E,v属于V-U,且在所有这样的边中,(u,v)的权c[u][v]最小,那么一定存在G的一颗最小生成树,它亦是(u,v)为其中一条边,这个性质有时也称为MST性质.</p>
 <p><strong>Prim算法</strong><br>  设<code>G=(V, E)</code>是连通带权图, V={1,2,…,n}.构造G的最小生成树Prim算法的基本思想是:**首先置S={1},然后,只有S是V的真子集,就进行如下的贪心选择:选取满足添加i属于S,j属于V-S,且c[i][j]最小的边,将顶点j添加到S中.这个过程一直进行到S=V时为止.在这个过程中选取到的所有边恰好构成G的一颗最小生成树.</p>
+<details>
+<summary>Prim</summary>
+
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @file</span></span><br><span class="line"><span class="comment"> * @author [Timothy Maloney](https://github.com/sl1mb0)</span></span><br><span class="line"><span class="comment"> * @brief [Prim's algorithm](https://en.wikipedia.org/wiki/Prim%27s_algorithm)</span></span><br><span class="line"><span class="comment"> * implementation in C to find the MST of a weighted, connected graph.</span></span><br><span class="line"><span class="comment"> * @details Prim's algorithm uses a greedy approach to generate the MST of a</span></span><br><span class="line"><span class="comment"> *weighted connected graph. The algorithm begins at an arbitrary vertex v, and</span></span><br><span class="line"><span class="comment"> *selects a next vertex u, where v and u are connected by a weighted edge whose</span></span><br><span class="line"><span class="comment"> *weight is the minimum of all edges connected to v.</span></span><br><span class="line"><span class="comment"> * @references Page 319 "Introduction to the Design and Analysis of Algorithms"</span></span><br><span class="line"><span class="comment"> *- Anany Levitin</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * To test - run './prim -test'</span></span><br><span class="line"><span class="comment"> * prim() will find the MST of the following adj. matrix:</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *	  0  1  2  3</span></span><br><span class="line"><span class="comment"> *        1  0  4  6</span></span><br><span class="line"><span class="comment"> *        2  4  0  5</span></span><br><span class="line"><span class="comment"> *        3  6  5  0</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * The minimum spanning tree for the above weighted connected graph is given by</span></span><br><span class="line"><span class="comment"> *the following adj matrix:</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *	  0  1  2  3</span></span><br><span class="line"><span class="comment"> *	  1  0  0  0</span></span><br><span class="line"><span class="comment"> *	  2  0  0  0</span></span><br><span class="line"><span class="comment"> *	  3  0  0  0</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * The following [link](https://visualgo.net/en/mst) provides a visual</span></span><br><span class="line"><span class="comment"> *representation of graphs that can be used to test/verify the algorithm for</span></span><br><span class="line"><span class="comment"> *different adj matrices and their weighted, connected graphs.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;assert.h&gt;</span>    <span class="comment">/// for assert()</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;inttypes.h&gt;</span>  <span class="comment">/// for uint16_t</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span>     <span class="comment">/// for IO operations</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span>    <span class="comment">/// for string comparison</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX 20</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 999</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @brief Finds index of minimum element in edge list for an arbitrary vertex</span></span><br><span class="line"><span class="comment"> * @param arr graph row</span></span><br><span class="line"><span class="comment"> * @param N number of elements in arr</span></span><br><span class="line"><span class="comment"> * @returns index of minimum element in arr</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">uint16_t</span> <span class="title">minimum</span><span class="params">(<span class="keyword">uint16_t</span> arr[], <span class="keyword">uint16_t</span> N)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">uint16_t</span> index = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">uint16_t</span> min = INF;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">uint16_t</span> i = <span class="number">0</span>; i &lt; N; i++) {</span><br><span class="line">        <span class="keyword">if</span> (arr[i] &lt; min) {</span><br><span class="line">            min = arr[i];</span><br><span class="line">            index = i;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> index;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @brief Used to find MST of user-generated adj matrix G</span></span><br><span class="line"><span class="comment"> * @returns void</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">prim</span><span class="params">(<span class="keyword">uint16_t</span> G[][MAX], <span class="keyword">uint16_t</span> MST[][MAX], <span class="keyword">uint16_t</span> V)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">uint16_t</span> u, v;</span><br><span class="line">    <span class="keyword">uint16_t</span> E_t[MAX], path[MAX];</span><br><span class="line">    <span class="keyword">uint16_t</span> V_t[MAX], no_of_edges;</span><br><span class="line"></span><br><span class="line">    E_t[<span class="number">0</span>] = <span class="number">0</span>;  <span class="comment">// edges for current vertex</span></span><br><span class="line">    V_t[<span class="number">0</span>] = <span class="number">1</span>;  <span class="comment">// list of visited vertices</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">uint16_t</span> i = <span class="number">1</span>; i &lt; V; i++) {</span><br><span class="line">        E_t[i] = G[i][<span class="number">0</span>];</span><br><span class="line">        path[i] = <span class="number">0</span>;</span><br><span class="line">        V_t[i] = <span class="number">0</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    no_of_edges = V - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (no_of_edges &gt; <span class="number">0</span>) {</span><br><span class="line">        u = minimum(E_t, V);</span><br><span class="line">        <span class="keyword">while</span> (V_t[u] == <span class="number">1</span>) {</span><br><span class="line">            E_t[u] = INF;</span><br><span class="line">            u = minimum(E_t, V);</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        v = path[u];</span><br><span class="line">        MST[v][u] = E_t[u];</span><br><span class="line">        MST[u][v] = E_t[u];</span><br><span class="line">        no_of_edges--;</span><br><span class="line">        V_t[u] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">uint16_t</span> i = <span class="number">1</span>; i &lt; V; i++) {</span><br><span class="line">            <span class="keyword">if</span> (V_t[i] == <span class="number">0</span> &amp;&amp; G[u][i] &lt; E_t[i]) {</span><br><span class="line">                E_t[i] = G[u][i];</span><br><span class="line">                path[i] = v;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @brief Self-test implementations</span></span><br><span class="line"><span class="comment"> * @returns void</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(<span class="keyword">uint16_t</span> G[][MAX], <span class="keyword">uint16_t</span> MST[][MAX], <span class="keyword">uint16_t</span> V)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">uint16_t</span> test[<span class="number">4</span>][<span class="number">4</span>] = {</span><br><span class="line">        {<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>}, {<span class="number">1</span>, <span class="number">0</span>, <span class="number">4</span>, <span class="number">6</span>}, {<span class="number">2</span>, <span class="number">4</span>, <span class="number">0</span>, <span class="number">5</span>}, {<span class="number">3</span>, <span class="number">6</span>, <span class="number">5</span>, <span class="number">0</span>}};</span><br><span class="line">    <span class="keyword">uint16_t</span> solution[<span class="number">4</span>][<span class="number">4</span>] = {</span><br><span class="line">        {<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>}, {<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>}, {<span class="number">2</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>}, {<span class="number">3</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>}};</span><br><span class="line"></span><br><span class="line">    V = <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">uint16_t</span> i = <span class="number">0</span>; i &lt; V; ++i) {</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">uint16_t</span> j = <span class="number">0</span>; j &lt; V; ++j) {</span><br><span class="line">            G[i][j] = test[i][j];</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    prim(&amp;(*G), &amp;(*MST), V);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">uint16_t</span> i = <span class="number">0</span>; i &lt; V; ++i) {</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">uint16_t</span> j = <span class="number">0</span>; j &lt; V; ++j) {</span><br><span class="line">            assert(MST[i][j] == solution[i][j]);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @brief Function user_graph();</span></span><br><span class="line"><span class="comment"> * gets user input adj. matrix and finds MST of that graph</span></span><br><span class="line"><span class="comment"> * @returns void</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">user_graph</span><span class="params">(<span class="keyword">uint16_t</span> G[][MAX], <span class="keyword">uint16_t</span> MST[][MAX], <span class="keyword">uint16_t</span> V)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Enter the number of vertices: "</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">" %hd"</span>, &amp;V);</span><br><span class="line"></span><br><span class="line">    assert(V &lt;= MAX);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Enter the adj matrix\n"</span>);</span><br><span class="line">    <span class="keyword">uint16_t</span> i, j;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; V; ++i) {</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; V; ++j) {</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"G[%d][%d]: "</span>, i, j);</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">" %hd"</span>, &amp;G[i][j]);</span><br><span class="line">            <span class="keyword">if</span> (G[i][j] == <span class="number">0</span>)</span><br><span class="line">                G[i][j] = INF;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    prim(&amp;(*G), &amp;(*MST), V);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"minimum spanning tree:\n"</span>);</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; V; ++i) {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; V; ++j) {</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d\t"</span>, MST[i][j]);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @brief Main function</span></span><br><span class="line"><span class="comment"> * @param argc commandline argument count (ignored)</span></span><br><span class="line"><span class="comment"> * @param argv commandline array of arguments (ignored)</span></span><br><span class="line"><span class="comment"> * @returns 0 on exit</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">uint16_t</span> G[MAX][MAX];    <span class="comment">///&lt; weighted, connected graph G</span></span><br><span class="line">    <span class="keyword">uint16_t</span> MST[MAX][MAX];  <span class="comment">///&lt; adj matrix to hold minimum spanning tree of G</span></span><br><span class="line">    <span class="keyword">uint16_t</span> V;              <span class="comment">///&lt; number of vertices in V in G</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (argc == <span class="number">2</span> &amp;&amp; <span class="built_in">strcmp</span>(argv[<span class="number">1</span>], <span class="string">"-test"</span>) == <span class="number">0</span>) {</span><br><span class="line">        test(&amp;(*G), &amp;(*MST), V);</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        user_graph(&amp;(*G), &amp;(*MST), V);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+</details>
+
 <h4 id="3-4-4-leetcode题目"><a href="#3-4-4-leetcode题目" class="headerlink" title="3.4.4 leetcode题目"></a>3.4.4 leetcode题目</h4><ul>
 <li>柠檬水找零</li>
 <li>分发饼干</li>
@@ -1278,208 +1486,6 @@
       <tags>
         <tag>实用教程</tag>
         <tag>Another Tag</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>英语语法指一</title>
-    <url>/2021/12/02/2021/12/%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95%E4%B8%80/</url>
-    <content><![CDATA[<h2 id="一-简单句子分析"><a href="#一-简单句子分析" class="headerlink" title="一.简单句子分析"></a>一.简单句子分析</h2><p> <strong>英语句子= 主干+修饰成分</strong><br> 分析句子结构:<br>  一个中心 + 两个要点<br>  一个中心: 动词. 句子必须右动词<br>  两个要点: 主语 + 谓语. 谓语是动词,主语为动作的执行者或接受者.<br>  <strong>句子的核心是主谓结构</strong></p>
-<span id="more"></span>
-<p> n个主语+1个谓语 或者 1个主语+n个谓语，就可以组成简单句。其他的定状补语等都是句子的附属成分。主语部分形式比较单一，通常由名词性的结构来担任。谓语部分的形式变化较多，五种基本句型实际就是通过不同的谓语部分结构来表达五种类型的含义。不管谓语部分如何变化，它都由动词起头，并承担主要的表意功能。</p>
-<p> 英语的句子结构分为三种:简单句,并列句,复合句.简单句又分为五种基本句型.</p>
-<blockquote class="pullquote mindmap mindmap-md"><ul>
-<li>英文句子<ul>
-<li>简单句<ul>
-<li>主 + 谓</li>
-<li>主 + 谓 + 宾</li>
-<li>主 + 谓 + 宾 + 宾补</li>
-<li>主 + 谓 + 间宾 + 直宾</li>
-<li>主 + 系 + 表</li>
-</ul>
-</li>
-<li>复合句<ul>
-<li>名词性从句<ul>
-<li>主语从句</li>
-<li>宾语从句</li>
-<li>同位语从句</li>
-<li>表语从句</li>
-</ul>
-</li>
-<li>定语从句</li>
-<li>状语从句<ul>
-<li>时间状语从句</li>
-<li>地点状语从句</li>
-<li>条件状语从句</li>
-<li>结果状语从句</li>
-<li>让步状语从句</li>
-<li>目的状语从句</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>特殊句式<ul>
-<li>强调句</li>
-<li>虚拟语气</li>
-<li>倒装句</li>
-</ul>
-</li>
-<li>类型<ul>
-<li>陈述句</li>
-<li>祈使句</li>
-<li>感叹句</li>
-<li>疑问句</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-
-<p> 英语语法从整体上来讲是通过五部分来组成<br>  1、简单句<br>  2、并列句、复合句<br>  3、三大从句<br>  4、特殊句式<br>  5、类型</p>
-<p>补语<br> 补语是和表意不完全的动词息息相关的。在第三种基本句型中，联系动词将主语和补语在某个意义层面上对等起来。<br> 修饰成分<br>  介词短语<br>  从句<br>  非谓语动词<br>  时间状语<br> 论主语的补语，而后将宾语的补语作为一种变形来讨论</p>
-<h3 id="1-1-S-V-（主-谓）"><a href="#1-1-S-V-（主-谓）" class="headerlink" title="1.1 S + V （主+谓）"></a>1.1 S + V （主+谓）</h3><p> 句子不可或缺的两部分.<br> 名词/代词/不定式/动名词 + 动词<br> 谓语动词可以表达完整的意思，这类动词为不及物动词（vi）.</p>
-<h3 id="1-2-S-V-C-（主-系-表）"><a href="#1-2-S-V-C-（主-系-表）" class="headerlink" title="1.2 S + V + C （主+系+表）"></a>1.2 S + V + C （主+系+表）</h3><p>主语 +系动词 +表语</p>
-<p>表语说明主语的状态和性质，可以是名词，形容词，副词，短语等。</p>
-<p>系动词包括：</p>
-<p>a. be 动词，am, is, are, was, were;</p>
-<p>b. 表感官：feel(摸起来像是), smell, sound(听起来是), taste(尝起来是), look(看起来是);</p>
-<p>c. 表变化：become(成为), grow, turn(转变为), go, get, fall;</p>
-<p>d. 表状态：remain(依旧是), keep, hold, stay(仍然是), seem(似乎是).</p>
-<p>appear 显得像是<br>prove 证实为<br>become 成为<br>make 作为</p>
-<h3 id="1-3-S-V-O-（主-谓-宾）"><a href="#1-3-S-V-O-（主-谓-宾）" class="headerlink" title="1.3 S + V + O （主+谓+宾）"></a>1.3 S + V + O （主+谓+宾）</h3><p>主语+谓语+宾语</p>
-<p>谓语一般为及物动词（vt.），后面必须要跟宾语才能表达完整的意思。宾语是谓语动词动作的承受者。</p>
-<h3 id="1-4-S-V-O-O（主-谓-间宾-人-直宾-物-）"><a href="#1-4-S-V-O-O（主-谓-间宾-人-直宾-物-）" class="headerlink" title="1.4 S + V + O + O（主+谓+间宾(人)+直宾(物)）"></a>1.4 S + V + O + O（主+谓+间宾(人)+直宾(物)）</h3><p>谓语动词必须要跟两个宾语才能表达完整意思。两个宾语分别是动作的直接承受者（一般是物）和间接承受者（一般是人）。<br>e.g.,</p>
-<p>give sb sth = give sth to sb</p>
-<p>tell sb sth = tell sth to sb</p>
-<h3 id="1-5-S-V-O-C（主-谓-宾-宾补）"><a href="#1-5-S-V-O-C（主-谓-宾-宾补）" class="headerlink" title="1.5 S + V + O + C（主+谓+宾+宾补）"></a>1.5 S + V + O + C（主+谓+宾+宾补）</h3><p>此种情况，动词虽然跟了宾语，但句子意思不完整，需要跟上一个补足语，对宾语进行解释说明，句子意思才能完整通顺。<br>主语的补语用来表示主语是什么。类似地，宾语的补语用来表示宾语是什么。在 S + V + O + C 这个句型当中，宾语和补语之间虽然没有动词存在。但是句子可以变形成：S + V + that + O + V + C 的形式，也就是将原本的宾语和补语以从句的形式出现。因此，可以认为宾语和补语之间有「隐藏的」判断动词「是」的存在。</p>
-<p>There be 句型</p>
-<p>There be 句型表示人/物的存在。句子结构，就是There be + 主语+其他部分</p>
-<p>1.主语：句子所陈述的对象。<br>2.谓语：主语发出的动作。一般是有动作意义的动词。<br>3. 宾语：分为动词宾语和介词宾语，属于动作的承受者。<br>4. 系动词：表示状态或状态变化的动词，没有实际的动作意义。如 be, 感官系动词（look, sound, smell, taste 和 feel）、保持类系动词（keep, stay 和 remain）、状态变化类系动词（become、get、turn 和 go）等。<br>5. 表语：紧跟系动词后面的成分。<br>6. 定语：修饰名词或代词的成分。<br>7. 状语： 修饰形容词、副词、动词或句子的成分。<br>8. 补语：分为宾语补足语和主语补足语。是对宾语和主语的补充说明，与其有主动或被动的逻辑关系。</p>
-<ul>
-<li><p>参考链接:<br><a href="https://liam.page/2014/06/21/basic-sentence-and-the-complement/">https://liam.page/2014/06/21/basic-sentence-and-the-complement/</a><br><a href="https://www.zhihu.com/question/30030877/answer/768501967">https://www.zhihu.com/question/30030877/answer/768501967</a></p>
-</li>
-<li><p>参考数据<br>《语法俱乐部》</p>
-</li>
-</ul>
-<p>复杂句:从简单句演化而来</p>
-<p>简单句没有什么句序的调整，所以翻译起来基本没有什么难度。</p>
-<p>英语中的修饰成分，分定语和状语两种情况。<br>英语句子 = 主干(五种基本句型) + 修饰成分(定语+状语)</p>
-<h2 id="二、并列句、复合句"><a href="#二、并列句、复合句" class="headerlink" title="二、并列句、复合句"></a>二、并列句、复合句</h2><p>简单句通过不同的连接词就成为了不同的句子，通过并列词成了并列句，通过从属连词成了复合句。下面我们就一一讲解 ：</p>
-<p>并列句：简单句+并列词+简单句</p>
-<p>并列词一般有：and / or / but / so /while / yet / for / however</p>
-<p>1）：表示并列：and, not only…but also… , neither…nor…</p>
-<p>Her father is a doctor and her mother is a teacher .</p>
-<p>2）：表示选择：or, or else, otherwise, either…or…</p>
-<p>Hurry or you won’t make the train.</p>
-<p>3）：表示对比、转折: but, while , yet , however , never ,</p>
-<p>I like tea while she likes coffee .</p>
-<p>4）：表示原因：for</p>
-<p>I am thirsty , for it is hot .</p>
-<p>复合句：简单句+从属连词+简单句</p>
-<p>从属连词有：that / wether/ if</p>
-<p>复合句其实就是我们常说的三大从句，</p>
-<h2 id="三-三大从句"><a href="#三-三大从句" class="headerlink" title="三.三大从句"></a>三.三大从句</h2><p>1、名词性从句</p>
-<p>当名词性从句作为句子的不同成分时，又被称呼为不同的名字。</p>
-<p>当作为主语时，称为主语从句。</p>
-<p>当称为宾语时，称为宾语从句，同样表语从句以及同位语从句。以下我们来举个栗子 ：</p>
-<p>主语从句 What she said is wrong .</p>
-<p>宾语从句 I said that she was wrong.</p>
-<p>表语从句 The fact is that he doesn’t really try.</p>
-<p>同位语从句 The news that he will come back is ture.</p>
-<p>记住一点，不管什么从句，你把它当成一个”长一点的名词”。</p>
-<p>那如果这个长名词在句子中作主语，就是主语从句，作宾语就是宾语从句。</p>
-<p>同位语从句就是相当于一个长点的名词对另外一个抽象名词进行解释说明。</p>
-<p>2、定语从句</p>
-<p>修饰限定名词，汉语中“的”前面的内容。</p>
-<p>关系代词引导的定语从句</p>
-<p>1.who指人，在从句中做主语 Yesterday I helped an old man who lost his way.</p>
-<p>2. whom指人，在定语从句中充当宾语，常可省略。</p>
-<p>Mr. Ling is just the boy whom I want to see</p>
-<p>3. which指物，在定语从句中做主语或者宾语，做宾语时可省略</p>
-<p>This is the pen (which) he bought yesterday.</p>
-<p>4. that指人时，相当于who 或者whom；指物时，相当于which。</p>
-<p>5. whose通常指人，也可指物，在定语从句中做定语。</p>
-<p>指的是谁的。Do you like the book whose cover is yellow?</p>
-<p>关系副词引导的定语从句</p>
-<p>when where why</p>
-<p>3、状语从句</p>
-<p>修饰动作的发生的时间、地点、原因、方式</p>
-<p>九大状语从句</p>
-<p>1、时间状语从句</p>
-<p>常用引导词：when, as, while, as soon as, before, after, since , till, until</p>
-<p>特殊引导词：the minute, the moment, the second, every time, the day，the instant,</p>
-<p>I was fat when I was a child.</p>
-<p>2、地点状语从句</p>
-<p>常用引导词：where</p>
-<p>特殊引导词：wherever, anywhere, everywhere</p>
-<p>Keep it where you can see it.</p>
-<p>3、原因状语从句</p>
-<p>常用引导词：because, since, as, for</p>
-<p>特殊引导词：seeing that, now that, in that, considering that, given that.</p>
-<p>My friends dislike me because I’m beautiful .</p>
-<p>4、目的状语从句</p>
-<p>常用引导词：so that, in order that</p>
-<p>特殊引导词：lest, in case, for fear that，in the hope that, for the purpose that, to the end that</p>
-<p>study hard so that you can pass the exam.</p>
-<p>5、结果状语从句</p>
-<p>常用引导词：so … that, so… that, such … that,</p>
-<p>特殊引导词：such that, to the degree that, to the extent that, to such a degree that,</p>
-<p>He got up so early that he caught the first bus.</p>
-<p>6、条件状语从句</p>
-<p>常用引导词：if, unless,</p>
-<p>特殊引导词：as/so long as, only if, providing/provided that, supposing that, in case that, on condition that</p>
-<p>If you ask him, he will help you.</p>
-<p>7、方式状语从句</p>
-<p>常用引导词：as, as if, how</p>
-<p>特殊引导词：the way</p>
-<p>Think as i think</p>
-<p>8、比较状语从句</p>
-<p>常用引导词：as(同级比较), than(不同程度的比较)</p>
-<p>特殊引导词：the more … the more … ; just as …， so…; A is to B what /as X is to Y; no … more than; not A so much as B</p>
-<p>The house is three times as big as ours.</p>
-<p>9、让步状语从句</p>
-<p>常用引导词：though, although, even if, even though</p>
-<p>特殊引导词： as(用在让步状语从句中必须要倒装)，while ( 一般用在句首 )，no matter …， in spite of the fact that, while, whatever, whoever, wherever, whenever, however, whichever</p>
-<p>Though I believe it, yet I must consider.</p>
-<h2 id="四-特殊句式"><a href="#四-特殊句式" class="headerlink" title="四.特殊句式"></a>四.特殊句式</h2><p>1、强调句</p>
-<p>It is （名词 / 介宾）指的是被强调的内容that （……..）</p>
-<p>It was she whom we are talking about.</p>
-<p>2、倒装句</p>
-<p>正常句序 ：主谓宾</p>
-<p>倒装句序 ：谓主宾</p>
-<p>we can win only through hard work .</p>
-<p>only through hard work can we win .</p>
-<p>3、虚拟语气，假设不可能发生的事情</p>
-<p>1、对过去情况的虚拟</p>
-<p>从句用 had done</p>
-<p>主句用 would could might should have done</p>
-<p>2、对现在情况的虚拟</p>
-<p>从句用 did , was变成were</p>
-<p>主句用 would could might should do</p>
-<p>3、对将来情况虚拟</p>
-<p>从句用 did ，was 变成 were，should do,were to do</p>
-<p>主句用 would could might should do</p>
-<h2 id="五-类型"><a href="#五-类型" class="headerlink" title="五.类型"></a>五.类型</h2><p>陈述句</p>
-<p>i like English very much . 我非常喜欢英语。</p>
-<p>疑问句</p>
-<p>is this your key ? 这是你的钥匙吗？</p>
-<p>祈使句</p>
-<p>一种是以动词原形开头，在动词原形之前加do (但只限于省略第二人称主语的句子)。</p>
-<p>mind you head 小心碰头！</p>
-<p>第二种祈使句以let开头</p>
-<p>Let’s have another try</p>
-<p>感叹句</p>
-<p>what a brave girl ! 真是个勇敢的女孩子</p>
-<p><a href="https://zhuanlan.zhihu.com/p/400448345">https://zhuanlan.zhihu.com/p/400448345</a></p>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>study</category>
-        <category>2021</category>
-        <category>12</category>
-      </categories>
-      <tags>
-        <tag>Another Tag</tag>
-        <tag>English</tag>
       </tags>
   </entry>
 </search>
