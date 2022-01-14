@@ -168,28 +168,6 @@
       </tags>
   </entry>
   <entry>
-    <title>C/C++内存管理</title>
-    <url>/2021/10/07/2021/11/%E5%86%85%E5%AD%98/</url>
-    <content><![CDATA[<h2 id="一、内存"><a href="#一、内存" class="headerlink" title="一、内存"></a>一、内存</h2><p> 在计算机中，不同应用程序之间的内存是相互独立的，通常情况下不可以相互访问。</p>
-<span id="more"></span>
-
-<p>1、内存四区<br>从下到上为：代码区、数据区、堆区、栈区。<br>栈区：存储临时变量的区域，临时变量包括：局部变量、返回值、参数、返回地址。这些变量超出作用域自动弹出。超出栈大小将会栈溢出。栈从栈顶自上而下，最下端为0x0000。<br>堆区：比较大的内存区域，用于动态内存分配，由开放人员申请和释放，在程序结束时未释放，将会右系统自动回收。<br>数据区：主要存放全局变量、常量和静态变量；数据区又可以划分为：全局区和静态区。<br>代码区：主要纯粹可执行代码。属性为只读的。</p>
-<h2 id="二、malloc和free"><a href="#二、malloc和free" class="headerlink" title="二、malloc和free"></a>二、malloc和free</h2><p> 在 C 语言（不是 C++)中，malloc 和 free 是系统提供的函数，成对使用，用于从堆中分配和释放内存。malloc 的全称是 memory allocation 译为“动态内存分配”。</p>
-<ul>
-<li>参考链接：<br><a href="https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ">https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ</a></li>
-</ul>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2021</category>
-        <category>11</category>
-      </categories>
-      <tags>
-        <tag>Another Tag</tag>
-        <tag>Computer Science</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>leetcode题解算法分析</title>
     <url>/2021/10/27/2021/11/leetcode%E9%A2%98%E8%A7%A3%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h2 id="1-单调栈"><a href="#1-单调栈" class="headerlink" title="1.单调栈"></a>1.单调栈</h2><h3 id="1-1-代表题目-84-柱状图中最大的矩形"><a href="#1-1-代表题目-84-柱状图中最大的矩形" class="headerlink" title="1.1 代表题目: 84.柱状图中最大的矩形"></a>1.1 代表题目: 84.<a href="https://leetcode-cn.com/problems/largest-rectangle-in-histogram/description/">柱状图中最大的矩形</a></h3><span id="more"></span>
@@ -401,6 +379,28 @@
       <tags>
         <tag>实用教程</tag>
         <tag>Another Tag</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C/C++内存管理</title>
+    <url>/2021/10/07/2021/11/%E5%86%85%E5%AD%98/</url>
+    <content><![CDATA[<h2 id="一、内存"><a href="#一、内存" class="headerlink" title="一、内存"></a>一、内存</h2><p> 在计算机中，不同应用程序之间的内存是相互独立的，通常情况下不可以相互访问。</p>
+<span id="more"></span>
+
+<p>1、内存四区<br>从下到上为：代码区、数据区、堆区、栈区。<br>栈区：存储临时变量的区域，临时变量包括：局部变量、返回值、参数、返回地址。这些变量超出作用域自动弹出。超出栈大小将会栈溢出。栈从栈顶自上而下，最下端为0x0000。<br>堆区：比较大的内存区域，用于动态内存分配，由开放人员申请和释放，在程序结束时未释放，将会右系统自动回收。<br>数据区：主要存放全局变量、常量和静态变量；数据区又可以划分为：全局区和静态区。<br>代码区：主要纯粹可执行代码。属性为只读的。</p>
+<h2 id="二、malloc和free"><a href="#二、malloc和free" class="headerlink" title="二、malloc和free"></a>二、malloc和free</h2><p> 在 C 语言（不是 C++)中，malloc 和 free 是系统提供的函数，成对使用，用于从堆中分配和释放内存。malloc 的全称是 memory allocation 译为“动态内存分配”。</p>
+<ul>
+<li>参考链接：<br><a href="https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ">https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ</a></li>
+</ul>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2021</category>
+        <category>11</category>
+      </categories>
+      <tags>
+        <tag>Another Tag</tag>
+        <tag>Computer Science</tag>
       </tags>
   </entry>
   <entry>
@@ -1481,12 +1481,25 @@
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i = <span class="number">1.</span>..N</span><br><span class="line">    <span class="keyword">for</span> j = V..<span class="number">.0</span></span><br><span class="line">        p[j] = max{p[j-volume[i]] + value[i], p[j]};</span><br></pre></td></tr></tbody></table></figure>
 
 
+<details>
+<summary>dp</summary>
+
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> v[]={<span class="number">6</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">6</span>};</span><br><span class="line"><span class="keyword">int</span> w[]={<span class="number">2</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">5</span>,<span class="number">4</span>};</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">100</span>][<span class="number">100</span>];</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Max</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>{</span><br><span class="line">	<span class="keyword">if</span>(a&gt;=b){</span><br><span class="line">		<span class="keyword">return</span> a;</span><br><span class="line">	}<span class="keyword">else</span>{</span><br><span class="line">		<span class="keyword">return</span> b;</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getAns</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> wi)</span> </span>{</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">0</span>;x&lt;=i;x++) {</span><br><span class="line">		dp[x][<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">0</span>; x &lt;= wi; x++) {</span><br><span class="line">		dp[<span class="number">0</span>][x]=<span class="number">0</span>;</span><br><span class="line">	}</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">1</span>; x &lt;= i; x++) {</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> y=<span class="number">1</span>;y&lt;=wi;y++) {</span><br><span class="line">			<span class="keyword">if</span>(y&gt;=w[x<span class="number">-1</span>]) {</span><br><span class="line">				dp[x][y]=Max(dp[x<span class="number">-1</span>][y],v[x<span class="number">-1</span>]+dp[x<span class="number">-1</span>][y-w[x<span class="number">-1</span>]]);</span><br><span class="line">			} <span class="keyword">else</span> {</span><br><span class="line">				dp[x][y]=dp[x<span class="number">-1</span>][y];</span><br><span class="line">			}</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%4d"</span>,dp[x][y]);</span><br><span class="line">		}</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> dp[i][wi];</span><br><span class="line">}</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">	<span class="keyword">int</span> max=getAns(<span class="number">5</span>,<span class="number">10</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,max);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">} </span><br></pre></td></tr></tbody></table></figure>
+</details>
+
 <h4 id="3-5-4-最长公共子序列"><a href="#3-5-4-最长公共子序列" class="headerlink" title="3.5.4 最长公共子序列"></a>3.5.4 最长公共子序列</h4><p> 问题描述:<br> 一个散列S,如果分别是两个或多个已知数列的子序列,且是所有匹配此条件序列中最长的,则S称为已知序列的最长公共子序列(LCS)<br> 给定两个序列X,Y,求两个序列的最长公共子序列.<br> 解题思路:<br> 最长公共子序列问题存在最优子结构；这个问题可分解成更小，更简单的“子问题”，这个子问题可以分成更多的子问题，因此整个问题就变得简单了。<br> 最长公共子序列问题的子问题的解是可以重复使用的，即，更高级别的子问题通常会重用低级子问题的解。拥有这个两个属性的问题可以使用动态规划算法来解决，这样子问题的解就可以存储起来，而不用重复计算。这个过程需要在一个表中存储同一级别的子问题的解，因此这个解可被更高级的子问题使用。设有二维数组f[i][j]表示X的i位和Y的j位之前的最长公共子序列的长度，则有：</p>
 <blockquote>
 <p>f[1][1] = same(1,1)<br>f[i][j] = max{f[i-1][j-1] + same(i, j), f[i-1][j], f[i][j-1]}<br> 其中，<code>same(a,b)</code>当X的第a位与Y的第b位完全相同是”1”，否则位”1”。<br> 此时，f[i][j]中最大的数便是X和Y的最长公共子序列的长度，依据该数组回溯，便可找出最长公共子序列。<br> 该算法的空间、时间复杂度位O(n^2)，经过优化后，空间复杂度位O(n)。</p>
 </blockquote>
 <p> 伪代码:</p>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function">function <span class="title">LCSLength</span><span class="params">(X[<span class="number">1.</span>.m], Y[<span class="number">1.</span>.n])</span></span></span><br><span class="line"><span class="function">    C </span>= <span class="built_in">array</span>(<span class="number">0.</span>.m, <span class="number">0.</span>.n)</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0.</span>.m</span><br><span class="line">        C[i, <span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> j := <span class="number">0.</span>.n</span><br><span class="line">        C[<span class="number">0</span>, j] = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">1.</span>.m</span><br><span class="line">        <span class="keyword">for</span> j := <span class="number">1.</span>.n</span><br><span class="line">            <span class="keyword">if</span> X[i] = Y[j]</span><br><span class="line">                C[i, j] := C[i<span class="number">-1</span>, j<span class="number">-1</span>] + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                C[i, j] := max(C[i, j<span class="number">-1</span>], C[i<span class="number">-1</span>,j])</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> C[m, n]</span><br></pre></td></tr></tbody></table></figure>
+
+<details>
+<summary>最长公共序列数</summary>
+
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">100</span>][<span class="number">100</span>];</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Max</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> c)</span></span>{</span><br><span class="line">	<span class="keyword">int</span> max=a;</span><br><span class="line">	<span class="keyword">if</span>(b&gt;max){</span><br><span class="line">		max=b;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">if</span>(c&gt;max){</span><br><span class="line">		max=c;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> max;</span><br><span class="line">}</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getMax</span><span class="params">(<span class="keyword">char</span> s1[],<span class="keyword">char</span> s2[],<span class="keyword">int</span> m,<span class="keyword">int</span> n)</span></span>{</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;m;i++){       <span class="comment">//当 s2取 1个的时候 ,s1为可变长度 </span></span><br><span class="line">		<span class="keyword">if</span>(s1[i]==s2[<span class="number">0</span>]){</span><br><span class="line">			dp[i][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">for</span>(j=i+<span class="number">1</span>;j&lt;m;j++){</span><br><span class="line">				dp[j][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">			}</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		} </span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++){      <span class="comment">//当 s1取 1个的时候 ,s2为可变长度 </span></span><br><span class="line">		<span class="keyword">if</span>(s2[i]==s1[<span class="number">0</span>]){</span><br><span class="line">			dp[<span class="number">0</span>][i]=<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">for</span>(j=i+<span class="number">1</span>;j&lt;n;j++){</span><br><span class="line">				dp[<span class="number">0</span>][j]=<span class="number">1</span>;</span><br><span class="line">			}</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		} </span><br><span class="line">	} </span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;m;i++){</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;n;j++){</span><br><span class="line">			<span class="keyword">if</span>(s1[i]==s2[j]){</span><br><span class="line">				dp[i][j]=Max(dp[i<span class="number">-1</span>][j<span class="number">-1</span>]+<span class="number">1</span>,dp[i<span class="number">-1</span>][j],dp[i][j<span class="number">-1</span>]);</span><br><span class="line">			}<span class="keyword">else</span>{</span><br><span class="line">				dp[i][j]=dp[i<span class="number">-1</span>][j]&gt;=dp[i][j<span class="number">-1</span>]?dp[i<span class="number">-1</span>][j]:dp[i][j<span class="number">-1</span>];</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">	} </span><br><span class="line">	<span class="keyword">return</span> dp[m<span class="number">-1</span>][n<span class="number">-1</span>];</span><br><span class="line">}</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">	<span class="keyword">int</span> m,n;</span><br><span class="line">	<span class="keyword">char</span> s1[<span class="number">100</span>];</span><br><span class="line">	<span class="keyword">char</span> s2[<span class="number">100</span>];</span><br><span class="line">	gets(s1);</span><br><span class="line">	gets(s2);</span><br><span class="line">	m=<span class="built_in">strlen</span>(s1);</span><br><span class="line">	n=<span class="built_in">strlen</span>(s2);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,getMax(s1,s2,m,n));</span><br><span class="line"> </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+</details>
+
 
 <details>
 <summary>Fibonacci_dp</summary>
