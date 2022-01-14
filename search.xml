@@ -168,6 +168,28 @@
       </tags>
   </entry>
   <entry>
+    <title>C/C++内存管理</title>
+    <url>/2021/10/07/2021/11/%E5%86%85%E5%AD%98/</url>
+    <content><![CDATA[<h2 id="一、内存"><a href="#一、内存" class="headerlink" title="一、内存"></a>一、内存</h2><p> 在计算机中，不同应用程序之间的内存是相互独立的，通常情况下不可以相互访问。</p>
+<span id="more"></span>
+
+<p>1、内存四区<br>从下到上为：代码区、数据区、堆区、栈区。<br>栈区：存储临时变量的区域，临时变量包括：局部变量、返回值、参数、返回地址。这些变量超出作用域自动弹出。超出栈大小将会栈溢出。栈从栈顶自上而下，最下端为0x0000。<br>堆区：比较大的内存区域，用于动态内存分配，由开放人员申请和释放，在程序结束时未释放，将会右系统自动回收。<br>数据区：主要存放全局变量、常量和静态变量；数据区又可以划分为：全局区和静态区。<br>代码区：主要纯粹可执行代码。属性为只读的。</p>
+<h2 id="二、malloc和free"><a href="#二、malloc和free" class="headerlink" title="二、malloc和free"></a>二、malloc和free</h2><p> 在 C 语言（不是 C++)中，malloc 和 free 是系统提供的函数，成对使用，用于从堆中分配和释放内存。malloc 的全称是 memory allocation 译为“动态内存分配”。</p>
+<ul>
+<li>参考链接：<br><a href="https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ">https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ</a></li>
+</ul>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2021</category>
+        <category>11</category>
+      </categories>
+      <tags>
+        <tag>Another Tag</tag>
+        <tag>Computer Science</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>leetcode题解算法分析</title>
     <url>/2021/10/27/2021/11/leetcode%E9%A2%98%E8%A7%A3%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h2 id="1-单调栈"><a href="#1-单调栈" class="headerlink" title="1.单调栈"></a>1.单调栈</h2><h3 id="1-1-代表题目-84-柱状图中最大的矩形"><a href="#1-1-代表题目-84-柱状图中最大的矩形" class="headerlink" title="1.1 代表题目: 84.柱状图中最大的矩形"></a>1.1 代表题目: 84.<a href="https://leetcode-cn.com/problems/largest-rectangle-in-histogram/description/">柱状图中最大的矩形</a></h3><span id="more"></span>
@@ -382,25 +404,71 @@
       </tags>
   </entry>
   <entry>
-    <title>C/C++内存管理</title>
-    <url>/2021/10/07/2021/11/%E5%86%85%E5%AD%98/</url>
-    <content><![CDATA[<h2 id="一、内存"><a href="#一、内存" class="headerlink" title="一、内存"></a>一、内存</h2><p> 在计算机中，不同应用程序之间的内存是相互独立的，通常情况下不可以相互访问。</p>
+    <title>CMake</title>
+    <url>/2021/12/07/2021/12/cmake/</url>
+    <content><![CDATA[<h2 id="1-camke简述"><a href="#1-camke简述" class="headerlink" title="1.camke简述"></a>1.camke简述</h2><p> CMake是跨平台编译管理工具,为第三方依赖和引入,创建编译系统,程序测试及安装.Cmake工具使用CMakeLists.txt文件,跨平台执行相同编译命令,生成对应平台的可执行程序或者链接库.</p>
 <span id="more"></span>
 
-<p>1、内存四区<br>从下到上为：代码区、数据区、堆区、栈区。<br>栈区：存储临时变量的区域，临时变量包括：局部变量、返回值、参数、返回地址。这些变量超出作用域自动弹出。超出栈大小将会栈溢出。栈从栈顶自上而下，最下端为0x0000。<br>堆区：比较大的内存区域，用于动态内存分配，由开放人员申请和释放，在程序结束时未释放，将会右系统自动回收。<br>数据区：主要存放全局变量、常量和静态变量；数据区又可以划分为：全局区和静态区。<br>代码区：主要纯粹可执行代码。属性为只读的。</p>
-<h2 id="二、malloc和free"><a href="#二、malloc和free" class="headerlink" title="二、malloc和free"></a>二、malloc和free</h2><p> 在 C 语言（不是 C++)中，malloc 和 free 是系统提供的函数，成对使用，用于从堆中分配和释放内存。malloc 的全称是 memory allocation 译为“动态内存分配”。</p>
+<p> CMake工程简单例子</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">cmake_minimum_required(VERSION 3.12)</span><br><span class="line">project(myproj)</span><br><span class="line">find_package(Poco REQUIRED COMPONENTS Net Util)</span><br><span class="line">add_executable(MyExe)</span><br><span class="line">target_source(MyExe PRIVATE <span class="string">"main.cpp"</span>)</span><br><span class="line">target_link_library(MyExe PRIVATE Poco::Net PocoUtil)</span><br><span class="line"></span><br><span class="line">target_complie_definition(MyExe PRIVATE std_cxx_14)</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="2-Target-和围绕-Target-的配置"><a href="#2-Target-和围绕-Target-的配置" class="headerlink" title="2.Target 和围绕 Target 的配置"></a>2.Target 和围绕 Target 的配置</h2><p> C/C++工程通常都是为了生成可执行程序或者链接库，在现代 CMake 里他们被统称为<code>target</code>，创建命令分别是<code>add_library()</code>和<code>add_executable()</code>。其中链接库的类型又分为很多种，最常用的就是<code>SHARED</code>以及<code>STATIC</code>，在命令中加入关键词进行声明：add_library(MyLib SHARED)，第一个参数为target的名称，后续的配置都需要用到这个名字。<br> 指定target的源文件：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_source(MyLib PRVIATE <span class="string">"main.cpp"</span> <span class="string">"func.cpp"</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p> PRIVATE关键词用于描述参数的“应用范围”，此外还有INTERFACE和PUBLIC两种可能的值</p>
+<p> 较多的源文件，可以使用 CMake 的file命令进行遍历拿到全部的源文件</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">file(GLOB_RECURSE SRCS <span class="variable">${CMAKE_CURRENT_SOURCE_DIR}</span>/*.cpp)</span><br></pre></td></tr></tbody></table></figure>
+<p> 命令第一个参数GLOB_RECURSE表明递归的查找子文件夹，第二个参数SRCS则是存储结果的变量名，第三个参数为目标文件的匹配模式，找到符合条件的 cpp 文件后，他们的路径会以字符串数组的形式保存在 SRCS 变量中，使用方式如下：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_source(MyLib PRIVATE <span class="variable">${SRCS}</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p> 配置target时通常还需要指定头文件目录：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_include_directories(MyLib PRIVATE <span class="variable">${CMAKE_CURRENT_SOURCE_DIR}</span>/include/)</span><br></pre></td></tr></tbody></table></figure>
+<p> 编译时需要的语言特性：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_features(MyLib PRIVATE std_cxx_14)</span><br></pre></td></tr></tbody></table></figure>
+<p> 编译时的宏定义：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_definitions(MyLib PRIVATE LogLevel=3)</span><br></pre></td></tr></tbody></table></figure>
+<p> 参数想直接传给底层的编译器（比如 gcc, clang, cl），可以使用</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_options(MyLib PRIVATE -Werror -Wall -Wextra)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="3-Build-Specification-和-Usage-Requirement"><a href="#3-Build-Specification-和-Usage-Requirement" class="headerlink" title="3.Build Specification 和 Usage Requirement"></a>3.Build Specification 和 Usage Requirement</h2><p> C/C++通过 include 头文件的方式引入依赖，在动态或静态链接后可以调用依赖实现。一个可执行程序可能会依赖链接库，链接库也同样可能依赖其他的链接库<br> CMake 提供的解决方案是，在对 target 进行配置时，可以规定配置的类型，分为 build specification 和 usage requirement 两类，会影响配置的应用范围。Build specification 类型的配置仅在编译的时候需要满足，通过PRIVATE关键字声明；Usage requirement 类型的配置则是在使用时需要满足，即在其他项目里，使用本项目已编译好的 target 时需要满足，这种类型的配置使用INTERFACE关键词声明。在实际工程中，有很多配置在编译时以及被使用时都需要被满足的，这种配置通过PUBLIC关键词进行声明。</p>
+<p> 一个 library，在编译时静态链接了 Boost，在我们的实现文件中使用了 c++14 的特性，并用到了 Boost 的头文件和函数。随后我们对外发布了这个库，其中有头文件和预编译好的动态链接库。尽管我们的实现代码里用了 C++14，但在对外提供的头文件中只用到 C++03 的语法，也没有引入任何 Boost 的代码。这种情况下，当其他工程在使用我们的 library 时，其使用的编译器不需要开启 C++14 的支持，开发环境下也不需要安装 Boost。我们 library 的 CMake 配置中可以这么写：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_features(MyLib PRIVATE cxx_std_14)</span><br><span class="line">target_link_libraries(MyLib PRIVATE Boost::Format)</span><br></pre></td></tr></tbody></table></figure>
+<p> PRIVATE 说明 c++14 的支持只在编译时需要用到，Boost 库的链接也仅在编译时需要。但如果我们对外提供的头文件中也使用了 C++14，那么就需要使用 PUBLIC 修饰，改为：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_features(MyLib PUBLIC cxx_std_14)</span><br><span class="line">target_link_libraries(MyLib PRIVATE Boost::Format)</span><br></pre></td></tr></tbody></table></figure>
+<p> 当 library 是 header-only 时，我们的工程是不需要单独编译的，因此也就没有 build specification，通过INTERFACE修饰配置即可</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">arget_compile_features(MyLib INTERFACE cxx_std_14)</span><br></pre></td></tr></tbody></table></figure>
+<p> Usage requirement 类型的配置，即通过INTERFACE或是PUBLIC修饰的配置是会传递的，比如 LibA 依赖 LibB 后，会继承 LibB 的 usage requirement，此后 LibC 依赖 LibB 时，LibA 和 libB 的 usage requirement 都会继承下来，</p>
+<h2 id="4-寻找和使用链接库"><a href="#4-寻找和使用链接库" class="headerlink" title="4.寻找和使用链接库"></a>4.寻找和使用链接库</h2><p> C/C++标准没有规范库的安装位置和安装形式，通过 CMake 提供的方案寻找依赖，不光可以定位到头文件目录和链接库路径，还能够获取到库的 usage requirement。<br> 在 CMake 中寻找第三方库的命令为find_package，其背后的工作方式有两种，一种基于 Config File 的查找，另一种则是基于 Find File 的查找。在执行find_package时，实际上 CMake 都是在找这两类文件，找到后从中获取关于库的信息。</p>
+<h3 id="4-1-通过-Config-file-找到依赖"><a href="#4-1-通过-Config-file-找到依赖" class="headerlink" title="4.1 通过 Config file 找到依赖"></a>4.1 通过 Config file 找到依赖</h3><p> Config File 是依赖的开发者提供的 cmake 脚本，通常会随预编译好的二进制一起发布，供下游的使用者使用。在 Config file 里，会对库里包含的 target 进行描述，说明版本信息以及头文件路径、链接库路径、编译选项等 usage requirement</p>
+<p> CMake 对 Config file 的命名是有规定的，对于find_package(ABC)这样一条命令，CMake 只会去寻找ABCConfig.cmake或是abc-config.cmake。CMake 默认寻找的路径和平台有关，在 Linux 下寻找路径包括/usr/lib/cmake以及/usr/lib/local/cmake，在这两个路径下可以发现大量的 Config File，一般在安装某个库时，其自带的 Config file 会被放到这里来。</p>
+<h3 id="4-2-通过-Find-file-找到依赖"><a href="#4-2-通过-Find-file-找到依赖" class="headerlink" title="4.2 通过 Find file 找到依赖"></a>4.2 通过 Find file 找到依赖</h3><p> 对于find_package(ABC)命令，如果 CMake 没有找到 Config file，他还会去试着寻找FindABC.cmake。Find file 在功能上和 Config file 相同，区别在于 Find file 是由其他人编写的，而非库的开发者。如果你使用的某个库没有提供 Config file，你可以去网上搜搜 Find file 或者自己写一个，然后加入到你的 CMake 工程中。</p>
+<p> CMake 官方为我们写好了很多 Find file，在CMake Documentation这一页面可以看到，OpenGL，OpenMP，SDL 这些知名的库官方都为我们写好了 Find 脚本，因此直接调用 find_package 命令即可。但由于库的安装位置并不是固定的，这些 Find 脚本不一定能找到库，此时根据 CMake 报错的提示设置对应变量即可，通常是需要提供安装路径，这样就可以通过 Find file 获取到库的 usage requirement。不论是 Config file 还是 Find file，其目的都不只是找到库这么简单，而是告诉 CMake 如何使用这个库。<br>库 CMake 官方也没有提供 Find file，这时候就要自己写了或者靠搜索了，写好后放到本项目的目录下，修改CMAKE_MODULE_PATH这个 CMAKE 变量：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">list(INSERT CMAKE_MODULE_PATH 0 <span class="variable">${CMAKE_SOURCE_DIR}</span>/cmake)</span><br></pre></td></tr></tbody></table></figure>
+<p> ${CMAKE_SOURCE_DIR}/cmake目录下的 Find file 就可以被 CMake 找到了。<br> 通过 CMake 的find_library和find_path两个命令就可以完成任务：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">find_library(MPI_LIBRARY</span><br><span class="line">  NAMES mpi</span><br><span class="line">  HINTS <span class="string">"<span class="variable">${CMAKE_PREFIX_PATH}</span>/lib"</span> <span class="variable">${MPI_LIB_PATH}</span></span><br><span class="line">  <span class="comment"># 如果默认路径没找到libmpi.so，还会去MPI_LIB_PATH找，下游使用者可以设置这个变量值</span></span><br><span class="line">)</span><br><span class="line">find_path(MPI_INCLUDE_DIR</span><br><span class="line">  NAMES mpi.h</span><br><span class="line">  PATHS <span class="string">"<span class="variable">${CMAKE_PREFIX_PATH}</span>/include"</span> <span class="variable">${MPI_INCLUDE_PATH}</span></span><br><span class="line">  <span class="comment"># 如果默认路径没找到mpi.h，还会去MPI_INCLUDE_PATH找，下游使用者可以设置这个变量值</span></span><br><span class="line">)</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="4-3-find-package-的处理"><a href="#4-3-find-package-的处理" class="headerlink" title="4.3.find_package 的处理"></a>4.3.find_package 的处理</h3><p> find_package这个命令，这个命令可以指定很多参数，比如指定版本，指定具体的模块等等。以 SFML 多媒体库为例，其包含了 network 模块，audio 模块，graphic 模块等等，但我很多时候只用到 graphic 模块，那么其他的模块对应的链接库不需要被链接，于是 CMake 脚本可以这么写：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 要求大版本号为2的SFML库的graphic模块</span></span><br><span class="line">find_package(SFML 2 COMPONENTS graphics REQUIRED)</span><br><span class="line"><span class="comment"># SFML提供的target名字为sfml-graphics</span></span><br><span class="line">target_link_libraries(MyEXE PRIVATE sfml-graphics)</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="5-使用-CMake-来编译"><a href="#5-使用-CMake-来编译" class="headerlink" title="5.使用 CMake 来编译"></a>5.使用 CMake 来编译</h3><p> CMake 生成好编译环境后，底层的 make, ninja, MSBuild 编译命令都是不一样的，但 CMake 提供了一个统一的方法进行编译：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">cmake --build .</span><br></pre></td></tr></tbody></table></figure>
+<p> 使用–buildflag，CMake 就会调用底层的编译命令，在跨平台时十分方便。<br> 对于 Visual Studio，其 Debug 和 Release 环境是基于 configuration 的，因此CMAKE_BUILD_TYPE变量无效，需要在 build 时指定：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">cmake --build . --config Release</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+
 <ul>
-<li>参考链接：<br><a href="https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ">https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ</a></li>
+<li>参考链接:<br>cmake<br><a href="https://ukabuer.me/blog/more-modern-cmake/">https://ukabuer.me/blog/more-modern-cmake/</a><br>Makefile</li>
 </ul>
 <script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
       <categories>
         <category>tool</category>
         <category>2021</category>
-        <category>11</category>
+        <category>12</category>
       </categories>
       <tags>
-        <tag>Another Tag</tag>
-        <tag>Computer Science</tag>
+        <tag>complier</tag>
+        <tag>cs</tag>
+        <tag>cmake</tag>
       </tags>
   </entry>
   <entry>
@@ -417,8 +485,210 @@
         <category>12</category>
       </categories>
       <tags>
-        <tag>c/c++</tag>
         <tag>cs</tag>
+        <tag>c/c++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>英语语法指一</title>
+    <url>/2021/12/02/2021/12/%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95%E4%B8%80/</url>
+    <content><![CDATA[<h2 id="一-简单句子分析"><a href="#一-简单句子分析" class="headerlink" title="一.简单句子分析"></a>一.简单句子分析</h2><p> <strong>英语句子= 主干+修饰成分</strong><br> 分析句子结构:<br>  一个中心 + 两个要点<br>  一个中心: 动词. 句子必须右动词<br>  两个要点: 主语 + 谓语. 谓语是动词,主语为动作的执行者或接受者.<br>  <strong>句子的核心是主谓结构</strong></p>
+<span id="more"></span>
+<p> n个主语+1个谓语 或者 1个主语+n个谓语，就可以组成简单句。其他的定状补语等都是句子的附属成分。主语部分形式比较单一，通常由名词性的结构来担任。谓语部分的形式变化较多，五种基本句型实际就是通过不同的谓语部分结构来表达五种类型的含义。不管谓语部分如何变化，它都由动词起头，并承担主要的表意功能。</p>
+<p> 英语的句子结构分为三种:简单句,并列句,复合句.简单句又分为五种基本句型.</p>
+<blockquote class="pullquote mindmap mindmap-md"><ul>
+<li>英文句子<ul>
+<li>简单句<ul>
+<li>主 + 谓</li>
+<li>主 + 谓 + 宾</li>
+<li>主 + 谓 + 宾 + 宾补</li>
+<li>主 + 谓 + 间宾 + 直宾</li>
+<li>主 + 系 + 表</li>
+</ul>
+</li>
+<li>复合句<ul>
+<li>名词性从句<ul>
+<li>主语从句</li>
+<li>宾语从句</li>
+<li>同位语从句</li>
+<li>表语从句</li>
+</ul>
+</li>
+<li>定语从句</li>
+<li>状语从句<ul>
+<li>时间状语从句</li>
+<li>地点状语从句</li>
+<li>条件状语从句</li>
+<li>结果状语从句</li>
+<li>让步状语从句</li>
+<li>目的状语从句</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>特殊句式<ul>
+<li>强调句</li>
+<li>虚拟语气</li>
+<li>倒装句</li>
+</ul>
+</li>
+<li>类型<ul>
+<li>陈述句</li>
+<li>祈使句</li>
+<li>感叹句</li>
+<li>疑问句</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+
+<p> 英语语法从整体上来讲是通过五部分来组成<br>  1、简单句<br>  2、并列句、复合句<br>  3、三大从句<br>  4、特殊句式<br>  5、类型</p>
+<p>补语<br> 补语是和表意不完全的动词息息相关的。在第三种基本句型中，联系动词将主语和补语在某个意义层面上对等起来。<br> 修饰成分<br>  介词短语<br>  从句<br>  非谓语动词<br>  时间状语<br> 论主语的补语，而后将宾语的补语作为一种变形来讨论</p>
+<h3 id="1-1-S-V-（主-谓）"><a href="#1-1-S-V-（主-谓）" class="headerlink" title="1.1 S + V （主+谓）"></a>1.1 S + V （主+谓）</h3><p> 句子不可或缺的两部分.<br> 名词/代词/不定式/动名词 + 动词<br> 谓语动词可以表达完整的意思，这类动词为不及物动词（vi）.</p>
+<h3 id="1-2-S-V-C-（主-系-表）"><a href="#1-2-S-V-C-（主-系-表）" class="headerlink" title="1.2 S + V + C （主+系+表）"></a>1.2 S + V + C （主+系+表）</h3><p>主语 +系动词 +表语</p>
+<p>表语说明主语的状态和性质，可以是名词，形容词，副词，短语等。</p>
+<p>系动词包括：</p>
+<p>a. be 动词，am, is, are, was, were;</p>
+<p>b. 表感官：feel(摸起来像是), smell, sound(听起来是), taste(尝起来是), look(看起来是);</p>
+<p>c. 表变化：become(成为), grow, turn(转变为), go, get, fall;</p>
+<p>d. 表状态：remain(依旧是), keep, hold, stay(仍然是), seem(似乎是).</p>
+<p>appear 显得像是<br>prove 证实为<br>become 成为<br>make 作为</p>
+<h3 id="1-3-S-V-O-（主-谓-宾）"><a href="#1-3-S-V-O-（主-谓-宾）" class="headerlink" title="1.3 S + V + O （主+谓+宾）"></a>1.3 S + V + O （主+谓+宾）</h3><p>主语+谓语+宾语</p>
+<p>谓语一般为及物动词（vt.），后面必须要跟宾语才能表达完整的意思。宾语是谓语动词动作的承受者。</p>
+<h3 id="1-4-S-V-O-O（主-谓-间宾-人-直宾-物-）"><a href="#1-4-S-V-O-O（主-谓-间宾-人-直宾-物-）" class="headerlink" title="1.4 S + V + O + O（主+谓+间宾(人)+直宾(物)）"></a>1.4 S + V + O + O（主+谓+间宾(人)+直宾(物)）</h3><p>谓语动词必须要跟两个宾语才能表达完整意思。两个宾语分别是动作的直接承受者（一般是物）和间接承受者（一般是人）。<br>e.g.,</p>
+<p>give sb sth = give sth to sb</p>
+<p>tell sb sth = tell sth to sb</p>
+<h3 id="1-5-S-V-O-C（主-谓-宾-宾补）"><a href="#1-5-S-V-O-C（主-谓-宾-宾补）" class="headerlink" title="1.5 S + V + O + C（主+谓+宾+宾补）"></a>1.5 S + V + O + C（主+谓+宾+宾补）</h3><p>此种情况，动词虽然跟了宾语，但句子意思不完整，需要跟上一个补足语，对宾语进行解释说明，句子意思才能完整通顺。<br>主语的补语用来表示主语是什么。类似地，宾语的补语用来表示宾语是什么。在 S + V + O + C 这个句型当中，宾语和补语之间虽然没有动词存在。但是句子可以变形成：S + V + that + O + V + C 的形式，也就是将原本的宾语和补语以从句的形式出现。因此，可以认为宾语和补语之间有「隐藏的」判断动词「是」的存在。</p>
+<p>There be 句型</p>
+<p>There be 句型表示人/物的存在。句子结构，就是There be + 主语+其他部分</p>
+<p>1.主语：句子所陈述的对象。<br>2.谓语：主语发出的动作。一般是有动作意义的动词。<br>3. 宾语：分为动词宾语和介词宾语，属于动作的承受者。<br>4. 系动词：表示状态或状态变化的动词，没有实际的动作意义。如 be, 感官系动词（look, sound, smell, taste 和 feel）、保持类系动词（keep, stay 和 remain）、状态变化类系动词（become、get、turn 和 go）等。<br>5. 表语：紧跟系动词后面的成分。<br>6. 定语：修饰名词或代词的成分。<br>7. 状语： 修饰形容词、副词、动词或句子的成分。<br>8. 补语：分为宾语补足语和主语补足语。是对宾语和主语的补充说明，与其有主动或被动的逻辑关系。</p>
+<ul>
+<li><p>参考链接:<br><a href="https://liam.page/2014/06/21/basic-sentence-and-the-complement/">https://liam.page/2014/06/21/basic-sentence-and-the-complement/</a><br><a href="https://www.zhihu.com/question/30030877/answer/768501967">https://www.zhihu.com/question/30030877/answer/768501967</a></p>
+</li>
+<li><p>参考数据<br>《语法俱乐部》</p>
+</li>
+</ul>
+<p>复杂句:从简单句演化而来</p>
+<p>简单句没有什么句序的调整，所以翻译起来基本没有什么难度。</p>
+<p>英语中的修饰成分，分定语和状语两种情况。<br>英语句子 = 主干(五种基本句型) + 修饰成分(定语+状语)</p>
+<h2 id="二、并列句、复合句"><a href="#二、并列句、复合句" class="headerlink" title="二、并列句、复合句"></a>二、并列句、复合句</h2><p>简单句通过不同的连接词就成为了不同的句子，通过并列词成了并列句，通过从属连词成了复合句。下面我们就一一讲解 ：</p>
+<p>并列句：简单句+并列词+简单句</p>
+<p>并列词一般有：and / or / but / so /while / yet / for / however</p>
+<p>1）：表示并列：and, not only…but also… , neither…nor…</p>
+<p>Her father is a doctor and her mother is a teacher .</p>
+<p>2）：表示选择：or, or else, otherwise, either…or…</p>
+<p>Hurry or you won’t make the train.</p>
+<p>3）：表示对比、转折: but, while , yet , however , never ,</p>
+<p>I like tea while she likes coffee .</p>
+<p>4）：表示原因：for</p>
+<p>I am thirsty , for it is hot .</p>
+<p>复合句：简单句+从属连词+简单句</p>
+<p>从属连词有：that / wether/ if</p>
+<p>复合句其实就是我们常说的三大从句，</p>
+<h2 id="三-三大从句"><a href="#三-三大从句" class="headerlink" title="三.三大从句"></a>三.三大从句</h2><p>1、名词性从句</p>
+<p>当名词性从句作为句子的不同成分时，又被称呼为不同的名字。</p>
+<p>当作为主语时，称为主语从句。</p>
+<p>当称为宾语时，称为宾语从句，同样表语从句以及同位语从句。以下我们来举个栗子 ：</p>
+<p>主语从句 What she said is wrong .</p>
+<p>宾语从句 I said that she was wrong.</p>
+<p>表语从句 The fact is that he doesn’t really try.</p>
+<p>同位语从句 The news that he will come back is ture.</p>
+<p>记住一点，不管什么从句，你把它当成一个”长一点的名词”。</p>
+<p>那如果这个长名词在句子中作主语，就是主语从句，作宾语就是宾语从句。</p>
+<p>同位语从句就是相当于一个长点的名词对另外一个抽象名词进行解释说明。</p>
+<p>2、定语从句</p>
+<p>修饰限定名词，汉语中“的”前面的内容。</p>
+<p>关系代词引导的定语从句</p>
+<p>1.who指人，在从句中做主语 Yesterday I helped an old man who lost his way.</p>
+<p>2. whom指人，在定语从句中充当宾语，常可省略。</p>
+<p>Mr. Ling is just the boy whom I want to see</p>
+<p>3. which指物，在定语从句中做主语或者宾语，做宾语时可省略</p>
+<p>This is the pen (which) he bought yesterday.</p>
+<p>4. that指人时，相当于who 或者whom；指物时，相当于which。</p>
+<p>5. whose通常指人，也可指物，在定语从句中做定语。</p>
+<p>指的是谁的。Do you like the book whose cover is yellow?</p>
+<p>关系副词引导的定语从句</p>
+<p>when where why</p>
+<p>3、状语从句</p>
+<p>修饰动作的发生的时间、地点、原因、方式</p>
+<p>九大状语从句</p>
+<p>1、时间状语从句</p>
+<p>常用引导词：when, as, while, as soon as, before, after, since , till, until</p>
+<p>特殊引导词：the minute, the moment, the second, every time, the day，the instant,</p>
+<p>I was fat when I was a child.</p>
+<p>2、地点状语从句</p>
+<p>常用引导词：where</p>
+<p>特殊引导词：wherever, anywhere, everywhere</p>
+<p>Keep it where you can see it.</p>
+<p>3、原因状语从句</p>
+<p>常用引导词：because, since, as, for</p>
+<p>特殊引导词：seeing that, now that, in that, considering that, given that.</p>
+<p>My friends dislike me because I’m beautiful .</p>
+<p>4、目的状语从句</p>
+<p>常用引导词：so that, in order that</p>
+<p>特殊引导词：lest, in case, for fear that，in the hope that, for the purpose that, to the end that</p>
+<p>study hard so that you can pass the exam.</p>
+<p>5、结果状语从句</p>
+<p>常用引导词：so … that, so… that, such … that,</p>
+<p>特殊引导词：such that, to the degree that, to the extent that, to such a degree that,</p>
+<p>He got up so early that he caught the first bus.</p>
+<p>6、条件状语从句</p>
+<p>常用引导词：if, unless,</p>
+<p>特殊引导词：as/so long as, only if, providing/provided that, supposing that, in case that, on condition that</p>
+<p>If you ask him, he will help you.</p>
+<p>7、方式状语从句</p>
+<p>常用引导词：as, as if, how</p>
+<p>特殊引导词：the way</p>
+<p>Think as i think</p>
+<p>8、比较状语从句</p>
+<p>常用引导词：as(同级比较), than(不同程度的比较)</p>
+<p>特殊引导词：the more … the more … ; just as …， so…; A is to B what /as X is to Y; no … more than; not A so much as B</p>
+<p>The house is three times as big as ours.</p>
+<p>9、让步状语从句</p>
+<p>常用引导词：though, although, even if, even though</p>
+<p>特殊引导词： as(用在让步状语从句中必须要倒装)，while ( 一般用在句首 )，no matter …， in spite of the fact that, while, whatever, whoever, wherever, whenever, however, whichever</p>
+<p>Though I believe it, yet I must consider.</p>
+<h2 id="四-特殊句式"><a href="#四-特殊句式" class="headerlink" title="四.特殊句式"></a>四.特殊句式</h2><p>1、强调句</p>
+<p>It is （名词 / 介宾）指的是被强调的内容that （……..）</p>
+<p>It was she whom we are talking about.</p>
+<p>2、倒装句</p>
+<p>正常句序 ：主谓宾</p>
+<p>倒装句序 ：谓主宾</p>
+<p>we can win only through hard work .</p>
+<p>only through hard work can we win .</p>
+<p>3、虚拟语气，假设不可能发生的事情</p>
+<p>1、对过去情况的虚拟</p>
+<p>从句用 had done</p>
+<p>主句用 would could might should have done</p>
+<p>2、对现在情况的虚拟</p>
+<p>从句用 did , was变成were</p>
+<p>主句用 would could might should do</p>
+<p>3、对将来情况虚拟</p>
+<p>从句用 did ，was 变成 were，should do,were to do</p>
+<p>主句用 would could might should do</p>
+<h2 id="五-类型"><a href="#五-类型" class="headerlink" title="五.类型"></a>五.类型</h2><p>陈述句</p>
+<p>i like English very much . 我非常喜欢英语。</p>
+<p>疑问句</p>
+<p>is this your key ? 这是你的钥匙吗？</p>
+<p>祈使句</p>
+<p>一种是以动词原形开头，在动词原形之前加do (但只限于省略第二人称主语的句子)。</p>
+<p>mind you head 小心碰头！</p>
+<p>第二种祈使句以let开头</p>
+<p>Let’s have another try</p>
+<p>感叹句</p>
+<p>what a brave girl ! 真是个勇敢的女孩子</p>
+<p><a href="https://zhuanlan.zhihu.com/p/400448345">https://zhuanlan.zhihu.com/p/400448345</a></p>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>study</category>
+        <category>2021</category>
+        <category>12</category>
+      </categories>
+      <tags>
+        <tag>Another Tag</tag>
+        <tag>English</tag>
       </tags>
   </entry>
   <entry>
@@ -1218,6 +1488,12 @@
 <p> 伪代码:</p>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function">function <span class="title">LCSLength</span><span class="params">(X[<span class="number">1.</span>.m], Y[<span class="number">1.</span>.n])</span></span></span><br><span class="line"><span class="function">    C </span>= <span class="built_in">array</span>(<span class="number">0.</span>.m, <span class="number">0.</span>.n)</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0.</span>.m</span><br><span class="line">        C[i, <span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> j := <span class="number">0.</span>.n</span><br><span class="line">        C[<span class="number">0</span>, j] = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">1.</span>.m</span><br><span class="line">        <span class="keyword">for</span> j := <span class="number">1.</span>.n</span><br><span class="line">            <span class="keyword">if</span> X[i] = Y[j]</span><br><span class="line">                C[i, j] := C[i<span class="number">-1</span>, j<span class="number">-1</span>] + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                C[i, j] := max(C[i, j<span class="number">-1</span>], C[i<span class="number">-1</span>,j])</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> C[m, n]</span><br></pre></td></tr></tbody></table></figure>
 
+<details>
+<summary>Fibonacci_dp</summary>
+
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Fibonacci Series using Dynamic Programming</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Author: Moinak Banerjee(moinak878)</span></span><br><span class="line"><span class="comment">   Date : 1 October ,2019</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="comment">// Out of Range checking</span></span><br><span class="line">    <span class="keyword">if</span> (n &lt; <span class="number">0</span>) {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\nNo Such term !\n"</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// declaring array to store fibonacci numbers -- memoization</span></span><br><span class="line">    <span class="keyword">int</span> *f = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>((n + <span class="number">2</span>) * <span class="keyword">sizeof</span>(<span class="keyword">int</span>));  <span class="comment">//  one extra to handle edge case, n = 0</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* let 0th and 1st number of the series be 0 and 1*/</span></span><br><span class="line">    f[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    f[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">2</span>; i &lt;= n; i++) {</span><br><span class="line">        <span class="comment">// Adding the previous 2 terms to make the 3rd term</span></span><br><span class="line">        f[i] = f[i - <span class="number">1</span>] + f[i - <span class="number">2</span>];</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> out = f[n];</span><br><span class="line">    <span class="built_in">free</span>(f);</span><br><span class="line">    <span class="keyword">return</span> out;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> number;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Asks for the number/position of term in Fibonnacci sequence</span></span><br><span class="line">    <span class="keyword">if</span> (argc == <span class="number">2</span>) {</span><br><span class="line">        number = atoi(argv[<span class="number">1</span>]);</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Enter the value of n(n starts from 0 ): "</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;number);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"The nth term is : %d \n"</span>, fib(number));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+</details>
+
 <h4 id="3-5-5-leetcode题目"><a href="#3-5-5-leetcode题目" class="headerlink" title="3.5.5 leetcode题目"></a>3.5.5 leetcode题目</h4><ul>
 <li>最大子序和</li>
 <li>编辑距离</li>
@@ -1257,276 +1533,6 @@
       <tags>
         <tag>实用教程</tag>
         <tag>Another Tag</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CMake</title>
-    <url>/2021/12/07/2021/12/cmake/</url>
-    <content><![CDATA[<h2 id="1-camke简述"><a href="#1-camke简述" class="headerlink" title="1.camke简述"></a>1.camke简述</h2><p> CMake是跨平台编译管理工具,为第三方依赖和引入,创建编译系统,程序测试及安装.Cmake工具使用CMakeLists.txt文件,跨平台执行相同编译命令,生成对应平台的可执行程序或者链接库.</p>
-<span id="more"></span>
-
-<p> CMake工程简单例子</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">cmake_minimum_required(VERSION 3.12)</span><br><span class="line">project(myproj)</span><br><span class="line">find_package(Poco REQUIRED COMPONENTS Net Util)</span><br><span class="line">add_executable(MyExe)</span><br><span class="line">target_source(MyExe PRIVATE <span class="string">"main.cpp"</span>)</span><br><span class="line">target_link_library(MyExe PRIVATE Poco::Net PocoUtil)</span><br><span class="line"></span><br><span class="line">target_complie_definition(MyExe PRIVATE std_cxx_14)</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="2-Target-和围绕-Target-的配置"><a href="#2-Target-和围绕-Target-的配置" class="headerlink" title="2.Target 和围绕 Target 的配置"></a>2.Target 和围绕 Target 的配置</h2><p> C/C++工程通常都是为了生成可执行程序或者链接库，在现代 CMake 里他们被统称为<code>target</code>，创建命令分别是<code>add_library()</code>和<code>add_executable()</code>。其中链接库的类型又分为很多种，最常用的就是<code>SHARED</code>以及<code>STATIC</code>，在命令中加入关键词进行声明：add_library(MyLib SHARED)，第一个参数为target的名称，后续的配置都需要用到这个名字。<br> 指定target的源文件：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_source(MyLib PRVIATE <span class="string">"main.cpp"</span> <span class="string">"func.cpp"</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p> PRIVATE关键词用于描述参数的“应用范围”，此外还有INTERFACE和PUBLIC两种可能的值</p>
-<p> 较多的源文件，可以使用 CMake 的file命令进行遍历拿到全部的源文件</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">file(GLOB_RECURSE SRCS <span class="variable">${CMAKE_CURRENT_SOURCE_DIR}</span>/*.cpp)</span><br></pre></td></tr></tbody></table></figure>
-<p> 命令第一个参数GLOB_RECURSE表明递归的查找子文件夹，第二个参数SRCS则是存储结果的变量名，第三个参数为目标文件的匹配模式，找到符合条件的 cpp 文件后，他们的路径会以字符串数组的形式保存在 SRCS 变量中，使用方式如下：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_source(MyLib PRIVATE <span class="variable">${SRCS}</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p> 配置target时通常还需要指定头文件目录：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_include_directories(MyLib PRIVATE <span class="variable">${CMAKE_CURRENT_SOURCE_DIR}</span>/include/)</span><br></pre></td></tr></tbody></table></figure>
-<p> 编译时需要的语言特性：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_features(MyLib PRIVATE std_cxx_14)</span><br></pre></td></tr></tbody></table></figure>
-<p> 编译时的宏定义：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_definitions(MyLib PRIVATE LogLevel=3)</span><br></pre></td></tr></tbody></table></figure>
-<p> 参数想直接传给底层的编译器（比如 gcc, clang, cl），可以使用</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_options(MyLib PRIVATE -Werror -Wall -Wextra)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="3-Build-Specification-和-Usage-Requirement"><a href="#3-Build-Specification-和-Usage-Requirement" class="headerlink" title="3.Build Specification 和 Usage Requirement"></a>3.Build Specification 和 Usage Requirement</h2><p> C/C++通过 include 头文件的方式引入依赖，在动态或静态链接后可以调用依赖实现。一个可执行程序可能会依赖链接库，链接库也同样可能依赖其他的链接库<br> CMake 提供的解决方案是，在对 target 进行配置时，可以规定配置的类型，分为 build specification 和 usage requirement 两类，会影响配置的应用范围。Build specification 类型的配置仅在编译的时候需要满足，通过PRIVATE关键字声明；Usage requirement 类型的配置则是在使用时需要满足，即在其他项目里，使用本项目已编译好的 target 时需要满足，这种类型的配置使用INTERFACE关键词声明。在实际工程中，有很多配置在编译时以及被使用时都需要被满足的，这种配置通过PUBLIC关键词进行声明。</p>
-<p> 一个 library，在编译时静态链接了 Boost，在我们的实现文件中使用了 c++14 的特性，并用到了 Boost 的头文件和函数。随后我们对外发布了这个库，其中有头文件和预编译好的动态链接库。尽管我们的实现代码里用了 C++14，但在对外提供的头文件中只用到 C++03 的语法，也没有引入任何 Boost 的代码。这种情况下，当其他工程在使用我们的 library 时，其使用的编译器不需要开启 C++14 的支持，开发环境下也不需要安装 Boost。我们 library 的 CMake 配置中可以这么写：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_features(MyLib PRIVATE cxx_std_14)</span><br><span class="line">target_link_libraries(MyLib PRIVATE Boost::Format)</span><br></pre></td></tr></tbody></table></figure>
-<p> PRIVATE 说明 c++14 的支持只在编译时需要用到，Boost 库的链接也仅在编译时需要。但如果我们对外提供的头文件中也使用了 C++14，那么就需要使用 PUBLIC 修饰，改为：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_features(MyLib PUBLIC cxx_std_14)</span><br><span class="line">target_link_libraries(MyLib PRIVATE Boost::Format)</span><br></pre></td></tr></tbody></table></figure>
-<p> 当 library 是 header-only 时，我们的工程是不需要单独编译的，因此也就没有 build specification，通过INTERFACE修饰配置即可</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">arget_compile_features(MyLib INTERFACE cxx_std_14)</span><br></pre></td></tr></tbody></table></figure>
-<p> Usage requirement 类型的配置，即通过INTERFACE或是PUBLIC修饰的配置是会传递的，比如 LibA 依赖 LibB 后，会继承 LibB 的 usage requirement，此后 LibC 依赖 LibB 时，LibA 和 libB 的 usage requirement 都会继承下来，</p>
-<h2 id="4-寻找和使用链接库"><a href="#4-寻找和使用链接库" class="headerlink" title="4.寻找和使用链接库"></a>4.寻找和使用链接库</h2><p> C/C++标准没有规范库的安装位置和安装形式，通过 CMake 提供的方案寻找依赖，不光可以定位到头文件目录和链接库路径，还能够获取到库的 usage requirement。<br> 在 CMake 中寻找第三方库的命令为find_package，其背后的工作方式有两种，一种基于 Config File 的查找，另一种则是基于 Find File 的查找。在执行find_package时，实际上 CMake 都是在找这两类文件，找到后从中获取关于库的信息。</p>
-<h3 id="4-1-通过-Config-file-找到依赖"><a href="#4-1-通过-Config-file-找到依赖" class="headerlink" title="4.1 通过 Config file 找到依赖"></a>4.1 通过 Config file 找到依赖</h3><p> Config File 是依赖的开发者提供的 cmake 脚本，通常会随预编译好的二进制一起发布，供下游的使用者使用。在 Config file 里，会对库里包含的 target 进行描述，说明版本信息以及头文件路径、链接库路径、编译选项等 usage requirement</p>
-<p> CMake 对 Config file 的命名是有规定的，对于find_package(ABC)这样一条命令，CMake 只会去寻找ABCConfig.cmake或是abc-config.cmake。CMake 默认寻找的路径和平台有关，在 Linux 下寻找路径包括/usr/lib/cmake以及/usr/lib/local/cmake，在这两个路径下可以发现大量的 Config File，一般在安装某个库时，其自带的 Config file 会被放到这里来。</p>
-<h3 id="4-2-通过-Find-file-找到依赖"><a href="#4-2-通过-Find-file-找到依赖" class="headerlink" title="4.2 通过 Find file 找到依赖"></a>4.2 通过 Find file 找到依赖</h3><p> 对于find_package(ABC)命令，如果 CMake 没有找到 Config file，他还会去试着寻找FindABC.cmake。Find file 在功能上和 Config file 相同，区别在于 Find file 是由其他人编写的，而非库的开发者。如果你使用的某个库没有提供 Config file，你可以去网上搜搜 Find file 或者自己写一个，然后加入到你的 CMake 工程中。</p>
-<p> CMake 官方为我们写好了很多 Find file，在CMake Documentation这一页面可以看到，OpenGL，OpenMP，SDL 这些知名的库官方都为我们写好了 Find 脚本，因此直接调用 find_package 命令即可。但由于库的安装位置并不是固定的，这些 Find 脚本不一定能找到库，此时根据 CMake 报错的提示设置对应变量即可，通常是需要提供安装路径，这样就可以通过 Find file 获取到库的 usage requirement。不论是 Config file 还是 Find file，其目的都不只是找到库这么简单，而是告诉 CMake 如何使用这个库。<br>库 CMake 官方也没有提供 Find file，这时候就要自己写了或者靠搜索了，写好后放到本项目的目录下，修改CMAKE_MODULE_PATH这个 CMAKE 变量：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">list(INSERT CMAKE_MODULE_PATH 0 <span class="variable">${CMAKE_SOURCE_DIR}</span>/cmake)</span><br></pre></td></tr></tbody></table></figure>
-<p> ${CMAKE_SOURCE_DIR}/cmake目录下的 Find file 就可以被 CMake 找到了。<br> 通过 CMake 的find_library和find_path两个命令就可以完成任务：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">find_library(MPI_LIBRARY</span><br><span class="line">  NAMES mpi</span><br><span class="line">  HINTS <span class="string">"<span class="variable">${CMAKE_PREFIX_PATH}</span>/lib"</span> <span class="variable">${MPI_LIB_PATH}</span></span><br><span class="line">  <span class="comment"># 如果默认路径没找到libmpi.so，还会去MPI_LIB_PATH找，下游使用者可以设置这个变量值</span></span><br><span class="line">)</span><br><span class="line">find_path(MPI_INCLUDE_DIR</span><br><span class="line">  NAMES mpi.h</span><br><span class="line">  PATHS <span class="string">"<span class="variable">${CMAKE_PREFIX_PATH}</span>/include"</span> <span class="variable">${MPI_INCLUDE_PATH}</span></span><br><span class="line">  <span class="comment"># 如果默认路径没找到mpi.h，还会去MPI_INCLUDE_PATH找，下游使用者可以设置这个变量值</span></span><br><span class="line">)</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="4-3-find-package-的处理"><a href="#4-3-find-package-的处理" class="headerlink" title="4.3.find_package 的处理"></a>4.3.find_package 的处理</h3><p> find_package这个命令，这个命令可以指定很多参数，比如指定版本，指定具体的模块等等。以 SFML 多媒体库为例，其包含了 network 模块，audio 模块，graphic 模块等等，但我很多时候只用到 graphic 模块，那么其他的模块对应的链接库不需要被链接，于是 CMake 脚本可以这么写：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 要求大版本号为2的SFML库的graphic模块</span></span><br><span class="line">find_package(SFML 2 COMPONENTS graphics REQUIRED)</span><br><span class="line"><span class="comment"># SFML提供的target名字为sfml-graphics</span></span><br><span class="line">target_link_libraries(MyEXE PRIVATE sfml-graphics)</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="5-使用-CMake-来编译"><a href="#5-使用-CMake-来编译" class="headerlink" title="5.使用 CMake 来编译"></a>5.使用 CMake 来编译</h3><p> CMake 生成好编译环境后，底层的 make, ninja, MSBuild 编译命令都是不一样的，但 CMake 提供了一个统一的方法进行编译：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">cmake --build .</span><br></pre></td></tr></tbody></table></figure>
-<p> 使用–buildflag，CMake 就会调用底层的编译命令，在跨平台时十分方便。<br> 对于 Visual Studio，其 Debug 和 Release 环境是基于 configuration 的，因此CMAKE_BUILD_TYPE变量无效，需要在 build 时指定：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">cmake --build . --config Release</span><br></pre></td></tr></tbody></table></figure>
-
-
-
-
-<ul>
-<li>参考链接:<br>cmake<br><a href="https://ukabuer.me/blog/more-modern-cmake/">https://ukabuer.me/blog/more-modern-cmake/</a><br>Makefile</li>
-</ul>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2021</category>
-        <category>12</category>
-      </categories>
-      <tags>
-        <tag>cs</tag>
-        <tag>complier</tag>
-        <tag>cmake</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>英语语法指一</title>
-    <url>/2021/12/02/2021/12/%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95%E4%B8%80/</url>
-    <content><![CDATA[<h2 id="一-简单句子分析"><a href="#一-简单句子分析" class="headerlink" title="一.简单句子分析"></a>一.简单句子分析</h2><p> <strong>英语句子= 主干+修饰成分</strong><br> 分析句子结构:<br>  一个中心 + 两个要点<br>  一个中心: 动词. 句子必须右动词<br>  两个要点: 主语 + 谓语. 谓语是动词,主语为动作的执行者或接受者.<br>  <strong>句子的核心是主谓结构</strong></p>
-<span id="more"></span>
-<p> n个主语+1个谓语 或者 1个主语+n个谓语，就可以组成简单句。其他的定状补语等都是句子的附属成分。主语部分形式比较单一，通常由名词性的结构来担任。谓语部分的形式变化较多，五种基本句型实际就是通过不同的谓语部分结构来表达五种类型的含义。不管谓语部分如何变化，它都由动词起头，并承担主要的表意功能。</p>
-<p> 英语的句子结构分为三种:简单句,并列句,复合句.简单句又分为五种基本句型.</p>
-<blockquote class="pullquote mindmap mindmap-md"><ul>
-<li>英文句子<ul>
-<li>简单句<ul>
-<li>主 + 谓</li>
-<li>主 + 谓 + 宾</li>
-<li>主 + 谓 + 宾 + 宾补</li>
-<li>主 + 谓 + 间宾 + 直宾</li>
-<li>主 + 系 + 表</li>
-</ul>
-</li>
-<li>复合句<ul>
-<li>名词性从句<ul>
-<li>主语从句</li>
-<li>宾语从句</li>
-<li>同位语从句</li>
-<li>表语从句</li>
-</ul>
-</li>
-<li>定语从句</li>
-<li>状语从句<ul>
-<li>时间状语从句</li>
-<li>地点状语从句</li>
-<li>条件状语从句</li>
-<li>结果状语从句</li>
-<li>让步状语从句</li>
-<li>目的状语从句</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>特殊句式<ul>
-<li>强调句</li>
-<li>虚拟语气</li>
-<li>倒装句</li>
-</ul>
-</li>
-<li>类型<ul>
-<li>陈述句</li>
-<li>祈使句</li>
-<li>感叹句</li>
-<li>疑问句</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-
-<p> 英语语法从整体上来讲是通过五部分来组成<br>  1、简单句<br>  2、并列句、复合句<br>  3、三大从句<br>  4、特殊句式<br>  5、类型</p>
-<p>补语<br> 补语是和表意不完全的动词息息相关的。在第三种基本句型中，联系动词将主语和补语在某个意义层面上对等起来。<br> 修饰成分<br>  介词短语<br>  从句<br>  非谓语动词<br>  时间状语<br> 论主语的补语，而后将宾语的补语作为一种变形来讨论</p>
-<h3 id="1-1-S-V-（主-谓）"><a href="#1-1-S-V-（主-谓）" class="headerlink" title="1.1 S + V （主+谓）"></a>1.1 S + V （主+谓）</h3><p> 句子不可或缺的两部分.<br> 名词/代词/不定式/动名词 + 动词<br> 谓语动词可以表达完整的意思，这类动词为不及物动词（vi）.</p>
-<h3 id="1-2-S-V-C-（主-系-表）"><a href="#1-2-S-V-C-（主-系-表）" class="headerlink" title="1.2 S + V + C （主+系+表）"></a>1.2 S + V + C （主+系+表）</h3><p>主语 +系动词 +表语</p>
-<p>表语说明主语的状态和性质，可以是名词，形容词，副词，短语等。</p>
-<p>系动词包括：</p>
-<p>a. be 动词，am, is, are, was, were;</p>
-<p>b. 表感官：feel(摸起来像是), smell, sound(听起来是), taste(尝起来是), look(看起来是);</p>
-<p>c. 表变化：become(成为), grow, turn(转变为), go, get, fall;</p>
-<p>d. 表状态：remain(依旧是), keep, hold, stay(仍然是), seem(似乎是).</p>
-<p>appear 显得像是<br>prove 证实为<br>become 成为<br>make 作为</p>
-<h3 id="1-3-S-V-O-（主-谓-宾）"><a href="#1-3-S-V-O-（主-谓-宾）" class="headerlink" title="1.3 S + V + O （主+谓+宾）"></a>1.3 S + V + O （主+谓+宾）</h3><p>主语+谓语+宾语</p>
-<p>谓语一般为及物动词（vt.），后面必须要跟宾语才能表达完整的意思。宾语是谓语动词动作的承受者。</p>
-<h3 id="1-4-S-V-O-O（主-谓-间宾-人-直宾-物-）"><a href="#1-4-S-V-O-O（主-谓-间宾-人-直宾-物-）" class="headerlink" title="1.4 S + V + O + O（主+谓+间宾(人)+直宾(物)）"></a>1.4 S + V + O + O（主+谓+间宾(人)+直宾(物)）</h3><p>谓语动词必须要跟两个宾语才能表达完整意思。两个宾语分别是动作的直接承受者（一般是物）和间接承受者（一般是人）。<br>e.g.,</p>
-<p>give sb sth = give sth to sb</p>
-<p>tell sb sth = tell sth to sb</p>
-<h3 id="1-5-S-V-O-C（主-谓-宾-宾补）"><a href="#1-5-S-V-O-C（主-谓-宾-宾补）" class="headerlink" title="1.5 S + V + O + C（主+谓+宾+宾补）"></a>1.5 S + V + O + C（主+谓+宾+宾补）</h3><p>此种情况，动词虽然跟了宾语，但句子意思不完整，需要跟上一个补足语，对宾语进行解释说明，句子意思才能完整通顺。<br>主语的补语用来表示主语是什么。类似地，宾语的补语用来表示宾语是什么。在 S + V + O + C 这个句型当中，宾语和补语之间虽然没有动词存在。但是句子可以变形成：S + V + that + O + V + C 的形式，也就是将原本的宾语和补语以从句的形式出现。因此，可以认为宾语和补语之间有「隐藏的」判断动词「是」的存在。</p>
-<p>There be 句型</p>
-<p>There be 句型表示人/物的存在。句子结构，就是There be + 主语+其他部分</p>
-<p>1.主语：句子所陈述的对象。<br>2.谓语：主语发出的动作。一般是有动作意义的动词。<br>3. 宾语：分为动词宾语和介词宾语，属于动作的承受者。<br>4. 系动词：表示状态或状态变化的动词，没有实际的动作意义。如 be, 感官系动词（look, sound, smell, taste 和 feel）、保持类系动词（keep, stay 和 remain）、状态变化类系动词（become、get、turn 和 go）等。<br>5. 表语：紧跟系动词后面的成分。<br>6. 定语：修饰名词或代词的成分。<br>7. 状语： 修饰形容词、副词、动词或句子的成分。<br>8. 补语：分为宾语补足语和主语补足语。是对宾语和主语的补充说明，与其有主动或被动的逻辑关系。</p>
-<ul>
-<li><p>参考链接:<br><a href="https://liam.page/2014/06/21/basic-sentence-and-the-complement/">https://liam.page/2014/06/21/basic-sentence-and-the-complement/</a><br><a href="https://www.zhihu.com/question/30030877/answer/768501967">https://www.zhihu.com/question/30030877/answer/768501967</a></p>
-</li>
-<li><p>参考数据<br>《语法俱乐部》</p>
-</li>
-</ul>
-<p>复杂句:从简单句演化而来</p>
-<p>简单句没有什么句序的调整，所以翻译起来基本没有什么难度。</p>
-<p>英语中的修饰成分，分定语和状语两种情况。<br>英语句子 = 主干(五种基本句型) + 修饰成分(定语+状语)</p>
-<h2 id="二、并列句、复合句"><a href="#二、并列句、复合句" class="headerlink" title="二、并列句、复合句"></a>二、并列句、复合句</h2><p>简单句通过不同的连接词就成为了不同的句子，通过并列词成了并列句，通过从属连词成了复合句。下面我们就一一讲解 ：</p>
-<p>并列句：简单句+并列词+简单句</p>
-<p>并列词一般有：and / or / but / so /while / yet / for / however</p>
-<p>1）：表示并列：and, not only…but also… , neither…nor…</p>
-<p>Her father is a doctor and her mother is a teacher .</p>
-<p>2）：表示选择：or, or else, otherwise, either…or…</p>
-<p>Hurry or you won’t make the train.</p>
-<p>3）：表示对比、转折: but, while , yet , however , never ,</p>
-<p>I like tea while she likes coffee .</p>
-<p>4）：表示原因：for</p>
-<p>I am thirsty , for it is hot .</p>
-<p>复合句：简单句+从属连词+简单句</p>
-<p>从属连词有：that / wether/ if</p>
-<p>复合句其实就是我们常说的三大从句，</p>
-<h2 id="三-三大从句"><a href="#三-三大从句" class="headerlink" title="三.三大从句"></a>三.三大从句</h2><p>1、名词性从句</p>
-<p>当名词性从句作为句子的不同成分时，又被称呼为不同的名字。</p>
-<p>当作为主语时，称为主语从句。</p>
-<p>当称为宾语时，称为宾语从句，同样表语从句以及同位语从句。以下我们来举个栗子 ：</p>
-<p>主语从句 What she said is wrong .</p>
-<p>宾语从句 I said that she was wrong.</p>
-<p>表语从句 The fact is that he doesn’t really try.</p>
-<p>同位语从句 The news that he will come back is ture.</p>
-<p>记住一点，不管什么从句，你把它当成一个”长一点的名词”。</p>
-<p>那如果这个长名词在句子中作主语，就是主语从句，作宾语就是宾语从句。</p>
-<p>同位语从句就是相当于一个长点的名词对另外一个抽象名词进行解释说明。</p>
-<p>2、定语从句</p>
-<p>修饰限定名词，汉语中“的”前面的内容。</p>
-<p>关系代词引导的定语从句</p>
-<p>1.who指人，在从句中做主语 Yesterday I helped an old man who lost his way.</p>
-<p>2. whom指人，在定语从句中充当宾语，常可省略。</p>
-<p>Mr. Ling is just the boy whom I want to see</p>
-<p>3. which指物，在定语从句中做主语或者宾语，做宾语时可省略</p>
-<p>This is the pen (which) he bought yesterday.</p>
-<p>4. that指人时，相当于who 或者whom；指物时，相当于which。</p>
-<p>5. whose通常指人，也可指物，在定语从句中做定语。</p>
-<p>指的是谁的。Do you like the book whose cover is yellow?</p>
-<p>关系副词引导的定语从句</p>
-<p>when where why</p>
-<p>3、状语从句</p>
-<p>修饰动作的发生的时间、地点、原因、方式</p>
-<p>九大状语从句</p>
-<p>1、时间状语从句</p>
-<p>常用引导词：when, as, while, as soon as, before, after, since , till, until</p>
-<p>特殊引导词：the minute, the moment, the second, every time, the day，the instant,</p>
-<p>I was fat when I was a child.</p>
-<p>2、地点状语从句</p>
-<p>常用引导词：where</p>
-<p>特殊引导词：wherever, anywhere, everywhere</p>
-<p>Keep it where you can see it.</p>
-<p>3、原因状语从句</p>
-<p>常用引导词：because, since, as, for</p>
-<p>特殊引导词：seeing that, now that, in that, considering that, given that.</p>
-<p>My friends dislike me because I’m beautiful .</p>
-<p>4、目的状语从句</p>
-<p>常用引导词：so that, in order that</p>
-<p>特殊引导词：lest, in case, for fear that，in the hope that, for the purpose that, to the end that</p>
-<p>study hard so that you can pass the exam.</p>
-<p>5、结果状语从句</p>
-<p>常用引导词：so … that, so… that, such … that,</p>
-<p>特殊引导词：such that, to the degree that, to the extent that, to such a degree that,</p>
-<p>He got up so early that he caught the first bus.</p>
-<p>6、条件状语从句</p>
-<p>常用引导词：if, unless,</p>
-<p>特殊引导词：as/so long as, only if, providing/provided that, supposing that, in case that, on condition that</p>
-<p>If you ask him, he will help you.</p>
-<p>7、方式状语从句</p>
-<p>常用引导词：as, as if, how</p>
-<p>特殊引导词：the way</p>
-<p>Think as i think</p>
-<p>8、比较状语从句</p>
-<p>常用引导词：as(同级比较), than(不同程度的比较)</p>
-<p>特殊引导词：the more … the more … ; just as …， so…; A is to B what /as X is to Y; no … more than; not A so much as B</p>
-<p>The house is three times as big as ours.</p>
-<p>9、让步状语从句</p>
-<p>常用引导词：though, although, even if, even though</p>
-<p>特殊引导词： as(用在让步状语从句中必须要倒装)，while ( 一般用在句首 )，no matter …， in spite of the fact that, while, whatever, whoever, wherever, whenever, however, whichever</p>
-<p>Though I believe it, yet I must consider.</p>
-<h2 id="四-特殊句式"><a href="#四-特殊句式" class="headerlink" title="四.特殊句式"></a>四.特殊句式</h2><p>1、强调句</p>
-<p>It is （名词 / 介宾）指的是被强调的内容that （……..）</p>
-<p>It was she whom we are talking about.</p>
-<p>2、倒装句</p>
-<p>正常句序 ：主谓宾</p>
-<p>倒装句序 ：谓主宾</p>
-<p>we can win only through hard work .</p>
-<p>only through hard work can we win .</p>
-<p>3、虚拟语气，假设不可能发生的事情</p>
-<p>1、对过去情况的虚拟</p>
-<p>从句用 had done</p>
-<p>主句用 would could might should have done</p>
-<p>2、对现在情况的虚拟</p>
-<p>从句用 did , was变成were</p>
-<p>主句用 would could might should do</p>
-<p>3、对将来情况虚拟</p>
-<p>从句用 did ，was 变成 were，should do,were to do</p>
-<p>主句用 would could might should do</p>
-<h2 id="五-类型"><a href="#五-类型" class="headerlink" title="五.类型"></a>五.类型</h2><p>陈述句</p>
-<p>i like English very much . 我非常喜欢英语。</p>
-<p>疑问句</p>
-<p>is this your key ? 这是你的钥匙吗？</p>
-<p>祈使句</p>
-<p>一种是以动词原形开头，在动词原形之前加do (但只限于省略第二人称主语的句子)。</p>
-<p>mind you head 小心碰头！</p>
-<p>第二种祈使句以let开头</p>
-<p>Let’s have another try</p>
-<p>感叹句</p>
-<p>what a brave girl ! 真是个勇敢的女孩子</p>
-<p><a href="https://zhuanlan.zhihu.com/p/400448345">https://zhuanlan.zhihu.com/p/400448345</a></p>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>study</category>
-        <category>2021</category>
-        <category>12</category>
-      </categories>
-      <tags>
-        <tag>Another Tag</tag>
-        <tag>English</tag>
       </tags>
   </entry>
 </search>
