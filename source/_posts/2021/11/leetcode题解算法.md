@@ -10,57 +10,15 @@ tags:
 ---
 
 ## 1.单调栈
-### 1.1 代表题目: 84.[柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/description/)
 
 <!--more-->
 
-<details>
-  <summary>柱状图中最大的矩形 c语言</summary>
-
-```c
-int largestRectangleArea(int* heights, int heightsSize) {
-    // 栈顶标记,单调递减栈
-    int top = -1;
-    int area = 0;
-    int maxArea = 0;
-    int *stack = (int *)malloc(sizeof(int) * (heightsSize + 2));
-    int *buf = (int *)malloc(sizeof(int) * (heightsSize + 2));
-
-    // 增加前哨兵
-    buf[0] = 0;
-    // 在最后增加哨兵
-    buf[heightsSize + 1] = 0;
-    for (int i = 1; i <= heightsSize; i++) {
-        buf[i] = heights[i - 1];
-    }
-
-    stack[++top] = 0;
-    for (int i = 1; i < heightsSize + 2; i++) {
-        while (top > 0 && buf[i] < buf[stack[top]]) {
-            // 注意 i - 
-            area = (i - stack[top - 1] - 1) * buf[stack[top]];
-            maxArea = maxArea > area ? maxArea : area;
-            top--;
-        }
-        // 索引入栈，其他可能是元素入栈
-        stack[++top] = i;
-    }
-
-    return maxArea;
-}
-```
-
-</details>
-
-<br>
-
-
-### 1.2 单调栈描述
+### 1.1 单调栈描述
 
 &ensp;单调栈里面的元素大小按照他们所在栈内的位置,满足一定的单调性.
 
-> 单调递增栈：单调递增栈就是从栈底到栈顶数据是从小到大; 可找到左起第一个比当前数字小的元素.
-> 单调递减栈：单调递减栈就是从栈底到栈顶数据是从大到小; 可找到左起第一个比当前数字大的元素.
+> 单调递**增**栈：单调递增栈就是从栈底到栈顶数据是从小到大; 可找到**左起**第一个比当前数字**小**的元素.
+> 单调递**减**栈：单调递减栈就是从栈底到栈顶数据是从大到小; 可找到**左起**第一个比当前数字**大**的元素.
 
 &emsp;单调递增栈，元素进栈过程，若当前进栈的元素a，如果a>栈顶元素，则直接将a进栈，如果a<=栈顶元素，则不断将栈顶元素出栈，直到满足a>栈顶元素。单调递减栈则为a<栈顶元素时进栈。
 
@@ -106,9 +64,58 @@ int *nextExceed(int *input, int size)
 }
 ```
 
-&emsp;我们维护一个单调递减栈stack,stack内存的是原数组的每个index,当遇到一个比当前栈顶所对应的数大的时候,则栈顶元素出栈,并更新它们在返回数组中对应位置的值.
+&emsp;维护一个单调递**减**栈stack,stack内存的是原数组的每个index,当遇到一个比当前栈顶所对应的数**大**的时候,则栈顶元素出栈,并更新它们在返回数组中对应位置的值.
 
 &ensp;单调栈通常应用在一维数组上,和前后元素大小之间关系有关的问题.单调栈时间复杂度为`O(n)`.
+
+
+
+### 1.2 Letocde题目分析
+
+84.[柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/description/)
+
+
+
+<details>
+  <summary>柱状图中最大的矩形 c语言</summary>
+
+```c
+int largestRectangleArea(int* heights, int heightsSize) {
+    // 栈顶标记,单调递减栈
+    int top = -1;
+    int area = 0;
+    int maxArea = 0;
+    int *stack = (int *)malloc(sizeof(int) * (heightsSize + 2));
+    int *buf = (int *)malloc(sizeof(int) * (heightsSize + 2));
+
+    // 增加前哨兵
+    buf[0] = 0;
+    // 在最后增加哨兵
+    buf[heightsSize + 1] = 0;
+    for (int i = 1; i <= heightsSize; i++) {
+        buf[i] = heights[i - 1];
+    }
+
+    stack[++top] = 0;
+    for (int i = 1; i < heightsSize + 2; i++) {
+        while (top > 0 && buf[i] < buf[stack[top]]) {
+            // 注意 i - 
+            area = (i - stack[top - 1] - 1) * buf[stack[top]];
+            maxArea = maxArea > area ? maxArea : area;
+            top--;
+        }
+        // 索引入栈，其他可能是元素入栈
+        stack[++top] = i;
+    }
+
+    return maxArea;
+}
+```
+
+</details>
+
+<br>
+
 
 ### 1.3 单调栈的性质
 &emsp;1.单调栈里的元素具有单调性,栈中元素只能是单调递增或者单调递减
@@ -120,6 +127,8 @@ int *nextExceed(int *input, int size)
 &ensp;给定一个仅包含 0 和 1 、大小为 rows x cols 的二维二进制矩阵，找出只包含 1 的最大矩形，并返回其面积。
 &emsp;思路:对于每一行,构建一个histogram,然后计算.在构建新的histogram的时候,不需要全部遍历,只需对已有的histogram进行略微修改(运用DP的思想)
 
+<details>
+  <summary>maximalRectangle</summary>
 
 ```c
 int maximalRectangle(char** matrix, int matrixSize, int* matrixColSize)
@@ -170,6 +179,10 @@ int maximalRectangle(char** matrix, int matrixSize, int* matrixColSize)
     return ret;
 }
 ```
+
+</details>
+
+<br>
 
 ![20211207235410](https://s2.loli.net/2021/12/07/aU8ZQBWRo9dTXMb.png)
 
@@ -256,7 +269,7 @@ int maximalRectangle(char** matrix, int matrixSize, int* matrixColSize){
 </details>
 
 <details>
-<summary></summary>
+<summary>StackCreate</summary>
 
 ```c
 typedef struct {
@@ -389,120 +402,25 @@ int maximalRectangle(char **matrix, int matrixSize, int *matrixColSize)
 
 </details>
 
+<br>
+<br>
 
 85 Maximal Reactangle
 leetcode 496、503、739、239
+<br>
 42.接雨水
-https://blog.csdn.net/chongbin007/article/details/112741867?utm_term=%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97leetcode&utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~sobaiduweb~default-0-112741867&spm=3001.4430
+
+<br>
+
+- 参考链接：
+[leetcode算法总结 ——单调栈&单调队列](https://blog.csdn.net/chongbin007/article/details/112741867?utm_term=%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97leetcode)
+
 
 
 
 
 ## 2.并查集
-
-### 2.1 代表题目:[547.省份数量](https://leetcode-cn.com/problems/number-of-provinces/)
-
-&ensp;有 n 个城市，其中一些彼此相连，另一些没有相连。如果城市 a 与城市 b 直接相连，且城市 b 与城市 c 直接相连，那么城市 a 与城市 c 间接相连。
-
-&ensp;省份 是一组直接或间接相连的城市，组内不含其他没有相连的城市。
-
-&ensp;给你一个 n x n 的矩阵 isConnected ，其中 isConnected[i][j] = 1 表示第 i 个城市和第 j 个城市直接相连，而 isConnected[i][j] = 0 表示二者不直接相连。
-
-返回矩阵中 省份 的数量。
-
-```c
-int *g_test;
-
-bool init(int mSize)
-{
-    int i;
-    if (mSize < 1) {
-        return false;
-    }
-    g_dest = (int *)malloc(mSize * sizeof(int));
-    if (g_dest == NULL) {
-        return false;
-    }
-    
-    fot (i = 0; i < mSize; i++) {
-        g_dest[i] = i;
-    }
-    return true;
-}
-
-int Find(int index)
-{
-    if (g_dest[index] == index) {
-        return index;
-    }
-    return g_dest[index] = Find(g_dest[index]);
-}
-
-int FindRoot(int i)
-{
-    while (g_dest[i] != 0) {
-        i = g_dest[i];
-    }
-    return i;
-}
-
-void ProcCircle(int **m, int mSize)
-{
-    int i, j;
-    int rootI, rootJ;
-    for (i = 0; i < mSize; i++) {
-        for (int j = (i + 1); j < mSize; j++) {
-            if (m[i][j] != 1) {
-                continue;
-            }
-            rootI = FindRoot(i);
-            rootJ = FindRoot(j);
-            if (rootI == rootJ) {
-                continue;
-            }
-            g_dest[rootI] = rootJ;
-        }
-    }
-    return;
-}
-
-int GetCircleNum(int mSize)
-{
-    int sum = 0;
-    for (int i = 0; i < mSize; i++) {
-        if (g_dest[i] == i) {
-            sum++;
-        }
-    }
-    return sum;
-}
-
-void FreeCircle()
-{
-    if (g_dest != NULL) {
-        free(g_dest);
-        g_dest = 0;
-    }
-}
-
-int findCircleNum(int **m, int mSize, int* mColSize)
-{
-    bool rslt;
-    int sum;
-    rslt = Init(mSize);
-    if (!rslt) {
-        return 0;
-    }
-
-    ProcCicle(m, mSize);
-    sum = GetCircleNum(mSize);
-
-    FreeCircle();
-    return sum;
-}
-```
-
-### 2.2 并查集介绍
+### 2.1 并查集介绍
 
 &ensp;并查集(DSU)主要用于解决一些元素分组的问题，管理一系列不相交的集合，并支持两种操作：
 &ensp;并查集即**合并集合**和**查找集合中元素**两种操作的算法.但实际并查集的基本操作有三个:
@@ -733,6 +651,111 @@ int main()
 
 
 
+### 2.2 Leetcode题目:[547.省份数量](https://leetcode-cn.com/problems/number-of-provinces/)
+
+&ensp;有 n 个城市，其中一些彼此相连，另一些没有相连。如果城市 a 与城市 b 直接相连，且城市 b 与城市 c 直接相连，那么城市 a 与城市 c 间接相连。
+
+&ensp;省份 是一组直接或间接相连的城市，组内不含其他没有相连的城市。
+
+&ensp;给你一个 n x n 的矩阵 isConnected ，其中 isConnected[i][j] = 1 表示第 i 个城市和第 j 个城市直接相连，而 isConnected[i][j] = 0 表示二者不直接相连。
+
+返回矩阵中 省份 的数量。
+
+```c
+int *g_test;
+
+bool init(int mSize)
+{
+    int i;
+    if (mSize < 1) {
+        return false;
+    }
+    g_dest = (int *)malloc(mSize * sizeof(int));
+    if (g_dest == NULL) {
+        return false;
+    }
+    
+    fot (i = 0; i < mSize; i++) {
+        g_dest[i] = i;
+    }
+    return true;
+}
+
+int Find(int index)
+{
+    if (g_dest[index] == index) {
+        return index;
+    }
+    return g_dest[index] = Find(g_dest[index]);
+}
+
+int FindRoot(int i)
+{
+    while (g_dest[i] != 0) {
+        i = g_dest[i];
+    }
+    return i;
+}
+
+void ProcCircle(int **m, int mSize)
+{
+    int i, j;
+    int rootI, rootJ;
+    for (i = 0; i < mSize; i++) {
+        for (int j = (i + 1); j < mSize; j++) {
+            if (m[i][j] != 1) {
+                continue;
+            }
+            rootI = FindRoot(i);
+            rootJ = FindRoot(j);
+            if (rootI == rootJ) {
+                continue;
+            }
+            g_dest[rootI] = rootJ;
+        }
+    }
+    return;
+}
+
+int GetCircleNum(int mSize)
+{
+    int sum = 0;
+    for (int i = 0; i < mSize; i++) {
+        if (g_dest[i] == i) {
+            sum++;
+        }
+    }
+    return sum;
+}
+
+void FreeCircle()
+{
+    if (g_dest != NULL) {
+        free(g_dest);
+        g_dest = 0;
+    }
+}
+
+int findCircleNum(int **m, int mSize, int* mColSize)
+{
+    bool rslt;
+    int sum;
+    rslt = Init(mSize);
+    if (!rslt) {
+        return 0;
+    }
+
+    ProcCicle(m, mSize);
+    sum = GetCircleNum(mSize);
+
+    FreeCircle();
+    return sum;
+}
+```
+
+
+
+
 ### 2.3 最小生成树
 
 &ensp;关于图的几个概念定义:
@@ -749,19 +772,23 @@ int main()
 
 ## 3.滑动窗口&双指针
 
-### 3.1 经典题目 1208.进可能使字符串相等
+### 3.1 滑动窗口描述
 
 &ensp;滑动窗口法，也叫尺取法（可能也不一定相等，大概就是这样 =。=），可以用来解决一些查找满足一定条件的连续区间的性质（长度等）的问题。由于区间连续，因此当区间发生变化时，可以通过旧有的计算结果对搜索空间进行剪枝，这样便减少了重复计算，降低了时间复杂度。往往类似于“请找到满足xx的最x的区间（子串、子数组）的xx”这类问题都可以使用该方法进行解决。
 
-&ensp; TCP协议使用滑动窗口实现.
+
 &ensp;滑动窗口算法在一个特定大小的字符串或数组上进行操作，而不在整个字符串和数组上操作，这样就降低了问题的复杂度，从而也达到降低了循环的嵌套深度。其实这里就可以看出来滑动窗口主要应用在数组和字符串上。
 
-滑动：说明这个窗口是移动的，也就是移动是按照一定方向来的。
+&emsp; 滑动：说明这个窗口是移动的，也就是移动是按照一定方向来的。
 
-窗口：窗口大小并不是固定的，可以不断扩容直到满足一定的条件；也可以不断缩小，直到找到一个满足条件的最小窗口；当然也可以是固定大小。
+&emsp; 窗口：窗口大小并不是固定的，可以不断扩容直到满足一定的条件；也可以不断缩小，直到找到一个满足条件的最小窗口；当然也可以是固定大小。
 
-滑动窗口是双指针的一种应用，形象点说就是维护一个窗口，在窗口滑动的过程中进行窗口内数据的更新，并判断是否符合答案。、
+&ensp; 滑动窗口是双指针的一种应用，形象点说就是维护一个窗口，在窗口滑动的过程中进行窗口内数据的更新，并判断是否符合答案。、
 初始时两个指针均指向开头，然后右指针依次向右滑动，在滑动的过程中需要收缩的时候进行左指针的移动，当右指针移出的时候结束循环即可。
+&ensp; TCP协议使用滑动窗口实现.
+
+### 3.2 Leetcode题目
+1208.进可能使字符串相等
 
 Leetcode 209. 长度最小的子数组
 给定一个含有 n 个正整数的数组和一个正整数 s ，找出该数组中满足其和 ≥ s 的长度最小的连续子数组。如果不存在符合条件的连续子数组，返回 0。
@@ -803,7 +830,7 @@ void fun(string s, string t){
 - 参考链接:
 https://zhuanlan.zhihu.com/p/61564531
 
-### .单调队列
+### 3.3 单调队列
 &emsp;单调队列是指：队列中的元素之间的关系具有单调性，而且，队首和队尾都可以进行出队操作，只有队尾开源进行入队操作。
 &emsp;单调队列与单调栈及其相似，把单调栈先进后出的性质改为先进先出既可。
 元素进队列的过程对于单调递增队列。
@@ -903,7 +930,10 @@ int main()
 }
 ```
 
+- 参考链接：
 https://www.cnblogs.com/zzcxxoo/p/13216030.html
+
+<br>
 
 ## 4.前缀和(&哈希表优化)
 
@@ -936,11 +966,11 @@ a[1] + a[2] + a[3] = sum[3] - sum[0]
 &emsp;&emsp;另外一种前缀和初始化方法:前缀和长度为nums.length,第0个元素存储自己的和.
 &emsp;&emsp;prefixSum[i] - prefixSum[i-1] 容易出现错误理解和技术丢失.示例:prefixSum[0] = num[1],造成nums[0]丢失.
 
-- 参考链接:https://blog.csdn.net/fgy_u/article/details/109349710
-
+- 参考链接:
+https://blog.csdn.net/fgy_u/article/details/109349710
 https://www.jianshu.com/p/3021429f38d4
 
-
+<br>
 
 ## 5.差分
 
@@ -955,6 +985,8 @@ https://www.jianshu.com/p/3021429f38d4
 &emsp;第二步:更新array[3] = 3, array[7] = -2;
 &emsp;第三步:进行求和,得到结果array[] = {0, 2, 2, 5, 5, 3, 3, 0}
 
+
+<br>
 
 ## 6.拓扑排序
 
@@ -1066,8 +1098,11 @@ int main()
 由于输出每个顶点的同时还要删除以它为起点的边，故上述拓扑排序的时间复杂度为O(V+E)O(V+E)。
 
 
-- 参考链接:https://blog.csdn.net/lisonglisonglisong/article/details/45543451
+- 参考链接:
+https://blog.csdn.net/lisonglisonglisong/article/details/45543451
 
+
+<br>
 
 ## 7.字符串
 
@@ -1097,6 +1132,8 @@ int main()
 &emsp;&emsp;重复上述步骤，直到表达式最右端
 &emsp;&emsp;
 
+<br>
+
 ## 8.二分查找
 &ensp;二分查找也称折半查找(Binary Search),它使一种效率较高的查找方法,前提是数据结构必须先排好序.但是,二分查找要求线性表具有随机访问的特点(如数组),也要求线性表能够根据中间元素的特点推测它两侧元素的性质,以达到缩减问题规模的效果.
 &ensp;二分查找问题也是面试中常考问题,虽然它思想简单,但写好二分算法并不容易.
@@ -1105,6 +1142,9 @@ int main()
 - 4.寻找两个有序数组的中位数
 - 33.搜索选择排序数组
 
+
+<br>
+
 ## 9.BFS
 
 BFS（广度优先搜索） 常用来解决层序遍历,最短路径问题。
@@ -1112,7 +1152,9 @@ BFS（广度优先搜索） 常用来解决层序遍历,最短路径问题。
 几个要点：
 
 只能用来求解无权图的最短路径问题
-队列：用来存储每一层遍历得到的节点
+队
+
+列：用来存储每一层遍历得到的节点
 标记：对于遍历过的结点，应将其标记，以防重复访问
 
 注:
@@ -1137,6 +1179,8 @@ BFS（广度优先搜索） 常用来解决层序遍历,最短路径问题。
 - 815.公交路线
 - 934.最短的桥
 
+
+<br>
 
 ## 10.DFS
 &ensp;深度优先搜索算法(DFS):是一种用于遍历或搜索树或图的算法.利用深度优先搜索算法可产生目标图的拓扑排序表,拓扑排序可用于无权最长路径问题等.DFS实质是一种枚举,不过借助递归实现.
@@ -1213,6 +1257,7 @@ def backtrack(路径, 选择列表)
 - 113.路线总和II
 
 
+<br>
 
 ## 11.动态规划
 
@@ -1228,7 +1273,12 @@ https://blog.csdn.net/u013309870/article/details/75193592
 - 123
 
 
+<br>
+
 ## 12.贪心算法
+
+<br>
+
 
 ## 13.字典树
 
@@ -1567,21 +1617,12 @@ int deleteBit(int num) {
 ```
 
 
+- 参考链接：
 https://www.cnblogs.com/cjsblog/p/11613708.html
-
 https://www.cnblogs.com/chunxia/archive/2013/04/28/3049243.html
-
 https://zhuanlan.zhihu.com/p/414067305
-
-
-
 https://ac.nowcoder.com/discuss/292850
-
-
-
 https://www.zhihu.com/question/36738189
-
-
 https://zhuanlan.zhihu.com/p/161036474
 
 
