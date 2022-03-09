@@ -24,13 +24,9 @@
     <updated>2022-01-31T16:53:53.000Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;双指针&quot;&gt;&lt;a href=&quot;#双指针&quot; class=&quot;headerlink&quot; title=&quot;双指针&quot;&gt;&lt;/a&gt;双指针&lt;/h2&gt;&lt;h3 id=&quot;3-无重复字符的最长子串&quot;&gt;&lt;a href=&quot;#3-无重复字符的最长子串&quot; class=&quot;headerlink&quot;</summary>
-        
-      
+    <summary type="html">&lt;h2 id=&quot;双指针&quot;&gt;&lt;a href=&quot;#双指针&quot; class=&quot;headerlink&quot; title=&quot;双指针&quot;&gt;&lt;/a&gt;双指针&lt;/h2&gt;&lt;h3 id=&quot;3-无重复字符的最长子串&quot;&gt;&lt;a href=&quot;#3-无重复字符的最长子串&quot; class=&quot;headerlink&quot; title=&quot;3 无重复字符的最长子串&quot;&gt;&lt;/a&gt;3 &lt;a href=&quot;https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/&quot;&gt;无重复字符的最长子串&lt;/a&gt;&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;思路：前后两个指针，从零开始向字符串尾移动，和一个标记字符在两个指针中间的表，判断前指针字符是否在表中，不在，记录表中，右指针加一；在，左指针对应字符提出表，左指针加一；左右指针差的最大值即为最长长度。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
     
     
     
@@ -223,6 +219,12 @@
 &lt;li&gt;&lt;p&gt;C Primer Plus(第六版)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;C语言解惑：指针、数组、函数和文件&lt;br&gt;回看第七章&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;算法图解&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;大话数据结构&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;软件故事&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;</summary>
     
