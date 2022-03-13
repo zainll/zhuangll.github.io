@@ -14,6 +14,46 @@ tags:
 
 <!--more-->
 
+## 617.[合并二叉树](https://leetcode-cn.com/problems/merge-two-binary-trees/)
+
+> 思路：递归，判空，
+
+```c
+struct TreeNode* newNode(int val)
+{
+    struct TreeNode* node = malloc(sizeof(struct TreeNode));
+    node->val = val;
+    node->left = NULL;
+    node->right = NULL;
+    return node;
+}
+
+struct TreeNode* mergeTrees(struct TreeNode* root1, struct TreeNode* root2){
+
+   /*  if (root1 == NULL && root2 == NULL) {
+        return NULL;
+    } */
+    if (root1 == NULL) {
+        return root2;
+    }
+
+    if (root2 == NULL) {
+        return root1;
+    }
+    
+   /*  struct TreeNode* root = (struct TreeNode*)malloc(sizeof(struct TreeNode));
+    root->val += root1 == NULL ? 0 : root1->val;
+    root->val += root2 == NULL ? 0 : root2->val;
+    root->left = NULL;
+    root->right = NULL; */
+    int val = (root1 == NULL ? 0 : root1->val) + (root2 == NULL ? 0 : root2->val);
+    struct TreeNode* root  = newNode(val);
+    root->left = mergeTrees(root1->left, root2->left);
+    root->right = mergeTrees(root1->right, root2->right);
+    return root;
+}
+```
+
 ## 647.[回文子串](https://leetcode-cn.com/problems/palindromic-substrings/)
 
 > 思路：左侧判断去重，左右判断相等。
