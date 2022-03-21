@@ -9,10 +9,753 @@ tags:
     - Another Tag
 ---
 
-1207, 876, 701, 674
+1207, 876, 701, 674, 367， 231  206
 
 
 <!--more-->
+
+## 203.[移除链表元素](https://leetcode-cn.com/problems/remove-linked-list-elements/)
+
+> 思路：递归
+
+```c
+struct ListNode *removeElements(struct ListNode *head, int val)
+{
+    if (head == NULL) {
+         return NULL;
+    }
+
+    if (head->val == val) {
+        return removeElements(head->next, val);
+    } else {
+        head->next = removeElements(head->next, val);
+    }
+    return head;
+}
+
+```
+
+## 206.[反转链表](https://leetcode-cn.com/problems/reverse-linked-list/)
+
+> 思路：
+
+```c
+struct ListNode* reverseList(struct ListNode* head){
+    struct ListNode* res = NULL;
+    while (head) {
+        struct ListNode* pre_node = head;
+        head = head->next;
+        pre_node->next = res;
+        res = pre_node;
+    }
+    return res;
+}
+```
+
+## 215.[数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/)
+
+> 思路：排序，第k个最大
+
+```c
+int Cmp(const void* a, const void* b)
+{
+    return *(int *)b - *(int *)a;
+}
+
+int findKthLargest(int* nums, int numsSize, int k){
+    qsort(nums, numsSize, sizeof(int), Cmp);
+    return nums[k-1];
+}
+```
+
+## 217.[存在重复元素](https://leetcode-cn.com/problems/contains-duplicate/)
+
+> 思路：
+一、排序，比较前一个数和当前数是否相等
+二、uthash
+
+```c
+int Cmp(const void* a, const void* b)
+{
+    return *(int *)a - *(int *)b;
+}
+
+bool containsDuplicate(int* nums, int numsSize){
+    if (numsSize <= 1) {
+        return true;
+    }
+    qsort(nums, numsSize, sizeof(int), Cmp);
+    for (int i = 1; i < numsSize; i++) {
+        if (nums[i-1] == nums[i]) {
+            return true;
+        }
+    }
+    return false;
+}
+```
+
+```c
+struct my_struct {
+    int id;
+    UT_hash_handle hh;
+};
+
+struct my_struct *users = NULL;
+
+bool containsDuplicate(int* nums, int numsSize){
+   struct my_struct *s;
+   HASH_FIND_INT(users, nums[i], s);
+   if (s == NULL) {
+       s = (struct my_struct*)malloc(sizeof(struct my_struct));
+       s->id = nums[i];
+       HASH_ADD_INT(users, id, s);
+   } else {
+       return true;
+   }
+   return false;
+}
+```
+
+## 226.[翻转二叉树](https://leetcode-cn.com/problems/invert-binary-tree/)
+
+> 思路：判空，交换左右子树，递归调用
+
+```c
+struct TreeNode* invertTree(struct TreeNode* root){
+    
+    if (root == NULL) {
+        return NULL;
+    }
+
+    struct TreeNode* tmp = root->left;
+    root->left = root->right;
+    root->right = tmp;
+
+    invertTree(root->left);
+    invertTree(root->right);
+    return root;
+}
+```
+
+```c
+struct TreeNode* invertTree(struct TreeNode* root){
+    if (root == NULL) {
+        return NULL;
+    }
+
+    struct TreeNode *left = (struct TreeNode *)malloc(sizeof(struct TreeNode));
+    struct TreeNode *right = (struct TreeNode *)malloc(sizeof(struct TreeNode));
+    left = invertTree(root->left);
+    right = invertTree(root->right);
+    root->left = right;
+    root->right = left;
+    return root;
+}
+```
+
+## 231.[2的幂](https://leetcode-cn.com/problems/power-of-two/)
+
+> 思路：
+
+```c
+bool isPowerOfTwo(int n)
+{
+    if (!n) {
+        return false;
+    }
+        
+    while (n % 2 == 0) {
+        n /= 2;
+    }
+    return n == 1;
+}
+```
+
+```c
+bool isPowerOfTwo(int n){
+
+    if (n == 0) {
+        return false;
+    }
+
+    if (n == 1) {
+        return true;
+    }
+    
+    bool res = false;
+    if (n % 2 != 0) {
+        return false;
+    }else {
+       res = isPowerOfTwo(n/2);
+    }
+    return res;
+}
+```
+
+```c
+bool isPowerOfTwo(int n){
+    //用位运算来判断有几个1，要是只有一个1那就是2的幂。
+    if (n >= 2147483647 || n <= -2147483648) {
+        return false;
+    }
+    int nu m =0;
+    while (n>0 && n!=0) {
+        n &= (n-1);
+        num++;
+    }
+    if (num!=1) {
+        return false;
+    }
+    return true;
+
+}
+
+```
+
+## 234.[回文链表](https://leetcode-cn.com/problems/palindrome-linked-list/submissions/)
+
+> 思路；
+一、通过一个数组记录链表中的元素值，在判断数组是否是回文。
+二、翻转链表
+
+```c
+#define MAXSIZE 100000
+
+bool isPalindrome(struct ListNode* head){
+    int size = 0;
+    int nums[MAXSIZE] = {0};
+    struct ListNode* p = head;
+    // 判断条件
+    while (p) {
+        nums[size++] = p->val;
+        p = p->next;
+    }
+    printf("size = %d\n", size);
+    int left = 0;
+    int right = size - 1;
+    while (left <= right) {
+        if (nums[left] != nums[right]) {
+            return false;
+        }
+        left++;
+        right--;
+    }
+    return true;
+}
+```
+
+```c
+struct ListNode *reverse(struct ListNode *head)
+{
+    struct ListNode *res = NULL;
+    while (head) {
+        struct ListNode *pre_node = head;
+        head = head->next;
+        pre_node->next = res;
+        res = pre_node;
+    }
+    return res;
+}
+bool isPalindrome(struct ListNode *head)
+{
+    struct ListNode *slow = head;
+    struct ListNode *fast = head;
+    struct ListNode *last;
+    while (fast && fast->next) {
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    if (fast != NULL) {
+        slow = slow->next;
+    }
+    last = reverse(slow);
+    while (last) {
+        if (head->val != last->val) {
+            return 0;
+        }
+        head = head->next;
+        last = last->next;
+    }
+    return 1;
+}
+```
+
+## 242.[有效的字母异位词](https://leetcode-cn.com/problems/valid-anagram/submissions/)
+
+> 思路：先比较长度，不相等 false，通过表格记录第一个字符串中字符，遍历第二个字符串时表格记录--，最后，判断表格中所有值是否为零
+
+```c
+#define NUMSIZE 256
+
+bool isAnagram(char * s, char * t){
+    int sLen = strlen(s);
+    int tLen = strlen(t);
+    if (sLen != tLen) {
+        return false;
+    }
+    int table[256] = {0};
+
+    for (int i = 0; i < sLen; i++) {
+        table[s[i]]++;
+    }
+    for (int i = 0; i < tLen; i++) {
+        table[t[i]]--;
+    }
+
+    for (int i = 0; i < NUMSIZE; i++) {
+        if (table[i] != 0) {
+            return false;
+        }
+    }
+    return true;
+}
+```
+
+## 268.[丢失的数字](https://leetcode-cn.com/problems/missing-number/)
+
+> 思路：边求和，边减去数组中的数字
+
+```c
+int missingNumber(int* nums, int numsSize){
+    int mNum = 0;
+    for (int i = 0; i < numsSize; i++) {
+        mNum += (i + 1);
+        mNum -= nums[i];
+    }
+    return mNum;
+}
+```
+
+
+
+## 278.[第一个错误的版本](https://leetcode-cn.com/problems/first-bad-version/)
+
+> 思路：二分查找
+
+```c
+int firstBadVersion(int n) {
+    int left = 1;
+    int right = n;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (isBadVersion(mid) && !isBadVersion(mid-1)) {
+            return mid;
+        } else if (isBadVersion(mid) && isBadVersion(mid-1)) {
+            right = mid - 1;
+        } else {
+            left = mid + 1;
+        }
+    }
+    return -1;
+}
+```
+
+```c
+int firstBadVersion(int n) {
+    int low = 1, high = n;
+    while (low <= high) {
+        int mid = low + (high - low) / 2;
+        if (isBadVersion(mid)) {
+            high = mid - 1;
+        } else {
+            low = mid + 1;
+        }
+    }
+    return low;
+}
+```
+
+## 283.[移动零](https://leetcode-cn.com/problems/move-zeroes/)
+
+> 思路：不等于零时向数组中添加，等于零时跳过，最后填充0
+nums[start++] = nums[i]
+
+```c
+void moveZeroes(int* nums, int numsSize){
+    int start = 0;
+    for (int i = 0; i < numsSize; i++) {
+        if (nums[i] != 0) {
+            nums[start++] = nums[i];
+        }
+    }
+
+    for (; start < numsSize; start++) {
+        nums[start] = 0;
+    }    
+}
+```
+
+## 287.[寻找重复整数](https://leetcode-cn.com/problems/find-the-duplicate-number/)
+
+> 思路：循环遍历，标记，判断是否标记过，return
+
+```c
+#define MAXSIZE 100001
+
+int findDuplicate(int* nums, int numsSize){
+    int table[MAXSIZE] = {0};
+    for (int i = 0; i < numsSize; i++) {
+        if (table[nums[i]] != 0) {
+            return nums[i];
+        } else {
+            table[nums[i]]++;
+        }
+    }
+    return -1;
+}
+```
+
+## 344.[反转字符串](https://leetcode-cn.com/problems/reverse-string/)
+
+> 思路：双指针，交换
+
+```c
+void reverseString(char* s, int sSize){
+    int left =0;
+    int right = sSize - 1;
+    while (left < right) {
+        char c = s[left];
+        s[left] = s[right];
+        s[right] = c;
+        left++;
+        right--;
+    }
+}
+```
+
+## 367.[有效的完全平方数](https://leetcode-cn.com/problems/valid-perfect-square/)
+
+> 思路：for 循环，条件 i * i <= num 
+
+```c
+bool isPerfectSquare(int num)
+{
+    for (long i = 0; i * i <= num; i++) {
+        if (i * i == num) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+```
+
+## 387.[字符串中的第一个唯一字符](https://leetcode-cn.com/problems/first-unique-character-in-a-string/)
+
+> 思路：两次遍历，第一次遍历见字母标记得到统计表格中，第二次遍历找出统计表格中第一个为1字符，返回对应下标。
+
+```c
+#define NUMSIZE 256
+
+int firstUniqChar(char * s){
+    int sLen = strlen(s);
+    int table[NUMSIZE] = {0};
+    for (int i = 0; i < sLen; i++) {
+        table[s[i]]++;
+    }
+
+    for (int i = 0; i < sLen; i++) {
+        if (table[s[i]] == 1) {
+            return i;
+        }
+    }
+    return -1;
+}
+```
+
+## 389.[找不同](https://leetcode-cn.com/problems/find-the-difference/)
+
+> 思路：字符可以转化为数字，为了防止溢出通过 - 'a'，求两个字符串的差值，在加上'a'
+
+```c
+char findTheDifference(char * s, char * t){
+    int sLen = strlen(s);
+    int tLen = strlen(t);
+    int nS = 0;
+    int nT = 0;
+    for (int i = 0; i < sLen; i++) {
+        nS += s[i] - 'a';
+    }
+    for (int i = 0; i < tLen; i++) {
+        nT += t[i] - 'a';
+    }
+    return (char)(nT - nS + 'a');
+}
+```
+
+## 404.[左叶子之和](https://leetcode-cn.com/problems/sum-of-left-leaves/)
+
+> 思路：递归：判断左子树是否为叶子结点，是则记录sum，返回 sum + 递归调用左子树 + 递归调用右子树
+
+```c
+int sumOfLeftLeaves(struct TreeNode* root){
+    if (root == NULL) {
+        return 0;
+    }
+    int sum = 0;
+    if (root->left) {
+        if (root->left->left == NULL && root->left->right == NULL) {
+            sum += root->left->val;
+        }
+    }
+    return  sum + sumOfLeftLeaves(root->left) + sumOfLeftLeaves(root->right);
+}
+```
+
+```c
+int isleaf(struct TreeNode* root)
+{
+    return root->left == NULL && root->right == NULL;
+}
+
+int sumOfLeftLeaves(struct TreeNode* root)
+{
+    if(root == NULL) {
+        return 0;
+    }
+    if (root->left) {
+        if(isleaf(root->left)) {
+            // 此处直接递归，少一层调用
+            return root->left->val + sumOfLeftLeaves(root->right);
+        }
+    }
+    return sumOfLeftLeaves(root->left) + sumOfLeftLeaves(root->right);
+}
+```
+
+## 442.[数组中重复的数据](https://leetcode-cn.com/problems/find-all-duplicates-in-an-array/)
+
+> 思路：
+一、通过表标记数组中出现过的数字，当再次出现时将数字添加到返回数组中。
+二、
+
+```c
+#define MAXSIZE 100000
+
+int* findDuplicates(int* nums, int numsSize, int* returnSize){
+    int table[MAXSIZE] = {0};
+    *returnSize = 0;
+    int *res = (int *)malloc(sizeof(int) * MAXSIZE);
+    for (int i = 0; i < numsSize; i++) {
+        if (table[nums[i]] == 1) {
+            res[*returnSize] = nums[i];
+            (*returnSize)++;
+        } else {
+            table[nums[i]]++;
+        }
+    }
+    return res;
+}
+```
+
+```c
+int* findDuplicates(int* nums, int numsSize, int* returnSize) {
+    int table[100000] = {0};
+    int *res = (int *)malloc(sizeof(int) * 100000);
+    int j = 0;
+    for (int i = 0; i < numsSize; i++) {
+        table[nums[i]]++;
+        if (table[nums[i]] == 2) {
+            res[j++] = nums[i];
+        }
+    }
+    *returnSize = j;
+    return res;
+}
+```
+
+
+## 461.[汉明距离](https://leetcode-cn.com/problems/hamming-distance/)
+
+> 思路：
+一、求 x ^ y 中 1 的个数
+二、比较x，y的每一位 和 1与
+
+```c
+int hammingDistance(int x, int y)
+{
+    int n = x ^ y;
+    int res = 0;
+    while (n) {
+        int p = n & 1;
+        if (p) {
+            res++;
+        }
+        n >>= 1;
+    }
+    return res;
+}
+```
+
+```c
+int hammingDistance(int x, int y){
+    int count = 0;
+    while (x || y) {
+        int nX = x & 0x1;
+        int nY = y & 0x1;
+        if (nX != nY) {
+            count++;
+        }
+        x >>= 1;
+        y >>= 1;
+    }
+    return count;
+
+}
+```
+
+## 476.[数字的补数](https://leetcode-cn.com/problems/number-complement/)
+
+> 思路：
+一、按位与1求与，再取反(!)，然后移位，
+二、先统计位数，在取位数相同全一数，最后与原数字求异或 ^
+
+```c
+int findComplement(int num){
+    int res = 0;
+    int count = 0;
+    while (num) {
+        int t = !(num & 0x1);
+        t <<= count;
+        printf("t = %d\n", t);
+        res += t;
+        count++;
+        num>>=1;
+    }
+    return res;
+
+}
+```
+
+```c
+int findComplement(int num){
+    int totalBits = 0;
+    int tmp = num;
+    while (tmp) {
+        totalBits++;
+        tmp >>= 1;
+    }
+    int flipNumber = 1;
+    for (int i = 1; i < totalBits; i++) {
+        flipNumber += UINT32_C(1) << i;
+    }
+    num = num ^ flipNumber;
+    return num;
+}
+
+```
+
+## 509.[斐波那契数列](https://leetcode-cn.com/problems/fibonacci-number/)
+
+> 思路：一、递归  二、迭代
+
+- 递归
+```c
+int fib(int n){
+    if (n <= 1) {
+        return n;
+    }
+    return fib(n - 1) + fib(n - 2);
+
+}
+```
+
+- 迭代
+```c
+int fib(int n){
+    if (n <= 1) {
+        return n;
+    }
+    int* nums = (int *)malloc(sizeof(int) * (n + 1));
+    nums[0] = 0;
+    nums[1] = 1;
+    for (int i = 2; i <= n; i++) {
+        nums[i] = nums[i - 1] + nums[i - 2];
+    }
+    return nums[n];
+}
+```
+
+## 520.[检测大写字母](https://leetcode-cn.com/problems/detect-capital/submissions/)
+
+> 思路：
+一、先判断第二个字母是否为大写，1.word[1] 大写，从从零开始判断是否全为大写 2.word[1]为小写，从word是否全为小写。
+二、
+
+```c
+bool detectCapitalUse(char * word){
+
+    int len = strlen(word);
+    if (len <= 1) {
+        return true;
+    }
+
+    int i = 1;
+    if (isupper(word[i])) {
+        i = 0;
+        while (word[i] != '\0') {
+            if (!isupper(word[i])) {
+                return false;
+            }
+            i++;
+        }
+    } else {
+        while (word[i] != '\0') {
+            if (isupper(word[i])) {
+                return false;
+            }
+            i++;
+        }
+    }
+    return true;
+}
+```
+
+```c
+bool detectCapitalUse(char * word){
+    int len = strlen(word);
+    if (len == 1) {
+        return true;
+    }
+    for (int i = 1; i < len; i++) {
+        // word[0] 每次都需要判断，一个复杂度。
+        if (isupper(word[0]) && isupper(word[1])) {
+            if (!isupper(word[i])) {
+                return false;
+            }
+        } else {
+            if (isupper(word[i])) {
+                return false;
+            }
+        }
+    }
+    return true;
+   
+}
+```
+
+
+## 561.[拆分数组I](https://leetcode-cn.com/problems/array-partition-i/)
+
+> 思路：排序，取偶数位求和。
+
+```c
+int Cmp(const void* a, const void* b)
+{
+    return *(int *)a - *(int *)b;
+}
+int arrayPairSum(int* nums, int numsSize){
+    qsort(nums, numsSize, sizeof(int), Cmp);
+    int minSum = 0;
+    for (int i = 0; i < numsSize; i++) {
+        if (i % 2 == 0) {
+            minSum += nums[i];
+        }    
+    }
+    return minSum;
+}
+```
 
 ## 617.[合并二叉树](https://leetcode-cn.com/problems/merge-two-binary-trees/)
 
@@ -393,8 +1136,7 @@ char * reverseOnlyLetters(char * s){
     }
     return s;
 }
-···
-
+```
 
 
 ## 938.[二叉搜索树的范围和](https://leetcode-cn.com/problems/range-sum-of-bst/)
@@ -432,7 +1174,7 @@ int rangeSumBST(struct TreeNode* root, int low, int high){
 
 
 
-## 965.[值二叉树](https://leetcode-cn.com/problems/univalued-binary-tree/)
+## 965.[单值二叉树](https://leetcode-cn.com/problems/univalued-binary-tree/)
 
 > 思路：递归，递归出口：root == NULL
 
