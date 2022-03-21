@@ -15,6 +15,21 @@ tags:
 
 <!--more-->
 
+## 146.[只出现一次的数字](https://leetcode-cn.com/problems/single-number/)
+
+> 思路：n ^ n = 0 一个数与自己异或为 0
+
+```c
+int singleNumber(int* nums, int numsSize){
+    int res = 0;
+    for (int i = 0; i < numsSize; i++) {
+        res = res ^ nums[i];
+    }
+    return res;
+
+}
+```
+
 ## 141.[环形链表](https://leetcode-cn.com/problems/linked-list-cycle/)
 
 > 思路：快慢双指针
