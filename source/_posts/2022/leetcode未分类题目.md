@@ -9,10 +9,347 @@ tags:
     - Another Tag
 ---
 
-1207, 876, 701, 674, 367， 231  206
+1207, 876, 701, 674, 367， 231  206 201  189  160
+
 
 
 <!--more-->
+
+## 141.[环形链表](https://leetcode-cn.com/problems/linked-list-cycle/)
+
+> 思路：快慢双指针
+
+```c
+bool hasCycle(struct ListNode *head) {
+    struct ListNode *slow = head;
+    struct ListNode *fast = head;
+    while (slow && fast && fast->next) {
+        slow = slow->next;
+        fast = fast->next->next;
+        if (slow == fast) {
+            return true;
+        }
+    }
+    return false;
+}
+```
+
+## 142.[环形链表 II](https://leetcode-cn.com/problems/linked-list-cycle-ii/)
+
+> 思路：快慢双指针
+
+```c
+struct ListNode *detectCycle(struct ListNode *head) {
+    struct ListNode* slow = (struct ListNode*)malloc(sizeof(struct ListNode));
+    struct ListNode* fast = (struct ListNode*)malloc(sizeof(struct ListNode));
+    slow = head;
+    fast = head;
+    while (fast != NULL && fast->next != NULL) {
+        slow = slow->next;
+        fast = fast->next->next;
+        if (slow == fast) {
+            struct ListNode* entry = head;
+            while (slow != entry) {
+                slow = slow->next;
+                entry = entry->next;
+            }
+            return entry;
+        }
+    }
+    return NULL;
+}
+```
+
+## 153.[寻找旋转排序数组中的最小值](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/)
+
+> 思路：二分查找
+
+```c
+int findMin(int* nums, int numsSize){
+    int low = 0;
+    int high = numsSize - 1;
+    while (low < high) {
+        int mid = low + (high - low) / 2;
+        if (nums[mid] < nums[high]) {
+            high = mid;
+        } else {
+            low = mid + 1;
+        }
+    }
+    return nums[low];
+}
+```
+
+```c
+int findMin(int* nums, int numsSize){
+    int i;
+    for (i = 0; i < numsSize - 1; i++) {
+        if (nums[i] > nums[(i+1)]) {
+            return nums[i+1];
+        }
+    }
+    return nums[0];
+
+}
+```
+
+## 160.[相交链表](https://leetcode-cn.com/problemset/all/?page=1&search=160)
+
+> 思路：
+一、
+二、先统计两个链表结点个数，然后长链表先走个数差位
+
+```c
+struct ListNode *getIntersectionNode(struct ListNode *headA, struct ListNode *headB) {
+    struct ListNode *cur1 = headA;
+    struct ListNode *cur2 = headB;
+    if (cur1 == NULL || cur2 == NULL)
+        return NULL;
+    while (cur1 && cur2 && cur1 != cur2) {
+        cur1 = cur1->next;
+        cur2 = cur2->next;
+        if (cur1 == cur2) {
+            return cur1;
+        }
+        if (!cur1) {
+            cur1 = headB;
+        }
+        if (!cur2) {
+            cur2 = headA;
+        }
+    }
+    return cur1;
+}
+```
+
+
+## 169.[多数元素](https://leetcode-cn.com/problems/majority-element/)
+
+> 思路：选定一个主元素，计数器
+
+```c
+int majorityElement(int* nums, int numsSize){
+    int count = 1;
+    int majorNum = nums[0];
+    for (int i = 1; i < numsSize; i++) {
+        if (count == 0) {
+            majorNum = nums[i];
+            count++;
+        } else if (majorNum == nums[i]) {
+            count++;
+        } else {
+            count--;
+        }
+    }
+    return majorNum;
+}
+```
+
+
+## 173.[二叉搜索树迭代器](https://leetcode-cn.com/problems/binary-search-tree-iterator/)
+
+> 思路：
+
+```c
+typedef struct {
+    int* res;
+    int size;
+    int idx;
+} BSTIterator;
+
+int getTreeSize(struct TreeNode* root) {
+    if (root == NULL) {
+        return 0;
+    }
+    return 1 + getTreeSize(root->left) + getTreeSize(root->right);
+}
+
+void inorder(int* ret, int* retSize, struct TreeNode* root) {
+    if (root == NULL) {
+        return;
+    }
+    inorder(ret, retSize, root->left);
+    ret[(*retSize)++] = root->val;
+    inorder(ret, retSize, root->right);
+}
+
+int* inorderTraversal(int* retSize, struct TreeNode* root) {
+    *retSize = 0;
+    int* ret = malloc(sizeof(int) * getTreeSize(root));
+    inorder(ret, retSize, root);
+    return ret;
+}
+
+BSTIterator* bSTIteratorCreate(struct TreeNode* root) {
+    BSTIterator* ret = malloc(sizeof(BSTIterator));
+    ret->res = inorderTraversal(&(ret->size), root);
+    ret->idx = 0;
+    return ret;
+}
+
+int bSTIteratorNext(BSTIterator* obj) {
+    return obj->res[(obj->idx)++];
+}
+
+bool bSTIteratorHasNext(BSTIterator* obj) {
+    return (obj->idx < obj->size);
+}
+
+void bSTIteratorFree(BSTIterator* obj) {
+    free(obj->res);
+    free(obj);
+}
+```
+
+## 189.[轮转数组](https://leetcode-cn.com/problems/rotate-array/)
+
+> 思路：
+一、每次移动一个数
+二、先整体翻转，在翻转前k个，最后翻转 numsSize - k个
+
+
+```c
+void moveOne(int* nums, int numsSize)
+{
+    int tmp = nums[numsSize - 1];
+    for (int i = numsSize - 1; i > 0; i--) {
+        nums[i] = nums[i-1]; 
+    }
+    nums[0] = tmp;
+}
+
+void rotate(int* nums, int numsSize, int k)
+{
+    for (int i = 0; i < k; i++) {
+        moveOne(nums, numsSize);
+    }
+}
+```
+
+```c
+/* */ 
+void swap(int* a, int* b) {
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+void reverse(int* nums, int start, int end) {
+    while (start < end) {
+        swap(&nums[start], &nums[end]);
+        start += 1;
+        end -= 1;
+    }
+}
+void rotate(int* nums, int numsSize, int k) {
+    k %= numsSize;
+    for (int i = 0; i < numsSize; i++) {
+        printf("nums[%d] = %d\t", i, nums[i]);
+    }
+    printf("\n");
+    reverse(nums, 0, numsSize - 1);
+    for (int i = 0; i < numsSize; i++) {
+        printf("nums[%d] = %d\t", i, nums[i]);
+    }
+    printf("\n");
+    reverse(nums, 0, k - 1);
+    for (int i = 0; i < numsSize; i++) {
+        printf("nums[%d] = %d\t", i, nums[i]);
+    }
+    printf("\n");
+    reverse(nums, k, numsSize - 1);
+    for (int i = 0; i < numsSize; i++) {
+        printf("nums[%d] = %d\t", i, nums[i]);
+    }
+    printf("\n");
+}
+
+
+
+/*
+void rotate(int* nums, int numsSize, int k){
+     for (int i = 0; i < k; i++) {
+        int lastElement = nums[numsSize - 1];
+        for (int j = numsSize - 1; j > 0; j--) {
+            nums[j] = nums[j - 1];
+        }
+        nums[0] = lastElement;
+    } 
+}*/
+
+/*  
+void rotate(int* nums, int numsSize, int k){
+    if (k == numsSize / 2 && numsSize % 2 != 1) {
+        for (int i = 0; i < k; i++) {
+            int tmp = nums[i];
+            nums[i] = nums[k+i];
+            nums[k+i] = tmp;
+        }
+        return;
+    }
+  
+    int i = 0;
+    int tmp = nums[0];
+    int p = 0;
+    int count = 0;
+    do {
+        p = (i + k) % numsSize;
+        printf("p = %d\n",p);
+        int t = nums[p];
+        nums[p] = tmp;
+        tmp = t;
+        i = p;
+     } while (i != 0);
+} */ 
+```
+
+## 190.[颠倒二进制位](https://leetcode-cn.com/problems/reverse-bits/submissions/)
+
+> 思路：32位，
+
+```c
+uint32_t reverseBits(uint32_t n) {
+    uint32_t m = 0;
+    int cnt = 32;
+    while (cnt) {
+        m <<= 1;
+        m += (n & 0x1);
+        n >>= 1;
+        cnt--;
+    }
+    return m;
+}
+```
+
+## 191.[位1的个数](https://leetcode-cn.com/problems/number-of-1-bits/submissions/)
+
+> 思路：n & 0x1
+
+```c
+int hammingWeight(uint32_t n) {
+    int cnt = 0;
+    while (n) {
+        if (n & 0x1) {
+            cnt++;
+        }
+        n >>= 1;
+    }
+    return cnt;
+    
+}
+```
+
+## 201.[数字范围按位与](https://leetcode-cn.com/problems/bitwise-and-of-numbers-range/)
+
+> 思路：n & (n - 1) 去除n最高位的1
+
+```c
+int rangeBitwiseAnd(int left, int right){
+    while (left < right) {
+        right &= right - 1;
+    }
+    return right;
+}
+```
 
 ## 203.[移除链表元素](https://leetcode-cn.com/problems/remove-linked-list-elements/)
 
