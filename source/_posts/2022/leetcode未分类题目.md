@@ -9,13 +9,85 @@ tags:
     - Another Tag
 ---
 
-1207, 876, 701, 674, 367， 231  206 201  189  160
+1207, 876, 701, 674, 367， 231  206 201  189  160 125   121
 
 
 
 <!--more-->
 
-## 146.[只出现一次的数字](https://leetcode-cn.com/problems/single-number/)
+## 
+
+## 112.[ 路径总和](https://leetcode-cn.com/problems/path-sum/submissions/)
+
+> 思路：递归：递归出口； 注意书判空
+
+```c
+bool hasPathSum(struct TreeNode* root, int targetSum){
+    if (root == NULL) {
+        return false;
+    }
+
+    if (root->left == NULL && root->right == NULL && root->val == targetSum) {
+        return true;
+    }
+    return hasPathSum(root->left, targetSum - root->val) || hasPathSum(root->right, targetSum - root->val);
+
+}
+```
+
+## 121.[买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
+
+> 思路：股票是连续收益的 maxcmp(0, maxCur + prices[i] - prices[i - 1])
+
+```c
+int maxcmp(int a, int b)
+{ 
+    return (a >= b) ? a : b; 
+}
+
+int maxProfit(int* prices, int pricesSize){
+    int maxCur = 0, maxSoFar = 0;
+    for (int i = 1; i < pricesSize; i++) {
+        maxCur = maxcmp(0, maxCur + prices[i] - prices[i - 1]);
+        maxSoFar = maxcmp(maxSoFar, maxCur);
+         printf("i = %d\t maxCur = %d \t maxSoFar = %d\n", i, maxCur, maxSoFar);
+    }
+    return maxSoFar;
+}
+```
+
+## 125.[验证回文串](https://leetcode-cn.com/problems/valid-palindrome/)
+
+> 思路：判断是否是字母和数字，库函数 isalnum; 注意库函数 isalpha 为判断是否为字母。
+
+```c
+bool isPalindrome(char * s){
+    int len = strlen(s);
+    int left = 0;
+    int right = len - 1;
+    while (left <= right) {
+        //while (left < right && !isalpha(s[left])) {
+        while (left < right && !isalnum(s[left])) {
+            left++;
+        }
+        //while (left < right && !isalpha(s[right])) {
+        while (left < right && !isalnum(s[right])) {
+            right--;
+        }
+        printf("left = %d\t right = %d\n", left, right);
+        if (tolower(s[left]) != tolower(s[right])) {
+            return false;
+        }
+        left++;
+        right--;
+    }
+    return true;
+}
+```
+
+
+
+## 136.[只出现一次的数字](https://leetcode-cn.com/problems/single-number/)
 
 > 思路：n ^ n = 0 一个数与自己异或为 0
 
