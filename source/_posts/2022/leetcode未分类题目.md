@@ -9,13 +9,1750 @@ tags:
     - Another Tag
 ---
 
-1207, 876, 701, 674, 367， 231  206 201  189  160 125   121
-
+1207, 876, 701, 674, 367， 231  206 201  189  160 125   121   110   109  108  104  101  94  66   53   38  29
+28   27  24 20  13  12 11   8  7   6   4   3  
 
 
 <!--more-->
 
-## 
+## 1.[两数之和](https://leetcode-cn.com/problems/two-sum/)
+
+> 思路：
+
+```c
+int* twoSum(int* nums, int numsSize, int target, int* returnSize){
+    int i, j;
+    int *ret = (int *)malloc(sizeof(int) * 2);
+    for (i = 0; i < numsSize; i++)
+    {
+        int key = target - nums[i];
+        for (j = i + 1; j < numsSize; j++)
+            if (nums[j] == key)
+            {
+                ret[0] = i;
+                ret[1] = j;
+            }
+    }
+    *returnSize = 2;
+    return ret;
+}
+```
+
+## 2.[两数相加](https://leetcode-cn.com/problems/add-two-numbers/)
+
+> 思路：
+
+```c
+struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
+    struct ListNode *head = NULL, *tail = NULL;
+    int carry = 0;
+    while (l1 || l2) {
+        int n1 = l1 ? l1->val : 0;
+        int n2 = l2 ? l2->val : 0;
+        int sum = n1 + n2 + carry;
+        if (!head) {
+            head = tail = malloc(sizeof(struct ListNode));
+            tail->val = sum % 10;
+            tail->next = NULL;
+        } else {
+            tail->next = malloc(sizeof(struct ListNode));
+            tail->next->val = sum % 10;
+            tail = tail->next;
+            tail->next = NULL;
+        }
+        carry = sum / 10;
+        if (l1) {
+            l1 = l1->next;
+        }
+        if (l2) {
+            l2 = l2->next;
+        }
+    }
+    if (carry > 0) {
+        tail->next = malloc(sizeof(struct ListNode));
+        tail->next->val = carry;
+        tail->next->next = NULL;
+    }
+    return head;
+}
+```
+
+## 3.[无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
+
+> 思路：
+
+```c
+int lengthOfLongestSubstring(char * s){
+    int len = strlen(s);
+    printf("len = %d\n", len);
+    int left = 0;
+    int right = 0;
+    char table[256] = {0};
+    int maxLen = 0;
+    while (right < len) {
+        printf("%d \t", right);
+        if (table[s[right]] == 0) {
+            table[s[right]] = 1;
+            right++;
+        //} else if (table[s[right]] == 1) {
+        } else {
+            table[s[left]] = 0;
+            left++;
+        }
+        maxLen = fmax(maxLen, right - left);
+    }
+    return maxLen;
+}
+```
+
+## 4.[寻找两个正序数组的中位数](https://leetcode-cn.com/problems/median-of-two-sorted-arrays/)
+
+> 思路：
+
+```c
+double findMedianSortedArrays(int* nums1, int nums1Size, int* nums2, int nums2Size){
+    int sum = nums1Size + nums2Size;
+    int *nums = (int *)malloc(sizeof(int) * sum);
+    int i = 0, j = 0, k = 0;
+    int half = sum / 2 + 1;
+    
+    while (k < half) {
+        int n;
+        if (i < nums1Size && j < nums2Size) {
+            n = (nums1[i] < nums2[j]) ? nums1[i++] : nums2[j++];
+        } else if (i < nums1Size) {
+            n = nums1[i++];
+        } else if (j < nums2Size) {
+            n = nums2[j++];
+        }
+        nums[k++] = n;
+    }
+
+    if (sum % 2 == 0) {
+        return (nums[k-1] + nums[k-2]) / 2.0;
+    } else {
+        return nums[k-1];
+    }
+}
+```
+
+## 6.[Z 字形变换](https://leetcode-cn.com/problems/zigzag-conversion/)
+
+> 思路：
+
+```c
+char * convert(char * s, int numRows){
+ uint16_t len = strlen(s);
+
+    if (len < numRows)
+    {
+        numRows = len;
+    }
+    char* out = calloc(len + 1, sizeof(char));
+
+    if (numRows < 2)
+    {
+        memcpy(out, s, len + 1);
+        return out;
+    }
+
+    uint16_t max = numRows - 1;
+    uint16_t rr = 2 * max;
+    uint16_t i = 0;
+    uint16_t o = 0;
+    uint16_t delta = 0;
+
+    // first row
+    while (i < len)
+    {
+        out[o++] = s[i];
+        i += rr;
+    }
+
+    // middle rows
+    for (uint16_t l = 1; l < max; l++)
+    {
+        i = l;
+        delta = 2 * l;
+        while (i < len)
+        {
+            out[o++] = s[i];
+            delta = rr - delta;
+            i += delta;
+        }
+    }
+
+    // last row
+    i = max;
+    while (i < len)
+    {
+        out[o++] = s[i];
+        i += rr;
+    }
+
+    return out;
+}
+```
+
+## 7.[整数反转](https://leetcode-cn.com/problems/reverse-integer/)
+
+> 思路：
+
+```c
+int reverse(int x){
+    int rev = 0;
+    while (x != 0) {
+        int pop = x % 10;
+        x /= 10;
+        if (rev > INT_MAX / 10 || (rev == INT_MAX / 10 && pop > 7))
+            return 0;
+        if (rev < INT_MIN / 10 || (rev == INT_MIN / 10 && pop < -8))
+            return 0;
+        rev = rev * 10 + pop;
+    }
+    return rev;
+}
+```
+
+## 8.[字符串转换整数 (atoi)](https://leetcode-cn.com/problems/string-to-integer-atoi/)
+
+> 思路：
+
+```c
+int myAtoi(char * s){
+    long flag = 1;
+    long num = 0;
+    //int singleRes=0;
+    while(*s == ' ') {
+        s++;
+    }
+    if(*s=='-') {
+        flag=-1;
+        s++;
+    } else if (*s=='+') {
+        s++;
+        flag=1;
+    }
+
+     while(*s!='\0' && (*s<='9' && *s>='0')) {
+           if(num>INT_MAX/10 || (num==INT_MAX/10 && *s>'7')){//因为是从正数转化为负数，所以要都按正数溢出标准
+               if(flag==1) {
+                   return INT_MAX;
+               } else {
+                   return INT_MIN;
+               }
+           } else {
+               num=num*10+(*s-'0');
+               s++;    
+           }
+       }
+   if(flag==1) {
+       return num;
+   } else {
+       return -num;
+   }
+}
+```
+
+```c
+int myAtoi(char * s){
+int minusFlag = 0;
+    int length = strlen(s);
+    long int result = 0;
+    char numberBuffer[11];
+    int counter = 0;
+    while (s[counter] == ' ')
+    {
+        counter++;
+    }
+    s = &s[counter];
+    counter = 0;
+
+    for (int i = 0; i < length; i++)
+    {
+        if (i == 0)
+        {
+            if (s[0] == '-')
+            {
+                minusFlag = 1;
+                i++;
+            }
+            else if (s[0] == '+')
+            {
+                i++;
+            }
+        }
+        if (counter > 10)
+        {
+            if (minusFlag)
+            {
+                return __INT_MAX__ * -1 - 1;
+            }
+            else
+            {
+                return __INT_MAX__;
+            }
+        }
+
+        if (s[i] < '0' || s[i] > '9')
+        {
+            break;
+        }
+        if (counter == 0 && s[i] == '0')
+        {
+            continue;
+        }
+
+        numberBuffer[counter] = s[i];
+        counter++;
+    }
+
+    int i = 0;
+    while (counter > 0)
+    {
+        if (minusFlag)
+        {
+            result -= (numberBuffer[i] - '0') * pow(10.0, counter - 1);
+        }
+        else
+        {
+            result += (numberBuffer[i] - '0') * pow(10.0, counter - 1);
+        }
+        i++;
+        counter--;
+    }
+
+    if (result > __INT_MAX__)
+    {
+        return __INT_MAX__;
+    }
+    else if (result < __INT_MAX__ * -1 - 1)
+    {
+        return __INT_MAX__ * -1 - 1;
+    }
+    return result;
+}
+```
+
+## 9.[回文数](https://leetcode-cn.com/problems/palindrome-number/)
+
+> 思路：
+
+```c
+bool isPalindrome(int x)
+{
+    if (x < 0) {
+        return false;
+    }
+
+    int table[20] = {0};
+    int count = 0;
+    while (x) {
+        table[count++] = x % 10;
+        x = x / 10;
+        printf("x = %d\n", x);
+    }
+
+    for (int i = 0; i < count / 2; i++) {
+        if (table[i] != table[count - i - 1]) {
+            return false;
+        }
+    }
+    return true;
+}
+```
+
+```c
+bool isPalindrome(int x){
+if (x < 0 || (x % 10 == 0 && x != 0))
+    {
+        return false;
+    }
+
+    int revertedNumber = 0;
+    while (x > revertedNumber)
+    {
+        revertedNumber = revertedNumber * 10 + x % 10;
+        x /= 10;
+    }
+
+    return x == revertedNumber || x == revertedNumber / 10;
+}
+```
+
+## 11.[盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water/)
+
+> 思路：
+
+```c
+int maxArea(int* height, int heightSize)
+{
+    int left = 0;
+    int right = heightSize - 1;
+    int maxNum = 0;
+    while (left < right) {
+        int hMax = fmin(height[left], height[right]);
+        int tmp = hMax * (right - left);
+        maxNum = fmax(maxNum, tmp);
+        if (height[left] < height[right]) {
+            left++;
+        } else {
+            right--;
+        }
+    }
+    return maxNum;
+}
+```
+
+```c
+int maxArea(int* height, int heightSize)
+{
+    int left = 0;
+    int right = heightSize - 1;
+    int mArea = 0;
+    while (left < right) {
+        int h = fmin(height[left], height[right]);
+        int m = h * (right - left);
+        mArea = fmax(mArea, m);
+        if (height[left] < height[right]) {
+            left++;
+        } else {
+            right--;
+        }
+    }
+    return mArea;
+
+}
+```
+
+```c
+int maxArea(int* height, int heightSize){
+  // Start with maximum container width
+    int start = 0;
+    int end = heightSize - 1;
+    int res = 0;
+
+    while (start < end)
+    {
+        // Calculate current area by taking minimum of two heights
+        int currArea = (end - start) * fmin(height[start], height[end]);
+
+        if (currArea > res)
+            res = currArea;
+
+        if (height[start] < height[end])
+            start = start + 1;
+        else
+            end = end - 1;
+    }
+
+    return res;
+}
+```
+
+## 12.[整数转罗马数字](https://leetcode-cn.com/problems/integer-to-roman/)
+
+> 思路：
+
+```c
+const int values[] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+const char* symbols[] = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+
+char* intToRoman(int num)
+{
+    char* roman = malloc(sizeof(char) * 16);
+    roman[0] = '\0';
+    for (int i = 0; i < 13; i++) {
+        while (num >= values[i]) {
+            num -= values[i];
+            strcpy(roman + strlen(roman), symbols[i]);
+        }
+        if (num == 0) {
+            break;
+        }
+    }
+    return roman;
+}
+```
+
+
+```c
+char *getOne(char c)
+{
+    switch (c)
+    {
+    case '9':
+        return "IX";
+
+    case '8':
+        return "VIII";
+
+    case '7':
+        return "VII";
+
+    case '6':
+        return "VI";
+
+    case '5':
+        return "V";
+
+    case '4':
+        return "IV";
+
+    case '3':
+        return "III";
+
+    case '2':
+        return "II";
+
+    case '1':
+        return "I";
+
+    case '0':
+        return "";
+
+    default:
+        return NULL;
+    }
+}
+
+char *getTen(char c)
+{
+    switch (c)
+    {
+    case '9':
+        return "XC";
+
+    case '8':
+        return "LXXX";
+
+    case '7':
+        return "LXX";
+
+    case '6':
+        return "LX";
+
+    case '5':
+        return "L";
+
+    case '4':
+        return "XL";
+
+    case '3':
+        return "XXX";
+
+    case '2':
+        return "XX";
+
+    case '1':
+        return "X";
+
+    case '0':
+        return "";
+
+    default:
+        return NULL;
+    }
+}
+
+char *getHundred(char c)
+{
+    switch (c)
+    {
+    case '9':
+        return "CM";
+
+    case '8':
+        return "DCCC";
+
+    case '7':
+        return "DCC";
+
+    case '6':
+        return "DC";
+
+    case '5':
+        return "D";
+
+    case '4':
+        return "CD";
+
+    case '3':
+        return "CCC";
+
+    case '2':
+        return "CC";
+
+    case '1':
+        return "C";
+
+    case '0':
+        return "";
+
+    default:
+        return NULL;
+    }
+}
+
+char *getThousand(char c)
+{
+    switch (c)
+    {
+    case '3':
+        return "MMM";
+
+    case '2':
+        return "MM";
+
+    case '1':
+        return "M";
+
+    default:
+        return NULL;
+    }
+}
+
+char * intToRoman(int num){
+int length;
+    char number[5];
+    char *s = malloc(16 * sizeof(char));
+
+    sprintf(number, "%i", num);
+
+    length = strlen(number);
+
+    switch (length)
+    {
+    case 4:
+        sprintf(s, "%s%s%s%s", getThousand(number[0]), getHundred(number[1]),
+                getTen(number[2]), getOne(number[3]));
+        break;
+
+    case 3:
+        sprintf(s, "%s%s%s", getHundred(number[0]), getTen(number[1]),
+                getOne(number[2]));
+
+        break;
+
+    case 2:
+        sprintf(s, "%s%s", getTen(number[0]), getOne(number[1]));
+
+        break;
+
+    case 1:
+        s = getOne(number[0]);
+        break;
+
+    default:
+        break;
+    }
+    return s;
+}
+```
+
+## 13.[罗马数字转整数](https://leetcode-cn.com/problems/roman-to-integer/)
+
+> 思路：
+
+```c
+int romanToInt(char * s){
+int romanToInt = 0;
+    for (int i = 0; i < strlen(s); i++)
+    {
+        switch (s[i])
+        {
+        case 'I':
+            if (i + 1 < strlen(s))
+            {
+                if (s[i + 1] == 'V' || s[i + 1] == 'X')
+                {
+                    romanToInt -= 1;
+                    break;
+                }
+            }
+            romanToInt += 1;
+            break;
+        case 'V':
+            romanToInt += 5;
+            break;
+        case 'X':
+            if (i + 1 < strlen(s))
+            {
+                if (s[i + 1] == 'L' || s[i + 1] == 'C')
+                {
+                    romanToInt -= 10;
+                    break;
+                }
+            }
+            romanToInt += 10;
+            break;
+        case 'L':
+            romanToInt += 50;
+            break;
+        case 'C':
+            if (i + 1 < strlen(s))
+            {
+                if (s[i + 1] == 'D' || s[i + 1] == 'M')
+                {
+                    romanToInt -= 100;
+                    break;
+                }
+            }
+            romanToInt += 100;
+            break;
+        case 'D':
+            romanToInt += 500;
+            break;
+        case 'M':
+            romanToInt += 1000;
+            break;
+        default:
+            break;
+        }
+    }
+    return romanToInt;
+}
+```
+
+## 20.[有效的括号](https://leetcode-cn.com/problems/valid-parentheses/)
+
+> 思路：
+
+```c
+bool isValid(char * s){
+ int i, k = 0, len = strlen(s);
+    char *store = calloc(len, sizeof(char));
+
+    for (i = 0; s[i] != '\0'; i++)
+    {
+        switch (s[i])
+        {
+        case '(':
+        case '{':
+        case '[':
+            store[k++] = s[i];
+            break;
+        case ')':
+            if (k < 1 || store[--k] != '(')
+                goto out;
+            break;
+        case '}':
+            if (k < 1 || store[--k] != '{')
+                goto out;
+            break;
+        case ']':
+            if (k < 1 || store[--k] != '[')
+                goto out;
+            break;
+        }
+    }
+out:
+    free(store);
+    return s[i] == '\0' && k == 0;
+}
+```
+
+## 21.[合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
+
+> 思路：
+
+```c
+struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2)
+{
+
+    struct ListNode* head = NULL;
+    struct ListNode* tmp = NULL;
+
+    if (l1 == NULL) {
+        return l2;
+    }
+    if (l2 == NULL) {
+        return l1;
+    }
+
+    if (l1 != NULL && l2 != NULL) {
+        if (l1->val < l2->val) {
+            head = tmp = l1;
+            l1 = l1->next;
+        } else {
+            head = tmp = l2;
+            l2 = l2->next;
+        }
+
+        while (l1 && l2) {
+            if (l1->val < l2->val) {
+                tmp->next = l1;
+                l1 = l1->next;
+            } else {
+                tmp->next = l2;
+                l2 = l2->next;
+            }
+            tmp = tmp->next;
+        }
+
+        if (l1) {
+            tmp->next = l1;
+        }
+        if (l2) {
+            tmp->next = l2;
+        }
+        return head;
+    }
+
+    return NULL;
+}
+````
+
+```c
+struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
+    struct ListNode *list = NULL;
+    struct ListNode *tmp = NULL;
+
+    if (!l1)
+        return l2;
+    if (!l2)
+        return l1;
+
+    if (l1 && l2)
+    {
+        if (l1->val < l2->val)
+        {
+            list = tmp = l1;
+            l1 = l1->next;
+        }
+        else
+        {
+            list = tmp = l2;
+            l2 = l2->next;
+        }
+
+        while (l1 && l2)
+        {
+            if (l1->val < l2->val)
+            {
+                tmp->next = l1;
+                l1 = l1->next;
+            }
+            else
+            {
+                tmp->next = l2;
+                l2 = l2->next;
+            }
+            tmp = tmp->next;
+        }
+
+        if (l1)
+            tmp->next = l1;
+        if (l2)
+            tmp->next = l2;
+
+        return list;
+    }
+
+    return NULL;
+
+}
+ /* if (!list1)
+        return list2;
+    if (!list2)
+        return list1;
+    if (list1->val < list2->val)
+    {
+        list1->next = mergeTwoLists(list1->next, list2);
+        return list1;
+    }
+    else
+    {
+        list2->next = mergeTwoLists(list1, list2->next);
+        return list2;
+    } */
+```
+
+## 24.[两两交换链表中的节点](https://leetcode-cn.com/problems/swap-nodes-in-pairs/)
+
+> 思路：
+
+```c
+struct ListNode* swapPairs(struct ListNode* head)
+{
+    if (head == NULL || head->next == NULL) {
+        return head;
+    }
+    struct ListNode* first = head->next;
+    head->next = swapPairs(head->next->next);
+    first->next = head;
+    head = head->next;
+    return first;
+}
+```
+
+```c
+struct ListNode* swapPairs(struct ListNode* head){
+ if (!head || !head->next)
+        return head;
+    struct ListNode *tmp = head->next;
+    head->next = swapPairs(head->next->next);
+    tmp->next = head;
+    return tmp;
+}
+```
+
+## 26.[删除有序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)
+
+> 思路：
+
+```c
+int removeDuplicates(int* nums, int numsSize)
+{
+    if(numsSize == 0) {
+        return 0;
+    }
+    int fast = 1, low = 0;
+    while (fast < numsSize) {
+        if (nums[fast] != nums[low]) {
+            nums[low + 1] = nums[fast];
+            low++;
+        }
+        fast++;
+    }
+    return low + 1;
+}
+```
+
+
+```c
+int removeDuplicates(int* nums, int numsSize){
+    int count = 0, i;
+    for (i = 1; i < numsSize; i++)
+    {
+        if (nums[i] == nums[i - 1])
+            count++;
+        else
+            nums[i - count] = nums[i];
+    }
+    return numsSize - count;
+}
+```
+
+## 27.[移除元素](https://leetcode-cn.com/problems/remove-element/)
+
+> 思路：nums[start++] = nums[i];
+
+```c
+int removeElement(int* nums, int numsSize, int val){
+ int i, start = 0;
+    for (i = 0; i < numsSize; i++)
+    {
+        if (nums[i] != val) {
+            nums[start++] = nums[i];
+        }
+    }
+    return start;
+}
+```
+
+## 28.[实现 strStr()](https://leetcode-cn.com/problems/implement-strstr/)
+
+> 思路：
+
+```c
+int strStr(char * haystack, char * needle){
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    int hlen = 0;
+    int nlen = 0;
+
+    if (needle == NULL || *needle == 0)
+        return 0;
+
+    if (haystack == NULL || *haystack == 0)
+        return -1;
+
+    hlen = strlen(haystack);
+    nlen = strlen(needle);
+
+    if (hlen < nlen)
+        return -1;
+
+    for (i = 0; i <= hlen - nlen; i++)
+    {
+        j = 0;
+        if (haystack[i] != needle[j++])
+            continue;
+
+        k = i + 1;
+        for (; j < nlen; j++)
+        {
+            if (haystack[k] != needle[j])
+            {
+                break;
+            }
+            else
+                k++;
+        }
+        if (j == nlen)
+            return i;
+    }
+    return -1;
+}
+```
+
+## 29.[两数相除](https://leetcode-cn.com/problems/divide-two-integers/)
+
+> 思路：
+
+```c
+int divide(int dividend, int divisor)
+{
+ int cnt = 0;
+    int sign = 1;
+    if ((dividend ^ divisor) < 0) { // 两数任意一个为负数
+        sign = -1;
+    }
+    if (divisor == INT_MIN) { // 除数边界值特殊处理
+        if (dividend == INT_MIN) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+    if (dividend == INT_MIN) { // 被除数边界值特殊处理
+        if (divisor == -1) {
+            return INT_MAX;
+        } else if (divisor == 1) {
+            return INT_MIN;
+        }
+        dividend += abs(divisor); // 先执行一次加操作，避免abs转换溢出
+        cnt++;
+    } 
+    int a = abs(dividend);
+    int b = abs(divisor);
+    while (a >= b) {
+        int c = 1;
+        int s = b;
+        // 需指数级快速逼近，以避免执行超时
+        while (s < (a >> 1)) { // 逼近至一半，同时避免溢出
+            s += s;
+            c += c;
+        }
+        cnt += c;
+        a -= s;
+    }
+    return (sign == -1) ? -cnt : cnt;
+}
+```
+
+```c
+int divide(int dividend, int divisor){
+    int sign = 1;
+    long int output = 0;
+    
+    if (dividend < 0) {
+        sign *= -1;
+    } else {
+        dividend *= -1;
+    }
+
+    if (divisor < 0) {
+        sign *= -1;
+    } else {
+        divisor *= -1;
+    }
+    while (dividend <= divisor)
+    {
+        long int tmp = 0;
+        long int div = divisor;
+        while (dividend <= div) {
+            tmp += (tmp + 1);
+            dividend -= div;
+            div += div;
+        }
+        if (output >= INT_MAX) {
+            if (sign == -1) {
+                return INT_MIN;
+            } else {
+                return INT_MAX;
+            }
+        }
+        output += tmp;
+    }
+
+    return output * sign;
+}
+```
+
+## 35.[搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/)
+
+> 思路：
+
+```c
+int searchInsert(int* nums, int numsSize, int target)
+{
+    int left = 0;
+    int right = numsSize - 1;
+    int mid;
+    while (left <= right) {
+        // mid = (right + left) / 2;
+        mid = left + (right - left) / 2;
+        if (nums[mid] == target) {
+            return mid;
+        } else if (nums[mid] < target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return left;
+}
+```
+
+```c
+int searchInsert(int* nums, int numsSize, int target){
+  int idx = numsSize - 1;
+    if (numsSize > 0)
+    {
+        if (target > nums[idx])
+        {
+            return numsSize;
+        }
+        return searchInsert(nums, numsSize - 1, target);
+    }
+    return 0;
+}
+```
+
+## 38.[外观数列](https://leetcode-cn.com/problems/count-and-say/)
+
+> 思路：
+
+```c
+char * countAndSay(int n){
+    char *p = (char *)malloc(5000);
+    char *p1 = (char *)malloc(5000);
+    p[0] = '1';
+    p[1] = '\0';
+    for(int i = 1; i < n; ++i){
+        int x = 0;
+        for(int j = 0; p[j]; ++j){
+            int y = 1; //计数器
+            while (p[j+1] && p[j] == p[j+1]){
+                ++y;
+                ++j;
+            }
+            p1[x++] = y+48;
+            p1[x++] = p[j];
+        }
+        strcpy(p, p1);
+        p[x] = '\0';
+    }
+    return p;
+}
+```
+
+```c
+char * countAndSay(int n){
+ // Calculating the length of array
+    double result = 1.0;
+    for (int i = 0; i < n - 1; i++) {
+        result *= 1.4;
+    }
+
+    int k, j, count, convert = (int)result;
+
+    // Creating array with the length calculated above
+    char *arr = malloc(convert + 4);
+    arr[0] = '1';
+    arr[1] = '\0';
+
+    for (int i = 2, length; i <= n; i++) {
+        length = strlen(arr);
+        char newArr[length * 2];
+        strcpy(newArr, arr);
+
+        k = 0;
+        j = 0;
+        count = 1;
+
+        while (newArr[j] != '\0') {
+            if (newArr[j] == newArr[j + 1]) {
+                count++;
+                j++;
+            } else {
+                arr[k] = (48 + count);
+                arr[k + 1] = newArr[j];
+                arr[k + 2] = '\0';
+                j++;
+                k += 2;
+                count = 1;
+            }
+        }
+    }
+
+    return arr;
+}
+```
+
+
+## 53.[最大子数组和](https://leetcode-cn.com/problems/maximum-subarray/)
+
+> 思路：累加？
+
+```c
+int maxcmp(int a, int b)
+{
+    return a >= b ? a : b;
+}
+int maxSubArray(int* nums, int numsSize){
+    int maxSoFar = nums[0];
+    int maxEndingHere = nums[0];
+    for (int i = 1; i < numsSize; i++) {
+        maxEndingHere = maxcmp(maxEndingHere + nums[i], nums[i]);
+        maxSoFar = maxcmp(maxSoFar, maxEndingHere);
+    }
+    return maxSoFar;
+}
+```
+
+## 66.[加一](https://leetcode-cn.com/problems/plus-one/)
+
+> 思路：
+
+```c
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+int *plusOne(int *digits, int digitsSize, int *returnSize)
+{
+    for (int i = digitsSize - 1; i >= 0; i--) {
+        if (digits[i] < 9) {
+            digits[i]++;
+            *returnSize = digitsSize;
+            return digits;
+        } else {
+            digits[i] = 0;
+        }
+    }
+    
+    int* newdigit = (int *)malloc(sizeof(int) * (digitsSize + 1));
+    newdigit[0] = 1;
+    for (int i = 1; i < (digitsSize + 1); i++) {
+        newdigit[i] = digits[i-1];
+    }
+    *returnSize = digitsSize + 1;
+    return newdigit;
+}
+```
+
+```c
+int* plusOne(int* digits, int digitsSize, int* returnSize){
+   *returnSize = digitsSize;
+   digits[digitsSize - 1] += 1;
+   int carry = digits[digitsSize - 1] / 10;
+   for (int i = digitsSize - 1; i >= 0; i--) {
+       digits[i] =  (carry + digits[i]) % 10;
+       int t = carry;
+       carry = (carry + digits[i]) / 10;
+       printf("carry = %d\n", carry);
+       
+       
+   }
+   if (carry == 1) {
+       *returnSize = digitsSize + 1;
+       int *res = malloc(sizeof(int) * (*returnSize));
+       res[0] = 1;
+       for (int i = 0; i < digitsSize; i++) {
+           res[i+1] = digits[i];
+       }
+       return res;
+   }
+   return digits;
+}
+```
+
+## 82.[删除排序链表中的重复元素 II](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/)
+
+> 思路：
+
+```c
+struct ListNode* deleteDuplicates(struct ListNode* head){
+   /*  if (head == NULL) {
+        return NULL;
+    }
+
+    if (head->next && head->val == head->next->val) {
+        while (head->next && head->val == head->next->val) {
+            head = head->next;
+        }
+        return deleteDuplicates(head->next);
+    } else {
+        head->next = deleteDuplicates(head->next);
+    }
+    return head; */
+     if (head == NULL)
+        return NULL;
+
+    if (head->next && head->val == head->next->val) {
+        /* Remove all duplicate numbers */
+        while (head->next && head->val == head->next->val) {
+            head = head->next;
+        }
+        return deleteDuplicates(head->next);
+    } else {
+        head->next = deleteDuplicates(head->next);
+    }
+    return head;
+
+}
+```
+
+## 83.[删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/)
+
+> 思路：
+
+```c
+/* struct ListNode* deleteDuplicates(struct ListNode* head){
+    if (head == NULL) {
+        return NULL;
+    }
+    int table[201] = {0};
+    struct ListNode* cur = head;
+    table[cur->val + 100] = 1;
+    while (cur != NULL && cur->next) {
+        if (table[cur->next->val + 100] == 1) {
+            if (cur->next->next != NULL) {
+                cur->next = cur->next->next;
+                continue;
+            } else {
+                cur->next = NULL;
+                break;
+            }
+        } else {
+            table[cur->next->val + 100] = 1;
+        }
+
+        cur = cur->next;
+    }
+    return head;
+
+} */
+
+struct ListNode* deleteDuplicates(struct ListNode* head)
+{
+    struct ListNode* cur = head;
+    while (cur && cur->next) {
+        if (cur->val == cur->next->val) {
+            cur->next = cur->next->next;
+        } else {
+            cur = cur->next;
+        }
+    }
+    return head;
+}
+```
+
+```c
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     struct ListNode *next;
+ * };
+ */
+
+struct ListNode* deleteDuplicates(struct ListNode* head)
+{
+    if(head==NULL)
+    {
+        return NULL;
+    }
+    else
+    {
+        struct ListNode* s = head;
+        struct ListNode* t = head->next;
+        while(t!=NULL)
+        {
+            if(s->val==t->val)
+            {
+                struct ListNode* y;
+                y=s->next;
+                s->next=t->next;
+                t=y->next;
+                free(y);
+            }
+            else
+            {
+                s=s->next;
+                t=t->next;
+            }
+        }
+    }
+    return head;
+}
+```
+
+## 84.[柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/)
+
+> 思路：
+
+```c
+int largestRectangleArea(int* heights, int heightsSize){
+/*     int *data = (int*)malloc(sizeof(int) * (heightsSize + 2));
+    int *stack = (int*)malloc(sizeof(int) * (heightsSize + 2));
+
+    //给heights前后+0，成新数组data
+    data[0] = 0;
+    for (int i = 1; i <= heightsSize; i++) {
+        data[i] = heights[i - 1];
+    }
+    data[heightsSize + 1] = 0;
+
+    int j = 0, area = 0;
+    stack[j] = 0;
+    for (int i = 1; i <= heightsSize + 1; i++) {
+        while (j > 0 && data[stack[j]] >= data[i]) {
+            int sidx = stack[j - 1];
+            int h = data[stack[j]];
+            //area = fmax(area, data[stack[top]] * (i - stack[top - 1] - 1));
+            area = fmax(area, h * (i - sidx  - 1));
+            j--;
+        }
+
+        stack[++j] = i;
+    }
+
+    return area; */
+
+
+  int* stack = (int*)malloc(sizeof(int) * (heightsSize + 2));
+    int* nheights = (int*)malloc(sizeof(int) * (heightsSize + 2));
+
+    for (int i = 0; i < heightsSize; i++) {
+        nheights[i+1] = heights[i];
+    }
+    nheights[0] = 0;
+    nheights[heightsSize + 1] = 0;
+
+    int maxArea = 0;
+    int top = 0;
+    stack[top] = 0;
+    for (int i = 1; i <= heightsSize + 1; i++) {
+        while (top > 0 && nheights[stack[top]] >= nheights[i]) {
+            int h = nheights[stack[top]];
+            int s = stack[top - 1];
+			int area =  nheights[stack[top]] * (i - s -1);
+            maxArea = fmax(maxArea, area);
+            top--;
+        }
+        top++;
+        stack[top] = i;
+
+    }
+    return maxArea; 
+}
+```
+
+```c
+void showIntArr(const char *brief, int *arr, uint32_t nums) {
+    printf("%s:", brief);
+    for (uint32_t i = 0; i < nums; i++) {
+        printf("%d ",arr[i]);
+    }
+    printf("\n");
+
+    return;
+}
+
+int largestRectangleArea(int* heights, int heightsSize){
+    int *stack = (int *)malloc(sizeof(int) * (heightsSize + 1));
+    uint32_t stackIdx = 0;
+
+    int maxAns = 0;
+    int tmpAns = 0;
+    int high = 0;
+    int wide = 0;
+    stack[stackIdx++] = -1;
+    for (uint32_t i = 0; i < heightsSize; i++) {
+        //showIntArr("stack", stack, stackIdx);
+        if (stackIdx == 1) {  /* 单调栈为空 */
+            stack[stackIdx++] = i;
+            continue;
+        }
+
+        // printf("stackIdx - 1 [%d]\n", stackIdx - 1);
+        if (heights[i] >= heights[stack[stackIdx - 1]]) {
+            stack[stackIdx++] = i;
+            continue;
+        }
+
+        while ((stackIdx > 1) && heights[i] < heights[stack[stackIdx - 1]]) {  /* 遍历到的元素小于栈顶元素 */
+            high = heights[stack[stackIdx - 1]];
+            stackIdx--;
+            wide = i - stack[stackIdx - 1] - 1;
+            tmpAns = high * wide;
+            //printf("i[%u] high[%d] wide[%d]\n", i, high, wide);
+            if (tmpAns > maxAns) {
+                maxAns = tmpAns;
+            }
+        }
+        stack[stackIdx++] = i;
+    }
+
+    while (stackIdx > 1) {
+        high = heights[stack[stackIdx - 1]];
+        stackIdx--;
+        wide = heightsSize - stack[stackIdx - 1] - 1;
+        tmpAns = high * wide;
+        //printf("ele[%d] high[%d] wide[%d]\n", heightsSize, high, wide);
+        if (tmpAns > maxAns) {
+            maxAns = tmpAns;
+        }
+    }
+
+    return maxAns;
+}
+```
+
+## 94.[二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)
+
+> 思路：
+
+```c
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     struct TreeNode *left;
+ *     struct TreeNode *right;
+ * };
+ */
+
+void processTraversal(struct TreeNode* root, int* res, int* size)
+{
+    if (!root) {
+        return;
+    }
+
+    processTraversal(root->left, res, size);
+    res[*size] = root->val;
+    *size += 1;
+    processTraversal(root->right, res, size);
+}
+
+int* inorderTraversal(struct TreeNode* root, int* returnSize){
+    int* res = malloc(sizeof(int) * 256);
+    *returnSize = 0;
+
+    processTraversal(root, res, returnSize);
+    return res;
+}
+```
+
+## 101.[对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/)
+
+> 思路：
+
+```c
+bool checkSymmetric(struct TreeNode *left, struct TreeNode *right)
+{
+    if (!left || !right)
+        return left == right;
+    if (left->val != right->val)
+        return 0;
+    return checkSymmetric(left->left, right->right) &&
+           checkSymmetric(left->right, right->left);
+}
+
+bool isSymmetric(struct TreeNode *root)
+{
+    return root == NULL || checkSymmetric(root->left, root->right);
+}
+```
+
+## 104.[二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)
+
+> 思路：求树深度递归 return 1 + maxval(maxDepth(root->left), maxDepth
+
+```c
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     struct TreeNode *left;
+ *     struct TreeNode *right;
+ * };
+ */
+int maxval(int a, int b)
+{
+    return a > b ? a : b;
+}
+
+int maxDepth(struct TreeNode *root)
+{
+    if (root == NULL) {
+        return 0;
+    }
+    return 1 + maxval(maxDepth(root->left), maxDepth(root->right));
+}
+```
+
+```c
+int max(int a, int b)
+{
+    return a >= b ? a : b;
+}
+
+int height(struct TreeNode* root)
+{
+    if (root == NULL) {
+        return 1;
+    }
+    return 1 + max(height(root->left), height(root->right));
+}
+
+int maxDepth(struct TreeNode* root){
+    if (root == NULL) {
+        return 0;
+    }
+    int left = height(root->left);
+    int right = height(root->right);
+    return fmax(left, right);
+}
+```
+
+## 108.[将有序数组转换为二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/)
+
+> 思路：
+
+```c
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     struct TreeNode *left;
+ *     struct TreeNode *right;
+ * };
+ */
+struct TreeNode* convertBST(int* nums, int left, int right)
+{
+    if (left > right) {
+        return NULL;
+    } else {
+        int mid = (right + left) / 2;
+        struct TreeNode* new_val = malloc(sizeof(struct TreeNode));
+        new_val->val = nums[mid];
+        new_val->left = convertBST(nums, left, mid - 1);
+        new_val->right = convertBST(nums, mid + 1, right);
+        return new_val;
+    }
+}
+
+struct TreeNode* sortedArrayToBST(int* nums, int numsSize){
+    if (numsSize == 0) {
+        return NULL;
+    }
+    return convertBST(nums, 0, numsSize - 1);
+}
+```
+
+
+## 109.[有序链表转换二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-list-to-binary-search-tree/)
+
+> 思路：
+
+```c
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     struct ListNode *next;
+ * };
+ */
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     struct TreeNode *left;
+ *     struct TreeNode *right;
+ * };
+ */
+
+struct TreeNode* buildBST(struct ListNode* head, struct ListNode* tail)
+{
+    if (head == tail) {
+        return NULL;
+    }
+    struct ListNode* slow = head;
+    struct ListNode* fast = head;
+    while (fast != tail && fast->next != tail) {
+        fast = fast->next->next;
+        slow = slow->next;
+    }
+    //struct TreeNode* node = (struct TreeNode)malloc(sizeof(struct TreeNode));
+    struct TreeNode *node = malloc(sizeof(struct TreeNode));
+    node->val = slow->val;
+    node->left = buildBST(head, slow);
+    node->right = buildBST(slow->next, tail);
+    return node;
+
+}
+
+struct TreeNode* sortedListToBST(struct ListNode* head){
+    if (!head) {
+        return NULL;
+    }
+    return buildBST(head, NULL);
+}
+```
+
+
+## 110.[平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/)
+
+> 思路：分别求左右子树的深度height，比较左右深度差值。
+
+```c
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     struct TreeNode *left;
+ *     struct TreeNode *right;
+ * };
+ */
+
+int max(int a, int b)
+{
+    return a >= b ? a : b;
+}
+
+int height(struct TreeNode* root)
+{
+    if (root == NULL) {
+        return  0;
+    } else {
+        return 1 + max(height(root->left), height(root->right));
+    }
+}
+
+bool isBalanced(struct TreeNode* root){
+
+    if (root == NULL) {
+        return 1;
+    }
+
+    int left = height(root->left);
+    int right = height(root->right);
+    return abs(left - right) <= 1 && isBalanced(root->left) && isBalanced(root->right);
+}
+```
+
+
+
+
+
+
+
+
 
 ## 112.[ 路径总和](https://leetcode-cn.com/problems/path-sum/submissions/)
 
