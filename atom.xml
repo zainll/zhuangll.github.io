@@ -49,7 +49,7 @@
     <updated>2022-01-31T16:53:53.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;1207, 876, 701, 674, 367， 231  206 201  189  160 125   121&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;1207, 876, 701, 674, 367， 231  206 201  189  160 125   121   110   109  108  104  101  94  66   53   38  29&lt;br&gt;28   27  &lt;/p&gt;</summary>
     
     
     
@@ -225,6 +225,29 @@
   </entry>
   
   <entry>
+    <title>WSL</title>
+    <link href="http://example.com/2021/10/27/WSL/"/>
+    <id>http://example.com/2021/10/27/WSL/</id>
+    <published>2021-10-26T16:47:53.000Z</published>
+    <updated>2021-10-26T16:53:53.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;安装ubuntu20-04&quot;&gt;&lt;a href=&quot;#安装ubuntu20-04&quot; class=&quot;headerlink&quot; title=&quot;安装ubuntu20.04&quot;&gt;&lt;/a&gt;安装ubuntu20.04&lt;/h2&gt;&lt;p&gt;安装到非系统盘目录，下载离线安装包，复制到想要安装的目录下，解压，以管理员身份运行ubuntu2004.exe&lt;/p&gt;
+&lt;h2 id=&quot;卸载wsl&quot;&gt;&lt;a href=&quot;#卸载wsl&quot; class=&quot;headerlink&quot; title=&quot;卸载wsl&quot;&gt;&lt;/a&gt;卸载wsl&lt;/h2&gt;&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wslconfig /l&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 从列表中选择要卸载的发行版（例如Ubuntu）并键入命令&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;wslconfig /u Ubuntu&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;参考链接：&lt;a href=&quot;https://blog.csdn.net/zhangpeterx/article/details/97616268&quot;&gt;WSL系列操作：安装，卸载&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tool" scheme="http://example.com/categories/tool/"/>
+    
+    
+    <category term="实用教程" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="Another Tag" scheme="http://example.com/tags/Another-Tag/"/>
+    
+  </entry>
+  
+  <entry>
     <title>书单&amp;电影</title>
     <link href="http://example.com/2021/10/27/%E4%B9%A6%E5%8D%95/"/>
     <id>http://example.com/2021/10/27/%E4%B9%A6%E5%8D%95/</id>
@@ -251,29 +274,6 @@
 &lt;li&gt;&lt;p&gt;软件故事&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="tool" scheme="http://example.com/categories/tool/"/>
-    
-    
-    <category term="实用教程" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"/>
-    
-    <category term="Another Tag" scheme="http://example.com/tags/Another-Tag/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>WSL</title>
-    <link href="http://example.com/2021/10/27/WSL/"/>
-    <id>http://example.com/2021/10/27/WSL/</id>
-    <published>2021-10-26T16:47:53.000Z</published>
-    <updated>2021-10-26T16:53:53.000Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;安装ubuntu20-04&quot;&gt;&lt;a href=&quot;#安装ubuntu20-04&quot; class=&quot;headerlink&quot; title=&quot;安装ubuntu20.04&quot;&gt;&lt;/a&gt;安装ubuntu20.04&lt;/h2&gt;&lt;p&gt;安装到非系统盘目录，下载离线安装包，复制到想要安装的目录下，解压，以管理员身份运行ubuntu2004.exe&lt;/p&gt;
-&lt;h2 id=&quot;卸载wsl&quot;&gt;&lt;a href=&quot;#卸载wsl&quot; class=&quot;headerlink&quot; title=&quot;卸载wsl&quot;&gt;&lt;/a&gt;卸载wsl&lt;/h2&gt;&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wslconfig /l&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 从列表中选择要卸载的发行版（例如Ubuntu）并键入命令&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;wslconfig /u Ubuntu&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;参考链接：&lt;a href=&quot;https://blog.csdn.net/zhangpeterx/article/details/97616268&quot;&gt;WSL系列操作：安装，卸载&lt;/a&gt;&lt;/p&gt;</summary>
     
     
     
