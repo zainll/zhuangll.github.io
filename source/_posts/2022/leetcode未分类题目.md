@@ -9,13 +9,33 @@ tags:
     - Another Tag
 ---
 
-1207, 876, 701, 674, 367， 231  206 201  189  160 125   121   110   109  108  104  101  94  66   53   38  29
-28   27  24 20  13  12 11   8  7   6   4   3  
+[toc]
+
+- 牛人博客
+https://programmercarl.com/
+https://mp.weixin.qq.com/s/AWsL7G89RtaHyHjRPNJENA
 
 
 <!--more-->
 
-## 1.[两数之和](https://leetcode-cn.com/problems/two-sum/)
+## 剑指offer II
+
+```c
+
+```
+
+
+## leetcode基础题目
+
+
+ 876,  674,   125   101   29   27  
+
+
+
+[3.无重复字符的最长子串](#3)  &emsp;&emsp;
+[4.](#4) &emsp;&emsp;[6.](#6) &emsp;&emsp;  [7.](#7) &emsp;&emsp;  [8.](#8) &emsp;&emsp; [9.](#9) &emsp;&emsp; [11.](#11) &emsp;&emsp; [12.](#12) &emsp;&emsp; [13.](#13) &emsp;&emsp; [21.](#21) &emsp;&emsp; [24.](#24) &emsp;&emsp; [28.](#28) &emsp;&emsp; [38.](#38) &emsp;&emsp; [53.](#53) &emsp;&emsp; [66.](#66) &emsp;&emsp; [82.](#82) &emsp;&emsp; [94.](#94) &emsp;&emsp; [104.](#104) &emsp;&emsp; [108.](#108) &emsp;&emsp; [109.](#109) &emsp;&emsp; [110.](#110) &emsp;&emsp; [112.](#112) &emsp;&emsp; [121.](#121) &emsp;&emsp; [136.](#136) &emsp;&emsp; [142.](#142) &emsp;&emsp; [160.](#160) &emsp;&emsp; [169.](#169) &emsp;&emsp; [173.](#173) &emsp;&emsp; [189.](#189) &emsp;&emsp; [201.](#201) &emsp;&emsp; [203.](#203) &emsp;&emsp; [206.](#206) &emsp;&emsp; [217.](#217) &emsp;&emsp; [226.](#226) &emsp;&emsp; [231.](#231) &emsp;&emsp; [234.](#234) &emsp;&emsp; [367.](#367) &emsp;&emsp; [389.](#389) &emsp;&emsp; [442.](#442) &emsp;&emsp; [476.](#476) &emsp;&emsp; [617.](#617) &emsp;&emsp; [701.](#701) &emsp;&emsp; [938.](#938) &emsp;&emsp; [1089.](#1089) &emsp;&emsp; [1207.](#1207)
+
+### 1.[两数之和](https://leetcode-cn.com/problems/two-sum/)
 
 > 思路：
 
@@ -38,7 +58,7 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize){
 }
 ```
 
-## 2.[两数相加](https://leetcode-cn.com/problems/add-two-numbers/)
+### 2.[两数相加](https://leetcode-cn.com/problems/add-two-numbers/)
 
 > 思路：
 
@@ -77,7 +97,8 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
 }
 ```
 
-## 3.[无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
+### <span id="3">3</span>.[无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
+
 
 > 思路：
 
@@ -105,7 +126,7 @@ int lengthOfLongestSubstring(char * s){
 }
 ```
 
-## 4.[寻找两个正序数组的中位数](https://leetcode-cn.com/problems/median-of-two-sorted-arrays/)
+### <span id="4">4</span>.[寻找两个正序数组的中位数](https://leetcode-cn.com/problems/median-of-two-sorted-arrays/)
 
 > 思路：
 
@@ -136,7 +157,7 @@ double findMedianSortedArrays(int* nums1, int nums1Size, int* nums2, int nums2Si
 }
 ```
 
-## 6.[Z 字形变换](https://leetcode-cn.com/problems/zigzag-conversion/)
+### <span id="6">6</span>.[Z 字形变换](https://leetcode-cn.com/problems/zigzag-conversion/)
 
 > 思路：
 
@@ -194,7 +215,7 @@ char * convert(char * s, int numRows){
 }
 ```
 
-## 7.[整数反转](https://leetcode-cn.com/problems/reverse-integer/)
+### <span id="7">7</span>.[整数反转](https://leetcode-cn.com/problems/reverse-integer/)
 
 > 思路：
 
@@ -214,7 +235,7 @@ int reverse(int x){
 }
 ```
 
-## 8.[字符串转换整数 (atoi)](https://leetcode-cn.com/problems/string-to-integer-atoi/)
+### <span id="8">8</span>.[字符串转换整数 (atoi)](https://leetcode-cn.com/problems/string-to-integer-atoi/)
 
 > 思路：
 
@@ -334,7 +355,7 @@ int minusFlag = 0;
 }
 ```
 
-## 9.[回文数](https://leetcode-cn.com/problems/palindrome-number/)
+### <span id="9">9</span>.[回文数](https://leetcode-cn.com/problems/palindrome-number/)
 
 > 思路：
 
@@ -380,7 +401,7 @@ if (x < 0 || (x % 10 == 0 && x != 0))
 }
 ```
 
-## 11.[盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water/)
+### <span id="11">11</span>.[盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water/)
 
 > 思路：
 
@@ -450,7 +471,7 @@ int maxArea(int* height, int heightSize){
 }
 ```
 
-## 12.[整数转罗马数字](https://leetcode-cn.com/problems/integer-to-roman/)
+### <span id="12">12</span>.[整数转罗马数字](https://leetcode-cn.com/problems/integer-to-roman/)
 
 > 思路：
 
@@ -650,7 +671,7 @@ int length;
 }
 ```
 
-## 13.[罗马数字转整数](https://leetcode-cn.com/problems/roman-to-integer/)
+### <span id="13">13</span>.[罗马数字转整数](https://leetcode-cn.com/problems/roman-to-integer/)
 
 > 思路：
 
@@ -714,7 +735,7 @@ int romanToInt = 0;
 }
 ```
 
-## 20.[有效的括号](https://leetcode-cn.com/problems/valid-parentheses/)
+### <span id="20">20</span>.[有效的括号](https://leetcode-cn.com/problems/valid-parentheses/)
 
 > 思路：
 
@@ -752,7 +773,7 @@ out:
 }
 ```
 
-## 21.[合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
+### <span id="21">21</span>.[合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
 
 > 思路：
 
@@ -868,7 +889,7 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
     } */
 ```
 
-## 24.[两两交换链表中的节点](https://leetcode-cn.com/problems/swap-nodes-in-pairs/)
+### <span id="24">24</span>.[两两交换链表中的节点](https://leetcode-cn.com/problems/swap-nodes-in-pairs/)
 
 > 思路：
 
@@ -897,7 +918,7 @@ struct ListNode* swapPairs(struct ListNode* head){
 }
 ```
 
-## 26.[删除有序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)
+### 26.[删除有序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)
 
 > 思路：
 
@@ -934,7 +955,7 @@ int removeDuplicates(int* nums, int numsSize){
 }
 ```
 
-## 27.[移除元素](https://leetcode-cn.com/problems/remove-element/)
+### 27.[移除元素](https://leetcode-cn.com/problems/remove-element/)
 
 > 思路：nums[start++] = nums[i];
 
@@ -951,7 +972,7 @@ int removeElement(int* nums, int numsSize, int val){
 }
 ```
 
-## 28.[实现 strStr()](https://leetcode-cn.com/problems/implement-strstr/)
+### <span id="28">28</span>.[实现 strStr()](https://leetcode-cn.com/problems/implement-strstr/)
 
 > 思路：
 
@@ -998,7 +1019,7 @@ int strStr(char * haystack, char * needle){
 }
 ```
 
-## 29.[两数相除](https://leetcode-cn.com/problems/divide-two-integers/)
+### 29.[两数相除](https://leetcode-cn.com/problems/divide-two-integers/)
 
 > 思路：
 
@@ -1082,7 +1103,7 @@ int divide(int dividend, int divisor){
 }
 ```
 
-## 35.[搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/)
+### 35.[搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/)
 
 > 思路：
 
@@ -1122,7 +1143,7 @@ int searchInsert(int* nums, int numsSize, int target){
 }
 ```
 
-## 38.[外观数列](https://leetcode-cn.com/problems/count-and-say/)
+### <span id="38">38</span>.[外观数列](https://leetcode-cn.com/problems/count-and-say/)
 
 > 思路：
 
@@ -1194,7 +1215,7 @@ char * countAndSay(int n){
 ```
 
 
-## 53.[最大子数组和](https://leetcode-cn.com/problems/maximum-subarray/)
+### <span id="53">53</span>.[最大子数组和](https://leetcode-cn.com/problems/maximum-subarray/)
 
 > 思路：累加？
 
@@ -1214,7 +1235,7 @@ int maxSubArray(int* nums, int numsSize){
 }
 ```
 
-## 66.[加一](https://leetcode-cn.com/problems/plus-one/)
+### <span id="66">66</span>.[加一](https://leetcode-cn.com/problems/plus-one/)
 
 > 思路：
 
@@ -1270,7 +1291,7 @@ int* plusOne(int* digits, int digitsSize, int* returnSize){
 }
 ```
 
-## 82.[删除排序链表中的重复元素 II](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/)
+### <span id="82">82</span>.[删除排序链表中的重复元素 II](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/)
 
 > 思路：
 
@@ -1306,7 +1327,7 @@ struct ListNode* deleteDuplicates(struct ListNode* head){
 }
 ```
 
-## 83.[删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/)
+### 83.[删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/)
 
 > 思路：
 
@@ -1391,7 +1412,7 @@ struct ListNode* deleteDuplicates(struct ListNode* head)
 }
 ```
 
-## 84.[柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/)
+### 84.[柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/)
 
 > 思路：
 
@@ -1513,7 +1534,7 @@ int largestRectangleArea(int* heights, int heightsSize){
 }
 ```
 
-## 94.[二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)
+### <span id="94">94</span>.[二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)
 
 > 思路：
 
@@ -1548,7 +1569,7 @@ int* inorderTraversal(struct TreeNode* root, int* returnSize){
 }
 ```
 
-## 101.[对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/)
+### 101.[对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/)
 
 > 思路：
 
@@ -1569,7 +1590,7 @@ bool isSymmetric(struct TreeNode *root)
 }
 ```
 
-## 104.[二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)
+### <span id="104">104</span>.[二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)
 
 > 思路：求树深度递归 return 1 + maxval(maxDepth(root->left), maxDepth
 
@@ -1620,7 +1641,7 @@ int maxDepth(struct TreeNode* root){
 }
 ```
 
-## 108.[将有序数组转换为二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/)
+### <span id="108">108</span>.[将有序数组转换为二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/)
 
 > 思路：
 
@@ -1656,7 +1677,7 @@ struct TreeNode* sortedArrayToBST(int* nums, int numsSize){
 ```
 
 
-## 109.[有序链表转换二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-list-to-binary-search-tree/)
+### <span id="109">109</span>.[有序链表转换二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-list-to-binary-search-tree/)
 
 > 思路：
 
@@ -1706,7 +1727,7 @@ struct TreeNode* sortedListToBST(struct ListNode* head){
 ```
 
 
-## 110.[平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/)
+### <span id="110">110</span>.[平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/)
 
 > 思路：分别求左右子树的深度height，比较左右深度差值。
 
@@ -1747,14 +1768,7 @@ bool isBalanced(struct TreeNode* root){
 ```
 
 
-
-
-
-
-
-
-
-## 112.[ 路径总和](https://leetcode-cn.com/problems/path-sum/submissions/)
+### <span id="112">112</span>.[ 路径总和](https://leetcode-cn.com/problems/path-sum/submissions/)
 
 > 思路：递归：递归出口； 注意书判空
 
@@ -1772,7 +1786,7 @@ bool hasPathSum(struct TreeNode* root, int targetSum){
 }
 ```
 
-## 121.[买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
+### <span id="121">121</span>.[买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
 
 > 思路：股票是连续收益的 maxcmp(0, maxCur + prices[i] - prices[i - 1])
 
@@ -1793,7 +1807,7 @@ int maxProfit(int* prices, int pricesSize){
 }
 ```
 
-## 125.[验证回文串](https://leetcode-cn.com/problems/valid-palindrome/)
+### 125.[验证回文串](https://leetcode-cn.com/problems/valid-palindrome/)
 
 > 思路：判断是否是字母和数字，库函数 isalnum; 注意库函数 isalpha 为判断是否为字母。
 
@@ -1822,9 +1836,7 @@ bool isPalindrome(char * s){
 }
 ```
 
-
-
-## 136.[只出现一次的数字](https://leetcode-cn.com/problems/single-number/)
+### <span id="136">136</span>.[只出现一次的数字](https://leetcode-cn.com/problems/single-number/)
 
 > 思路：n ^ n = 0 一个数与自己异或为 0
 
@@ -1839,7 +1851,7 @@ int singleNumber(int* nums, int numsSize){
 }
 ```
 
-## 141.[环形链表](https://leetcode-cn.com/problems/linked-list-cycle/)
+### 141.[环形链表](https://leetcode-cn.com/problems/linked-list-cycle/)
 
 > 思路：快慢双指针
 
@@ -1858,7 +1870,7 @@ bool hasCycle(struct ListNode *head) {
 }
 ```
 
-## 142.[环形链表 II](https://leetcode-cn.com/problems/linked-list-cycle-ii/)
+### <span id="142">142</span>.[环形链表 II](https://leetcode-cn.com/problems/linked-list-cycle-ii/)
 
 > 思路：快慢双指针
 
@@ -1884,7 +1896,7 @@ struct ListNode *detectCycle(struct ListNode *head) {
 }
 ```
 
-## 153.[寻找旋转排序数组中的最小值](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/)
+### 153.[寻找旋转排序数组中的最小值](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/)
 
 > 思路：二分查找
 
@@ -1917,7 +1929,7 @@ int findMin(int* nums, int numsSize){
 }
 ```
 
-## 160.[相交链表](https://leetcode-cn.com/problemset/all/?page=1&search=160)
+### <span id="160">160</span>.[相交链表](https://leetcode-cn.com/problemset/all/?page=1&search=160)
 
 > 思路：
 一、
@@ -1947,7 +1959,7 @@ struct ListNode *getIntersectionNode(struct ListNode *headA, struct ListNode *he
 ```
 
 
-## 169.[多数元素](https://leetcode-cn.com/problems/majority-element/)
+### <span id="169">169</span>.[多数元素](https://leetcode-cn.com/problems/majority-element/)
 
 > 思路：选定一个主元素，计数器
 
@@ -1970,7 +1982,7 @@ int majorityElement(int* nums, int numsSize){
 ```
 
 
-## 173.[二叉搜索树迭代器](https://leetcode-cn.com/problems/binary-search-tree-iterator/)
+### <span id="173">173</span>.[二叉搜索树迭代器](https://leetcode-cn.com/problems/binary-search-tree-iterator/)
 
 > 思路：
 
@@ -2025,7 +2037,7 @@ void bSTIteratorFree(BSTIterator* obj) {
 }
 ```
 
-## 189.[轮转数组](https://leetcode-cn.com/problems/rotate-array/)
+### <span id="189">189</span>.[轮转数组](https://leetcode-cn.com/problems/rotate-array/)
 
 > 思路：
 一、每次移动一个数
@@ -2126,7 +2138,7 @@ void rotate(int* nums, int numsSize, int k){
 } */ 
 ```
 
-## 190.[颠倒二进制位](https://leetcode-cn.com/problems/reverse-bits/submissions/)
+### 190.[颠倒二进制位](https://leetcode-cn.com/problems/reverse-bits/submissions/)
 
 > 思路：32位，
 
@@ -2144,7 +2156,7 @@ uint32_t reverseBits(uint32_t n) {
 }
 ```
 
-## 191.[位1的个数](https://leetcode-cn.com/problems/number-of-1-bits/submissions/)
+### 191.[位1的个数](https://leetcode-cn.com/problems/number-of-1-bits/submissions/)
 
 > 思路：n & 0x1
 
@@ -2162,7 +2174,7 @@ int hammingWeight(uint32_t n) {
 }
 ```
 
-## 201.[数字范围按位与](https://leetcode-cn.com/problems/bitwise-and-of-numbers-range/)
+### <span id="201">201</span>.[数字范围按位与](https://leetcode-cn.com/problems/bitwise-and-of-numbers-range/)
 
 > 思路：n & (n - 1) 去除n最高位的1
 
@@ -2175,7 +2187,7 @@ int rangeBitwiseAnd(int left, int right){
 }
 ```
 
-## 203.[移除链表元素](https://leetcode-cn.com/problems/remove-linked-list-elements/)
+### <span id="203">203</span>.[移除链表元素](https://leetcode-cn.com/problems/remove-linked-list-elements/)
 
 > 思路：递归
 
@@ -2196,7 +2208,7 @@ struct ListNode *removeElements(struct ListNode *head, int val)
 
 ```
 
-## 206.[反转链表](https://leetcode-cn.com/problems/reverse-linked-list/)
+### <span id="206">206</span>.[反转链表](https://leetcode-cn.com/problems/reverse-linked-list/)
 
 > 思路：
 
@@ -2213,7 +2225,7 @@ struct ListNode* reverseList(struct ListNode* head){
 }
 ```
 
-## 215.[数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/)
+### 215.[数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/)
 
 > 思路：排序，第k个最大
 
@@ -2229,7 +2241,7 @@ int findKthLargest(int* nums, int numsSize, int k){
 }
 ```
 
-## 217.[存在重复元素](https://leetcode-cn.com/problems/contains-duplicate/)
+### <span id="217">217</span>.[存在重复元素](https://leetcode-cn.com/problems/contains-duplicate/)
 
 > 思路：
 一、排序，比较前一个数和当前数是否相等
@@ -2277,7 +2289,7 @@ bool containsDuplicate(int* nums, int numsSize){
 }
 ```
 
-## 226.[翻转二叉树](https://leetcode-cn.com/problems/invert-binary-tree/)
+### <span id="226">226</span>.[翻转二叉树](https://leetcode-cn.com/problems/invert-binary-tree/)
 
 > 思路：判空，交换左右子树，递归调用
 
@@ -2314,7 +2326,7 @@ struct TreeNode* invertTree(struct TreeNode* root){
 }
 ```
 
-## 231.[2的幂](https://leetcode-cn.com/problems/power-of-two/)
+### <span id="231">231</span>.[2的幂](https://leetcode-cn.com/problems/power-of-two/)
 
 > 思路：
 
@@ -2373,7 +2385,7 @@ bool isPowerOfTwo(int n){
 
 ```
 
-## 234.[回文链表](https://leetcode-cn.com/problems/palindrome-linked-list/submissions/)
+### <span id="234">234</span>.[回文链表](https://leetcode-cn.com/problems/palindrome-linked-list/submissions/)
 
 > 思路；
 一、通过一个数组记录链表中的元素值，在判断数组是否是回文。
@@ -2441,7 +2453,7 @@ bool isPalindrome(struct ListNode *head)
 }
 ```
 
-## 242.[有效的字母异位词](https://leetcode-cn.com/problems/valid-anagram/submissions/)
+### 242.[有效的字母异位词](https://leetcode-cn.com/problems/valid-anagram/submissions/)
 
 > 思路：先比较长度，不相等 false，通过表格记录第一个字符串中字符，遍历第二个字符串时表格记录--，最后，判断表格中所有值是否为零
 
@@ -2472,7 +2484,7 @@ bool isAnagram(char * s, char * t){
 }
 ```
 
-## 268.[丢失的数字](https://leetcode-cn.com/problems/missing-number/)
+### 268.[丢失的数字](https://leetcode-cn.com/problems/missing-number/)
 
 > 思路：边求和，边减去数组中的数字
 
@@ -2489,7 +2501,7 @@ int missingNumber(int* nums, int numsSize){
 
 
 
-## 278.[第一个错误的版本](https://leetcode-cn.com/problems/first-bad-version/)
+### 278.[第一个错误的版本](https://leetcode-cn.com/problems/first-bad-version/)
 
 > 思路：二分查找
 
@@ -2526,7 +2538,7 @@ int firstBadVersion(int n) {
 }
 ```
 
-## 283.[移动零](https://leetcode-cn.com/problems/move-zeroes/)
+### 283.[移动零](https://leetcode-cn.com/problems/move-zeroes/)
 
 > 思路：不等于零时向数组中添加，等于零时跳过，最后填充0
 nums[start++] = nums[i]
@@ -2546,7 +2558,7 @@ void moveZeroes(int* nums, int numsSize){
 }
 ```
 
-## 287.[寻找重复整数](https://leetcode-cn.com/problems/find-the-duplicate-number/)
+### 287.[寻找重复整数](https://leetcode-cn.com/problems/find-the-duplicate-number/)
 
 > 思路：循环遍历，标记，判断是否标记过，return
 
@@ -2566,7 +2578,7 @@ int findDuplicate(int* nums, int numsSize){
 }
 ```
 
-## 344.[反转字符串](https://leetcode-cn.com/problems/reverse-string/)
+### 344.[反转字符串](https://leetcode-cn.com/problems/reverse-string/)
 
 > 思路：双指针，交换
 
@@ -2584,7 +2596,7 @@ void reverseString(char* s, int sSize){
 }
 ```
 
-## 367.[有效的完全平方数](https://leetcode-cn.com/problems/valid-perfect-square/)
+### <span id="367">367</span>.[有效的完全平方数](https://leetcode-cn.com/problems/valid-perfect-square/)
 
 > 思路：for 循环，条件 i * i <= num 
 
@@ -2602,7 +2614,7 @@ bool isPerfectSquare(int num)
 
 ```
 
-## 387.[字符串中的第一个唯一字符](https://leetcode-cn.com/problems/first-unique-character-in-a-string/)
+### 387.[字符串中的第一个唯一字符](https://leetcode-cn.com/problems/first-unique-character-in-a-string/)
 
 > 思路：两次遍历，第一次遍历见字母标记得到统计表格中，第二次遍历找出统计表格中第一个为1字符，返回对应下标。
 
@@ -2625,7 +2637,7 @@ int firstUniqChar(char * s){
 }
 ```
 
-## 389.[找不同](https://leetcode-cn.com/problems/find-the-difference/)
+### <span id="389">389</span>.[找不同](https://leetcode-cn.com/problems/find-the-difference/)
 
 > 思路：字符可以转化为数字，为了防止溢出通过 - 'a'，求两个字符串的差值，在加上'a'
 
@@ -2645,7 +2657,7 @@ char findTheDifference(char * s, char * t){
 }
 ```
 
-## 404.[左叶子之和](https://leetcode-cn.com/problems/sum-of-left-leaves/)
+### 404.[左叶子之和](https://leetcode-cn.com/problems/sum-of-left-leaves/)
 
 > 思路：递归：判断左子树是否为叶子结点，是则记录sum，返回 sum + 递归调用左子树 + 递归调用右子树
 
@@ -2685,7 +2697,7 @@ int sumOfLeftLeaves(struct TreeNode* root)
 }
 ```
 
-## 442.[数组中重复的数据](https://leetcode-cn.com/problems/find-all-duplicates-in-an-array/)
+### <span id="442">442</span>.[数组中重复的数据](https://leetcode-cn.com/problems/find-all-duplicates-in-an-array/)
 
 > 思路：
 一、通过表标记数组中出现过的数字，当再次出现时将数字添加到返回数组中。
@@ -2727,7 +2739,7 @@ int* findDuplicates(int* nums, int numsSize, int* returnSize) {
 ```
 
 
-## 461.[汉明距离](https://leetcode-cn.com/problems/hamming-distance/)
+### 461.[汉明距离](https://leetcode-cn.com/problems/hamming-distance/)
 
 > 思路：
 一、求 x ^ y 中 1 的个数
@@ -2766,7 +2778,7 @@ int hammingDistance(int x, int y){
 }
 ```
 
-## 476.[数字的补数](https://leetcode-cn.com/problems/number-complement/)
+### <span id="476">476</span>.[数字的补数](https://leetcode-cn.com/problems/number-complement/)
 
 > 思路：
 一、按位与1求与，再取反(!)，然后移位，
@@ -2807,7 +2819,7 @@ int findComplement(int num){
 
 ```
 
-## 509.[斐波那契数列](https://leetcode-cn.com/problems/fibonacci-number/)
+### 509.[斐波那契数列](https://leetcode-cn.com/problems/fibonacci-number/)
 
 > 思路：一、递归  二、迭代
 
@@ -2838,7 +2850,7 @@ int fib(int n){
 }
 ```
 
-## 520.[检测大写字母](https://leetcode-cn.com/problems/detect-capital/submissions/)
+### 520.[检测大写字母](https://leetcode-cn.com/problems/detect-capital/submissions/)
 
 > 思路：
 一、先判断第二个字母是否为大写，1.word[1] 大写，从从零开始判断是否全为大写 2.word[1]为小写，从word是否全为小写。
@@ -2897,7 +2909,7 @@ bool detectCapitalUse(char * word){
 ```
 
 
-## 561.[拆分数组I](https://leetcode-cn.com/problems/array-partition-i/)
+### 561.[拆分数组I](https://leetcode-cn.com/problems/array-partition-i/)
 
 > 思路：排序，取偶数位求和。
 
@@ -2918,7 +2930,7 @@ int arrayPairSum(int* nums, int numsSize){
 }
 ```
 
-## 617.[合并二叉树](https://leetcode-cn.com/problems/merge-two-binary-trees/)
+### <span id="617">617</span>.[合并二叉树](https://leetcode-cn.com/problems/merge-two-binary-trees/)
 
 > 思路：递归，判空，
 
@@ -2958,7 +2970,7 @@ struct TreeNode* mergeTrees(struct TreeNode* root1, struct TreeNode* root2){
 }
 ```
 
-## 647.[回文子串](https://leetcode-cn.com/problems/palindromic-substrings/)
+### 647.[回文子串](https://leetcode-cn.com/problems/palindromic-substrings/)
 
 > 思路：左侧判断去重，左右判断相等。
 
@@ -3007,7 +3019,7 @@ int countPalin(char *s, int head, int tail, int len)
 }
 ```
 
-## 674.[最长连续递增序列](https://leetcode-cn.com/problems/longest-continuous-increasing-subsequence/)
+### 674.[最长连续递增序列](https://leetcode-cn.com/problems/longest-continuous-increasing-subsequence/)
 
 > 思路：双循环判断，
 
@@ -3048,7 +3060,7 @@ int findLengthOfLCIS(int* nums, int numsSize){
 }
 ```
 
-## 700.[二叉搜索树中的搜索](https://leetcode-cn.com/problems/search-in-a-binary-search-tree/)
+### 700.[二叉搜索树中的搜索](https://leetcode-cn.com/problems/search-in-a-binary-search-tree/)
 
 > 思路：递归，注意 判空 root == NULL
 
@@ -3068,7 +3080,7 @@ struct TreeNode* searchBST(struct TreeNode* root, int val){
 }
 ```
 
-## 701.[二叉搜索树中的插入操作](https://leetcode-cn.com/problems/insert-into-a-binary-search-tree/)
+### <span id="701">701</span>.[二叉搜索树中的插入操作](https://leetcode-cn.com/problems/insert-into-a-binary-search-tree/)
 
 > 思路：递归，递归出口，root == NULL, 新建树结点 malloc
 
@@ -3092,7 +3104,7 @@ struct TreeNode* insertIntoBST(struct TreeNode* root, int val){
 }
 ```
 
-## 704.[二分查找](https://leetcode-cn.com/problems/binary-search/)
+### 704.[二分查找](https://leetcode-cn.com/problems/binary-search/)
 
 > 思路：二分查找，注意 left <= right ，包含等于
 
@@ -3114,7 +3126,7 @@ int search(int* nums, int numsSize, int target){
 }
 ```
 
-## 709.[转换成小写字母](https://leetcode-cn.com/problems/to-lower-case/)
+### 709.[转换成小写字母](https://leetcode-cn.com/problems/to-lower-case/)
 
 > 思路；库函数 isupper, tolower
 
@@ -3130,7 +3142,7 @@ char * toLowerCase(char * s){
 }
 ```
 
-## 771.[宝石和石头](https://leetcode-cn.com/problems/jewels-and-stones/)
+### 771.[宝石和石头](https://leetcode-cn.com/problems/jewels-and-stones/)
 
 > 思路：表记录stones中每个字符个数，求和jewels字符表中的值
 
@@ -3152,7 +3164,7 @@ int numJewelsInStones(char * jewels, char * stones){
 ```
 
 
-## 852.[山脉数组的峰顶索引](https://leetcode-cn.com/problems/peak-index-in-a-mountain-array/)
+### 852.[山脉数组的峰顶索引](https://leetcode-cn.com/problems/peak-index-in-a-mountain-array/)
 
 > 思路：判断条件，完全
 
@@ -3174,7 +3186,7 @@ int peakIndexInMountainArray(int* arr, int arrSize){
 }
 ```
 
-## 876.[链表的中间结点](https://leetcode-cn.com/problems/middle-of-the-linked-list/)
+### 876.[链表的中间结点](https://leetcode-cn.com/problems/middle-of-the-linked-list/)
 
 > 思路：快慢指针，第二个指针通过 偶数判断  for循环
 
@@ -3192,7 +3204,7 @@ struct ListNode* middleNode(struct ListNode* head){
 }
 ```
 
-## 905.[按奇偶排序数组](https://leetcode-cn.com/problems/sort-array-by-parity/)
+### 905.[按奇偶排序数组](https://leetcode-cn.com/problems/sort-array-by-parity/)
 
 > 思路: 一、双指针，同917
 二、判断，前后索引移动，双指针
@@ -3268,7 +3280,7 @@ int* sortArrayByParity(int* nums, int numsSize, int* returnSize){
 ```
 
 
-## 917.[仅仅反转字母](https://leetcode-cn.com/problems/reverse-only-letters/)
+### 917.[仅仅反转字母](https://leetcode-cn.com/problems/reverse-only-letters/)
 
 > 思路：双指针，库函数 isalpha， continue
 
@@ -3300,7 +3312,7 @@ char * reverseOnlyLetters(char * s){
 ```
 
 
-## 938.[二叉搜索树的范围和](https://leetcode-cn.com/problems/range-sum-of-bst/)
+### <span id="938">938</span>.[二叉搜索树的范围和](https://leetcode-cn.com/problems/range-sum-of-bst/)
 
 ```c
 int rangeSumBST(struct TreeNode* root, int low, int high){
@@ -3335,7 +3347,7 @@ int rangeSumBST(struct TreeNode* root, int low, int high){
 
 
 
-## 965.[单值二叉树](https://leetcode-cn.com/problems/univalued-binary-tree/)
+### 965.[单值二叉树](https://leetcode-cn.com/problems/univalued-binary-tree/)
 
 > 思路：递归，递归出口：root == NULL
 
@@ -3370,7 +3382,7 @@ bool isUnivalTree(struct TreeNode* root){
 ```
 
 
-## 977.[有序数组的平方](https://leetcode-cn.com/problems/squares-of-a-sorted-array/submissions/)
+### 977.[有序数组的平方](https://leetcode-cn.com/problems/squares-of-a-sorted-array/submissions/)
 
 > 思路
 
@@ -3393,7 +3405,7 @@ int* sortedSquares(int* nums, int numsSize, int* returnSize){
 }
 ```
 
-## 1089.[复写零](https://leetcode-cn.com/problems/duplicate-zeros/)
+### <span id="1089">1089</span>.[复写零](https://leetcode-cn.com/problems/duplicate-zeros/)
 
 > 思路：将原数组复制一份，根据复制数组，修改原数组值
 
@@ -3432,7 +3444,7 @@ void duplicateZeros(int* arr, int arrSize){
 
 
 
-## 1184.[公交站间的距离](https://leetcode-cn.com/problems/distance-between-bus-stops/submissions/)
+### 1184.[公交站间的距离](https://leetcode-cn.com/problems/distance-between-bus-stops/submissions/)
 
 > 思路: 保证 start 小于 destination， 计算一圈的总长度sum，计算start到destination的距离d，取d与sum-d两者较小值
 
@@ -3459,7 +3471,7 @@ int distanceBetweenBusStops(int* distance, int distanceSize, int start, int dest
 }
 ```
 
-## 1189.[ “气球” 的最大数量](https://leetcode-cn.com/problems/maximum-number-of-balloons/)
+### 1189.[ “气球” 的最大数量](https://leetcode-cn.com/problems/maximum-number-of-balloons/)
 
 > 思路：统计字符次数，注意 字符串指针  取值 *p  或者 字符数组 test[i]
 
@@ -3539,7 +3551,7 @@ int maxNumberOfBalloons(char * text){
 
 
 
-## 1207.[独一无二的出现次数](https://leetcode-cn.com/problems/unique-number-of-occurrences/)
+### <span id="1207">1207</span>.[独一无二的出现次数](https://leetcode-cn.com/problems/unique-number-of-occurrences/)
 
 解法一
 > 通过一个表统计每个数字出现的次数，定义另外一个表记录表一中每一项的，如果出现相同数字，则返回false，遍历到最后时返回true
