@@ -183,7 +183,7 @@
     <updated>2021-10-26T16:53:53.000Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;1-camke简述&quot;&gt;&lt;a href=&quot;#1-camke简述&quot; class=&quot;headerlink&quot; title=&quot;1.camke简述&quot;&gt;&lt;/a&gt;1.camke简述&lt;/h2&gt;&lt;p&gt; CMake是跨平台编译管理工具,为第三方依赖和引入,创建编译系统,程序测试及安装.Cmake工具使用CMakeLists.txt文件,跨平台执行相同编译命令,生成对应平台的可执行程序或者链接库.&lt;/p&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;1-cmake简述&quot;&gt;&lt;a href=&quot;#1-cmake简述&quot; class=&quot;headerlink&quot; title=&quot;1.cmake简述&quot;&gt;&lt;/a&gt;1.cmake简述&lt;/h2&gt;&lt;p&gt; CMake是跨平台编译管理工具,为第三方依赖和引入,创建编译系统,程序测试及安装.Cmake工具使用CMakeLists.txt文件,跨平台执行相同编译命令,生成对应平台的可执行程序或者链接库.&lt;/p&gt;</summary>
     
     
     

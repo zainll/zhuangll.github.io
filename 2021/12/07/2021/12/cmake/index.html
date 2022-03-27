@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true,"b2t":false,"scrollpercent":true},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="1.camke简述 CMake是跨平台编译管理工具,为第三方依赖和引入,创建编译系统,程序测试及安装.Cmake工具使用CMakeLists.txt文件,跨平台执行相同编译命令,生成对应平台的可执行程序或者链接库.">
+  <meta name="description" content="1.cmake简述 CMake是跨平台编译管理工具,为第三方依赖和引入,创建编译系统,程序测试及安装.Cmake工具使用CMakeLists.txt文件,跨平台执行相同编译命令,生成对应平台的可执行程序或者链接库.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CMake">
 <meta property="og:url" content="http://example.com/2021/12/07/2021/12/cmake/index.html">
 <meta property="og:site_name" content="liuz">
-<meta property="og:description" content="1.camke简述 CMake是跨平台编译管理工具,为第三方依赖和引入,创建编译系统,程序测试及安装.Cmake工具使用CMakeLists.txt文件,跨平台执行相同编译命令,生成对应平台的可执行程序或者链接库.">
+<meta property="og:description" content="1.cmake简述 CMake是跨平台编译管理工具,为第三方依赖和引入,创建编译系统,程序测试及安装.Cmake工具使用CMakeLists.txt文件,跨平台执行相同编译命令,生成对应平台的可执行程序或者链接库.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-06T16:47:53.000Z">
 <meta property="article:modified_time" content="2021-10-26T16:53:53.000Z">
@@ -278,7 +278,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="1-camke简述"><a href="#1-camke简述" class="headerlink" title="1.camke简述"></a>1.camke简述</h2><p> CMake是跨平台编译管理工具,为第三方依赖和引入,创建编译系统,程序测试及安装.Cmake工具使用CMakeLists.txt文件,跨平台执行相同编译命令,生成对应平台的可执行程序或者链接库.</p>
+        <h2 id="1-cmake简述"><a href="#1-cmake简述" class="headerlink" title="1.cmake简述"></a>1.cmake简述</h2><p> CMake是跨平台编译管理工具,为第三方依赖和引入,创建编译系统,程序测试及安装.Cmake工具使用CMakeLists.txt文件,跨平台执行相同编译命令,生成对应平台的可执行程序或者链接库.</p>
 <span id="more"></span>
 
 <p> CMake工程简单例子</p>
@@ -416,7 +416,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-camke%E7%AE%80%E8%BF%B0"><span class="nav-text">1.camke简述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Target-%E5%92%8C%E5%9B%B4%E7%BB%95-Target-%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-text">2.Target 和围绕 Target 的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Build-Specification-%E5%92%8C-Usage-Requirement"><span class="nav-text">3.Build Specification 和 Usage Requirement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%AF%BB%E6%89%BE%E5%92%8C%E4%BD%BF%E7%94%A8%E9%93%BE%E6%8E%A5%E5%BA%93"><span class="nav-text">4.寻找和使用链接库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E9%80%9A%E8%BF%87-Config-file-%E6%89%BE%E5%88%B0%E4%BE%9D%E8%B5%96"><span class="nav-text">4.1 通过 Config file 找到依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E9%80%9A%E8%BF%87-Find-file-%E6%89%BE%E5%88%B0%E4%BE%9D%E8%B5%96"><span class="nav-text">4.2 通过 Find file 找到依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-find-package-%E7%9A%84%E5%A4%84%E7%90%86"><span class="nav-text">4.3.find_package 的处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E4%BD%BF%E7%94%A8-CMake-%E6%9D%A5%E7%BC%96%E8%AF%91"><span class="nav-text">5.使用 CMake 来编译</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-cmake%E7%AE%80%E8%BF%B0"><span class="nav-text">1.cmake简述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Target-%E5%92%8C%E5%9B%B4%E7%BB%95-Target-%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-text">2.Target 和围绕 Target 的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Build-Specification-%E5%92%8C-Usage-Requirement"><span class="nav-text">3.Build Specification 和 Usage Requirement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%AF%BB%E6%89%BE%E5%92%8C%E4%BD%BF%E7%94%A8%E9%93%BE%E6%8E%A5%E5%BA%93"><span class="nav-text">4.寻找和使用链接库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E9%80%9A%E8%BF%87-Config-file-%E6%89%BE%E5%88%B0%E4%BE%9D%E8%B5%96"><span class="nav-text">4.1 通过 Config file 找到依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E9%80%9A%E8%BF%87-Find-file-%E6%89%BE%E5%88%B0%E4%BE%9D%E8%B5%96"><span class="nav-text">4.2 通过 Find file 找到依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-find-package-%E7%9A%84%E5%A4%84%E7%90%86"><span class="nav-text">4.3.find_package 的处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E4%BD%BF%E7%94%A8-CMake-%E6%9D%A5%E7%BC%96%E8%AF%91"><span class="nav-text">5.使用 CMake 来编译</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
