@@ -244,7 +244,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.5k</span>
+              <span>1.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -272,7 +272,9 @@
 
 <h2 id="ubuntu-换源"><a href="#ubuntu-换源" class="headerlink" title="ubuntu 换源"></a>ubuntu 换源</h2><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 备份</span></span><br><span class="line">cp /etc/apt/sources.list /etc/apt/sources.list.20211013</span><br><span class="line">lsb_release -c</span><br><span class="line">lsb_release -a</span><br><span class="line"><span class="comment"># </span></span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 <p>参考链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33706673/article/details/106869016">ubuntu20.04更改国内镜像源</a></p>
-<h2 id="Read-The-Docs-环境搭建"><a href="#Read-The-Docs-环境搭建" class="headerlink" title="Read The Docs 环境搭建"></a>Read The Docs 环境搭建</h2><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo apt-get install python3-pip</span><br><span class="line"></span><br><span class="line">pip install sphinx sphinx-autobuild sphinx_rtd_theme</span><br><span class="line">pip install recommonmark</span><br><span class="line">pip install sphinx-markdown-tables</span><br><span class="line">pip install Pyinstaller -i http://pypi.douban.com/simple --trusted-host pypi.douban.com</span><br><span class="line">（其中的Pyinstaller是你需要下载的库或包名，根据自己需求自行更改即可）</span><br><span class="line"></span><br><span class="line">extensions = [</span><br><span class="line">    <span class="string">'recommonmark'</span>,</span><br><span class="line">    <span class="string">'sphinx_markdown_tables'</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">python3 -m pip freeze &gt; requirements.txt</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="ubuntu-显示"><a href="#ubuntu-显示" class="headerlink" title="ubuntu 显示"></a>ubuntu 显示</h2><p><a target="_blank" rel="noopener" href="https://ubuntuqa.com/article/8837.html">https://ubuntuqa.com/article/8837.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.csdn.net/tags/MtTaAgzsNjg5MTk4LWJsb2cO0O0O.html">https://www.csdn.net/tags/MtTaAgzsNjg5MTk4LWJsb2cO0O0O.html</a></p>
+<h2 id="vscode-使用wsl"><a href="#vscode-使用wsl" class="headerlink" title="vscode 使用wsl"></a>vscode 使用wsl</h2><h2 id="Read-The-Docs-环境搭建"><a href="#Read-The-Docs-环境搭建" class="headerlink" title="Read The Docs 环境搭建"></a>Read The Docs 环境搭建</h2><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo apt-get install python3-pip</span><br><span class="line"></span><br><span class="line">pip install sphinx sphinx-autobuild sphinx_rtd_theme</span><br><span class="line">pip install recommonmark</span><br><span class="line">pip install sphinx-markdown-tables</span><br><span class="line">pip install Pyinstaller -i http://pypi.douban.com/simple --trusted-host pypi.douban.com</span><br><span class="line">（其中的Pyinstaller是你需要下载的库或包名，根据自己需求自行更改即可）</span><br><span class="line"></span><br><span class="line">extensions = [</span><br><span class="line">    <span class="string">'recommonmark'</span>,</span><br><span class="line">    <span class="string">'sphinx_markdown_tables'</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">python3 -m pip freeze &gt; requirements.txt</span><br></pre></td></tr></tbody></table></figure>
 
 <p>参考链接：<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/112919704">VsCode +Read The Docs 环境搭建</a><br><br></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/264647009">Sphinx + Read the Docs 从懵逼到入门</a><br><br></p>
@@ -321,8 +323,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/10/27/%E4%B9%A6%E5%8D%95/" rel="prev" title="书单&电影">
-      <i class="fa fa-chevron-left"></i> 书单&电影
+    <a href="/2021/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" rel="prev" title="数据结构与算法基础">
+      <i class="fa fa-chevron-left"></i> 数据结构与算法基础
     </a></div>
       <div class="post-nav-item">
     <a href="/2021/12/02/2021/12/%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95%E4%B8%80/" rel="next" title="英语语法指一">
@@ -386,7 +388,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85ubuntu20-04"><span class="nav-text">安装ubuntu20.04</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%B8%E8%BD%BDwsl"><span class="nav-text">卸载wsl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AEwsl"><span class="nav-text">设置wsl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ubuntu-%E6%8D%A2%E6%BA%90"><span class="nav-text">ubuntu 换源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Read-The-Docs-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-text">Read The Docs 环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git"><span class="nav-text">git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PowerShell"><span class="nav-text">PowerShell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#windows-%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7"><span class="nav-text">windows 包管理工具</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85ubuntu20-04"><span class="nav-text">安装ubuntu20.04</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%B8%E8%BD%BDwsl"><span class="nav-text">卸载wsl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AEwsl"><span class="nav-text">设置wsl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ubuntu-%E6%8D%A2%E6%BA%90"><span class="nav-text">ubuntu 换源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ubuntu-%E6%98%BE%E7%A4%BA"><span class="nav-text">ubuntu 显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode-%E4%BD%BF%E7%94%A8wsl"><span class="nav-text">vscode 使用wsl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Read-The-Docs-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-text">Read The Docs 环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git"><span class="nav-text">git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PowerShell"><span class="nav-text">PowerShell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#windows-%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7"><span class="nav-text">windows 包管理工具</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -400,7 +402,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

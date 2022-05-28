@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-01-31T16:53:53.000Z</updated>
+  <updated>2022-05-19T16:53:53.000Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Dynamorio</title>
+    <link href="http://example.com/2022/05/20/2022/Dynamorio/"/>
+    <id>http://example.com/2022/05/20/2022/Dynamorio/</id>
+    <published>2022-05-19T16:47:53.000Z</published>
+    <updated>2022-05-19T16:53:53.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;学习链接&lt;br&gt;DynamoRIO进阶指南&lt;br&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="tool" scheme="http://example.com/categories/tool/"/>
+    
+    <category term="2022" scheme="http://example.com/categories/tool/2022/"/>
+    
+    
+    <category term="Another Tag" scheme="http://example.com/tags/Another-Tag/"/>
+    
+    <category term="Computer Science" scheme="http://example.com/tags/Computer-Science/"/>
+    
+  </entry>
   
   <entry>
     <title>leetcode基础</title>
@@ -232,6 +262,27 @@
   </entry>
   
   <entry>
+    <title>数据结构与算法基础</title>
+    <link href="http://example.com/2021/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/"/>
+    <id>http://example.com/2021/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/</id>
+    <published>2021-10-26T16:47:53.000Z</published>
+    <updated>2021-10-26T16:53:53.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;1-程序性能&quot;&gt;&lt;a href=&quot;#1-程序性能&quot; class=&quot;headerlink&quot; title=&quot;1 程序性能&quot;&gt;&lt;/a&gt;1 程序性能&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="tool" scheme="http://example.com/categories/tool/"/>
+    
+    
+    <category term="实用教程" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="Another Tag" scheme="http://example.com/tags/Another-Tag/"/>
+    
+  </entry>
+  
+  <entry>
     <title>书单&amp;电影</title>
     <link href="http://example.com/2021/10/27/%E4%B9%A6%E5%8D%95/"/>
     <id>http://example.com/2021/10/27/%E4%B9%A6%E5%8D%95/</id>
@@ -258,27 +309,6 @@
 &lt;li&gt;&lt;p&gt;软件故事&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="tool" scheme="http://example.com/categories/tool/"/>
-    
-    
-    <category term="实用教程" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"/>
-    
-    <category term="Another Tag" scheme="http://example.com/tags/Another-Tag/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据结构与算法基础</title>
-    <link href="http://example.com/2021/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/"/>
-    <id>http://example.com/2021/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/</id>
-    <published>2021-10-26T16:47:53.000Z</published>
-    <updated>2021-10-26T16:53:53.000Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;1-程序性能&quot;&gt;&lt;a href=&quot;#1-程序性能&quot; class=&quot;headerlink&quot; title=&quot;1 程序性能&quot;&gt;&lt;/a&gt;1 程序性能&lt;/h2&gt;</summary>
     
     
     
@@ -324,7 +354,11 @@
     <updated>2021-10-26T16:53:53.000Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;GitHub-Pages-Hexo使用及配置&quot;&gt;&lt;a href=&quot;#GitHub-Pages-Hexo使用及配置&quot; class=&quot;headerlink&quot; title=&quot;GitHub Pages + Hexo使用及配置&quot;&gt;&lt;/a&gt;GitHub Pages + Hexo使用及配置&lt;/h2&gt;&lt;p&gt;github上创建一个  username.github.io 的工程，username 必须为github的用户名&lt;/p&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;编译工具&quot;&gt;&lt;a href=&quot;#编译工具&quot; class=&quot;headerlink&quot; title=&quot;编译工具&quot;&gt;&lt;/a&gt;编译工具&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;各版本gcc  mingw  clang&lt;br&gt;&lt;a href=&quot;https://github.com/brechtsanders/winlibs_mingw&quot;&gt;https://github.com/brechtsanders/winlibs_mingw&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;MinGW-w64&lt;br&gt;&lt;a href=&quot;https://www.mingw-w64.org/changelog/&quot;&gt;https://www.mingw-w64.org/changelog/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;GitHub-Pages-Hexo使用及配置&quot;&gt;&lt;a href=&quot;#GitHub-Pages-Hexo使用及配置&quot; class=&quot;headerlink&quot; title=&quot;GitHub Pages + Hexo使用及配置&quot;&gt;&lt;/a&gt;GitHub Pages + Hexo使用及配置&lt;/h2&gt;&lt;p&gt;github上创建一个  username.github.io 的工程，username 必须为github的用户名&lt;/p&gt;</summary>
     
     
     
