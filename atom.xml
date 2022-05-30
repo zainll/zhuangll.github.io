@@ -28,8 +28,8 @@
       
         
         
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;学习链接&lt;br&gt;DynamoRIO进阶指南&lt;br&gt;&lt;a</summary>
+    <summary type="html">&lt;h2 id=&quot;编译&quot;&gt;&lt;a href=&quot;#编译&quot; class=&quot;headerlink&quot; title=&quot;编译&quot;&gt;&lt;/a&gt;编译&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;注意wsl中需要root用户编译&lt;br&gt;&lt;a</summary>
         
       
     
@@ -155,6 +155,33 @@
   </entry>
   
   <entry>
+    <title>CMake</title>
+    <link href="http://example.com/2021/12/07/2021/12/cmake/"/>
+    <id>http://example.com/2021/12/07/2021/12/cmake/</id>
+    <published>2021-12-06T16:47:53.000Z</published>
+    <updated>2021-10-26T16:53:53.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;1-cmake简述&quot;&gt;&lt;a href=&quot;#1-cmake简述&quot; class=&quot;headerlink&quot; title=&quot;1.cmake简述&quot;&gt;&lt;/a&gt;1.cmake简述&lt;/h2&gt;&lt;p&gt; CMake是跨平台编译管理工具,为第三方依赖和引入,创建编译系统,程序测试及安装.Cmake工具使用CMakeLists.txt文件,跨平台执行相同编译命令,生成对应平台的可执行程序或者链接库.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tool" scheme="http://example.com/categories/tool/"/>
+    
+    <category term="2021" scheme="http://example.com/categories/tool/2021/"/>
+    
+    <category term="12" scheme="http://example.com/categories/tool/2021/12/"/>
+    
+    
+    <category term="complier" scheme="http://example.com/tags/complier/"/>
+    
+    <category term="cs" scheme="http://example.com/tags/cs/"/>
+    
+    <category term="cmake" scheme="http://example.com/tags/cmake/"/>
+    
+  </entry>
+  
+  <entry>
     <title>C/C++</title>
     <link href="http://example.com/2021/12/07/2021/12/C++/"/>
     <id>http://example.com/2021/12/07/2021/12/C++/</id>
@@ -180,36 +207,9 @@
     <category term="12" scheme="http://example.com/categories/tool/2021/12/"/>
     
     
+    <category term="cs" scheme="http://example.com/tags/cs/"/>
+    
     <category term="c/c++" scheme="http://example.com/tags/c-c/"/>
-    
-    <category term="cs" scheme="http://example.com/tags/cs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CMake</title>
-    <link href="http://example.com/2021/12/07/2021/12/cmake/"/>
-    <id>http://example.com/2021/12/07/2021/12/cmake/</id>
-    <published>2021-12-06T16:47:53.000Z</published>
-    <updated>2021-10-26T16:53:53.000Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;1-cmake简述&quot;&gt;&lt;a href=&quot;#1-cmake简述&quot; class=&quot;headerlink&quot; title=&quot;1.cmake简述&quot;&gt;&lt;/a&gt;1.cmake简述&lt;/h2&gt;&lt;p&gt; CMake是跨平台编译管理工具,为第三方依赖和引入,创建编译系统,程序测试及安装.Cmake工具使用CMakeLists.txt文件,跨平台执行相同编译命令,生成对应平台的可执行程序或者链接库.&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="tool" scheme="http://example.com/categories/tool/"/>
-    
-    <category term="2021" scheme="http://example.com/categories/tool/2021/"/>
-    
-    <category term="12" scheme="http://example.com/categories/tool/2021/12/"/>
-    
-    
-    <category term="cs" scheme="http://example.com/tags/cs/"/>
-    
-    <category term="complier" scheme="http://example.com/tags/complier/"/>
-    
-    <category term="cmake" scheme="http://example.com/tags/cmake/"/>
     
   </entry>
   
@@ -249,27 +249,6 @@
     <summary type="html">&lt;h2 id=&quot;安装ubuntu20-04&quot;&gt;&lt;a href=&quot;#安装ubuntu20-04&quot; class=&quot;headerlink&quot; title=&quot;安装ubuntu20.04&quot;&gt;&lt;/a&gt;安装ubuntu20.04&lt;/h2&gt;&lt;p&gt;安装到非系统盘目录，下载离线安装包，复制到想要安装的目录下，解压，以管理员身份运行ubuntu2004.exe&lt;/p&gt;
 &lt;h2 id=&quot;卸载wsl&quot;&gt;&lt;a href=&quot;#卸载wsl&quot; class=&quot;headerlink&quot; title=&quot;卸载wsl&quot;&gt;&lt;/a&gt;卸载wsl&lt;/h2&gt;&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wslconfig /l&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 从列表中选择要卸载的发行版（例如Ubuntu）并键入命令&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;wslconfig /u Ubuntu&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;参考链接：&lt;a href=&quot;https://blog.csdn.net/zhangpeterx/article/details/97616268&quot;&gt;WSL系列操作：安装，卸载&lt;/a&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="tool" scheme="http://example.com/categories/tool/"/>
-    
-    
-    <category term="实用教程" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"/>
-    
-    <category term="Another Tag" scheme="http://example.com/tags/Another-Tag/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据结构与算法基础</title>
-    <link href="http://example.com/2021/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/"/>
-    <id>http://example.com/2021/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/</id>
-    <published>2021-10-26T16:47:53.000Z</published>
-    <updated>2021-10-26T16:53:53.000Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;1-程序性能&quot;&gt;&lt;a href=&quot;#1-程序性能&quot; class=&quot;headerlink&quot; title=&quot;1 程序性能&quot;&gt;&lt;/a&gt;1 程序性能&lt;/h2&gt;</summary>
     
     
     
@@ -347,6 +326,27 @@
   </entry>
   
   <entry>
+    <title>数据结构与算法基础</title>
+    <link href="http://example.com/2021/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/"/>
+    <id>http://example.com/2021/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/</id>
+    <published>2021-10-26T16:47:53.000Z</published>
+    <updated>2021-10-26T16:53:53.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;1-程序性能&quot;&gt;&lt;a href=&quot;#1-程序性能&quot; class=&quot;headerlink&quot; title=&quot;1 程序性能&quot;&gt;&lt;/a&gt;1 程序性能&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="tool" scheme="http://example.com/categories/tool/"/>
+    
+    
+    <category term="实用教程" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="Another Tag" scheme="http://example.com/tags/Another-Tag/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Software&amp;Tool</title>
     <link href="http://example.com/2021/10/26/Software&amp;Tool/"/>
     <id>http://example.com/2021/10/26/Software&amp;Tool/</id>
@@ -355,7 +355,7 @@
     
     
     <summary type="html">&lt;h2 id=&quot;编译工具&quot;&gt;&lt;a href=&quot;#编译工具&quot; class=&quot;headerlink&quot; title=&quot;编译工具&quot;&gt;&lt;/a&gt;编译工具&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;各版本gcc  mingw  clang&lt;br&gt;&lt;a href=&quot;https://github.com/brechtsanders/winlibs_mingw&quot;&gt;https://github.com/brechtsanders/winlibs_mingw&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;各版本gcc  mingw  clang&lt;br&gt;&lt;a href=&quot;https://winlibs.com/&quot;&gt;https://winlibs.com/&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/brechtsanders/winlibs_mingw&quot;&gt;https://github.com/brechtsanders/winlibs_mingw&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;MinGW-w64&lt;br&gt;&lt;a href=&quot;https://www.mingw-w64.org/changelog/&quot;&gt;https://www.mingw-w64.org/changelog/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;GitHub-Pages-Hexo使用及配置&quot;&gt;&lt;a href=&quot;#GitHub-Pages-Hexo使用及配置&quot; class=&quot;headerlink&quot; title=&quot;GitHub Pages + Hexo使用及配置&quot;&gt;&lt;/a&gt;GitHub Pages + Hexo使用及配置&lt;/h2&gt;&lt;p&gt;github上创建一个  username.github.io 的工程，username 必须为github的用户名&lt;/p&gt;</summary>
