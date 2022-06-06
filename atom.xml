@@ -24,14 +24,9 @@
     <updated>2022-05-19T16:53:53.000Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;h2 id=&quot;编译&quot;&gt;&lt;a href=&quot;#编译&quot; class=&quot;headerlink&quot; title=&quot;编译&quot;&gt;&lt;/a&gt;编译&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;注意wsl中需要root用户编译&lt;br&gt;&lt;a</summary>
-        
-      
+&lt;li&gt;注意wsl中需要root用户编译&lt;br&gt;&lt;a href=&quot;https://dynamorio.org/page_building.html&quot;&gt;https://dynamorio.org/page_building.html&lt;/a&gt;&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cmake \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-DCMAKE_TOOLCHAIN_FILE=/mnt/e/code/dynamorio/make/toolchain-android=arm64.cmake \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-DANDROID_TOOLCHAIN=/home/dbi/android_toolchain_using \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-DDR_COPY_TO_DEVICE=OFF \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-DCMAKE_BUILD_TYPE=Debug \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-DBUILD_TESTS=OFF \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-DBUILD_SAMPLES=ON \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-DBUILD_CLIENTS=ON \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;../dynamorio&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cmake \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-DDR_COPY_TO_DEVICE=OFF \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-DCMAKE_BUILD_TYPE=Debug \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-DBUILD_TESTS=OFF \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-DBUILD_SAMPLES=ON \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-DBUILD_CLIENTS=ON \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;../dynamorio&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
     
     
     
@@ -54,14 +49,9 @@
     <updated>2022-02-26T16:53:53.000Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
-&lt;h1 id=&quot;深入理解计算机系统&quot;&gt;&lt;a href=&quot;#深入理解计算机系统&quot; class=&quot;headerlink&quot; title=&quot;深入理解计算机系统&quot;&gt;&lt;/a&gt;深入理解计算机系统&lt;/h1&gt;&lt;h2 id=&quot;第1章-计算机系统&quot;&gt;&lt;a</summary>
-        
-      
+&lt;h1 id=&quot;深入理解计算机系统&quot;&gt;&lt;a href=&quot;#深入理解计算机系统&quot; class=&quot;headerlink&quot; title=&quot;深入理解计算机系统&quot;&gt;&lt;/a&gt;深入理解计算机系统&lt;/h1&gt;&lt;h2 id=&quot;第1章-计算机系统&quot;&gt;&lt;a href=&quot;#第1章-计算机系统&quot; class=&quot;headerlink&quot; title=&quot;第1章 计算机系统&quot;&gt;&lt;/a&gt;第1章 计算机系统&lt;/h2&gt;&lt;p&gt;hello world程序分析，&lt;/p&gt;
+&lt;br&gt;</summary>
     
     
     
