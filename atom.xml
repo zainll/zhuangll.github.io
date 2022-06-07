@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>liuz</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2022-05-19T16:53:53.000Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Dynamorio</title>
+    <link href="http://example.com/2022/05/20/2022/Dynamorio/"/>
+    <id>http://example.com/2022/05/20/2022/Dynamorio/</id>
+    <published>2022-05-19T16:47:53.000Z</published>
+    <updated>2022-05-19T16:53:53.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;编译&quot;&gt;&lt;a href=&quot;#编译&quot; class=&quot;headerlink&quot; title=&quot;编译&quot;&gt;&lt;/a&gt;编译&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;注意wsl中需要root用户编译&lt;br&gt;&lt;a href=&quot;https://dynamorio.org/page_building.html&quot;&gt;https://dynamorio.org/page_building.html&lt;/a&gt;&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cmake \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-DCMAKE_TOOLCHAIN_FILE=/mnt/e/code/dynamorio/make/toolchain-android=arm64.cmake \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-DANDROID_TOOLCHAIN=/home/dbi/android_toolchain_using \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-DDR_COPY_TO_DEVICE=OFF \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-DCMAKE_BUILD_TYPE=Debug \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-DBUILD_TESTS=OFF \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-DBUILD_SAMPLES=ON \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-DBUILD_CLIENTS=ON \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;../dynamorio&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cmake \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-DDR_COPY_TO_DEVICE=OFF \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-DCMAKE_BUILD_TYPE=Debug \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-DBUILD_TESTS=OFF \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-DBUILD_SAMPLES=ON \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-DBUILD_CLIENTS=ON \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;../dynamorio&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="tool" scheme="http://example.com/categories/tool/"/>
+    
+    <category term="2022" scheme="http://example.com/categories/tool/2022/"/>
+    
+    
+    <category term="Another Tag" scheme="http://example.com/tags/Another-Tag/"/>
+    
+    <category term="Computer Science" scheme="http://example.com/tags/Computer-Science/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深入理解计算机系统</title>
+    <link href="http://example.com/2022/02/27/2022/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://example.com/2022/02/27/2022/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/</id>
+    <published>2022-02-26T16:47:53.000Z</published>
+    <updated>2022-02-26T16:53:53.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
+&lt;h1 id=&quot;深入理解计算机系统&quot;&gt;&lt;a href=&quot;#深入理解计算机系统&quot; class=&quot;headerlink&quot; title=&quot;深入理解计算机系统&quot;&gt;&lt;/a&gt;深入理解计算机系统&lt;/h1&gt;&lt;h2 id=&quot;第1章-计算机系统&quot;&gt;&lt;a href=&quot;#第1章-计算机系统&quot; class=&quot;headerlink&quot; title=&quot;第1章 计算机系统&quot;&gt;&lt;/a&gt;第1章 计算机系统&lt;/h2&gt;&lt;p&gt;hello world程序分析，&lt;/p&gt;
+&lt;p&gt;hello.c编译&lt;br&gt;图：&lt;br&gt;编译系统：预处理器cpp、编译器ccl、汇编器as和链接器ld&lt;/p&gt;
+&lt;p&gt;计算机系统硬件组成：总线，I/O设备，主存，处理器&lt;br&gt;图：&lt;/p&gt;
+&lt;p&gt;CPU 在指令的要求下执行操作：加载、存储、操作和跳转&lt;/p&gt;
+&lt;p&gt;hello程序加载&lt;/p&gt;
+&lt;p&gt;高速缓存存储器cache：L1 L2 L3(SRAM)&lt;/p&gt;
+&lt;p&gt;存储设备层次结构&lt;br&gt;图：&lt;/p&gt;
+&lt;p&gt;操作系统有两个基本功能：（1)防止硬件被失控的应用程序滥用；（2 )向应用程序提供简单一致的机制来控制复杂而又通常大不相同的低级硬件设备&lt;br&gt;图&lt;br&gt;操作系统通过几个基本的抽象概念：进程、虚拟内存和文件&lt;br&gt;图&lt;/p&gt;
+&lt;p&gt;Posix 标准：Unix 系统调用的 C 语言接口、shell 程序和工具、线程及网络编程&lt;/p&gt;
+&lt;p&gt;进程&lt;/p&gt;
+&lt;br&gt;</summary>
+    
+    
+    
+    <category term="tool" scheme="http://example.com/categories/tool/"/>
+    
+    <category term="2022" scheme="http://example.com/categories/tool/2022/"/>
+    
+    
+    <category term="实用教程" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="Another Tag" scheme="http://example.com/tags/Another-Tag/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>leetcode基础</title>
+    <link href="http://example.com/2022/02/01/2022/leetcode%E6%9C%AA%E5%88%86%E7%B1%BB%E9%A2%98%E7%9B%AE/"/>
+    <id>http://example.com/2022/02/01/2022/leetcode%E6%9C%AA%E5%88%86%E7%B1%BB%E9%A2%98%E7%9B%AE/</id>
+    <published>2022-01-31T16:47:53.000Z</published>
+    <updated>2022-01-31T16:53:53.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;牛人博客&lt;br&gt;&lt;a href=&quot;https://programmercarl.com/&quot;&gt;https://programmercarl.com/&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/AWsL7G89RtaHyHjRPNJENA&quot;&gt;https://mp.weixin.qq.com/s/AWsL7G89RtaHyHjRPNJENA&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;双指针：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;快慢指针：去除指定(或重复)元素、移动零&lt;/li&gt;
+&lt;li&gt;左右指针：&lt;/li&gt;
+&lt;li&gt;滑动窗口：&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 模板&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; () {&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 将新进来的右边的数据，计算进来&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 更新数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 判断窗口数据是否不满足要求了&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; (窗口数据不满要求 &amp;amp;&amp;amp; left &amp;lt; arrSize) {&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 移除left数据，更新窗口数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        left++;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    }&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    right++;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;}&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="tool" scheme="http://example.com/categories/tool/"/>
+    
+    <category term="2022" scheme="http://example.com/categories/tool/2022/"/>
+    
+    
+    <category term="实用教程" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="Another Tag" scheme="http://example.com/tags/Another-Tag/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>读书随记</title>
+    <link href="http://example.com/2022/01/27/2022/%E8%AF%BB%E4%B9%A6%E9%9A%8F%E8%AE%B0/"/>
+    <id>http://example.com/2022/01/27/2022/%E8%AF%BB%E4%B9%A6%E9%9A%8F%E8%AE%B0/</id>
+    <published>2022-01-26T16:47:53.000Z</published>
+    <updated>2022-01-26T16:53:53.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;script type=&quot;text&amp;#x2F;javascript&quot; src=&quot;https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js&quot;&gt;&lt;/script&gt;&lt;script</summary>
+        
+      
+    
+    
+    
+    <category term="tool" scheme="http://example.com/categories/tool/"/>
+    
+    <category term="2022" scheme="http://example.com/categories/tool/2022/"/>
+    
+    
+    <category term="实用教程" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="Another Tag" scheme="http://example.com/tags/Another-Tag/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>c语言</title>
+    <link href="http://example.com/2022/01/20/2022/c%E8%AF%AD%E8%A8%80/"/>
+    <id>http://example.com/2022/01/20/2022/c%E8%AF%AD%E8%A8%80/</id>
+    <published>2022-01-19T16:47:53.000Z</published>
+    <updated>2022-01-19T16:53:53.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;库函数&quot;&gt;&lt;a href=&quot;#库函数&quot; class=&quot;headerlink&quot; title=&quot;库函数&quot;&gt;&lt;/a&gt;库函数&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="tool" scheme="http://example.com/categories/tool/"/>
+    
+    <category term="2022" scheme="http://example.com/categories/tool/2022/"/>
+    
+    
+    <category term="Another Tag" scheme="http://example.com/tags/Another-Tag/"/>
+    
+    <category term="Computer Science" scheme="http://example.com/tags/Computer-Science/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>剑指offer</title>
+    <link href="http://example.com/2022/01/17/2022/%E5%89%91%E6%8C%87offer/"/>
+    <id>http://example.com/2022/01/17/2022/%E5%89%91%E6%8C%87offer/</id>
+    <published>2022-01-16T16:47:53.000Z</published>
+    <updated>2022-01-26T16:53:53.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;script type=&quot;text&amp;#x2F;javascript&quot; src=&quot;https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js&quot;&gt;&lt;/script&gt;&lt;script</summary>
+        
+      
+    
+    
+    
+    <category term="tool" scheme="http://example.com/categories/tool/"/>
+    
+    <category term="2022" scheme="http://example.com/categories/tool/2022/"/>
+    
+    
+    <category term="Another Tag" scheme="http://example.com/tags/Another-Tag/"/>
+    
+    <category term="Computer Science" scheme="http://example.com/tags/Computer-Science/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C/C++</title>
+    <link href="http://example.com/2021/12/07/2021/12/C++/"/>
+    <id>http://example.com/2021/12/07/2021/12/C++/</id>
+    <published>2021-12-06T16:47:53.000Z</published>
+    <updated>2021-10-26T16:53:53.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1&quot;&gt;&lt;a href=&quot;#1&quot; class=&quot;headerlink&quot; title=&quot;1&quot;&gt;&lt;/a&gt;1&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;开源 C++ 库列表&lt;br&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="tool" scheme="http://example.com/categories/tool/"/>
+    
+    <category term="2021" scheme="http://example.com/categories/tool/2021/"/>
+    
+    <category term="12" scheme="http://example.com/categories/tool/2021/12/"/>
+    
+    
+    <category term="c/c++" scheme="http://example.com/tags/c-c/"/>
+    
+    <category term="cs" scheme="http://example.com/tags/cs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CMake</title>
+    <link href="http://example.com/2021/12/07/2021/12/cmake/"/>
+    <id>http://example.com/2021/12/07/2021/12/cmake/</id>
+    <published>2021-12-06T16:47:53.000Z</published>
+    <updated>2021-10-26T16:53:53.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;1-cmake简述&quot;&gt;&lt;a href=&quot;#1-cmake简述&quot; class=&quot;headerlink&quot; title=&quot;1.cmake简述&quot;&gt;&lt;/a&gt;1.cmake简述&lt;/h2&gt;&lt;p&gt; CMake是跨平台编译管理工具,为第三方依赖和引入,创建编译系统,程序测试及安装.Cmake工具使用CMakeLists.txt文件,跨平台执行相同编译命令,生成对应平台的可执行程序或者链接库.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tool" scheme="http://example.com/categories/tool/"/>
+    
+    <category term="2021" scheme="http://example.com/categories/tool/2021/"/>
+    
+    <category term="12" scheme="http://example.com/categories/tool/2021/12/"/>
+    
+    
+    <category term="cs" scheme="http://example.com/tags/cs/"/>
+    
+    <category term="complier" scheme="http://example.com/tags/complier/"/>
+    
+    <category term="cmake" scheme="http://example.com/tags/cmake/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>英语语法指一</title>
+    <link href="http://example.com/2021/12/02/2021/12/%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95%E4%B8%80/"/>
+    <id>http://example.com/2021/12/02/2021/12/%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95%E4%B8%80/</id>
+    <published>2021-12-01T16:47:53.000Z</published>
+    <updated>2021-12-01T16:53:53.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;一-简单句子分析&quot;&gt;&lt;a href=&quot;#一-简单句子分析&quot; class=&quot;headerlink&quot; title=&quot;一.简单句子分析&quot;&gt;&lt;/a&gt;一.简单句子分析&lt;/h2&gt;&lt;p&gt; &lt;strong&gt;英语句子= 主干+修饰成分&lt;/strong&gt;&lt;br&gt; 分析句子结构:&lt;br&gt;  一个中心 + 两个要点&lt;br&gt;  一个中心: 动词. 句子必须右动词&lt;br&gt;  两个要点: 主语 + 谓语. 谓语是动词,主语为动作的执行者或接受者.&lt;br&gt;  &lt;strong&gt;句子的核心是主谓结构&lt;/strong&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="study" scheme="http://example.com/categories/study/"/>
+    
+    <category term="2021" scheme="http://example.com/categories/study/2021/"/>
+    
+    <category term="12" scheme="http://example.com/categories/study/2021/12/"/>
+    
+    
+    <category term="Another Tag" scheme="http://example.com/tags/Another-Tag/"/>
+    
+    <category term="English" scheme="http://example.com/tags/English/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>WSL</title>
+    <link href="http://example.com/2021/10/27/WSL/"/>
+    <id>http://example.com/2021/10/27/WSL/</id>
+    <published>2021-10-26T16:47:53.000Z</published>
+    <updated>2021-10-26T16:53:53.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;安装ubuntu20-04&quot;&gt;&lt;a href=&quot;#安装ubuntu20-04&quot; class=&quot;headerlink&quot; title=&quot;安装ubuntu20.04&quot;&gt;&lt;/a&gt;安装ubuntu20.04&lt;/h2&gt;&lt;p&gt;安装到非系统盘目录，下载离线安装包，复制到想要安装的目录下，解压，以管理员身份运行ubuntu2004.exe&lt;/p&gt;
+&lt;h2 id=&quot;卸载wsl&quot;&gt;&lt;a href=&quot;#卸载wsl&quot; class=&quot;headerlink&quot; title=&quot;卸载wsl&quot;&gt;&lt;/a&gt;卸载wsl&lt;/h2&gt;&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wslconfig /l&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 从列表中选择要卸载的发行版（例如Ubuntu）并键入命令&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;wslconfig /u Ubuntu&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;参考链接：&lt;a href=&quot;https://blog.csdn.net/zhangpeterx/article/details/97616268&quot;&gt;WSL系列操作：安装，卸载&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tool" scheme="http://example.com/categories/tool/"/>
+    
+    
+    <category term="实用教程" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="Another Tag" scheme="http://example.com/tags/Another-Tag/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>书单&amp;电影</title>
+    <link href="http://example.com/2021/10/27/%E4%B9%A6%E5%8D%95/"/>
+    <id>http://example.com/2021/10/27/%E4%B9%A6%E5%8D%95/</id>
+    <published>2021-10-26T16:47:53.000Z</published>
+    <updated>2021-10-26T16:53:53.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;书&quot;&gt;&lt;a href=&quot;#书&quot; class=&quot;headerlink&quot; title=&quot;书&quot;&gt;&lt;/a&gt;书&lt;/h2&gt;&lt;h3 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;豆豆三部曲&lt;br&gt;背叛&lt;br&gt;遥远的救世主&lt;br&gt;天幕红尘&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;h3 id=&quot;computer&quot;&gt;&lt;a href=&quot;#computer&quot; class=&quot;headerlink&quot; title=&quot;computer&quot;&gt;&lt;/a&gt;computer&lt;/h3&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C语言编程魔法书：基于C11标准&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;剑指offer 名企面试官精讲典型编程题&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C Primer Plus(第六版)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C语言解惑：指针、数组、函数和文件&lt;br&gt;回看第七章&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;算法图解&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;大话数据结构&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;软件故事&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="tool" scheme="http://example.com/categories/tool/"/>
+    
+    
+    <category term="实用教程" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="Another Tag" scheme="http://example.com/tags/Another-Tag/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构与算法基础</title>
+    <link href="http://example.com/2021/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/"/>
+    <id>http://example.com/2021/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/</id>
+    <published>2021-10-26T16:47:53.000Z</published>
+    <updated>2021-10-26T16:53:53.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;1-程序性能&quot;&gt;&lt;a href=&quot;#1-程序性能&quot; class=&quot;headerlink&quot; title=&quot;1 程序性能&quot;&gt;&lt;/a&gt;1 程序性能&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="tool" scheme="http://example.com/categories/tool/"/>
+    
+    
+    <category term="实用教程" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="Another Tag" scheme="http://example.com/tags/Another-Tag/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>leetcode题解算法分析</title>
+    <link href="http://example.com/2021/10/27/2021/11/leetcode%E9%A2%98%E8%A7%A3%E7%AE%97%E6%B3%95/"/>
+    <id>http://example.com/2021/10/27/2021/11/leetcode%E9%A2%98%E8%A7%A3%E7%AE%97%E6%B3%95/</id>
+    <published>2021-10-26T16:47:53.000Z</published>
+    <updated>2021-10-26T16:53:53.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;1-单调栈&quot;&gt;&lt;a href=&quot;#1-单调栈&quot; class=&quot;headerlink&quot; title=&quot;1.单调栈&quot;&gt;&lt;/a&gt;1.单调栈&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="tool" scheme="http://example.com/categories/tool/"/>
+    
+    <category term="2021" scheme="http://example.com/categories/tool/2021/"/>
+    
+    <category term="11" scheme="http://example.com/categories/tool/2021/11/"/>
+    
+    
+    <category term="实用教程" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="Another Tag" scheme="http://example.com/tags/Another-Tag/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Software&amp;Tool</title>
+    <link href="http://example.com/2021/10/26/Software&amp;Tool/"/>
+    <id>http://example.com/2021/10/26/Software&amp;Tool/</id>
+    <published>2021-10-25T16:47:53.000Z</published>
+    <updated>2021-10-26T16:53:53.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;编译工具&quot;&gt;&lt;a href=&quot;#编译工具&quot; class=&quot;headerlink&quot; title=&quot;编译工具&quot;&gt;&lt;/a&gt;编译工具&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;各版本gcc  mingw  clang&lt;br&gt;&lt;a href=&quot;https://winlibs.com/&quot;&gt;https://winlibs.com/&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/brechtsanders/winlibs_mingw&quot;&gt;https://github.com/brechtsanders/winlibs_mingw&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;MinGW-w64&lt;br&gt;&lt;a href=&quot;https://www.mingw-w64.org/changelog/&quot;&gt;https://www.mingw-w64.org/changelog/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;GitHub-Pages-Hexo使用及配置&quot;&gt;&lt;a href=&quot;#GitHub-Pages-Hexo使用及配置&quot; class=&quot;headerlink&quot; title=&quot;GitHub Pages + Hexo使用及配置&quot;&gt;&lt;/a&gt;GitHub Pages + Hexo使用及配置&lt;/h2&gt;&lt;p&gt;github上创建一个  username.github.io 的工程，username 必须为github的用户名&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tool" scheme="http://example.com/categories/tool/"/>
+    
+    
+    <category term="实用教程" scheme="http://example.com/tags/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="Another Tag" scheme="http://example.com/tags/Another-Tag/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2021/10/25/hello-world/"/>
+    <id>http://example.com/2021/10/25/hello-world/</id>
+    <published>2021-10-25T15:41:26.082Z</published>
+    <updated>2021-10-26T14:34:13.311Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>C/C++内存管理</title>
+    <link href="http://example.com/2021/10/07/2021/11/%E5%86%85%E5%AD%98/"/>
+    <id>http://example.com/2021/10/07/2021/11/%E5%86%85%E5%AD%98/</id>
+    <published>2021-10-06T16:47:53.000Z</published>
+    <updated>2021-10-06T16:53:53.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;一、内存&quot;&gt;&lt;a href=&quot;#一、内存&quot; class=&quot;headerlink&quot; title=&quot;一、内存&quot;&gt;&lt;/a&gt;一、内存&lt;/h2&gt;&lt;p&gt; 在计算机中，不同应用程序之间的内存是相互独立的，通常情况下不可以相互访问。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tool" scheme="http://example.com/categories/tool/"/>
+    
+    <category term="2021" scheme="http://example.com/categories/tool/2021/"/>
+    
+    <category term="11" scheme="http://example.com/categories/tool/2021/11/"/>
+    
+    
+    <category term="Another Tag" scheme="http://example.com/tags/Another-Tag/"/>
+    
+    <category term="Computer Science" scheme="http://example.com/tags/Computer-Science/"/>
+    
+  </entry>
+  
+</feed>
