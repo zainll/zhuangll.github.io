@@ -405,6 +405,19 @@
       </tags>
   </entry>
   <entry>
+    <title>剑指offer</title>
+    <url>/2022/01/17/2022/%E5%89%91%E6%8C%87offer/</url>
+    <content><![CDATA[<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2022</category>
+      </categories>
+      <tags>
+        <tag>Another Tag</tag>
+        <tag>Computer Science</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>深入理解计算机系统</title>
     <url>/2022/02/27/2022/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/</url>
     <content><![CDATA[<p>[toc]</p>
@@ -426,24 +439,43 @@
 <li><p>高速缓存存储器cache：L1 L2 L3(SRAM)<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220608232141.png" alt="20220608232141"></p>
 </li>
 </ol>
-<p>存储设备层次结构<br>图：</p>
-<p>操作系统有两个基本功能：（1)防止硬件被失控的应用程序滥用；（2 )向应用程序提供简单一致的机制来控制复杂而又通常大不相同的低级硬件设备<br>图<br>操作系统通过几个基本的抽象概念：进程、虚拟内存和文件<br>图</p>
-<p>Posix 标准：Unix 系统调用的 C 语言接口、shell 程序和工具、线程及网络编程</p>
-<p>进程<br>进程是操作系统对一个正在运行的程序的一种抽象<br>操作系统实现这种交错执行的机制称为上下文切换</p>
-<p>操作系统保持跟踪进程运行所需的所有状态信息。这种状态，也就是上下文，包括 PC 和寄存器文件的当前值，以及主存的内容</p>
-<p>系统调用会将控制权传递给操作系统</p>
-<p>从一个进程到另一个进程的转换是由操作系统内核（kernel )管理的。<br>内核是操作系统代码常驻主存的部分</p>
-<p>读写文件，执行一条系统调用（system call)指令，将控制权传递给内核。然后内核执行被请求的操作并返回应用程序</p>
-<p>内核不是一个独立的进程。是系统管理全部进程所用代码和数据结构的集合</p>
-<p>线程<br>每个线程都运行在进程的上下文中，并共享同样的代码和全局数据</p>
-<p>虚拟内存<br>图：</p>
-<p>程序代码和数据，堆，共享库，栈，内核虚拟内存，</p>
-<p>文件<br>I/O 设备是文件</p>
-<p>系统之间网络通信</p>
-<p>Amdahl定律</p>
-<p>对系统的某个部分加速时，其对系统整体性能的影响取决于该部分的重要性和加速程度</p>
-<p>并发和并行<br>三个层次<br>线程级并发<br>指令级并行<br>单指令、多数据并行</p>
-<p> 计算机系统中抽象<br> 图</p>
+<ol start="6">
+<li>存储设备层次结构<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220608232321.png" alt="20220608232321"></li>
+</ol>
+<ol start="7">
+<li>操作系统有两个基本功能：（1)防止硬件被失控的应用程序滥用；（2 )向应用程序提供简单一致的机制来控制复杂而又通常大不相同的低级硬件设备<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220608232459.png" alt="20220608232459"></li>
+</ol>
+<p>  操作系统通过几个基本的抽象概念：<strong>进程、虚拟内存和文件</strong><br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220608232435.png" alt="20220608232435"></p>
+<p>  Posix 标准：Unix 系统调用的 C 语言接口、shell 程序和工具、线程及网络编程</p>
+<p>  进程：操作系统对一个正在运行的程序的一种抽象<br>操作系统实现这种交错执行的机制称为上下文切换</p>
+<p>  操作系统保持跟踪进程运行所需的所有状态信息。这种状态，也就是上下文，包括 PC 和寄存器文件的当前值，以及主存的内容</p>
+<p>  系统调用会将控制权传递给操作系统</p>
+<p>  从一个进程到另一个进程的转换是由操作系统内核（kernel )管理的。内核是操作系统代码常驻主存的部分</p>
+<p>  读写文件，执行一条系统调用（system call)指令，将控制权传递给内核。然后内核执行被请求的操作并返回应用程序</p>
+<p>  内核不是一个独立的进程。是系统管理全部进程所用代码和数据结构的集合</p>
+<p>  线程：每个线程都运行在进程的上下文中，并共享同样的代码和全局数据</p>
+<p>  虚拟内存<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220608232704.png" alt="20220608232704"></p>
+<p>  程序代码和数据，堆，共享库，栈，内核虚拟内存，</p>
+<p>  文件   I/O 设备是文件</p>
+<ol start="8">
+<li><p>系统之间网络通信</p>
+</li>
+<li><p>Amdahl定律</p>
+</li>
+</ol>
+<p>  对系统的某个部分加速时，其对系统整体性能的影响取决于该部分的重要性和加速程度</p>
+<ol start="10">
+<li>并发和并行</li>
+</ol>
+<p> 三个层次：</p>
+<ul>
+<li>线程级并发</li>
+<li>指令级并行</li>
+<li>单指令、多数据并行</li>
+</ul>
+<ol start="11">
+<li>计算机系统中抽象<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220608232955.png" alt="20220608232955"></li>
+</ol>
 <br>
 
 
@@ -485,6 +517,19 @@
 <br>
 
 <script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2022</category>
+      </categories>
+      <tags>
+        <tag>实用教程</tag>
+        <tag>Another Tag</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>读书随记</title>
+    <url>/2022/01/27/2022/%E8%AF%BB%E4%B9%A6%E9%9A%8F%E8%AE%B0/</url>
+    <content><![CDATA[<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
       <categories>
         <category>tool</category>
         <category>2022</category>
@@ -1358,32 +1403,6 @@
       <tags>
         <tag>实用教程</tag>
         <tag>Another Tag</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>读书随记</title>
-    <url>/2022/01/27/2022/%E8%AF%BB%E4%B9%A6%E9%9A%8F%E8%AE%B0/</url>
-    <content><![CDATA[<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2022</category>
-      </categories>
-      <tags>
-        <tag>实用教程</tag>
-        <tag>Another Tag</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>剑指offer</title>
-    <url>/2022/01/17/2022/%E5%89%91%E6%8C%87offer/</url>
-    <content><![CDATA[<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2022</category>
-      </categories>
-      <tags>
-        <tag>Another Tag</tag>
-        <tag>Computer Science</tag>
       </tags>
   </entry>
   <entry>
@@ -2270,6 +2289,24 @@
       </tags>
   </entry>
   <entry>
+    <title>C/C++</title>
+    <url>/2021/12/07/2021/12/C++/</url>
+    <content><![CDATA[<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><ul>
+<li>开源 C++ 库列表<br><a href="https://zh.cppreference.com/w/cpp/links/libs">https://zh.cppreference.com/w/cpp/links/libs</a></li>
+<li>C 语言<br><a href="https://zh.cppreference.com/w/c/language">https://zh.cppreference.com/w/c/language</a></li>
+</ul>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2021</category>
+        <category>12</category>
+      </categories>
+      <tags>
+        <tag>c/c++</tag>
+        <tag>cs</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CMake</title>
     <url>/2021/12/07/2021/12/cmake/</url>
     <content><![CDATA[<h2 id="1-cmake简述"><a href="#1-cmake简述" class="headerlink" title="1.cmake简述"></a>1.cmake简述</h2><p> CMake是跨平台编译管理工具,为第三方依赖和引入,创建编译系统,程序测试及安装.Cmake工具使用CMakeLists.txt文件,跨平台执行相同编译命令,生成对应平台的可执行程序或者链接库.</p>
@@ -2332,27 +2369,9 @@
         <category>12</category>
       </categories>
       <tags>
+        <tag>cs</tag>
         <tag>complier</tag>
-        <tag>cs</tag>
         <tag>cmake</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C/C++</title>
-    <url>/2021/12/07/2021/12/C++/</url>
-    <content><![CDATA[<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><ul>
-<li>开源 C++ 库列表<br><a href="https://zh.cppreference.com/w/cpp/links/libs">https://zh.cppreference.com/w/cpp/links/libs</a></li>
-<li>C 语言<br><a href="https://zh.cppreference.com/w/c/language">https://zh.cppreference.com/w/c/language</a></li>
-</ul>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2021</category>
-        <category>12</category>
-      </categories>
-      <tags>
-        <tag>cs</tag>
-        <tag>c/c++</tag>
       </tags>
   </entry>
   <entry>
