@@ -404,32 +404,6 @@
       </tags>
   </entry>
   <entry>
-    <title>剑指offer</title>
-    <url>/2022/01/17/2022/%E5%89%91%E6%8C%87offer/</url>
-    <content><![CDATA[<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2022</category>
-      </categories>
-      <tags>
-        <tag>Another Tag</tag>
-        <tag>Computer Science</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>读书随记</title>
-    <url>/2022/01/27/2022/%E8%AF%BB%E4%B9%A6%E9%9A%8F%E8%AE%B0/</url>
-    <content><![CDATA[<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2022</category>
-      </categories>
-      <tags>
-        <tag>实用教程</tag>
-        <tag>Another Tag</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数据结构与算法基础</title>
     <url>/2021/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h2 id="1-程序性能"><a href="#1-程序性能" class="headerlink" title="1 程序性能"></a>1 程序性能</h2><span id="more"></span>
@@ -1296,10 +1270,38 @@
       </tags>
   </entry>
   <entry>
+    <title>剑指offer</title>
+    <url>/2022/01/17/2022/%E5%89%91%E6%8C%87offer/</url>
+    <content><![CDATA[<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2022</category>
+      </categories>
+      <tags>
+        <tag>Another Tag</tag>
+        <tag>Computer Science</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>读书随记</title>
+    <url>/2022/01/27/2022/%E8%AF%BB%E4%B9%A6%E9%9A%8F%E8%AE%B0/</url>
+    <content><![CDATA[<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2022</category>
+      </categories>
+      <tags>
+        <tag>实用教程</tag>
+        <tag>Another Tag</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>深入理解计算机系统</title>
     <url>/2022/02/27/2022/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/</url>
     <content><![CDATA[<p>[toc]</p>
-<h1 id="深入理解计算机系统"><a href="#深入理解计算机系统" class="headerlink" title="深入理解计算机系统"></a>深入理解计算机系统</h1><h2 id="第1章-计算机系统"><a href="#第1章-计算机系统" class="headerlink" title="第1章 计算机系统"></a>第1章 计算机系统</h2><p>hello world程序分析，</p>
+<h1 id="深入理解计算机系统"><a href="#深入理解计算机系统" class="headerlink" title="深入理解计算机系统"></a>深入理解计算机系统</h1><h2 id="第1章-计算机系统"><a href="#第1章-计算机系统" class="headerlink" title="第1章 计算机系统"></a>第1章 计算机系统</h2><span id="more"></span>
+
+<p>hello world程序分析，</p>
 <p>hello.c编译</p>
 <p><img src="https://cdn.jsdelivr.net/gh/zhuangll/PictureBed@main/blogs/pictures/20220608230116.png" alt="20220608230116"></p>
 <p>图：<br>编译系统：预处理器cpp、编译器ccl、汇编器as和链接器ld</p>
@@ -1327,7 +1329,7 @@
 <p> 计算机系统中抽象<br> 图</p>
 <br>
 
-<span id="more"></span>
+
 
 <h1 id="程序结构和执行"><a href="#程序结构和执行" class="headerlink" title="程序结构和执行"></a>程序结构和执行</h1><h2 id="第2章-信息的表示和处理"><a href="#第2章-信息的表示和处理" class="headerlink" title="第2章 信息的表示和处理"></a>第2章 信息的表示和处理</h2><p>补码表示，<br>浮点数表示<br>类型转换</p>
 <br>
@@ -1373,6 +1375,24 @@
       <tags>
         <tag>实用教程</tag>
         <tag>Another Tag</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C/C++</title>
+    <url>/2021/12/07/2021/12/C++/</url>
+    <content><![CDATA[<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><ul>
+<li>开源 C++ 库列表<br><a href="https://zh.cppreference.com/w/cpp/links/libs">https://zh.cppreference.com/w/cpp/links/libs</a></li>
+<li>C 语言<br><a href="https://zh.cppreference.com/w/c/language">https://zh.cppreference.com/w/c/language</a></li>
+</ul>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2021</category>
+        <category>12</category>
+      </categories>
+      <tags>
+        <tag>c/c++</tag>
+        <tag>cs</tag>
       </tags>
   </entry>
   <entry>
@@ -2025,27 +2045,9 @@
         <category>12</category>
       </categories>
       <tags>
+        <tag>cs</tag>
         <tag>complier</tag>
-        <tag>cs</tag>
         <tag>cmake</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C/C++</title>
-    <url>/2021/12/07/2021/12/C++/</url>
-    <content><![CDATA[<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><ul>
-<li>开源 C++ 库列表<br><a href="https://zh.cppreference.com/w/cpp/links/libs">https://zh.cppreference.com/w/cpp/links/libs</a></li>
-<li>C 语言<br><a href="https://zh.cppreference.com/w/c/language">https://zh.cppreference.com/w/c/language</a></li>
-</ul>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2021</category>
-        <category>12</category>
-      </categories>
-      <tags>
-        <tag>cs</tag>
-        <tag>c/c++</tag>
       </tags>
   </entry>
   <entry>
