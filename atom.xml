@@ -51,7 +51,9 @@
     
     <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
 &lt;h1 id=&quot;深入理解计算机系统&quot;&gt;&lt;a href=&quot;#深入理解计算机系统&quot; class=&quot;headerlink&quot; title=&quot;深入理解计算机系统&quot;&gt;&lt;/a&gt;深入理解计算机系统&lt;/h1&gt;&lt;h2 id=&quot;第1章-计算机系统&quot;&gt;&lt;a href=&quot;#第1章-计算机系统&quot; class=&quot;headerlink&quot; title=&quot;第1章 计算机系统&quot;&gt;&lt;/a&gt;第1章 计算机系统&lt;/h2&gt;&lt;p&gt;hello world程序分析，&lt;/p&gt;
-&lt;p&gt;hello.c编译&lt;br&gt;图：&lt;br&gt;编译系统：预处理器cpp、编译器ccl、汇编器as和链接器ld&lt;/p&gt;
+&lt;p&gt;hello.c编译&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/zhuangll/PictureBed@main/blogs/pictures/20220608230116.png&quot; alt=&quot;20220608230116&quot;&gt;&lt;/p&gt;
+&lt;p&gt;图：&lt;br&gt;编译系统：预处理器cpp、编译器ccl、汇编器as和链接器ld&lt;/p&gt;
 &lt;p&gt;计算机系统硬件组成：总线，I/O设备，主存，处理器&lt;br&gt;图：&lt;/p&gt;
 &lt;p&gt;CPU 在指令的要求下执行操作：加载、存储、操作和跳转&lt;/p&gt;
 &lt;p&gt;hello程序加载&lt;/p&gt;
@@ -203,6 +205,33 @@
   </entry>
   
   <entry>
+    <title>CMake</title>
+    <link href="http://example.com/2021/12/07/2021/12/cmake/"/>
+    <id>http://example.com/2021/12/07/2021/12/cmake/</id>
+    <published>2021-12-06T16:47:53.000Z</published>
+    <updated>2021-10-26T16:53:53.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;1-cmake简述&quot;&gt;&lt;a href=&quot;#1-cmake简述&quot; class=&quot;headerlink&quot; title=&quot;1.cmake简述&quot;&gt;&lt;/a&gt;1.cmake简述&lt;/h2&gt;&lt;p&gt; CMake是跨平台编译管理工具,为第三方依赖和引入,创建编译系统,程序测试及安装.Cmake工具使用CMakeLists.txt文件,跨平台执行相同编译命令,生成对应平台的可执行程序或者链接库.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tool" scheme="http://example.com/categories/tool/"/>
+    
+    <category term="2021" scheme="http://example.com/categories/tool/2021/"/>
+    
+    <category term="12" scheme="http://example.com/categories/tool/2021/12/"/>
+    
+    
+    <category term="complier" scheme="http://example.com/tags/complier/"/>
+    
+    <category term="cs" scheme="http://example.com/tags/cs/"/>
+    
+    <category term="cmake" scheme="http://example.com/tags/cmake/"/>
+    
+  </entry>
+  
+  <entry>
     <title>C/C++</title>
     <link href="http://example.com/2021/12/07/2021/12/C++/"/>
     <id>http://example.com/2021/12/07/2021/12/C++/</id>
@@ -228,36 +257,9 @@
     <category term="12" scheme="http://example.com/categories/tool/2021/12/"/>
     
     
+    <category term="cs" scheme="http://example.com/tags/cs/"/>
+    
     <category term="c/c++" scheme="http://example.com/tags/c-c/"/>
-    
-    <category term="cs" scheme="http://example.com/tags/cs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CMake</title>
-    <link href="http://example.com/2021/12/07/2021/12/cmake/"/>
-    <id>http://example.com/2021/12/07/2021/12/cmake/</id>
-    <published>2021-12-06T16:47:53.000Z</published>
-    <updated>2021-10-26T16:53:53.000Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;1-cmake简述&quot;&gt;&lt;a href=&quot;#1-cmake简述&quot; class=&quot;headerlink&quot; title=&quot;1.cmake简述&quot;&gt;&lt;/a&gt;1.cmake简述&lt;/h2&gt;&lt;p&gt; CMake是跨平台编译管理工具,为第三方依赖和引入,创建编译系统,程序测试及安装.Cmake工具使用CMakeLists.txt文件,跨平台执行相同编译命令,生成对应平台的可执行程序或者链接库.&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="tool" scheme="http://example.com/categories/tool/"/>
-    
-    <category term="2021" scheme="http://example.com/categories/tool/2021/"/>
-    
-    <category term="12" scheme="http://example.com/categories/tool/2021/12/"/>
-    
-    
-    <category term="cs" scheme="http://example.com/tags/cs/"/>
-    
-    <category term="complier" scheme="http://example.com/tags/complier/"/>
-    
-    <category term="cmake" scheme="http://example.com/tags/cmake/"/>
     
   </entry>
   

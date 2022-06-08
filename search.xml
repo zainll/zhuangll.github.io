@@ -257,6 +257,179 @@
       </tags>
   </entry>
   <entry>
+    <title>c语言</title>
+    <url>/2022/01/20/2022/c%E8%AF%AD%E8%A8%80/</url>
+    <content><![CDATA[<h2 id="库函数"><a href="#库函数" class="headerlink" title="库函数"></a>库函数</h2><span id="more"></span>
+
+<h3 id="string-h"><a href="#string-h" class="headerlink" title="string.h"></a>string.h</h3><h4 id="strcpy-字符串复制函数"><a href="#strcpy-字符串复制函数" class="headerlink" title="strcpy 字符串复制函数"></a>strcpy 字符串复制函数</h4><figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// strDestination 目的字符串；strSource 源字符串</span></span><br><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">strcpy</span><span class="params">(<span class="keyword">char</span>* strDestination, <span class="keyword">const</span> <span class="keyword">char</span>* strSource)</span></span>;</span><br><span class="line"><span class="comment">// strcpy() 会把 strSource 指向的字符串复制到 strDestination。</span></span><br><span class="line"><span class="comment">// 返回值：目的字符串，也即 strDestination。</span></span><br><span class="line">    <span class="keyword">char</span> dest[<span class="number">50</span>] = { <span class="number">0</span> };</span><br><span class="line">    <span class="keyword">char</span> src[<span class="number">50</span>] = { <span class="string">"http://c.biancheng.net"</span> };</span><br><span class="line">    <span class="built_in">strcpy</span>(dest, src);</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="strlen-求字符串长度"><a href="#strlen-求字符串长度" class="headerlink" title="strlen 求字符串长度"></a>strlen 求字符串长度</h4><figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+
+<h4 id="strcspn-求字符串互补跨度-长度"><a href="#strcspn-求字符串互补跨度-长度" class="headerlink" title="strcspn 求字符串互补跨度(长度)"></a>strcspn 求字符串互补跨度(长度)</h4><figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// 回从字符串 str 开头算起，连续有几个字符都不在 reject 中；也就是说，str 中连续有几个字符和 reject 没有交集</span></span><br><span class="line"><span class="comment">// str 要检索的字符串</span></span><br><span class="line"><span class="comment">// reject 该字符串包含要在str中进行匹配的字符列表</span></span><br><span class="line"><span class="function"><span class="keyword">size_t</span> <span class="title">strcspn</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* str, <span class="keyword">const</span> <span class="keyword">char</span>* reject)</span></span>;</span><br><span class="line"><span class="comment">// 返回值：返回从字符串 str 开头算起，连续不在 reject 中的字符的个数；也可以理解为，str 中第一次出现 reject 中字符的位置。</span></span><br><span class="line"><span class="keyword">char</span> str[<span class="number">50</span>] = { <span class="string">"http://c.biancheng.net"</span> };</span><br><span class="line"><span class="keyword">char</span> keys[<span class="number">50</span>] = { <span class="string">"?.,:\"\'-!"</span> };</span><br><span class="line"><span class="keyword">int</span> i = <span class="built_in">strcspn</span>(str, keys);</span><br><span class="line"><span class="comment">// i = 4</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="strcmp-比较两个字符串"><a href="#strcmp-比较两个字符串" class="headerlink" title="strcmp 比较两个字符串"></a>strcmp 比较两个字符串</h4><figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// strcmp() 会根据 ASCII 编码依次比较 str1 和 str2 的每一个字符，直到出现不到的字符，或者到达字符串末尾（遇见\0）</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">strcmp</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* str1, <span class="keyword">const</span> <span class="keyword">char</span>* str2)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> str1[<span class="number">50</span>] = { <span class="number">0</span> };</span><br><span class="line"><span class="keyword">char</span> str2[<span class="number">50</span>] = { <span class="number">0</span> };</span><br><span class="line"><span class="built_in">strcmp</span>(str1, str2)</span><br></pre></td></tr></tbody></table></figure>
+<p>返回值：</p>
+<ul>
+<li>如果返回值 &lt; 0，则表示 str1 小于 str2。</li>
+<li>如果返回值 &gt; 0，则表示 str2 小于 str1。</li>
+<li>如果返回值 = 0，则表示 str1 等于 str2。</li>
+</ul>
+<h4 id="strchr-字符查找函数"><a href="#strchr-字符查找函数" class="headerlink" title="strchr 字符查找函数"></a>strchr 字符查找函数</h4><ul>
+<li>strchr() 函数会依次检索字符串 str 中的每一个字符，直到遇见字符 c，或者到达字符串末尾（遇见\0）。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// str 被查找的字符串</span></span><br><span class="line"><span class="comment">// c  要查找的字符</span></span><br><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">strchr</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* str, <span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *str = <span class="string">"http://c.biancheng.net/"</span>;</span><br><span class="line"><span class="keyword">int</span> c = <span class="string">'g'</span>;</span><br><span class="line"><span class="keyword">char</span> *p = <span class="built_in">strchr</span>(str, c);</span><br></pre></td></tr></tbody></table></figure>
+返回值：</li>
+<li>返回在字符串 str 中第一次出现字符 c 的位置，如果未找到该字符 c 则返回 NULL。</li>
+</ul>
+<h4 id="strcat-字符串拼接"><a href="#strcat-字符串拼接" class="headerlink" title="strcat 字符串拼接"></a>strcat 字符串拼接</h4><ul>
+<li>strcat() 函数把 strSource 所指向的字符串追加到 strDestination 所指向的字符串的结尾<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// strDestination 目的字符串</span></span><br><span class="line"><span class="comment">// strSource  源字符串</span></span><br><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">strcat</span><span class="params">(<span class="keyword">char</span>* strDestination, <span class="keyword">const</span> <span class="keyword">char</span>* strSource)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> str1[<span class="number">101</span>] = { <span class="number">0</span> };</span><br><span class="line"><span class="keyword">char</span> str2[<span class="number">50</span>] = { <span class="number">0</span> };</span><br><span class="line"><span class="built_in">strcat</span>(str1, str2);</span><br></pre></td></tr></tbody></table></figure>
+返回值：</li>
+<li>指向 strDestination 的指针。</li>
+</ul>
+<h3 id="ctype-h"><a href="#ctype-h" class="headerlink" title="ctype.h"></a>ctype.h</h3><h4 id="isupper-判断一个字符是否是大写字母"><a href="#isupper-判断一个字符是否是大写字母" class="headerlink" title="isupper 判断一个字符是否是大写字母"></a>isupper 判断一个字符是否是大写字母</h4><figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// c</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isupper</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> str[] = <span class="string">"C++ Java Python C# Linux Golang Shell\n"</span>;</span><br><span class="line"><span class="keyword">int</span> re = <span class="built_in">isupper</span>(s[i]);</span><br></pre></td></tr></tbody></table></figure>
+<p>返回值：</p>
+<ul>
+<li>返回值为非 0（真）表示 c 是大写字母，返回值为 0（假）表示 c 不是大写字母。</li>
+</ul>
+<h4 id="islower-判断一个字符是否是小写字母"><a href="#islower-判断一个字符是否是小写字母" class="headerlink" title="islower 判断一个字符是否是小写字母"></a>islower 判断一个字符是否是小写字母</h4><figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">islower</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> c = <span class="string">'a'</span>;</span><br><span class="line"><span class="keyword">int</span> re = <span class="built_in">islower</span>(c);</span><br></pre></td></tr></tbody></table></figure>
+
+
+<h4 id="isspace-判断一个字符是否是空白字符"><a href="#isspace-判断一个字符是否是空白字符" class="headerlink" title="isspace 判断一个字符是否是空白字符"></a>isspace 判断一个字符是否是空白字符</h4><figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isspace</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">char</span> str[] = <span class="string">"Linux C++\tPython Shell\nC# Java\n"</span>;</span><br><span class="line"><span class="keyword">while</span> (str[i]) {</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">isspace</span>(s[i])) {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"c = %c "</span>, s[i]);</span><br><span class="line">    }</span><br><span class="line">    i++;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>空白字符：空格、水平制表符、换行符、垂直制表符、换页、回车<br>返回值：</li>
+<li>返回值为非 0（真）表示c是空白符，返回值为 0（假）表示c不是空白符。</li>
+</ul>
+<h4 id="isprint-判断一个字符是否是可打印字符"><a href="#isprint-判断一个字符是否是可打印字符" class="headerlink" title="isprint 判断一个字符是否是可打印字符"></a>isprint 判断一个字符是否是可打印字符</h4><figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isprint</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">char</span> str[]=<span class="string">"C++ Java \n C# Python \t Shell Linux\n"</span>;</span><br><span class="line"><span class="keyword">while</span>(str[i]) {</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">isprint</span>(str[i])) <span class="built_in">putchar</span> (str[i]);</span><br><span class="line">    i++;</span><br><span class="line">}</span><br><span class="line"><span class="comment">// C++ Java  C# Python  Shell Linux</span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>可打印字符和控制字符是相对的，控制字符是指那些具有某种特殊功能、不会显示在屏幕上、不会占用字符位置的“特殊”字符。要检测一个字符是否是控制字符，请使用 iscntrl() 函数<br>返回值：</li>
+<li>返回值为非 0（真）表示 c 是可打印字符，返回值为 0（假）表示 c 不是可打印字符。</li>
+</ul>
+<h4 id="isgraph-判断一个字符是否是图形字符"><a href="#isgraph-判断一个字符是否是图形字符" class="headerlink" title="isgraph 判断一个字符是否是图形字符"></a>isgraph 判断一个字符是否是图形字符</h4><ul>
+<li>字符是图形字符，就是说这个字符需要在显示器上绘制出来，而空格、换行、Tab 缩进等字符只会占用输出的位置，不需要绘制。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isgraph</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> c = <span class="string">'';</span></span><br><span class="line"><span class="string">int res = isgraph(c)</span></span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li>返回值为非 0（真）表示 c 是图形字符，返回值为 0（假）表示 c 不是图形字符。</li>
+</ul>
+<h4 id="iscntrl-判断一个字符是否为控制字符"><a href="#iscntrl-判断一个字符是否为控制字符" class="headerlink" title="iscntrl 判断一个字符是否为控制字符"></a>iscntrl 判断一个字符是否为控制字符</h4><ul>
+<li>“控制字符”是指那些具有某种特殊功能、不会显示在屏幕上、不会占用字符位置的特殊字符。默认情况下，C语言使用的是 ASCII 编码，控制字符的范围是0x00 (NUL) ~ 0x1f (US)，再加上最后的0x7f (DEL)，一共 33 个。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">iscntrl</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> res = <span class="built_in">iscntrl</span>(c);</span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li>返回值为非 0（真）表示 c 是控制字符，返回值为 0（假）表示 c 不是控制字符。</li>
+</ul>
+<h4 id="isdigit-判断一个字符是否为数字"><a href="#isdigit-判断一个字符是否为数字" class="headerlink" title="isdigit  判断一个字符是否为数字"></a>isdigit  判断一个字符是否为数字</h4><ul>
+<li>isdigit() 函数用来判断一个字符是否是数字，也即 0~9。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isdigit</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> s[<span class="number">50</span>] = {<span class="number">0</span>};</span><br><span class="line"><span class="keyword">int</span> res = <span class="built_in">isdigit</span>(s[i]);</span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li>返回值为非 0（真）表示 c 是数字，返回值为 0（假）表示 c 不是数字。</li>
+</ul>
+<h4 id="isalpha-判断一个字符是否是字母"><a href="#isalpha-判断一个字符是否是字母" class="headerlink" title="isalpha 判断一个字符是否是字母"></a>isalpha 判断一个字符是否是字母</h4><ul>
+<li>isalpha() 函数用来检测一个字符是否是字母，包括大写字母和小写字母。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isalpha</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> str[] = <span class="string">"C++ Java C#"</span>;</span><br><span class="line"><span class="keyword">while</span> (str[i]) {</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">isalpha</span>(str[i])) {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%c is alphabetic\n"</span>, str[i]);</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%c is not alphabetic\n"</span>, str[i]);</span><br><span class="line">    }</span><br><span class="line">    i++;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li>回非 0（真）表示 c 是字母，返回 0（假）表示 c 不是字母。</li>
+</ul>
+<h4 id="isalnum-判断一个字符是否是字母或数字"><a href="#isalnum-判断一个字符是否是字母或数字" class="headerlink" title="isalnum 判断一个字符是否是字母或数字"></a>isalnum 判断一个字符是否是字母或数字</h4><ul>
+<li> isalnum() 函数用于判断一个字符是否是字母（包括大写字母和小写字母）或者数字（0~9）。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isalnum</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> str[] = <span class="string">"*http://c.biancheng.net is 7 years old"</span>;</span><br><span class="line"><span class="keyword">while</span> (str[i]) {</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">isalnum</span>(str[i])) n++;</span><br><span class="line">    i++;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li>返回非 0（真）表示 c 是字母或者数字，返回 0（假）表示 c 既不是数字也不是字母。</li>
+</ul>
+<h3 id="math-h"><a href="#math-h" class="headerlink" title="math.h"></a>math.h</h3><h4 id="ldexp"><a href="#ldexp" class="headerlink" title="ldexp"></a>ldexp</h4><p>返回x乘以2的exponent次方</p>
+<ul>
+<li>ldexp() 函数用来计算 x 乘以 2 的 exponent 次方（次幂）的值，也即返回 x * 2^exponent 的值。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// x 双精度浮点数</span></span><br><span class="line"><span class="comment">// exponnent  2的指数</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">ldexp</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">int</span> exponent)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> f=<span class="number">0.964453</span>, n=<span class="number">7</span>;  <span class="comment">//为变量赋初值</span></span><br><span class="line"><span class="keyword">double</span> x = <span class="built_in">ldexp</span>(f, n);  <span class="comment">//求f * 2^n 的结果</span></span><br></pre></td></tr></tbody></table></figure>
+返回值：</li>
+<li>x*2^exponent 的计算结果</li>
+</ul>
+<h4 id="labs-求整数的绝对值-针对long类型"><a href="#labs-求整数的绝对值-针对long类型" class="headerlink" title="labs 求整数的绝对值(针对long类型)"></a>labs 求整数的绝对值(针对long类型)</h4><figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">labs</span><span class="params">(<span class="keyword">long</span> n)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> m = <span class="number">11</span>;</span><br><span class="line"><span class="keyword">long</span> a = <span class="built_in">labs</span>(m); <span class="comment">// 求m的绝对值</span></span><br></pre></td></tr></tbody></table></figure>
+<p>返回值：</p>
+<ul>
+<li>参数n的绝对值</li>
+</ul>
+<h4 id="abs-求整数的绝对值"><a href="#abs-求整数的绝对值" class="headerlink" title="abs 求整数的绝对值"></a>abs 求整数的绝对值</h4><ul>
+<li>abs()函数用于求整数的绝对值<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">abs</span><span class="params">(<span class="keyword">int</span> n)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a = <span class="number">3</span>, b = <span class="number">-4</span>, c, d;  <span class="comment">//为变量赋初值</span></span><br><span class="line">c = <span class="built_in">abs</span>(a);  <span class="comment">//求a的绝对值</span></span><br><span class="line">d = <span class="built_in">abs</span>(b);  <span class="comment">//求b的绝对值</span></span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li>参数的绝对值</li>
+</ul>
+<h4 id="pow-求x的y次方的值"><a href="#pow-求x的y次方的值" class="headerlink" title="pow 求x的y次方的值"></a>pow 求x的y次方的值</h4><ul>
+<li> pow() 函数用来求 x 的 y 次方的值。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// x 双精度数  y 双精度数</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">pow</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">double</span> y)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> x = <span class="number">4</span>, y = <span class="number">6</span>;  <span class="comment">//为变量赋初值</span></span><br><span class="line"><span class="keyword">double</span> result = <span class="built_in">pow</span>(x, y);  <span class="comment">//求a的b次方</span></span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li>x 的 y 次方的值。</li>
+</ul>
+<h4 id="frexp-提取浮点数的尾数和指数部分"><a href="#frexp-提取浮点数的尾数和指数部分" class="headerlink" title="frexp 提取浮点数的尾数和指数部分"></a>frexp 提取浮点数的尾数和指数部分</h4><ul>
+<li>rexp() 函数用来提取一个浮点数（小数）的指数部分和尾数部分。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// x 要被计算的浮点数</span></span><br><span class="line"><span class="comment">// exponent  一个指向指数部分的指针</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">frexp</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">int</span>* exponent)</span></span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> <span class="built_in">exp</span>;</span><br><span class="line"><span class="keyword">double</span> mant = <span class="built_in">frexp</span>(<span class="number">19.625</span>, &amp;<span class="built_in">exp</span>);</span><br></pre></td></tr></tbody></table></figure>
+指数部分被存入参数 exponent 中，尾数部分被放入返回值中，最终 x = mantissa * 2 ^ exponent（mantissa 表示尾数）。<br>返回值</li>
+<li>浮点数 x 的尾数部分。</li>
+</ul>
+<h4 id="modf-提取浮点数的小数和整数部分"><a href="#modf-提取浮点数的小数和整数部分" class="headerlink" title="modf 提取浮点数的小数和整数部分"></a>modf 提取浮点数的小数和整数部分</h4><ul>
+<li>double modf(double x, double *intptr) 将提取浮点数 x 的整数部分和小数部分，整数部分被存入参数 intptr 中，小数部分被放入返回值中。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// x 要被计算的浮点数</span></span><br><span class="line"><span class="comment">// 一个指向整数部分的指针</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">modf</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">double</span> *intptr)</span></span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> x=<span class="number">3.1415</span>, intpart;  <span class="comment">//为变量赋初值</span></span><br><span class="line"><span class="keyword">double</span> fractpart = <span class="built_in">modf</span>(x, &amp;intpart);  <span class="comment">//求3.1415的小数部分</span></span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li>x的小数部分</li>
+</ul>
+<h4 id="fmod-求x-y的余数-针对浮点数"><a href="#fmod-求x-y的余数-针对浮点数" class="headerlink" title="fmod 求x/y的余数(针对浮点数)"></a>fmod 求x/y的余数(针对浮点数)</h4><ul>
+<li>fmod()函数用于求x/y的余数，针对浮点数。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">fmod</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">double</span> y)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> m=<span class="number">10.1</span>, n=<span class="number">3.1</span>;  <span class="comment">//为变量赋初值</span></span><br><span class="line"><span class="keyword">double</span> x = <span class="built_in">fmod</span>(m,n);  <span class="comment">//求m/n的余数</span></span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li>x/y的余数</li>
+</ul>
+<h4 id="log10-返回以10为底的对数"><a href="#log10-返回以10为底的对数" class="headerlink" title="log10 返回以10为底的对数"></a>log10 返回以10为底的对数</h4><figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+
+<h4 id="log-返回x的自然对数"><a href="#log-返回x的自然对数" class="headerlink" title="log 返回x的自然对数"></a>log 返回x的自然对数</h4><figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="ceil-求不小于x的最小整数"><a href="#ceil-求不小于x的最小整数" class="headerlink" title="ceil 求不小于x的最小整数"></a>ceil 求不小于x的最小整数</h4><ul>
+<li>ceil() 函数用于求不小于 x 的最小整数，也即向上取整。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">ceil</span><span class="params">(<span class="keyword">double</span> x)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> m = <span class="number">6.123</span>;</span><br><span class="line"><span class="keyword">int</span> n = <span class="built_in">ceil</span>(m);  <span class="comment">//求不小于m的最小整数</span></span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li>不小于x的最小整数</li>
+</ul>
+<h4 id="floor-求不大于x的最大整数（向下取整）"><a href="#floor-求不大于x的最大整数（向下取整）" class="headerlink" title="floor 求不大于x的最大整数（向下取整）"></a>floor 求不大于x的最大整数（向下取整）</h4><ul>
+<li>floor() 函数用于求不大于 x 的最大整数，也即向下取整。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">floor</span><span class="params">(<span class="keyword">double</span> x)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> m = <span class="number">6.123</span>;  <span class="comment">//为变量赋初值</span></span><br><span class="line"><span class="keyword">double</span> n = <span class="built_in">floor</span>(m);  <span class="comment">//求不大于m的最大整数</span></span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li>不大于x的最大整数</li>
+</ul>
+<h3 id="stdlib-h"><a href="#stdlib-h" class="headerlink" title="stdlib.h"></a>stdlib.h</h3><h4 id="ldiv-求两个数的商和余数"><a href="#ldiv-求两个数的商和余数" class="headerlink" title="ldiv 求两个数的商和余数"></a>ldiv 求两个数的商和余数</h4><ul>
+<li>ldiv() 函数用于求两个长整型数的商和余数。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// numer 被除数  denom 除数</span></span><br><span class="line"><span class="function"><span class="keyword">ldiv_t</span> <span class="title">ldiv</span><span class="params">(<span class="keyword">long</span> <span class="keyword">int</span> numer, <span class="keyword">long</span> <span class="keyword">int</span> denom)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> x = <span class="number">234</span>, y = <span class="number">23</span>;  <span class="comment">//为变量赋初值</span></span><br><span class="line"><span class="keyword">ldiv_t</span> a = ldiv(x, y);  <span class="comment">//求234除以23的商和余数</span></span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li>ldiv_t 类型的商和余数<br>ldiv_t 是在 stdlib.h 头文件中定义的结构体，它有两个成员，分别是 quot 和 rem：quot 表示商，rem 表示余数。</li>
+</ul>
+<h4 id="div-求两个数的商和余数"><a href="#div-求两个数的商和余数" class="headerlink" title="div 求两个数的商和余数"></a>div 求两个数的商和余数</h4><ul>
+<li>div()函数用于求两个数的商和余数<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// numer 是被除数  denom 除数</span></span><br><span class="line"><span class="function"><span class="keyword">div_t</span> <span class="title">div</span><span class="params">(<span class="keyword">int</span> numer, <span class="keyword">int</span> denom)</span></span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> x = <span class="number">512</span>, y = <span class="number">28</span>;  <span class="comment">//为变量赋初值</span></span><br><span class="line"><span class="keyword">div_t</span> a = div(x, y);  <span class="comment">//求512除以28的商和余数</span></span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li><ul>
+<li>div_t 类型的商和余数</li>
+</ul>
+</li>
+</ul>
+<p>参考链接：<br><a href="http://c.biancheng.net/c/ref/">http://c.biancheng.net/c/ref/</a></p>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2022</category>
+      </categories>
+      <tags>
+        <tag>Another Tag</tag>
+        <tag>Computer Science</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>剑指offer</title>
+    <url>/2022/01/17/2022/%E5%89%91%E6%8C%87offer/</url>
+    <content><![CDATA[<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2022</category>
+      </categories>
+      <tags>
+        <tag>Another Tag</tag>
+        <tag>Computer Science</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>读书随记</title>
+    <url>/2022/01/27/2022/%E8%AF%BB%E4%B9%A6%E9%9A%8F%E8%AE%B0/</url>
+    <content><![CDATA[<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2022</category>
+      </categories>
+      <tags>
+        <tag>实用教程</tag>
+        <tag>Another Tag</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据结构与算法基础</title>
     <url>/2021/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h2 id="1-程序性能"><a href="#1-程序性能" class="headerlink" title="1 程序性能"></a>1 程序性能</h2><span id="more"></span>
@@ -1123,158 +1296,13 @@
       </tags>
   </entry>
   <entry>
-    <title>c语言</title>
-    <url>/2022/01/20/2022/c%E8%AF%AD%E8%A8%80/</url>
-    <content><![CDATA[<h2 id="库函数"><a href="#库函数" class="headerlink" title="库函数"></a>库函数</h2><span id="more"></span>
-
-<h3 id="string-h"><a href="#string-h" class="headerlink" title="string.h"></a>string.h</h3><h4 id="strcpy-字符串复制函数"><a href="#strcpy-字符串复制函数" class="headerlink" title="strcpy 字符串复制函数"></a>strcpy 字符串复制函数</h4><figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// strDestination 目的字符串；strSource 源字符串</span></span><br><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">strcpy</span><span class="params">(<span class="keyword">char</span>* strDestination, <span class="keyword">const</span> <span class="keyword">char</span>* strSource)</span></span>;</span><br><span class="line"><span class="comment">// strcpy() 会把 strSource 指向的字符串复制到 strDestination。</span></span><br><span class="line"><span class="comment">// 返回值：目的字符串，也即 strDestination。</span></span><br><span class="line">    <span class="keyword">char</span> dest[<span class="number">50</span>] = { <span class="number">0</span> };</span><br><span class="line">    <span class="keyword">char</span> src[<span class="number">50</span>] = { <span class="string">"http://c.biancheng.net"</span> };</span><br><span class="line">    <span class="built_in">strcpy</span>(dest, src);</span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="strlen-求字符串长度"><a href="#strlen-求字符串长度" class="headerlink" title="strlen 求字符串长度"></a>strlen 求字符串长度</h4><figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-
-<h4 id="strcspn-求字符串互补跨度-长度"><a href="#strcspn-求字符串互补跨度-长度" class="headerlink" title="strcspn 求字符串互补跨度(长度)"></a>strcspn 求字符串互补跨度(长度)</h4><figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// 回从字符串 str 开头算起，连续有几个字符都不在 reject 中；也就是说，str 中连续有几个字符和 reject 没有交集</span></span><br><span class="line"><span class="comment">// str 要检索的字符串</span></span><br><span class="line"><span class="comment">// reject 该字符串包含要在str中进行匹配的字符列表</span></span><br><span class="line"><span class="function"><span class="keyword">size_t</span> <span class="title">strcspn</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* str, <span class="keyword">const</span> <span class="keyword">char</span>* reject)</span></span>;</span><br><span class="line"><span class="comment">// 返回值：返回从字符串 str 开头算起，连续不在 reject 中的字符的个数；也可以理解为，str 中第一次出现 reject 中字符的位置。</span></span><br><span class="line"><span class="keyword">char</span> str[<span class="number">50</span>] = { <span class="string">"http://c.biancheng.net"</span> };</span><br><span class="line"><span class="keyword">char</span> keys[<span class="number">50</span>] = { <span class="string">"?.,:\"\'-!"</span> };</span><br><span class="line"><span class="keyword">int</span> i = <span class="built_in">strcspn</span>(str, keys);</span><br><span class="line"><span class="comment">// i = 4</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="strcmp-比较两个字符串"><a href="#strcmp-比较两个字符串" class="headerlink" title="strcmp 比较两个字符串"></a>strcmp 比较两个字符串</h4><figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// strcmp() 会根据 ASCII 编码依次比较 str1 和 str2 的每一个字符，直到出现不到的字符，或者到达字符串末尾（遇见\0）</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">strcmp</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* str1, <span class="keyword">const</span> <span class="keyword">char</span>* str2)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> str1[<span class="number">50</span>] = { <span class="number">0</span> };</span><br><span class="line"><span class="keyword">char</span> str2[<span class="number">50</span>] = { <span class="number">0</span> };</span><br><span class="line"><span class="built_in">strcmp</span>(str1, str2)</span><br></pre></td></tr></tbody></table></figure>
-<p>返回值：</p>
-<ul>
-<li>如果返回值 &lt; 0，则表示 str1 小于 str2。</li>
-<li>如果返回值 &gt; 0，则表示 str2 小于 str1。</li>
-<li>如果返回值 = 0，则表示 str1 等于 str2。</li>
-</ul>
-<h4 id="strchr-字符查找函数"><a href="#strchr-字符查找函数" class="headerlink" title="strchr 字符查找函数"></a>strchr 字符查找函数</h4><ul>
-<li>strchr() 函数会依次检索字符串 str 中的每一个字符，直到遇见字符 c，或者到达字符串末尾（遇见\0）。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// str 被查找的字符串</span></span><br><span class="line"><span class="comment">// c  要查找的字符</span></span><br><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">strchr</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* str, <span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *str = <span class="string">"http://c.biancheng.net/"</span>;</span><br><span class="line"><span class="keyword">int</span> c = <span class="string">'g'</span>;</span><br><span class="line"><span class="keyword">char</span> *p = <span class="built_in">strchr</span>(str, c);</span><br></pre></td></tr></tbody></table></figure>
-返回值：</li>
-<li>返回在字符串 str 中第一次出现字符 c 的位置，如果未找到该字符 c 则返回 NULL。</li>
-</ul>
-<h4 id="strcat-字符串拼接"><a href="#strcat-字符串拼接" class="headerlink" title="strcat 字符串拼接"></a>strcat 字符串拼接</h4><ul>
-<li>strcat() 函数把 strSource 所指向的字符串追加到 strDestination 所指向的字符串的结尾<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// strDestination 目的字符串</span></span><br><span class="line"><span class="comment">// strSource  源字符串</span></span><br><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">strcat</span><span class="params">(<span class="keyword">char</span>* strDestination, <span class="keyword">const</span> <span class="keyword">char</span>* strSource)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> str1[<span class="number">101</span>] = { <span class="number">0</span> };</span><br><span class="line"><span class="keyword">char</span> str2[<span class="number">50</span>] = { <span class="number">0</span> };</span><br><span class="line"><span class="built_in">strcat</span>(str1, str2);</span><br></pre></td></tr></tbody></table></figure>
-返回值：</li>
-<li>指向 strDestination 的指针。</li>
-</ul>
-<h3 id="ctype-h"><a href="#ctype-h" class="headerlink" title="ctype.h"></a>ctype.h</h3><h4 id="isupper-判断一个字符是否是大写字母"><a href="#isupper-判断一个字符是否是大写字母" class="headerlink" title="isupper 判断一个字符是否是大写字母"></a>isupper 判断一个字符是否是大写字母</h4><figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// c</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isupper</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> str[] = <span class="string">"C++ Java Python C# Linux Golang Shell\n"</span>;</span><br><span class="line"><span class="keyword">int</span> re = <span class="built_in">isupper</span>(s[i]);</span><br></pre></td></tr></tbody></table></figure>
-<p>返回值：</p>
-<ul>
-<li>返回值为非 0（真）表示 c 是大写字母，返回值为 0（假）表示 c 不是大写字母。</li>
-</ul>
-<h4 id="islower-判断一个字符是否是小写字母"><a href="#islower-判断一个字符是否是小写字母" class="headerlink" title="islower 判断一个字符是否是小写字母"></a>islower 判断一个字符是否是小写字母</h4><figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">islower</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> c = <span class="string">'a'</span>;</span><br><span class="line"><span class="keyword">int</span> re = <span class="built_in">islower</span>(c);</span><br></pre></td></tr></tbody></table></figure>
-
-
-<h4 id="isspace-判断一个字符是否是空白字符"><a href="#isspace-判断一个字符是否是空白字符" class="headerlink" title="isspace 判断一个字符是否是空白字符"></a>isspace 判断一个字符是否是空白字符</h4><figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isspace</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">char</span> str[] = <span class="string">"Linux C++\tPython Shell\nC# Java\n"</span>;</span><br><span class="line"><span class="keyword">while</span> (str[i]) {</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">isspace</span>(s[i])) {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"c = %c "</span>, s[i]);</span><br><span class="line">    }</span><br><span class="line">    i++;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>空白字符：空格、水平制表符、换行符、垂直制表符、换页、回车<br>返回值：</li>
-<li>返回值为非 0（真）表示c是空白符，返回值为 0（假）表示c不是空白符。</li>
-</ul>
-<h4 id="isprint-判断一个字符是否是可打印字符"><a href="#isprint-判断一个字符是否是可打印字符" class="headerlink" title="isprint 判断一个字符是否是可打印字符"></a>isprint 判断一个字符是否是可打印字符</h4><figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isprint</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">char</span> str[]=<span class="string">"C++ Java \n C# Python \t Shell Linux\n"</span>;</span><br><span class="line"><span class="keyword">while</span>(str[i]) {</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">isprint</span>(str[i])) <span class="built_in">putchar</span> (str[i]);</span><br><span class="line">    i++;</span><br><span class="line">}</span><br><span class="line"><span class="comment">// C++ Java  C# Python  Shell Linux</span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>可打印字符和控制字符是相对的，控制字符是指那些具有某种特殊功能、不会显示在屏幕上、不会占用字符位置的“特殊”字符。要检测一个字符是否是控制字符，请使用 iscntrl() 函数<br>返回值：</li>
-<li>返回值为非 0（真）表示 c 是可打印字符，返回值为 0（假）表示 c 不是可打印字符。</li>
-</ul>
-<h4 id="isgraph-判断一个字符是否是图形字符"><a href="#isgraph-判断一个字符是否是图形字符" class="headerlink" title="isgraph 判断一个字符是否是图形字符"></a>isgraph 判断一个字符是否是图形字符</h4><ul>
-<li>字符是图形字符，就是说这个字符需要在显示器上绘制出来，而空格、换行、Tab 缩进等字符只会占用输出的位置，不需要绘制。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isgraph</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> c = <span class="string">'';</span></span><br><span class="line"><span class="string">int res = isgraph(c)</span></span><br></pre></td></tr></tbody></table></figure>
-返回值</li>
-<li>返回值为非 0（真）表示 c 是图形字符，返回值为 0（假）表示 c 不是图形字符。</li>
-</ul>
-<h4 id="iscntrl-判断一个字符是否为控制字符"><a href="#iscntrl-判断一个字符是否为控制字符" class="headerlink" title="iscntrl 判断一个字符是否为控制字符"></a>iscntrl 判断一个字符是否为控制字符</h4><ul>
-<li>“控制字符”是指那些具有某种特殊功能、不会显示在屏幕上、不会占用字符位置的特殊字符。默认情况下，C语言使用的是 ASCII 编码，控制字符的范围是0x00 (NUL) ~ 0x1f (US)，再加上最后的0x7f (DEL)，一共 33 个。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">iscntrl</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> res = <span class="built_in">iscntrl</span>(c);</span><br></pre></td></tr></tbody></table></figure>
-返回值</li>
-<li>返回值为非 0（真）表示 c 是控制字符，返回值为 0（假）表示 c 不是控制字符。</li>
-</ul>
-<h4 id="isdigit-判断一个字符是否为数字"><a href="#isdigit-判断一个字符是否为数字" class="headerlink" title="isdigit  判断一个字符是否为数字"></a>isdigit  判断一个字符是否为数字</h4><ul>
-<li>isdigit() 函数用来判断一个字符是否是数字，也即 0~9。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isdigit</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> s[<span class="number">50</span>] = {<span class="number">0</span>};</span><br><span class="line"><span class="keyword">int</span> res = <span class="built_in">isdigit</span>(s[i]);</span><br></pre></td></tr></tbody></table></figure>
-返回值</li>
-<li>返回值为非 0（真）表示 c 是数字，返回值为 0（假）表示 c 不是数字。</li>
-</ul>
-<h4 id="isalpha-判断一个字符是否是字母"><a href="#isalpha-判断一个字符是否是字母" class="headerlink" title="isalpha 判断一个字符是否是字母"></a>isalpha 判断一个字符是否是字母</h4><ul>
-<li>isalpha() 函数用来检测一个字符是否是字母，包括大写字母和小写字母。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isalpha</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> str[] = <span class="string">"C++ Java C#"</span>;</span><br><span class="line"><span class="keyword">while</span> (str[i]) {</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">isalpha</span>(str[i])) {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%c is alphabetic\n"</span>, str[i]);</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%c is not alphabetic\n"</span>, str[i]);</span><br><span class="line">    }</span><br><span class="line">    i++;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-返回值</li>
-<li>回非 0（真）表示 c 是字母，返回 0（假）表示 c 不是字母。</li>
-</ul>
-<h4 id="isalnum-判断一个字符是否是字母或数字"><a href="#isalnum-判断一个字符是否是字母或数字" class="headerlink" title="isalnum 判断一个字符是否是字母或数字"></a>isalnum 判断一个字符是否是字母或数字</h4><ul>
-<li> isalnum() 函数用于判断一个字符是否是字母（包括大写字母和小写字母）或者数字（0~9）。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isalnum</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> str[] = <span class="string">"*http://c.biancheng.net is 7 years old"</span>;</span><br><span class="line"><span class="keyword">while</span> (str[i]) {</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">isalnum</span>(str[i])) n++;</span><br><span class="line">    i++;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-返回值</li>
-<li>返回非 0（真）表示 c 是字母或者数字，返回 0（假）表示 c 既不是数字也不是字母。</li>
-</ul>
-<h3 id="math-h"><a href="#math-h" class="headerlink" title="math.h"></a>math.h</h3><h4 id="ldexp"><a href="#ldexp" class="headerlink" title="ldexp"></a>ldexp</h4><p>返回x乘以2的exponent次方</p>
-<ul>
-<li>ldexp() 函数用来计算 x 乘以 2 的 exponent 次方（次幂）的值，也即返回 x * 2^exponent 的值。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// x 双精度浮点数</span></span><br><span class="line"><span class="comment">// exponnent  2的指数</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">ldexp</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">int</span> exponent)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> f=<span class="number">0.964453</span>, n=<span class="number">7</span>;  <span class="comment">//为变量赋初值</span></span><br><span class="line"><span class="keyword">double</span> x = <span class="built_in">ldexp</span>(f, n);  <span class="comment">//求f * 2^n 的结果</span></span><br></pre></td></tr></tbody></table></figure>
-返回值：</li>
-<li>x*2^exponent 的计算结果</li>
-</ul>
-<h4 id="labs-求整数的绝对值-针对long类型"><a href="#labs-求整数的绝对值-针对long类型" class="headerlink" title="labs 求整数的绝对值(针对long类型)"></a>labs 求整数的绝对值(针对long类型)</h4><figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">labs</span><span class="params">(<span class="keyword">long</span> n)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> m = <span class="number">11</span>;</span><br><span class="line"><span class="keyword">long</span> a = <span class="built_in">labs</span>(m); <span class="comment">// 求m的绝对值</span></span><br></pre></td></tr></tbody></table></figure>
-<p>返回值：</p>
-<ul>
-<li>参数n的绝对值</li>
-</ul>
-<h4 id="abs-求整数的绝对值"><a href="#abs-求整数的绝对值" class="headerlink" title="abs 求整数的绝对值"></a>abs 求整数的绝对值</h4><ul>
-<li>abs()函数用于求整数的绝对值<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">abs</span><span class="params">(<span class="keyword">int</span> n)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a = <span class="number">3</span>, b = <span class="number">-4</span>, c, d;  <span class="comment">//为变量赋初值</span></span><br><span class="line">c = <span class="built_in">abs</span>(a);  <span class="comment">//求a的绝对值</span></span><br><span class="line">d = <span class="built_in">abs</span>(b);  <span class="comment">//求b的绝对值</span></span><br></pre></td></tr></tbody></table></figure>
-返回值</li>
-<li>参数的绝对值</li>
-</ul>
-<h4 id="pow-求x的y次方的值"><a href="#pow-求x的y次方的值" class="headerlink" title="pow 求x的y次方的值"></a>pow 求x的y次方的值</h4><ul>
-<li> pow() 函数用来求 x 的 y 次方的值。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// x 双精度数  y 双精度数</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">pow</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">double</span> y)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> x = <span class="number">4</span>, y = <span class="number">6</span>;  <span class="comment">//为变量赋初值</span></span><br><span class="line"><span class="keyword">double</span> result = <span class="built_in">pow</span>(x, y);  <span class="comment">//求a的b次方</span></span><br></pre></td></tr></tbody></table></figure>
-返回值</li>
-<li>x 的 y 次方的值。</li>
-</ul>
-<h4 id="frexp-提取浮点数的尾数和指数部分"><a href="#frexp-提取浮点数的尾数和指数部分" class="headerlink" title="frexp 提取浮点数的尾数和指数部分"></a>frexp 提取浮点数的尾数和指数部分</h4><ul>
-<li>rexp() 函数用来提取一个浮点数（小数）的指数部分和尾数部分。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// x 要被计算的浮点数</span></span><br><span class="line"><span class="comment">// exponent  一个指向指数部分的指针</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">frexp</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">int</span>* exponent)</span></span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> <span class="built_in">exp</span>;</span><br><span class="line"><span class="keyword">double</span> mant = <span class="built_in">frexp</span>(<span class="number">19.625</span>, &amp;<span class="built_in">exp</span>);</span><br></pre></td></tr></tbody></table></figure>
-指数部分被存入参数 exponent 中，尾数部分被放入返回值中，最终 x = mantissa * 2 ^ exponent（mantissa 表示尾数）。<br>返回值</li>
-<li>浮点数 x 的尾数部分。</li>
-</ul>
-<h4 id="modf-提取浮点数的小数和整数部分"><a href="#modf-提取浮点数的小数和整数部分" class="headerlink" title="modf 提取浮点数的小数和整数部分"></a>modf 提取浮点数的小数和整数部分</h4><ul>
-<li>double modf(double x, double *intptr) 将提取浮点数 x 的整数部分和小数部分，整数部分被存入参数 intptr 中，小数部分被放入返回值中。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// x 要被计算的浮点数</span></span><br><span class="line"><span class="comment">// 一个指向整数部分的指针</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">modf</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">double</span> *intptr)</span></span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> x=<span class="number">3.1415</span>, intpart;  <span class="comment">//为变量赋初值</span></span><br><span class="line"><span class="keyword">double</span> fractpart = <span class="built_in">modf</span>(x, &amp;intpart);  <span class="comment">//求3.1415的小数部分</span></span><br></pre></td></tr></tbody></table></figure>
-返回值</li>
-<li>x的小数部分</li>
-</ul>
-<h4 id="fmod-求x-y的余数-针对浮点数"><a href="#fmod-求x-y的余数-针对浮点数" class="headerlink" title="fmod 求x/y的余数(针对浮点数)"></a>fmod 求x/y的余数(针对浮点数)</h4><ul>
-<li>fmod()函数用于求x/y的余数，针对浮点数。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">fmod</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">double</span> y)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> m=<span class="number">10.1</span>, n=<span class="number">3.1</span>;  <span class="comment">//为变量赋初值</span></span><br><span class="line"><span class="keyword">double</span> x = <span class="built_in">fmod</span>(m,n);  <span class="comment">//求m/n的余数</span></span><br></pre></td></tr></tbody></table></figure>
-返回值</li>
-<li>x/y的余数</li>
-</ul>
-<h4 id="log10-返回以10为底的对数"><a href="#log10-返回以10为底的对数" class="headerlink" title="log10 返回以10为底的对数"></a>log10 返回以10为底的对数</h4><figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-
-<h4 id="log-返回x的自然对数"><a href="#log-返回x的自然对数" class="headerlink" title="log 返回x的自然对数"></a>log 返回x的自然对数</h4><figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="ceil-求不小于x的最小整数"><a href="#ceil-求不小于x的最小整数" class="headerlink" title="ceil 求不小于x的最小整数"></a>ceil 求不小于x的最小整数</h4><ul>
-<li>ceil() 函数用于求不小于 x 的最小整数，也即向上取整。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">ceil</span><span class="params">(<span class="keyword">double</span> x)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> m = <span class="number">6.123</span>;</span><br><span class="line"><span class="keyword">int</span> n = <span class="built_in">ceil</span>(m);  <span class="comment">//求不小于m的最小整数</span></span><br></pre></td></tr></tbody></table></figure>
-返回值</li>
-<li>不小于x的最小整数</li>
-</ul>
-<h4 id="floor-求不大于x的最大整数（向下取整）"><a href="#floor-求不大于x的最大整数（向下取整）" class="headerlink" title="floor 求不大于x的最大整数（向下取整）"></a>floor 求不大于x的最大整数（向下取整）</h4><ul>
-<li>floor() 函数用于求不大于 x 的最大整数，也即向下取整。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">floor</span><span class="params">(<span class="keyword">double</span> x)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> m = <span class="number">6.123</span>;  <span class="comment">//为变量赋初值</span></span><br><span class="line"><span class="keyword">double</span> n = <span class="built_in">floor</span>(m);  <span class="comment">//求不大于m的最大整数</span></span><br></pre></td></tr></tbody></table></figure>
-返回值</li>
-<li>不大于x的最大整数</li>
-</ul>
-<h3 id="stdlib-h"><a href="#stdlib-h" class="headerlink" title="stdlib.h"></a>stdlib.h</h3><h4 id="ldiv-求两个数的商和余数"><a href="#ldiv-求两个数的商和余数" class="headerlink" title="ldiv 求两个数的商和余数"></a>ldiv 求两个数的商和余数</h4><ul>
-<li>ldiv() 函数用于求两个长整型数的商和余数。<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// numer 被除数  denom 除数</span></span><br><span class="line"><span class="function"><span class="keyword">ldiv_t</span> <span class="title">ldiv</span><span class="params">(<span class="keyword">long</span> <span class="keyword">int</span> numer, <span class="keyword">long</span> <span class="keyword">int</span> denom)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> x = <span class="number">234</span>, y = <span class="number">23</span>;  <span class="comment">//为变量赋初值</span></span><br><span class="line"><span class="keyword">ldiv_t</span> a = ldiv(x, y);  <span class="comment">//求234除以23的商和余数</span></span><br></pre></td></tr></tbody></table></figure>
-返回值</li>
-<li>ldiv_t 类型的商和余数<br>ldiv_t 是在 stdlib.h 头文件中定义的结构体，它有两个成员，分别是 quot 和 rem：quot 表示商，rem 表示余数。</li>
-</ul>
-<h4 id="div-求两个数的商和余数"><a href="#div-求两个数的商和余数" class="headerlink" title="div 求两个数的商和余数"></a>div 求两个数的商和余数</h4><ul>
-<li>div()函数用于求两个数的商和余数<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// numer 是被除数  denom 除数</span></span><br><span class="line"><span class="function"><span class="keyword">div_t</span> <span class="title">div</span><span class="params">(<span class="keyword">int</span> numer, <span class="keyword">int</span> denom)</span></span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> x = <span class="number">512</span>, y = <span class="number">28</span>;  <span class="comment">//为变量赋初值</span></span><br><span class="line"><span class="keyword">div_t</span> a = div(x, y);  <span class="comment">//求512除以28的商和余数</span></span><br></pre></td></tr></tbody></table></figure>
-返回值</li>
-<li><ul>
-<li>div_t 类型的商和余数</li>
-</ul>
-</li>
-</ul>
-<p>参考链接：<br><a href="http://c.biancheng.net/c/ref/">http://c.biancheng.net/c/ref/</a></p>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2022</category>
-      </categories>
-      <tags>
-        <tag>Another Tag</tag>
-        <tag>Computer Science</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>深入理解计算机系统</title>
     <url>/2022/02/27/2022/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/</url>
     <content><![CDATA[<p>[toc]</p>
 <h1 id="深入理解计算机系统"><a href="#深入理解计算机系统" class="headerlink" title="深入理解计算机系统"></a>深入理解计算机系统</h1><h2 id="第1章-计算机系统"><a href="#第1章-计算机系统" class="headerlink" title="第1章 计算机系统"></a>第1章 计算机系统</h2><p>hello world程序分析，</p>
-<p>hello.c编译<br>图：<br>编译系统：预处理器cpp、编译器ccl、汇编器as和链接器ld</p>
+<p>hello.c编译</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhuangll/PictureBed@main/blogs/pictures/20220608230116.png" alt="20220608230116"></p>
+<p>图：<br>编译系统：预处理器cpp、编译器ccl、汇编器as和链接器ld</p>
 <p>计算机系统硬件组成：总线，I/O设备，主存，处理器<br>图：</p>
 <p>CPU 在指令的要求下执行操作：加载、存储、操作和跳转</p>
 <p>hello程序加载</p>
@@ -1935,50 +1963,6 @@
       </tags>
   </entry>
   <entry>
-    <title>剑指offer</title>
-    <url>/2022/01/17/2022/%E5%89%91%E6%8C%87offer/</url>
-    <content><![CDATA[<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2022</category>
-      </categories>
-      <tags>
-        <tag>Another Tag</tag>
-        <tag>Computer Science</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>读书随记</title>
-    <url>/2022/01/27/2022/%E8%AF%BB%E4%B9%A6%E9%9A%8F%E8%AE%B0/</url>
-    <content><![CDATA[<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2022</category>
-      </categories>
-      <tags>
-        <tag>实用教程</tag>
-        <tag>Another Tag</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C/C++</title>
-    <url>/2021/12/07/2021/12/C++/</url>
-    <content><![CDATA[<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><ul>
-<li>开源 C++ 库列表<br><a href="https://zh.cppreference.com/w/cpp/links/libs">https://zh.cppreference.com/w/cpp/links/libs</a></li>
-<li>C 语言<br><a href="https://zh.cppreference.com/w/c/language">https://zh.cppreference.com/w/c/language</a></li>
-</ul>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2021</category>
-        <category>12</category>
-      </categories>
-      <tags>
-        <tag>c/c++</tag>
-        <tag>cs</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CMake</title>
     <url>/2021/12/07/2021/12/cmake/</url>
     <content><![CDATA[<h2 id="1-cmake简述"><a href="#1-cmake简述" class="headerlink" title="1.cmake简述"></a>1.cmake简述</h2><p> CMake是跨平台编译管理工具,为第三方依赖和引入,创建编译系统,程序测试及安装.Cmake工具使用CMakeLists.txt文件,跨平台执行相同编译命令,生成对应平台的可执行程序或者链接库.</p>
@@ -2041,9 +2025,27 @@
         <category>12</category>
       </categories>
       <tags>
-        <tag>cs</tag>
         <tag>complier</tag>
+        <tag>cs</tag>
         <tag>cmake</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C/C++</title>
+    <url>/2021/12/07/2021/12/C++/</url>
+    <content><![CDATA[<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><ul>
+<li>开源 C++ 库列表<br><a href="https://zh.cppreference.com/w/cpp/links/libs">https://zh.cppreference.com/w/cpp/links/libs</a></li>
+<li>C 语言<br><a href="https://zh.cppreference.com/w/c/language">https://zh.cppreference.com/w/c/language</a></li>
+</ul>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2021</category>
+        <category>12</category>
+      </categories>
+      <tags>
+        <tag>cs</tag>
+        <tag>c/c++</tag>
       </tags>
   </entry>
   <entry>
@@ -2246,28 +2248,6 @@
       <tags>
         <tag>Another Tag</tag>
         <tag>English</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C/C++内存管理</title>
-    <url>/2021/10/07/2021/11/%E5%86%85%E5%AD%98/</url>
-    <content><![CDATA[<h2 id="一、内存"><a href="#一、内存" class="headerlink" title="一、内存"></a>一、内存</h2><p> 在计算机中，不同应用程序之间的内存是相互独立的，通常情况下不可以相互访问。</p>
-<span id="more"></span>
-
-<p>1、内存四区<br>从下到上为：代码区、数据区、堆区、栈区。<br>栈区：存储临时变量的区域，临时变量包括：局部变量、返回值、参数、返回地址。这些变量超出作用域自动弹出。超出栈大小将会栈溢出。栈从栈顶自上而下，最下端为0x0000。<br>堆区：比较大的内存区域，用于动态内存分配，由开放人员申请和释放，在程序结束时未释放，将会右系统自动回收。<br>数据区：主要存放全局变量、常量和静态变量；数据区又可以划分为：全局区和静态区。<br>代码区：主要纯粹可执行代码。属性为只读的。</p>
-<h2 id="二、malloc和free"><a href="#二、malloc和free" class="headerlink" title="二、malloc和free"></a>二、malloc和free</h2><p> 在 C 语言（不是 C++)中，malloc 和 free 是系统提供的函数，成对使用，用于从堆中分配和释放内存。malloc 的全称是 memory allocation 译为“动态内存分配”。</p>
-<ul>
-<li>参考链接：<br><a href="https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ">https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ</a></li>
-</ul>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2021</category>
-        <category>11</category>
-      </categories>
-      <tags>
-        <tag>Another Tag</tag>
-        <tag>Computer Science</tag>
       </tags>
   </entry>
   <entry>
@@ -2542,6 +2522,28 @@
       <tags>
         <tag>实用教程</tag>
         <tag>Another Tag</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C/C++内存管理</title>
+    <url>/2021/10/07/2021/11/%E5%86%85%E5%AD%98/</url>
+    <content><![CDATA[<h2 id="一、内存"><a href="#一、内存" class="headerlink" title="一、内存"></a>一、内存</h2><p> 在计算机中，不同应用程序之间的内存是相互独立的，通常情况下不可以相互访问。</p>
+<span id="more"></span>
+
+<p>1、内存四区<br>从下到上为：代码区、数据区、堆区、栈区。<br>栈区：存储临时变量的区域，临时变量包括：局部变量、返回值、参数、返回地址。这些变量超出作用域自动弹出。超出栈大小将会栈溢出。栈从栈顶自上而下，最下端为0x0000。<br>堆区：比较大的内存区域，用于动态内存分配，由开放人员申请和释放，在程序结束时未释放，将会右系统自动回收。<br>数据区：主要存放全局变量、常量和静态变量；数据区又可以划分为：全局区和静态区。<br>代码区：主要纯粹可执行代码。属性为只读的。</p>
+<h2 id="二、malloc和free"><a href="#二、malloc和free" class="headerlink" title="二、malloc和free"></a>二、malloc和free</h2><p> 在 C 语言（不是 C++)中，malloc 和 free 是系统提供的函数，成对使用，用于从堆中分配和释放内存。malloc 的全称是 memory allocation 译为“动态内存分配”。</p>
+<ul>
+<li>参考链接：<br><a href="https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ">https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ</a></li>
+</ul>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2021</category>
+        <category>11</category>
+      </categories>
+      <tags>
+        <tag>Another Tag</tag>
+        <tag>Computer Science</tag>
       </tags>
   </entry>
 </search>
