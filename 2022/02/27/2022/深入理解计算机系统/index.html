@@ -258,7 +258,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.1k</span>
+              <span>2.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -348,7 +348,10 @@
 <li><p>移位运算<br>  算数右移和逻辑右移</p>
 </li>
 </ol>
-<h3 id="2-2-整数表示"><a href="#2-2-整数表示" class="headerlink" title="2.2 整数表示"></a>2.2 整数表示</h3><p>  有符号数和无符号数<br>补码<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220609225345.png" alt="20220609225345"><br>C 库中的文件〈limits.h&gt;定义了一组常量，来限定编译器运行的这台机器的不同整型数据类型的取值范围。常量 INT_MAX、INT_MIN 和UINT_MAX,</p>
+<h3 id="2-2-整数表示"><a href="#2-2-整数表示" class="headerlink" title="2.2 整数表示"></a>2.2 整数表示</h3><p>  有符号数和无符号数<br>  补码计算公式<br><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220609225345.png"><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220609225345.png" alt="20220609225345"></a><br>  C 库中的文件〈limits.h&gt;定义了一组常量，来限定编译器运行的这台机器的不同整型数据类型的取值范围。常量 INT_MAX、INT_MIN 和UINT_MAX,<br>  stdint.h 中uintl6_t，int32_t定义指定位数类型。</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INT_MAX 2147483647</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INT.MIN (-INT_MAX 1)</span></span><br></pre></td></tr></tbody></table></figure>
+
+
 <p>补码表示，<br>浮点数表示<br>类型转换</p>
 <br>
 
