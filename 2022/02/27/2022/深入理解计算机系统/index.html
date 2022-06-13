@@ -40,6 +40,11 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220611014655.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220613224202.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220613224634.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220613231258.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220613231925.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220613234132.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220614000119.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220614002405.png">
 <meta property="article:published_time" content="2022-02-26T16:47:53.000Z">
 <meta property="article:modified_time" content="2022-02-26T16:53:53.000Z">
 <meta property="article:author" content="John Doe">
@@ -262,14 +267,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.5k</span>
+              <span>4.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -390,7 +395,43 @@
 <li>cltq指令：总以寄存器%eax作为源，%rax作为符号扩展结果的目的</li>
 </ul>
 <p>*指针简介引用，&amp;取址</p>
-<h4 id="3-2-2-压入和弹出栈数据"><a href="#3-2-2-压入和弹出栈数据" class="headerlink" title="3.2.2 压入和弹出栈数据"></a>3.2.2 压入和弹出栈数据</h4><p> push操作把数据压入栈中，pop操作踏出栈</p>
+<h4 id="3-2-2-压入和弹出栈数据"><a href="#3-2-2-压入和弹出栈数据" class="headerlink" title="3.2.2 压入和弹出栈数据"></a>3.2.2 压入和弹出栈数据</h4><p> pushq操作把数据压入栈中，popq指令弹出数据；栈向下增长，栈顶元素在低地址，栈指针%rsp保存栈顶元素地址。<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220613231258.png" alt="20220613231258"></p>
+<h3 id="3-3-算术和逻辑操作"><a href="#3-3-算术和逻辑操作" class="headerlink" title="3.3 算术和逻辑操作"></a>3.3 算术和逻辑操作</h3><p> 加法指令ADD类：addb、addw、addl和addq<br> 四组操作：加载有效地址、一元操作、二元操作和移位<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220613231925.png" alt="20220613231925"></p>
+<p> leaq 将有效地址写入到目的操作数。<br> 一元操作：只有一个操作数，即是源又是目的。<br> 二元操作：第二个操作数既是源又是目的。<br> 移位操作：先给出移位量，然后第二项给出的是要移位的数。算术和逻辑右移。移位量是个立即数，或者但自己寄存器%c1中。左移：SAL和SHL；右移：SAR和SHR</p>
+<p> 特殊算数操作<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220613234132.png" alt="20220613234132"></p>
+<h3 id="3-4-控制指令"><a href="#3-4-控制指令" class="headerlink" title="3.4 控制指令"></a>3.4 控制指令</h3><p> 两种基本条件行为：测试数据值，然后根据曹氏结果来改变控制流或数据流。</p>
+<h4 id="3-4-1-条件码-condition-code-寄存器"><a href="#3-4-1-条件码-condition-code-寄存器" class="headerlink" title="3.4.1 条件码(condition code)寄存器"></a>3.4.1 条件码(condition code)寄存器</h4><ul>
+<li>CF：进位标志</li>
+<li>ZF：零标志</li>
+<li>SF：符号标志</li>
+<li>OF：溢出标志</li>
+</ul>
+<p> 两类设置条件码指令：</p>
+<ul>
+<li>CMP指令：根据两个操作数之差来设置条件码</li>
+<li>TEST指令：与AND(&amp;)指令一样，但仅设置条件码</li>
+</ul>
+<p> 访问条件码：1)条件码的某种组合SET指令 2)条件跳转 3)条件传送数据</p>
+<p> 跳转指令jump</p>
+<ul>
+<li>jmp无条件跳转指令：直接跳转和间接跳转<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用寄存器%rax中的值作为跳转目标</span></span><br><span class="line">jmp *%rax</span><br><span class="line"><span class="comment"># 以%rax中的值作为读地址，从内存中读取跳转目标</span></span><br><span class="line">jmp *(%rax)</span><br></pre></td></tr></tbody></table></figure>
+<img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220614000119.png" alt="20220614000119"></li>
+</ul>
+<p> 当执行 PC 相对寻址时，程序计数器的值是跳转指令后面的那条指令<br>的地址，而不是跳转指令本身的地址</p>
+<p> 为什么基于条件数据传送(条件赋值)的代码会比基于条件控制转移的代码性能要好？</p>
+<ul>
+<li>分支预测是条件表达式50%的正确率，x86-64分支预测错误惩罚19个时钟周期。</li>
+<li>无论测试数据是什么，编译出使用条件传送代码所需的时间8个时钟周期。控制流不依赖于数据，处理器更容易保持流水线是满的。</li>
+</ul>
+<p> 条件传送指令<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220614002405.png" alt="20220614002405"></p>
+<h4 id="3-4-2-循环"><a href="#3-4-2-循环" class="headerlink" title="3.4.2 循环"></a>3.4.2 循环</h4><p> 条件测试和跳转组合实现循环</p>
+<ul>
+<li><p>do-while循环</p>
+<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">loop:</span><br><span class="line">    bogy-statement</span><br><span class="line">    t = text-expr;</span><br><span class="line">    <span class="keyword">if</span> (t)</span><br><span class="line">        goto loop</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>while 循环</p>
+<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">goto <span class="built_in">test</span>;</span><br><span class="line">loop: </span><br><span class="line">    body-statement</span><br><span class="line"><span class="built_in">test</span>:</span><br><span class="line">    t = text-expr;</span><br><span class="line">    <span class="keyword">if</span> (t)</span><br><span class="line">        goto loop;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">t = text-expr</span><br><span class="line"><span class="keyword">if</span> (!t)</span><br><span class="line">    got <span class="keyword">done</span>;</span><br><span class="line"><span class="keyword">do</span> </span><br><span class="line">    body-statement</span><br><span class="line">    <span class="keyword">while</span>(test-expr);</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
+<h4 id="3-4-2-switch语句"><a href="#3-4-2-switch语句" class="headerlink" title="3.4.2 switch语句"></a>3.4.2 switch语句</h4><p> switch(开关)语句可以根据一个整数索引值进行多重分支（multiway branching)。使用跳转表(jump table)数据结构使得实现更加高效,跳转表是一个数组，表项i是一个代码段的地址。和使用一组很长的 if-else 语句相比，使用跳转表的优点是执行开关语句的时间与开关情况的数量无关</p>
 <p>x86-64 机器代码<br>控制结构（比如条件、循环和开关语句）生成的基本指令模式<br>括栈分配、寄存器使用惯例和参数传递<br>数据结构（如结构、联合和数组）的分配和访问方式<br>整数和浮点数算术运算的指令<br>代码安全漏洞（例如缓冲区溢出）</p>
 <br>
 
@@ -508,7 +549,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F"><span class="nav-text">深入理解计算机系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC1%E7%AB%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F"><span class="nav-text">第1章 计算机系统</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E5%92%8C%E6%89%A7%E8%A1%8C"><span class="nav-text">程序结构和执行</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC2%E7%AB%A0-%E4%BF%A1%E6%81%AF%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%A4%84%E7%90%86"><span class="nav-text">第2章 信息的表示和处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E4%BF%A1%E6%81%AF%E8%A1%A8%E7%A4%BA"><span class="nav-text">2.1 信息表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E6%95%B4%E6%95%B0%E8%A1%A8%E7%A4%BA"><span class="nav-text">2.2 整数表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E6%95%B4%E6%95%B0%E8%BF%90%E7%AE%97"><span class="nav-text">2.3 整数运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-%E6%B5%AE%E7%82%B9%E6%95%B0"><span class="nav-text">2.4 浮点数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC3%E7%AB%A0-%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9C%BA%E5%99%A8%E7%BA%A7%E8%A1%A8%E7%A4%BA"><span class="nav-text">第3章 程序的机器级表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E6%9C%BA%E5%99%A8%E7%A0%81"><span class="nav-text">3.1 机器码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E5%A4%84%E7%90%86%E5%99%A8%E8%AE%BF%E9%97%AE"><span class="nav-text">3.2 处理器访问</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-1-%E6%8C%87%E4%BB%A4%E6%93%8D%E4%BD%9C%E5%92%8C%E7%B1%BB%E5%9E%8B"><span class="nav-text">3.2.1 指令操作和类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-2-%E5%8E%8B%E5%85%A5%E5%92%8C%E5%BC%B9%E5%87%BA%E6%A0%88%E6%95%B0%E6%8D%AE"><span class="nav-text">3.2.2 压入和弹出栈数据</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC4%E7%AB%A0-%E5%A4%84%E7%90%86%E5%99%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-text">第4章 处理器体系结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC5%E7%AB%A0-%E4%BC%98%E5%8C%96%E7%A8%8B%E5%BA%8F%E6%80%A7%E8%83%BD"><span class="nav-text">第5章 优化程序性能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC6%E7%AB%A0-%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="nav-text">第6章 存储器层次结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9C%A8%E7%B3%BB%E7%BB%9F%E4%B8%8A%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F"><span class="nav-text">在系统上运行程序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC7%E7%AB%A0-%E9%93%BE%E6%8E%A5"><span class="nav-text">第7章 链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC8%E7%AB%A0-%E5%BC%82%E5%B8%B8%E6%8E%A7%E5%88%B6%E6%B5%81"><span class="nav-text">第8章 异常控制流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC9%E7%AB%A0-%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98"><span class="nav-text">第9章 虚拟内存</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E9%97%B4%E7%9A%84%E4%BA%A4%E4%BA%92%E5%92%8C%E9%80%9A%E4%BF%A1"><span class="nav-text">程序间的交互和通信</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC10%E7%AB%A0-%E7%B3%BB%E7%BB%9F%E7%BA%A7-1"><span class="nav-text">第10章 系统级 1&#x2F;()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC11%E7%AB%A0-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B"><span class="nav-text">第11章 网络编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC12%E7%AB%A0-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B"><span class="nav-text">第12章 并发编程</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F"><span class="nav-text">深入理解计算机系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC1%E7%AB%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F"><span class="nav-text">第1章 计算机系统</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E5%92%8C%E6%89%A7%E8%A1%8C"><span class="nav-text">程序结构和执行</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC2%E7%AB%A0-%E4%BF%A1%E6%81%AF%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%A4%84%E7%90%86"><span class="nav-text">第2章 信息的表示和处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E4%BF%A1%E6%81%AF%E8%A1%A8%E7%A4%BA"><span class="nav-text">2.1 信息表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E6%95%B4%E6%95%B0%E8%A1%A8%E7%A4%BA"><span class="nav-text">2.2 整数表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E6%95%B4%E6%95%B0%E8%BF%90%E7%AE%97"><span class="nav-text">2.3 整数运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-%E6%B5%AE%E7%82%B9%E6%95%B0"><span class="nav-text">2.4 浮点数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC3%E7%AB%A0-%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9C%BA%E5%99%A8%E7%BA%A7%E8%A1%A8%E7%A4%BA"><span class="nav-text">第3章 程序的机器级表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E6%9C%BA%E5%99%A8%E7%A0%81"><span class="nav-text">3.1 机器码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E5%A4%84%E7%90%86%E5%99%A8%E8%AE%BF%E9%97%AE"><span class="nav-text">3.2 处理器访问</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-1-%E6%8C%87%E4%BB%A4%E6%93%8D%E4%BD%9C%E5%92%8C%E7%B1%BB%E5%9E%8B"><span class="nav-text">3.2.1 指令操作和类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-2-%E5%8E%8B%E5%85%A5%E5%92%8C%E5%BC%B9%E5%87%BA%E6%A0%88%E6%95%B0%E6%8D%AE"><span class="nav-text">3.2.2 压入和弹出栈数据</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-%E7%AE%97%E6%9C%AF%E5%92%8C%E9%80%BB%E8%BE%91%E6%93%8D%E4%BD%9C"><span class="nav-text">3.3 算术和逻辑操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-%E6%8E%A7%E5%88%B6%E6%8C%87%E4%BB%A4"><span class="nav-text">3.4 控制指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4-1-%E6%9D%A1%E4%BB%B6%E7%A0%81-condition-code-%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-text">3.4.1 条件码(condition code)寄存器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4-2-%E5%BE%AA%E7%8E%AF"><span class="nav-text">3.4.2 循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4-2-switch%E8%AF%AD%E5%8F%A5"><span class="nav-text">3.4.2 switch语句</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC4%E7%AB%A0-%E5%A4%84%E7%90%86%E5%99%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-text">第4章 处理器体系结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC5%E7%AB%A0-%E4%BC%98%E5%8C%96%E7%A8%8B%E5%BA%8F%E6%80%A7%E8%83%BD"><span class="nav-text">第5章 优化程序性能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC6%E7%AB%A0-%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="nav-text">第6章 存储器层次结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9C%A8%E7%B3%BB%E7%BB%9F%E4%B8%8A%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F"><span class="nav-text">在系统上运行程序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC7%E7%AB%A0-%E9%93%BE%E6%8E%A5"><span class="nav-text">第7章 链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC8%E7%AB%A0-%E5%BC%82%E5%B8%B8%E6%8E%A7%E5%88%B6%E6%B5%81"><span class="nav-text">第8章 异常控制流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC9%E7%AB%A0-%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98"><span class="nav-text">第9章 虚拟内存</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E9%97%B4%E7%9A%84%E4%BA%A4%E4%BA%92%E5%92%8C%E9%80%9A%E4%BF%A1"><span class="nav-text">程序间的交互和通信</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC10%E7%AB%A0-%E7%B3%BB%E7%BB%9F%E7%BA%A7-1"><span class="nav-text">第10章 系统级 1&#x2F;()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC11%E7%AB%A0-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B"><span class="nav-text">第11章 网络编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC12%E7%AB%A0-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B"><span class="nav-text">第12章 并发编程</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -575,12 +616,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">238k</span>
+    <span title="站点总字数">239k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:36</span>
+    <span title="站点阅读时长">3:38</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
