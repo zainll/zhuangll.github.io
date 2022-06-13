@@ -267,7 +267,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.7k</span>
+              <span>4.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -430,7 +430,12 @@
 <figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">loop:</span><br><span class="line">    bogy-statement</span><br><span class="line">    t = text-expr;</span><br><span class="line">    <span class="keyword">if</span> (t)</span><br><span class="line">        goto loop</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure></li>
 <li><p>while 循环</p>
 <figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">goto <span class="built_in">test</span>;</span><br><span class="line">loop: </span><br><span class="line">    body-statement</span><br><span class="line"><span class="built_in">test</span>:</span><br><span class="line">    t = text-expr;</span><br><span class="line">    <span class="keyword">if</span> (t)</span><br><span class="line">        goto loop;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">t = text-expr</span><br><span class="line"><span class="keyword">if</span> (!t)</span><br><span class="line">    got <span class="keyword">done</span>;</span><br><span class="line"><span class="keyword">do</span> </span><br><span class="line">    body-statement</span><br><span class="line">    <span class="keyword">while</span>(test-expr);</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>for循环</p>
+</li>
 </ul>
+<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">init-expr;</span><br><span class="line">got <span class="built_in">test</span>;</span><br><span class="line">loop:</span><br><span class="line">    body-statement</span><br><span class="line">    update-expr;</span><br><span class="line"><span class="built_in">test</span>:</span><br><span class="line">    t = test-expr;</span><br><span class="line">    <span class="keyword">if</span> (t)</span><br><span class="line">        goto loop;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">init-expr;</span><br><span class="line">t = test-expr;</span><br><span class="line"><span class="keyword">if</span> (!t)</span><br><span class="line">    goto <span class="keyword">done</span>;</span><br><span class="line">loop:</span><br><span class="line">    body-statement</span><br><span class="line">    update-epxr;</span><br><span class="line">    t = test-expr;</span><br><span class="line">    <span class="keyword">if</span> (t)</span><br><span class="line">        goto loop;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+
 <h4 id="3-4-2-switch语句"><a href="#3-4-2-switch语句" class="headerlink" title="3.4.2 switch语句"></a>3.4.2 switch语句</h4><p> switch(开关)语句可以根据一个整数索引值进行多重分支（multiway branching)。使用跳转表(jump table)数据结构使得实现更加高效,跳转表是一个数组，表项i是一个代码段的地址。和使用一组很长的 if-else 语句相比，使用跳转表的优点是执行开关语句的时间与开关情况的数量无关</p>
 <p>x86-64 机器代码<br>控制结构（比如条件、循环和开关语句）生成的基本指令模式<br>括栈分配、寄存器使用惯例和参数传递<br>数据结构（如结构、联合和数组）的分配和访问方式<br>整数和浮点数算术运算的指令<br>代码安全漏洞（例如缓冲区溢出）</p>
 <br>
@@ -616,7 +621,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">239k</span>
+    <span title="站点总字数">240k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
