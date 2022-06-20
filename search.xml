@@ -239,7 +239,7 @@
     <title>Dynamorio</title>
     <url>/2022/05/20/2022/Dynamorio/</url>
     <content><![CDATA[<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><ul>
-<li>注意wsl中需要root用户编译<br><a href="https://dynamorio.org/page_building.html">https://dynamorio.org/page_building.html</a><figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">cmake \</span><br><span class="line">-DCMAKE_TOOLCHAIN_FILE=/mnt/e/code/dynamorio/make/toolchain-android=arm64.cmake \</span><br><span class="line">-DANDROID_TOOLCHAIN=/home/dbi/android_toolchain_using \</span><br><span class="line">-DDR_COPY_TO_DEVICE=OFF \</span><br><span class="line">-DCMAKE_BUILD_TYPE=Debug \</span><br><span class="line">-DBUILD_TESTS=OFF \</span><br><span class="line">-DBUILD_SAMPLES=ON \</span><br><span class="line">-DBUILD_CLIENTS=ON \</span><br><span class="line">../dynamorio</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cmake \</span><br><span class="line">-DDR_COPY_TO_DEVICE=OFF \</span><br><span class="line">-DCMAKE_BUILD_TYPE=Debug \</span><br><span class="line">-DBUILD_TESTS=OFF \</span><br><span class="line">-DBUILD_SAMPLES=ON \</span><br><span class="line">-DBUILD_CLIENTS=ON \</span><br><span class="line">../dynamorio</span><br></pre></td></tr></tbody></table></figure></li>
+<li>注意wsl中需要root用户编译<br><a href="https://dynamorio.org/page_building.html">https://dynamorio.org/page_building.html</a><figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">cmake \</span><br><span class="line">-DCMAKE_TOOLCHAIN_FILE=/mnt/e/code/dynamorio/make/toolchain-android=arm64.cmake \</span><br><span class="line">-DANDROID_TOOLCHAIN=/android_toolchain_using \</span><br><span class="line">-DDR_COPY_TO_DEVICE=OFF \</span><br><span class="line">-DCMAKE_BUILD_TYPE=Debug \</span><br><span class="line">-DBUILD_TESTS=OFF \</span><br><span class="line">-DBUILD_SAMPLES=ON \</span><br><span class="line">-DBUILD_CLIENTS=ON \</span><br><span class="line">../dynamorio</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cmake \</span><br><span class="line">-DDR_COPY_TO_DEVICE=OFF \</span><br><span class="line">-DCMAKE_BUILD_TYPE=Debug \</span><br><span class="line">-DBUILD_TESTS=OFF \</span><br><span class="line">-DBUILD_SAMPLES=ON \</span><br><span class="line">-DBUILD_CLIENTS=ON \</span><br><span class="line">../dynamorio</span><br></pre></td></tr></tbody></table></figure></li>
 </ul>
 <span id="more"></span>
 
@@ -415,19 +415,6 @@
       <tags>
         <tag>Another Tag</tag>
         <tag>Computer Science</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>读书随记</title>
-    <url>/2022/01/27/2022/%E8%AF%BB%E4%B9%A6%E9%9A%8F%E8%AE%B0/</url>
-    <content><![CDATA[<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2022</category>
-      </categories>
-      <tags>
-        <tag>实用教程</tag>
-        <tag>Another Tag</tag>
       </tags>
   </entry>
   <entry>
@@ -693,6 +680,41 @@
       <tags>
         <tag>实用教程</tag>
         <tag>Another Tag</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>读书随记</title>
+    <url>/2022/01/27/2022/%E8%AF%BB%E4%B9%A6%E9%9A%8F%E8%AE%B0/</url>
+    <content><![CDATA[<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2022</category>
+      </categories>
+      <tags>
+        <tag>实用教程</tag>
+        <tag>Another Tag</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C/C++内存管理</title>
+    <url>/2021/10/07/2021/11/%E5%86%85%E5%AD%98/</url>
+    <content><![CDATA[<h2 id="一、内存"><a href="#一、内存" class="headerlink" title="一、内存"></a>一、内存</h2><p> 在计算机中，不同应用程序之间的内存是相互独立的，通常情况下不可以相互访问。</p>
+<span id="more"></span>
+
+<p>1、内存四区<br>从下到上为：代码区、数据区、堆区、栈区。<br>栈区：存储临时变量的区域，临时变量包括：局部变量、返回值、参数、返回地址。这些变量超出作用域自动弹出。超出栈大小将会栈溢出。栈从栈顶自上而下，最下端为0x0000。<br>堆区：比较大的内存区域，用于动态内存分配，由开放人员申请和释放，在程序结束时未释放，将会右系统自动回收。<br>数据区：主要存放全局变量、常量和静态变量；数据区又可以划分为：全局区和静态区。<br>代码区：主要纯粹可执行代码。属性为只读的。</p>
+<h2 id="二、malloc和free"><a href="#二、malloc和free" class="headerlink" title="二、malloc和free"></a>二、malloc和free</h2><p> 在 C 语言（不是 C++)中，malloc 和 free 是系统提供的函数，成对使用，用于从堆中分配和释放内存。malloc 的全称是 memory allocation 译为“动态内存分配”。</p>
+<ul>
+<li>参考链接：<br><a href="https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ">https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ</a></li>
+</ul>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2021</category>
+        <category>11</category>
+      </categories>
+      <tags>
+        <tag>Another Tag</tag>
+        <tag>Computer Science</tag>
       </tags>
   </entry>
   <entry>
@@ -1280,28 +1302,6 @@
       <tags>
         <tag>实用教程</tag>
         <tag>Another Tag</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C/C++内存管理</title>
-    <url>/2021/10/07/2021/11/%E5%86%85%E5%AD%98/</url>
-    <content><![CDATA[<h2 id="一、内存"><a href="#一、内存" class="headerlink" title="一、内存"></a>一、内存</h2><p> 在计算机中，不同应用程序之间的内存是相互独立的，通常情况下不可以相互访问。</p>
-<span id="more"></span>
-
-<p>1、内存四区<br>从下到上为：代码区、数据区、堆区、栈区。<br>栈区：存储临时变量的区域，临时变量包括：局部变量、返回值、参数、返回地址。这些变量超出作用域自动弹出。超出栈大小将会栈溢出。栈从栈顶自上而下，最下端为0x0000。<br>堆区：比较大的内存区域，用于动态内存分配，由开放人员申请和释放，在程序结束时未释放，将会右系统自动回收。<br>数据区：主要存放全局变量、常量和静态变量；数据区又可以划分为：全局区和静态区。<br>代码区：主要纯粹可执行代码。属性为只读的。</p>
-<h2 id="二、malloc和free"><a href="#二、malloc和free" class="headerlink" title="二、malloc和free"></a>二、malloc和free</h2><p> 在 C 语言（不是 C++)中，malloc 和 free 是系统提供的函数，成对使用，用于从堆中分配和释放内存。malloc 的全称是 memory allocation 译为“动态内存分配”。</p>
-<ul>
-<li>参考链接：<br><a href="https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ">https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ</a></li>
-</ul>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2021</category>
-        <category>11</category>
-      </categories>
-      <tags>
-        <tag>Another Tag</tag>
-        <tag>Computer Science</tag>
       </tags>
   </entry>
   <entry>
@@ -2191,18 +2191,37 @@
   <entry>
     <title>leetcode题解算法分析</title>
     <url>/2021/10/27/2021/11/leetcode%E9%A2%98%E8%A7%A3%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h3><figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">stk[N]</span><br><span class="line">stk[0] = ;</span><br><span class="line">top = 0 -1 ?</span><br><span class="line"><span class="keyword">for</span> (i ) {</span><br><span class="line">    <span class="keyword">while</span> (top &gt;0 &amp;&amp; 比较栈顶与nums[stk[i]]) { // 单调性</span><br><span class="line">    res[stk[top]] = ;</span><br><span class="line">    top--;</span><br><span class="line">    }</span><br><span class="line">    stk[++top] = i;</span><br><span class="line">}</span><br><span class="line"><span class="built_in">return</span> res;</span><br></pre></td></tr></tbody></table></figure>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="回溯法"><a href="#回溯法" class="headerlink" title="回溯法"></a>回溯法</h3><p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220620232325.png" alt="20220620232325"></p>
+<p>组合问题：N个数里面按一定规则找出k个数的集合<br>切割问题：一个字符串按一定规则有几种切割方式<br>子集问题：一个N个数的集合里有多少符合条件的子集<br>排列问题：N个数按一定规则全排列，有几种排列方式<br>棋盘问题：N皇后，解数独等等</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// 回溯函数模板返回值以及参数</span></span><br><span class="line"><span class="comment">// 回溯函数终止条件</span></span><br><span class="line"><span class="comment">// 回溯搜索的遍历过程</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">backtracking</span><span class="params">(参数)</span> </span>{</span><br><span class="line">    <span class="keyword">if</span> (终止条件) {</span><br><span class="line">        存放结果;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (选择：本层集合中元素（树中节点孩子的数量就是集合的大小）) {</span><br><span class="line">        处理节点;</span><br><span class="line">        backtracking(路径，选择列表); <span class="comment">// 递归</span></span><br><span class="line">        回溯，撤销处理结果</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对于组合问题，什么时候需要startIndex呢？</span></span><br><span class="line"><span class="comment">// 如果是一个集合来求组合的话，就需要startIndex</span></span><br><span class="line"><span class="comment">// 如果是多个集合取组合，各个集合之间相互不影响，那么就不用startIndex</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 树枝去重”和“树层去重”</span></span><br><span class="line"><span class="comment">// </span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h3><span id="more"></span>
+
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">stk[N]</span><br><span class="line">stk[0] = ;</span><br><span class="line">top = 0 -1 ?</span><br><span class="line"><span class="keyword">for</span> (i ) {</span><br><span class="line">    <span class="keyword">while</span> (top &gt;0 &amp;&amp; 比较栈顶与nums[stk[i]]) { // 单调性</span><br><span class="line">    res[stk[top]] = ;</span><br><span class="line">    top--;</span><br><span class="line">    }</span><br><span class="line">    stk[++top] = i;</span><br><span class="line">}</span><br><span class="line"><span class="built_in">return</span> res;</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><p> 动态规划步骤：<br> 1.确定dp数组(dp table)以及下标的含义<br> 2.确定递推公式<br> 3.dp数组初始化<br> 4.确定变量顺序<br> 5.举例推导dp数组</p>
 <p>dp数组推导：以终为始，从后向前推导</p>
 <figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 斐波那契数列</span></span><br><span class="line">dp[i] = dp[i - 1] + dp[i - 2]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">for</span></span> () {</span><br><span class="line">    n = dp[0] + dp[1];</span><br><span class="line">    dp[0] = dp[1];</span><br><span class="line">    dp[1] = n;</span><br><span class="line">}</span><br><span class="line"><span class="built_in">return</span> dp[1];</span><br><span class="line"></span><br><span class="line"><span class="comment"># 爬楼梯花费最小</span></span><br><span class="line">dp[i] = min(dp[i - 1], dp[i - 2]) + cost[i];</span><br><span class="line"></span><br><span class="line"><span class="comment"># 方格路径</span></span><br><span class="line"><span class="keyword">for</span> (int i = 1; i &lt; m; i++) {</span><br><span class="line">    <span class="keyword">for</span> (int j = 1; j &lt; n; j++) {</span><br><span class="line">        <span class="keyword">if</span> (obstacleGrid[i][j] == 1) // 障碍<span class="built_in">continue</span>;</span><br><span class="line">        dp[i][j] = dp[i - 1][j] + dp[i][j - 1];</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment"># 整数拆分</span></span><br><span class="line"><span class="keyword">for</span> (int i = 3; i &lt;= n ; i++) {</span><br><span class="line">    <span class="keyword">for</span> (int j = 1; j &lt; i - 1; j++) {</span><br><span class="line">        dp[i] = max(dp[i], max((i - j) * j, dp[i - j] * j));</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment"># n个不同的节点求能组成多少个不同二叉搜索树。</span></span><br><span class="line"><span class="keyword">for</span> (int i = 1; i &lt;= n; i++) {</span><br><span class="line">    <span class="keyword">for</span> (int j = 1; j &lt;= i; j++) {</span><br><span class="line">        dp[i] += dp[j - 1] * dp[i - j];</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 
 <ul>
-<li>背包问题<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// 01背包</span></span><br><span class="line"><span class="comment">// weight数组的大小 就是物品个数</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; weight.size(); i++) { <span class="comment">// 遍历物品</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= bagweight; j++) { <span class="comment">// 遍历背包容量</span></span><br><span class="line">        <span class="keyword">if</span> (j &lt; weight[i]) dp[i][j] = dp[i - <span class="number">1</span>][j];</span><br><span class="line">        <span class="keyword">else</span> dp[i][j] = max(dp[i - <span class="number">1</span>][j], dp[i - <span class="number">1</span>][j - weight[i]] + value[i]);</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; weight.size(); i++) { <span class="comment">// 遍历物品</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = bagWeight; j &gt;= weight[i]; j--) { <span class="comment">// 遍历背包容量</span></span><br><span class="line">        dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 开始 01背包</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++) {</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = target; j &gt;= nums[i]; j--) { <span class="comment">// 每一个元素一定是不可重复放入，所以从大到小遍历</span></span><br><span class="line">        dp[j] = max(dp[j], dp[j - nums[i]] + nums[i]);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li>
+<li>背包问题</li>
 </ul>
-<h2 id="1-单调栈"><a href="#1-单调栈" class="headerlink" title="1.单调栈"></a>1.单调栈</h2><span id="more"></span>
+<p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220620232057.png" alt="![20220620232057](https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220620232057.png)"></p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// 01背包</span></span><br><span class="line"><span class="comment">// weight数组的大小 就是物品个数</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; weight.size(); i++) { <span class="comment">// 遍历物品</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= bagweight; j++) { <span class="comment">// 遍历背包容量</span></span><br><span class="line">        <span class="keyword">if</span> (j &lt; weight[i]) dp[i][j] = dp[i - <span class="number">1</span>][j];</span><br><span class="line">        <span class="keyword">else</span> dp[i][j] = max(dp[i - <span class="number">1</span>][j], dp[i - <span class="number">1</span>][j - weight[i]] + value[i]);</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; weight.size(); i++) { <span class="comment">// 遍历物品</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = bagWeight; j &gt;= weight[i]; j--) { <span class="comment">// 遍历背包容量</span></span><br><span class="line">        dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 开始 01背包</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++) {</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = target; j &gt;= nums[i]; j--) { <span class="comment">// 每一个元素一定是不可重复放入，所以从大到小遍历</span></span><br><span class="line">        dp[j] = max(dp[j], dp[j - nums[i]] + nums[i]);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; weight.size(); i++) { <span class="comment">// 遍历物品</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = bagWeight; j &gt;= weight[i]; j--) { <span class="comment">// 遍历背包容量</span></span><br><span class="line">        dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 求组合类问题的公式，都是类似这种：</span></span><br><span class="line"><span class="comment">// 求装满背包有几种方法的情况下，递推公式一般为：</span></span><br><span class="line">dp[j] += dp[j - nums[i]]</span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="1-1-单调栈描述"><a href="#1-1-单调栈描述" class="headerlink" title="1.1 单调栈描述"></a>1.1 单调栈描述</h3><p> 单调栈里面的元素大小按照他们所在栈内的位置,满足一定的单调性.</p>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h2 id="1-单调栈"><a href="#1-单调栈" class="headerlink" title="1.单调栈"></a>1.单调栈</h2><h3 id="1-1-单调栈描述"><a href="#1-1-单调栈描述" class="headerlink" title="1.1 单调栈描述"></a>1.1 单调栈描述</h3><p> 单调栈里面的元素大小按照他们所在栈内的位置,满足一定的单调性.</p>
 <blockquote>
 <p>单调递<strong>增</strong>栈：单调递增栈就是从栈底到栈顶数据是从小到大; 可找到<strong>左起</strong>第一个比当前数字<strong>小</strong>的元素.<br>单调递<strong>减</strong>栈：单调递减栈就是从栈底到栈顶数据是从大到小; 可找到<strong>左起</strong>第一个比当前数字<strong>大</strong>的元素.</p>
 </blockquote>

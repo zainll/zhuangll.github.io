@@ -235,7 +235,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>544</span>
+              <span>535</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -255,7 +255,7 @@
 
       
           <h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><ul>
-<li>注意wsl中需要root用户编译<br><a target="_blank" rel="noopener" href="https://dynamorio.org/page_building.html">https://dynamorio.org/page_building.html</a><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">cmake \</span><br><span class="line">-DCMAKE_TOOLCHAIN_FILE=/mnt/e/code/dynamorio/make/toolchain-android=arm64.cmake \</span><br><span class="line">-DANDROID_TOOLCHAIN=/home/dbi/android_toolchain_using \</span><br><span class="line">-DDR_COPY_TO_DEVICE=OFF \</span><br><span class="line">-DCMAKE_BUILD_TYPE=Debug \</span><br><span class="line">-DBUILD_TESTS=OFF \</span><br><span class="line">-DBUILD_SAMPLES=ON \</span><br><span class="line">-DBUILD_CLIENTS=ON \</span><br><span class="line">../dynamorio</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cmake \</span><br><span class="line">-DDR_COPY_TO_DEVICE=OFF \</span><br><span class="line">-DCMAKE_BUILD_TYPE=Debug \</span><br><span class="line">-DBUILD_TESTS=OFF \</span><br><span class="line">-DBUILD_SAMPLES=ON \</span><br><span class="line">-DBUILD_CLIENTS=ON \</span><br><span class="line">../dynamorio</span><br></pre></td></tr></tbody></table></figure></li>
+<li>注意wsl中需要root用户编译<br><a target="_blank" rel="noopener" href="https://dynamorio.org/page_building.html">https://dynamorio.org/page_building.html</a><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">cmake \</span><br><span class="line">-DCMAKE_TOOLCHAIN_FILE=/mnt/e/code/dynamorio/make/toolchain-android=arm64.cmake \</span><br><span class="line">-DANDROID_TOOLCHAIN=/android_toolchain_using \</span><br><span class="line">-DDR_COPY_TO_DEVICE=OFF \</span><br><span class="line">-DCMAKE_BUILD_TYPE=Debug \</span><br><span class="line">-DBUILD_TESTS=OFF \</span><br><span class="line">-DBUILD_SAMPLES=ON \</span><br><span class="line">-DBUILD_CLIENTS=ON \</span><br><span class="line">../dynamorio</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cmake \</span><br><span class="line">-DDR_COPY_TO_DEVICE=OFF \</span><br><span class="line">-DCMAKE_BUILD_TYPE=Debug \</span><br><span class="line">-DBUILD_TESTS=OFF \</span><br><span class="line">-DBUILD_SAMPLES=ON \</span><br><span class="line">-DBUILD_CLIENTS=ON \</span><br><span class="line">../dynamorio</span><br></pre></td></tr></tbody></table></figure></li>
 </ul>
           <!--noindex-->
             <div class="post-button">
@@ -1256,7 +1256,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">243k</span>
+    <span title="站点总字数">244k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
