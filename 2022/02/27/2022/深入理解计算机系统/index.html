@@ -71,6 +71,9 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220622235348.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220629003932.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220629005430.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220629010259.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220629010749.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220629010927.png">
 <meta property="article:published_time" content="2022-02-26T16:47:53.000Z">
 <meta property="article:modified_time" content="2022-02-26T16:53:53.000Z">
 <meta property="article:author" content="John Doe">
@@ -293,14 +296,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>10k</span>
+              <span>11k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>9 分钟</span>
+              <span>10 分钟</span>
             </span>
 
         </div>
@@ -607,6 +610,15 @@
 <p> 固态硬盘<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220629003932.png" alt="20220629003932"><br> 读SSD比写要快</p>
 <h3 id="6-2-局部性"><a href="#6-2-局部性" class="headerlink" title="6.2 局部性"></a>6.2 局部性</h3><p> 局部性原理（principle of locality)：倾向于引用邻近于其他最近引用过的数据项的数据项，或者最近引用过的数据项本身<br> 时间局部性（temporal locality) 和空间局部性（spatial<br>locality)<br> 时间局部性的程序中，被引用过一次的内存位置很可能在不远<br>的将来再被多次引用<br> 空间局部性的程序中，如果一个内存位置被引用了一次，那么程序很可能在不远的将来引用附近的一个内存位置<br> 数据引用的局部性，取指令的局部性<br> 局部性原则：重复引用相同变量；步长为々的引用模式的程序，步长越小，空间局部性越好；取指令来说，循环有好的时间和空间局部性</p>
 <h3 id="6-3-存储层次结构"><a href="#6-3-存储层次结构" class="headerlink" title="6.3 存储层次结构"></a>6.3 存储层次结构</h3><p>存储器层次结构<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220629005430.png" alt="20220629005430"></p>
+<p> 高速缓存cache<br>存储器被划分成连续的数据对象组块（chunk), 称为块（block)。<br>数据总是以块大小为传送单元（transfer unit)在第k层和第;k+1 层之间来回复制的<br>缓存命中和缓存不命中(cache miss)<br>替换策略：最近最少被使用（LRU)替换策略的缓存会选择那个最后被访问的时间距现在最远的块<br>缓存不命中的种类</p>
+<ul>
+<li>强制性不命中（compulsory miss)或冷不命中（cold miss)：空的缓存有时被称为冷缓存（cold cache)</li>
+<li>冲突不命中（conflict miss)：限制性的放置策略会引起一种不命中</li>
+<li>容量不命中（capacity miss)：工作集的大小超过缓存的大小<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220629010259.png" alt="20220629010259"></li>
+</ul>
+<p>高速缓存被组织成一个有 S=2^s个高速缓存组（cache set)的数组。每个组包含 £个高速缓存行（cache line)， 每个行是由一个 B =2^b 字节的数据块(block)组成的，一个有效位（valid bit)指明这个行是否包含有意义的信息，还有 t=m-(b+s)个标记位（tag bit)(是当前块的内存地址的位的一个子集》s 它们唯一地标识存储在<br>这个高速缓存行中的块。<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220629010749.png" alt="20220629010749"><br>高速缓存的结构可以用元组（S,E,B,m)来描述</p>
+<p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220629010927.png" alt="20220629010927"></p>
+<p> 高速缓存请求名字，抽取被请求子过程：1)组选择 2)行匹配 3)字抽取</p>
 <br>
 随机存取存储器（RAM)和只读存储器(ROM) 及磁盘和固态硬盘
 时间局部性和空间局部性来提高应用程序的性能
@@ -787,7 +799,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">247k</span>
+    <span title="站点总字数">248k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
