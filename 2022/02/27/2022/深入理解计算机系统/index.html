@@ -74,6 +74,9 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220629010259.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220629010749.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220629010927.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220629225753.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220629230138.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220629230242.png">
 <meta property="article:published_time" content="2022-02-26T16:47:53.000Z">
 <meta property="article:modified_time" content="2022-02-26T16:53:53.000Z">
 <meta property="article:author" content="John Doe">
@@ -296,14 +299,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>11k</span>
+              <span>12k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>10 分钟</span>
+              <span>11 分钟</span>
             </span>
 
         </div>
@@ -619,13 +622,22 @@
 <p>高速缓存被组织成一个有 S=2^s个高速缓存组（cache set)的数组。每个组包含 £个高速缓存行（cache line)， 每个行是由一个 B =2^b 字节的数据块(block)组成的，一个有效位（valid bit)指明这个行是否包含有意义的信息，还有 t=m-(b+s)个标记位（tag bit)(是当前块的内存地址的位的一个子集》s 它们唯一地标识存储在<br>这个高速缓存行中的块。<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220629010749.png" alt="20220629010749"><br>高速缓存的结构可以用元组（S,E,B,m)来描述</p>
 <p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220629010927.png" alt="20220629010927"></p>
 <p> 高速缓存请求名字，抽取被请求子过程：1)组选择 2)行匹配 3)字抽取</p>
+<p> 组相联高速缓存： 1&lt;E&lt;C/B 称为E路组相联高速缓存<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220629225753.png" alt="20220629225753"><br>组相连替换最不常使用(Least-Frequently-Used,LFU)策略会替换在过去某个时间窗口内引用次数最少的那一行。最近最 少使用(Least-Recently-Used LRU)策略会替换最后一次访问时间最久远的那一行。</p>
+<p> 全相联高速缓存： 包含所有高速缓存行的组（即 E=C/B)组成<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220629230138.png" alt="20220629230138"></p>
+<p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220629230242.png" alt="20220629230242"></p>
+<p>写的问题：直写，写回，写分配<br>i-cache和d-cache<br>高速缓存性能指标：不命中率(miss rate)，命中率(hit rate)，命中时间(hit time)，不命中出发(miss penalty)<br>块：固定大小，cache与主存之间传送<br>行：cache的一个存储单元？<br>组：一个或者多个含的集合<br>编写高速缓存友好代码：对局部变量反复引用；步长为1的引用模式</p>
+<p>高速缓存与程序性能一个程序从存储系统中读数据的速率称为读呑吐量(read throughput) 或者有时称为读带宽(read bandwidth)<br>利用时间局部性，使得频繁使用的字从 L1 中取出，还要利用空.间局部性，使得尽可能多的字从一个L1 高速缓存行中访问到</p>
+<p>存储器层次结构对程序编写指导：</p>
+<ul>
+<li>注意力集中在内循环上</li>
+<li>按照数据对象存储在内存中的顺序、以步长为 1 的来读数据，从而使得你程序中的空间局部性最大</li>
+<li>从存睹器中读入了一个数据对象，就尽可能多地使用它，从而使得程序中的时间局部性最大</li>
+</ul>
 <br>
-随机存取存储器（RAM)和只读存储器(ROM) 及磁盘和固态硬盘
-时间局部性和空间局部性来提高应用程序的性能
+基本存储技术包括随机存储器(RAM)、非易失性存储器（ROM)和磁盘。RAM 有两种基本类型。静态RAM(SRAM)快一些，用做 CPU 芯片上的髙速缓存，也可以用做芯片下的高速缓存；动态 RAM(DRAM)慢一点，用做主存和图形帧缓冲区；在关电的时候,ROM 也能保持它们的信息；
 
 
-
-
+<p>随机存取存储器（RAM)和只读存储器(ROM) 及磁盘和固态硬盘<br>时间局部性和空间局部性来提高应用程序的性能</p>
 <br>
 
 <h1 id="在系统上运行程序"><a href="#在系统上运行程序" class="headerlink" title="在系统上运行程序"></a>在系统上运行程序</h1><h2 id="第7章-链接"><a href="#第7章-链接" class="headerlink" title="第7章 链接"></a>第7章 链接</h2><p>静态和动态链接,<br>可重定位的和可执行的目标文件、符号解析、重定位、静态库、 共享目标库、 位置无关代码，以及库打桩</p>
@@ -804,7 +816,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:45</span>
+    <span title="站点阅读时长">3:46</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
