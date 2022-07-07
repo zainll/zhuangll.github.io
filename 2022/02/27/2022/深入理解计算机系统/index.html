@@ -670,6 +670,8 @@
 <li>.line： 调试符号表，其条目是程序中定义的局部变量和类型定义 <strong>LINE</strong></li>
 <li>.strtab: 字符串表</li>
 </ul>
+<p> 符号表：全局符号，外部符号和局部符号<br> 符号表是由汇编器构造的，使用编译器输出到汇编语言.s 文件中的符号。.symtab节中包含ELF符号表。<br> 有三个特殊的伪节（pseudosection), 它们在节头部表中是没有条目的：ABS 代表不该被重定位的符号；UNDEF 代表未定义的符号，也就是在本目标模块中引用，但是却在其他地方定义的符号；COMMON 表示还未被分配位置的未初始化的数据目标<br> 符号解析：连接器解析符号</p>
+<p>编译器向汇编器输出每个全局符号，或者是强(strong)或者是弱(weak)，Linux 链接器来处理多重定义的符号名规则</p>
 <br>
 
 <p>静态和动态链接,<br>可重定位的和可执行的目标文件、符号解析、重定位、静态库、 共享目标库、 位置无关代码，以及库打桩</p>
@@ -843,7 +845,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">249k</span>
+    <span title="站点总字数">250k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
