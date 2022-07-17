@@ -20,15 +20,16 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true,"b2t":false,"scrollpercent":true},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="1.操作系统有两个基本功能：  防止硬件被失控的应用程序滥用  隔离 向应用程序提供简单一致的机制来控制复杂而又通常大不相同的低级硬件设备    隔离：隔离硬件;内存空间隔离(虚拟内存)-&gt;进程管理;防御安全 隔离实现分时复用硬件资源  操作系统通过几个基本的抽象概念：进程、虚拟内存和文件 进程：操作系统对一个正在运行的程序的一种抽象，操作系统实现进程交错执行的机制称为上下文切换">
+  <meta name="description" content="[toc] 操作系统">
 <meta property="og:type" content="article">
 <meta property="og:title" content="操作系统">
 <meta property="og:url" content="http://example.com/2022/06/28/2022/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.html">
 <meta property="og:site_name" content="liuz">
-<meta property="og:description" content="1.操作系统有两个基本功能：  防止硬件被失控的应用程序滥用  隔离 向应用程序提供简单一致的机制来控制复杂而又通常大不相同的低级硬件设备    隔离：隔离硬件;内存空间隔离(虚拟内存)-&gt;进程管理;防御安全 隔离实现分时复用硬件资源  操作系统通过几个基本的抽象概念：进程、虚拟内存和文件 进程：操作系统对一个正在运行的程序的一种抽象，操作系统实现进程交错执行的机制称为上下文切换">
+<meta property="og:description" content="[toc] 操作系统">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220710174724.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220710175044.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220717173502.png">
 <meta property="article:published_time" content="2022-06-27T16:47:53.000Z">
 <meta property="article:modified_time" content="2022-06-27T16:53:53.000Z">
 <meta property="article:author" content="John Doe">
@@ -81,9 +82,9 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="liuz" type="application/atom+xml">
 
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="liuz" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -251,14 +252,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
+              <span>4.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -270,11 +271,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <span id="more"></span>
+        <p>[toc]</p>
+<p>操作系统</p>
+<span id="more"></span>
 
-
-
-<p>1.操作系统有两个基本功能：</p>
+<h2 id="3-OS-Organization-and-System-Calls"><a href="#3-OS-Organization-and-System-Calls" class="headerlink" title="3 OS Organization and System Calls"></a>3 OS Organization and System Calls</h2><p>1.操作系统有两个基本功能：</p>
 <ul>
 <li>防止硬件被失控的应用程序滥用  隔离</li>
 <li>向应用程序提供简单一致的机制来控制复杂而又通常大不相同的低级硬件设备</li>
@@ -293,15 +294,78 @@
 <p> 操作系统和应用程序之前的接口被称为系统调用接口(System call interface)</p>
 <p>用户态与内核态切换<br>RISC-V中ECALL，ARM64中SVC，HVC？</p>
 <p>宏内核与微内核<br>linux，unix宏内核，是微内核<br>怎么区分宏内核和微内核？将大部分的操作系统运行在内核之外，大部分硬件驱动不在内核是微内核。微内核跳转变多</p>
-<p>XV6编译<br>XV6代码三部分：kernel、user和mkfs</p>
+<p>XV6编译<br>XV6代码三部分：kernel、user和mkfs<br>QEMU<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/fangye945a/article/details/121962409">https://blog.csdn.net/fangye945a/article/details/121962409</a></p>
+<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install ninja-build</span><br></pre></td></tr></tbody></table></figure>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Leo_h1104/article/details/115580753">https://blog.csdn.net/Leo_h1104/article/details/115580753</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/351865040">https://zhuanlan.zhihu.com/p/351865040</a></p>
+<h2 id="Page-Table"><a href="#Page-Table" class="headerlink" title="Page Table"></a>Page Table</h2><p> 虚拟内存-页表</p>
+<ol>
+<li><p>映射：虚拟地址&lt;–&gt;物理地址  </p>
+</li>
+<li><p>地址空间(Address Spaces)<br>虚拟地址空间-&gt;内存隔离</p>
+</li>
+<li><p>物理内存如何比虚拟内存大？实际程序运行时并不全部加载指令和数据，而是用时加载或者局部加载，所以并不需要加载全部虚拟地址空间，也不需要使用全部物理地址。但是虚拟地址需要有对应的物理地址，是一一对应的吗？如果虚拟地址更大，对应的物理地址数据会刷回到硬盘吗？即内存是硬盘的缓存</p>
+</li>
+<li><p>kalloc保存了空余page的列表，列表为空或者耗尽，kalloc会返回一个空指针，内核会妥善处理并将结果返回给用户应用程序。并告诉用户应用程序，要么是对这个应用程序没有额外的内存了，要么是整个机器都没有内存</p>
+</li>
+<li><p>实现地址空间-&gt;页表<br>页表是在硬件中通过处理器和内存管理单元(Memory Management Unit)实现</p>
+</li>
+<li><p>任何带有地址的指令，其中的地址应该认为是虚拟内存地址而不是物理地址</p>
+</li>
+<li><p>CPU角度，一旦MMU打开，它执行的每条指令中的地址都是虚拟内存地址</p>
+</li>
+<li><p>MMU会有一个表单，表单中，一边是虚拟内存地址，另一边是物理内存地址。RISC-V上一个叫做SATP的寄存器保存表单地址</p>
+</li>
+<li><p>MMU并不会保存page table，它只会从内存中读取page table，然后完成翻译</p>
+</li>
+<li><p>操作系统将CPU从一个应用程序切换到另一个应用程序时，同时也需要切换SATP寄存器中的内容，从而指向新的进程保存在物理内存中的地址对应表单。进程对应的SATP值是由内核保存，只有运行在kernel mode的代码可以更新这个寄存器。SATP呢？它存的是物理地址还是虚拟地址？物理地址</p>
+</li>
+<li><p>RISC-V中，一个page是4KB，也就是4096Bytes，为每个page创建一条表单条目</p>
+</li>
+<li><p>对于虚拟内存地址，划分为两个部分，index和offset，index用来查找page，offset对应的是一个page中的哪个字节。<br>MMU在做地址翻译，通过读取虚拟内存地址中的index可以知道物理内存中的page号，这个page号对应了物理内存中的4096个字节。之后虚拟内存地址中的offset指向了page中的4096个字节中的某一个，假设offset是12，那么page中的第12个字节被使用了。将offset加上page的起始地址，就可以得到物理内存地址</p>
+</li>
+<li><p>RISC-V的寄存器是64bit，虚拟内存地址的数量现在只有2^39个，大概是512GB，39bit中，有27bit被用来当做index，12bit被用来当做offset。offset必须是12bit，因为对应了一个page的4096个字节。</p>
+</li>
+<li><p>RISC-V中，物理内存地址是56bit，ARM v8也是？44bit是物理page号(PPN，Physical Page Number)，剩下12bit是offset完全继承自虚拟内存地址</p>
+</li>
+<li><p>增大页表？16k 64k？</p>
+</li>
+<li><p>多级页表，虚拟内存地址中的27bit的index，实际上是由3个9bit的数字组成(L2，L1，L0)。前9个bit被用来索引最高级的page directory</p>
+</li>
+<li><p>一个directory是4096Bytes，就跟page的大小是一样的。Directory中的一个条目被称为PTE（Page Table Entry）是64bits，就像寄存器的大小一样，也就是8Bytes。所以一个Directory page有512个条目。</p>
+</li>
+<li><p>SATP寄存器会指向最高一级的page directory的物理内存地址，虚拟内存中index的高9bit用来索引最高一级的page directory，这样我们就能得到一个PPN，也就是物理page号。这个PPN指向了中间级的page directory<br>最高级的page directory中的PPN，包含了下一级page directory的物理内存地址，依次类推。在最低级page directory，我们还是可以得到44bit的PPN，这里包含了我们实际上想要翻译的物理page地址，然后再加上虚拟内存地址的12bit offset，就得到了56bit物理内存地址</p>
+</li>
+<li><p>PTE中的Flag，因为它也很重要。每个PTE的低10bit是一堆标志位</p>
+</li>
+</ol>
+<ul>
+<li>第一个标志位是Valid。如果Valid bit位为1，那么表明这是一条合法的PTE</li>
+<li>下两个标志位分别是Readable和Writable。表明你是否可以读/写这个page</li>
+<li>Executable表明你可以从这个page执行指令</li>
+<li>user表明这个page可以被运行在用户空间的进程访问。</li>
+</ul>
+<ol start="21">
+<li>页表缓存(Translation Lookaside Buffer)<br>TLB会保存虚拟地址到物理地址的映射关系。<br>Q切换了page table，操作系统需要告诉处理器当前正在切换page table，处理器会清空TLB。在RISC-V中，清空TLB的指令是sfence_vma。<br>虚拟地址索引的cache位于MMU之前，由物理地址索引的cache位于MMU之后<br>在XV6中，内核有它自己的page table，用户进程也有自己的page table，用户进程指向sys_info结构体的指针存在于用户空间的page table，但是内核需要将这个指针翻译成一个自己可以读写的物理地址。copy_in，copy_out，你可以发现内核会通过用户进程的page table，将用户的虚拟地址翻译得到物理地址，这样内核可以读写相应的物理内存地址<br>page table提供了一层抽象(level of indirection)。抽象就是指从虚拟地址到物理地址的映射</li>
+<li>当操作系统启动时，会从地址0x80000000开始运行，这个地址其实也是由硬件设计者决定的。地址0是保留的，地址0x10090000对应以太网，地址0x80000000对应DDR内存，处理器外的易失存储（Off-Chip Volatile Memory），也就是主板上的DRAM芯片</li>
+<li>地址0x1000是boot ROM的物理地址，当你对主板上电，主板做的第一件事情就是运行存储在boot ROM中的代码，当boot完成之后，会跳转到地址0x80000000，操作系统需要确保那个地址有一些数据能够接着启动操作系统。</li>
+<li>I/O设备</li>
+</ol>
+<ul>
+<li>PLIC是中断控制器(Platform-Level Interrupt Controller)</li>
+<li>CLINT(Core Local Interruptor)也是中断的一部分。所以多个设备都能产生中断，需要中断控制器来将这些中断路由到合适的处理函数</li>
+<li>UART0（Universal Asynchronous Receiver/Transmitter）负责与Console和显示器交互</li>
+<li>VIRTIO disk，与磁盘进行交互。</li>
+</ul>
+<ol start="25">
+<li>同一个物理地址映射两个虚拟地址，你可以不将一个虚拟地址映射到物理地址。可以是一对一的映射，一对多映射，多对一映射</li>
+<li>用户进程的虚拟地址空间分布<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220717173502.png" alt="20220717173502"></li>
+</ol>
+<p>Kvminit函数<br>kvminithart函数<br>walk函数</p>
 <p>b站课程：<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV19k4y1C7kA?p=2&amp;spm_id_from=pageDriver&amp;vd_source=6768732acbd0f78ac59230d2faa59a86">https://www.bilibili.com/video/BV19k4y1C7kA?p=2&amp;spm_id_from=pageDriver&amp;vd_source=6768732acbd0f78ac59230d2faa59a86</a></p>
 <p>课程翻译<br><a target="_blank" rel="noopener" href="https://github.com/huihongxiao/MIT6.S081">https://github.com/huihongxiao/MIT6.S081</a><br><a target="_blank" rel="noopener" href="https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/">https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/</a></p>
 <p><a target="_blank" rel="noopener" href="https://pdos.csail.mit.edu/6.828/2020/schedule.html">https://pdos.csail.mit.edu/6.828/2020/schedule.html</a></p>
 <p><a target="_blank" rel="noopener" href="https://pdos.csail.mit.edu/6.828/2020/schedule.html">https://pdos.csail.mit.edu/6.828/2020/schedule.html</a></p>
-<p>QEMU<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/fangye945a/article/details/121962409">https://blog.csdn.net/fangye945a/article/details/121962409</a></p>
-<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install ninja-build</span><br></pre></td></tr></tbody></table></figure>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Leo_h1104/article/details/115580753">https://blog.csdn.net/Leo_h1104/article/details/115580753</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/351865040">https://zhuanlan.zhihu.com/p/351865040</a></p>
 <script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">
     </div>
 
@@ -383,6 +447,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-OS-Organization-and-System-Calls"><span class="nav-text">3 OS Organization and System Calls</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Page-Table"><span class="nav-text">Page Table</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -449,12 +514,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">237k</span>
+    <span title="站点总字数">267k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:36</span>
+    <span title="站点阅读时长">4:03</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
