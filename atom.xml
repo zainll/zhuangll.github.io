@@ -25,11 +25,7 @@
     
     
     <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
-&lt;p&gt;现代操作系统&lt;br&gt;体系结构(指令集、存储组织、 I/0和总线结构)&lt;br&gt;操作系统的主要任务是记录哪个程序在使用什么资源，对资源请求进行分配、评估使用代价，并且为不同的程序和用户调解互相冲突的资沥请求。&lt;br&gt;资源管理包括两种不同方式实现多路复用(共享)资源：在时间上复用和在空间上复用&lt;br&gt;纸带程序-批处理程序-多道程序-分时系统&lt;br&gt;UNIX有两个主要的版本，即AT&amp;amp;T System V和加州大学伯克利分校的BSD(Berkeley Software&lt;br&gt;Distribution)。UNIX的标准，称作POSJX,&lt;br&gt;MS—DOS-Windows95&lt;br&gt;处理器：程序计数器(PC)、堆栈指针、程序状态字(PSW)：包含了条件码位(由比较指令设置)、CPU优先级、换式(用户态或内核态)，以及各种其他控制位&lt;/p&gt;
-&lt;p&gt;从操作系统中获得服务，用户程序必须使用 系统调用 (sys call)以陷入内核井调用操作系统。 TRAP 指令把用户态切换成内核态，井启用操作系统&lt;/p&gt;
-&lt;p&gt;虚拟内存机制:运行大于物理内存的程序，将程序放在磁盘上，而将主存作为缓存，用来保存最频繁使用的部&lt;br&gt;分程序。这种机制需要快速地映像内存地址，以便把程序生成的地址转换为有关字节在RAM 中的物理&lt;br&gt;地址。这种映像由CPU 中的 个称为存储器管理单元 Memory Management Unit, MMU 的部件来完&lt;br&gt;成&lt;br&gt;I/O设备一般包括两个部分：设备控制器和设备本身&lt;br&gt;启动计算机:基本输入输出系统((Basic Input Output System, BIOS)的程序。BIOS 内有底层l/0软件，包括读键盘、写屏幕、进行磁盘I/O 以及其他过程&lt;/p&gt;
-&lt;p&gt;操作系统概念：进程&lt;br&gt;系统管理器授权每个进程使用一个给定的 UID(User IDentification)。每个被启动的进程都有启动该进程的用户UID 。子进程拥有与父进程一样的UID。用户可以是某个组的成员，每个组也有GID(Group IDentificalion)。UNIX中，有一个UID称为超级用户 (superuser) 或者Windows 中的管理员 (administrator)。&lt;br&gt;操作系统具有两种功能：为用户程序提供抽象和管理计箕机资源&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718223909.png&quot; alt=&quot;20220718223909&quot;&gt;&lt;/p&gt;</summary>
+&lt;p&gt;现代操作系统&lt;/p&gt;</summary>
     
     
     
@@ -341,7 +337,8 @@
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;软件故事&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</summary>
+&lt;/ul&gt;
+&lt;p&gt;ACM &lt;a href=&quot;http://www.acm.org/&quot;&gt;http://www.acm.org&lt;/a&gt;&lt;br&gt;IEEE &lt;a href=&quot;http://www.computer.org/&quot;&gt;http://www.computer.org&lt;/a&gt;&lt;br&gt;USENIC &lt;a href=&quot;http://www.usenix.org/&quot;&gt;http://www.usenix.org&lt;/a&gt;&lt;/p&gt;</summary>
     
     
     

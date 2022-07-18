@@ -20,14 +20,16 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true,"b2t":false,"scrollpercent":true},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="[toc] 现代操作系统体系结构(指令集、存储组织、 I&#x2F;0和总线结构)操作系统的主要任务是记录哪个程序在使用什么资源，对资源请求进行分配、评估使用代价，并且为不同的程序和用户调解互相冲突的资沥请求。资源管理包括两种不同方式实现多路复用(共享)资源：在时间上复用和在空间上复用纸带程序-批处理程序-多道程序-分时系统UNIX有两个主要的版本，即AT&amp;T System V和加州大学伯克利分校的">
+  <meta name="description" content="[toc] 现代操作系统">
 <meta property="og:type" content="article">
 <meta property="og:title" content="现代操作系统">
 <meta property="og:url" content="http://example.com/2022/07/15/2022/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.html">
 <meta property="og:site_name" content="liuz">
-<meta property="og:description" content="[toc] 现代操作系统体系结构(指令集、存储组织、 I&#x2F;0和总线结构)操作系统的主要任务是记录哪个程序在使用什么资源，对资源请求进行分配、评估使用代价，并且为不同的程序和用户调解互相冲突的资沥请求。资源管理包括两种不同方式实现多路复用(共享)资源：在时间上复用和在空间上复用纸带程序-批处理程序-多道程序-分时系统UNIX有两个主要的版本，即AT&amp;T System V和加州大学伯克利分校的">
+<meta property="og:description" content="[toc] 现代操作系统">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718223909.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718232209.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718232859.png">
 <meta property="article:published_time" content="2022-07-14T16:47:53.000Z">
 <meta property="article:modified_time" content="2022-07-14T16:53:53.000Z">
 <meta property="article:author" content="John Doe">
@@ -80,9 +82,9 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="liuz" type="application/atom+xml">
 
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="liuz" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -250,7 +252,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>879</span>
+              <span>1.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -270,16 +272,21 @@
 
       
         <p>[toc]</p>
-<p>现代操作系统<br>体系结构(指令集、存储组织、 I/0和总线结构)<br>操作系统的主要任务是记录哪个程序在使用什么资源，对资源请求进行分配、评估使用代价，并且为不同的程序和用户调解互相冲突的资沥请求。<br>资源管理包括两种不同方式实现多路复用(共享)资源：在时间上复用和在空间上复用<br>纸带程序-批处理程序-多道程序-分时系统<br>UNIX有两个主要的版本，即AT&amp;T System V和加州大学伯克利分校的BSD(Berkeley Software<br>Distribution)。UNIX的标准，称作POSJX,<br>MS—DOS-Windows95<br>处理器：程序计数器(PC)、堆栈指针、程序状态字(PSW)：包含了条件码位(由比较指令设置)、CPU优先级、换式(用户态或内核态)，以及各种其他控制位</p>
+<p>现代操作系统</p>
+<span id="more"></span>
+
+<h2 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章 绪论"></a>第一章 绪论</h2><p>体系结构(指令集、存储组织、 I/0和总线结构)<br>操作系统的主要任务是记录哪个程序在使用什么资源，对资源请求进行分配、评估使用代价，并且为不同的程序和用户调解互相冲突的资沥请求。<br>资源管理包括两种不同方式实现多路复用(共享)资源：在时间上复用和在空间上复用<br>纸带程序-批处理程序-多道程序-分时系统<br>UNIX有两个主要的版本，即AT&amp;T System V和加州大学伯克利分校的BSD(Berkeley Software<br>Distribution)。UNIX的标准，称作POSJX,<br>MS—DOS-Windows95<br>处理器：程序计数器(PC)、堆栈指针、程序状态字(PSW)：包含了条件码位(由比较指令设置)、CPU优先级、换式(用户态或内核态)，以及各种其他控制位</p>
 <p>从操作系统中获得服务，用户程序必须使用 系统调用 (sys call)以陷入内核井调用操作系统。 TRAP 指令把用户态切换成内核态，井启用操作系统</p>
 <p>虚拟内存机制:运行大于物理内存的程序，将程序放在磁盘上，而将主存作为缓存，用来保存最频繁使用的部<br>分程序。这种机制需要快速地映像内存地址，以便把程序生成的地址转换为有关字节在RAM 中的物理<br>地址。这种映像由CPU 中的 个称为存储器管理单元 Memory Management Unit, MMU 的部件来完<br>成<br>I/O设备一般包括两个部分：设备控制器和设备本身<br>启动计算机:基本输入输出系统((Basic Input Output System, BIOS)的程序。BIOS 内有底层l/0软件，包括读键盘、写屏幕、进行磁盘I/O 以及其他过程</p>
 <p>操作系统概念：进程<br>系统管理器授权每个进程使用一个给定的 UID(User IDentification)。每个被启动的进程都有启动该进程的用户UID 。子进程拥有与父进程一样的UID。用户可以是某个组的成员，每个组也有GID(Group IDentificalion)。UNIX中，有一个UID称为超级用户 (superuser) 或者Windows 中的管理员 (administrator)。<br>操作系统具有两种功能：为用户程序提供抽象和管理计箕机资源</p>
 <p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718223909.png" alt="20220718223909"></p>
-<span id="more"></span>
+<p>fork调用返回一个值，在子进程中该值为零，井且在父进程中等于子进程的进程标识符(Process IDeotifier, PID)<br>父进程执行waitpid 系统调用，它只是等待，直至子进程终止<br>子进程必须执行用户的命令。通过使用execve 系统调用可以实现<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718232209.png" alt="20220718232209"></p>
+<p>虚拟机：KVM(针对Linux 内核)、VirtualBox、Hyper-V;模拟器,二进制翻译</p>
+<p>C语言<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718232859.png" alt="20220718232859"></p>
+<p>操作系统有两种观点:资源管理观点和扩展的机器观点。在资源管理观点中，操作系统的任务是有效地管理系统的各个部分。在扩展的机器观点中，系统的任务是为用 提供比实际机器更便干运用的抽象。这些抽象包括进程、地址空间以及文件。<br>操作系统构建基本概念是进程、存储管理、I/O管理、文件管理和安全</p>
+<br>
 
-
-
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">
+<h2 id="第二章-进程与线程"><a href="#第二章-进程与线程" class="headerlink" title="第二章 进程与线程"></a>第二章 进程与线程</h2><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">
     </div>
 
     
@@ -360,6 +367,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%BB%AA%E8%AE%BA"><span class="nav-text">第一章 绪论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B"><span class="nav-text">第二章 进程与线程</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -426,7 +434,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">268k</span>
+    <span title="站点总字数">269k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
