@@ -254,7 +254,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>5.2k</span>
+              <span>5.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -398,7 +398,25 @@
 <li>页帧大小支持4KB、16KB和64KB</li>
 </ul>
 <ol start="12">
-<li>AArach64采用两套页表设计，虚拟地址空间分为三部分：下面是用户空间，中间是非规范区，上面是内核空间。当CPU访问用户空间是，MMU选择TTBR0指向的页表，CPU访问内核空间时，MMU选择TTBR1寄存器指向的页表。</li>
+<li><p>AArach64采用两套页表设计，虚拟地址空间分为三部分：下面是用户空间，中间是非规范区，上面是内核空间。当CPU访问用户空间是，MMU选择TTBR0指向的页表，CPU访问内核空间时，MMU选择TTBR1寄存器指向的页表。</p>
+</li>
+<li><p>页表属性</p>
+</li>
+</ol>
+<ul>
+<li>共享性与缓存性：共享性决定高速缓存可被哪些观察者观察到; 缓存性值页面是否使能高速缓存以及高速缓存的范围。</li>
+<li>访问权限：AP字段控制CPU对页面的访问，可读可写属性。</li>
+<li>执行权限：PXN字段以及XN/UXN字段设置CPU是否可执行页面</li>
+<li>访问标志位：访问字段AF用来标识页面是否被访问过。</li>
+<li>全局和进程特有TLB：nG字段，0全局，1进程特有</li>
+</ul>
+<ol start="14">
+<li><p>硬件管理访问位和脏位(TTHM特性)，页表转换控制器TCR，HA字段自动设置AF标志。<br>脏位TCR_EL1的HD字段，</p>
+</li>
+<li><p>转换控制寄存器(TCR)、系统控制寄存器(SCTLR)和转换页表基址寄存器(TTBR)。<br>TTBR中ASID字段用来存储硬件ASID，AADDR字段存储页表基地址。</p>
+</li>
+<li><p>内存属性：Armv8两种内存属性：普通类型内存和设备内存。普通内存可优化。设备内存不可预测访问。</p>
+</li>
 </ol>
 <br>
 <br>
@@ -563,7 +581,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:06</span>
+    <span title="站点阅读时长">4:07</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
