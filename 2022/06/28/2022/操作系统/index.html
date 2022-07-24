@@ -30,6 +30,8 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220710174724.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220710175044.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220717173502.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220724171523.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220724173718.png">
 <meta property="article:published_time" content="2022-06-27T16:47:53.000Z">
 <meta property="article:modified_time" content="2022-06-27T16:53:53.000Z">
 <meta property="article:author" content="John Doe">
@@ -252,14 +254,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.1k</span>
+              <span>5.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
+              <span>5 分钟</span>
             </span>
 
         </div>
@@ -362,6 +364,45 @@
 <li>用户进程的虚拟地址空间分布<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220717173502.png" alt="20220717173502"></li>
 </ol>
 <p>Kvminit函数<br>kvminithart函数<br>walk函数</p>
+<h3 id="Armv8-A-Address-Translation"><a href="#Armv8-A-Address-Translation" class="headerlink" title="Armv8-A Address Translation"></a>Armv8-A Address Translation</h3><ol>
+<li>支持4K、16K和64K页表。TCR_EL1寄存存储支持页表大小。</li>
+<li>AArch64 4级页表，4K页表，48bit地址，9bit索引，512个表项，12bit的offset。<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220724171523.png" alt="20220724171523"></li>
+</ol>
+<p>16K页表，11bit索引，2048表项，14bit的offset<br>64K页表，3级索引，<br>3. MMU 使用转换表和转换寄存器来控制哪些内存位置是可缓存。缓存策略MAIR_ELn寄存器标识，TLB缓存是否有效。</p>
+<h3 id="DDI0487H-a-a-profile-architecture-reference-manual-pdf"><a href="#DDI0487H-a-a-profile-architecture-reference-manual-pdf" class="headerlink" title="DDI0487H_a_a-profile_architecture_reference_manual.pdf"></a>DDI0487H_a_a-profile_architecture_reference_manual.pdf</h3><h4 id="D5-2-6"><a href="#D5-2-6" class="headerlink" title="D5.2.6"></a>D5.2.6</h4><p>单一阶段转换：虚拟地址-&gt;物理地址<br>两阶段转换：虚拟地址-&gt;中间物理地址-&gt;物理地址</p>
+<p>阶段1 </p>
+<p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220724173718.png" alt="20220724173718"></p>
+<h3 id="ARM64体系结构编程实践"><a href="#ARM64体系结构编程实践" class="headerlink" title="ARM64体系结构编程实践"></a>ARM64体系结构编程实践</h3><h4 id="第14章-内存管理"><a href="#第14章-内存管理" class="headerlink" title="第14章 内存管理"></a>第14章 内存管理</h4><h5 id="1"><a href="#1" class="headerlink" title="1"></a>1</h5><ol>
+<li>进程地址空间使用内存3部分：进程本身、栈空间、堆空间</li>
+<li>地址转换(address translation):进程请求虚拟地址(VA)转换为物理地址(PA)，通过MMU实现。</li>
+<li>操作系统3元素：进程地址空间、进程的CPU虚拟化和文件对存储空间的抽象。</li>
+<li>分页机制引入虚拟存储，核心思想让程序不使用的内存交换到磁盘中，程序正在使用内存保留在物理内存。</li>
+<li>4K页帧虚拟地址组成VA[31:0]，偏移量offset VA[11:0]; 虚拟页帧号(VPN)。物理地址组成，偏移量offset PA[11:0];物理页帧号(PFN)。MMU把虚拟页帧号转换成物理页帧号。</li>
+<li>页表：存储VPN到PFN的映射关系，表项称为页表项PTE。多级页表用来减少页表占用内存空间，ARM64v8支持4级页表。</li>
+<li>TLB未命中从，处理器MMU中页表查询</li>
+</ol>
+<ul>
+<li>处理器根据虚拟地址判断使用TTBR0还是TTBR1，虚拟地址第63位为1时，选择TTBR1，为0时，选择TTBR0。TTBR中存储一级页表(L0)基地址。</li>
+<li>处理器以虚拟地址一级索引在一级页表中查找表项。</li>
+</ul>
+<ol start="8">
+<li>ARM64 处理器的MMU包括TLB和页表遍历单元。TLB是高速缓存，用于缓存页表转换的结果。</li>
+<li>进程地址空间分为：内核空间(kernel space)和用户空间(user space)</li>
+<li>SMP多核处理器系统中，每个处理器内置MMU和TLB，如何保证CPU访问正前有效的TLB。</li>
+<li>AArach64体系结构页表特性：</li>
+</ol>
+<ul>
+<li>最多支持4级页表</li>
+<li>输入地址最多有效位宽为48bit</li>
+<li>输出地址最大有效位款为48bit</li>
+<li>页帧大小支持4KB、16KB和64KB</li>
+</ul>
+<ol start="12">
+<li>AArach64采用两套页表设计，虚拟地址空间分为三部分：下面是用户空间，中间是非规范区，上面是内核空间。当CPU访问用户空间是，MMU选择TTBR0指向的页表，CPU访问内核空间时，MMU选择TTBR1寄存器指向的页表。</li>
+</ol>
+<br>
+<br>
+
 <p>b站课程：<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV19k4y1C7kA?p=2&amp;spm_id_from=pageDriver&amp;vd_source=6768732acbd0f78ac59230d2faa59a86">https://www.bilibili.com/video/BV19k4y1C7kA?p=2&amp;spm_id_from=pageDriver&amp;vd_source=6768732acbd0f78ac59230d2faa59a86</a></p>
 <p>课程翻译<br><a target="_blank" rel="noopener" href="https://github.com/huihongxiao/MIT6.S081">https://github.com/huihongxiao/MIT6.S081</a><br><a target="_blank" rel="noopener" href="https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/">https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/</a></p>
 <p><a target="_blank" rel="noopener" href="https://pdos.csail.mit.edu/6.828/2020/schedule.html">https://pdos.csail.mit.edu/6.828/2020/schedule.html</a></p>
@@ -450,7 +491,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-OS-Organization-and-System-Calls"><span class="nav-text">3 OS Organization and System Calls</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Page-Table"><span class="nav-text">Page Table</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-OS-Organization-and-System-Calls"><span class="nav-text">3 OS Organization and System Calls</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Page-Table"><span class="nav-text">Page Table</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Armv8-A-Address-Translation"><span class="nav-text">Armv8-A Address Translation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DDI0487H-a-a-profile-architecture-reference-manual-pdf"><span class="nav-text">DDI0487H_a_a-profile_architecture_reference_manual.pdf</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#D5-2-6"><span class="nav-text">D5.2.6</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARM64%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5"><span class="nav-text">ARM64体系结构编程实践</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC14%E7%AB%A0-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text">第14章 内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1"><span class="nav-text">1</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -464,7 +505,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -517,12 +558,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">269k</span>
+    <span title="站点总字数">271k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:05</span>
+    <span title="站点阅读时长">4:06</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
