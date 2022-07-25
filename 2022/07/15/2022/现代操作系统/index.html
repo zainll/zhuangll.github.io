@@ -257,7 +257,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.1k</span>
+              <span>2.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -294,7 +294,8 @@
 <h2 id="第二章-进程与线程"><a href="#第二章-进程与线程" class="headerlink" title="第二章 进程与线程"></a>第二章 进程与线程</h2><h3 id="2-1-进程"><a href="#2-1-进程" class="headerlink" title="2.1 进程"></a>2.1 进程</h3><p> 进程模型：包括程序计数器、寄存器和变量的当前值。<br> 进程创建4中事件：系统初始化、程序执行创建进程的系统调用、用户请求创建新进程、批处理作业的初始化。<br> Unix系统创建进程fork，系统调用创建一个与调用进程相同的副本。父进程与子进程有相同的内存映像。子进程执行execve或类似系统调用，以修改器内存映像并运行一个新程序。Win32中CreateProcess<br> 进程退出：正常退出、出错退出、严重错误和被其他进程杀死。Unix调用exit，Windows中ExitProcess。<br> 进程层次，Unix中进程和他所有子进程组成一个进程组。<br> 进程状态：运行态、就绪态、阻塞态，终止；进程调度。<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720005759.png" alt="20220720005759"><br> 进程表<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720010310.png" alt="20220720010310"><br> I/O类关联的是中断向量(interrup vector)的位置(靠近内存底部的固定区域)。</p>
 <h3 id="2-2-线程"><a href="#2-2-线程" class="headerlink" title="2.2 线程"></a>2.2 线程</h3><p> 线程：创建开销小、共享进程内存、切换开销小。线程有一样地址空间。<br> 每个计算都有一个被保存的状态，存在一个会发生且使得相关状态发生改变的事件集合，称为有限状态机。<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720012833.png" alt="20220720012833"><br> 线程创建 thread_create，线程退出thread_exit，等待线程退出 thread_join<br> POSIS线程pthread<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720013227.png" alt="20220720013227"><br> 有两种主要的方法实现线程包：在用户空间 中和在内核中<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720231701.png" alt="20220720231701"></p>
 <h3 id="2-3-进程间通信IPC"><a href="#2-3-进程间通信IPC" class="headerlink" title="2.3 进程间通信IPC"></a>2.3 进程间通信IPC</h3><p> 竞争条件：两个或多个进程读写某些共享数据，而最后的结果取决于进程运行的精确时序。共享内存进行访问的程序片段称作临界区域。<br>使用互斥：屏蔽中断、锁变量、严格轮换、Peterson解法、TSL测试并加锁<br> 信号量：down和up，对信号量down橾作，则是检查其值是否大于0，若该值大千0, 则将其值减1 (即用掉一个保存的唤醒信号)井继<br>续，若该值为0, 则进程将睡眠，而且此时down操作井未结束。up操作对信号量的值增1<br> 互斥量：处干两态之一的变量：解锁和加锁。快速用户区互斥量futex。一个futex 包含两个部分一个内核服务和一个用户库<br> 消息传递，进程间通信方法：send和receive</p>
-<h3 id="2-4-调度"><a href="#2-4-调度" class="headerlink" title="2.4 调度"></a>2.4 调度</h3><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">
+<h3 id="2-4-调度Scheduler"><a href="#2-4-调度Scheduler" class="headerlink" title="2.4 调度Scheduler"></a>2.4 调度Scheduler</h3><p> 1.进程行为：CPU密集型进程(计算密集型)和I/O密集型进程<br> 2.进程调度时机：1)创建新进程时调度父进程或子进程 2)进程退出时 3)进程阻塞在I/O和信号量上时 4)I/O中断时<br> 3.调度算法：非抢占式和抢占式<br> 4.三种运行环境：批处理、交互式和实时,批处理-非抢占式，交互式-抢占式，。大型计算中心关心三个指标：吞吐量、周转时间和CPU利用率。交互系统最小响应时间。<br> 5.批处理系统调度算法：1)先来先服务 2)最短作业优先 3)最短剩余时间优先<br> 6.交互式系统调度算法：1)轮转调度 轮询 时间片 2)优先级调度 3)多级队列 4)最短进程优先 5)公平分享调度<br> 7.实时系统调度：硬实时和软实时<br>策略与机制</p>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">
     </div>
 
     
@@ -378,7 +379,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%BB%AA%E8%AE%BA"><span class="nav-text">第一章 绪论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B"><span class="nav-text">第二章 进程与线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E8%BF%9B%E7%A8%8B"><span class="nav-text">2.1 进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E7%BA%BF%E7%A8%8B"><span class="nav-text">2.2 线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1IPC"><span class="nav-text">2.3 进程间通信IPC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-%E8%B0%83%E5%BA%A6"><span class="nav-text">2.4 调度</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%BB%AA%E8%AE%BA"><span class="nav-text">第一章 绪论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B"><span class="nav-text">第二章 进程与线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E8%BF%9B%E7%A8%8B"><span class="nav-text">2.1 进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E7%BA%BF%E7%A8%8B"><span class="nav-text">2.2 线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1IPC"><span class="nav-text">2.3 进程间通信IPC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-%E8%B0%83%E5%BA%A6Scheduler"><span class="nav-text">2.4 调度Scheduler</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -445,7 +446,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">271k</span>
+    <span title="站点总字数">272k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
