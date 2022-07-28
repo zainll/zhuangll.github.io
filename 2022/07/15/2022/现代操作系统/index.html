@@ -257,7 +257,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.1k</span>
+              <span>3.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -304,8 +304,11 @@
 <h2 id="第3章-内存管理"><a href="#第3章-内存管理" class="headerlink" title="第3章 内存管理"></a>第3章 内存管理</h2><p> 分层存储器体系。存储管理器：操作系统种管理分层存储体系的部分。<br> 操作系统作为库实现的常见例子如流行的e-Cos操作系统。</p>
 <h3 id="3-1-存储抽象：地址空间"><a href="#3-1-存储抽象：地址空间" class="headerlink" title="3.1 存储抽象：地址空间"></a>3.1 存储抽象：地址空间</h3><p> 地址空间一个进程可用于寻址内存的一套地址集合<br> 交换技术：空闲进程存到存储磁盘上，运行进程存储到物理内存。</p>
 <p> 虚拟内存：每个程序用于自己的地址空间，空间分割位多个块，每块位一页或页面。页被映射到物理内存，运行程序时不是所有页都必须在内存中，程序引用不在物理内存中的地址空间时，操作系统将缺失部分装入到物理内存。<br> 内存管理单元MMU：把虚拟地址映射到物理内存地址。<br> 页表：虚拟地址：虚拟页号和偏移量<br> 保护位：三位读、写、可执行。页面使用情况：修改位和访问位。禁止高速缓存位。<br> TLB(转换检测缓冲区)：，将虚拟地址直接映射到物理地址。TLB硬件实现和软件管理，当一个页面访问在内存中而不在TLB中时，将产生软失效；当页面本身不在内存中(当然也不在TLB)时，将产生硬失效。<br> 多级页表</p>
-<p> 页表置换算法：最优页面置换算法、最近未使用页面置换算法、先进先出页面置换算法、<strong>最近最少使用页面置换算法LRU</strong></p>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">
+<p> 页表置换算法：最优页面置换算法、最近未使用页面置换算法、先进先出页面置换算法、<strong>最近最少使用页面置换算法LRU</strong><br> PDP-11 指令和数据设置分离的地址空间，分别称为I空间和D空间。进程表有两个指针：一个指向I空间页表，一个指向D空间页表。共享页面<br> 共享库 Windows中DLL，运行时共享，编译时共享：使用相对地址</p>
+<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># unix  链接当前目录下的所有的.o(目标)文件，井扫描两个库：/usr/lib/libc.a和/usr/lib/libm.a 。</span></span><br><span class="line">Id•.o -le -Im </span><br></pre></td></tr></tbody></table></figure>
+<p> 分页守护进程。分布式共享内存</p>
+<p> 操作系统在四个阶段处理分页相关工作：进程创建时，进程执行时，缺页中断时和进程终止时。</p>
+<h2 id="第4章-文件系统"><a href="#第4章-文件系统" class="headerlink" title="第4章 文件系统"></a>第4章 文件系统</h2><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">
     </div>
 
     
@@ -389,7 +392,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC1%E7%AB%A0-%E7%BB%AA%E8%AE%BA"><span class="nav-text">第1章 绪论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC2%E7%AB%A0-%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B"><span class="nav-text">第2章 进程与线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E8%BF%9B%E7%A8%8B"><span class="nav-text">2.1 进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E7%BA%BF%E7%A8%8B"><span class="nav-text">2.2 线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1IPC"><span class="nav-text">2.3 进程间通信IPC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-%E8%B0%83%E5%BA%A6Scheduler"><span class="nav-text">2.4 调度Scheduler</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-%E5%B0%8F%E7%BB%93"><span class="nav-text">2.5 小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC3%E7%AB%A0-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text">第3章 内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E5%AD%98%E5%82%A8%E6%8A%BD%E8%B1%A1%EF%BC%9A%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4"><span class="nav-text">3.1 存储抽象：地址空间</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC1%E7%AB%A0-%E7%BB%AA%E8%AE%BA"><span class="nav-text">第1章 绪论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC2%E7%AB%A0-%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B"><span class="nav-text">第2章 进程与线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E8%BF%9B%E7%A8%8B"><span class="nav-text">2.1 进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E7%BA%BF%E7%A8%8B"><span class="nav-text">2.2 线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1IPC"><span class="nav-text">2.3 进程间通信IPC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-%E8%B0%83%E5%BA%A6Scheduler"><span class="nav-text">2.4 调度Scheduler</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-%E5%B0%8F%E7%BB%93"><span class="nav-text">2.5 小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC3%E7%AB%A0-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text">第3章 内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E5%AD%98%E5%82%A8%E6%8A%BD%E8%B1%A1%EF%BC%9A%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4"><span class="nav-text">3.1 存储抽象：地址空间</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC4%E7%AB%A0-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="nav-text">第4章 文件系统</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -456,7 +459,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">272k</span>
+    <span title="站点总字数">273k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
