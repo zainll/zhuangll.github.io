@@ -32,6 +32,9 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220717173502.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220724171523.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220724173718.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220731191036.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220731191509.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220731192550.png">
 <meta property="article:published_time" content="2022-06-27T16:47:53.000Z">
 <meta property="article:modified_time" content="2022-06-27T16:53:53.000Z">
 <meta property="article:author" content="John Doe">
@@ -84,9 +87,9 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="liuz" type="application/atom+xml">
 
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="liuz" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -254,14 +257,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>5.5k</span>
+              <span>6.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
+              <span>6 分钟</span>
             </span>
 
         </div>
@@ -418,7 +421,34 @@
 <li><p>内存属性：Armv8两种内存属性：普通类型内存和设备内存。普通内存可优化。设备内存不可预测访问。</p>
 </li>
 </ol>
-<br>
+<h2 id="Calling-conventions-and-stack-frames-RISC-V"><a href="#Calling-conventions-and-stack-frames-RISC-V" class="headerlink" title="Calling conventions and stack frames RISC-V"></a>Calling conventions and stack frames RISC-V</h2><ul>
+<li>syscanll  lab</li>
+<li>C -&gt; Asm / Processor</li>
+<li>RISC-V &amp; x86 &amp; Arm64</li>
+<li>Registers</li>
+<li>stack + calling conventions</li>
+<li>struct layout in memory</li>
+</ul>
+<h3 id="编译，RISV-V调用规范"><a href="#编译，RISV-V调用规范" class="headerlink" title="编译，RISV-V调用规范"></a>编译，RISV-V调用规范</h3><p> ISA就是处理器能够理解的指令集。每一条指令都有一个对应的二进制编码或者一个Opcode。<br> 预处理-编译-汇编-链接<br> RISC精简指令集与CISC复杂指令集，RISC统一的加载与存储指令。<br> RISC-V指令包含Base Integer Instruction Set和Standard Extension Instruction Set<br> 汇编代码：global全局变量函数，text代码段<br>进程地址空间<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220731191036.png" alt="20220731191036"><br> gdb layout split会同时展现C代码和汇编，而layout source只会展示C代码。</p>
+<h3 id="RISC-V寄存器"><a href="#RISC-V寄存器" class="headerlink" title="RISC-V寄存器"></a>RISC-V寄存器</h3><p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220731191509.png" alt="20220731191509"></p>
+<ul>
+<li>Caller Saved寄存器在函数调用的时候不会保存</li>
+<li>Callee Saved寄存器在函数调用的时候会保存<br> 汇编代码并不是在内存上执行，而是在寄存器上执行，load到寄存器，store到其他地方。除了Compressed Instruction，寄存器都是通过它们的ABI名字来引用。<br> a0到a7寄存器是用来作为函数的参数。如果一个函数有超过8个参数，需要用内存</li>
+</ul>
+<h3 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h3><p>Stack Frame<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220731192550.png" alt="20220731192550"><br>函数通过移动Stack Pointer来完成Stack Frame的空间分配。</p>
+<ul>
+<li>Return address总是会出现在Stack Frame的第一位</li>
+<li>指向前一个Stack Frame的指针也会出现在栈中的固定位置<br>第一个是SP（Stack Pointer），指向Stack的底部并代表了当前Stack Frame的位置。第二个是FP（Frame Pointer），它指向当前Stack Frame的顶部。因为Return address和指向前一个Stack Frame的的指针都在当前Stack Frame的固定位置，所以可以通过当前的FP寄存器寻址到这两个数据。?  前一个Frame Pointer存储到FP寄存器<br> leaf函数是指不调用别的函数的函数,不用担心保存自己的Return address或者任何其他的Caller Saved寄存器<br> 删除掉Prologue和Epllogue? sum_then_double将不知道它应该返回的Return address。所以调用sum_to的时候，Return address被覆盖了，最终sum_to函数不能返回到它原本的调用位置。</li>
+</ul>
+<p> info frame</p>
+<ul>
+<li>Stack level 0，表明这是调用栈的最底层</li>
+<li>pc，当前的程序计数器</li>
+<li>saved pc，demo4的位置，表明当前函数要返回的位置</li>
+<li>source language c，表明这是C代码</li>
+<li>Arglist at，表明参数的起始地址。当前的参数都在寄存器中，可以看到argc=3，argv是一个地址</li>
+</ul>
+<h3 id="Struct"><a href="#Struct" class="headerlink" title="Struct"></a>Struct</h3><h2 id="Isolation-amp-system-call-entry-exit-Rebort"><a href="#Isolation-amp-system-call-entry-exit-Rebort" class="headerlink" title="Isolation &amp; system call entry/exit(Rebort)"></a>Isolation &amp; system call entry/exit(Rebort)</h2><br>
 <br>
 
 <p>b站课程：<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV19k4y1C7kA?p=2&amp;spm_id_from=pageDriver&amp;vd_source=6768732acbd0f78ac59230d2faa59a86">https://www.bilibili.com/video/BV19k4y1C7kA?p=2&amp;spm_id_from=pageDriver&amp;vd_source=6768732acbd0f78ac59230d2faa59a86</a></p>
@@ -509,7 +539,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-OS-Organization-and-System-Calls"><span class="nav-text">3 OS Organization and System Calls</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Page-Table"><span class="nav-text">Page Table</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Armv8-A-Address-Translation"><span class="nav-text">Armv8-A Address Translation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DDI0487H-a-a-profile-architecture-reference-manual-pdf"><span class="nav-text">DDI0487H_a_a-profile_architecture_reference_manual.pdf</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#D5-2-6"><span class="nav-text">D5.2.6</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARM64%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5"><span class="nav-text">ARM64体系结构编程实践</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC14%E7%AB%A0-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text">第14章 内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1"><span class="nav-text">1</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-OS-Organization-and-System-Calls"><span class="nav-text">3 OS Organization and System Calls</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Page-Table"><span class="nav-text">Page Table</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Armv8-A-Address-Translation"><span class="nav-text">Armv8-A Address Translation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DDI0487H-a-a-profile-architecture-reference-manual-pdf"><span class="nav-text">DDI0487H_a_a-profile_architecture_reference_manual.pdf</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#D5-2-6"><span class="nav-text">D5.2.6</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARM64%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5"><span class="nav-text">ARM64体系结构编程实践</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC14%E7%AB%A0-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text">第14章 内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1"><span class="nav-text">1</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Calling-conventions-and-stack-frames-RISC-V"><span class="nav-text">Calling conventions and stack frames RISC-V</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%EF%BC%8CRISV-V%E8%B0%83%E7%94%A8%E8%A7%84%E8%8C%83"><span class="nav-text">编译，RISV-V调用规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RISC-V%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-text">RISC-V寄存器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stack"><span class="nav-text">Stack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Struct"><span class="nav-text">Struct</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Isolation-amp-system-call-entry-exit-Rebort"><span class="nav-text">Isolation &amp; system call entry&#x2F;exit(Rebort)</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -576,12 +606,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">246k</span>
+    <span title="站点总字数">275k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:43</span>
+    <span title="站点阅读时长">4:10</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
