@@ -36,6 +36,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720013227.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720231701.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220729231922.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220802000949.png">
 <meta property="article:published_time" content="2022-07-14T16:47:53.000Z">
 <meta property="article:modified_time" content="2022-07-14T16:53:53.000Z">
 <meta property="article:author" content="John Doe">
@@ -88,9 +89,9 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="liuz" type="application/atom+xml">
 
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="liuz" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -258,7 +259,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.1k</span>
+              <span>4.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -312,7 +313,20 @@
 <h2 id="第4章-文件系统fs"><a href="#第4章-文件系统fs" class="headerlink" title="第4章 文件系统fs"></a>第4章 文件系统fs</h2><h3 id="4-1-文件和目录"><a href="#4-1-文件和目录" class="headerlink" title="4.1 文件和目录"></a>4.1 文件和目录</h3><p> MS-Dos Windows FAT16-&gt;FAT32-&gt;NTFS  linux ext3<br> 目录(directory)是管理文件系统结构的系统文件<br> 文件访问：顺序访问与随机访问<br> 文件属性<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220729231922.png" alt="20220729231922"></p>
 <p> 文件操作：create、delete、open、close、read、write、append、seek、get attributes、set attributes、rename<br> 目录：根目录<br>目录操作：create、delete、opendir、closedir、readdir、rename、link、unlink</p>
 <h3 id="4-2-文件系统实现"><a href="#4-2-文件系统实现" class="headerlink" title="4.2 文件系统实现"></a>4.2 文件系统实现</h3><p> 磁盘的0号扇区称为主引导记录(Master Boot Record MBR).在MBR结尾是分区表,给出每个分区的起始和结束地址。计算机引导时，BIOS读人并执行MBR，MBR读入他的第一个块是引导块。<br> 文件系统本身时一个有向无环图(DAG)。目录与该共享文件的联系称为链接(link)<br> 日志结构文件系统(Log-structured File System LFS)<br> 虚拟文件系统VFS  网络文件系统NFS</p>
-<h2 id="第5章-输入-输出-I-O"><a href="#第5章-输入-输出-I-O" class="headerlink" title="第5章 输入/输出 I/O"></a>第5章 输入/输出 I/O</h2><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">
+<br>
+
+<h2 id="第5章-输入-输出-I-O"><a href="#第5章-输入-输出-I-O" class="headerlink" title="第5章 输入/输出 I/O"></a>第5章 输入/输出 I/O</h2><p> I/O设备：块设备和字符设备。I/O设备控制器和设备本身。<br> CPU如何与设备的控制寄存器和数据缓冲区进行通信？<br> 第一种方法，每个控制寄存器被分配一个I/O端口(I/O port)号。所有I/O端口形成I/O端口空间(I/O port space)，普通用户不可访问。</p>
+<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># I/O 指令</span></span><br><span class="line">IN REG, PORT</span><br><span class="line">OUT PORT, REG</span><br></pre></td></tr></tbody></table></figure>
+<p> 第二种方法：将所有控制器映射到内存空间中，每个控制器被分配唯一的一个内存地址，称为内存映射I/O。内存映射不运行缓存。优点：1)C语言可编写驱动，访问控制器寄存器 2)隔离地址空间-&gt;阻止用户进程I/O操作 </p>
+<p> 直接存储器存取(DMA)<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220802000949.png" alt="20220802000949"></p>
+<p> 中断信号使CPU停止当前正在做的工作井且开始做其他的事情。地址线上的数字被用做指向中断向量(interrupt vector)的表格的索引，以便读取一个新的程序计数器。<br> 将机器留在一个明确状态的中断称为精确中断</p>
+<ul>
+<li>PC程序计数器保存在一个已知的地方</li>
+<li>PC所指向的指令之前的所有指令已经完全执行</li>
+<li>PC所指向的指令之后的所有指令都没有执行</li>
+<li>PC所指向的指令的执行状态已知的<br> 不满足这些要求的中断称为不精确中断</li>
+</ul>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">
     </div>
 
     
