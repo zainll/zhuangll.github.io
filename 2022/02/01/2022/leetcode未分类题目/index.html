@@ -248,14 +248,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>58k</span>
+              <span>50k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>53 分钟</span>
+              <span>45 分钟</span>
             </span>
 
         </div>
@@ -514,7 +514,7 @@
 
 <figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize)</span></span>{</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; numsSize - <span class="number">1</span>; i++) {</span><br><span class="line">        <span class="keyword">if</span> (nums[i] &gt; nums[(i+<span class="number">1</span>)]) {</span><br><span class="line">            <span class="keyword">return</span> nums[i+<span class="number">1</span>];</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="160-相交链表"><a href="#160-相交链表" class="headerlink" title="160.相交链表"></a><span id="160">160</span>.<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problemset/all/?page=1&amp;search=160">相交链表</a></h3><blockquote>
+<h3 id="160-相交链表"><a href="#160-相交链表" class="headerlink" title="160.相交链表"></a><span id="160">160</span>.<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/intersection-of-two-linked-lists/">相交链表</a></h3><blockquote>
 <p>思路：<br>一、<br>二、先统计两个链表结点个数，然后长链表先走个数差位</p>
 </blockquote>
 <figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">struct ListNode *<span class="title">getIntersectionNode</span><span class="params">(struct ListNode *headA, struct ListNode *headB)</span> </span>{</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span> *<span class="title">cur1</span> =</span> headA;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span> *<span class="title">cur2</span> =</span> headB;</span><br><span class="line">    <span class="keyword">if</span> (cur1 == <span class="literal">NULL</span> || cur2 == <span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">while</span> (cur1 &amp;&amp; cur2 &amp;&amp; cur1 != cur2) {</span><br><span class="line">        cur1 = cur1-&gt;next;</span><br><span class="line">        cur2 = cur2-&gt;next;</span><br><span class="line">        <span class="keyword">if</span> (cur1 == cur2) {</span><br><span class="line">            <span class="keyword">return</span> cur1;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span> (!cur1) {</span><br><span class="line">            cur1 = headB;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span> (!cur2) {</span><br><span class="line">            cur2 = headA;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> cur1;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
@@ -992,12 +992,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">277k</span>
+    <span title="站点总字数">249k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:12</span>
+    <span title="站点阅读时长">3:46</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
