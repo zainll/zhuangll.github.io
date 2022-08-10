@@ -117,26 +117,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/10/25/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-  </entry>
-  <entry>
     <title>书单&amp;电影</title>
     <url>/2021/10/27/%E4%B9%A6%E5%8D%95/</url>
     <content><![CDATA[<h2 id="书"><a href="#书" class="headerlink" title="书"></a>书</h2><h3 id=""><a href="#" class="headerlink" title=""></a></h3><ul>
@@ -237,6 +217,26 @@
         <tag>实用教程</tag>
         <tag>Another Tag</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/10/25/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
   </entry>
   <entry>
     <title>Dynamorio</title>
@@ -408,22 +408,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux</title>
-    <url>/2022/06/02/2022/linux/</url>
-    <content><![CDATA[<p><a href="https://www.zhihu.com/question/47039391/answer/2287806626">https://www.zhihu.com/question/47039391/answer/2287806626</a></p>
-<h2 id="ELF"><a href="#ELF" class="headerlink" title="ELF"></a>ELF</h2><p>开源库<br>lief</p>
-<p>参考链接：<br><a href="https://blog.csdn.net/GrayOnDream/article/details/124564129">https://blog.csdn.net/GrayOnDream/article/details/124564129</a></p>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>study</category>
-        <category>2022</category>
-      </categories>
-      <tags>
-        <tag>Another Tag</tag>
-        <tag>English</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>剑指offer</title>
     <url>/2022/01/17/2022/%E5%89%91%E6%8C%87offer/</url>
     <content><![CDATA[<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
@@ -437,250 +421,19 @@
       </tags>
   </entry>
   <entry>
-    <title>操作系统</title>
-    <url>/2022/06/28/2022/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p>[toc]</p>
-<p>操作系统</p>
-<span id="more"></span>
-
-<h2 id="3-OS-Organization-and-System-Calls"><a href="#3-OS-Organization-and-System-Calls" class="headerlink" title="3 OS Organization and System Calls"></a>3 OS Organization and System Calls</h2><p>1.操作系统有两个基本功能：</p>
-<ul>
-<li>防止硬件被失控的应用程序滥用  隔离</li>
-<li>向应用程序提供简单一致的机制来控制复杂而又通常大不相同的低级硬件设备</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220710174724.png" alt="20220710174724"></p>
-<p> 隔离：隔离硬件;内存空间隔离(虚拟内存)-&gt;进程管理;防御安全<br> 隔离实现分时复用硬件资源</p>
-<p> 操作系统通过几个基本的抽象概念：进程、虚拟内存和文件<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220710175044.png" alt="20220710175044"></p>
-<p>进程：操作系统对一个正在运行的程序的一种抽象，操作系统实现进程交错执行的机制称为上下文切换</p>
-<p>  操作系统保持跟踪进程运行所需的所有状态信息。这种状态，也就是上下文，包括 PC 和寄存器文件的当前值，以及主存的内容</p>
-<p>  系统调用会将控制权传递给操作系统</p>
-<p>  从一个进程到另一个进程的转换是由操作系统内核（kernel )管理的。内核是操作系统代码常驻主存的部分</p>
-<p>  读写文件，执行一条系统调用（system call)指令，将控制权传递给内核。然后内核执行被请求的操作并返回应用程序</p>
-<p>  内核不是一个独立的进程。是系统管理全部进程所用代码和数据结构的集合</p>
-<p> kernel和User mode。这两种模式用来隔离操作系统内核和用户应用程序，用户态和内核态通过标志位区分。<br> 用户态普通指令，内核态执行特权指令</p>
-<p>RISC-V还有第三种模式称为machine mode，三级权限(user/kernel/machine)</p>
-<p> 操作系统和应用程序之前的接口被称为系统调用接口(System call interface)</p>
-<p>用户态与内核态切换<br>RISC-V中ECALL，ARM64中SVC，HVC？</p>
-<p>宏内核与微内核<br>linux，unix宏内核，是微内核<br>怎么区分宏内核和微内核？将大部分的操作系统运行在内核之外，大部分硬件驱动不在内核是微内核。微内核跳转变多</p>
-<p>XV6编译<br>XV6代码三部分：kernel、user和mkfs<br>QEMU<br><a href="https://blog.csdn.net/fangye945a/article/details/121962409">https://blog.csdn.net/fangye945a/article/details/121962409</a></p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">sudo apt-get install ninja-build</span><br></pre></td></tr></tbody></table></figure>
-<p><a href="https://blog.csdn.net/Leo_h1104/article/details/115580753">https://blog.csdn.net/Leo_h1104/article/details/115580753</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/351865040">https://zhuanlan.zhihu.com/p/351865040</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/466423677">https://zhuanlan.zhihu.com/p/466423677</a></p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># gdb</span></span><br><span class="line">make qemu</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">set</span> auto-load safe-path / &gt; ~/.gdbinit</span><br><span class="line">gdb-multiarch</span><br><span class="line"></span><br><span class="line">layout split</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-
-
-<h2 id="Page-Table"><a href="#Page-Table" class="headerlink" title="Page Table"></a>Page Table</h2><p> 虚拟内存-页表</p>
-<ol>
-<li><p>映射：虚拟地址&lt;–&gt;物理地址  </p>
-</li>
-<li><p>地址空间(Address Spaces)<br>虚拟地址空间-&gt;内存隔离</p>
-</li>
-<li><p>物理内存如何比虚拟内存大？实际程序运行时并不全部加载指令和数据，而是用时加载或者局部加载，所以并不需要加载全部虚拟地址空间，也不需要使用全部物理地址。但是虚拟地址需要有对应的物理地址，是一一对应的吗？如果虚拟地址更大，对应的物理地址数据会刷回到硬盘吗？即内存是硬盘的缓存</p>
-</li>
-<li><p>kalloc保存了空余page的列表，列表为空或者耗尽，kalloc会返回一个空指针，内核会妥善处理并将结果返回给用户应用程序。并告诉用户应用程序，要么是对这个应用程序没有额外的内存了，要么是整个机器都没有内存</p>
-</li>
-<li><p>实现地址空间-&gt;页表<br>页表是在硬件中通过处理器和内存管理单元(Memory Management Unit)实现</p>
-</li>
-<li><p>任何带有地址的指令，其中的地址应该认为是虚拟内存地址而不是物理地址</p>
-</li>
-<li><p>CPU角度，一旦MMU打开，它执行的每条指令中的地址都是虚拟内存地址</p>
-</li>
-<li><p>MMU会有一个表单，表单中，一边是虚拟内存地址，另一边是物理内存地址。RISC-V上一个叫做SATP的寄存器保存表单地址</p>
-</li>
-<li><p>MMU并不会保存page table，它只会从内存中读取page table，然后完成翻译</p>
-</li>
-<li><p>操作系统将CPU从一个应用程序切换到另一个应用程序时，同时也需要切换SATP寄存器中的内容，从而指向新的进程保存在物理内存中的地址对应表单。进程对应的SATP值是由内核保存，只有运行在kernel mode的代码可以更新这个寄存器。SATP呢？它存的是物理地址还是虚拟地址？物理地址</p>
-</li>
-<li><p>RISC-V中，一个page是4KB，也就是4096Bytes，为每个page创建一条表单条目</p>
-</li>
-<li><p>对于虚拟内存地址，划分为两个部分，index和offset，index用来查找page，offset对应的是一个page中的哪个字节。<br>MMU在做地址翻译，通过读取虚拟内存地址中的index可以知道物理内存中的page号，这个page号对应了物理内存中的4096个字节。之后虚拟内存地址中的offset指向了page中的4096个字节中的某一个，假设offset是12，那么page中的第12个字节被使用了。将offset加上page的起始地址，就可以得到物理内存地址</p>
-</li>
-<li><p>RISC-V的寄存器是64bit，虚拟内存地址的数量现在只有2^39个，大概是512GB，39bit中，有27bit被用来当做index，12bit被用来当做offset。offset必须是12bit，因为对应了一个page的4096个字节。</p>
-</li>
-<li><p>RISC-V中，物理内存地址是56bit，ARM v8也是？44bit是物理page号(PPN，Physical Page Number)，剩下12bit是offset完全继承自虚拟内存地址</p>
-</li>
-<li><p>增大页表？16k 64k？</p>
-</li>
-<li><p>多级页表，虚拟内存地址中的27bit的index，实际上是由3个9bit的数字组成(L2，L1，L0)。前9个bit被用来索引最高级的page directory</p>
-</li>
-<li><p>一个directory是4096Bytes，就跟page的大小是一样的。Directory中的一个条目被称为PTE（Page Table Entry）是64bits，就像寄存器的大小一样，也就是8Bytes。所以一个Directory page有512个条目。</p>
-</li>
-<li><p>SATP寄存器会指向最高一级的page directory的物理内存地址，虚拟内存中index的高9bit用来索引最高一级的page directory，这样我们就能得到一个PPN，也就是物理page号。这个PPN指向了中间级的page directory<br>最高级的page directory中的PPN，包含了下一级page directory的物理内存地址，依次类推。在最低级page directory，我们还是可以得到44bit的PPN，这里包含了我们实际上想要翻译的物理page地址，然后再加上虚拟内存地址的12bit offset，就得到了56bit物理内存地址</p>
-</li>
-<li><p>PTE中的Flag，因为它也很重要。每个PTE的低10bit是一堆标志位</p>
-</li>
-</ol>
-<ul>
-<li>第一个标志位是Valid。如果Valid bit位为1，那么表明这是一条合法的PTE</li>
-<li>下两个标志位分别是Readable和Writable。表明你是否可以读/写这个page</li>
-<li>Executable表明你可以从这个page执行指令</li>
-<li>user表明这个page可以被运行在用户空间的进程访问。</li>
-</ul>
-<ol start="21">
-<li>页表缓存(Translation Lookaside Buffer)<br>TLB会保存虚拟地址到物理地址的映射关系。<br>Q切换了page table，操作系统需要告诉处理器当前正在切换page table，处理器会清空TLB。在RISC-V中，清空TLB的指令是sfence_vma。<br>虚拟地址索引的cache位于MMU之前，由物理地址索引的cache位于MMU之后<br>在XV6中，内核有它自己的page table，用户进程也有自己的page table，用户进程指向sys_info结构体的指针存在于用户空间的page table，但是内核需要将这个指针翻译成一个自己可以读写的物理地址。copy_in，copy_out，你可以发现内核会通过用户进程的page table，将用户的虚拟地址翻译得到物理地址，这样内核可以读写相应的物理内存地址<br>page table提供了一层抽象(level of indirection)。抽象就是指从虚拟地址到物理地址的映射</li>
-<li>当操作系统启动时，会从地址0x80000000开始运行，这个地址其实也是由硬件设计者决定的。地址0是保留的，地址0x10090000对应以太网，地址0x80000000对应DDR内存，处理器外的易失存储（Off-Chip Volatile Memory），也就是主板上的DRAM芯片</li>
-<li>地址0x1000是boot ROM的物理地址，当你对主板上电，主板做的第一件事情就是运行存储在boot ROM中的代码，当boot完成之后，会跳转到地址0x80000000，操作系统需要确保那个地址有一些数据能够接着启动操作系统。</li>
-<li>I/O设备</li>
-</ol>
-<ul>
-<li>PLIC是中断控制器(Platform-Level Interrupt Controller)</li>
-<li>CLINT(Core Local Interruptor)也是中断的一部分。所以多个设备都能产生中断，需要中断控制器来将这些中断路由到合适的处理函数</li>
-<li>UART0（Universal Asynchronous Receiver/Transmitter）负责与Console和显示器交互</li>
-<li>VIRTIO disk，与磁盘进行交互。</li>
-</ul>
-<ol start="25">
-<li>同一个物理地址映射两个虚拟地址，你可以不将一个虚拟地址映射到物理地址。可以是一对一的映射，一对多映射，多对一映射</li>
-<li>用户进程的虚拟地址空间分布<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220717173502.png" alt="20220717173502"></li>
-</ol>
-<p>Kvminit函数<br>kvminithart函数<br>walk函数</p>
-<h3 id="Armv8-A-Address-Translation"><a href="#Armv8-A-Address-Translation" class="headerlink" title="Armv8-A Address Translation"></a>Armv8-A Address Translation</h3><ol>
-<li>支持4K、16K和64K页表。TCR_EL1寄存存储支持页表大小。</li>
-<li>AArch64 4级页表，4K页表，48bit地址，9bit索引，512个表项，12bit的offset。<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220724171523.png" alt="20220724171523"></li>
-</ol>
-<p>16K页表，11bit索引，2048表项，14bit的offset<br>64K页表，3级索引，<br>3. MMU 使用转换表和转换寄存器来控制哪些内存位置是可缓存。缓存策略MAIR_ELn寄存器标识，TLB缓存是否有效。</p>
-<h3 id="DDI0487H-a-a-profile-architecture-reference-manual-pdf"><a href="#DDI0487H-a-a-profile-architecture-reference-manual-pdf" class="headerlink" title="DDI0487H_a_a-profile_architecture_reference_manual.pdf"></a>DDI0487H_a_a-profile_architecture_reference_manual.pdf</h3><h4 id="D5-2-6"><a href="#D5-2-6" class="headerlink" title="D5.2.6"></a>D5.2.6</h4><p>单一阶段转换：虚拟地址-&gt;物理地址<br>两阶段转换：虚拟地址-&gt;中间物理地址-&gt;物理地址</p>
-<p>阶段1 </p>
-<p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220724173718.png" alt="20220724173718"></p>
-<h3 id="ARM64体系结构编程实践"><a href="#ARM64体系结构编程实践" class="headerlink" title="ARM64体系结构编程实践"></a>ARM64体系结构编程实践</h3><h4 id="第14章-内存管理"><a href="#第14章-内存管理" class="headerlink" title="第14章 内存管理"></a>第14章 内存管理</h4><h5 id="1"><a href="#1" class="headerlink" title="1"></a>1</h5><ol>
-<li>进程地址空间使用内存3部分：进程本身、栈空间、堆空间</li>
-<li>地址转换(address translation):进程请求虚拟地址(VA)转换为物理地址(PA)，通过MMU实现。</li>
-<li>操作系统3元素：进程地址空间、进程的CPU虚拟化和文件对存储空间的抽象。</li>
-<li>分页机制引入虚拟存储，核心思想让程序不使用的内存交换到磁盘中，程序正在使用内存保留在物理内存。</li>
-<li>4K页帧虚拟地址组成VA[31:0]，偏移量offset VA[11:0]; 虚拟页帧号(VPN)。物理地址组成，偏移量offset PA[11:0];物理页帧号(PFN)。MMU把虚拟页帧号转换成物理页帧号。</li>
-<li>页表：存储VPN到PFN的映射关系，表项称为页表项PTE。多级页表用来减少页表占用内存空间，ARM64v8支持4级页表。</li>
-<li>TLB未命中从，处理器MMU中页表查询</li>
-</ol>
-<ul>
-<li>处理器根据虚拟地址判断使用TTBR0还是TTBR1，虚拟地址第63位为1时，选择TTBR1，为0时，选择TTBR0。TTBR中存储一级页表(L0)基地址。</li>
-<li>处理器以虚拟地址一级索引在一级页表中查找表项。</li>
-</ul>
-<ol start="8">
-<li>ARM64 处理器的MMU包括TLB和页表遍历单元。TLB是高速缓存，用于缓存页表转换的结果。</li>
-<li>进程地址空间分为：内核空间(kernel space)和用户空间(user space)</li>
-<li>SMP多核处理器系统中，每个处理器内置MMU和TLB，如何保证CPU访问正前有效的TLB。</li>
-<li>AArach64体系结构页表特性：</li>
-</ol>
-<ul>
-<li>最多支持4级页表</li>
-<li>输入地址最多有效位宽为48bit</li>
-<li>输出地址最大有效位款为48bit</li>
-<li>页帧大小支持4KB、16KB和64KB</li>
-</ul>
-<ol start="12">
-<li><p>AArach64采用两套页表设计，虚拟地址空间分为三部分：下面是用户空间，中间是非规范区，上面是内核空间。当CPU访问用户空间是，MMU选择TTBR0指向的页表，CPU访问内核空间时，MMU选择TTBR1寄存器指向的页表。</p>
-</li>
-<li><p>页表属性</p>
-</li>
-</ol>
-<ul>
-<li>共享性与缓存性：共享性决定高速缓存可被哪些观察者观察到; 缓存性值页面是否使能高速缓存以及高速缓存的范围。</li>
-<li>访问权限：AP字段控制CPU对页面的访问，可读可写属性。</li>
-<li>执行权限：PXN字段以及XN/UXN字段设置CPU是否可执行页面</li>
-<li>访问标志位：访问字段AF用来标识页面是否被访问过。</li>
-<li>全局和进程特有TLB：nG字段，0全局，1进程特有</li>
-</ul>
-<ol start="14">
-<li><p>硬件管理访问位和脏位(TTHM特性)，页表转换控制器TCR，HA字段自动设置AF标志。<br>脏位TCR_EL1的HD字段，</p>
-</li>
-<li><p>转换控制寄存器(TCR)、系统控制寄存器(SCTLR)和转换页表基址寄存器(TTBR)。<br>TTBR中ASID字段用来存储硬件ASID，AADDR字段存储页表基地址。</p>
-</li>
-<li><p>内存属性：Armv8两种内存属性：普通类型内存和设备内存。普通内存可优化。设备内存不可预测访问。</p>
-</li>
-</ol>
-<h2 id="Calling-conventions-and-stack-frames-RISC-V"><a href="#Calling-conventions-and-stack-frames-RISC-V" class="headerlink" title="Calling conventions and stack frames RISC-V"></a>Calling conventions and stack frames RISC-V</h2><ul>
-<li>syscanll  lab</li>
-<li>C -&gt; Asm / Processor</li>
-<li>RISC-V &amp; x86 &amp; Arm64</li>
-<li>Registers</li>
-<li>stack + calling conventions</li>
-<li>struct layout in memory</li>
-</ul>
-<h3 id="编译，RISV-V调用规范"><a href="#编译，RISV-V调用规范" class="headerlink" title="编译，RISV-V调用规范"></a>编译，RISV-V调用规范</h3><p> ISA就是处理器能够理解的指令集。每一条指令都有一个对应的二进制编码或者一个Opcode。<br> 预处理-编译-汇编-链接<br> RISC精简指令集与CISC复杂指令集，RISC统一的加载与存储指令。<br> RISC-V指令包含Base Integer Instruction Set和Standard Extension Instruction Set<br> 汇编代码：global全局变量函数，text代码段<br>进程地址空间<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220731191036.png" alt="20220731191036"><br> gdb layout split会同时展现C代码和汇编，而layout source只会展示C代码。</p>
-<h3 id="RISC-V寄存器"><a href="#RISC-V寄存器" class="headerlink" title="RISC-V寄存器"></a>RISC-V寄存器</h3><p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220731191509.png" alt="20220731191509"></p>
-<ul>
-<li>Caller Saved寄存器在函数调用的时候不会保存</li>
-<li>Callee Saved寄存器在函数调用的时候会保存<br> 汇编代码并不是在内存上执行，而是在寄存器上执行，load到寄存器，store到其他地方。除了Compressed Instruction，寄存器都是通过它们的ABI名字来引用。<br> a0到a7寄存器是用来作为函数的参数。如果一个函数有超过8个参数，需要用内存</li>
-</ul>
-<h3 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h3><p>Stack Frame<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220731192550.png" alt="20220731192550"><br>函数通过移动Stack Pointer来完成Stack Frame的空间分配。</p>
-<ul>
-<li>Return address总是会出现在Stack Frame的第一位</li>
-<li>指向前一个Stack Frame的指针也会出现在栈中的固定位置<br>第一个是SP（Stack Pointer），指向Stack的底部并代表了当前Stack Frame的位置。第二个是FP（Frame Pointer），它指向当前Stack Frame的顶部。因为Return address和指向前一个Stack Frame的的指针都在当前Stack Frame的固定位置，所以可以通过当前的FP寄存器寻址到这两个数据。?  前一个Frame Pointer存储到FP寄存器<br> leaf函数是指不调用别的函数的函数,不用担心保存自己的Return address或者任何其他的Caller Saved寄存器<br> 删除掉Prologue和Epllogue? sum_then_double将不知道它应该返回的Return address。所以调用sum_to的时候，Return address被覆盖了，最终sum_to函数不能返回到它原本的调用位置。</li>
-</ul>
-<p> info frame</p>
-<ul>
-<li>Stack level 0，表明这是调用栈的最底层</li>
-<li>pc，当前的程序计数器</li>
-<li>saved pc，demo4的位置，表明当前函数要返回的位置</li>
-<li>source language c，表明这是C代码</li>
-<li>Arglist at，表明参数的起始地址。当前的参数都在寄存器中，可以看到argc=3，argv是一个地址</li>
-</ul>
-<h3 id="Struct"><a href="#Struct" class="headerlink" title="Struct"></a>Struct</h3><h2 id="Isolation-amp-system-call-entry-exit-Rebort"><a href="#Isolation-amp-system-call-entry-exit-Rebort" class="headerlink" title="Isolation &amp; system call entry/exit(Rebort)"></a>Isolation &amp; system call entry/exit(Rebort)</h2><h3 id="Trap"><a href="#Trap" class="headerlink" title="Trap"></a>Trap</h3><p> 用户空间与内核空间切换trap：</p>
-<ul>
-<li>程序执行系统调用</li>
-<li>出现如page fault、运算时除以0的错误</li>
-<li>设备触发中断使得当前程序运行需要响应内核设备驱动<br> 32个寄存器：SP堆栈指针寄存器、PC程序计算器<br> mode标志位：标志当前是supervisor还是user mode<br> RSIC-V SATP（Supervisor Address Translation and Protection）寄存器，它包含了指向page table的物理内存地址<br> STVEC（Supervisor Trap Vector Base Address Register）寄存器，它指向了内核中处理trap的指令的起始地址<br> SEPC（Supervisor Exception Program Counter）寄存器，在trap的过程中保存程序计数器的值。<br> 在trap处理的过程中的操作：</li>
-<li>保存32个寄存器</li>
-<li>保存程序计数器PC</li>
-<li>将mode改为supervisor mode，内核中执行特权指令</li>
-<li>SATP寄存器由指向user page table变为指向 kernelpage table</li>
-<li>将堆栈寄存器指向内核中的地址</li>
-<li>跳入到内核的C代码<br> supervisor mode可：读写SATP寄存器，也就是page table的指针；STVEC，也就是处理trap的内核指令地址；SEPC，保存当发生trap时的程序计数器；SSCRATCH；使用PTE_U标志位为0的PTE。当PTE_U标志位为1的时候，表明用户代码可以使用这个页表；如果这个标志位为0，则只有supervisor mode可以使用这个页表。<br>supervisor mode中的代码并不能读写任意物理地址 ？</li>
-</ul>
-<p> trap执行流程，系统调用通过执行ECALL指令来执行系。ECALL指令会切换到具有supervisor mode的内核中。在这个过程中，内核中执行的第一个指令是一个由汇编语言写的函数，叫做uservec。这个函数是内核代码trampoline.s文件的一部分。所以执行的第一个代码就是这个uservec汇编函数。在这个汇编函数中，代码执行跳转到了由C语言实现的函数usertrap中，这个函数在trap.c中，在usertrap这个C函数中，我们执行了一个叫做syscall的函数。这个函数会在一个表单中，根据传入的代表系统调用的数字进行查找，并在内核中执行具体实现了系统调用功能的函数</p>
-<br>
-<br>
-
-<p>b站课程：<br><a href="https://www.bilibili.com/video/BV19k4y1C7kA?p=2&amp;spm_id_from=pageDriver&amp;vd_source=6768732acbd0f78ac59230d2faa59a86">https://www.bilibili.com/video/BV19k4y1C7kA?p=2&amp;spm_id_from=pageDriver&amp;vd_source=6768732acbd0f78ac59230d2faa59a86</a></p>
-<p>课程翻译<br><a href="https://github.com/huihongxiao/MIT6.S081">https://github.com/huihongxiao/MIT6.S081</a><br><a href="https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/">https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/</a></p>
-<p><a href="https://pdos.csail.mit.edu/6.828/2020/schedule.html">https://pdos.csail.mit.edu/6.828/2020/schedule.html</a></p>
-<p><a href="https://pdos.csail.mit.edu/6.828/2020/schedule.html">https://pdos.csail.mit.edu/6.828/2020/schedule.html</a></p>
+    <title>Linux</title>
+    <url>/2022/06/02/2022/linux/</url>
+    <content><![CDATA[<p><a href="https://www.zhihu.com/question/47039391/answer/2287806626">https://www.zhihu.com/question/47039391/answer/2287806626</a></p>
+<h2 id="ELF"><a href="#ELF" class="headerlink" title="ELF"></a>ELF</h2><p>开源库<br>lief</p>
+<p>参考链接：<br><a href="https://blog.csdn.net/GrayOnDream/article/details/124564129">https://blog.csdn.net/GrayOnDream/article/details/124564129</a></p>
 <script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
       <categories>
-        <category>tool</category>
+        <category>study</category>
         <category>2022</category>
       </categories>
       <tags>
         <tag>Another Tag</tag>
-        <tag>Computer Science</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>树莓派</title>
-    <url>/2022/07/22/2022/%E6%A0%91%E8%8E%93%E6%B4%BE/</url>
-    <content><![CDATA[<p>[toc]</p>
-<p>树莓派</p>
-<span id="more"></span>
-
-<h1 id="1-安装系统"><a href="#1-安装系统" class="headerlink" title="1 安装系统"></a>1 安装系统</h1><ol>
-<li><p>官方镜像2022-04-04-raspios-bullseye-arm64.img.xz，xz格式文件可通过7zip直接解压。</p>
-</li>
-<li><p>通过win32diskimager安装</p>
-</li>
-<li><p>无显示配置<br><a href="https://blog.csdn.net/weixin_39591031/article/details/122325148">https://blog.csdn.net/weixin_39591031/article/details/122325148</a></p>
-</li>
-</ol>
-<p>配置wifi<br>开启ssh</p>
-<p>``<br>sudo raspi-config</p>
-<h1 id="选择Interface-Options"><a href="#选择Interface-Options" class="headerlink" title="选择Interface Options"></a>选择Interface Options</h1><h1 id="选择SSH"><a href="#选择SSH" class="headerlink" title="选择SSH"></a>选择SSH</h1><h1 id="开启SSH服务-Yes"><a href="#开启SSH服务-Yes" class="headerlink" title="开启SSH服务 Yes"></a>开启SSH服务 Yes</h1><h1 id="连接ssh"><a href="#连接ssh" class="headerlink" title="连接ssh"></a>连接ssh</h1><p>ssh <a href="mailto:pi@192.168.18.160">pi@192.168.18.160</a></p>
-<pre><code>
-
-
-
-
-- 参考链接：
-树莓派官网
-https://www.raspberrypi.com/software/
-</code></pre>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2022</category>
-      </categories>
-      <tags>
-        <tag>实用教程</tag>
-        <tag>Another Tag</tag>
+        <tag>English</tag>
       </tags>
   </entry>
   <entry>
@@ -831,43 +584,43 @@ https://www.raspberrypi.com/software/
 
 
 <h3 id="53-最大子数组和"><a href="#53-最大子数组和" class="headerlink" title="53.最大子数组和"></a><span id="53">53</span>.<a href="https://leetcode-cn.com/problems/maximum-subarray/">最大子数组和</a></h3><blockquote>
-<p>思路：累加？</p>
+<p>思路：累加，动态规划</p>
 </blockquote>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxcmp</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>{</span><br><span class="line">    <span class="keyword">return</span> a &gt;= b ? a : b;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize)</span> </span>{</span><br><span class="line">    <span class="keyword">int</span> maxSoFar = nums[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">int</span> maxEndingHere = nums[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; numsSize; i++) {</span><br><span class="line">        maxEndingHere = maxcmp(maxEndingHere + nums[i], nums[i]);</span><br><span class="line">        maxSoFar = maxcmp(maxSoFar, maxEndingHere);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> maxSoFar;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="66-加一"><a href="#66-加一" class="headerlink" title="66.加一"></a><span id="66">66</span>.<a href="https://leetcode-cn.com/problems/plus-one/">加一</a></h3><blockquote>
-<p>思路：</p>
+<p>思路：判断是否发生进位，最后判断最高位是否进位</p>
 </blockquote>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// The returned array must be malloced, assume caller calls free().</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> *<span class="title">plusOne</span><span class="params">(<span class="keyword">int</span> *digits, <span class="keyword">int</span> digitsSize, <span class="keyword">int</span> *returnSize)</span> </span>{</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = digitsSize - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) {</span><br><span class="line">        <span class="keyword">if</span> (digits[i] &lt; <span class="number">9</span>) {</span><br><span class="line">            digits[i]++;</span><br><span class="line">            *returnSize = digitsSize;</span><br><span class="line">            <span class="keyword">return</span> digits;</span><br><span class="line">        } <span class="keyword">else</span> {</span><br><span class="line">            digits[i] = <span class="number">0</span>;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span>* newdigit = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * (digitsSize + <span class="number">1</span>));</span><br><span class="line">    newdigit[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; (digitsSize + <span class="number">1</span>); i++) {</span><br><span class="line">        newdigit[i] = digits[i<span class="number">-1</span>];</span><br><span class="line">    }</span><br><span class="line">    *returnSize = digitsSize + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> newdigit;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span>* <span class="title">plusOne</span><span class="params">(<span class="keyword">int</span>* digits, <span class="keyword">int</span> digitsSize, <span class="keyword">int</span>* returnSize)</span> </span>{</span><br><span class="line">   *returnSize = digitsSize;</span><br><span class="line">   digits[digitsSize - <span class="number">1</span>] += <span class="number">1</span>;</span><br><span class="line">   <span class="keyword">int</span> carry = digits[digitsSize - <span class="number">1</span>] / <span class="number">10</span>;</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i = digitsSize - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) {</span><br><span class="line">       digits[i] =  (carry + digits[i]) % <span class="number">10</span>;</span><br><span class="line">       <span class="keyword">int</span> t = carry;</span><br><span class="line">       carry = (carry + digits[i]) / <span class="number">10</span>;</span><br><span class="line">       <span class="built_in">printf</span>(<span class="string">"carry = %d\n"</span>, carry);       </span><br><span class="line">   }</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> (carry == <span class="number">1</span>) {</span><br><span class="line">       *returnSize = digitsSize + <span class="number">1</span>;</span><br><span class="line">       <span class="keyword">int</span> *res = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * (*returnSize));</span><br><span class="line">       res[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; digitsSize; i++) {</span><br><span class="line">           res[i+<span class="number">1</span>] = digits[i];</span><br><span class="line">       }</span><br><span class="line">       <span class="keyword">return</span> res;</span><br><span class="line">   }</span><br><span class="line">   <span class="keyword">return</span> digits;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="82-删除排序链表中的重复元素-II"><a href="#82-删除排序链表中的重复元素-II" class="headerlink" title="82.删除排序链表中的重复元素 II"></a><span id="82">82</span>.<a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/">删除排序链表中的重复元素 II</a></h3><blockquote>
-<p>思路：</p>
+<p>思路：递归，判断是否和下一个链表值相等</p>
 </blockquote>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function">struct ListNode* <span class="title">deleteDuplicates</span><span class="params">(struct ListNode* head)</span> </span>{</span><br><span class="line">   <span class="comment">/*  if (head == NULL) {</span></span><br><span class="line"><span class="comment">        return NULL;</span></span><br><span class="line"><span class="comment">    }</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    if (head-&gt;next &amp;&amp; head-&gt;val == head-&gt;next-&gt;val) {</span></span><br><span class="line"><span class="comment">        while (head-&gt;next &amp;&amp; head-&gt;val == head-&gt;next-&gt;val) {</span></span><br><span class="line"><span class="comment">            head = head-&gt;next;</span></span><br><span class="line"><span class="comment">        }</span></span><br><span class="line"><span class="comment">        return deleteDuplicates(head-&gt;next);</span></span><br><span class="line"><span class="comment">    } else {</span></span><br><span class="line"><span class="comment">        head-&gt;next = deleteDuplicates(head-&gt;next);</span></span><br><span class="line"><span class="comment">    }</span></span><br><span class="line"><span class="comment">    return head; */</span></span><br><span class="line">     <span class="keyword">if</span> (head == <span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (head-&gt;next &amp;&amp; head-&gt;val == head-&gt;next-&gt;val) {</span><br><span class="line">        <span class="comment">/* Remove all duplicate numbers */</span></span><br><span class="line">        <span class="keyword">while</span> (head-&gt;next &amp;&amp; head-&gt;val == head-&gt;next-&gt;val) {</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> deleteDuplicates(head-&gt;next);</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        head-&gt;next = deleteDuplicates(head-&gt;next);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="83-删除排序链表中的重复元素"><a href="#83-删除排序链表中的重复元素" class="headerlink" title="83.删除排序链表中的重复元素"></a>83.<a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/">删除排序链表中的重复元素</a></h3><blockquote>
-<p>思路：</p>
+<p>思路：判断相等，next = next-&gt;next</p>
 </blockquote>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">/* struct ListNode* deleteDuplicates(struct ListNode* head){</span></span><br><span class="line"><span class="comment">    if (head == NULL) {</span></span><br><span class="line"><span class="comment">        return NULL;</span></span><br><span class="line"><span class="comment">    }</span></span><br><span class="line"><span class="comment">    int table[201] = {0};</span></span><br><span class="line"><span class="comment">    struct ListNode* cur = head;</span></span><br><span class="line"><span class="comment">    table[cur-&gt;val + 100] = 1;</span></span><br><span class="line"><span class="comment">    while (cur != NULL &amp;&amp; cur-&gt;next) {</span></span><br><span class="line"><span class="comment">        if (table[cur-&gt;next-&gt;val + 100] == 1) {</span></span><br><span class="line"><span class="comment">            if (cur-&gt;next-&gt;next != NULL) {</span></span><br><span class="line"><span class="comment">                cur-&gt;next = cur-&gt;next-&gt;next;</span></span><br><span class="line"><span class="comment">                continue;</span></span><br><span class="line"><span class="comment">            } else {</span></span><br><span class="line"><span class="comment">                cur-&gt;next = NULL;</span></span><br><span class="line"><span class="comment">                break;</span></span><br><span class="line"><span class="comment">            }</span></span><br><span class="line"><span class="comment">        } else {</span></span><br><span class="line"><span class="comment">            table[cur-&gt;next-&gt;val + 100] = 1;</span></span><br><span class="line"><span class="comment">        }</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        cur = cur-&gt;next;</span></span><br><span class="line"><span class="comment">    }</span></span><br><span class="line"><span class="comment">    return head;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">} */</span></span><br><span class="line"></span><br><span class="line"><span class="function">struct ListNode* <span class="title">deleteDuplicates</span><span class="params">(struct ListNode* head)</span> </span>{</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span>* <span class="title">cur</span> =</span> head;</span><br><span class="line">    <span class="keyword">while</span> (cur &amp;&amp; cur-&gt;next) {</span><br><span class="line">        <span class="keyword">if</span> (cur-&gt;val == cur-&gt;next-&gt;val) {</span><br><span class="line">            cur-&gt;next = cur-&gt;next-&gt;next;</span><br><span class="line">        } <span class="keyword">else</span> {</span><br><span class="line">            cur = cur-&gt;next;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode {</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     struct ListNode *next;</span></span><br><span class="line"><span class="comment"> * };</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function">struct ListNode* <span class="title">deleteDuplicates</span><span class="params">(struct ListNode* head)</span> </span>{</span><br><span class="line">    <span class="keyword">if</span> (head == <span class="literal">NULL</span>) {</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        struct ListNode* s = head;</span><br><span class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span>* <span class="title">t</span> =</span> head-&gt;next;</span><br><span class="line">        <span class="keyword">while</span> (t != <span class="literal">NULL</span>) {</span><br><span class="line">            <span class="keyword">if</span> (s-&gt;val == t-&gt;val) {</span><br><span class="line">                <span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span>* <span class="title">y</span>;</span></span><br><span class="line">                y=s-&gt;next;</span><br><span class="line">                s-&gt;next=t-&gt;next;</span><br><span class="line">                t=y-&gt;next;</span><br><span class="line">                <span class="built_in">free</span>(y);</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                s=s-&gt;next;</span><br><span class="line">                t=t-&gt;next;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="84-柱状图中最大的矩形"><a href="#84-柱状图中最大的矩形" class="headerlink" title="84.柱状图中最大的矩形"></a>84.<a href="https://leetcode-cn.com/problems/largest-rectangle-in-histogram/">柱状图中最大的矩形</a></h3><blockquote>
-<p>思路：</p>
+<p>思路：单调栈？</p>
 </blockquote>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">largestRectangleArea</span><span class="params">(<span class="keyword">int</span>* heights, <span class="keyword">int</span> heightsSize)</span></span>{</span><br><span class="line"><span class="comment">/*     int *data = (int*)malloc(sizeof(int) * (heightsSize + 2));</span></span><br><span class="line"><span class="comment">    int *stack = (int*)malloc(sizeof(int) * (heightsSize + 2));</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    //给heights前后+0，成新数组data</span></span><br><span class="line"><span class="comment">    data[0] = 0;</span></span><br><span class="line"><span class="comment">    for (int i = 1; i &lt;= heightsSize; i++) {</span></span><br><span class="line"><span class="comment">        data[i] = heights[i - 1];</span></span><br><span class="line"><span class="comment">    }</span></span><br><span class="line"><span class="comment">    data[heightsSize + 1] = 0;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    int j = 0, area = 0;</span></span><br><span class="line"><span class="comment">    stack[j] = 0;</span></span><br><span class="line"><span class="comment">    for (int i = 1; i &lt;= heightsSize + 1; i++) {</span></span><br><span class="line"><span class="comment">        while (j &gt; 0 &amp;&amp; data[stack[j]] &gt;= data[i]) {</span></span><br><span class="line"><span class="comment">            int sidx = stack[j - 1];</span></span><br><span class="line"><span class="comment">            int h = data[stack[j]];</span></span><br><span class="line"><span class="comment">            //area = fmax(area, data[stack[top]] * (i - stack[top - 1] - 1));</span></span><br><span class="line"><span class="comment">            area = fmax(area, h * (i - sidx  - 1));</span></span><br><span class="line"><span class="comment">            j--;</span></span><br><span class="line"><span class="comment">        }</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        stack[++j] = i;</span></span><br><span class="line"><span class="comment">    }</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    return area; */</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span>* <span class="built_in">stack</span> = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * (heightsSize + <span class="number">2</span>));</span><br><span class="line">    <span class="keyword">int</span>* nheights = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * (heightsSize + <span class="number">2</span>));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; heightsSize; i++) {</span><br><span class="line">        nheights[i+<span class="number">1</span>] = heights[i];</span><br><span class="line">    }</span><br><span class="line">    nheights[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    nheights[heightsSize + <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> maxArea = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> top = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">stack</span>[top] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= heightsSize + <span class="number">1</span>; i++) {</span><br><span class="line">        <span class="keyword">while</span> (top &gt; <span class="number">0</span> &amp;&amp; nheights[<span class="built_in">stack</span>[top]] &gt;= nheights[i]) {</span><br><span class="line">            <span class="keyword">int</span> h = nheights[<span class="built_in">stack</span>[top]];</span><br><span class="line">            <span class="keyword">int</span> s = <span class="built_in">stack</span>[top - <span class="number">1</span>];</span><br><span class="line">			<span class="keyword">int</span> area =  nheights[<span class="built_in">stack</span>[top]] * (i - s <span class="number">-1</span>);</span><br><span class="line">            maxArea = fmax(maxArea, area);</span><br><span class="line">            top--;</span><br><span class="line">        }</span><br><span class="line">        top++;</span><br><span class="line">        <span class="built_in">stack</span>[top] = i;</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> maxArea; </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">largestRectangleArea</span><span class="params">(<span class="keyword">int</span>* heights, <span class="keyword">int</span> heightsSize)</span></span>{</span><br><span class="line"><span class="comment">/*     int *data = (int*)malloc(sizeof(int) * (heightsSize + 2));</span></span><br><span class="line"><span class="comment">    int *stack = (int*)malloc(sizeof(int) * (heightsSize + 2));</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    //给heights前后+0，成新数组data</span></span><br><span class="line"><span class="comment">    data[0] = 0;</span></span><br><span class="line"><span class="comment">    for (int i = 1; i &lt;= heightsSize; i++) {</span></span><br><span class="line"><span class="comment">        data[i] = heights[i - 1];</span></span><br><span class="line"><span class="comment">    }</span></span><br><span class="line"><span class="comment">    data[heightsSize + 1] = 0;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    int j = 0, area = 0;</span></span><br><span class="line"><span class="comment">    stack[j] = 0;</span></span><br><span class="line"><span class="comment">    for (int i = 1; i &lt;= heightsSize + 1; i++) {</span></span><br><span class="line"><span class="comment">        while (j &gt; 0 &amp;&amp; data[stack[j]] &gt;= data[i]) {</span></span><br><span class="line"><span class="comment">            int sidx = stack[j - 1];</span></span><br><span class="line"><span class="comment">            int h = data[stack[j]];</span></span><br><span class="line"><span class="comment">            //area = fmax(area, data[stack[top]] * (i - stack[top - 1] - 1));</span></span><br><span class="line"><span class="comment">            area = fmax(area, h * (i - sidx  - 1));</span></span><br><span class="line"><span class="comment">            j--;</span></span><br><span class="line"><span class="comment">        }</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        stack[++j] = i;</span></span><br><span class="line"><span class="comment">    }</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    return area; */</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span>* <span class="built_in">stack</span> = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * (heightsSize + <span class="number">2</span>));</span><br><span class="line">    <span class="keyword">int</span>* nheights = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * (heightsSize + <span class="number">2</span>));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; heightsSize; i++) {</span><br><span class="line">        nheights[i+<span class="number">1</span>] = heights[i];</span><br><span class="line">    }</span><br><span class="line">    nheights[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    nheights[heightsSize + <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> maxArea = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> top = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">stack</span>[top] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= heightsSize + <span class="number">1</span>; i++) {</span><br><span class="line">        <span class="keyword">while</span> (top &gt; <span class="number">0</span> &amp;&amp; nheights[<span class="built_in">stack</span>[top]] &gt;= nheights[i]) {</span><br><span class="line">            <span class="keyword">int</span> h = nheights[<span class="built_in">stack</span>[top]];</span><br><span class="line">            <span class="keyword">int</span> s = <span class="built_in">stack</span>[top - <span class="number">1</span>];</span><br><span class="line">            <span class="keyword">int</span> area =  nheights[<span class="built_in">stack</span>[top]] * (i - s <span class="number">-1</span>);</span><br><span class="line">            maxArea = fmax(maxArea, area);</span><br><span class="line">            top--;</span><br><span class="line">        }</span><br><span class="line">        top++;</span><br><span class="line">        <span class="built_in">stack</span>[top] = i;</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> maxArea; </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">showIntArr</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *brief, <span class="keyword">int</span> *arr, <span class="keyword">uint32_t</span> nums)</span> </span>{</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s:"</span>, brief);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">uint32_t</span> i = <span class="number">0</span>; i &lt; nums; i++) {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>,arr[i]);</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">largestRectangleArea</span><span class="params">(<span class="keyword">int</span>* heights, <span class="keyword">int</span> heightsSize)</span></span>{</span><br><span class="line">    <span class="keyword">int</span> *<span class="built_in">stack</span> = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * (heightsSize + <span class="number">1</span>));</span><br><span class="line">    <span class="keyword">uint32_t</span> stackIdx = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> maxAns = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> tmpAns = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> high = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> wide = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">stack</span>[stackIdx++] = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">uint32_t</span> i = <span class="number">0</span>; i &lt; heightsSize; i++) {</span><br><span class="line">        <span class="comment">//showIntArr("stack", stack, stackIdx);</span></span><br><span class="line">        <span class="keyword">if</span> (stackIdx == <span class="number">1</span>) {  <span class="comment">/* 单调栈为空 */</span></span><br><span class="line">            <span class="built_in">stack</span>[stackIdx++] = i;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="comment">// printf("stackIdx - 1 [%d]\n", stackIdx - 1);</span></span><br><span class="line">        <span class="keyword">if</span> (heights[i] &gt;= heights[<span class="built_in">stack</span>[stackIdx - <span class="number">1</span>]]) {</span><br><span class="line">            <span class="built_in">stack</span>[stackIdx++] = i;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> ((stackIdx &gt; <span class="number">1</span>) &amp;&amp; heights[i] &lt; heights[<span class="built_in">stack</span>[stackIdx - <span class="number">1</span>]]) {  <span class="comment">/* 遍历到的元素小于栈顶元素 */</span></span><br><span class="line">            high = heights[<span class="built_in">stack</span>[stackIdx - <span class="number">1</span>]];</span><br><span class="line">            stackIdx--;</span><br><span class="line">            wide = i - <span class="built_in">stack</span>[stackIdx - <span class="number">1</span>] - <span class="number">1</span>;</span><br><span class="line">            tmpAns = high * wide;</span><br><span class="line">            <span class="comment">//printf("i[%u] high[%d] wide[%d]\n", i, high, wide);</span></span><br><span class="line">            <span class="keyword">if</span> (tmpAns &gt; maxAns) {</span><br><span class="line">                maxAns = tmpAns;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="built_in">stack</span>[stackIdx++] = i;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (stackIdx &gt; <span class="number">1</span>) {</span><br><span class="line">        high = heights[<span class="built_in">stack</span>[stackIdx - <span class="number">1</span>]];</span><br><span class="line">        stackIdx--;</span><br><span class="line">        wide = heightsSize - <span class="built_in">stack</span>[stackIdx - <span class="number">1</span>] - <span class="number">1</span>;</span><br><span class="line">        tmpAns = high * wide;</span><br><span class="line">        <span class="comment">//printf("ele[%d] high[%d] wide[%d]\n", heightsSize, high, wide);</span></span><br><span class="line">        <span class="keyword">if</span> (tmpAns &gt; maxAns) {</span><br><span class="line">            maxAns = tmpAns;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> maxAns;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="94-二叉树的中序遍历"><a href="#94-二叉树的中序遍历" class="headerlink" title="94.二叉树的中序遍历"></a><span id="94">94</span>.<a href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal/">二叉树的中序遍历</a></h3><blockquote>
-<p>思路：</p>
+<p>思路：递归，中序，注意封装递归函数</p>
 </blockquote>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode {</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     struct TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     struct TreeNode *right;</span></span><br><span class="line"><span class="comment"> * };</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">processTraversal</span><span class="params">(struct TreeNode* root, <span class="keyword">int</span>* res, <span class="keyword">int</span>* size)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">if</span> (!root) {</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    processTraversal(root-&gt;left, res, size);</span><br><span class="line">    res[*size] = root-&gt;val;</span><br><span class="line">    *size += <span class="number">1</span>;</span><br><span class="line">    processTraversal(root-&gt;right, res, size);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span>* <span class="title">inorderTraversal</span><span class="params">(struct TreeNode* root, <span class="keyword">int</span>* returnSize)</span></span>{</span><br><span class="line">    <span class="keyword">int</span>* res = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * <span class="number">256</span>);</span><br><span class="line">    *returnSize = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    processTraversal(root, res, returnSize);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="101-对称二叉树"><a href="#101-对称二叉树" class="headerlink" title="101.对称二叉树"></a>101.<a href="https://leetcode-cn.com/problems/symmetric-tree/">对称二叉树</a></h3><blockquote>
-<p>思路：</p>
+<p>思路：递归判断，注意递归出口判断条件</p>
 </blockquote>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">checkSymmetric</span><span class="params">(struct TreeNode *left, struct TreeNode *right)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">if</span> (!left || !right)</span><br><span class="line">        <span class="keyword">return</span> left == right;</span><br><span class="line">    <span class="keyword">if</span> (left-&gt;val != right-&gt;val)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> checkSymmetric(left-&gt;left, right-&gt;right) &amp;&amp;</span><br><span class="line">           checkSymmetric(left-&gt;right, right-&gt;left);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(struct TreeNode *root)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">return</span> root == <span class="literal">NULL</span> || checkSymmetric(root-&gt;left, root-&gt;right);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
@@ -879,35 +632,35 @@ https://www.raspberrypi.com/software/
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>{</span><br><span class="line">    <span class="keyword">return</span> a &gt;= b ? a : b;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">height</span><span class="params">(struct TreeNode* root)</span> </span>{</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">NULL</span>) {</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> + max(height(root-&gt;left), height(root-&gt;right));</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(struct TreeNode* root)</span> </span>{</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">NULL</span>) {</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">int</span> left = height(root-&gt;left);</span><br><span class="line">    <span class="keyword">int</span> right = height(root-&gt;right);</span><br><span class="line">    <span class="keyword">return</span> fmax(left, right);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="108-将有序数组转换为二叉搜索树"><a href="#108-将有序数组转换为二叉搜索树" class="headerlink" title="108.将有序数组转换为二叉搜索树"></a><span id="108">108</span>.<a href="https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/">将有序数组转换为二叉搜索树</a></h3><blockquote>
-<p>思路：</p>
+<p>思路：递归处理从中间分左右两部分，先添加当前节点在递归。</p>
 </blockquote>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode {</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     struct TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     struct TreeNode *right;</span></span><br><span class="line"><span class="comment"> * };</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function">struct TreeNode* <span class="title">convertBST</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">if</span> (left &gt; right) {</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        <span class="keyword">int</span> mid = (right + left) / <span class="number">2</span>;</span><br><span class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span>* <span class="title">new_val</span> =</span> <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct TreeNode));</span><br><span class="line">        new_val-&gt;val = nums[mid];</span><br><span class="line">        new_val-&gt;left = convertBST(nums, left, mid - <span class="number">1</span>);</span><br><span class="line">        new_val-&gt;right = convertBST(nums, mid + <span class="number">1</span>, right);</span><br><span class="line">        <span class="keyword">return</span> new_val;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function">struct TreeNode* <span class="title">sortedArrayToBST</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize)</span></span>{</span><br><span class="line">    <span class="keyword">if</span> (numsSize == <span class="number">0</span>) {</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> convertBST(nums, <span class="number">0</span>, numsSize - <span class="number">1</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 
 <h3 id="109-有序链表转换二叉搜索树"><a href="#109-有序链表转换二叉搜索树" class="headerlink" title="109.有序链表转换二叉搜索树"></a><span id="109">109</span>.<a href="https://leetcode-cn.com/problems/convert-sorted-list-to-binary-search-tree/">有序链表转换二叉搜索树</a></h3><blockquote>
-<p>思路：</p>
+<p>思路：先找到中间节点和尾节点，将中间节点添加到树上，递归处理中间节点前部和后部两部分，递归出口为找不着新节点</p>
 </blockquote>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode {</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     struct ListNode *next;</span></span><br><span class="line"><span class="comment"> * };</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode {</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     struct TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     struct TreeNode *right;</span></span><br><span class="line"><span class="comment"> * };</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function">struct TreeNode* <span class="title">buildBST</span><span class="params">(struct ListNode* head, struct ListNode* tail)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">if</span> (head == tail) {</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span>* <span class="title">slow</span> =</span> head;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span>* <span class="title">fast</span> =</span> head;</span><br><span class="line">    <span class="keyword">while</span> (fast != tail &amp;&amp; fast-&gt;next != tail) {</span><br><span class="line">        fast = fast-&gt;next-&gt;next;</span><br><span class="line">        slow = slow-&gt;next;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">//struct TreeNode* node = (struct TreeNode)malloc(sizeof(struct TreeNode));</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span> *<span class="title">node</span> =</span> <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct TreeNode));</span><br><span class="line">    node-&gt;val = slow-&gt;val;</span><br><span class="line">    node-&gt;left = buildBST(head, slow);</span><br><span class="line">    node-&gt;right = buildBST(slow-&gt;next, tail);</span><br><span class="line">    <span class="keyword">return</span> node;</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function">struct TreeNode* <span class="title">sortedListToBST</span><span class="params">(struct ListNode* head)</span></span>{</span><br><span class="line">    <span class="keyword">if</span> (!head) {</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> buildBST(head, <span class="literal">NULL</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 
 <h3 id="110-平衡二叉树"><a href="#110-平衡二叉树" class="headerlink" title="110.平衡二叉树"></a><span id="110">110</span>.<a href="https://leetcode-cn.com/problems/balanced-binary-tree/">平衡二叉树</a></h3><blockquote>
-<p>思路：分别求左右子树的深度height，比较左右深度差值。</p>
+<p>思路：分别求左右子树的深度height，比较左右深度差值。递归判断左右子树是否为平衡二叉树</p>
 </blockquote>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode {</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     struct TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     struct TreeNode *right;</span></span><br><span class="line"><span class="comment"> * };</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">return</span> a &gt;= b ? a : b;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">height</span><span class="params">(struct TreeNode* root)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">NULL</span>) {</span><br><span class="line">        <span class="keyword">return</span>  <span class="number">0</span>;</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span> + max(height(root-&gt;left), height(root-&gt;right));</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isBalanced</span><span class="params">(struct TreeNode* root)</span></span>{</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">NULL</span>) {</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> left = height(root-&gt;left);</span><br><span class="line">    <span class="keyword">int</span> right = height(root-&gt;right);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">abs</span>(left - right) &lt;= <span class="number">1</span> &amp;&amp; isBalanced(root-&gt;left) &amp;&amp; isBalanced(root-&gt;right);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 
 <h3 id="112-路径总和"><a href="#112-路径总和" class="headerlink" title="112. 路径总和"></a><span id="112">112</span>.<a href="https://leetcode-cn.com/problems/path-sum/submissions/"> 路径总和</a></h3><blockquote>
-<p>思路：递归：递归出口； 注意书判空</p>
+<p>思路：递归：左右子树 递归出口； 注意书判空</p>
 </blockquote>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">hasPathSum</span><span class="params">(struct TreeNode* root, <span class="keyword">int</span> targetSum)</span></span>{</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">NULL</span>) {</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (root-&gt;left == <span class="literal">NULL</span> &amp;&amp; root-&gt;right == <span class="literal">NULL</span> &amp;&amp; root-&gt;val == targetSum) {</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> hasPathSum(root-&gt;left, targetSum - root-&gt;val) || hasPathSum(root-&gt;right, targetSum - root-&gt;val);</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="121-买卖股票的最佳时机"><a href="#121-买卖股票的最佳时机" class="headerlink" title="121.买卖股票的最佳时机"></a><span id="121">121</span>.<a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/">买卖股票的最佳时机</a></h3><blockquote>
-<p>思路：股票是连续收益的 maxcmp(0, maxCur + prices[i] - prices[i - 1])</p>
+<p>思路：动态规划，股票是连续收益的 maxcmp(0, maxCur + prices[i] - prices[i - 1])，收益累计</p>
 </blockquote>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxcmp</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>{ </span><br><span class="line">    <span class="keyword">return</span> (a &gt;= b) ? a : b; </span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span>* prices, <span class="keyword">int</span> pricesSize)</span></span>{</span><br><span class="line">    <span class="keyword">int</span> maxCur = <span class="number">0</span>, maxSoFar = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; pricesSize; i++) {</span><br><span class="line">        maxCur = maxcmp(<span class="number">0</span>, maxCur + prices[i] - prices[i - <span class="number">1</span>]);</span><br><span class="line">        maxSoFar = maxcmp(maxSoFar, maxCur);</span><br><span class="line">         <span class="built_in">printf</span>(<span class="string">"i = %d\t maxCur = %d \t maxSoFar = %d\n"</span>, i, maxCur, maxSoFar);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> maxSoFar;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxcmp</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>{ </span><br><span class="line">    <span class="keyword">return</span> (a &gt;= b) ? a : b; </span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span>* prices, <span class="keyword">int</span> pricesSize)</span></span>{</span><br><span class="line">    <span class="keyword">int</span> maxCur = <span class="number">0</span>, maxSoFar = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; pricesSize; i++) {</span><br><span class="line">        maxCur = maxcmp(<span class="number">0</span>, maxCur + prices[i] - prices[i - <span class="number">1</span>]);</span><br><span class="line">        maxSoFar = maxcmp(maxSoFar, maxCur);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"i = %d\t maxCur = %d \t maxSoFar = %d\n"</span>, i, maxCur, maxSoFar);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> maxSoFar;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="125-验证回文串"><a href="#125-验证回文串" class="headerlink" title="125.验证回文串"></a>125.<a href="https://leetcode-cn.com/problems/valid-palindrome/">验证回文串</a></h3><blockquote>
-<p>思路：判断是否是字母和数字，库函数 isalnum; 注意库函数 isalpha 为判断是否为字母。</p>
+<p>思路：判断是否是字母和数字，库函数 isalnum; 注意库函数 isalpha 为判断是否为字母。头尾双指针，逼近中间，注意非数字字母忽略</p>
 </blockquote>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="keyword">char</span> * s)</span></span>{</span><br><span class="line">    <span class="keyword">int</span> len = <span class="built_in">strlen</span>(s);</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> right = len - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (left &lt;= right) {</span><br><span class="line">        <span class="comment">//while (left &lt; right &amp;&amp; !isalpha(s[left])) {</span></span><br><span class="line">        <span class="keyword">while</span> (left &lt; right &amp;&amp; !<span class="built_in">isalnum</span>(s[left])) {</span><br><span class="line">            left++;</span><br><span class="line">        }</span><br><span class="line">        <span class="comment">//while (left &lt; right &amp;&amp; !isalpha(s[right])) {</span></span><br><span class="line">        <span class="keyword">while</span> (left &lt; right &amp;&amp; !<span class="built_in">isalnum</span>(s[right])) {</span><br><span class="line">            right--;</span><br><span class="line">        }</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"left = %d\t right = %d\n"</span>, left, right);</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">tolower</span>(s[left]) != <span class="built_in">tolower</span>(s[right])) {</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        }</span><br><span class="line">        left++;</span><br><span class="line">        right--;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
@@ -917,12 +670,12 @@ https://www.raspberrypi.com/software/
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">singleNumber</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize)</span></span>{</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numsSize; i++) {</span><br><span class="line">        res = res ^ nums[i];</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="141-环形链表"><a href="#141-环形链表" class="headerlink" title="141.环形链表"></a>141.<a href="https://leetcode-cn.com/problems/linked-list-cycle/">环形链表</a></h3><blockquote>
-<p>思路：快慢双指针</p>
+<p>思路：快慢双指针，fast一次走两步，slow一次走一步，判断是否能相遇</p>
 </blockquote>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">hasCycle</span><span class="params">(struct ListNode *head)</span> </span>{</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span> *<span class="title">slow</span> =</span> head;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span> *<span class="title">fast</span> =</span> head;</span><br><span class="line">    <span class="keyword">while</span> (slow &amp;&amp; fast &amp;&amp; fast-&gt;next) {</span><br><span class="line">        slow = slow-&gt;next;</span><br><span class="line">        fast = fast-&gt;next-&gt;next;</span><br><span class="line">        <span class="keyword">if</span> (slow == fast) {</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="142-环形链表-II"><a href="#142-环形链表-II" class="headerlink" title="142.环形链表 II"></a><span id="142">142</span>.<a href="https://leetcode-cn.com/problems/linked-list-cycle-ii/">环形链表 II</a></h3><blockquote>
-<p>思路：快慢双指针</p>
+<p>思路：快慢双指针，判断出环向后，从链表入口开始，和slow指针相同速度遍历，直到相遇</p>
 </blockquote>
 <figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function">struct ListNode *<span class="title">detectCycle</span><span class="params">(struct ListNode *head)</span> </span>{</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span>* <span class="title">slow</span> =</span> (struct ListNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct ListNode));</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span>* <span class="title">fast</span> =</span> (struct ListNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct ListNode));</span><br><span class="line">    slow = head;</span><br><span class="line">    fast = head;</span><br><span class="line">    <span class="keyword">while</span> (fast != <span class="literal">NULL</span> &amp;&amp; fast-&gt;next != <span class="literal">NULL</span>) {</span><br><span class="line">        slow = slow-&gt;next;</span><br><span class="line">        fast = fast-&gt;next-&gt;next;</span><br><span class="line">        <span class="keyword">if</span> (slow == fast) {</span><br><span class="line">            <span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span>* <span class="title">entry</span> =</span> head;</span><br><span class="line">            <span class="keyword">while</span> (slow != entry) {</span><br><span class="line">                slow = slow-&gt;next;</span><br><span class="line">                entry = entry-&gt;next;</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">return</span> entry;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
@@ -1268,67 +1021,6 @@ https://www.raspberrypi.com/software/
       <tags>
         <tag>实用教程</tag>
         <tag>Another Tag</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>现代操作系统</title>
-    <url>/2022/07/15/2022/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p>[toc]</p>
-<p>现代操作系统</p>
-<span id="more"></span>
-
-<h2 id="第1章-绪论"><a href="#第1章-绪论" class="headerlink" title="第1章 绪论"></a>第1章 绪论</h2><p>体系结构(指令集、存储组织、 I/0和总线结构)<br>操作系统的主要任务是记录哪个程序在使用什么资源，对资源请求进行分配、评估使用代价，并且为不同的程序和用户调解互相冲突的资沥请求。<br>资源管理包括两种不同方式实现多路复用(共享)资源：在时间上复用和在空间上复用<br>纸带程序-批处理程序-多道程序-分时系统<br>UNIX有两个主要的版本，即AT&amp;T System V和加州大学伯克利分校的BSD(Berkeley Software<br>Distribution)。UNIX的标准，称作POSJX, MS-DOS-Windows95<br>处理器：程序计数器(PC)、堆栈指针、程序状态字(PSW)：包含了条件码位(由比较指令设置)、CPU优先级、换式(用户态或内核态)，以及各种其他控制位</p>
-<p>从操作系统中获得服务，用户程序必须使用 系统调用 (sys call)以陷入内核井调用操作系统。 TRAP 指令把用户态切换成内核态，井启用操作系统</p>
-<p>虚拟内存机制:运行大于物理内存的程序，将程序放在磁盘上，而将主存作为缓存，用来保存最频繁使用的部<br>分程序。这种机制需要快速地映像内存地址，以便把程序生成的地址转换为有关字节在RAM 中的物理地址。这种映像由CPU 中的 个称为存储器管理单元 Memory Management Unit, MMU 的部件来完成<br>I/O设备一般包括两个部分：设备控制器和设备本身<br>启动计算机:基本输入输出系统((Basic Input Output System, BIOS)的程序。BIOS 内有底层l/0软件，包括读键盘、写屏幕、进行磁盘I/O 以及其他过程</p>
-<p>操作系统概念：进程<br>系统管理器授权每个进程使用一个给定的 UID(User IDentification)。每个被启动的进程都有启动该进程的用户UID 。子进程拥有与父进程一样的UID。用户可以是某个组的成员，每个组也有GID(Group IDentificalion)。UNIX中，有一个UID称为超级用户 (superuser) 或者Windows 中的管理员 (administrator)。<br>操作系统具有两种功能：为用户程序提供抽象和管理计箕机资源</p>
-<p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718223909.png" alt="20220718223909"></p>
-<p>fork调用返回一个值，在子进程中该值为零，井且在父进程中等于子进程的进程标识符(Process IDeotifier, PID)<br>父进程执行waitpid 系统调用，它只是等待，直至子进程终止子进程必须执行用户的命令。通过使用execve 系统调用可以实现<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718232209.png" alt="20220718232209"></p>
-<p>虚拟机：KVM(针对Linux 内核)、VirtualBox、Hyper-V;模拟器,二进制翻译</p>
-<p>C语言<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718232859.png" alt="20220718232859"></p>
-<p>操作系统有两种观点:资源管理观点和扩展的机器观点。在资源管理观点中，操作系统的任务是有效地管理系统的各个部分。在扩展的机器观点中，系统的任务是为用 提供比实际机器更便干运用的抽象。这些抽象包括进程、地址空间以及文件。<br>操作系统构建基本概念是进程、存储管理、I/O管理、文件管理和安全</p>
-<br>
-
-<h2 id="第2章-进程与线程"><a href="#第2章-进程与线程" class="headerlink" title="第2章 进程与线程"></a>第2章 进程与线程</h2><h3 id="2-1-进程"><a href="#2-1-进程" class="headerlink" title="2.1 进程"></a>2.1 进程</h3><p> 进程模型：包括程序计数器、寄存器和变量的当前值。<br> 进程创建4种事件：系统初始化、程序执行创建进程的系统调用、用户请求创建新进程、批处理作业的初始化。<br> Unix系统创建进程fork，系统调用创建一个与调用进程相同的副本。父进程与子进程有相同的内存映像。子进程执行execve或类似系统调用，以修改器内存映像并运行一个新程序。Win32中CreateProcess<br> 进程退出：正常退出、出错退出、严重错误和被其他进程杀死。Unix调用exit，Windows中ExitProcess。<br> 进程层次，Unix中进程和他所有子进程组成一个进程组。<br> 进程状态：运行态、就绪态、阻塞态，终止；进程调度。<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720005759.png" alt="20220720005759"><br> 进程表<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720010310.png" alt="20220720010310"><br> I/O类关联的是中断向量(interrup vector)的位置(靠近内存底部的固定区域)。</p>
-<h3 id="2-2-线程"><a href="#2-2-线程" class="headerlink" title="2.2 线程"></a>2.2 线程</h3><p> 线程：创建开销小、共享进程内存、切换开销小。线程有一样地址空间。<br> 每个计算都有一个被保存的状态，存在一个会发生且使得相关状态发生改变的事件集合，称为有限状态机。<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720012833.png" alt="20220720012833"><br> 线程创建 thread_create，线程退出thread_exit，等待线程退出 thread_join<br> POSIS线程pthread<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720013227.png" alt="20220720013227"><br> 有两种主要的方法实现线程包：在用户空间 中和在内核中<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720231701.png" alt="20220720231701"></p>
-<h3 id="2-3-进程间通信IPC"><a href="#2-3-进程间通信IPC" class="headerlink" title="2.3 进程间通信IPC"></a>2.3 进程间通信IPC</h3><p> 竞争条件：两个或多个进程读写某些共享数据，而最后的结果取决于进程运行的精确时序。共享内存进行访问的程序片段称作临界区域。<br>使用互斥：屏蔽中断、锁变量、严格轮换、Peterson解法、TSL测试并加锁<br> 信号量：down和up，对信号量down橾作，则是检查其值是否大于0，若该值大千0, 则将其值减1 (即用掉一个保存的唤醒信号)井继续，若该值为0, 则进程将睡眠，而且此时down操作井未结束。up操作对信号量的值增1<br> 互斥量：处干两态之一的变量：解锁和加锁。快速用户区互斥量futex。一个futex 包含两个部分一个内核服务和一个用户库<br> 消息传递，进程间通信方法：send和receive</p>
-<h3 id="2-4-调度Scheduler"><a href="#2-4-调度Scheduler" class="headerlink" title="2.4 调度Scheduler"></a>2.4 调度Scheduler</h3><p> 1.进程行为：CPU密集型进程(计算密集型)和I/O密集型进程<br> 2.进程调度时机：1)创建新进程时调度父进程或子进程 2)进程退出时 3)进程阻塞在I/O和信号量上时 4)I/O中断时<br> 3.调度算法：非抢占式和抢占式<br> 4.三种运行环境：批处理、交互式和实时,批处理-非抢占式，交互式-抢占式，。大型计算中心关心三个指标：吞吐量、周转时间和CPU利用率。交互系统最小响应时间。<br> 5.批处理系统调度算法：1)先来先服务 2)最短作业优先 3)最短剩余时间优先<br> 6.交互式系统调度算法：1)轮转调度 轮询 时间片 2)优先级调度 3)多级队列 4)最短进程优先 5)公平分享调度<br> 7.实时系统调度：硬实时和软实时</p>
-<p> 8.策略与机制</p>
-<p> 9.线程调度：用户级线程和内核级线程之间的差别在于性能 用户级线程的线程切换需要少址的机器指令，而内核级线程垢要完整的上下文切换，修改内存映像，使亦速缓存失效，导致了若干数杂级的延迟</p>
-<p> 功耗管理、虚拟化、云计算和安全问题成为了新的热点主题。</p>
-<h3 id="2-5-小结"><a href="#2-5-小结" class="headerlink" title="2.5 小结"></a>2.5 小结</h3><p> 隐藏中断的影响，操作系统提供了 个井行执行串行进程的概念模型。进程可以动态地创建和终止、每个进程都有自己的地址空间。<br> 线程被独立调度并且有独立的栈，但是在一个进程中的所有线程共享一个地址空间。线程可以在用户态实现，也可以在内核态实现。<br> 进程之间通过进程间通信原语来交换信息，如信号众、管程和消息。进程可以处在运行、就绪或阻塞状态</p>
-<br>
-
-<h2 id="第3章-内存管理"><a href="#第3章-内存管理" class="headerlink" title="第3章 内存管理"></a>第3章 内存管理</h2><p> 分层存储器体系。存储管理器：操作系统种管理分层存储体系的部分。<br> 操作系统作为库实现的常见例子如流行的e-Cos操作系统。</p>
-<h3 id="3-1-存储抽象：地址空间"><a href="#3-1-存储抽象：地址空间" class="headerlink" title="3.1 存储抽象：地址空间"></a>3.1 存储抽象：地址空间</h3><p> 地址空间一个进程可用于寻址内存的一套地址集合<br> 交换技术：空闲进程存到存储磁盘上，运行进程存储到物理内存。</p>
-<p> 虚拟内存：每个程序用于自己的地址空间，空间分割位多个块，每块位一页或页面。页被映射到物理内存，运行程序时不是所有页都必须在内存中，程序引用不在物理内存中的地址空间时，操作系统将缺失部分装入到物理内存。<br> 内存管理单元MMU：把虚拟地址映射到物理内存地址。<br> 页表：虚拟地址：虚拟页号和偏移量<br> 保护位：三位读、写、可执行。页面使用情况：修改位和访问位。禁止高速缓存位。<br> TLB(转换检测缓冲区)：，将虚拟地址直接映射到物理地址。TLB硬件实现和软件管理，当一个页面访问在内存中而不在TLB中时，将产生软失效；当页面本身不在内存中(当然也不在TLB)时，将产生硬失效。<br> 多级页表</p>
-<p> 页表置换算法：最优页面置换算法、最近未使用页面置换算法、先进先出页面置换算法、<strong>最近最少使用页面置换算法LRU</strong><br> PDP-11 指令和数据设置分离的地址空间，分别称为I空间和D空间。进程表有两个指针：一个指向I空间页表，一个指向D空间页表。共享页面<br> 共享库 Windows中DLL，运行时共享，编译时共享：使用相对地址</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># unix  链接当前目录下的所有的.o(目标)文件，井扫描两个库：/usr/lib/libc.a和/usr/lib/libm.a 。</span></span><br><span class="line">Id•.o -le -Im </span><br></pre></td></tr></tbody></table></figure>
-<p> 分页守护进程。分布式共享内存</p>
-<p> 操作系统在四个阶段处理分页相关工作：进程创建时，进程执行时，缺页中断时和进程终止时。</p>
-<h2 id="第4章-文件系统fs"><a href="#第4章-文件系统fs" class="headerlink" title="第4章 文件系统fs"></a>第4章 文件系统fs</h2><h3 id="4-1-文件和目录"><a href="#4-1-文件和目录" class="headerlink" title="4.1 文件和目录"></a>4.1 文件和目录</h3><p> MS-Dos Windows FAT16-&gt;FAT32-&gt;NTFS  linux ext3<br> 目录(directory)是管理文件系统结构的系统文件<br> 文件访问：顺序访问与随机访问<br> 文件属性<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220729231922.png" alt="20220729231922"></p>
-<p> 文件操作：create、delete、open、close、read、write、append、seek、get attributes、set attributes、rename<br> 目录：根目录<br>目录操作：create、delete、opendir、closedir、readdir、rename、link、unlink</p>
-<h3 id="4-2-文件系统实现"><a href="#4-2-文件系统实现" class="headerlink" title="4.2 文件系统实现"></a>4.2 文件系统实现</h3><p> 磁盘的0号扇区称为主引导记录(Master Boot Record MBR).在MBR结尾是分区表,给出每个分区的起始和结束地址。计算机引导时，BIOS读人并执行MBR，MBR读入他的第一个块是引导块。<br> 文件系统本身时一个有向无环图(DAG)。目录与该共享文件的联系称为链接(link)<br> 日志结构文件系统(Log-structured File System LFS)<br> 虚拟文件系统VFS  网络文件系统NFS</p>
-<br>
-
-<h2 id="第5章-输入-输出-I-O"><a href="#第5章-输入-输出-I-O" class="headerlink" title="第5章 输入/输出 I/O"></a>第5章 输入/输出 I/O</h2><p> I/O设备：块设备和字符设备。I/O设备控制器和设备本身。<br> CPU如何与设备的控制寄存器和数据缓冲区进行通信？<br> 第一种方法，每个控制寄存器被分配一个I/O端口(I/O port)号。所有I/O端口形成I/O端口空间(I/O port space)，普通用户不可访问。</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># I/O 指令</span></span><br><span class="line">IN REG, PORT</span><br><span class="line">OUT PORT, REG</span><br></pre></td></tr></tbody></table></figure>
-<p> 第二种方法：将所有控制器映射到内存空间中，每个控制器被分配唯一的一个内存地址，称为内存映射I/O。内存映射不运行缓存。优点：1)C语言可编写驱动，访问控制器寄存器 2)隔离地址空间-&gt;阻止用户进程I/O操作 </p>
-<p> 直接存储器存取(DMA)<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220802000949.png" alt="20220802000949"></p>
-<p> 中断信号使CPU停止当前正在做的工作井且开始做其他的事情。地址线上的数字被用做指向中断向量(interrupt vector)的表格的索引，以便读取一个新的程序计数器。<br> 将机器留在一个明确状态的中断称为精确中断</p>
-<ul>
-<li>PC程序计数器保存在一个已知的地方</li>
-<li>PC所指向的指令之前的所有指令已经完全执行</li>
-<li>PC所指向的指令之后的所有指令都没有执行</li>
-<li>PC所指向的指令的执行状态已知的<br> 不满足这些要求的中断称为不精确中断</li>
-</ul>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2022</category>
-      </categories>
-      <tags>
-        <tag>Another Tag</tag>
-        <tag>Computer Science</tag>
       </tags>
   </entry>
   <entry>
@@ -2198,9 +1890,243 @@ https://www.raspberrypi.com/software/
       </tags>
   </entry>
   <entry>
-    <title>读书随记</title>
-    <url>/2022/01/27/2022/%E8%AF%BB%E4%B9%A6%E9%9A%8F%E8%AE%B0/</url>
-    <content><![CDATA[<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+    <title>操作系统</title>
+    <url>/2022/06/28/2022/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>[toc]</p>
+<p>操作系统</p>
+<span id="more"></span>
+
+<h2 id="3-OS-Organization-and-System-Calls"><a href="#3-OS-Organization-and-System-Calls" class="headerlink" title="3 OS Organization and System Calls"></a>3 OS Organization and System Calls</h2><p>1.操作系统有两个基本功能：</p>
+<ul>
+<li>防止硬件被失控的应用程序滥用  隔离</li>
+<li>向应用程序提供简单一致的机制来控制复杂而又通常大不相同的低级硬件设备</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220710174724.png" alt="20220710174724"></p>
+<p> 隔离：隔离硬件;内存空间隔离(虚拟内存)-&gt;进程管理;防御安全<br> 隔离实现分时复用硬件资源</p>
+<p> 操作系统通过几个基本的抽象概念：进程、虚拟内存和文件<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220710175044.png" alt="20220710175044"></p>
+<p>进程：操作系统对一个正在运行的程序的一种抽象，操作系统实现进程交错执行的机制称为上下文切换</p>
+<p>  操作系统保持跟踪进程运行所需的所有状态信息。这种状态，也就是上下文，包括 PC 和寄存器文件的当前值，以及主存的内容</p>
+<p>  系统调用会将控制权传递给操作系统</p>
+<p>  从一个进程到另一个进程的转换是由操作系统内核（kernel )管理的。内核是操作系统代码常驻主存的部分</p>
+<p>  读写文件，执行一条系统调用（system call)指令，将控制权传递给内核。然后内核执行被请求的操作并返回应用程序</p>
+<p>  内核不是一个独立的进程。是系统管理全部进程所用代码和数据结构的集合</p>
+<p> kernel和User mode。这两种模式用来隔离操作系统内核和用户应用程序，用户态和内核态通过标志位区分。<br> 用户态普通指令，内核态执行特权指令</p>
+<p>RISC-V还有第三种模式称为machine mode，三级权限(user/kernel/machine)</p>
+<p> 操作系统和应用程序之前的接口被称为系统调用接口(System call interface)</p>
+<p>用户态与内核态切换<br>RISC-V中ECALL，ARM64中SVC，HVC？</p>
+<p>宏内核与微内核<br>linux，unix宏内核，是微内核<br>怎么区分宏内核和微内核？将大部分的操作系统运行在内核之外，大部分硬件驱动不在内核是微内核。微内核跳转变多</p>
+<p>XV6编译<br>XV6代码三部分：kernel、user和mkfs<br>QEMU<br><a href="https://blog.csdn.net/fangye945a/article/details/121962409">https://blog.csdn.net/fangye945a/article/details/121962409</a></p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">sudo apt-get install ninja-build</span><br></pre></td></tr></tbody></table></figure>
+<p><a href="https://blog.csdn.net/Leo_h1104/article/details/115580753">https://blog.csdn.net/Leo_h1104/article/details/115580753</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/351865040">https://zhuanlan.zhihu.com/p/351865040</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/466423677">https://zhuanlan.zhihu.com/p/466423677</a></p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># gdb</span></span><br><span class="line">make qemu</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">set</span> auto-load safe-path / &gt; ~/.gdbinit</span><br><span class="line">gdb-multiarch</span><br><span class="line"></span><br><span class="line">layout split</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="Page-Table"><a href="#Page-Table" class="headerlink" title="Page Table"></a>Page Table</h2><p> 虚拟内存-页表</p>
+<ol>
+<li><p>映射：虚拟地址&lt;–&gt;物理地址  </p>
+</li>
+<li><p>地址空间(Address Spaces)<br>虚拟地址空间-&gt;内存隔离</p>
+</li>
+<li><p>物理内存如何比虚拟内存大？实际程序运行时并不全部加载指令和数据，而是用时加载或者局部加载，所以并不需要加载全部虚拟地址空间，也不需要使用全部物理地址。但是虚拟地址需要有对应的物理地址，是一一对应的吗？如果虚拟地址更大，对应的物理地址数据会刷回到硬盘吗？即内存是硬盘的缓存</p>
+</li>
+<li><p>kalloc保存了空余page的列表，列表为空或者耗尽，kalloc会返回一个空指针，内核会妥善处理并将结果返回给用户应用程序。并告诉用户应用程序，要么是对这个应用程序没有额外的内存了，要么是整个机器都没有内存</p>
+</li>
+<li><p>实现地址空间-&gt;页表<br>页表是在硬件中通过处理器和内存管理单元(Memory Management Unit)实现</p>
+</li>
+<li><p>任何带有地址的指令，其中的地址应该认为是虚拟内存地址而不是物理地址</p>
+</li>
+<li><p>CPU角度，一旦MMU打开，它执行的每条指令中的地址都是虚拟内存地址</p>
+</li>
+<li><p>MMU会有一个表单，表单中，一边是虚拟内存地址，另一边是物理内存地址。RISC-V上一个叫做SATP的寄存器保存表单地址</p>
+</li>
+<li><p>MMU并不会保存page table，它只会从内存中读取page table，然后完成翻译</p>
+</li>
+<li><p>操作系统将CPU从一个应用程序切换到另一个应用程序时，同时也需要切换SATP寄存器中的内容，从而指向新的进程保存在物理内存中的地址对应表单。进程对应的SATP值是由内核保存，只有运行在kernel mode的代码可以更新这个寄存器。SATP呢？它存的是物理地址还是虚拟地址？物理地址</p>
+</li>
+<li><p>RISC-V中，一个page是4KB，也就是4096Bytes，为每个page创建一条表单条目</p>
+</li>
+<li><p>对于虚拟内存地址，划分为两个部分，index和offset，index用来查找page，offset对应的是一个page中的哪个字节。<br>MMU在做地址翻译，通过读取虚拟内存地址中的index可以知道物理内存中的page号，这个page号对应了物理内存中的4096个字节。之后虚拟内存地址中的offset指向了page中的4096个字节中的某一个，假设offset是12，那么page中的第12个字节被使用了。将offset加上page的起始地址，就可以得到物理内存地址</p>
+</li>
+<li><p>RISC-V的寄存器是64bit，虚拟内存地址的数量现在只有2^39个，大概是512GB，39bit中，有27bit被用来当做index，12bit被用来当做offset。offset必须是12bit，因为对应了一个page的4096个字节。</p>
+</li>
+<li><p>RISC-V中，物理内存地址是56bit，ARM v8也是？44bit是物理page号(PPN，Physical Page Number)，剩下12bit是offset完全继承自虚拟内存地址</p>
+</li>
+<li><p>增大页表？16k 64k？</p>
+</li>
+<li><p>多级页表，虚拟内存地址中的27bit的index，实际上是由3个9bit的数字组成(L2，L1，L0)。前9个bit被用来索引最高级的page directory</p>
+</li>
+<li><p>一个directory是4096Bytes，就跟page的大小是一样的。Directory中的一个条目被称为PTE（Page Table Entry）是64bits，就像寄存器的大小一样，也就是8Bytes。所以一个Directory page有512个条目。</p>
+</li>
+<li><p>SATP寄存器会指向最高一级的page directory的物理内存地址，虚拟内存中index的高9bit用来索引最高一级的page directory，这样我们就能得到一个PPN，也就是物理page号。这个PPN指向了中间级的page directory<br>最高级的page directory中的PPN，包含了下一级page directory的物理内存地址，依次类推。在最低级page directory，我们还是可以得到44bit的PPN，这里包含了我们实际上想要翻译的物理page地址，然后再加上虚拟内存地址的12bit offset，就得到了56bit物理内存地址</p>
+</li>
+<li><p>PTE中的Flag，因为它也很重要。每个PTE的低10bit是一堆标志位</p>
+</li>
+</ol>
+<ul>
+<li>第一个标志位是Valid。如果Valid bit位为1，那么表明这是一条合法的PTE</li>
+<li>下两个标志位分别是Readable和Writable。表明你是否可以读/写这个page</li>
+<li>Executable表明你可以从这个page执行指令</li>
+<li>user表明这个page可以被运行在用户空间的进程访问。</li>
+</ul>
+<ol start="21">
+<li>页表缓存(Translation Lookaside Buffer)<br>TLB会保存虚拟地址到物理地址的映射关系。<br>Q切换了page table，操作系统需要告诉处理器当前正在切换page table，处理器会清空TLB。在RISC-V中，清空TLB的指令是sfence_vma。<br>虚拟地址索引的cache位于MMU之前，由物理地址索引的cache位于MMU之后<br>在XV6中，内核有它自己的page table，用户进程也有自己的page table，用户进程指向sys_info结构体的指针存在于用户空间的page table，但是内核需要将这个指针翻译成一个自己可以读写的物理地址。copy_in，copy_out，你可以发现内核会通过用户进程的page table，将用户的虚拟地址翻译得到物理地址，这样内核可以读写相应的物理内存地址<br>page table提供了一层抽象(level of indirection)。抽象就是指从虚拟地址到物理地址的映射</li>
+<li>当操作系统启动时，会从地址0x80000000开始运行，这个地址其实也是由硬件设计者决定的。地址0是保留的，地址0x10090000对应以太网，地址0x80000000对应DDR内存，处理器外的易失存储（Off-Chip Volatile Memory），也就是主板上的DRAM芯片</li>
+<li>地址0x1000是boot ROM的物理地址，当你对主板上电，主板做的第一件事情就是运行存储在boot ROM中的代码，当boot完成之后，会跳转到地址0x80000000，操作系统需要确保那个地址有一些数据能够接着启动操作系统。</li>
+<li>I/O设备</li>
+</ol>
+<ul>
+<li>PLIC是中断控制器(Platform-Level Interrupt Controller)</li>
+<li>CLINT(Core Local Interruptor)也是中断的一部分。所以多个设备都能产生中断，需要中断控制器来将这些中断路由到合适的处理函数</li>
+<li>UART0（Universal Asynchronous Receiver/Transmitter）负责与Console和显示器交互</li>
+<li>VIRTIO disk，与磁盘进行交互。</li>
+</ul>
+<ol start="25">
+<li>同一个物理地址映射两个虚拟地址，你可以不将一个虚拟地址映射到物理地址。可以是一对一的映射，一对多映射，多对一映射</li>
+<li>用户进程的虚拟地址空间分布<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220717173502.png" alt="20220717173502"></li>
+</ol>
+<p>Kvminit函数<br>kvminithart函数<br>walk函数</p>
+<h3 id="Armv8-A-Address-Translation"><a href="#Armv8-A-Address-Translation" class="headerlink" title="Armv8-A Address Translation"></a>Armv8-A Address Translation</h3><ol>
+<li>支持4K、16K和64K页表。TCR_EL1寄存存储支持页表大小。</li>
+<li>AArch64 4级页表，4K页表，48bit地址，9bit索引，512个表项，12bit的offset。<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220724171523.png" alt="20220724171523"></li>
+</ol>
+<p>16K页表，11bit索引，2048表项，14bit的offset<br>64K页表，3级索引，<br>3. MMU 使用转换表和转换寄存器来控制哪些内存位置是可缓存。缓存策略MAIR_ELn寄存器标识，TLB缓存是否有效。</p>
+<h3 id="DDI0487H-a-a-profile-architecture-reference-manual-pdf"><a href="#DDI0487H-a-a-profile-architecture-reference-manual-pdf" class="headerlink" title="DDI0487H_a_a-profile_architecture_reference_manual.pdf"></a>DDI0487H_a_a-profile_architecture_reference_manual.pdf</h3><h4 id="D5-2-6"><a href="#D5-2-6" class="headerlink" title="D5.2.6"></a>D5.2.6</h4><p>单一阶段转换：虚拟地址-&gt;物理地址<br>两阶段转换：虚拟地址-&gt;中间物理地址-&gt;物理地址</p>
+<p>阶段1 </p>
+<p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220724173718.png" alt="20220724173718"></p>
+<h3 id="ARM64体系结构编程实践"><a href="#ARM64体系结构编程实践" class="headerlink" title="ARM64体系结构编程实践"></a>ARM64体系结构编程实践</h3><h4 id="第14章-内存管理"><a href="#第14章-内存管理" class="headerlink" title="第14章 内存管理"></a>第14章 内存管理</h4><h5 id="1"><a href="#1" class="headerlink" title="1"></a>1</h5><ol>
+<li>进程地址空间使用内存3部分：进程本身、栈空间、堆空间</li>
+<li>地址转换(address translation):进程请求虚拟地址(VA)转换为物理地址(PA)，通过MMU实现。</li>
+<li>操作系统3元素：进程地址空间、进程的CPU虚拟化和文件对存储空间的抽象。</li>
+<li>分页机制引入虚拟存储，核心思想让程序不使用的内存交换到磁盘中，程序正在使用内存保留在物理内存。</li>
+<li>4K页帧虚拟地址组成VA[31:0]，偏移量offset VA[11:0]; 虚拟页帧号(VPN)。物理地址组成，偏移量offset PA[11:0];物理页帧号(PFN)。MMU把虚拟页帧号转换成物理页帧号。</li>
+<li>页表：存储VPN到PFN的映射关系，表项称为页表项PTE。多级页表用来减少页表占用内存空间，ARM64v8支持4级页表。</li>
+<li>TLB未命中从，处理器MMU中页表查询</li>
+</ol>
+<ul>
+<li>处理器根据虚拟地址判断使用TTBR0还是TTBR1，虚拟地址第63位为1时，选择TTBR1，为0时，选择TTBR0。TTBR中存储一级页表(L0)基地址。</li>
+<li>处理器以虚拟地址一级索引在一级页表中查找表项。</li>
+</ul>
+<ol start="8">
+<li>ARM64 处理器的MMU包括TLB和页表遍历单元。TLB是高速缓存，用于缓存页表转换的结果。</li>
+<li>进程地址空间分为：内核空间(kernel space)和用户空间(user space)</li>
+<li>SMP多核处理器系统中，每个处理器内置MMU和TLB，如何保证CPU访问正前有效的TLB。</li>
+<li>AArach64体系结构页表特性：</li>
+</ol>
+<ul>
+<li>最多支持4级页表</li>
+<li>输入地址最多有效位宽为48bit</li>
+<li>输出地址最大有效位款为48bit</li>
+<li>页帧大小支持4KB、16KB和64KB</li>
+</ul>
+<ol start="12">
+<li><p>AArach64采用两套页表设计，虚拟地址空间分为三部分：下面是用户空间，中间是非规范区，上面是内核空间。当CPU访问用户空间是，MMU选择TTBR0指向的页表，CPU访问内核空间时，MMU选择TTBR1寄存器指向的页表。</p>
+</li>
+<li><p>页表属性</p>
+</li>
+</ol>
+<ul>
+<li>共享性与缓存性：共享性决定高速缓存可被哪些观察者观察到; 缓存性值页面是否使能高速缓存以及高速缓存的范围。</li>
+<li>访问权限：AP字段控制CPU对页面的访问，可读可写属性。</li>
+<li>执行权限：PXN字段以及XN/UXN字段设置CPU是否可执行页面</li>
+<li>访问标志位：访问字段AF用来标识页面是否被访问过。</li>
+<li>全局和进程特有TLB：nG字段，0全局，1进程特有</li>
+</ul>
+<ol start="14">
+<li><p>硬件管理访问位和脏位(TTHM特性)，页表转换控制器TCR，HA字段自动设置AF标志。<br>脏位TCR_EL1的HD字段，</p>
+</li>
+<li><p>转换控制寄存器(TCR)、系统控制寄存器(SCTLR)和转换页表基址寄存器(TTBR)。<br>TTBR中ASID字段用来存储硬件ASID，AADDR字段存储页表基地址。</p>
+</li>
+<li><p>内存属性：Armv8两种内存属性：普通类型内存和设备内存。普通内存可优化。设备内存不可预测访问。</p>
+</li>
+</ol>
+<h2 id="Calling-conventions-and-stack-frames-RISC-V"><a href="#Calling-conventions-and-stack-frames-RISC-V" class="headerlink" title="Calling conventions and stack frames RISC-V"></a>Calling conventions and stack frames RISC-V</h2><ul>
+<li>syscanll  lab</li>
+<li>C -&gt; Asm / Processor</li>
+<li>RISC-V &amp; x86 &amp; Arm64</li>
+<li>Registers</li>
+<li>stack + calling conventions</li>
+<li>struct layout in memory</li>
+</ul>
+<h3 id="编译，RISV-V调用规范"><a href="#编译，RISV-V调用规范" class="headerlink" title="编译，RISV-V调用规范"></a>编译，RISV-V调用规范</h3><p> ISA就是处理器能够理解的指令集。每一条指令都有一个对应的二进制编码或者一个Opcode。<br> 预处理-编译-汇编-链接<br> RISC精简指令集与CISC复杂指令集，RISC统一的加载与存储指令。<br> RISC-V指令包含Base Integer Instruction Set和Standard Extension Instruction Set<br> 汇编代码：global全局变量函数，text代码段<br>进程地址空间<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220731191036.png" alt="20220731191036"><br> gdb layout split会同时展现C代码和汇编，而layout source只会展示C代码。</p>
+<h3 id="RISC-V寄存器"><a href="#RISC-V寄存器" class="headerlink" title="RISC-V寄存器"></a>RISC-V寄存器</h3><p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220731191509.png" alt="20220731191509"></p>
+<ul>
+<li>Caller Saved寄存器在函数调用的时候不会保存</li>
+<li>Callee Saved寄存器在函数调用的时候会保存<br> 汇编代码并不是在内存上执行，而是在寄存器上执行，load到寄存器，store到其他地方。除了Compressed Instruction，寄存器都是通过它们的ABI名字来引用。<br> a0到a7寄存器是用来作为函数的参数。如果一个函数有超过8个参数，需要用内存</li>
+</ul>
+<h3 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h3><p>Stack Frame<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220731192550.png" alt="20220731192550"><br>函数通过移动Stack Pointer来完成Stack Frame的空间分配。</p>
+<ul>
+<li>Return address总是会出现在Stack Frame的第一位</li>
+<li>指向前一个Stack Frame的指针也会出现在栈中的固定位置<br>第一个是SP（Stack Pointer），指向Stack的底部并代表了当前Stack Frame的位置。第二个是FP（Frame Pointer），它指向当前Stack Frame的顶部。因为Return address和指向前一个Stack Frame的的指针都在当前Stack Frame的固定位置，所以可以通过当前的FP寄存器寻址到这两个数据。?  前一个Frame Pointer存储到FP寄存器<br> leaf函数是指不调用别的函数的函数,不用担心保存自己的Return address或者任何其他的Caller Saved寄存器<br> 删除掉Prologue和Epllogue? sum_then_double将不知道它应该返回的Return address。所以调用sum_to的时候，Return address被覆盖了，最终sum_to函数不能返回到它原本的调用位置。</li>
+</ul>
+<p> info frame</p>
+<ul>
+<li>Stack level 0，表明这是调用栈的最底层</li>
+<li>pc，当前的程序计数器</li>
+<li>saved pc，demo4的位置，表明当前函数要返回的位置</li>
+<li>source language c，表明这是C代码</li>
+<li>Arglist at，表明参数的起始地址。当前的参数都在寄存器中，可以看到argc=3，argv是一个地址</li>
+</ul>
+<h3 id="Struct"><a href="#Struct" class="headerlink" title="Struct"></a>Struct</h3><h2 id="Isolation-amp-system-call-entry-exit-Rebort"><a href="#Isolation-amp-system-call-entry-exit-Rebort" class="headerlink" title="Isolation &amp; system call entry/exit(Rebort)"></a>Isolation &amp; system call entry/exit(Rebort)</h2><h3 id="Trap"><a href="#Trap" class="headerlink" title="Trap"></a>Trap</h3><p> 用户空间与内核空间切换trap：</p>
+<ul>
+<li>程序执行系统调用</li>
+<li>出现如page fault、运算时除以0的错误</li>
+<li>设备触发中断使得当前程序运行需要响应内核设备驱动<br> 32个寄存器：SP堆栈指针寄存器、PC程序计算器<br> mode标志位：标志当前是supervisor还是user mode<br> RSIC-V SATP（Supervisor Address Translation and Protection）寄存器，它包含了指向page table的物理内存地址<br> STVEC（Supervisor Trap Vector Base Address Register）寄存器，它指向了内核中处理trap的指令的起始地址<br> SEPC（Supervisor Exception Program Counter）寄存器，在trap的过程中保存程序计数器的值。<br> 在trap处理的过程中的操作：</li>
+<li>保存32个寄存器</li>
+<li>保存程序计数器PC</li>
+<li>将mode改为supervisor mode，内核中执行特权指令</li>
+<li>SATP寄存器由指向user page table变为指向 kernelpage table</li>
+<li>将堆栈寄存器指向内核中的地址</li>
+<li>跳入到内核的C代码<br> supervisor mode可：读写SATP寄存器，也就是page table的指针；STVEC，也就是处理trap的内核指令地址；SEPC，保存当发生trap时的程序计数器；SSCRATCH；使用PTE_U标志位为0的PTE。当PTE_U标志位为1的时候，表明用户代码可以使用这个页表；如果这个标志位为0，则只有supervisor mode可以使用这个页表。<br>supervisor mode中的代码并不能读写任意物理地址 ？</li>
+</ul>
+<p> trap执行流程，系统调用通过执行ECALL指令来执行系。ECALL指令会切换到具有supervisor mode的内核中。在这个过程中，内核中执行的第一个指令是一个由汇编语言写的函数，叫做uservec。这个函数是内核代码trampoline.s文件的一部分。所以执行的第一个代码就是这个uservec汇编函数。在这个汇编函数中，代码执行跳转到了由C语言实现的函数usertrap中，这个函数在trap.c中，在usertrap这个C函数中，我们执行了一个叫做syscall的函数。这个函数会在一个表单中，根据传入的代表系统调用的数字进行查找，并在内核中执行具体实现了系统调用功能的函数</p>
+<br>
+<br>
+
+<p>b站课程：<br><a href="https://www.bilibili.com/video/BV19k4y1C7kA?p=2&amp;spm_id_from=pageDriver&amp;vd_source=6768732acbd0f78ac59230d2faa59a86">https://www.bilibili.com/video/BV19k4y1C7kA?p=2&amp;spm_id_from=pageDriver&amp;vd_source=6768732acbd0f78ac59230d2faa59a86</a></p>
+<p>课程翻译<br><a href="https://github.com/huihongxiao/MIT6.S081">https://github.com/huihongxiao/MIT6.S081</a><br><a href="https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/">https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/</a></p>
+<p><a href="https://pdos.csail.mit.edu/6.828/2020/schedule.html">https://pdos.csail.mit.edu/6.828/2020/schedule.html</a></p>
+<p><a href="https://pdos.csail.mit.edu/6.828/2020/schedule.html">https://pdos.csail.mit.edu/6.828/2020/schedule.html</a></p>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2022</category>
+      </categories>
+      <tags>
+        <tag>Another Tag</tag>
+        <tag>Computer Science</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>树莓派</title>
+    <url>/2022/07/22/2022/%E6%A0%91%E8%8E%93%E6%B4%BE/</url>
+    <content><![CDATA[<p>[toc]</p>
+<p>树莓派</p>
+<span id="more"></span>
+
+<h1 id="1-安装系统"><a href="#1-安装系统" class="headerlink" title="1 安装系统"></a>1 安装系统</h1><ol>
+<li><p>官方镜像2022-04-04-raspios-bullseye-arm64.img.xz，xz格式文件可通过7zip直接解压。</p>
+</li>
+<li><p>通过win32diskimager安装</p>
+</li>
+<li><p>无显示配置<br><a href="https://blog.csdn.net/weixin_39591031/article/details/122325148">https://blog.csdn.net/weixin_39591031/article/details/122325148</a></p>
+</li>
+</ol>
+<p>配置wifi<br>开启ssh</p>
+<p>``<br>sudo raspi-config</p>
+<h1 id="选择Interface-Options"><a href="#选择Interface-Options" class="headerlink" title="选择Interface Options"></a>选择Interface Options</h1><h1 id="选择SSH"><a href="#选择SSH" class="headerlink" title="选择SSH"></a>选择SSH</h1><h1 id="开启SSH服务-Yes"><a href="#开启SSH服务-Yes" class="headerlink" title="开启SSH服务 Yes"></a>开启SSH服务 Yes</h1><h1 id="连接ssh"><a href="#连接ssh" class="headerlink" title="连接ssh"></a>连接ssh</h1><p>ssh <a href="mailto:pi@192.168.18.160">pi@192.168.18.160</a></p>
+<pre><code>
+
+
+
+
+- 参考链接：
+树莓派官网
+https://www.raspberrypi.com/software/
+</code></pre>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
       <categories>
         <category>tool</category>
         <category>2022</category>
@@ -2208,6 +2134,67 @@ https://www.raspberrypi.com/software/
       <tags>
         <tag>实用教程</tag>
         <tag>Another Tag</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>现代操作系统</title>
+    <url>/2022/07/15/2022/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>[toc]</p>
+<p>现代操作系统</p>
+<span id="more"></span>
+
+<h2 id="第1章-绪论"><a href="#第1章-绪论" class="headerlink" title="第1章 绪论"></a>第1章 绪论</h2><p>体系结构(指令集、存储组织、 I/0和总线结构)<br>操作系统的主要任务是记录哪个程序在使用什么资源，对资源请求进行分配、评估使用代价，并且为不同的程序和用户调解互相冲突的资沥请求。<br>资源管理包括两种不同方式实现多路复用(共享)资源：在时间上复用和在空间上复用<br>纸带程序-批处理程序-多道程序-分时系统<br>UNIX有两个主要的版本，即AT&amp;T System V和加州大学伯克利分校的BSD(Berkeley Software<br>Distribution)。UNIX的标准，称作POSJX, MS-DOS-Windows95<br>处理器：程序计数器(PC)、堆栈指针、程序状态字(PSW)：包含了条件码位(由比较指令设置)、CPU优先级、换式(用户态或内核态)，以及各种其他控制位</p>
+<p>从操作系统中获得服务，用户程序必须使用 系统调用 (sys call)以陷入内核井调用操作系统。 TRAP 指令把用户态切换成内核态，井启用操作系统</p>
+<p>虚拟内存机制:运行大于物理内存的程序，将程序放在磁盘上，而将主存作为缓存，用来保存最频繁使用的部<br>分程序。这种机制需要快速地映像内存地址，以便把程序生成的地址转换为有关字节在RAM 中的物理地址。这种映像由CPU 中的 个称为存储器管理单元 Memory Management Unit, MMU 的部件来完成<br>I/O设备一般包括两个部分：设备控制器和设备本身<br>启动计算机:基本输入输出系统((Basic Input Output System, BIOS)的程序。BIOS 内有底层l/0软件，包括读键盘、写屏幕、进行磁盘I/O 以及其他过程</p>
+<p>操作系统概念：进程<br>系统管理器授权每个进程使用一个给定的 UID(User IDentification)。每个被启动的进程都有启动该进程的用户UID 。子进程拥有与父进程一样的UID。用户可以是某个组的成员，每个组也有GID(Group IDentificalion)。UNIX中，有一个UID称为超级用户 (superuser) 或者Windows 中的管理员 (administrator)。<br>操作系统具有两种功能：为用户程序提供抽象和管理计箕机资源</p>
+<p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718223909.png" alt="20220718223909"></p>
+<p>fork调用返回一个值，在子进程中该值为零，井且在父进程中等于子进程的进程标识符(Process IDeotifier, PID)<br>父进程执行waitpid 系统调用，它只是等待，直至子进程终止子进程必须执行用户的命令。通过使用execve 系统调用可以实现<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718232209.png" alt="20220718232209"></p>
+<p>虚拟机：KVM(针对Linux 内核)、VirtualBox、Hyper-V;模拟器,二进制翻译</p>
+<p>C语言<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718232859.png" alt="20220718232859"></p>
+<p>操作系统有两种观点:资源管理观点和扩展的机器观点。在资源管理观点中，操作系统的任务是有效地管理系统的各个部分。在扩展的机器观点中，系统的任务是为用 提供比实际机器更便干运用的抽象。这些抽象包括进程、地址空间以及文件。<br>操作系统构建基本概念是进程、存储管理、I/O管理、文件管理和安全</p>
+<br>
+
+<h2 id="第2章-进程与线程"><a href="#第2章-进程与线程" class="headerlink" title="第2章 进程与线程"></a>第2章 进程与线程</h2><h3 id="2-1-进程"><a href="#2-1-进程" class="headerlink" title="2.1 进程"></a>2.1 进程</h3><p> 进程模型：包括程序计数器、寄存器和变量的当前值。<br> 进程创建4种事件：系统初始化、程序执行创建进程的系统调用、用户请求创建新进程、批处理作业的初始化。<br> Unix系统创建进程fork，系统调用创建一个与调用进程相同的副本。父进程与子进程有相同的内存映像。子进程执行execve或类似系统调用，以修改器内存映像并运行一个新程序。Win32中CreateProcess<br> 进程退出：正常退出、出错退出、严重错误和被其他进程杀死。Unix调用exit，Windows中ExitProcess。<br> 进程层次，Unix中进程和他所有子进程组成一个进程组。<br> 进程状态：运行态、就绪态、阻塞态，终止；进程调度。<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720005759.png" alt="20220720005759"><br> 进程表<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720010310.png" alt="20220720010310"><br> I/O类关联的是中断向量(interrup vector)的位置(靠近内存底部的固定区域)。</p>
+<h3 id="2-2-线程"><a href="#2-2-线程" class="headerlink" title="2.2 线程"></a>2.2 线程</h3><p> 线程：创建开销小、共享进程内存、切换开销小。线程有一样地址空间。<br> 每个计算都有一个被保存的状态，存在一个会发生且使得相关状态发生改变的事件集合，称为有限状态机。<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720012833.png" alt="20220720012833"><br> 线程创建 thread_create，线程退出thread_exit，等待线程退出 thread_join<br> POSIS线程pthread<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720013227.png" alt="20220720013227"><br> 有两种主要的方法实现线程包：在用户空间 中和在内核中<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720231701.png" alt="20220720231701"></p>
+<h3 id="2-3-进程间通信IPC"><a href="#2-3-进程间通信IPC" class="headerlink" title="2.3 进程间通信IPC"></a>2.3 进程间通信IPC</h3><p> 竞争条件：两个或多个进程读写某些共享数据，而最后的结果取决于进程运行的精确时序。共享内存进行访问的程序片段称作临界区域。<br>使用互斥：屏蔽中断、锁变量、严格轮换、Peterson解法、TSL测试并加锁<br> 信号量：down和up，对信号量down橾作，则是检查其值是否大于0，若该值大千0, 则将其值减1 (即用掉一个保存的唤醒信号)井继续，若该值为0, 则进程将睡眠，而且此时down操作井未结束。up操作对信号量的值增1<br> 互斥量：处干两态之一的变量：解锁和加锁。快速用户区互斥量futex。一个futex 包含两个部分一个内核服务和一个用户库<br> 消息传递，进程间通信方法：send和receive</p>
+<h3 id="2-4-调度Scheduler"><a href="#2-4-调度Scheduler" class="headerlink" title="2.4 调度Scheduler"></a>2.4 调度Scheduler</h3><p> 1.进程行为：CPU密集型进程(计算密集型)和I/O密集型进程<br> 2.进程调度时机：1)创建新进程时调度父进程或子进程 2)进程退出时 3)进程阻塞在I/O和信号量上时 4)I/O中断时<br> 3.调度算法：非抢占式和抢占式<br> 4.三种运行环境：批处理、交互式和实时,批处理-非抢占式，交互式-抢占式，。大型计算中心关心三个指标：吞吐量、周转时间和CPU利用率。交互系统最小响应时间。<br> 5.批处理系统调度算法：1)先来先服务 2)最短作业优先 3)最短剩余时间优先<br> 6.交互式系统调度算法：1)轮转调度 轮询 时间片 2)优先级调度 3)多级队列 4)最短进程优先 5)公平分享调度<br> 7.实时系统调度：硬实时和软实时</p>
+<p> 8.策略与机制</p>
+<p> 9.线程调度：用户级线程和内核级线程之间的差别在于性能 用户级线程的线程切换需要少址的机器指令，而内核级线程垢要完整的上下文切换，修改内存映像，使亦速缓存失效，导致了若干数杂级的延迟</p>
+<p> 功耗管理、虚拟化、云计算和安全问题成为了新的热点主题。</p>
+<h3 id="2-5-小结"><a href="#2-5-小结" class="headerlink" title="2.5 小结"></a>2.5 小结</h3><p> 隐藏中断的影响，操作系统提供了 个井行执行串行进程的概念模型。进程可以动态地创建和终止、每个进程都有自己的地址空间。<br> 线程被独立调度并且有独立的栈，但是在一个进程中的所有线程共享一个地址空间。线程可以在用户态实现，也可以在内核态实现。<br> 进程之间通过进程间通信原语来交换信息，如信号众、管程和消息。进程可以处在运行、就绪或阻塞状态</p>
+<br>
+
+<h2 id="第3章-内存管理"><a href="#第3章-内存管理" class="headerlink" title="第3章 内存管理"></a>第3章 内存管理</h2><p> 分层存储器体系。存储管理器：操作系统种管理分层存储体系的部分。<br> 操作系统作为库实现的常见例子如流行的e-Cos操作系统。</p>
+<h3 id="3-1-存储抽象：地址空间"><a href="#3-1-存储抽象：地址空间" class="headerlink" title="3.1 存储抽象：地址空间"></a>3.1 存储抽象：地址空间</h3><p> 地址空间一个进程可用于寻址内存的一套地址集合<br> 交换技术：空闲进程存到存储磁盘上，运行进程存储到物理内存。</p>
+<p> 虚拟内存：每个程序用于自己的地址空间，空间分割位多个块，每块位一页或页面。页被映射到物理内存，运行程序时不是所有页都必须在内存中，程序引用不在物理内存中的地址空间时，操作系统将缺失部分装入到物理内存。<br> 内存管理单元MMU：把虚拟地址映射到物理内存地址。<br> 页表：虚拟地址：虚拟页号和偏移量<br> 保护位：三位读、写、可执行。页面使用情况：修改位和访问位。禁止高速缓存位。<br> TLB(转换检测缓冲区)：，将虚拟地址直接映射到物理地址。TLB硬件实现和软件管理，当一个页面访问在内存中而不在TLB中时，将产生软失效；当页面本身不在内存中(当然也不在TLB)时，将产生硬失效。<br> 多级页表</p>
+<p> 页表置换算法：最优页面置换算法、最近未使用页面置换算法、先进先出页面置换算法、<strong>最近最少使用页面置换算法LRU</strong><br> PDP-11 指令和数据设置分离的地址空间，分别称为I空间和D空间。进程表有两个指针：一个指向I空间页表，一个指向D空间页表。共享页面<br> 共享库 Windows中DLL，运行时共享，编译时共享：使用相对地址</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># unix  链接当前目录下的所有的.o(目标)文件，井扫描两个库：/usr/lib/libc.a和/usr/lib/libm.a 。</span></span><br><span class="line">Id•.o -le -Im </span><br></pre></td></tr></tbody></table></figure>
+<p> 分页守护进程。分布式共享内存</p>
+<p> 操作系统在四个阶段处理分页相关工作：进程创建时，进程执行时，缺页中断时和进程终止时。</p>
+<h2 id="第4章-文件系统fs"><a href="#第4章-文件系统fs" class="headerlink" title="第4章 文件系统fs"></a>第4章 文件系统fs</h2><h3 id="4-1-文件和目录"><a href="#4-1-文件和目录" class="headerlink" title="4.1 文件和目录"></a>4.1 文件和目录</h3><p> MS-Dos Windows FAT16-&gt;FAT32-&gt;NTFS  linux ext3<br> 目录(directory)是管理文件系统结构的系统文件<br> 文件访问：顺序访问与随机访问<br> 文件属性<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220729231922.png" alt="20220729231922"></p>
+<p> 文件操作：create、delete、open、close、read、write、append、seek、get attributes、set attributes、rename<br> 目录：根目录<br>目录操作：create、delete、opendir、closedir、readdir、rename、link、unlink</p>
+<h3 id="4-2-文件系统实现"><a href="#4-2-文件系统实现" class="headerlink" title="4.2 文件系统实现"></a>4.2 文件系统实现</h3><p> 磁盘的0号扇区称为主引导记录(Master Boot Record MBR).在MBR结尾是分区表,给出每个分区的起始和结束地址。计算机引导时，BIOS读人并执行MBR，MBR读入他的第一个块是引导块。<br> 文件系统本身时一个有向无环图(DAG)。目录与该共享文件的联系称为链接(link)<br> 日志结构文件系统(Log-structured File System LFS)<br> 虚拟文件系统VFS  网络文件系统NFS</p>
+<br>
+
+<h2 id="第5章-输入-输出-I-O"><a href="#第5章-输入-输出-I-O" class="headerlink" title="第5章 输入/输出 I/O"></a>第5章 输入/输出 I/O</h2><p> I/O设备：块设备和字符设备。I/O设备控制器和设备本身。<br> CPU如何与设备的控制寄存器和数据缓冲区进行通信？<br> 第一种方法，每个控制寄存器被分配一个I/O端口(I/O port)号。所有I/O端口形成I/O端口空间(I/O port space)，普通用户不可访问。</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># I/O 指令</span></span><br><span class="line">IN REG, PORT</span><br><span class="line">OUT PORT, REG</span><br></pre></td></tr></tbody></table></figure>
+<p> 第二种方法：将所有控制器映射到内存空间中，每个控制器被分配唯一的一个内存地址，称为内存映射I/O。内存映射不运行缓存。优点：1)C语言可编写驱动，访问控制器寄存器 2)隔离地址空间-&gt;阻止用户进程I/O操作 </p>
+<p> 直接存储器存取(DMA)<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220802000949.png" alt="20220802000949"></p>
+<p> 中断信号使CPU停止当前正在做的工作井且开始做其他的事情。地址线上的数字被用做指向中断向量(interrupt vector)的表格的索引，以便读取一个新的程序计数器。<br> 将机器留在一个明确状态的中断称为精确中断</p>
+<ul>
+<li>PC程序计数器保存在一个已知的地方</li>
+<li>PC所指向的指令之前的所有指令已经完全执行</li>
+<li>PC所指向的指令之后的所有指令都没有执行</li>
+<li>PC所指向的指令的执行状态已知的<br> 不满足这些要求的中断称为不精确中断</li>
+</ul>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2022</category>
+      </categories>
+      <tags>
+        <tag>Another Tag</tag>
+        <tag>Computer Science</tag>
       </tags>
   </entry>
   <entry>
@@ -2826,6 +2813,239 @@ Linux 内核使用三个相关的数据结构来表示打开的文件
       </tags>
   </entry>
   <entry>
+    <title>读书随记</title>
+    <url>/2022/01/27/2022/%E8%AF%BB%E4%B9%A6%E9%9A%8F%E8%AE%B0/</url>
+    <content><![CDATA[<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2022</category>
+      </categories>
+      <tags>
+        <tag>实用教程</tag>
+        <tag>Another Tag</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C/C++</title>
+    <url>/2021/12/07/2021/12/C++/</url>
+    <content><![CDATA[<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><ul>
+<li>开源 C++ 库列表<br><a href="https://zh.cppreference.com/w/cpp/links/libs">https://zh.cppreference.com/w/cpp/links/libs</a></li>
+<li>C 语言<br><a href="https://zh.cppreference.com/w/c/language">https://zh.cppreference.com/w/c/language</a></li>
+</ul>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2021</category>
+        <category>12</category>
+      </categories>
+      <tags>
+        <tag>c/c++</tag>
+        <tag>cs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>英语语法指一</title>
+    <url>/2021/12/02/2021/12/%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95%E4%B8%80/</url>
+    <content><![CDATA[<h2 id="一-简单句子分析"><a href="#一-简单句子分析" class="headerlink" title="一.简单句子分析"></a>一.简单句子分析</h2><p> <strong>英语句子= 主干+修饰成分</strong><br> 分析句子结构:<br>  一个中心 + 两个要点<br>  一个中心: 动词. 句子必须右动词<br>  两个要点: 主语 + 谓语. 谓语是动词,主语为动作的执行者或接受者.<br>  <strong>句子的核心是主谓结构</strong></p>
+<span id="more"></span>
+<p> n个主语+1个谓语 或者 1个主语+n个谓语，就可以组成简单句。其他的定状补语等都是句子的附属成分。主语部分形式比较单一，通常由名词性的结构来担任。谓语部分的形式变化较多，五种基本句型实际就是通过不同的谓语部分结构来表达五种类型的含义。不管谓语部分如何变化，它都由动词起头，并承担主要的表意功能。</p>
+<p> 英语的句子结构分为三种:简单句,并列句,复合句.简单句又分为五种基本句型.</p>
+<blockquote class="pullquote mindmap mindmap-md"><ul>
+<li>英文句子<ul>
+<li>简单句<ul>
+<li>主 + 谓</li>
+<li>主 + 谓 + 宾</li>
+<li>主 + 谓 + 宾 + 宾补</li>
+<li>主 + 谓 + 间宾 + 直宾</li>
+<li>主 + 系 + 表</li>
+</ul>
+</li>
+<li>复合句<ul>
+<li>名词性从句<ul>
+<li>主语从句</li>
+<li>宾语从句</li>
+<li>同位语从句</li>
+<li>表语从句</li>
+</ul>
+</li>
+<li>定语从句</li>
+<li>状语从句<ul>
+<li>时间状语从句</li>
+<li>地点状语从句</li>
+<li>条件状语从句</li>
+<li>结果状语从句</li>
+<li>让步状语从句</li>
+<li>目的状语从句</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>特殊句式<ul>
+<li>强调句</li>
+<li>虚拟语气</li>
+<li>倒装句</li>
+</ul>
+</li>
+<li>类型<ul>
+<li>陈述句</li>
+<li>祈使句</li>
+<li>感叹句</li>
+<li>疑问句</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+
+<p> 英语语法从整体上来讲是通过五部分来组成<br>  1、简单句<br>  2、并列句、复合句<br>  3、三大从句<br>  4、特殊句式<br>  5、类型</p>
+<p>补语<br> 补语是和表意不完全的动词息息相关的。在第三种基本句型中，联系动词将主语和补语在某个意义层面上对等起来。<br> 修饰成分<br>  介词短语<br>  从句<br>  非谓语动词<br>  时间状语<br> 论主语的补语，而后将宾语的补语作为一种变形来讨论</p>
+<h3 id="1-1-S-V-（主-谓）"><a href="#1-1-S-V-（主-谓）" class="headerlink" title="1.1 S + V （主+谓）"></a>1.1 S + V （主+谓）</h3><p> 句子不可或缺的两部分.<br> 名词/代词/不定式/动名词 + 动词<br> 谓语动词可以表达完整的意思，这类动词为不及物动词（vi）.</p>
+<h3 id="1-2-S-V-C-（主-系-表）"><a href="#1-2-S-V-C-（主-系-表）" class="headerlink" title="1.2 S + V + C （主+系+表）"></a>1.2 S + V + C （主+系+表）</h3><p>主语 +系动词 +表语</p>
+<p>表语说明主语的状态和性质，可以是名词，形容词，副词，短语等。</p>
+<p>系动词包括：</p>
+<p>a. be 动词，am, is, are, was, were;</p>
+<p>b. 表感官：feel(摸起来像是), smell, sound(听起来是), taste(尝起来是), look(看起来是);</p>
+<p>c. 表变化：become(成为), grow, turn(转变为), go, get, fall;</p>
+<p>d. 表状态：remain(依旧是), keep, hold, stay(仍然是), seem(似乎是).</p>
+<p>appear 显得像是<br>prove 证实为<br>become 成为<br>make 作为</p>
+<h3 id="1-3-S-V-O-（主-谓-宾）"><a href="#1-3-S-V-O-（主-谓-宾）" class="headerlink" title="1.3 S + V + O （主+谓+宾）"></a>1.3 S + V + O （主+谓+宾）</h3><p>主语+谓语+宾语</p>
+<p>谓语一般为及物动词（vt.），后面必须要跟宾语才能表达完整的意思。宾语是谓语动词动作的承受者。</p>
+<h3 id="1-4-S-V-O-O（主-谓-间宾-人-直宾-物-）"><a href="#1-4-S-V-O-O（主-谓-间宾-人-直宾-物-）" class="headerlink" title="1.4 S + V + O + O（主+谓+间宾(人)+直宾(物)）"></a>1.4 S + V + O + O（主+谓+间宾(人)+直宾(物)）</h3><p>谓语动词必须要跟两个宾语才能表达完整意思。两个宾语分别是动作的直接承受者（一般是物）和间接承受者（一般是人）。<br>e.g.,</p>
+<p>give sb sth = give sth to sb</p>
+<p>tell sb sth = tell sth to sb</p>
+<h3 id="1-5-S-V-O-C（主-谓-宾-宾补）"><a href="#1-5-S-V-O-C（主-谓-宾-宾补）" class="headerlink" title="1.5 S + V + O + C（主+谓+宾+宾补）"></a>1.5 S + V + O + C（主+谓+宾+宾补）</h3><p>此种情况，动词虽然跟了宾语，但句子意思不完整，需要跟上一个补足语，对宾语进行解释说明，句子意思才能完整通顺。<br>主语的补语用来表示主语是什么。类似地，宾语的补语用来表示宾语是什么。在 S + V + O + C 这个句型当中，宾语和补语之间虽然没有动词存在。但是句子可以变形成：S + V + that + O + V + C 的形式，也就是将原本的宾语和补语以从句的形式出现。因此，可以认为宾语和补语之间有「隐藏的」判断动词「是」的存在。</p>
+<p>There be 句型</p>
+<p>There be 句型表示人/物的存在。句子结构，就是There be + 主语+其他部分</p>
+<p>1.主语：句子所陈述的对象。<br>2.谓语：主语发出的动作。一般是有动作意义的动词。<br>3. 宾语：分为动词宾语和介词宾语，属于动作的承受者。<br>4. 系动词：表示状态或状态变化的动词，没有实际的动作意义。如 be, 感官系动词（look, sound, smell, taste 和 feel）、保持类系动词（keep, stay 和 remain）、状态变化类系动词（become、get、turn 和 go）等。<br>5. 表语：紧跟系动词后面的成分。<br>6. 定语：修饰名词或代词的成分。<br>7. 状语： 修饰形容词、副词、动词或句子的成分。<br>8. 补语：分为宾语补足语和主语补足语。是对宾语和主语的补充说明，与其有主动或被动的逻辑关系。</p>
+<ul>
+<li><p>参考链接:<br><a href="https://liam.page/2014/06/21/basic-sentence-and-the-complement/">https://liam.page/2014/06/21/basic-sentence-and-the-complement/</a><br><a href="https://www.zhihu.com/question/30030877/answer/768501967">https://www.zhihu.com/question/30030877/answer/768501967</a></p>
+</li>
+<li><p>参考数据<br>《语法俱乐部》</p>
+</li>
+</ul>
+<p>复杂句:从简单句演化而来</p>
+<p>简单句没有什么句序的调整，所以翻译起来基本没有什么难度。</p>
+<p>英语中的修饰成分，分定语和状语两种情况。<br>英语句子 = 主干(五种基本句型) + 修饰成分(定语+状语)</p>
+<h2 id="二、并列句、复合句"><a href="#二、并列句、复合句" class="headerlink" title="二、并列句、复合句"></a>二、并列句、复合句</h2><p>简单句通过不同的连接词就成为了不同的句子，通过并列词成了并列句，通过从属连词成了复合句。下面我们就一一讲解 ：</p>
+<p>并列句：简单句+并列词+简单句</p>
+<p>并列词一般有：and / or / but / so /while / yet / for / however</p>
+<p>1）：表示并列：and, not only…but also… , neither…nor…</p>
+<p>Her father is a doctor and her mother is a teacher .</p>
+<p>2）：表示选择：or, or else, otherwise, either…or…</p>
+<p>Hurry or you won’t make the train.</p>
+<p>3）：表示对比、转折: but, while , yet , however , never ,</p>
+<p>I like tea while she likes coffee .</p>
+<p>4）：表示原因：for</p>
+<p>I am thirsty , for it is hot .</p>
+<p>复合句：简单句+从属连词+简单句</p>
+<p>从属连词有：that / wether/ if</p>
+<p>复合句其实就是我们常说的三大从句，</p>
+<h2 id="三-三大从句"><a href="#三-三大从句" class="headerlink" title="三.三大从句"></a>三.三大从句</h2><p>1、名词性从句</p>
+<p>当名词性从句作为句子的不同成分时，又被称呼为不同的名字。</p>
+<p>当作为主语时，称为主语从句。</p>
+<p>当称为宾语时，称为宾语从句，同样表语从句以及同位语从句。以下我们来举个栗子 ：</p>
+<p>主语从句 What she said is wrong .</p>
+<p>宾语从句 I said that she was wrong.</p>
+<p>表语从句 The fact is that he doesn’t really try.</p>
+<p>同位语从句 The news that he will come back is ture.</p>
+<p>记住一点，不管什么从句，你把它当成一个”长一点的名词”。</p>
+<p>那如果这个长名词在句子中作主语，就是主语从句，作宾语就是宾语从句。</p>
+<p>同位语从句就是相当于一个长点的名词对另外一个抽象名词进行解释说明。</p>
+<p>2、定语从句</p>
+<p>修饰限定名词，汉语中“的”前面的内容。</p>
+<p>关系代词引导的定语从句</p>
+<p>1.who指人，在从句中做主语 Yesterday I helped an old man who lost his way.</p>
+<p>2. whom指人，在定语从句中充当宾语，常可省略。</p>
+<p>Mr. Ling is just the boy whom I want to see</p>
+<p>3. which指物，在定语从句中做主语或者宾语，做宾语时可省略</p>
+<p>This is the pen (which) he bought yesterday.</p>
+<p>4. that指人时，相当于who 或者whom；指物时，相当于which。</p>
+<p>5. whose通常指人，也可指物，在定语从句中做定语。</p>
+<p>指的是谁的。Do you like the book whose cover is yellow?</p>
+<p>关系副词引导的定语从句</p>
+<p>when where why</p>
+<p>3、状语从句</p>
+<p>修饰动作的发生的时间、地点、原因、方式</p>
+<p>九大状语从句</p>
+<p>1、时间状语从句</p>
+<p>常用引导词：when, as, while, as soon as, before, after, since , till, until</p>
+<p>特殊引导词：the minute, the moment, the second, every time, the day，the instant,</p>
+<p>I was fat when I was a child.</p>
+<p>2、地点状语从句</p>
+<p>常用引导词：where</p>
+<p>特殊引导词：wherever, anywhere, everywhere</p>
+<p>Keep it where you can see it.</p>
+<p>3、原因状语从句</p>
+<p>常用引导词：because, since, as, for</p>
+<p>特殊引导词：seeing that, now that, in that, considering that, given that.</p>
+<p>My friends dislike me because I’m beautiful .</p>
+<p>4、目的状语从句</p>
+<p>常用引导词：so that, in order that</p>
+<p>特殊引导词：lest, in case, for fear that，in the hope that, for the purpose that, to the end that</p>
+<p>study hard so that you can pass the exam.</p>
+<p>5、结果状语从句</p>
+<p>常用引导词：so … that, so… that, such … that,</p>
+<p>特殊引导词：such that, to the degree that, to the extent that, to such a degree that,</p>
+<p>He got up so early that he caught the first bus.</p>
+<p>6、条件状语从句</p>
+<p>常用引导词：if, unless,</p>
+<p>特殊引导词：as/so long as, only if, providing/provided that, supposing that, in case that, on condition that</p>
+<p>If you ask him, he will help you.</p>
+<p>7、方式状语从句</p>
+<p>常用引导词：as, as if, how</p>
+<p>特殊引导词：the way</p>
+<p>Think as i think</p>
+<p>8、比较状语从句</p>
+<p>常用引导词：as(同级比较), than(不同程度的比较)</p>
+<p>特殊引导词：the more … the more … ; just as …， so…; A is to B what /as X is to Y; no … more than; not A so much as B</p>
+<p>The house is three times as big as ours.</p>
+<p>9、让步状语从句</p>
+<p>常用引导词：though, although, even if, even though</p>
+<p>特殊引导词： as(用在让步状语从句中必须要倒装)，while ( 一般用在句首 )，no matter …， in spite of the fact that, while, whatever, whoever, wherever, whenever, however, whichever</p>
+<p>Though I believe it, yet I must consider.</p>
+<h2 id="四-特殊句式"><a href="#四-特殊句式" class="headerlink" title="四.特殊句式"></a>四.特殊句式</h2><p>1、强调句</p>
+<p>It is （名词 / 介宾）指的是被强调的内容that （……..）</p>
+<p>It was she whom we are talking about.</p>
+<p>2、倒装句</p>
+<p>正常句序 ：主谓宾</p>
+<p>倒装句序 ：谓主宾</p>
+<p>we can win only through hard work .</p>
+<p>only through hard work can we win .</p>
+<p>3、虚拟语气，假设不可能发生的事情</p>
+<p>1、对过去情况的虚拟</p>
+<p>从句用 had done</p>
+<p>主句用 would could might should have done</p>
+<p>2、对现在情况的虚拟</p>
+<p>从句用 did , was变成were</p>
+<p>主句用 would could might should do</p>
+<p>3、对将来情况虚拟</p>
+<p>从句用 did ，was 变成 were，should do,were to do</p>
+<p>主句用 would could might should do</p>
+<h2 id="五-类型"><a href="#五-类型" class="headerlink" title="五.类型"></a>五.类型</h2><p>陈述句</p>
+<p>i like English very much . 我非常喜欢英语。</p>
+<p>疑问句</p>
+<p>is this your key ? 这是你的钥匙吗？</p>
+<p>祈使句</p>
+<p>一种是以动词原形开头，在动词原形之前加do (但只限于省略第二人称主语的句子)。</p>
+<p>mind you head 小心碰头！</p>
+<p>第二种祈使句以let开头</p>
+<p>Let’s have another try</p>
+<p>感叹句</p>
+<p>what a brave girl ! 真是个勇敢的女孩子</p>
+<p><a href="https://zhuanlan.zhihu.com/p/400448345">https://zhuanlan.zhihu.com/p/400448345</a></p>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>study</category>
+        <category>2021</category>
+        <category>12</category>
+      </categories>
+      <tags>
+        <tag>Another Tag</tag>
+        <tag>English</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>leetcode题解算法分析</title>
     <url>/2021/10/27/2021/11/leetcode%E9%A2%98%E8%A7%A3%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="回溯法"><a href="#回溯法" class="headerlink" title="回溯法"></a>回溯法</h3><p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220620232325.png" alt="20220620232325"></p>
@@ -3128,46 +3348,6 @@ Linux 内核使用三个相关的数据结构来表示打开的文件
       </tags>
   </entry>
   <entry>
-    <title>C/C++</title>
-    <url>/2021/12/07/2021/12/C++/</url>
-    <content><![CDATA[<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><ul>
-<li>开源 C++ 库列表<br><a href="https://zh.cppreference.com/w/cpp/links/libs">https://zh.cppreference.com/w/cpp/links/libs</a></li>
-<li>C 语言<br><a href="https://zh.cppreference.com/w/c/language">https://zh.cppreference.com/w/c/language</a></li>
-</ul>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2021</category>
-        <category>12</category>
-      </categories>
-      <tags>
-        <tag>c/c++</tag>
-        <tag>cs</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C/C++内存管理</title>
-    <url>/2021/10/07/2021/11/%E5%86%85%E5%AD%98/</url>
-    <content><![CDATA[<h2 id="一、内存"><a href="#一、内存" class="headerlink" title="一、内存"></a>一、内存</h2><p> 在计算机中，不同应用程序之间的内存是相互独立的，通常情况下不可以相互访问。</p>
-<span id="more"></span>
-
-<p>1、内存四区<br>从下到上为：代码区、数据区、堆区、栈区。<br>栈区：存储临时变量的区域，临时变量包括：局部变量、返回值、参数、返回地址。这些变量超出作用域自动弹出。超出栈大小将会栈溢出。栈从栈顶自上而下，最下端为0x0000。<br>堆区：比较大的内存区域，用于动态内存分配，由开放人员申请和释放，在程序结束时未释放，将会右系统自动回收。<br>数据区：主要存放全局变量、常量和静态变量；数据区又可以划分为：全局区和静态区。<br>代码区：主要纯粹可执行代码。属性为只读的。</p>
-<h2 id="二、malloc和free"><a href="#二、malloc和free" class="headerlink" title="二、malloc和free"></a>二、malloc和free</h2><p> 在 C 语言（不是 C++)中，malloc 和 free 是系统提供的函数，成对使用，用于从堆中分配和释放内存。malloc 的全称是 memory allocation 译为“动态内存分配”。</p>
-<ul>
-<li>参考链接：<br><a href="https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ">https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ</a></li>
-</ul>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2021</category>
-        <category>11</category>
-      </categories>
-      <tags>
-        <tag>Another Tag</tag>
-        <tag>Computer Science</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CMake</title>
     <url>/2021/12/07/2021/12/cmake/</url>
     <content><![CDATA[<h2 id="1-cmake简述"><a href="#1-cmake简述" class="headerlink" title="1.cmake简述"></a>1.cmake简述</h2><p> CMake是跨平台编译管理工具,为第三方依赖和引入,创建编译系统,程序测试及安装.Cmake工具使用CMakeLists.txt文件,跨平台执行相同编译命令,生成对应平台的可执行程序或者链接库.</p>
@@ -3236,205 +3416,25 @@ Linux 内核使用三个相关的数据结构来表示打开的文件
       </tags>
   </entry>
   <entry>
-    <title>英语语法指一</title>
-    <url>/2021/12/02/2021/12/%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95%E4%B8%80/</url>
-    <content><![CDATA[<h2 id="一-简单句子分析"><a href="#一-简单句子分析" class="headerlink" title="一.简单句子分析"></a>一.简单句子分析</h2><p> <strong>英语句子= 主干+修饰成分</strong><br> 分析句子结构:<br>  一个中心 + 两个要点<br>  一个中心: 动词. 句子必须右动词<br>  两个要点: 主语 + 谓语. 谓语是动词,主语为动作的执行者或接受者.<br>  <strong>句子的核心是主谓结构</strong></p>
+    <title>C/C++内存管理</title>
+    <url>/2021/10/07/2021/11/%E5%86%85%E5%AD%98/</url>
+    <content><![CDATA[<h2 id="一、内存"><a href="#一、内存" class="headerlink" title="一、内存"></a>一、内存</h2><p> 在计算机中，不同应用程序之间的内存是相互独立的，通常情况下不可以相互访问。</p>
 <span id="more"></span>
-<p> n个主语+1个谓语 或者 1个主语+n个谓语，就可以组成简单句。其他的定状补语等都是句子的附属成分。主语部分形式比较单一，通常由名词性的结构来担任。谓语部分的形式变化较多，五种基本句型实际就是通过不同的谓语部分结构来表达五种类型的含义。不管谓语部分如何变化，它都由动词起头，并承担主要的表意功能。</p>
-<p> 英语的句子结构分为三种:简单句,并列句,复合句.简单句又分为五种基本句型.</p>
-<blockquote class="pullquote mindmap mindmap-md"><ul>
-<li>英文句子<ul>
-<li>简单句<ul>
-<li>主 + 谓</li>
-<li>主 + 谓 + 宾</li>
-<li>主 + 谓 + 宾 + 宾补</li>
-<li>主 + 谓 + 间宾 + 直宾</li>
-<li>主 + 系 + 表</li>
-</ul>
-</li>
-<li>复合句<ul>
-<li>名词性从句<ul>
-<li>主语从句</li>
-<li>宾语从句</li>
-<li>同位语从句</li>
-<li>表语从句</li>
-</ul>
-</li>
-<li>定语从句</li>
-<li>状语从句<ul>
-<li>时间状语从句</li>
-<li>地点状语从句</li>
-<li>条件状语从句</li>
-<li>结果状语从句</li>
-<li>让步状语从句</li>
-<li>目的状语从句</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>特殊句式<ul>
-<li>强调句</li>
-<li>虚拟语气</li>
-<li>倒装句</li>
-</ul>
-</li>
-<li>类型<ul>
-<li>陈述句</li>
-<li>祈使句</li>
-<li>感叹句</li>
-<li>疑问句</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</blockquote>
 
-<p> 英语语法从整体上来讲是通过五部分来组成<br>  1、简单句<br>  2、并列句、复合句<br>  3、三大从句<br>  4、特殊句式<br>  5、类型</p>
-<p>补语<br> 补语是和表意不完全的动词息息相关的。在第三种基本句型中，联系动词将主语和补语在某个意义层面上对等起来。<br> 修饰成分<br>  介词短语<br>  从句<br>  非谓语动词<br>  时间状语<br> 论主语的补语，而后将宾语的补语作为一种变形来讨论</p>
-<h3 id="1-1-S-V-（主-谓）"><a href="#1-1-S-V-（主-谓）" class="headerlink" title="1.1 S + V （主+谓）"></a>1.1 S + V （主+谓）</h3><p> 句子不可或缺的两部分.<br> 名词/代词/不定式/动名词 + 动词<br> 谓语动词可以表达完整的意思，这类动词为不及物动词（vi）.</p>
-<h3 id="1-2-S-V-C-（主-系-表）"><a href="#1-2-S-V-C-（主-系-表）" class="headerlink" title="1.2 S + V + C （主+系+表）"></a>1.2 S + V + C （主+系+表）</h3><p>主语 +系动词 +表语</p>
-<p>表语说明主语的状态和性质，可以是名词，形容词，副词，短语等。</p>
-<p>系动词包括：</p>
-<p>a. be 动词，am, is, are, was, were;</p>
-<p>b. 表感官：feel(摸起来像是), smell, sound(听起来是), taste(尝起来是), look(看起来是);</p>
-<p>c. 表变化：become(成为), grow, turn(转变为), go, get, fall;</p>
-<p>d. 表状态：remain(依旧是), keep, hold, stay(仍然是), seem(似乎是).</p>
-<p>appear 显得像是<br>prove 证实为<br>become 成为<br>make 作为</p>
-<h3 id="1-3-S-V-O-（主-谓-宾）"><a href="#1-3-S-V-O-（主-谓-宾）" class="headerlink" title="1.3 S + V + O （主+谓+宾）"></a>1.3 S + V + O （主+谓+宾）</h3><p>主语+谓语+宾语</p>
-<p>谓语一般为及物动词（vt.），后面必须要跟宾语才能表达完整的意思。宾语是谓语动词动作的承受者。</p>
-<h3 id="1-4-S-V-O-O（主-谓-间宾-人-直宾-物-）"><a href="#1-4-S-V-O-O（主-谓-间宾-人-直宾-物-）" class="headerlink" title="1.4 S + V + O + O（主+谓+间宾(人)+直宾(物)）"></a>1.4 S + V + O + O（主+谓+间宾(人)+直宾(物)）</h3><p>谓语动词必须要跟两个宾语才能表达完整意思。两个宾语分别是动作的直接承受者（一般是物）和间接承受者（一般是人）。<br>e.g.,</p>
-<p>give sb sth = give sth to sb</p>
-<p>tell sb sth = tell sth to sb</p>
-<h3 id="1-5-S-V-O-C（主-谓-宾-宾补）"><a href="#1-5-S-V-O-C（主-谓-宾-宾补）" class="headerlink" title="1.5 S + V + O + C（主+谓+宾+宾补）"></a>1.5 S + V + O + C（主+谓+宾+宾补）</h3><p>此种情况，动词虽然跟了宾语，但句子意思不完整，需要跟上一个补足语，对宾语进行解释说明，句子意思才能完整通顺。<br>主语的补语用来表示主语是什么。类似地，宾语的补语用来表示宾语是什么。在 S + V + O + C 这个句型当中，宾语和补语之间虽然没有动词存在。但是句子可以变形成：S + V + that + O + V + C 的形式，也就是将原本的宾语和补语以从句的形式出现。因此，可以认为宾语和补语之间有「隐藏的」判断动词「是」的存在。</p>
-<p>There be 句型</p>
-<p>There be 句型表示人/物的存在。句子结构，就是There be + 主语+其他部分</p>
-<p>1.主语：句子所陈述的对象。<br>2.谓语：主语发出的动作。一般是有动作意义的动词。<br>3. 宾语：分为动词宾语和介词宾语，属于动作的承受者。<br>4. 系动词：表示状态或状态变化的动词，没有实际的动作意义。如 be, 感官系动词（look, sound, smell, taste 和 feel）、保持类系动词（keep, stay 和 remain）、状态变化类系动词（become、get、turn 和 go）等。<br>5. 表语：紧跟系动词后面的成分。<br>6. 定语：修饰名词或代词的成分。<br>7. 状语： 修饰形容词、副词、动词或句子的成分。<br>8. 补语：分为宾语补足语和主语补足语。是对宾语和主语的补充说明，与其有主动或被动的逻辑关系。</p>
+<p>1、内存四区<br>从下到上为：代码区、数据区、堆区、栈区。<br>栈区：存储临时变量的区域，临时变量包括：局部变量、返回值、参数、返回地址。这些变量超出作用域自动弹出。超出栈大小将会栈溢出。栈从栈顶自上而下，最下端为0x0000。<br>堆区：比较大的内存区域，用于动态内存分配，由开放人员申请和释放，在程序结束时未释放，将会右系统自动回收。<br>数据区：主要存放全局变量、常量和静态变量；数据区又可以划分为：全局区和静态区。<br>代码区：主要纯粹可执行代码。属性为只读的。</p>
+<h2 id="二、malloc和free"><a href="#二、malloc和free" class="headerlink" title="二、malloc和free"></a>二、malloc和free</h2><p> 在 C 语言（不是 C++)中，malloc 和 free 是系统提供的函数，成对使用，用于从堆中分配和释放内存。malloc 的全称是 memory allocation 译为“动态内存分配”。</p>
 <ul>
-<li><p>参考链接:<br><a href="https://liam.page/2014/06/21/basic-sentence-and-the-complement/">https://liam.page/2014/06/21/basic-sentence-and-the-complement/</a><br><a href="https://www.zhihu.com/question/30030877/answer/768501967">https://www.zhihu.com/question/30030877/answer/768501967</a></p>
-</li>
-<li><p>参考数据<br>《语法俱乐部》</p>
-</li>
+<li>参考链接：<br><a href="https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ">https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ</a></li>
 </ul>
-<p>复杂句:从简单句演化而来</p>
-<p>简单句没有什么句序的调整，所以翻译起来基本没有什么难度。</p>
-<p>英语中的修饰成分，分定语和状语两种情况。<br>英语句子 = 主干(五种基本句型) + 修饰成分(定语+状语)</p>
-<h2 id="二、并列句、复合句"><a href="#二、并列句、复合句" class="headerlink" title="二、并列句、复合句"></a>二、并列句、复合句</h2><p>简单句通过不同的连接词就成为了不同的句子，通过并列词成了并列句，通过从属连词成了复合句。下面我们就一一讲解 ：</p>
-<p>并列句：简单句+并列词+简单句</p>
-<p>并列词一般有：and / or / but / so /while / yet / for / however</p>
-<p>1）：表示并列：and, not only…but also… , neither…nor…</p>
-<p>Her father is a doctor and her mother is a teacher .</p>
-<p>2）：表示选择：or, or else, otherwise, either…or…</p>
-<p>Hurry or you won’t make the train.</p>
-<p>3）：表示对比、转折: but, while , yet , however , never ,</p>
-<p>I like tea while she likes coffee .</p>
-<p>4）：表示原因：for</p>
-<p>I am thirsty , for it is hot .</p>
-<p>复合句：简单句+从属连词+简单句</p>
-<p>从属连词有：that / wether/ if</p>
-<p>复合句其实就是我们常说的三大从句，</p>
-<h2 id="三-三大从句"><a href="#三-三大从句" class="headerlink" title="三.三大从句"></a>三.三大从句</h2><p>1、名词性从句</p>
-<p>当名词性从句作为句子的不同成分时，又被称呼为不同的名字。</p>
-<p>当作为主语时，称为主语从句。</p>
-<p>当称为宾语时，称为宾语从句，同样表语从句以及同位语从句。以下我们来举个栗子 ：</p>
-<p>主语从句 What she said is wrong .</p>
-<p>宾语从句 I said that she was wrong.</p>
-<p>表语从句 The fact is that he doesn’t really try.</p>
-<p>同位语从句 The news that he will come back is ture.</p>
-<p>记住一点，不管什么从句，你把它当成一个”长一点的名词”。</p>
-<p>那如果这个长名词在句子中作主语，就是主语从句，作宾语就是宾语从句。</p>
-<p>同位语从句就是相当于一个长点的名词对另外一个抽象名词进行解释说明。</p>
-<p>2、定语从句</p>
-<p>修饰限定名词，汉语中“的”前面的内容。</p>
-<p>关系代词引导的定语从句</p>
-<p>1.who指人，在从句中做主语 Yesterday I helped an old man who lost his way.</p>
-<p>2. whom指人，在定语从句中充当宾语，常可省略。</p>
-<p>Mr. Ling is just the boy whom I want to see</p>
-<p>3. which指物，在定语从句中做主语或者宾语，做宾语时可省略</p>
-<p>This is the pen (which) he bought yesterday.</p>
-<p>4. that指人时，相当于who 或者whom；指物时，相当于which。</p>
-<p>5. whose通常指人，也可指物，在定语从句中做定语。</p>
-<p>指的是谁的。Do you like the book whose cover is yellow?</p>
-<p>关系副词引导的定语从句</p>
-<p>when where why</p>
-<p>3、状语从句</p>
-<p>修饰动作的发生的时间、地点、原因、方式</p>
-<p>九大状语从句</p>
-<p>1、时间状语从句</p>
-<p>常用引导词：when, as, while, as soon as, before, after, since , till, until</p>
-<p>特殊引导词：the minute, the moment, the second, every time, the day，the instant,</p>
-<p>I was fat when I was a child.</p>
-<p>2、地点状语从句</p>
-<p>常用引导词：where</p>
-<p>特殊引导词：wherever, anywhere, everywhere</p>
-<p>Keep it where you can see it.</p>
-<p>3、原因状语从句</p>
-<p>常用引导词：because, since, as, for</p>
-<p>特殊引导词：seeing that, now that, in that, considering that, given that.</p>
-<p>My friends dislike me because I’m beautiful .</p>
-<p>4、目的状语从句</p>
-<p>常用引导词：so that, in order that</p>
-<p>特殊引导词：lest, in case, for fear that，in the hope that, for the purpose that, to the end that</p>
-<p>study hard so that you can pass the exam.</p>
-<p>5、结果状语从句</p>
-<p>常用引导词：so … that, so… that, such … that,</p>
-<p>特殊引导词：such that, to the degree that, to the extent that, to such a degree that,</p>
-<p>He got up so early that he caught the first bus.</p>
-<p>6、条件状语从句</p>
-<p>常用引导词：if, unless,</p>
-<p>特殊引导词：as/so long as, only if, providing/provided that, supposing that, in case that, on condition that</p>
-<p>If you ask him, he will help you.</p>
-<p>7、方式状语从句</p>
-<p>常用引导词：as, as if, how</p>
-<p>特殊引导词：the way</p>
-<p>Think as i think</p>
-<p>8、比较状语从句</p>
-<p>常用引导词：as(同级比较), than(不同程度的比较)</p>
-<p>特殊引导词：the more … the more … ; just as …， so…; A is to B what /as X is to Y; no … more than; not A so much as B</p>
-<p>The house is three times as big as ours.</p>
-<p>9、让步状语从句</p>
-<p>常用引导词：though, although, even if, even though</p>
-<p>特殊引导词： as(用在让步状语从句中必须要倒装)，while ( 一般用在句首 )，no matter …， in spite of the fact that, while, whatever, whoever, wherever, whenever, however, whichever</p>
-<p>Though I believe it, yet I must consider.</p>
-<h2 id="四-特殊句式"><a href="#四-特殊句式" class="headerlink" title="四.特殊句式"></a>四.特殊句式</h2><p>1、强调句</p>
-<p>It is （名词 / 介宾）指的是被强调的内容that （……..）</p>
-<p>It was she whom we are talking about.</p>
-<p>2、倒装句</p>
-<p>正常句序 ：主谓宾</p>
-<p>倒装句序 ：谓主宾</p>
-<p>we can win only through hard work .</p>
-<p>only through hard work can we win .</p>
-<p>3、虚拟语气，假设不可能发生的事情</p>
-<p>1、对过去情况的虚拟</p>
-<p>从句用 had done</p>
-<p>主句用 would could might should have done</p>
-<p>2、对现在情况的虚拟</p>
-<p>从句用 did , was变成were</p>
-<p>主句用 would could might should do</p>
-<p>3、对将来情况虚拟</p>
-<p>从句用 did ，was 变成 were，should do,were to do</p>
-<p>主句用 would could might should do</p>
-<h2 id="五-类型"><a href="#五-类型" class="headerlink" title="五.类型"></a>五.类型</h2><p>陈述句</p>
-<p>i like English very much . 我非常喜欢英语。</p>
-<p>疑问句</p>
-<p>is this your key ? 这是你的钥匙吗？</p>
-<p>祈使句</p>
-<p>一种是以动词原形开头，在动词原形之前加do (但只限于省略第二人称主语的句子)。</p>
-<p>mind you head 小心碰头！</p>
-<p>第二种祈使句以let开头</p>
-<p>Let’s have another try</p>
-<p>感叹句</p>
-<p>what a brave girl ! 真是个勇敢的女孩子</p>
-<p><a href="https://zhuanlan.zhihu.com/p/400448345">https://zhuanlan.zhihu.com/p/400448345</a></p>
 <script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
       <categories>
-        <category>study</category>
+        <category>tool</category>
         <category>2021</category>
-        <category>12</category>
+        <category>11</category>
       </categories>
       <tags>
         <tag>Another Tag</tag>
-        <tag>English</tag>
+        <tag>Computer Science</tag>
       </tags>
   </entry>
 </search>
