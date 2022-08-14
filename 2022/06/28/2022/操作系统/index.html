@@ -257,7 +257,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>9k</span>
+              <span>9.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -481,6 +481,12 @@
 </li>
 </ol>
 <p>如何发现父进程写了这部分内存地址？是与子进程相同的方法吗？相同的处理方式</p>
+<ol start="7">
+<li><p>Demand Paging<br>延迟加载text和data段<br>dirty page，因为它在某个时间点会被重新写回到内存中。</p>
+</li>
+<li><p> Memory Mapped Files<br>mmap的系统调用，系统调用会接收一个虚拟内存地址（VA），长度（len），protection，一些标志位，一个打开文件的文件描述符，和偏移量（offset）<br>多个进程将同一个文件映射到内存，然后会有同步的问题？<br>mmap的参数中，len和flag是什么意思？  len是文件中你想映射到内存中的字节数。prot是read/write。flags会在mmap lab中出现，我认为它表示了这个区域是私有的还是共享的</p>
+</li>
+</ol>
 <br>
 <br>
 
