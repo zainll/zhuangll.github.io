@@ -257,14 +257,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>8.1k</span>
+              <span>8.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>7 分钟</span>
+              <span>8 分钟</span>
             </span>
 
         </div>
@@ -466,6 +466,20 @@
 <li>跳入到内核的C代码<br> supervisor mode可：读写SATP寄存器，也就是page table的指针；STVEC，也就是处理trap的内核指令地址；SEPC，保存当发生trap时的程序计数器；SSCRATCH；使用PTE_U标志位为0的PTE。当PTE_U标志位为1的时候，表明用户代码可以使用这个页表；如果这个标志位为0，则只有supervisor mode可以使用这个页表。<br>supervisor mode中的代码并不能读写任意物理地址 ？</li>
 </ul>
 <p> trap执行流程，系统调用通过执行ECALL指令来执行系。ECALL指令会切换到具有supervisor mode的内核中。在这个过程中，内核中执行的第一个指令是一个由汇编语言写的函数，叫做uservec。这个函数是内核代码trampoline.s文件的一部分。所以执行的第一个代码就是这个uservec汇编函数。在这个汇编函数中，代码执行跳转到了由C语言实现的函数usertrap中，这个函数在trap.c中，在usertrap这个C函数中，我们执行了一个叫做syscall的函数。这个函数会在一个表单中，根据传入的代表系统调用的数字进行查找，并在内核中执行具体实现了系统调用功能的函数</p>
+<h2 id="Page-faults-Frans"><a href="#Page-faults-Frans" class="headerlink" title="Page faults(Frans)"></a>Page faults(Frans)</h2><ol>
+<li><p>page fault相关功能：1)lazy allocation 2)copy-on-write fork 3)demand paging 4)memroy mapped files</p>
+</li>
+<li><p>虚拟内存两个主要的优点：隔离Isoation; 虚拟地址空间level of indirection</p>
+</li>
+<li><p>page fault触发trap机制，将程序运行切换到内核，出错地址保存在STVAL寄存器；引起page fault的内存地址<br>page fault原因load 13、store 15或jump 12指令，SCAUSE寄存器；引起page fault的原因类型<br>触发page fault的指令的地址存放在SEPC寄存器；引起page fault时的程序计数器值</p>
+</li>
+<li><p>Lazy page allocation<br>sbrk的实现默认是eager allocation,内核会立即分配应用程序所需要的物理内存。而实际上内核在这个时间点并不会分配任何物理内存。之后在某个时间点，应用程序使用到了新申请的那部分内存，这时会触发page fault，因为我们还没有将新的内存映射到page table<br>用lazy allocation，应用程序怎么才能知道当前已经没有物理内存可用了？替换页？<br>如何判断一个地址是新分配的内存还是一个无效的地址？<br>如果使用的地址低于p-&gt;sz，那么这是一个用户空间的有效地址。如果大于p-&gt;sz，对应的就是一个程序错误</p>
+</li>
+<li><p>Zero Fill On Demand<br>BSS段未被初始化或者初始化为0的全局变量，多个page为全0，map到一个物理page，物理page为只读，当写BSS中的一个page时触发page fault，创建一个新的page，将其内容设置为0，并重新执行指令</p>
+</li>
+<li><p>Copy On Write Fork</p>
+</li>
+</ol>
 <br>
 <br>
 
@@ -557,7 +571,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-OS-Organization-and-System-Calls"><span class="nav-text">3 OS Organization and System Calls</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Page-Table"><span class="nav-text">Page Table</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Armv8-A-Address-Translation"><span class="nav-text">Armv8-A Address Translation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DDI0487H-a-a-profile-architecture-reference-manual-pdf"><span class="nav-text">DDI0487H_a_a-profile_architecture_reference_manual.pdf</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#D5-2-6"><span class="nav-text">D5.2.6</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARM64%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5"><span class="nav-text">ARM64体系结构编程实践</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC14%E7%AB%A0-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text">第14章 内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1"><span class="nav-text">1</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Calling-conventions-and-stack-frames-RISC-V"><span class="nav-text">Calling conventions and stack frames RISC-V</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%EF%BC%8CRISV-V%E8%B0%83%E7%94%A8%E8%A7%84%E8%8C%83"><span class="nav-text">编译，RISV-V调用规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RISC-V%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-text">RISC-V寄存器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stack"><span class="nav-text">Stack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Struct"><span class="nav-text">Struct</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Isolation-amp-system-call-entry-exit-Rebort"><span class="nav-text">Isolation &amp; system call entry&#x2F;exit(Rebort)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Trap"><span class="nav-text">Trap</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-OS-Organization-and-System-Calls"><span class="nav-text">3 OS Organization and System Calls</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Page-Table"><span class="nav-text">Page Table</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Armv8-A-Address-Translation"><span class="nav-text">Armv8-A Address Translation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DDI0487H-a-a-profile-architecture-reference-manual-pdf"><span class="nav-text">DDI0487H_a_a-profile_architecture_reference_manual.pdf</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#D5-2-6"><span class="nav-text">D5.2.6</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARM64%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5"><span class="nav-text">ARM64体系结构编程实践</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC14%E7%AB%A0-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text">第14章 内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1"><span class="nav-text">1</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Calling-conventions-and-stack-frames-RISC-V"><span class="nav-text">Calling conventions and stack frames RISC-V</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%EF%BC%8CRISV-V%E8%B0%83%E7%94%A8%E8%A7%84%E8%8C%83"><span class="nav-text">编译，RISV-V调用规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RISC-V%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-text">RISC-V寄存器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stack"><span class="nav-text">Stack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Struct"><span class="nav-text">Struct</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Isolation-amp-system-call-entry-exit-Rebort"><span class="nav-text">Isolation &amp; system call entry&#x2F;exit(Rebort)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Trap"><span class="nav-text">Trap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Page-faults-Frans"><span class="nav-text">Page faults(Frans)</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -624,12 +638,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">277k</span>
+    <span title="站点总字数">278k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:12</span>
+    <span title="站点阅读时长">4:13</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
