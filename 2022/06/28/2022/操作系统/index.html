@@ -257,7 +257,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>8.8k</span>
+              <span>9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -477,9 +477,10 @@
 </li>
 <li><p>Zero Fill On Demand<br>BSS段未被初始化或者初始化为0的全局变量，多个page为全0，map到一个物理page，物理page为只读，当写BSS中的一个page时触发page fault，创建一个新的page，将其内容设置为0，并重新执行指令</p>
 </li>
-<li><p>Copy On Write Fork</p>
+<li><p>Copy On Write Fork(COW fork)<br>直接共享父进程的物理内存page，设置子进程的PTE指向父进程对应的物理内存page，将父进程和子进程的PTE的标志位都设置成只读的，改内存的内容时，会得到page fault，拷贝相应的物理page，分配一个新的物理内存page，然后将page fault相关的物理内存page拷贝到新分配的物理内存page中，并将新分配的物理内存page映射到子进程</p>
 </li>
 </ol>
+<p>如何发现父进程写了这部分内存地址？是与子进程相同的方法吗？相同的处理方式</p>
 <br>
 <br>
 
