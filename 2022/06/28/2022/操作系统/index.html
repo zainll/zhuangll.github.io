@@ -258,7 +258,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>9.8k</span>
+              <span>10k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -500,7 +500,29 @@
 <li>SCAUSE寄存器 中断原因 ARM64 ESR</li>
 <li>STVEC寄存器 保存trap，page fault或者中断发生时，CPU运行的用户程序的程序计数器， ARM64 ELR_ELx<br>bottom/top和 ARM64中上半部分和下半部分反的？<br>polling轮询处理快速中断</li>
 </ul>
-<br>
+<p>ARM 64体系结构</p>
+<h3 id="11-异常处理"><a href="#11-异常处理" class="headerlink" title="11 异常处理"></a>11 异常处理</h3><ol>
+<li>异常种类：中断、种植、复位和系统调用</li>
+<li>异常等级EL0-EL3  EL0用户模式，EL1系统内核特权模式、EL2虚拟化管理hypervisor，EL3安全管理</li>
+<li>同步异常：指令异常和数据异常page fault；异常异常：中断，物理中断IRQ和FRQ，虚拟中断vIRQ和vFRQ</li>
+<li>异常处理：</li>
+</ol>
+<ul>
+<li>PSTATE寄存器保存到SPSR_ELx中，PSTATE寄存器D、A、I和F位置位1，关闭异常</li>
+<li>返回地址保存到ELR_ELx中</li>
+<li>ESR_ELx保存异常原因</li>
+<li>SP切换到目标异常等级SP_ELx</li>
+<li>切换到对应异常等级，跳转到异常向量表<br>异常返回：</li>
+<li>从ELR_ELx中恢复PC</li>
+<li>从SPSR_ELx中恢复PSTATE，开中断<br>异常返回地址：X30(LR)保存子函数返回地址，用ret返回；ELR_ELx保存异常返回地址，用eret返回</li>
+</ul>
+<ol start="5">
+<li>异常处理路由，当异常发生时应该在那个等级处理</li>
+<li>异常向量表 arch/arm64/kernel/entry.S kerenl_ventry<br>ARM64 v8中VBAR_ELx寄存器设置异常向量表的地址</li>
+<li>异常现场栈空间内容：PSTATE寄存器值、PC值、SP值、X0-X30寄存器值。此栈空间为发生异常时进程的内核态的栈空间</li>
+<li>同步异常  寄存器ESR</li>
+</ol>
+<h3 id="12-中断处理"><a href="#12-中断处理" class="headerlink" title="12 中断处理"></a>12 中断处理</h3><br>
 <br>
 
 <p>b站课程：<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV19k4y1C7kA?p=2&amp;spm_id_from=pageDriver&amp;vd_source=6768732acbd0f78ac59230d2faa59a86">https://www.bilibili.com/video/BV19k4y1C7kA?p=2&amp;spm_id_from=pageDriver&amp;vd_source=6768732acbd0f78ac59230d2faa59a86</a></p>
@@ -591,7 +613,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-OS-Organization-and-System-Calls"><span class="nav-text">3 OS Organization and System Calls</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Page-Table"><span class="nav-text">Page Table</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Armv8-A-Address-Translation"><span class="nav-text">Armv8-A Address Translation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DDI0487H-a-a-profile-architecture-reference-manual-pdf"><span class="nav-text">DDI0487H_a_a-profile_architecture_reference_manual.pdf</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#D5-2-6"><span class="nav-text">D5.2.6</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARM64%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5"><span class="nav-text">ARM64体系结构编程实践</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC14%E7%AB%A0-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text">第14章 内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1"><span class="nav-text">1</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Calling-conventions-and-stack-frames-RISC-V"><span class="nav-text">Calling conventions and stack frames RISC-V</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%EF%BC%8CRISV-V%E8%B0%83%E7%94%A8%E8%A7%84%E8%8C%83"><span class="nav-text">编译，RISV-V调用规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RISC-V%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-text">RISC-V寄存器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stack"><span class="nav-text">Stack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Struct"><span class="nav-text">Struct</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Isolation-amp-system-call-entry-exit-Rebort"><span class="nav-text">Isolation &amp; system call entry&#x2F;exit(Rebort)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Trap"><span class="nav-text">Trap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Page-faults-Frans"><span class="nav-text">Page faults(Frans)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interrupts"><span class="nav-text">Interrupts</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-OS-Organization-and-System-Calls"><span class="nav-text">3 OS Organization and System Calls</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Page-Table"><span class="nav-text">Page Table</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Armv8-A-Address-Translation"><span class="nav-text">Armv8-A Address Translation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DDI0487H-a-a-profile-architecture-reference-manual-pdf"><span class="nav-text">DDI0487H_a_a-profile_architecture_reference_manual.pdf</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#D5-2-6"><span class="nav-text">D5.2.6</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARM64%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5"><span class="nav-text">ARM64体系结构编程实践</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC14%E7%AB%A0-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text">第14章 内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1"><span class="nav-text">1</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Calling-conventions-and-stack-frames-RISC-V"><span class="nav-text">Calling conventions and stack frames RISC-V</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%EF%BC%8CRISV-V%E8%B0%83%E7%94%A8%E8%A7%84%E8%8C%83"><span class="nav-text">编译，RISV-V调用规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RISC-V%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-text">RISC-V寄存器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stack"><span class="nav-text">Stack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Struct"><span class="nav-text">Struct</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Isolation-amp-system-call-entry-exit-Rebort"><span class="nav-text">Isolation &amp; system call entry&#x2F;exit(Rebort)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Trap"><span class="nav-text">Trap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Page-faults-Frans"><span class="nav-text">Page faults(Frans)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interrupts"><span class="nav-text">Interrupts</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#11-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="nav-text">11 异常处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86"><span class="nav-text">12 中断处理</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
