@@ -526,7 +526,14 @@
 <li>ARM64 中断nIRQ和nFRQ，PSTATE中对应I和F两位</li>
 <li>中断处理过程</li>
 </ol>
-<p>1)把当前PC值保存到ELR_ELx中，把PSTATE保存到SPSR中，跳转到异常向量表<br>2)异常向量表中，CPU跳转到对应的汇编处理函数elx_irq<br>3)在汇编函数里保存中断现场<br>4)跳转到中断号所对应的中断处理函数<br>5)在中断处理程序中处理中断<br>6)返回elx_irq汇编函数，恢复中断上下文<br>7)调用ERET指令完成中断返回<br>8)CPU继续执行中断现场下一条指令<br>3. 中断现场</p>
+<p>1)把当前PC值保存到ELR_ELx中，把PSTATE保存到SPSR中，跳转到异常向量表<br>2)异常向量表中，CPU跳转到对应的汇编处理函数elx_irq<br>3)在汇编函数里保存中断现场<br>4)跳转到中断号所对应的中断处理函数<br>5)在中断处理程序中处理中断<br>6)返回elx_irq汇编函数，恢复中断上下文<br>7)调用ERET指令完成中断返回<br>8)CPU继续执行中断现场下一条指令<br>3. 中断现场数据结构pt_regs保存中断现场<br>中断发生时，把中断现场保存到当前进程的内核栈里：</p>
+<ul>
+<li>PSTATE保存到SPSR_ELx</li>
+<li>PC保存到ELR_ELx</li>
+<li>SP保存到栈顶</li>
+<li>regs保存LR的值</li>
+<li>regs[0]-regs[29]对应保存X0-X30寄存器值</li>
+</ul>
 <br>
 <br>
 
