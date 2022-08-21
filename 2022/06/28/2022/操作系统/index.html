@@ -258,7 +258,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>9.7k</span>
+              <span>9.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -490,15 +490,15 @@
 </ol>
 <h2 id="Interrupts"><a href="#Interrupts" class="headerlink" title="Interrupts"></a>Interrupts</h2><ol>
 <li>中断触发处理流程<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220821155615.png" alt="20220821155615"><br>RISC-V中断控制器PLIC？ARM64 GIC</li>
-<li>UART设备的驱动uart.c文件<br>bottom/top，bottom部分通常是Interrupt handler；top部分，是用户进程，或者内核的其他部分调用的接口<br>RISC-V通过memory mapped I/O完成设备地址映射，设备地址出现在物理地址的特定区间内<br>对设备load/store指令读写设备的控制寄存器</li>
+<li>UART设备的驱动uart.c文件<br>bottom/top，bottom部分通常是Interrupt handler；top部分，是用户进程，或者内核的其他部分调用的接口；top部分的代码会从队列中读写数据，而Interrupt handler（bottom部分）同时也会向队列中读写数据<br>RISC-V通过memory mapped I/O完成设备地址映射，设备地址出现在物理地址的特定区间内<br>对设备load/store指令读写设备的控制寄存器</li>
 <li>RISC-V与中断相关的寄存器：</li>
 </ol>
 <ul>
 <li>SIE（Supervisor Interrupt Enable）寄存器，bit E外部设备的中断、S软件中断、T定时器中断</li>
-<li>SSTATUS（Supervisor Status）寄存器 打开或者关闭中断 ARM64 SPSR_ELx  D、A、I、F设置为1</li>
+<li>SSTATUS（Supervisor Status）寄存器 打开或者关闭中断 ARM64 SPSR_ELx  D、A、I、F位置1</li>
 <li>SIP（Supervisor Interrupt Pending）寄存器  中断类型  ELx</li>
 <li>SCAUSE寄存器 中断原因 ARM64 ESR</li>
-<li>STVEC寄存器 保存trap，page fault或者中断发生时，CPU运行的用户程序的程序计数器， ARM64 ELR_ELx</li>
+<li>STVEC寄存器 保存trap，page fault或者中断发生时，CPU运行的用户程序的程序计数器， ARM64 ELR_ELx<br>bottom/top和 ARM64中上半部分和下半部分反的？<br>polling轮询处理快速中断</li>
 </ul>
 <br>
 <br>
