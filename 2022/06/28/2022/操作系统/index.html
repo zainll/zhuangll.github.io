@@ -258,14 +258,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>10k</span>
+              <span>11k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>9 分钟</span>
+              <span>10 分钟</span>
             </span>
 
         </div>
@@ -522,7 +522,12 @@
 <li>异常现场栈空间内容：PSTATE寄存器值、PC值、SP值、X0-X30寄存器值。此栈空间为发生异常时进程的内核态的栈空间</li>
 <li>同步异常  寄存器ESR</li>
 </ol>
-<h3 id="12-中断处理"><a href="#12-中断处理" class="headerlink" title="12 中断处理"></a>12 中断处理</h3><br>
+<h3 id="12-中断处理"><a href="#12-中断处理" class="headerlink" title="12 中断处理"></a>12 中断处理</h3><ol>
+<li>ARM64 中断nIRQ和nFRQ，PSTATE中对应I和F两位</li>
+<li>中断处理过程</li>
+</ol>
+<p>1)把当前PC值保存到ELR_ELx中，把PSTATE保存到SPSR中，跳转到异常向量表<br>2)异常向量表中，CPU跳转到对应的汇编处理函数elx_irq<br>3)在汇编函数里保存中断现场<br>4)跳转到中断号所对应的中断处理函数<br>5)在中断处理程序中处理中断<br>6)返回elx_irq汇编函数，恢复中断上下文<br>7)调用ERET指令完成中断返回<br>8)CPU继续执行中断现场下一条指令<br>3. 中断现场</p>
+<br>
 <br>
 
 <p>b站课程：<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV19k4y1C7kA?p=2&amp;spm_id_from=pageDriver&amp;vd_source=6768732acbd0f78ac59230d2faa59a86">https://www.bilibili.com/video/BV19k4y1C7kA?p=2&amp;spm_id_from=pageDriver&amp;vd_source=6768732acbd0f78ac59230d2faa59a86</a></p>
@@ -680,7 +685,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">279k</span>
+    <span title="站点总字数">280k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
