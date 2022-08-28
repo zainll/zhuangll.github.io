@@ -1,60 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>WSL</title>
-    <url>/2021/10/27/WSL/</url>
-    <content><![CDATA[<h2 id="安装ubuntu20-04"><a href="#安装ubuntu20-04" class="headerlink" title="安装ubuntu20.04"></a>安装ubuntu20.04</h2><p>安装到非系统盘目录，下载离线安装包，复制到想要安装的目录下，解压，以管理员身份运行ubuntu2004.exe</p>
-<h2 id="卸载wsl"><a href="#卸载wsl" class="headerlink" title="卸载wsl"></a>卸载wsl</h2><figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">wslconfig /l</span><br><span class="line"><span class="comment"># 从列表中选择要卸载的发行版（例如Ubuntu）并键入命令</span></span><br><span class="line">wslconfig /u Ubuntu</span><br></pre></td></tr></tbody></table></figure>
-<p>参考链接：<a href="https://blog.csdn.net/zhangpeterx/article/details/97616268">WSL系列操作：安装，卸载</a></p>
-<span id="more"></span>
-
-<h2 id="设置wsl"><a href="#设置wsl" class="headerlink" title="设置wsl"></a>设置wsl</h2><figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 更改默认root用户登录</span></span><br><span class="line">ubuntu1804.exe config --default-user root</span><br><span class="line"><span class="comment"># 更改默认登陆目录</span></span><br><span class="line"><span class="comment"># list 中 Ubuntu-20.04 条目中添加</span></span><br><span class="line"><span class="string">"startingDirectory"</span>: <span class="string">"//wsl$/Ubuntu-20.04"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 以管理员权限运行cmd</span></span><br><span class="line"><span class="comment"># 停止</span></span><br><span class="line">net stop LxssManager  </span><br><span class="line"><span class="comment"># 启动</span></span><br><span class="line">net start LxssManager </span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="ubuntu-换源"><a href="#ubuntu-换源" class="headerlink" title="ubuntu 换源"></a>ubuntu 换源</h2><figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 备份</span></span><br><span class="line">cp /etc/apt/sources.list /etc/apt/sources.list.20211013</span><br><span class="line">lsb_release -c</span><br><span class="line">lsb_release -a</span><br><span class="line"><span class="comment"># </span></span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<p>参考链接：<a href="https://blog.csdn.net/qq_33706673/article/details/106869016">ubuntu20.04更改国内镜像源</a></p>
-<h2 id="ubuntu-显示"><a href="#ubuntu-显示" class="headerlink" title="ubuntu 显示"></a>ubuntu 显示</h2><p><a href="https://ubuntuqa.com/article/8837.html">https://ubuntuqa.com/article/8837.html</a></p>
-<p><a href="https://www.csdn.net/tags/MtTaAgzsNjg5MTk4LWJsb2cO0O0O.html">https://www.csdn.net/tags/MtTaAgzsNjg5MTk4LWJsb2cO0O0O.html</a></p>
-<h2 id="vscode-使用wsl"><a href="#vscode-使用wsl" class="headerlink" title="vscode 使用wsl"></a>vscode 使用wsl</h2><h2 id="Read-The-Docs-环境搭建"><a href="#Read-The-Docs-环境搭建" class="headerlink" title="Read The Docs 环境搭建"></a>Read The Docs 环境搭建</h2><figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line">sudo apt-get install python3-pip</span><br><span class="line"></span><br><span class="line">pip install sphinx sphinx-autobuild sphinx_rtd_theme</span><br><span class="line">pip install recommonmark</span><br><span class="line">pip install sphinx-markdown-tables</span><br><span class="line">pip install Pyinstaller -i http://pypi.douban.com/simple --trusted-host pypi.douban.com</span><br><span class="line">（其中的Pyinstaller是你需要下载的库或包名，根据自己需求自行更改即可）</span><br><span class="line"></span><br><span class="line">extensions = [</span><br><span class="line">    <span class="string">'recommonmark'</span>,</span><br><span class="line">    <span class="string">'sphinx_markdown_tables'</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">python3 -m pip freeze &gt; requirements.txt</span><br></pre></td></tr></tbody></table></figure>
-
-<p>参考链接：<br><a href="https://zhuanlan.zhihu.com/p/112919704">VsCode +Read The Docs 环境搭建</a><br><br></p>
-<p><a href="https://zhuanlan.zhihu.com/p/264647009">Sphinx + Read the Docs 从懵逼到入门</a><br><br></p>
-<p><a href="https://zhuanlan.zhihu.com/p/388640347">ReadTheDocs搭建第一本电子书</a></p>
-<p><a href="https://www.jianshu.com/p/8aae1c1453ae">https://www.jianshu.com/p/8aae1c1453ae</a></p>
-<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><p>git push -u origin main</p>
-<p><a href="https://zhuanlan.zhihu.com/p/252505037">玩转WSL(6)之Git配置</a></p>
-<h2 id="PowerShell"><a href="#PowerShell" class="headerlink" title="PowerShell"></a>PowerShell</h2><p>winget search Microsoft.PowerShell<br>winget install Microsoft.PowerShell</p>
-<ul>
-<li><a href="https://blog.csdn.net/The_Time_Runner/article/details/106038222">Windows Powershell和Windows Terminal的区别</a><br></li>
-</ul>
-<p><a href="https://docs.microsoft.com/zh-cn/windows/terminal/get-started">安装和设置 Windows 终端</a></p>
-<h2 id="windows-包管理工具"><a href="#windows-包管理工具" class="headerlink" title="windows 包管理工具"></a>windows 包管理工具</h2><ul>
-<li><p>winget 官方推出</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 WinGet 安装一遍</span></span><br><span class="line">winget install postman</span><br><span class="line">winget search postman</span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载，再用 Scoop 安装一遍</span></span><br><span class="line">scoop install postman</span><br></pre></td></tr></tbody></table></figure></li>
-<li><p>choro</p>
-</li>
-<li><p>vcpkg<br><a href="https://vcpkg.io/en/getting-started.html">Get started with vcpkg</a></p>
-</li>
-</ul>
-<br>
-
-<ul>
-<li>cget<br><a href="https://cget.readthedocs.io/en/latest/#">https://cget.readthedocs.io/en/latest/#</a></li>
-</ul>
-<p><a href="https://blog.csdn.net/cjmqas/article/details/79282847">开源库集成器Vcpkg全教程</a></p>
-<p> Scoop </p>
-<p> python3 depix.py -p /mnt/e/code/Depix/images/20220407225617.jpg </p>
-<p> python3 depix.py -p images/20220407225617.jpg -s images/20220407225617_res.jpg</p>
-<h2 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h2><p> <a href="https://blog.csdn.net/qq_44314954/article/details/122951033">https://blog.csdn.net/qq_44314954/article/details/122951033</a></p>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-      </categories>
-      <tags>
-        <tag>实用教程</tag>
-        <tag>Another Tag</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Software&amp;Tool</title>
     <url>/2021/10/26/Software&amp;Tool/</url>
     <content><![CDATA[<h2 id="编译工具"><a href="#编译工具" class="headerlink" title="编译工具"></a>编译工具</h2><ul>
@@ -107,6 +53,60 @@
 <p><a href="http://hardysimpson.github.io/zlog/UsersGuide-CN.html">http://hardysimpson.github.io/zlog/UsersGuide-CN.html</a></p>
 <h2 id="gdb"><a href="#gdb" class="headerlink" title="gdb"></a>gdb</h2><p><a href="https://leetcode-cn.com/circle/article/7mxorv">https://leetcode-cn.com/circle/article/7mxorv</a></p>
 <h2 id="hugo"><a href="#hugo" class="headerlink" title="hugo"></a>hugo</h2><p><a href="https://blog.csdn.net/zhangbao_csdn/article/details/109536333">https://blog.csdn.net/zhangbao_csdn/article/details/109536333</a></p>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+      </categories>
+      <tags>
+        <tag>实用教程</tag>
+        <tag>Another Tag</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WSL</title>
+    <url>/2021/10/27/WSL/</url>
+    <content><![CDATA[<h2 id="安装ubuntu20-04"><a href="#安装ubuntu20-04" class="headerlink" title="安装ubuntu20.04"></a>安装ubuntu20.04</h2><p>安装到非系统盘目录，下载离线安装包，复制到想要安装的目录下，解压，以管理员身份运行ubuntu2004.exe</p>
+<h2 id="卸载wsl"><a href="#卸载wsl" class="headerlink" title="卸载wsl"></a>卸载wsl</h2><figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">wslconfig /l</span><br><span class="line"><span class="comment"># 从列表中选择要卸载的发行版（例如Ubuntu）并键入命令</span></span><br><span class="line">wslconfig /u Ubuntu</span><br></pre></td></tr></tbody></table></figure>
+<p>参考链接：<a href="https://blog.csdn.net/zhangpeterx/article/details/97616268">WSL系列操作：安装，卸载</a></p>
+<span id="more"></span>
+
+<h2 id="设置wsl"><a href="#设置wsl" class="headerlink" title="设置wsl"></a>设置wsl</h2><figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 更改默认root用户登录</span></span><br><span class="line">ubuntu1804.exe config --default-user root</span><br><span class="line"><span class="comment"># 更改默认登陆目录</span></span><br><span class="line"><span class="comment"># list 中 Ubuntu-20.04 条目中添加</span></span><br><span class="line"><span class="string">"startingDirectory"</span>: <span class="string">"//wsl$/Ubuntu-20.04"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 以管理员权限运行cmd</span></span><br><span class="line"><span class="comment"># 停止</span></span><br><span class="line">net stop LxssManager  </span><br><span class="line"><span class="comment"># 启动</span></span><br><span class="line">net start LxssManager </span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="ubuntu-换源"><a href="#ubuntu-换源" class="headerlink" title="ubuntu 换源"></a>ubuntu 换源</h2><figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 备份</span></span><br><span class="line">cp /etc/apt/sources.list /etc/apt/sources.list.20211013</span><br><span class="line">lsb_release -c</span><br><span class="line">lsb_release -a</span><br><span class="line"><span class="comment"># </span></span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<p>参考链接：<a href="https://blog.csdn.net/qq_33706673/article/details/106869016">ubuntu20.04更改国内镜像源</a></p>
+<h2 id="ubuntu-显示"><a href="#ubuntu-显示" class="headerlink" title="ubuntu 显示"></a>ubuntu 显示</h2><p><a href="https://ubuntuqa.com/article/8837.html">https://ubuntuqa.com/article/8837.html</a></p>
+<p><a href="https://www.csdn.net/tags/MtTaAgzsNjg5MTk4LWJsb2cO0O0O.html">https://www.csdn.net/tags/MtTaAgzsNjg5MTk4LWJsb2cO0O0O.html</a></p>
+<h2 id="vscode-使用wsl"><a href="#vscode-使用wsl" class="headerlink" title="vscode 使用wsl"></a>vscode 使用wsl</h2><h2 id="Read-The-Docs-环境搭建"><a href="#Read-The-Docs-环境搭建" class="headerlink" title="Read The Docs 环境搭建"></a>Read The Docs 环境搭建</h2><figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line">sudo apt-get install python3-pip</span><br><span class="line"></span><br><span class="line">pip install sphinx sphinx-autobuild sphinx_rtd_theme</span><br><span class="line">pip install recommonmark</span><br><span class="line">pip install sphinx-markdown-tables</span><br><span class="line">pip install Pyinstaller -i http://pypi.douban.com/simple --trusted-host pypi.douban.com</span><br><span class="line">（其中的Pyinstaller是你需要下载的库或包名，根据自己需求自行更改即可）</span><br><span class="line"></span><br><span class="line">extensions = [</span><br><span class="line">    <span class="string">'recommonmark'</span>,</span><br><span class="line">    <span class="string">'sphinx_markdown_tables'</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">python3 -m pip freeze &gt; requirements.txt</span><br></pre></td></tr></tbody></table></figure>
+
+<p>参考链接：<br><a href="https://zhuanlan.zhihu.com/p/112919704">VsCode +Read The Docs 环境搭建</a><br><br></p>
+<p><a href="https://zhuanlan.zhihu.com/p/264647009">Sphinx + Read the Docs 从懵逼到入门</a><br><br></p>
+<p><a href="https://zhuanlan.zhihu.com/p/388640347">ReadTheDocs搭建第一本电子书</a></p>
+<p><a href="https://www.jianshu.com/p/8aae1c1453ae">https://www.jianshu.com/p/8aae1c1453ae</a></p>
+<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><p>git push -u origin main</p>
+<p><a href="https://zhuanlan.zhihu.com/p/252505037">玩转WSL(6)之Git配置</a></p>
+<h2 id="PowerShell"><a href="#PowerShell" class="headerlink" title="PowerShell"></a>PowerShell</h2><p>winget search Microsoft.PowerShell<br>winget install Microsoft.PowerShell</p>
+<ul>
+<li><a href="https://blog.csdn.net/The_Time_Runner/article/details/106038222">Windows Powershell和Windows Terminal的区别</a><br></li>
+</ul>
+<p><a href="https://docs.microsoft.com/zh-cn/windows/terminal/get-started">安装和设置 Windows 终端</a></p>
+<h2 id="windows-包管理工具"><a href="#windows-包管理工具" class="headerlink" title="windows 包管理工具"></a>windows 包管理工具</h2><ul>
+<li><p>winget 官方推出</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 WinGet 安装一遍</span></span><br><span class="line">winget install postman</span><br><span class="line">winget search postman</span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载，再用 Scoop 安装一遍</span></span><br><span class="line">scoop install postman</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>choro</p>
+</li>
+<li><p>vcpkg<br><a href="https://vcpkg.io/en/getting-started.html">Get started with vcpkg</a></p>
+</li>
+</ul>
+<br>
+
+<ul>
+<li>cget<br><a href="https://cget.readthedocs.io/en/latest/#">https://cget.readthedocs.io/en/latest/#</a></li>
+</ul>
+<p><a href="https://blog.csdn.net/cjmqas/article/details/79282847">开源库集成器Vcpkg全教程</a></p>
+<p> Scoop </p>
+<p> python3 depix.py -p /mnt/e/code/Depix/images/20220407225617.jpg </p>
+<p> python3 depix.py -p images/20220407225617.jpg -s images/20220407225617_res.jpg</p>
+<h2 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h2><p> <a href="https://blog.csdn.net/qq_44314954/article/details/122951033">https://blog.csdn.net/qq_44314954/article/details/122951033</a></p>
 <script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
       <categories>
         <category>tool</category>
@@ -236,28 +236,6 @@
       <tags>
         <tag>实用教程</tag>
         <tag>Another Tag</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Dynamorio</title>
-    <url>/2022/05/20/2022/Dynamorio/</url>
-    <content><![CDATA[<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><ul>
-<li>注意wsl中需要root用户编译<br><a href="https://dynamorio.org/page_building.html">https://dynamorio.org/page_building.html</a><figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">cmake \</span><br><span class="line">-DCMAKE_TOOLCHAIN_FILE=/mnt/e/code/dynamorio/make/toolchain-android=arm64.cmake \</span><br><span class="line">-DANDROID_TOOLCHAIN=/android_toolchain_using \</span><br><span class="line">-DDR_COPY_TO_DEVICE=OFF \</span><br><span class="line">-DCMAKE_BUILD_TYPE=Debug \</span><br><span class="line">-DBUILD_TESTS=OFF \</span><br><span class="line">-DBUILD_SAMPLES=ON \</span><br><span class="line">-DBUILD_CLIENTS=ON \</span><br><span class="line">../dynamorio</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cmake \</span><br><span class="line">-DDR_COPY_TO_DEVICE=OFF \</span><br><span class="line">-DCMAKE_BUILD_TYPE=Debug \</span><br><span class="line">-DBUILD_TESTS=OFF \</span><br><span class="line">-DBUILD_SAMPLES=ON \</span><br><span class="line">-DBUILD_CLIENTS=ON \</span><br><span class="line">../dynamorio</span><br></pre></td></tr></tbody></table></figure></li>
-</ul>
-<span id="more"></span>
-
-
-<ul>
-<li>学习链接<br>DynamoRIO进阶指南<br><a href="https://blog.csdn.net/oShuangYue12/article/details/109780166">https://blog.csdn.net/oShuangYue12/article/details/109780166</a></li>
-</ul>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2022</category>
-      </categories>
-      <tags>
-        <tag>Another Tag</tag>
-        <tag>Computer Science</tag>
       </tags>
   </entry>
   <entry>
@@ -408,19 +386,25 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux</title>
-    <url>/2022/06/02/2022/linux/</url>
-    <content><![CDATA[<p><a href="https://www.zhihu.com/question/47039391/answer/2287806626">https://www.zhihu.com/question/47039391/answer/2287806626</a></p>
-<h2 id="ELF"><a href="#ELF" class="headerlink" title="ELF"></a>ELF</h2><p>开源库<br>lief</p>
-<p>参考链接：<br><a href="https://blog.csdn.net/GrayOnDream/article/details/124564129">https://blog.csdn.net/GrayOnDream/article/details/124564129</a></p>
+    <title>Dynamorio</title>
+    <url>/2022/05/20/2022/Dynamorio/</url>
+    <content><![CDATA[<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><ul>
+<li>注意wsl中需要root用户编译<br><a href="https://dynamorio.org/page_building.html">https://dynamorio.org/page_building.html</a><figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">cmake \</span><br><span class="line">-DCMAKE_TOOLCHAIN_FILE=/mnt/e/code/dynamorio/make/toolchain-android=arm64.cmake \</span><br><span class="line">-DANDROID_TOOLCHAIN=/android_toolchain_using \</span><br><span class="line">-DDR_COPY_TO_DEVICE=OFF \</span><br><span class="line">-DCMAKE_BUILD_TYPE=Debug \</span><br><span class="line">-DBUILD_TESTS=OFF \</span><br><span class="line">-DBUILD_SAMPLES=ON \</span><br><span class="line">-DBUILD_CLIENTS=ON \</span><br><span class="line">../dynamorio</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cmake \</span><br><span class="line">-DDR_COPY_TO_DEVICE=OFF \</span><br><span class="line">-DCMAKE_BUILD_TYPE=Debug \</span><br><span class="line">-DBUILD_TESTS=OFF \</span><br><span class="line">-DBUILD_SAMPLES=ON \</span><br><span class="line">-DBUILD_CLIENTS=ON \</span><br><span class="line">../dynamorio</span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
+<span id="more"></span>
+
+
+<ul>
+<li>学习链接<br>DynamoRIO进阶指南<br><a href="https://blog.csdn.net/oShuangYue12/article/details/109780166">https://blog.csdn.net/oShuangYue12/article/details/109780166</a></li>
+</ul>
 <script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
       <categories>
-        <category>study</category>
+        <category>tool</category>
         <category>2022</category>
       </categories>
       <tags>
         <tag>Another Tag</tag>
-        <tag>English</tag>
+        <tag>Computer Science</tag>
       </tags>
   </entry>
   <entry>
@@ -1024,317 +1008,19 @@
       </tags>
   </entry>
   <entry>
-    <title>操作系统</title>
-    <url>/2022/06/28/2022/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p>[toc]</p>
-<p>操作系统</p>
-<span id="more"></span>
-
-<h2 id="3-OS-Organization-and-System-Calls"><a href="#3-OS-Organization-and-System-Calls" class="headerlink" title="3 OS Organization and System Calls"></a>3 OS Organization and System Calls</h2><p>1.操作系统有两个基本功能：</p>
-<ul>
-<li>防止硬件被失控的应用程序滥用  隔离</li>
-<li>向应用程序提供简单一致的机制来控制复杂而又通常大不相同的低级硬件设备</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220710174724.png" alt="20220710174724"></p>
-<p> 隔离：隔离硬件;内存空间隔离(虚拟内存)-&gt;进程管理;防御安全<br> 隔离实现分时复用硬件资源</p>
-<p> 操作系统通过几个基本的抽象概念：进程、虚拟内存和文件<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220710175044.png" alt="20220710175044"></p>
-<p>进程：操作系统对一个正在运行的程序的一种抽象，操作系统实现进程交错执行的机制称为上下文切换</p>
-<p>  操作系统保持跟踪进程运行所需的所有状态信息。这种状态，也就是上下文，包括 PC 和寄存器文件的当前值，以及主存的内容</p>
-<p>  系统调用会将控制权传递给操作系统</p>
-<p>  从一个进程到另一个进程的转换是由操作系统内核（kernel )管理的。内核是操作系统代码常驻主存的部分</p>
-<p>  读写文件，执行一条系统调用（system call)指令，将控制权传递给内核。然后内核执行被请求的操作并返回应用程序</p>
-<p>  内核不是一个独立的进程。是系统管理全部进程所用代码和数据结构的集合</p>
-<p> kernel和User mode。这两种模式用来隔离操作系统内核和用户应用程序，用户态和内核态通过标志位区分。<br> 用户态普通指令，内核态执行特权指令</p>
-<p>RISC-V还有第三种模式称为machine mode，三级权限(user/kernel/machine)</p>
-<p> 操作系统和应用程序之前的接口被称为系统调用接口(System call interface)</p>
-<p>用户态与内核态切换<br>RISC-V中ECALL，ARM64中SVC，HVC？</p>
-<p>宏内核与微内核<br>linux，unix宏内核，是微内核<br>怎么区分宏内核和微内核？将大部分的操作系统运行在内核之外，大部分硬件驱动不在内核是微内核。微内核跳转变多</p>
-<p>XV6编译<br>XV6代码三部分：kernel、user和mkfs<br>QEMU<br><a href="https://blog.csdn.net/fangye945a/article/details/121962409">https://blog.csdn.net/fangye945a/article/details/121962409</a></p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">sudo apt-get install ninja-build</span><br></pre></td></tr></tbody></table></figure>
-<p><a href="https://blog.csdn.net/Leo_h1104/article/details/115580753">https://blog.csdn.net/Leo_h1104/article/details/115580753</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/351865040">https://zhuanlan.zhihu.com/p/351865040</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/466423677">https://zhuanlan.zhihu.com/p/466423677</a></p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># gdb</span></span><br><span class="line">make qemu</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">set</span> auto-load safe-path / &gt; ~/.gdbinit</span><br><span class="line">gdb-multiarch</span><br><span class="line"></span><br><span class="line">layout split</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-
-
-<h2 id="Page-Table"><a href="#Page-Table" class="headerlink" title="Page Table"></a>Page Table</h2><p> 虚拟内存-页表</p>
-<ol>
-<li><p>映射：虚拟地址&lt;–&gt;物理地址  </p>
-</li>
-<li><p>地址空间(Address Spaces)<br>虚拟地址空间-&gt;内存隔离</p>
-</li>
-<li><p>物理内存如何比虚拟内存大？实际程序运行时并不全部加载指令和数据，而是用时加载或者局部加载，所以并不需要加载全部虚拟地址空间，也不需要使用全部物理地址。但是虚拟地址需要有对应的物理地址，是一一对应的吗？如果虚拟地址更大，对应的物理地址数据会刷回到硬盘吗？即内存是硬盘的缓存</p>
-</li>
-<li><p>kalloc保存了空余page的列表，列表为空或者耗尽，kalloc会返回一个空指针，内核会妥善处理并将结果返回给用户应用程序。并告诉用户应用程序，要么是对这个应用程序没有额外的内存了，要么是整个机器都没有内存</p>
-</li>
-<li><p>实现地址空间-&gt;页表<br>页表是在硬件中通过处理器和内存管理单元(Memory Management Unit)实现</p>
-</li>
-<li><p>任何带有地址的指令，其中的地址应该认为是虚拟内存地址而不是物理地址</p>
-</li>
-<li><p>CPU角度，一旦MMU打开，它执行的每条指令中的地址都是虚拟内存地址</p>
-</li>
-<li><p>MMU会有一个表单，表单中，一边是虚拟内存地址，另一边是物理内存地址。RISC-V上一个叫做SATP的寄存器保存表单地址</p>
-</li>
-<li><p>MMU并不会保存page table，它只会从内存中读取page table，然后完成翻译</p>
-</li>
-<li><p>操作系统将CPU从一个应用程序切换到另一个应用程序时，同时也需要切换SATP寄存器中的内容，从而指向新的进程保存在物理内存中的地址对应表单。进程对应的SATP值是由内核保存，只有运行在kernel mode的代码可以更新这个寄存器。SATP呢？它存的是物理地址还是虚拟地址？物理地址</p>
-</li>
-<li><p>RISC-V中，一个page是4KB，也就是4096Bytes，为每个page创建一条表单条目</p>
-</li>
-<li><p>对于虚拟内存地址，划分为两个部分，index和offset，index用来查找page，offset对应的是一个page中的哪个字节。<br>MMU在做地址翻译，通过读取虚拟内存地址中的index可以知道物理内存中的page号，这个page号对应了物理内存中的4096个字节。之后虚拟内存地址中的offset指向了page中的4096个字节中的某一个，假设offset是12，那么page中的第12个字节被使用了。将offset加上page的起始地址，就可以得到物理内存地址</p>
-</li>
-<li><p>RISC-V的寄存器是64bit，虚拟内存地址的数量现在只有2^39个，大概是512GB，39bit中，有27bit被用来当做index，12bit被用来当做offset。offset必须是12bit，因为对应了一个page的4096个字节。</p>
-</li>
-<li><p>RISC-V中，物理内存地址是56bit，ARM v8也是？44bit是物理page号(PPN，Physical Page Number)，剩下12bit是offset完全继承自虚拟内存地址</p>
-</li>
-<li><p>增大页表？16k 64k？</p>
-</li>
-<li><p>多级页表，虚拟内存地址中的27bit的index，实际上是由3个9bit的数字组成(L2，L1，L0)。前9个bit被用来索引最高级的page directory</p>
-</li>
-<li><p>一个directory是4096Bytes，就跟page的大小是一样的。Directory中的一个条目被称为PTE（Page Table Entry）是64bits，就像寄存器的大小一样，也就是8Bytes。所以一个Directory page有512个条目。</p>
-</li>
-<li><p>SATP寄存器会指向最高一级的page directory的物理内存地址，虚拟内存中index的高9bit用来索引最高一级的page directory，这样我们就能得到一个PPN，也就是物理page号。这个PPN指向了中间级的page directory<br>最高级的page directory中的PPN，包含了下一级page directory的物理内存地址，依次类推。在最低级page directory，我们还是可以得到44bit的PPN，这里包含了我们实际上想要翻译的物理page地址，然后再加上虚拟内存地址的12bit offset，就得到了56bit物理内存地址</p>
-</li>
-<li><p>PTE中的Flag，因为它也很重要。每个PTE的低10bit是一堆标志位</p>
-</li>
-</ol>
-<ul>
-<li>第一个标志位是Valid。如果Valid bit位为1，那么表明这是一条合法的PTE</li>
-<li>下两个标志位分别是Readable和Writable。表明你是否可以读/写这个page</li>
-<li>Executable表明你可以从这个page执行指令</li>
-<li>user表明这个page可以被运行在用户空间的进程访问。</li>
-</ul>
-<ol start="21">
-<li>页表缓存(Translation Lookaside Buffer)<br>TLB会保存虚拟地址到物理地址的映射关系。<br>Q切换了page table，操作系统需要告诉处理器当前正在切换page table，处理器会清空TLB。在RISC-V中，清空TLB的指令是sfence_vma。<br>虚拟地址索引的cache位于MMU之前，由物理地址索引的cache位于MMU之后<br>在XV6中，内核有它自己的page table，用户进程也有自己的page table，用户进程指向sys_info结构体的指针存在于用户空间的page table，但是内核需要将这个指针翻译成一个自己可以读写的物理地址。copy_in，copy_out，你可以发现内核会通过用户进程的page table，将用户的虚拟地址翻译得到物理地址，这样内核可以读写相应的物理内存地址<br>page table提供了一层抽象(level of indirection)。抽象就是指从虚拟地址到物理地址的映射</li>
-<li>当操作系统启动时，会从地址0x80000000开始运行，这个地址其实也是由硬件设计者决定的。地址0是保留的，地址0x10090000对应以太网，地址0x80000000对应DDR内存，处理器外的易失存储（Off-Chip Volatile Memory），也就是主板上的DRAM芯片</li>
-<li>地址0x1000是boot ROM的物理地址，当你对主板上电，主板做的第一件事情就是运行存储在boot ROM中的代码，当boot完成之后，会跳转到地址0x80000000，操作系统需要确保那个地址有一些数据能够接着启动操作系统。</li>
-<li>I/O设备</li>
-</ol>
-<ul>
-<li>PLIC是中断控制器(Platform-Level Interrupt Controller)</li>
-<li>CLINT(Core Local Interruptor)也是中断的一部分。所以多个设备都能产生中断，需要中断控制器来将这些中断路由到合适的处理函数</li>
-<li>UART0（Universal Asynchronous Receiver/Transmitter）负责与Console和显示器交互</li>
-<li>VIRTIO disk，与磁盘进行交互。</li>
-</ul>
-<ol start="25">
-<li>同一个物理地址映射两个虚拟地址，你可以不将一个虚拟地址映射到物理地址。可以是一对一的映射，一对多映射，多对一映射</li>
-<li>用户进程的虚拟地址空间分布<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220717173502.png" alt="20220717173502"></li>
-</ol>
-<p>Kvminit函数<br>kvminithart函数<br>walk函数</p>
-<h3 id="Armv8-A-Address-Translation"><a href="#Armv8-A-Address-Translation" class="headerlink" title="Armv8-A Address Translation"></a>Armv8-A Address Translation</h3><ol>
-<li>支持4K、16K和64K页表。TCR_EL1寄存存储支持页表大小。</li>
-<li>AArch64 4级页表，4K页表，48bit地址，9bit索引，512个表项，12bit的offset。<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220724171523.png" alt="20220724171523"></li>
-</ol>
-<p>16K页表，11bit索引，2048表项，14bit的offset<br>64K页表，3级索引，<br>3. MMU 使用转换表和转换寄存器来控制哪些内存位置是可缓存。缓存策略MAIR_ELn寄存器标识，TLB缓存是否有效。</p>
-<h3 id="DDI0487H-a-a-profile-architecture-reference-manual-pdf"><a href="#DDI0487H-a-a-profile-architecture-reference-manual-pdf" class="headerlink" title="DDI0487H_a_a-profile_architecture_reference_manual.pdf"></a>DDI0487H_a_a-profile_architecture_reference_manual.pdf</h3><h4 id="D5-2-6"><a href="#D5-2-6" class="headerlink" title="D5.2.6"></a>D5.2.6</h4><p>单一阶段转换：虚拟地址-&gt;物理地址<br>两阶段转换：虚拟地址-&gt;中间物理地址-&gt;物理地址</p>
-<p>阶段1 </p>
-<p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220724173718.png" alt="20220724173718"></p>
-<h3 id="ARM64体系结构编程实践"><a href="#ARM64体系结构编程实践" class="headerlink" title="ARM64体系结构编程实践"></a>ARM64体系结构编程实践</h3><h4 id="第14章-内存管理"><a href="#第14章-内存管理" class="headerlink" title="第14章 内存管理"></a>第14章 内存管理</h4><h5 id="1"><a href="#1" class="headerlink" title="1"></a>1</h5><ol>
-<li>进程地址空间使用内存3部分：进程本身、栈空间、堆空间</li>
-<li>地址转换(address translation):进程请求虚拟地址(VA)转换为物理地址(PA)，通过MMU实现。</li>
-<li>操作系统3元素：进程地址空间、进程的CPU虚拟化和文件对存储空间的抽象。</li>
-<li>分页机制引入虚拟存储，核心思想让程序不使用的内存交换到磁盘中，程序正在使用内存保留在物理内存。</li>
-<li>4K页帧虚拟地址组成VA[31:0]，偏移量offset VA[11:0]; 虚拟页帧号(VPN)。物理地址组成，偏移量offset PA[11:0];物理页帧号(PFN)。MMU把虚拟页帧号转换成物理页帧号。</li>
-<li>页表：存储VPN到PFN的映射关系，表项称为页表项PTE。多级页表用来减少页表占用内存空间，ARM64v8支持4级页表。</li>
-<li>TLB未命中从，处理器MMU中页表查询</li>
-</ol>
-<ul>
-<li>处理器根据虚拟地址判断使用TTBR0还是TTBR1，虚拟地址第63位为1时，选择TTBR1，为0时，选择TTBR0。TTBR中存储一级页表(L0)基地址。</li>
-<li>处理器以虚拟地址一级索引在一级页表中查找表项。</li>
-</ul>
-<ol start="8">
-<li>ARM64 处理器的MMU包括TLB和页表遍历单元。TLB是高速缓存，用于缓存页表转换的结果。</li>
-<li>进程地址空间分为：内核空间(kernel space)和用户空间(user space)</li>
-<li>SMP多核处理器系统中，每个处理器内置MMU和TLB，如何保证CPU访问正前有效的TLB。</li>
-<li>AArach64体系结构页表特性：</li>
-</ol>
-<ul>
-<li>最多支持4级页表</li>
-<li>输入地址最多有效位宽为48bit</li>
-<li>输出地址最大有效位款为48bit</li>
-<li>页帧大小支持4KB、16KB和64KB</li>
-</ul>
-<ol start="12">
-<li><p>AArach64采用两套页表设计，虚拟地址空间分为三部分：下面是用户空间，中间是非规范区，上面是内核空间。当CPU访问用户空间是，MMU选择TTBR0指向的页表，CPU访问内核空间时，MMU选择TTBR1寄存器指向的页表。</p>
-</li>
-<li><p>页表属性</p>
-</li>
-</ol>
-<ul>
-<li>共享性与缓存性：共享性决定高速缓存可被哪些观察者观察到; 缓存性值页面是否使能高速缓存以及高速缓存的范围。</li>
-<li>访问权限：AP字段控制CPU对页面的访问，可读可写属性。</li>
-<li>执行权限：PXN字段以及XN/UXN字段设置CPU是否可执行页面</li>
-<li>访问标志位：访问字段AF用来标识页面是否被访问过。</li>
-<li>全局和进程特有TLB：nG字段，0全局，1进程特有</li>
-</ul>
-<ol start="14">
-<li><p>硬件管理访问位和脏位(TTHM特性)，页表转换控制器TCR，HA字段自动设置AF标志。<br>脏位TCR_EL1的HD字段，</p>
-</li>
-<li><p>转换控制寄存器(TCR)、系统控制寄存器(SCTLR)和转换页表基址寄存器(TTBR)。<br>TTBR中ASID字段用来存储硬件ASID，AADDR字段存储页表基地址。</p>
-</li>
-<li><p>内存属性：Armv8两种内存属性：普通类型内存和设备内存。普通内存可优化。设备内存不可预测访问。</p>
-</li>
-</ol>
-<h2 id="Calling-conventions-and-stack-frames-RISC-V"><a href="#Calling-conventions-and-stack-frames-RISC-V" class="headerlink" title="Calling conventions and stack frames RISC-V"></a>Calling conventions and stack frames RISC-V</h2><ul>
-<li>syscanll  lab</li>
-<li>C -&gt; Asm / Processor</li>
-<li>RISC-V &amp; x86 &amp; Arm64</li>
-<li>Registers</li>
-<li>stack + calling conventions</li>
-<li>struct layout in memory</li>
-</ul>
-<h3 id="编译，RISV-V调用规范"><a href="#编译，RISV-V调用规范" class="headerlink" title="编译，RISV-V调用规范"></a>编译，RISV-V调用规范</h3><p> ISA就是处理器能够理解的指令集。每一条指令都有一个对应的二进制编码或者一个Opcode。<br> 预处理-编译-汇编-链接<br> RISC精简指令集与CISC复杂指令集，RISC统一的加载与存储指令。<br> RISC-V指令包含Base Integer Instruction Set和Standard Extension Instruction Set<br> 汇编代码：global全局变量函数，text代码段<br>进程地址空间<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220731191036.png" alt="20220731191036"><br> gdb layout split会同时展现C代码和汇编，而layout source只会展示C代码。</p>
-<h3 id="RISC-V寄存器"><a href="#RISC-V寄存器" class="headerlink" title="RISC-V寄存器"></a>RISC-V寄存器</h3><p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220731191509.png" alt="20220731191509"></p>
-<ul>
-<li>Caller Saved寄存器在函数调用的时候不会保存</li>
-<li>Callee Saved寄存器在函数调用的时候会保存<br> 汇编代码并不是在内存上执行，而是在寄存器上执行，load到寄存器，store到其他地方。除了Compressed Instruction，寄存器都是通过它们的ABI名字来引用。<br> a0到a7寄存器是用来作为函数的参数。如果一个函数有超过8个参数，需要用内存</li>
-</ul>
-<h3 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h3><p>Stack Frame<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220731192550.png" alt="20220731192550"><br>函数通过移动Stack Pointer来完成Stack Frame的空间分配。</p>
-<ul>
-<li>Return address总是会出现在Stack Frame的第一位</li>
-<li>指向前一个Stack Frame的指针也会出现在栈中的固定位置<br>第一个是SP（Stack Pointer），指向Stack的底部并代表了当前Stack Frame的位置。第二个是FP（Frame Pointer），它指向当前Stack Frame的顶部。因为Return address和指向前一个Stack Frame的的指针都在当前Stack Frame的固定位置，所以可以通过当前的FP寄存器寻址到这两个数据。?  前一个Frame Pointer存储到FP寄存器<br> leaf函数是指不调用别的函数的函数,不用担心保存自己的Return address或者任何其他的Caller Saved寄存器<br> 删除掉Prologue和Epllogue? sum_then_double将不知道它应该返回的Return address。所以调用sum_to的时候，Return address被覆盖了，最终sum_to函数不能返回到它原本的调用位置。</li>
-</ul>
-<p> info frame</p>
-<ul>
-<li>Stack level 0，表明这是调用栈的最底层</li>
-<li>pc，当前的程序计数器</li>
-<li>saved pc，demo4的位置，表明当前函数要返回的位置</li>
-<li>source language c，表明这是C代码</li>
-<li>Arglist at，表明参数的起始地址。当前的参数都在寄存器中，可以看到argc=3，argv是一个地址</li>
-</ul>
-<h3 id="Struct"><a href="#Struct" class="headerlink" title="Struct"></a>Struct</h3><h2 id="Isolation-amp-system-call-entry-exit-Rebort"><a href="#Isolation-amp-system-call-entry-exit-Rebort" class="headerlink" title="Isolation &amp; system call entry/exit(Rebort)"></a>Isolation &amp; system call entry/exit(Rebort)</h2><h3 id="Trap"><a href="#Trap" class="headerlink" title="Trap"></a>Trap</h3><p> 用户空间与内核空间切换trap：</p>
-<ul>
-<li>程序执行系统调用</li>
-<li>出现如page fault、运算时除以0的错误</li>
-<li>设备触发中断使得当前程序运行需要响应内核设备驱动<br> 32个寄存器：SP堆栈指针寄存器、PC程序计算器<br> mode标志位：标志当前是supervisor还是user mode<br> RSIC-V SATP（Supervisor Address Translation and Protection）寄存器，它包含了指向page table的物理内存地址<br> STVEC（Supervisor Trap Vector Base Address Register）寄存器，它指向了内核中处理trap的指令的起始地址<br> SEPC（Supervisor Exception Program Counter）寄存器，在trap的过程中保存程序计数器的值。<br> 在trap处理的过程中的操作：</li>
-<li>保存32个寄存器</li>
-<li>保存程序计数器PC</li>
-<li>将mode改为supervisor mode，内核中执行特权指令</li>
-<li>SATP寄存器由指向user page table变为指向 kernelpage table</li>
-<li>将堆栈寄存器指向内核中的地址</li>
-<li>跳入到内核的C代码<br> supervisor mode可：读写SATP寄存器，也就是page table的指针；STVEC，也就是处理trap的内核指令地址；SEPC，保存当发生trap时的程序计数器；SSCRATCH；使用PTE_U标志位为0的PTE。当PTE_U标志位为1的时候，表明用户代码可以使用这个页表；如果这个标志位为0，则只有supervisor mode可以使用这个页表。<br>supervisor mode中的代码并不能读写任意物理地址 ？</li>
-</ul>
-<p> trap执行流程，系统调用通过执行ECALL指令来执行系。ECALL指令会切换到具有supervisor mode的内核中。在这个过程中，内核中执行的第一个指令是一个由汇编语言写的函数，叫做uservec。这个函数是内核代码trampoline.s文件的一部分。所以执行的第一个代码就是这个uservec汇编函数。在这个汇编函数中，代码执行跳转到了由C语言实现的函数usertrap中，这个函数在trap.c中，在usertrap这个C函数中，我们执行了一个叫做syscall的函数。这个函数会在一个表单中，根据传入的代表系统调用的数字进行查找，并在内核中执行具体实现了系统调用功能的函数</p>
-<h2 id="Page-faults-Frans"><a href="#Page-faults-Frans" class="headerlink" title="Page faults(Frans)"></a>Page faults(Frans)</h2><ol>
-<li><p>page fault相关功能：1)lazy allocation 2)copy-on-write fork 3)demand paging 4)memroy mapped files</p>
-</li>
-<li><p>虚拟内存两个主要的优点：隔离Isoation; 虚拟地址空间level of indirection</p>
-</li>
-<li><p>page fault触发trap机制，将程序运行切换到内核，出错地址保存在STVAL寄存器；引起page fault的内存地址<br>page fault原因load 13、store 15或jump 12指令，SCAUSE寄存器；引起page fault的原因类型<br>触发page fault的指令的地址存放在SEPC寄存器；引起page fault时的程序计数器值</p>
-</li>
-<li><p>Lazy page allocation<br>sbrk的实现默认是eager allocation,内核会立即分配应用程序所需要的物理内存。而实际上内核在这个时间点并不会分配任何物理内存。之后在某个时间点，应用程序使用到了新申请的那部分内存，这时会触发page fault，因为我们还没有将新的内存映射到page table<br>用lazy allocation，应用程序怎么才能知道当前已经没有物理内存可用了？替换页？<br>如何判断一个地址是新分配的内存还是一个无效的地址？<br>如果使用的地址低于p-&gt;sz，那么这是一个用户空间的有效地址。如果大于p-&gt;sz，对应的就是一个程序错误</p>
-</li>
-<li><p>Zero Fill On Demand<br>BSS段未被初始化或者初始化为0的全局变量，多个page为全0，map到一个物理page，物理page为只读，当写BSS中的一个page时触发page fault，创建一个新的page，将其内容设置为0，并重新执行指令</p>
-</li>
-<li><p>Copy On Write Fork(COW fork)<br>直接共享父进程的物理内存page，设置子进程的PTE指向父进程对应的物理内存page，将父进程和子进程的PTE的标志位都设置成只读的，改内存的内容时，会得到page fault，拷贝相应的物理page，分配一个新的物理内存page，然后将page fault相关的物理内存page拷贝到新分配的物理内存page中，并将新分配的物理内存page映射到子进程</p>
-</li>
-</ol>
-<p>如何发现父进程写了这部分内存地址？是与子进程相同的方法吗？相同的处理方式</p>
-<ol start="7">
-<li><p>Demand Paging<br>延迟加载text和data段<br>dirty page，因为它在某个时间点会被重新写回到内存中。</p>
-</li>
-<li><p> Memory Mapped Files<br>mmap的系统调用，系统调用会接收一个虚拟内存地址（VA），长度（len），protection，一些标志位，一个打开文件的文件描述符，和偏移量（offset）<br>多个进程将同一个文件映射到内存，然后会有同步的问题？<br>mmap的参数中，len和flag是什么意思？  len是文件中你想映射到内存中的字节数。prot是read/write。flags会在mmap lab中出现，我认为它表示了这个区域是私有的还是共享的</p>
-</li>
-</ol>
-<h2 id="Interrupts"><a href="#Interrupts" class="headerlink" title="Interrupts"></a>Interrupts</h2><ol>
-<li>中断触发处理流程<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220821155615.png" alt="20220821155615"><br>RISC-V中断控制器PLIC？ARM64 GIC</li>
-<li>UART设备的驱动uart.c文件<br>bottom/top，bottom部分通常是Interrupt handler；top部分，是用户进程，或者内核的其他部分调用的接口；top部分的代码会从队列中读写数据，而Interrupt handler（bottom部分）同时也会向队列中读写数据<br>RISC-V通过memory mapped I/O完成设备地址映射，设备地址出现在物理地址的特定区间内<br>对设备load/store指令读写设备的控制寄存器</li>
-<li>RISC-V与中断相关的寄存器：</li>
-</ol>
-<ul>
-<li>SIE（Supervisor Interrupt Enable）寄存器，bit E外部设备的中断、S软件中断、T定时器中断</li>
-<li>SSTATUS（Supervisor Status）寄存器 打开或者关闭中断 ARM64 SPSR_ELx  D、A、I、F位置1</li>
-<li>SIP（Supervisor Interrupt Pending）寄存器  中断类型  ELx</li>
-<li>SCAUSE寄存器 中断原因 ARM64 ESR</li>
-<li>STVEC寄存器 保存trap，page fault或者中断发生时，CPU运行的用户程序的程序计数器， ARM64 ELR_ELx<br>bottom/top和 ARM64中上半部分和下半部分反的？<br>polling轮询处理快速中断</li>
-</ul>
-<p>ARM 64体系结构</p>
-<h3 id="11-异常处理"><a href="#11-异常处理" class="headerlink" title="11 异常处理"></a>11 异常处理</h3><ol>
-<li>异常种类：中断、种植、复位和系统调用</li>
-<li>异常等级EL0-EL3  EL0用户模式，EL1系统内核特权模式、EL2虚拟化管理hypervisor，EL3安全管理</li>
-<li>同步异常：指令异常和数据异常page fault；异常异常：中断，物理中断IRQ和FRQ，虚拟中断vIRQ和vFRQ</li>
-<li>异常处理：</li>
-</ol>
-<ul>
-<li>PSTATE寄存器保存到SPSR_ELx中，PSTATE寄存器D、A、I和F位置位1，关闭异常</li>
-<li>返回地址保存到ELR_ELx中</li>
-<li>ESR_ELx保存异常原因</li>
-<li>SP切换到目标异常等级SP_ELx</li>
-<li>切换到对应异常等级，跳转到异常向量表<br>异常返回：</li>
-<li>从ELR_ELx中恢复PC</li>
-<li>从SPSR_ELx中恢复PSTATE，开中断<br>异常返回地址：X30(LR)保存子函数返回地址，用ret返回；ELR_ELx保存异常返回地址，用eret返回</li>
-</ul>
-<ol start="5">
-<li>异常处理路由，当异常发生时应该在那个等级处理</li>
-<li>异常向量表 arch/arm64/kernel/entry.S kerenl_ventry<br>ARM64 v8中VBAR_ELx寄存器设置异常向量表的地址</li>
-<li>异常现场栈空间内容：PSTATE寄存器值、PC值、SP值、X0-X30寄存器值。此栈空间为发生异常时进程的内核态的栈空间</li>
-<li>同步异常  寄存器ESR</li>
-</ol>
-<h3 id="12-中断处理"><a href="#12-中断处理" class="headerlink" title="12 中断处理"></a>12 中断处理</h3><ol>
-<li>ARM64 中断nIRQ和nFRQ，PSTATE中对应I和F两位</li>
-<li>中断处理过程</li>
-</ol>
-<p>1)把当前PC值保存到ELR_ELx中，把PSTATE保存到SPSR中，跳转到异常向量表<br>2)异常向量表中，CPU跳转到对应的汇编处理函数elx_irq<br>3)在汇编函数里保存中断现场<br>4)跳转到中断号所对应的中断处理函数<br>5)在中断处理程序中处理中断<br>6)返回elx_irq汇编函数，恢复中断上下文<br>7)调用ERET指令完成中断返回<br>8)CPU继续执行中断现场下一条指令<br>3. 中断现场数据结构pt_regs保存中断现场<br>中断发生时，把中断现场保存到当前进程的内核栈里：</p>
-<ul>
-<li>PSTATE保存到SPSR_ELx</li>
-<li>PC保存到ELR_ELx</li>
-<li>SP保存到栈顶</li>
-<li>regs保存LR的值</li>
-<li>regs[0]-regs[29]对应保存X0-X30寄存器值</li>
-</ul>
-<br>
-<br>
-
-<p>b站课程：<br><a href="https://www.bilibili.com/video/BV19k4y1C7kA?p=2&amp;spm_id_from=pageDriver&amp;vd_source=6768732acbd0f78ac59230d2faa59a86">https://www.bilibili.com/video/BV19k4y1C7kA?p=2&amp;spm_id_from=pageDriver&amp;vd_source=6768732acbd0f78ac59230d2faa59a86</a></p>
-<p>课程翻译<br><a href="https://github.com/huihongxiao/MIT6.S081">https://github.com/huihongxiao/MIT6.S081</a><br><a href="https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/">https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/</a></p>
-<p><a href="https://pdos.csail.mit.edu/6.828/2020/schedule.html">https://pdos.csail.mit.edu/6.828/2020/schedule.html</a></p>
-<p><a href="https://pdos.csail.mit.edu/6.828/2020/schedule.html">https://pdos.csail.mit.edu/6.828/2020/schedule.html</a></p>
+    <title>Linux</title>
+    <url>/2022/06/02/2022/linux/</url>
+    <content><![CDATA[<p><a href="https://www.zhihu.com/question/47039391/answer/2287806626">https://www.zhihu.com/question/47039391/answer/2287806626</a></p>
+<h2 id="ELF"><a href="#ELF" class="headerlink" title="ELF"></a>ELF</h2><p>开源库<br>lief</p>
+<p>参考链接：<br><a href="https://blog.csdn.net/GrayOnDream/article/details/124564129">https://blog.csdn.net/GrayOnDream/article/details/124564129</a></p>
 <script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
       <categories>
-        <category>tool</category>
+        <category>study</category>
         <category>2022</category>
       </categories>
       <tags>
         <tag>Another Tag</tag>
-        <tag>Computer Science</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>树莓派</title>
-    <url>/2022/07/22/2022/%E6%A0%91%E8%8E%93%E6%B4%BE/</url>
-    <content><![CDATA[<p>[toc]</p>
-<p>树莓派</p>
-<span id="more"></span>
-
-<h1 id="1-安装系统"><a href="#1-安装系统" class="headerlink" title="1 安装系统"></a>1 安装系统</h1><ol>
-<li><p>官方镜像2022-04-04-raspios-bullseye-arm64.img.xz，xz格式文件可通过7zip直接解压。</p>
-</li>
-<li><p>通过win32diskimager安装</p>
-</li>
-<li><p>无显示配置<br><a href="https://blog.csdn.net/weixin_39591031/article/details/122325148">https://blog.csdn.net/weixin_39591031/article/details/122325148</a></p>
-</li>
-</ol>
-<p>配置wifi<br>开启ssh</p>
-<p>``<br>sudo raspi-config</p>
-<h1 id="选择Interface-Options"><a href="#选择Interface-Options" class="headerlink" title="选择Interface Options"></a>选择Interface Options</h1><h1 id="选择SSH"><a href="#选择SSH" class="headerlink" title="选择SSH"></a>选择SSH</h1><h1 id="开启SSH服务-Yes"><a href="#开启SSH服务-Yes" class="headerlink" title="开启SSH服务 Yes"></a>开启SSH服务 Yes</h1><h1 id="连接ssh"><a href="#连接ssh" class="headerlink" title="连接ssh"></a>连接ssh</h1><p>ssh <a href="mailto:pi@192.168.18.160">pi@192.168.18.160</a></p>
-<pre><code>
-
-
-
-
-- 参考链接：
-树莓派官网
-https://www.raspberrypi.com/software/
-</code></pre>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2022</category>
-      </categories>
-      <tags>
-        <tag>实用教程</tag>
-        <tag>Another Tag</tag>
+        <tag>English</tag>
       </tags>
   </entry>
   <entry>
@@ -2204,56 +1890,322 @@ https://www.raspberrypi.com/software/
       </tags>
   </entry>
   <entry>
-    <title>现代操作系统</title>
-    <url>/2022/07/15/2022/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
+    <title>树莓派</title>
+    <url>/2022/07/22/2022/%E6%A0%91%E8%8E%93%E6%B4%BE/</url>
     <content><![CDATA[<p>[toc]</p>
-<p>现代操作系统</p>
+<p>树莓派</p>
 <span id="more"></span>
 
-<h2 id="第1章-绪论"><a href="#第1章-绪论" class="headerlink" title="第1章 绪论"></a>第1章 绪论</h2><p>体系结构(指令集、存储组织、 I/0和总线结构)<br>操作系统的主要任务是记录哪个程序在使用什么资源，对资源请求进行分配、评估使用代价，并且为不同的程序和用户调解互相冲突的资沥请求。<br>资源管理包括两种不同方式实现多路复用(共享)资源：在时间上复用和在空间上复用<br>纸带程序-批处理程序-多道程序-分时系统<br>UNIX有两个主要的版本，即AT&amp;T System V和加州大学伯克利分校的BSD(Berkeley Software<br>Distribution)。UNIX的标准，称作POSJX, MS-DOS-Windows95<br>处理器：程序计数器(PC)、堆栈指针、程序状态字(PSW)：包含了条件码位(由比较指令设置)、CPU优先级、换式(用户态或内核态)，以及各种其他控制位</p>
-<p>从操作系统中获得服务，用户程序必须使用 系统调用 (sys call)以陷入内核井调用操作系统。 TRAP 指令把用户态切换成内核态，井启用操作系统</p>
-<p>虚拟内存机制:运行大于物理内存的程序，将程序放在磁盘上，而将主存作为缓存，用来保存最频繁使用的部<br>分程序。这种机制需要快速地映像内存地址，以便把程序生成的地址转换为有关字节在RAM 中的物理地址。这种映像由CPU 中的 个称为存储器管理单元 Memory Management Unit, MMU 的部件来完成<br>I/O设备一般包括两个部分：设备控制器和设备本身<br>启动计算机:基本输入输出系统((Basic Input Output System, BIOS)的程序。BIOS 内有底层l/0软件，包括读键盘、写屏幕、进行磁盘I/O 以及其他过程</p>
-<p>操作系统概念：进程<br>系统管理器授权每个进程使用一个给定的 UID(User IDentification)。每个被启动的进程都有启动该进程的用户UID 。子进程拥有与父进程一样的UID。用户可以是某个组的成员，每个组也有GID(Group IDentificalion)。UNIX中，有一个UID称为超级用户 (superuser) 或者Windows 中的管理员 (administrator)。<br>操作系统具有两种功能：为用户程序提供抽象和管理计箕机资源</p>
-<p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718223909.png" alt="20220718223909"></p>
-<p>fork调用返回一个值，在子进程中该值为零，井且在父进程中等于子进程的进程标识符(Process IDeotifier, PID)<br>父进程执行waitpid 系统调用，它只是等待，直至子进程终止子进程必须执行用户的命令。通过使用execve 系统调用可以实现<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718232209.png" alt="20220718232209"></p>
-<p>虚拟机：KVM(针对Linux 内核)、VirtualBox、Hyper-V;模拟器,二进制翻译</p>
-<p>C语言<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718232859.png" alt="20220718232859"></p>
-<p>操作系统有两种观点:资源管理观点和扩展的机器观点。在资源管理观点中，操作系统的任务是有效地管理系统的各个部分。在扩展的机器观点中，系统的任务是为用 提供比实际机器更便干运用的抽象。这些抽象包括进程、地址空间以及文件。<br>操作系统构建基本概念是进程、存储管理、I/O管理、文件管理和安全</p>
-<br>
+<h1 id="1-安装系统"><a href="#1-安装系统" class="headerlink" title="1 安装系统"></a>1 安装系统</h1><ol>
+<li><p>官方镜像2022-04-04-raspios-bullseye-arm64.img.xz，xz格式文件可通过7zip直接解压。</p>
+</li>
+<li><p>通过win32diskimager安装</p>
+</li>
+<li><p>无显示配置<br><a href="https://blog.csdn.net/weixin_39591031/article/details/122325148">https://blog.csdn.net/weixin_39591031/article/details/122325148</a></p>
+</li>
+</ol>
+<p>配置wifi<br>开启ssh</p>
+<p>``<br>sudo raspi-config</p>
+<h1 id="选择Interface-Options"><a href="#选择Interface-Options" class="headerlink" title="选择Interface Options"></a>选择Interface Options</h1><h1 id="选择SSH"><a href="#选择SSH" class="headerlink" title="选择SSH"></a>选择SSH</h1><h1 id="开启SSH服务-Yes"><a href="#开启SSH服务-Yes" class="headerlink" title="开启SSH服务 Yes"></a>开启SSH服务 Yes</h1><h1 id="连接ssh"><a href="#连接ssh" class="headerlink" title="连接ssh"></a>连接ssh</h1><p>ssh <a href="mailto:pi@192.168.18.160">pi@192.168.18.160</a></p>
+<pre><code>
 
-<h2 id="第2章-进程与线程"><a href="#第2章-进程与线程" class="headerlink" title="第2章 进程与线程"></a>第2章 进程与线程</h2><h3 id="2-1-进程"><a href="#2-1-进程" class="headerlink" title="2.1 进程"></a>2.1 进程</h3><p> 进程模型：包括程序计数器、寄存器和变量的当前值。<br> 进程创建4种事件：系统初始化、程序执行创建进程的系统调用、用户请求创建新进程、批处理作业的初始化。<br> Unix系统创建进程fork，系统调用创建一个与调用进程相同的副本。父进程与子进程有相同的内存映像。子进程执行execve或类似系统调用，以修改器内存映像并运行一个新程序。Win32中CreateProcess<br> 进程退出：正常退出、出错退出、严重错误和被其他进程杀死。Unix调用exit，Windows中ExitProcess。<br> 进程层次，Unix中进程和他所有子进程组成一个进程组。<br> 进程状态：运行态、就绪态、阻塞态，终止；进程调度。<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720005759.png" alt="20220720005759"><br> 进程表<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720010310.png" alt="20220720010310"><br> I/O类关联的是中断向量(interrup vector)的位置(靠近内存底部的固定区域)。</p>
-<h3 id="2-2-线程"><a href="#2-2-线程" class="headerlink" title="2.2 线程"></a>2.2 线程</h3><p> 线程：创建开销小、共享进程内存、切换开销小。线程有一样地址空间。<br> 每个计算都有一个被保存的状态，存在一个会发生且使得相关状态发生改变的事件集合，称为有限状态机。<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720012833.png" alt="20220720012833"><br> 线程创建 thread_create，线程退出thread_exit，等待线程退出 thread_join<br> POSIS线程pthread<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720013227.png" alt="20220720013227"><br> 有两种主要的方法实现线程包：在用户空间 中和在内核中<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720231701.png" alt="20220720231701"></p>
-<h3 id="2-3-进程间通信IPC"><a href="#2-3-进程间通信IPC" class="headerlink" title="2.3 进程间通信IPC"></a>2.3 进程间通信IPC</h3><p> 竞争条件：两个或多个进程读写某些共享数据，而最后的结果取决于进程运行的精确时序。共享内存进行访问的程序片段称作临界区域。<br>使用互斥：屏蔽中断、锁变量、严格轮换、Peterson解法、TSL测试并加锁<br> 信号量：down和up，对信号量down橾作，则是检查其值是否大于0，若该值大千0, 则将其值减1 (即用掉一个保存的唤醒信号)井继续，若该值为0, 则进程将睡眠，而且此时down操作井未结束。up操作对信号量的值增1<br> 互斥量：处干两态之一的变量：解锁和加锁。快速用户区互斥量futex。一个futex 包含两个部分一个内核服务和一个用户库<br> 消息传递，进程间通信方法：send和receive</p>
-<h3 id="2-4-调度Scheduler"><a href="#2-4-调度Scheduler" class="headerlink" title="2.4 调度Scheduler"></a>2.4 调度Scheduler</h3><p> 1.进程行为：CPU密集型进程(计算密集型)和I/O密集型进程<br> 2.进程调度时机：1)创建新进程时调度父进程或子进程 2)进程退出时 3)进程阻塞在I/O和信号量上时 4)I/O中断时<br> 3.调度算法：非抢占式和抢占式<br> 4.三种运行环境：批处理、交互式和实时,批处理-非抢占式，交互式-抢占式，。大型计算中心关心三个指标：吞吐量、周转时间和CPU利用率。交互系统最小响应时间。<br> 5.批处理系统调度算法：1)先来先服务 2)最短作业优先 3)最短剩余时间优先<br> 6.交互式系统调度算法：1)轮转调度 轮询 时间片 2)优先级调度 3)多级队列 4)最短进程优先 5)公平分享调度<br> 7.实时系统调度：硬实时和软实时</p>
-<p> 8.策略与机制</p>
-<p> 9.线程调度：用户级线程和内核级线程之间的差别在于性能 用户级线程的线程切换需要少址的机器指令，而内核级线程垢要完整的上下文切换，修改内存映像，使亦速缓存失效，导致了若干数杂级的延迟</p>
-<p> 功耗管理、虚拟化、云计算和安全问题成为了新的热点主题。</p>
-<h3 id="2-5-小结"><a href="#2-5-小结" class="headerlink" title="2.5 小结"></a>2.5 小结</h3><p> 隐藏中断的影响，操作系统提供了 个井行执行串行进程的概念模型。进程可以动态地创建和终止、每个进程都有自己的地址空间。<br> 线程被独立调度并且有独立的栈，但是在一个进程中的所有线程共享一个地址空间。线程可以在用户态实现，也可以在内核态实现。<br> 进程之间通过进程间通信原语来交换信息，如信号众、管程和消息。进程可以处在运行、就绪或阻塞状态</p>
-<br>
 
-<h2 id="第3章-内存管理"><a href="#第3章-内存管理" class="headerlink" title="第3章 内存管理"></a>第3章 内存管理</h2><p> 分层存储器体系。存储管理器：操作系统种管理分层存储体系的部分。<br> 操作系统作为库实现的常见例子如流行的e-Cos操作系统。</p>
-<h3 id="3-1-存储抽象：地址空间"><a href="#3-1-存储抽象：地址空间" class="headerlink" title="3.1 存储抽象：地址空间"></a>3.1 存储抽象：地址空间</h3><p> 地址空间一个进程可用于寻址内存的一套地址集合<br> 交换技术：空闲进程存到存储磁盘上，运行进程存储到物理内存。</p>
-<p> 虚拟内存：每个程序用于自己的地址空间，空间分割位多个块，每块位一页或页面。页被映射到物理内存，运行程序时不是所有页都必须在内存中，程序引用不在物理内存中的地址空间时，操作系统将缺失部分装入到物理内存。<br> 内存管理单元MMU：把虚拟地址映射到物理内存地址。<br> 页表：虚拟地址：虚拟页号和偏移量<br> 保护位：三位读、写、可执行。页面使用情况：修改位和访问位。禁止高速缓存位。<br> TLB(转换检测缓冲区)：，将虚拟地址直接映射到物理地址。TLB硬件实现和软件管理，当一个页面访问在内存中而不在TLB中时，将产生软失效；当页面本身不在内存中(当然也不在TLB)时，将产生硬失效。<br> 多级页表</p>
-<p> 页表置换算法：最优页面置换算法、最近未使用页面置换算法、先进先出页面置换算法、<strong>最近最少使用页面置换算法LRU</strong><br> PDP-11 指令和数据设置分离的地址空间，分别称为I空间和D空间。进程表有两个指针：一个指向I空间页表，一个指向D空间页表。共享页面<br> 共享库 Windows中DLL，运行时共享，编译时共享：使用相对地址</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># unix  链接当前目录下的所有的.o(目标)文件，井扫描两个库：/usr/lib/libc.a和/usr/lib/libm.a 。</span></span><br><span class="line">Id•.o -le -Im </span><br></pre></td></tr></tbody></table></figure>
-<p> 分页守护进程。分布式共享内存</p>
-<p> 操作系统在四个阶段处理分页相关工作：进程创建时，进程执行时，缺页中断时和进程终止时。</p>
-<h2 id="第4章-文件系统fs"><a href="#第4章-文件系统fs" class="headerlink" title="第4章 文件系统fs"></a>第4章 文件系统fs</h2><h3 id="4-1-文件和目录"><a href="#4-1-文件和目录" class="headerlink" title="4.1 文件和目录"></a>4.1 文件和目录</h3><p> MS-Dos Windows FAT16-&gt;FAT32-&gt;NTFS  linux ext3<br> 目录(directory)是管理文件系统结构的系统文件<br> 文件访问：顺序访问与随机访问<br> 文件属性<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220729231922.png" alt="20220729231922"></p>
-<p> 文件操作：create、delete、open、close、read、write、append、seek、get attributes、set attributes、rename<br> 目录：根目录<br>目录操作：create、delete、opendir、closedir、readdir、rename、link、unlink</p>
-<h3 id="4-2-文件系统实现"><a href="#4-2-文件系统实现" class="headerlink" title="4.2 文件系统实现"></a>4.2 文件系统实现</h3><p> 磁盘的0号扇区称为主引导记录(Master Boot Record MBR).在MBR结尾是分区表,给出每个分区的起始和结束地址。计算机引导时，BIOS读人并执行MBR，MBR读入他的第一个块是引导块。<br> 文件系统本身时一个有向无环图(DAG)。目录与该共享文件的联系称为链接(link)<br> 日志结构文件系统(Log-structured File System LFS)<br> 虚拟文件系统VFS  网络文件系统NFS</p>
-<br>
 
-<h2 id="第5章-输入-输出-I-O"><a href="#第5章-输入-输出-I-O" class="headerlink" title="第5章 输入/输出 I/O"></a>第5章 输入/输出 I/O</h2><p> I/O设备：块设备和字符设备。I/O设备控制器和设备本身。<br> CPU如何与设备的控制寄存器和数据缓冲区进行通信？<br> 第一种方法，每个控制寄存器被分配一个I/O端口(I/O port)号。所有I/O端口形成I/O端口空间(I/O port space)，普通用户不可访问。</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># I/O 指令</span></span><br><span class="line">IN REG, PORT</span><br><span class="line">OUT PORT, REG</span><br></pre></td></tr></tbody></table></figure>
-<p> 第二种方法：将所有控制器映射到内存空间中，每个控制器被分配唯一的一个内存地址，称为内存映射I/O。内存映射不运行缓存。优点：1)C语言可编写驱动，访问控制器寄存器 2)隔离地址空间-&gt;阻止用户进程I/O操作 </p>
-<p> 直接存储器存取(DMA)<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220802000949.png" alt="20220802000949"></p>
-<p> 中断信号使CPU停止当前正在做的工作井且开始做其他的事情。地址线上的数字被用做指向中断向量(interrupt vector)的表格的索引，以便读取一个新的程序计数器。<br> 将机器留在一个明确状态的中断称为精确中断</p>
+
+- 参考链接：
+树莓派官网
+https://www.raspberrypi.com/software/
+</code></pre>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2022</category>
+      </categories>
+      <tags>
+        <tag>实用教程</tag>
+        <tag>Another Tag</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>操作系统</title>
+    <url>/2022/06/28/2022/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>[toc]</p>
+<p>操作系统</p>
+<span id="more"></span>
+
+<h2 id="3-OS-Organization-and-System-Calls"><a href="#3-OS-Organization-and-System-Calls" class="headerlink" title="3 OS Organization and System Calls"></a>3 OS Organization and System Calls</h2><p>1.操作系统有两个基本功能：</p>
 <ul>
-<li>PC程序计数器保存在一个已知的地方</li>
-<li>PC所指向的指令之前的所有指令已经完全执行</li>
-<li>PC所指向的指令之后的所有指令都没有执行</li>
-<li>PC所指向的指令的执行状态已知的<br> 不满足这些要求的中断称为不精确中断</li>
+<li>防止硬件被失控的应用程序滥用  隔离</li>
+<li>向应用程序提供简单一致的机制来控制复杂而又通常大不相同的低级硬件设备</li>
 </ul>
+<p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220710174724.png" alt="20220710174724"></p>
+<p> 隔离：隔离硬件;内存空间隔离(虚拟内存)-&gt;进程管理;防御安全<br> 隔离实现分时复用硬件资源</p>
+<p> 操作系统通过几个基本的抽象概念：进程、虚拟内存和文件<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220710175044.png" alt="20220710175044"></p>
+<p>进程：操作系统对一个正在运行的程序的一种抽象，操作系统实现进程交错执行的机制称为上下文切换</p>
+<p>  操作系统保持跟踪进程运行所需的所有状态信息。这种状态，也就是上下文，包括 PC 和寄存器文件的当前值，以及主存的内容</p>
+<p>  系统调用会将控制权传递给操作系统</p>
+<p>  从一个进程到另一个进程的转换是由操作系统内核（kernel )管理的。内核是操作系统代码常驻主存的部分</p>
+<p>  读写文件，执行一条系统调用（system call)指令，将控制权传递给内核。然后内核执行被请求的操作并返回应用程序</p>
+<p>  内核不是一个独立的进程。是系统管理全部进程所用代码和数据结构的集合</p>
+<p> kernel和User mode。这两种模式用来隔离操作系统内核和用户应用程序，用户态和内核态通过标志位区分。<br> 用户态普通指令，内核态执行特权指令</p>
+<p>RISC-V还有第三种模式称为machine mode，三级权限(user/kernel/machine)</p>
+<p> 操作系统和应用程序之前的接口被称为系统调用接口(System call interface)</p>
+<p>用户态与内核态切换<br>RISC-V中ECALL，ARM64中SVC，HVC？</p>
+<p>宏内核与微内核<br>linux，unix宏内核，是微内核<br>怎么区分宏内核和微内核？将大部分的操作系统运行在内核之外，大部分硬件驱动不在内核是微内核。微内核跳转变多</p>
+<p>XV6编译<br>XV6代码三部分：kernel、user和mkfs<br>QEMU<br><a href="https://blog.csdn.net/fangye945a/article/details/121962409">https://blog.csdn.net/fangye945a/article/details/121962409</a></p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">sudo apt-get install ninja-build</span><br></pre></td></tr></tbody></table></figure>
+<p><a href="https://blog.csdn.net/Leo_h1104/article/details/115580753">https://blog.csdn.net/Leo_h1104/article/details/115580753</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/351865040">https://zhuanlan.zhihu.com/p/351865040</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/466423677">https://zhuanlan.zhihu.com/p/466423677</a></p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># gdb</span></span><br><span class="line">make qemu</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">set</span> auto-load safe-path / &gt; ~/.gdbinit</span><br><span class="line">gdb-multiarch</span><br><span class="line"></span><br><span class="line">layout split</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="Page-Table"><a href="#Page-Table" class="headerlink" title="Page Table"></a>Page Table</h2><p> 虚拟内存-页表</p>
+<ol>
+<li><p>映射：虚拟地址&lt;–&gt;物理地址  </p>
+</li>
+<li><p>地址空间(Address Spaces)<br>虚拟地址空间-&gt;内存隔离</p>
+</li>
+<li><p>物理内存如何比虚拟内存大？实际程序运行时并不全部加载指令和数据，而是用时加载或者局部加载，所以并不需要加载全部虚拟地址空间，也不需要使用全部物理地址。但是虚拟地址需要有对应的物理地址，是一一对应的吗？如果虚拟地址更大，对应的物理地址数据会刷回到硬盘吗？即内存是硬盘的缓存</p>
+</li>
+<li><p>kalloc保存了空余page的列表，列表为空或者耗尽，kalloc会返回一个空指针，内核会妥善处理并将结果返回给用户应用程序。并告诉用户应用程序，要么是对这个应用程序没有额外的内存了，要么是整个机器都没有内存</p>
+</li>
+<li><p>实现地址空间-&gt;页表<br>页表是在硬件中通过处理器和内存管理单元(Memory Management Unit)实现</p>
+</li>
+<li><p>任何带有地址的指令，其中的地址应该认为是虚拟内存地址而不是物理地址</p>
+</li>
+<li><p>CPU角度，一旦MMU打开，它执行的每条指令中的地址都是虚拟内存地址</p>
+</li>
+<li><p>MMU会有一个表单，表单中，一边是虚拟内存地址，另一边是物理内存地址。RISC-V上一个叫做SATP的寄存器保存表单地址</p>
+</li>
+<li><p>MMU并不会保存page table，它只会从内存中读取page table，然后完成翻译</p>
+</li>
+<li><p>操作系统将CPU从一个应用程序切换到另一个应用程序时，同时也需要切换SATP寄存器中的内容，从而指向新的进程保存在物理内存中的地址对应表单。进程对应的SATP值是由内核保存，只有运行在kernel mode的代码可以更新这个寄存器。SATP呢？它存的是物理地址还是虚拟地址？物理地址</p>
+</li>
+<li><p>RISC-V中，一个page是4KB，也就是4096Bytes，为每个page创建一条表单条目</p>
+</li>
+<li><p>对于虚拟内存地址，划分为两个部分，index和offset，index用来查找page，offset对应的是一个page中的哪个字节。<br>MMU在做地址翻译，通过读取虚拟内存地址中的index可以知道物理内存中的page号，这个page号对应了物理内存中的4096个字节。之后虚拟内存地址中的offset指向了page中的4096个字节中的某一个，假设offset是12，那么page中的第12个字节被使用了。将offset加上page的起始地址，就可以得到物理内存地址</p>
+</li>
+<li><p>RISC-V的寄存器是64bit，虚拟内存地址的数量现在只有2^39个，大概是512GB，39bit中，有27bit被用来当做index，12bit被用来当做offset。offset必须是12bit，因为对应了一个page的4096个字节。</p>
+</li>
+<li><p>RISC-V中，物理内存地址是56bit，ARM v8也是？44bit是物理page号(PPN，Physical Page Number)，剩下12bit是offset完全继承自虚拟内存地址</p>
+</li>
+<li><p>增大页表？16k 64k？</p>
+</li>
+<li><p>多级页表，虚拟内存地址中的27bit的index，实际上是由3个9bit的数字组成(L2，L1，L0)。前9个bit被用来索引最高级的page directory</p>
+</li>
+<li><p>一个directory是4096Bytes，就跟page的大小是一样的。Directory中的一个条目被称为PTE（Page Table Entry）是64bits，就像寄存器的大小一样，也就是8Bytes。所以一个Directory page有512个条目。</p>
+</li>
+<li><p>SATP寄存器会指向最高一级的page directory的物理内存地址，虚拟内存中index的高9bit用来索引最高一级的page directory，这样我们就能得到一个PPN，也就是物理page号。这个PPN指向了中间级的page directory<br>最高级的page directory中的PPN，包含了下一级page directory的物理内存地址，依次类推。在最低级page directory，我们还是可以得到44bit的PPN，这里包含了我们实际上想要翻译的物理page地址，然后再加上虚拟内存地址的12bit offset，就得到了56bit物理内存地址</p>
+</li>
+<li><p>PTE中的Flag，因为它也很重要。每个PTE的低10bit是一堆标志位</p>
+</li>
+</ol>
+<ul>
+<li>第一个标志位是Valid。如果Valid bit位为1，那么表明这是一条合法的PTE</li>
+<li>下两个标志位分别是Readable和Writable。表明你是否可以读/写这个page</li>
+<li>Executable表明你可以从这个page执行指令</li>
+<li>user表明这个page可以被运行在用户空间的进程访问。</li>
+</ul>
+<ol start="21">
+<li>页表缓存(Translation Lookaside Buffer)<br>TLB会保存虚拟地址到物理地址的映射关系。<br>Q切换了page table，操作系统需要告诉处理器当前正在切换page table，处理器会清空TLB。在RISC-V中，清空TLB的指令是sfence_vma。<br>虚拟地址索引的cache位于MMU之前，由物理地址索引的cache位于MMU之后<br>在XV6中，内核有它自己的page table，用户进程也有自己的page table，用户进程指向sys_info结构体的指针存在于用户空间的page table，但是内核需要将这个指针翻译成一个自己可以读写的物理地址。copy_in，copy_out，你可以发现内核会通过用户进程的page table，将用户的虚拟地址翻译得到物理地址，这样内核可以读写相应的物理内存地址<br>page table提供了一层抽象(level of indirection)。抽象就是指从虚拟地址到物理地址的映射</li>
+<li>当操作系统启动时，会从地址0x80000000开始运行，这个地址其实也是由硬件设计者决定的。地址0是保留的，地址0x10090000对应以太网，地址0x80000000对应DDR内存，处理器外的易失存储（Off-Chip Volatile Memory），也就是主板上的DRAM芯片</li>
+<li>地址0x1000是boot ROM的物理地址，当你对主板上电，主板做的第一件事情就是运行存储在boot ROM中的代码，当boot完成之后，会跳转到地址0x80000000，操作系统需要确保那个地址有一些数据能够接着启动操作系统。</li>
+<li>I/O设备</li>
+</ol>
+<ul>
+<li>PLIC是中断控制器(Platform-Level Interrupt Controller)</li>
+<li>CLINT(Core Local Interruptor)也是中断的一部分。所以多个设备都能产生中断，需要中断控制器来将这些中断路由到合适的处理函数</li>
+<li>UART0（Universal Asynchronous Receiver/Transmitter）负责与Console和显示器交互</li>
+<li>VIRTIO disk，与磁盘进行交互。</li>
+</ul>
+<ol start="25">
+<li>同一个物理地址映射两个虚拟地址，你可以不将一个虚拟地址映射到物理地址。可以是一对一的映射，一对多映射，多对一映射</li>
+<li>用户进程的虚拟地址空间分布<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220717173502.png" alt="20220717173502"></li>
+</ol>
+<p>Kvminit函数<br>kvminithart函数<br>walk函数</p>
+<h3 id="Armv8-A-Address-Translation"><a href="#Armv8-A-Address-Translation" class="headerlink" title="Armv8-A Address Translation"></a>Armv8-A Address Translation</h3><ol>
+<li>支持4K、16K和64K页表。TCR_EL1寄存存储支持页表大小。</li>
+<li>AArch64 4级页表，4K页表，48bit地址，9bit索引，512个表项，12bit的offset。<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220724171523.png" alt="20220724171523"></li>
+</ol>
+<p>16K页表，11bit索引，2048表项，14bit的offset<br>64K页表，3级索引，<br>3. MMU 使用转换表和转换寄存器来控制哪些内存位置是可缓存。缓存策略MAIR_ELn寄存器标识，TLB缓存是否有效。</p>
+<h3 id="DDI0487H-a-a-profile-architecture-reference-manual-pdf"><a href="#DDI0487H-a-a-profile-architecture-reference-manual-pdf" class="headerlink" title="DDI0487H_a_a-profile_architecture_reference_manual.pdf"></a>DDI0487H_a_a-profile_architecture_reference_manual.pdf</h3><h4 id="D5-2-6"><a href="#D5-2-6" class="headerlink" title="D5.2.6"></a>D5.2.6</h4><p>单一阶段转换：虚拟地址-&gt;物理地址<br>两阶段转换：虚拟地址-&gt;中间物理地址-&gt;物理地址</p>
+<p>阶段1 </p>
+<p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220724173718.png" alt="20220724173718"></p>
+<h3 id="ARM64体系结构编程实践"><a href="#ARM64体系结构编程实践" class="headerlink" title="ARM64体系结构编程实践"></a>ARM64体系结构编程实践</h3><h4 id="第14章-内存管理"><a href="#第14章-内存管理" class="headerlink" title="第14章 内存管理"></a>第14章 内存管理</h4><h5 id="1"><a href="#1" class="headerlink" title="1"></a>1</h5><ol>
+<li>进程地址空间使用内存3部分：进程本身、栈空间、堆空间</li>
+<li>地址转换(address translation):进程请求虚拟地址(VA)转换为物理地址(PA)，通过MMU实现。</li>
+<li>操作系统3元素：进程地址空间、进程的CPU虚拟化和文件对存储空间的抽象。</li>
+<li>分页机制引入虚拟存储，核心思想让程序不使用的内存交换到磁盘中，程序正在使用内存保留在物理内存。</li>
+<li>4K页帧虚拟地址组成VA[31:0]，偏移量offset VA[11:0]; 虚拟页帧号(VPN)。物理地址组成，偏移量offset PA[11:0];物理页帧号(PFN)。MMU把虚拟页帧号转换成物理页帧号。</li>
+<li>页表：存储VPN到PFN的映射关系，表项称为页表项PTE。多级页表用来减少页表占用内存空间，ARM64v8支持4级页表。</li>
+<li>TLB未命中从，处理器MMU中页表查询</li>
+</ol>
+<ul>
+<li>处理器根据虚拟地址判断使用TTBR0还是TTBR1，虚拟地址第63位为1时，选择TTBR1，为0时，选择TTBR0。TTBR中存储一级页表(L0)基地址。</li>
+<li>处理器以虚拟地址一级索引在一级页表中查找表项。</li>
+</ul>
+<ol start="8">
+<li>ARM64 处理器的MMU包括TLB和页表遍历单元。TLB是高速缓存，用于缓存页表转换的结果。</li>
+<li>进程地址空间分为：内核空间(kernel space)和用户空间(user space)</li>
+<li>SMP多核处理器系统中，每个处理器内置MMU和TLB，如何保证CPU访问正前有效的TLB。</li>
+<li>AArach64体系结构页表特性：</li>
+</ol>
+<ul>
+<li>最多支持4级页表</li>
+<li>输入地址最多有效位宽为48bit</li>
+<li>输出地址最大有效位款为48bit</li>
+<li>页帧大小支持4KB、16KB和64KB</li>
+</ul>
+<ol start="12">
+<li><p>AArach64采用两套页表设计，虚拟地址空间分为三部分：下面是用户空间，中间是非规范区，上面是内核空间。当CPU访问用户空间是，MMU选择TTBR0指向的页表，CPU访问内核空间时，MMU选择TTBR1寄存器指向的页表。</p>
+</li>
+<li><p>页表属性</p>
+</li>
+</ol>
+<ul>
+<li>共享性与缓存性：共享性决定高速缓存可被哪些观察者观察到; 缓存性值页面是否使能高速缓存以及高速缓存的范围。</li>
+<li>访问权限：AP字段控制CPU对页面的访问，可读可写属性。</li>
+<li>执行权限：PXN字段以及XN/UXN字段设置CPU是否可执行页面</li>
+<li>访问标志位：访问字段AF用来标识页面是否被访问过。</li>
+<li>全局和进程特有TLB：nG字段，0全局，1进程特有</li>
+</ul>
+<ol start="14">
+<li><p>硬件管理访问位和脏位(TTHM特性)，页表转换控制器TCR，HA字段自动设置AF标志。<br>脏位TCR_EL1的HD字段，</p>
+</li>
+<li><p>转换控制寄存器(TCR)、系统控制寄存器(SCTLR)和转换页表基址寄存器(TTBR)。<br>TTBR中ASID字段用来存储硬件ASID，AADDR字段存储页表基地址。</p>
+</li>
+<li><p>内存属性：Armv8两种内存属性：普通类型内存和设备内存。普通内存可优化。设备内存不可预测访问。</p>
+</li>
+</ol>
+<h2 id="Calling-conventions-and-stack-frames-RISC-V"><a href="#Calling-conventions-and-stack-frames-RISC-V" class="headerlink" title="Calling conventions and stack frames RISC-V"></a>Calling conventions and stack frames RISC-V</h2><ul>
+<li>syscanll  lab</li>
+<li>C -&gt; Asm / Processor</li>
+<li>RISC-V &amp; x86 &amp; Arm64</li>
+<li>Registers</li>
+<li>stack + calling conventions</li>
+<li>struct layout in memory</li>
+</ul>
+<h3 id="编译，RISV-V调用规范"><a href="#编译，RISV-V调用规范" class="headerlink" title="编译，RISV-V调用规范"></a>编译，RISV-V调用规范</h3><p> ISA就是处理器能够理解的指令集。每一条指令都有一个对应的二进制编码或者一个Opcode。<br> 预处理-编译-汇编-链接<br> RISC精简指令集与CISC复杂指令集，RISC统一的加载与存储指令。<br> RISC-V指令包含Base Integer Instruction Set和Standard Extension Instruction Set<br> 汇编代码：global全局变量函数，text代码段<br>进程地址空间<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220731191036.png" alt="20220731191036"><br> gdb layout split会同时展现C代码和汇编，而layout source只会展示C代码。</p>
+<h3 id="RISC-V寄存器"><a href="#RISC-V寄存器" class="headerlink" title="RISC-V寄存器"></a>RISC-V寄存器</h3><p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220731191509.png" alt="20220731191509"></p>
+<ul>
+<li>Caller Saved寄存器在函数调用的时候不会保存</li>
+<li>Callee Saved寄存器在函数调用的时候会保存<br> 汇编代码并不是在内存上执行，而是在寄存器上执行，load到寄存器，store到其他地方。除了Compressed Instruction，寄存器都是通过它们的ABI名字来引用。<br> a0到a7寄存器是用来作为函数的参数。如果一个函数有超过8个参数，需要用内存</li>
+</ul>
+<h3 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h3><p>Stack Frame<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220731192550.png" alt="20220731192550"><br>函数通过移动Stack Pointer来完成Stack Frame的空间分配。</p>
+<ul>
+<li>Return address总是会出现在Stack Frame的第一位</li>
+<li>指向前一个Stack Frame的指针也会出现在栈中的固定位置<br>第一个是SP（Stack Pointer），指向Stack的底部并代表了当前Stack Frame的位置。第二个是FP（Frame Pointer），它指向当前Stack Frame的顶部。因为Return address和指向前一个Stack Frame的的指针都在当前Stack Frame的固定位置，所以可以通过当前的FP寄存器寻址到这两个数据。?  前一个Frame Pointer存储到FP寄存器<br> leaf函数是指不调用别的函数的函数,不用担心保存自己的Return address或者任何其他的Caller Saved寄存器<br> 删除掉Prologue和Epllogue? sum_then_double将不知道它应该返回的Return address。所以调用sum_to的时候，Return address被覆盖了，最终sum_to函数不能返回到它原本的调用位置。</li>
+</ul>
+<p> info frame</p>
+<ul>
+<li>Stack level 0，表明这是调用栈的最底层</li>
+<li>pc，当前的程序计数器</li>
+<li>saved pc，demo4的位置，表明当前函数要返回的位置</li>
+<li>source language c，表明这是C代码</li>
+<li>Arglist at，表明参数的起始地址。当前的参数都在寄存器中，可以看到argc=3，argv是一个地址</li>
+</ul>
+<h3 id="Struct"><a href="#Struct" class="headerlink" title="Struct"></a>Struct</h3><h2 id="Isolation-amp-system-call-entry-exit-Rebort"><a href="#Isolation-amp-system-call-entry-exit-Rebort" class="headerlink" title="Isolation &amp; system call entry/exit(Rebort)"></a>Isolation &amp; system call entry/exit(Rebort)</h2><h3 id="Trap"><a href="#Trap" class="headerlink" title="Trap"></a>Trap</h3><p> 用户空间与内核空间切换trap：</p>
+<ul>
+<li>程序执行系统调用</li>
+<li>出现如page fault、运算时除以0的错误</li>
+<li>设备触发中断使得当前程序运行需要响应内核设备驱动<br> 32个寄存器：SP堆栈指针寄存器、PC程序计算器<br> mode标志位：标志当前是supervisor还是user mode<br> RSIC-V SATP（Supervisor Address Translation and Protection）寄存器，它包含了指向page table的物理内存地址<br> STVEC（Supervisor Trap Vector Base Address Register）寄存器，它指向了内核中处理trap的指令的起始地址<br> SEPC（Supervisor Exception Program Counter）寄存器，在trap的过程中保存程序计数器的值。<br> 在trap处理的过程中的操作：</li>
+<li>保存32个寄存器</li>
+<li>保存程序计数器PC</li>
+<li>将mode改为supervisor mode，内核中执行特权指令</li>
+<li>SATP寄存器由指向user page table变为指向 kernelpage table</li>
+<li>将堆栈寄存器指向内核中的地址</li>
+<li>跳入到内核的C代码<br> supervisor mode可：读写SATP寄存器，也就是page table的指针；STVEC，也就是处理trap的内核指令地址；SEPC，保存当发生trap时的程序计数器；SSCRATCH；使用PTE_U标志位为0的PTE。当PTE_U标志位为1的时候，表明用户代码可以使用这个页表；如果这个标志位为0，则只有supervisor mode可以使用这个页表。<br>supervisor mode中的代码并不能读写任意物理地址 ？</li>
+</ul>
+<p> trap执行流程，系统调用通过执行ECALL指令来执行系。ECALL指令会切换到具有supervisor mode的内核中。在这个过程中，内核中执行的第一个指令是一个由汇编语言写的函数，叫做uservec。这个函数是内核代码trampoline.s文件的一部分。所以执行的第一个代码就是这个uservec汇编函数。在这个汇编函数中，代码执行跳转到了由C语言实现的函数usertrap中，这个函数在trap.c中，在usertrap这个C函数中，我们执行了一个叫做syscall的函数。这个函数会在一个表单中，根据传入的代表系统调用的数字进行查找，并在内核中执行具体实现了系统调用功能的函数</p>
+<h2 id="Page-faults-Frans"><a href="#Page-faults-Frans" class="headerlink" title="Page faults(Frans)"></a>Page faults(Frans)</h2><ol>
+<li><p>page fault相关功能：1)lazy allocation 2)copy-on-write fork 3)demand paging 4)memroy mapped files</p>
+</li>
+<li><p>虚拟内存两个主要的优点：隔离Isoation; 虚拟地址空间level of indirection</p>
+</li>
+<li><p>page fault触发trap机制，将程序运行切换到内核，出错地址保存在STVAL寄存器；引起page fault的内存地址<br>page fault原因load 13、store 15或jump 12指令，SCAUSE寄存器；引起page fault的原因类型<br>触发page fault的指令的地址存放在SEPC寄存器；引起page fault时的程序计数器值</p>
+</li>
+<li><p>Lazy page allocation<br>sbrk的实现默认是eager allocation,内核会立即分配应用程序所需要的物理内存。而实际上内核在这个时间点并不会分配任何物理内存。之后在某个时间点，应用程序使用到了新申请的那部分内存，这时会触发page fault，因为我们还没有将新的内存映射到page table<br>用lazy allocation，应用程序怎么才能知道当前已经没有物理内存可用了？替换页？<br>如何判断一个地址是新分配的内存还是一个无效的地址？<br>如果使用的地址低于p-&gt;sz，那么这是一个用户空间的有效地址。如果大于p-&gt;sz，对应的就是一个程序错误</p>
+</li>
+<li><p>Zero Fill On Demand<br>BSS段未被初始化或者初始化为0的全局变量，多个page为全0，map到一个物理page，物理page为只读，当写BSS中的一个page时触发page fault，创建一个新的page，将其内容设置为0，并重新执行指令</p>
+</li>
+<li><p>Copy On Write Fork(COW fork)<br>直接共享父进程的物理内存page，设置子进程的PTE指向父进程对应的物理内存page，将父进程和子进程的PTE的标志位都设置成只读的，改内存的内容时，会得到page fault，拷贝相应的物理page，分配一个新的物理内存page，然后将page fault相关的物理内存page拷贝到新分配的物理内存page中，并将新分配的物理内存page映射到子进程</p>
+</li>
+</ol>
+<p>如何发现父进程写了这部分内存地址？是与子进程相同的方法吗？相同的处理方式</p>
+<ol start="7">
+<li><p>Demand Paging<br>延迟加载text和data段<br>dirty page，因为它在某个时间点会被重新写回到内存中。</p>
+</li>
+<li><p> Memory Mapped Files<br>mmap的系统调用，系统调用会接收一个虚拟内存地址（VA），长度（len），protection，一些标志位，一个打开文件的文件描述符，和偏移量（offset）<br>多个进程将同一个文件映射到内存，然后会有同步的问题？<br>mmap的参数中，len和flag是什么意思？  len是文件中你想映射到内存中的字节数。prot是read/write。flags会在mmap lab中出现，我认为它表示了这个区域是私有的还是共享的</p>
+</li>
+</ol>
+<h2 id="Interrupts"><a href="#Interrupts" class="headerlink" title="Interrupts"></a>Interrupts</h2><ol>
+<li>中断触发处理流程<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220821155615.png" alt="20220821155615"><br>RISC-V中断控制器PLIC？ARM64 GIC</li>
+<li>UART设备的驱动uart.c文件<br>bottom/top，bottom部分通常是Interrupt handler；top部分，是用户进程，或者内核的其他部分调用的接口；top部分的代码会从队列中读写数据，而Interrupt handler（bottom部分）同时也会向队列中读写数据<br>RISC-V通过memory mapped I/O完成设备地址映射，设备地址出现在物理地址的特定区间内<br>对设备load/store指令读写设备的控制寄存器</li>
+<li>RISC-V与中断相关的寄存器：</li>
+</ol>
+<ul>
+<li>SIE（Supervisor Interrupt Enable）寄存器，bit E外部设备的中断、S软件中断、T定时器中断</li>
+<li>SSTATUS（Supervisor Status）寄存器 打开或者关闭中断 ARM64 SPSR_ELx  D、A、I、F位置1</li>
+<li>SIP（Supervisor Interrupt Pending）寄存器  中断类型  ELx</li>
+<li>SCAUSE寄存器 中断原因 ARM64 ESR</li>
+<li>STVEC寄存器 保存trap，page fault或者中断发生时，CPU运行的用户程序的程序计数器， ARM64 ELR_ELx<br>bottom/top和 ARM64中上半部分和下半部分反的？<br>polling轮询处理快速中断</li>
+</ul>
+<p>ARM 64体系结构</p>
+<h3 id="11-异常处理"><a href="#11-异常处理" class="headerlink" title="11 异常处理"></a>11 异常处理</h3><ol>
+<li>异常种类：中断、种植、复位和系统调用</li>
+<li>异常等级EL0-EL3  EL0用户模式，EL1系统内核特权模式、EL2虚拟化管理hypervisor，EL3安全管理</li>
+<li>同步异常：指令异常和数据异常page fault；异常异常：中断，物理中断IRQ和FRQ，虚拟中断vIRQ和vFRQ</li>
+<li>异常处理：</li>
+</ol>
+<ul>
+<li>PSTATE寄存器保存到SPSR_ELx中，PSTATE寄存器D、A、I和F位置位1，关闭异常</li>
+<li>返回地址保存到ELR_ELx中</li>
+<li>ESR_ELx保存异常原因</li>
+<li>SP切换到目标异常等级SP_ELx</li>
+<li>切换到对应异常等级，跳转到异常向量表<br>异常返回：</li>
+<li>从ELR_ELx中恢复PC</li>
+<li>从SPSR_ELx中恢复PSTATE，开中断<br>异常返回地址：X30(LR)保存子函数返回地址，用ret返回；ELR_ELx保存异常返回地址，用eret返回</li>
+</ul>
+<ol start="5">
+<li>异常处理路由，当异常发生时应该在那个等级处理</li>
+<li>异常向量表 arch/arm64/kernel/entry.S kerenl_ventry<br>ARM64 v8中VBAR_ELx寄存器设置异常向量表的地址</li>
+<li>异常现场栈空间内容：PSTATE寄存器值、PC值、SP值、X0-X30寄存器值。此栈空间为发生异常时进程的内核态的栈空间</li>
+<li>同步异常  寄存器ESR</li>
+</ol>
+<h3 id="12-中断处理"><a href="#12-中断处理" class="headerlink" title="12 中断处理"></a>12 中断处理</h3><ol>
+<li>ARM64 中断nIRQ和nFRQ，PSTATE中对应I和F两位</li>
+<li>中断处理过程</li>
+</ol>
+<p>1)把当前PC值保存到ELR_ELx中，把PSTATE保存到SPSR中，跳转到异常向量表<br>2)异常向量表中，CPU跳转到对应的汇编处理函数elx_irq<br>3)在汇编函数里保存中断现场<br>4)跳转到中断号所对应的中断处理函数<br>5)在中断处理程序中处理中断<br>6)返回elx_irq汇编函数，恢复中断上下文<br>7)调用ERET指令完成中断返回<br>8)CPU继续执行中断现场下一条指令<br>3. 中断现场数据结构pt_regs保存中断现场<br>中断发生时，把中断现场保存到当前进程的内核栈里：</p>
+<ul>
+<li>PSTATE保存到SPSR_ELx</li>
+<li>PC保存到ELR_ELx</li>
+<li>SP保存到栈顶</li>
+<li>regs保存LR的值</li>
+<li>regs[0]-regs[29]对应保存X0-X30寄存器值</li>
+</ul>
+<br>
+
+<h2 id="Lec10-Multiprocessors-and-locking"><a href="#Lec10-Multiprocessors-and-locking" class="headerlink" title="Lec10 Multiprocessors and locking"></a>Lec10 Multiprocessors and locking</h2><ol>
+<li>锁来控制并确保共享的数据是正确的<br>RSIC-V kalloc.c文件中的kfree函数会将释放的page保存于freelist中</li>
+<li>锁lock API：</li>
+</ol>
+<ul>
+<li>acquire，接收指向lock的指针作为参数。acquire确保了在任何时间，只会有一个进程能够成功的获取锁。</li>
+<li>release，也接收指向lock的指针作为参数。在同一时间尝试获取锁的其他进程需要等待，直到持有锁的进程对锁调用release。</li>
+</ul>
+<ol start="3">
+<li>什么时候才必须要加锁呢？<br>如果两个进程访问了一个共享的数据结构，并且其中一个进程会更新共享的数据结构，那么就需要对于这个共享的数据结构加锁。<br>有没有可能两个进程同时acquire锁，然后同时修改数据？不会<br>可不可以在访问某个数据结构的时候，就获取所有相关联的数据结构的锁？但是这种方式最后会很快演进成big kernel lock</li>
+</ol>
+<br>
+<br>
+
+<p>b站课程：<br><a href="https://www.bilibili.com/video/BV19k4y1C7kA?p=2&amp;spm_id_from=pageDriver&amp;vd_source=6768732acbd0f78ac59230d2faa59a86">https://www.bilibili.com/video/BV19k4y1C7kA?p=2&amp;spm_id_from=pageDriver&amp;vd_source=6768732acbd0f78ac59230d2faa59a86</a></p>
+<p>课程翻译<br><a href="https://github.com/huihongxiao/MIT6.S081">https://github.com/huihongxiao/MIT6.S081</a><br><a href="https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/">https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/</a></p>
+<p><a href="https://pdos.csail.mit.edu/6.828/2020/schedule.html">https://pdos.csail.mit.edu/6.828/2020/schedule.html</a></p>
+<p><a href="https://pdos.csail.mit.edu/6.828/2020/schedule.html">https://pdos.csail.mit.edu/6.828/2020/schedule.html</a></p>
 <script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
       <categories>
         <category>tool</category>
@@ -2262,19 +2214,6 @@ https://www.raspberrypi.com/software/
       <tags>
         <tag>Another Tag</tag>
         <tag>Computer Science</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>读书随记</title>
-    <url>/2022/01/27/2022/%E8%AF%BB%E4%B9%A6%E9%9A%8F%E8%AE%B0/</url>
-    <content><![CDATA[<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2022</category>
-      </categories>
-      <tags>
-        <tag>实用教程</tag>
-        <tag>Another Tag</tag>
       </tags>
   </entry>
   <entry>
@@ -2893,21 +2832,60 @@ Linux 内核使用三个相关的数据结构来表示打开的文件
       </tags>
   </entry>
   <entry>
-    <title>C/C++内存管理</title>
-    <url>/2021/10/07/2021/11/%E5%86%85%E5%AD%98/</url>
-    <content><![CDATA[<h2 id="一、内存"><a href="#一、内存" class="headerlink" title="一、内存"></a>一、内存</h2><p> 在计算机中，不同应用程序之间的内存是相互独立的，通常情况下不可以相互访问。</p>
+    <title>现代操作系统</title>
+    <url>/2022/07/15/2022/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>[toc]</p>
+<p>现代操作系统</p>
 <span id="more"></span>
 
-<p>1、内存四区<br>从下到上为：代码区、数据区、堆区、栈区。<br>栈区：存储临时变量的区域，临时变量包括：局部变量、返回值、参数、返回地址。这些变量超出作用域自动弹出。超出栈大小将会栈溢出。栈从栈顶自上而下，最下端为0x0000。<br>堆区：比较大的内存区域，用于动态内存分配，由开放人员申请和释放，在程序结束时未释放，将会右系统自动回收。<br>数据区：主要存放全局变量、常量和静态变量；数据区又可以划分为：全局区和静态区。<br>代码区：主要纯粹可执行代码。属性为只读的。</p>
-<h2 id="二、malloc和free"><a href="#二、malloc和free" class="headerlink" title="二、malloc和free"></a>二、malloc和free</h2><p> 在 C 语言（不是 C++)中，malloc 和 free 是系统提供的函数，成对使用，用于从堆中分配和释放内存。malloc 的全称是 memory allocation 译为“动态内存分配”。</p>
+<h2 id="第1章-绪论"><a href="#第1章-绪论" class="headerlink" title="第1章 绪论"></a>第1章 绪论</h2><p>体系结构(指令集、存储组织、 I/0和总线结构)<br>操作系统的主要任务是记录哪个程序在使用什么资源，对资源请求进行分配、评估使用代价，并且为不同的程序和用户调解互相冲突的资沥请求。<br>资源管理包括两种不同方式实现多路复用(共享)资源：在时间上复用和在空间上复用<br>纸带程序-批处理程序-多道程序-分时系统<br>UNIX有两个主要的版本，即AT&amp;T System V和加州大学伯克利分校的BSD(Berkeley Software<br>Distribution)。UNIX的标准，称作POSJX, MS-DOS-Windows95<br>处理器：程序计数器(PC)、堆栈指针、程序状态字(PSW)：包含了条件码位(由比较指令设置)、CPU优先级、换式(用户态或内核态)，以及各种其他控制位</p>
+<p>从操作系统中获得服务，用户程序必须使用 系统调用 (sys call)以陷入内核井调用操作系统。 TRAP 指令把用户态切换成内核态，井启用操作系统</p>
+<p>虚拟内存机制:运行大于物理内存的程序，将程序放在磁盘上，而将主存作为缓存，用来保存最频繁使用的部<br>分程序。这种机制需要快速地映像内存地址，以便把程序生成的地址转换为有关字节在RAM 中的物理地址。这种映像由CPU 中的 个称为存储器管理单元 Memory Management Unit, MMU 的部件来完成<br>I/O设备一般包括两个部分：设备控制器和设备本身<br>启动计算机:基本输入输出系统((Basic Input Output System, BIOS)的程序。BIOS 内有底层l/0软件，包括读键盘、写屏幕、进行磁盘I/O 以及其他过程</p>
+<p>操作系统概念：进程<br>系统管理器授权每个进程使用一个给定的 UID(User IDentification)。每个被启动的进程都有启动该进程的用户UID 。子进程拥有与父进程一样的UID。用户可以是某个组的成员，每个组也有GID(Group IDentificalion)。UNIX中，有一个UID称为超级用户 (superuser) 或者Windows 中的管理员 (administrator)。<br>操作系统具有两种功能：为用户程序提供抽象和管理计箕机资源</p>
+<p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718223909.png" alt="20220718223909"></p>
+<p>fork调用返回一个值，在子进程中该值为零，井且在父进程中等于子进程的进程标识符(Process IDeotifier, PID)<br>父进程执行waitpid 系统调用，它只是等待，直至子进程终止子进程必须执行用户的命令。通过使用execve 系统调用可以实现<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718232209.png" alt="20220718232209"></p>
+<p>虚拟机：KVM(针对Linux 内核)、VirtualBox、Hyper-V;模拟器,二进制翻译</p>
+<p>C语言<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718232859.png" alt="20220718232859"></p>
+<p>操作系统有两种观点:资源管理观点和扩展的机器观点。在资源管理观点中，操作系统的任务是有效地管理系统的各个部分。在扩展的机器观点中，系统的任务是为用 提供比实际机器更便干运用的抽象。这些抽象包括进程、地址空间以及文件。<br>操作系统构建基本概念是进程、存储管理、I/O管理、文件管理和安全</p>
+<br>
+
+<h2 id="第2章-进程与线程"><a href="#第2章-进程与线程" class="headerlink" title="第2章 进程与线程"></a>第2章 进程与线程</h2><h3 id="2-1-进程"><a href="#2-1-进程" class="headerlink" title="2.1 进程"></a>2.1 进程</h3><p> 进程模型：包括程序计数器、寄存器和变量的当前值。<br> 进程创建4种事件：系统初始化、程序执行创建进程的系统调用、用户请求创建新进程、批处理作业的初始化。<br> Unix系统创建进程fork，系统调用创建一个与调用进程相同的副本。父进程与子进程有相同的内存映像。子进程执行execve或类似系统调用，以修改器内存映像并运行一个新程序。Win32中CreateProcess<br> 进程退出：正常退出、出错退出、严重错误和被其他进程杀死。Unix调用exit，Windows中ExitProcess。<br> 进程层次，Unix中进程和他所有子进程组成一个进程组。<br> 进程状态：运行态、就绪态、阻塞态，终止；进程调度。<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720005759.png" alt="20220720005759"><br> 进程表<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720010310.png" alt="20220720010310"><br> I/O类关联的是中断向量(interrup vector)的位置(靠近内存底部的固定区域)。</p>
+<h3 id="2-2-线程"><a href="#2-2-线程" class="headerlink" title="2.2 线程"></a>2.2 线程</h3><p> 线程：创建开销小、共享进程内存、切换开销小。线程有一样地址空间。<br> 每个计算都有一个被保存的状态，存在一个会发生且使得相关状态发生改变的事件集合，称为有限状态机。<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720012833.png" alt="20220720012833"><br> 线程创建 thread_create，线程退出thread_exit，等待线程退出 thread_join<br> POSIS线程pthread<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720013227.png" alt="20220720013227"><br> 有两种主要的方法实现线程包：在用户空间 中和在内核中<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720231701.png" alt="20220720231701"></p>
+<h3 id="2-3-进程间通信IPC"><a href="#2-3-进程间通信IPC" class="headerlink" title="2.3 进程间通信IPC"></a>2.3 进程间通信IPC</h3><p> 竞争条件：两个或多个进程读写某些共享数据，而最后的结果取决于进程运行的精确时序。共享内存进行访问的程序片段称作临界区域。<br>使用互斥：屏蔽中断、锁变量、严格轮换、Peterson解法、TSL测试并加锁<br> 信号量：down和up，对信号量down橾作，则是检查其值是否大于0，若该值大千0, 则将其值减1 (即用掉一个保存的唤醒信号)井继续，若该值为0, 则进程将睡眠，而且此时down操作井未结束。up操作对信号量的值增1<br> 互斥量：处干两态之一的变量：解锁和加锁。快速用户区互斥量futex。一个futex 包含两个部分一个内核服务和一个用户库<br> 消息传递，进程间通信方法：send和receive</p>
+<h3 id="2-4-调度Scheduler"><a href="#2-4-调度Scheduler" class="headerlink" title="2.4 调度Scheduler"></a>2.4 调度Scheduler</h3><p> 1.进程行为：CPU密集型进程(计算密集型)和I/O密集型进程<br> 2.进程调度时机：1)创建新进程时调度父进程或子进程 2)进程退出时 3)进程阻塞在I/O和信号量上时 4)I/O中断时<br> 3.调度算法：非抢占式和抢占式<br> 4.三种运行环境：批处理、交互式和实时,批处理-非抢占式，交互式-抢占式，。大型计算中心关心三个指标：吞吐量、周转时间和CPU利用率。交互系统最小响应时间。<br> 5.批处理系统调度算法：1)先来先服务 2)最短作业优先 3)最短剩余时间优先<br> 6.交互式系统调度算法：1)轮转调度 轮询 时间片 2)优先级调度 3)多级队列 4)最短进程优先 5)公平分享调度<br> 7.实时系统调度：硬实时和软实时</p>
+<p> 8.策略与机制</p>
+<p> 9.线程调度：用户级线程和内核级线程之间的差别在于性能 用户级线程的线程切换需要少址的机器指令，而内核级线程垢要完整的上下文切换，修改内存映像，使亦速缓存失效，导致了若干数杂级的延迟</p>
+<p> 功耗管理、虚拟化、云计算和安全问题成为了新的热点主题。</p>
+<h3 id="2-5-小结"><a href="#2-5-小结" class="headerlink" title="2.5 小结"></a>2.5 小结</h3><p> 隐藏中断的影响，操作系统提供了 个井行执行串行进程的概念模型。进程可以动态地创建和终止、每个进程都有自己的地址空间。<br> 线程被独立调度并且有独立的栈，但是在一个进程中的所有线程共享一个地址空间。线程可以在用户态实现，也可以在内核态实现。<br> 进程之间通过进程间通信原语来交换信息，如信号众、管程和消息。进程可以处在运行、就绪或阻塞状态</p>
+<br>
+
+<h2 id="第3章-内存管理"><a href="#第3章-内存管理" class="headerlink" title="第3章 内存管理"></a>第3章 内存管理</h2><p> 分层存储器体系。存储管理器：操作系统种管理分层存储体系的部分。<br> 操作系统作为库实现的常见例子如流行的e-Cos操作系统。</p>
+<h3 id="3-1-存储抽象：地址空间"><a href="#3-1-存储抽象：地址空间" class="headerlink" title="3.1 存储抽象：地址空间"></a>3.1 存储抽象：地址空间</h3><p> 地址空间一个进程可用于寻址内存的一套地址集合<br> 交换技术：空闲进程存到存储磁盘上，运行进程存储到物理内存。</p>
+<p> 虚拟内存：每个程序用于自己的地址空间，空间分割位多个块，每块位一页或页面。页被映射到物理内存，运行程序时不是所有页都必须在内存中，程序引用不在物理内存中的地址空间时，操作系统将缺失部分装入到物理内存。<br> 内存管理单元MMU：把虚拟地址映射到物理内存地址。<br> 页表：虚拟地址：虚拟页号和偏移量<br> 保护位：三位读、写、可执行。页面使用情况：修改位和访问位。禁止高速缓存位。<br> TLB(转换检测缓冲区)：，将虚拟地址直接映射到物理地址。TLB硬件实现和软件管理，当一个页面访问在内存中而不在TLB中时，将产生软失效；当页面本身不在内存中(当然也不在TLB)时，将产生硬失效。<br> 多级页表</p>
+<p> 页表置换算法：最优页面置换算法、最近未使用页面置换算法、先进先出页面置换算法、<strong>最近最少使用页面置换算法LRU</strong><br> PDP-11 指令和数据设置分离的地址空间，分别称为I空间和D空间。进程表有两个指针：一个指向I空间页表，一个指向D空间页表。共享页面<br> 共享库 Windows中DLL，运行时共享，编译时共享：使用相对地址</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># unix  链接当前目录下的所有的.o(目标)文件，井扫描两个库：/usr/lib/libc.a和/usr/lib/libm.a 。</span></span><br><span class="line">Id•.o -le -Im </span><br></pre></td></tr></tbody></table></figure>
+<p> 分页守护进程。分布式共享内存</p>
+<p> 操作系统在四个阶段处理分页相关工作：进程创建时，进程执行时，缺页中断时和进程终止时。</p>
+<h2 id="第4章-文件系统fs"><a href="#第4章-文件系统fs" class="headerlink" title="第4章 文件系统fs"></a>第4章 文件系统fs</h2><h3 id="4-1-文件和目录"><a href="#4-1-文件和目录" class="headerlink" title="4.1 文件和目录"></a>4.1 文件和目录</h3><p> MS-Dos Windows FAT16-&gt;FAT32-&gt;NTFS  linux ext3<br> 目录(directory)是管理文件系统结构的系统文件<br> 文件访问：顺序访问与随机访问<br> 文件属性<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220729231922.png" alt="20220729231922"></p>
+<p> 文件操作：create、delete、open、close、read、write、append、seek、get attributes、set attributes、rename<br> 目录：根目录<br>目录操作：create、delete、opendir、closedir、readdir、rename、link、unlink</p>
+<h3 id="4-2-文件系统实现"><a href="#4-2-文件系统实现" class="headerlink" title="4.2 文件系统实现"></a>4.2 文件系统实现</h3><p> 磁盘的0号扇区称为主引导记录(Master Boot Record MBR).在MBR结尾是分区表,给出每个分区的起始和结束地址。计算机引导时，BIOS读人并执行MBR，MBR读入他的第一个块是引导块。<br> 文件系统本身时一个有向无环图(DAG)。目录与该共享文件的联系称为链接(link)<br> 日志结构文件系统(Log-structured File System LFS)<br> 虚拟文件系统VFS  网络文件系统NFS</p>
+<br>
+
+<h2 id="第5章-输入-输出-I-O"><a href="#第5章-输入-输出-I-O" class="headerlink" title="第5章 输入/输出 I/O"></a>第5章 输入/输出 I/O</h2><p> I/O设备：块设备和字符设备。I/O设备控制器和设备本身。<br> CPU如何与设备的控制寄存器和数据缓冲区进行通信？<br> 第一种方法，每个控制寄存器被分配一个I/O端口(I/O port)号。所有I/O端口形成I/O端口空间(I/O port space)，普通用户不可访问。</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># I/O 指令</span></span><br><span class="line">IN REG, PORT</span><br><span class="line">OUT PORT, REG</span><br></pre></td></tr></tbody></table></figure>
+<p> 第二种方法：将所有控制器映射到内存空间中，每个控制器被分配唯一的一个内存地址，称为内存映射I/O。内存映射不运行缓存。优点：1)C语言可编写驱动，访问控制器寄存器 2)隔离地址空间-&gt;阻止用户进程I/O操作 </p>
+<p> 直接存储器存取(DMA)<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220802000949.png" alt="20220802000949"></p>
+<p> 中断信号使CPU停止当前正在做的工作井且开始做其他的事情。地址线上的数字被用做指向中断向量(interrupt vector)的表格的索引，以便读取一个新的程序计数器。<br> 将机器留在一个明确状态的中断称为精确中断</p>
 <ul>
-<li>参考链接：<br><a href="https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ">https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ</a></li>
+<li>PC程序计数器保存在一个已知的地方</li>
+<li>PC所指向的指令之前的所有指令已经完全执行</li>
+<li>PC所指向的指令之后的所有指令都没有执行</li>
+<li>PC所指向的指令的执行状态已知的<br> 不满足这些要求的中断称为不精确中断</li>
 </ul>
 <script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
       <categories>
         <category>tool</category>
-        <category>2021</category>
-        <category>11</category>
+        <category>2022</category>
       </categories>
       <tags>
         <tag>Another Tag</tag>
@@ -2915,89 +2893,16 @@ Linux 内核使用三个相关的数据结构来表示打开的文件
       </tags>
   </entry>
   <entry>
-    <title>C/C++</title>
-    <url>/2021/12/07/2021/12/C++/</url>
-    <content><![CDATA[<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><ul>
-<li>开源 C++ 库列表<br><a href="https://zh.cppreference.com/w/cpp/links/libs">https://zh.cppreference.com/w/cpp/links/libs</a></li>
-<li>C 语言<br><a href="https://zh.cppreference.com/w/c/language">https://zh.cppreference.com/w/c/language</a></li>
-</ul>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+    <title>读书随记</title>
+    <url>/2022/01/27/2022/%E8%AF%BB%E4%B9%A6%E9%9A%8F%E8%AE%B0/</url>
+    <content><![CDATA[<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
       <categories>
         <category>tool</category>
-        <category>2021</category>
-        <category>12</category>
+        <category>2022</category>
       </categories>
       <tags>
-        <tag>c/c++</tag>
-        <tag>cs</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CMake</title>
-    <url>/2021/12/07/2021/12/cmake/</url>
-    <content><![CDATA[<h2 id="1-cmake简述"><a href="#1-cmake简述" class="headerlink" title="1.cmake简述"></a>1.cmake简述</h2><p> CMake是跨平台编译管理工具,为第三方依赖和引入,创建编译系统,程序测试及安装.Cmake工具使用CMakeLists.txt文件,跨平台执行相同编译命令,生成对应平台的可执行程序或者链接库.</p>
-<span id="more"></span>
-
-<p> CMake工程简单例子</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">cmake_minimum_required(VERSION 3.12)</span><br><span class="line">project(myproj)</span><br><span class="line">find_package(Poco REQUIRED COMPONENTS Net Util)</span><br><span class="line">add_executable(MyExe)</span><br><span class="line">target_source(MyExe PRIVATE <span class="string">"main.cpp"</span>)</span><br><span class="line">target_link_library(MyExe PRIVATE Poco::Net PocoUtil)</span><br><span class="line"></span><br><span class="line">target_complie_definition(MyExe PRIVATE std_cxx_14)</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="2-Target-和围绕-Target-的配置"><a href="#2-Target-和围绕-Target-的配置" class="headerlink" title="2.Target 和围绕 Target 的配置"></a>2.Target 和围绕 Target 的配置</h2><p> C/C++工程通常都是为了生成可执行程序或者链接库，在现代 CMake 里他们被统称为<code>target</code>，创建命令分别是<code>add_library()</code>和<code>add_executable()</code>。其中链接库的类型又分为很多种，最常用的就是<code>SHARED</code>以及<code>STATIC</code>，在命令中加入关键词进行声明：add_library(MyLib SHARED)，第一个参数为target的名称，后续的配置都需要用到这个名字。<br> 指定target的源文件：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_source(MyLib PRVIATE <span class="string">"main.cpp"</span> <span class="string">"func.cpp"</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p> PRIVATE关键词用于描述参数的“应用范围”，此外还有INTERFACE和PUBLIC两种可能的值</p>
-<p> 较多的源文件，可以使用 CMake 的file命令进行遍历拿到全部的源文件</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">file(GLOB_RECURSE SRCS <span class="variable">${CMAKE_CURRENT_SOURCE_DIR}</span>/*.cpp)</span><br></pre></td></tr></tbody></table></figure>
-<p> 命令第一个参数GLOB_RECURSE表明递归的查找子文件夹，第二个参数SRCS则是存储结果的变量名，第三个参数为目标文件的匹配模式，找到符合条件的 cpp 文件后，他们的路径会以字符串数组的形式保存在 SRCS 变量中，使用方式如下：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_source(MyLib PRIVATE <span class="variable">${SRCS}</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p> 配置target时通常还需要指定头文件目录：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_include_directories(MyLib PRIVATE <span class="variable">${CMAKE_CURRENT_SOURCE_DIR}</span>/include/)</span><br></pre></td></tr></tbody></table></figure>
-<p> 编译时需要的语言特性：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_features(MyLib PRIVATE std_cxx_14)</span><br></pre></td></tr></tbody></table></figure>
-<p> 编译时的宏定义：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_definitions(MyLib PRIVATE LogLevel=3)</span><br></pre></td></tr></tbody></table></figure>
-<p> 参数想直接传给底层的编译器（比如 gcc, clang, cl），可以使用</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_options(MyLib PRIVATE -Werror -Wall -Wextra)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="3-Build-Specification-和-Usage-Requirement"><a href="#3-Build-Specification-和-Usage-Requirement" class="headerlink" title="3.Build Specification 和 Usage Requirement"></a>3.Build Specification 和 Usage Requirement</h2><p> C/C++通过 include 头文件的方式引入依赖，在动态或静态链接后可以调用依赖实现。一个可执行程序可能会依赖链接库，链接库也同样可能依赖其他的链接库<br> CMake 提供的解决方案是，在对 target 进行配置时，可以规定配置的类型，分为 build specification 和 usage requirement 两类，会影响配置的应用范围。Build specification 类型的配置仅在编译的时候需要满足，通过PRIVATE关键字声明；Usage requirement 类型的配置则是在使用时需要满足，即在其他项目里，使用本项目已编译好的 target 时需要满足，这种类型的配置使用INTERFACE关键词声明。在实际工程中，有很多配置在编译时以及被使用时都需要被满足的，这种配置通过PUBLIC关键词进行声明。</p>
-<p> 一个 library，在编译时静态链接了 Boost，在我们的实现文件中使用了 c++14 的特性，并用到了 Boost 的头文件和函数。随后我们对外发布了这个库，其中有头文件和预编译好的动态链接库。尽管我们的实现代码里用了 C++14，但在对外提供的头文件中只用到 C++03 的语法，也没有引入任何 Boost 的代码。这种情况下，当其他工程在使用我们的 library 时，其使用的编译器不需要开启 C++14 的支持，开发环境下也不需要安装 Boost。我们 library 的 CMake 配置中可以这么写：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_features(MyLib PRIVATE cxx_std_14)</span><br><span class="line">target_link_libraries(MyLib PRIVATE Boost::Format)</span><br></pre></td></tr></tbody></table></figure>
-<p> PRIVATE 说明 c++14 的支持只在编译时需要用到，Boost 库的链接也仅在编译时需要。但如果我们对外提供的头文件中也使用了 C++14，那么就需要使用 PUBLIC 修饰，改为：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_features(MyLib PUBLIC cxx_std_14)</span><br><span class="line">target_link_libraries(MyLib PRIVATE Boost::Format)</span><br></pre></td></tr></tbody></table></figure>
-<p> 当 library 是 header-only 时，我们的工程是不需要单独编译的，因此也就没有 build specification，通过INTERFACE修饰配置即可</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">arget_compile_features(MyLib INTERFACE cxx_std_14)</span><br></pre></td></tr></tbody></table></figure>
-<p> Usage requirement 类型的配置，即通过INTERFACE或是PUBLIC修饰的配置是会传递的，比如 LibA 依赖 LibB 后，会继承 LibB 的 usage requirement，此后 LibC 依赖 LibB 时，LibA 和 libB 的 usage requirement 都会继承下来，</p>
-<h2 id="4-寻找和使用链接库"><a href="#4-寻找和使用链接库" class="headerlink" title="4.寻找和使用链接库"></a>4.寻找和使用链接库</h2><p> C/C++标准没有规范库的安装位置和安装形式，通过 CMake 提供的方案寻找依赖，不光可以定位到头文件目录和链接库路径，还能够获取到库的 usage requirement。<br> 在 CMake 中寻找第三方库的命令为find_package，其背后的工作方式有两种，一种基于 Config File 的查找，另一种则是基于 Find File 的查找。在执行find_package时，实际上 CMake 都是在找这两类文件，找到后从中获取关于库的信息。</p>
-<h3 id="4-1-通过-Config-file-找到依赖"><a href="#4-1-通过-Config-file-找到依赖" class="headerlink" title="4.1 通过 Config file 找到依赖"></a>4.1 通过 Config file 找到依赖</h3><p> Config File 是依赖的开发者提供的 cmake 脚本，通常会随预编译好的二进制一起发布，供下游的使用者使用。在 Config file 里，会对库里包含的 target 进行描述，说明版本信息以及头文件路径、链接库路径、编译选项等 usage requirement</p>
-<p> CMake 对 Config file 的命名是有规定的，对于find_package(ABC)这样一条命令，CMake 只会去寻找ABCConfig.cmake或是abc-config.cmake。CMake 默认寻找的路径和平台有关，在 Linux 下寻找路径包括/usr/lib/cmake以及/usr/lib/local/cmake，在这两个路径下可以发现大量的 Config File，一般在安装某个库时，其自带的 Config file 会被放到这里来。</p>
-<h3 id="4-2-通过-Find-file-找到依赖"><a href="#4-2-通过-Find-file-找到依赖" class="headerlink" title="4.2 通过 Find file 找到依赖"></a>4.2 通过 Find file 找到依赖</h3><p> 对于find_package(ABC)命令，如果 CMake 没有找到 Config file，他还会去试着寻找FindABC.cmake。Find file 在功能上和 Config file 相同，区别在于 Find file 是由其他人编写的，而非库的开发者。如果你使用的某个库没有提供 Config file，你可以去网上搜搜 Find file 或者自己写一个，然后加入到你的 CMake 工程中。</p>
-<p> CMake 官方为我们写好了很多 Find file，在CMake Documentation这一页面可以看到，OpenGL，OpenMP，SDL 这些知名的库官方都为我们写好了 Find 脚本，因此直接调用 find_package 命令即可。但由于库的安装位置并不是固定的，这些 Find 脚本不一定能找到库，此时根据 CMake 报错的提示设置对应变量即可，通常是需要提供安装路径，这样就可以通过 Find file 获取到库的 usage requirement。不论是 Config file 还是 Find file，其目的都不只是找到库这么简单，而是告诉 CMake 如何使用这个库。<br>库 CMake 官方也没有提供 Find file，这时候就要自己写了或者靠搜索了，写好后放到本项目的目录下，修改CMAKE_MODULE_PATH这个 CMAKE 变量：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">list(INSERT CMAKE_MODULE_PATH 0 <span class="variable">${CMAKE_SOURCE_DIR}</span>/cmake)</span><br></pre></td></tr></tbody></table></figure>
-<p> ${CMAKE_SOURCE_DIR}/cmake目录下的 Find file 就可以被 CMake 找到了。<br> 通过 CMake 的find_library和find_path两个命令就可以完成任务：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">find_library(MPI_LIBRARY</span><br><span class="line">  NAMES mpi</span><br><span class="line">  HINTS <span class="string">"<span class="variable">${CMAKE_PREFIX_PATH}</span>/lib"</span> <span class="variable">${MPI_LIB_PATH}</span></span><br><span class="line">  <span class="comment"># 如果默认路径没找到libmpi.so，还会去MPI_LIB_PATH找，下游使用者可以设置这个变量值</span></span><br><span class="line">)</span><br><span class="line">find_path(MPI_INCLUDE_DIR</span><br><span class="line">  NAMES mpi.h</span><br><span class="line">  PATHS <span class="string">"<span class="variable">${CMAKE_PREFIX_PATH}</span>/include"</span> <span class="variable">${MPI_INCLUDE_PATH}</span></span><br><span class="line">  <span class="comment"># 如果默认路径没找到mpi.h，还会去MPI_INCLUDE_PATH找，下游使用者可以设置这个变量值</span></span><br><span class="line">)</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="4-3-find-package-的处理"><a href="#4-3-find-package-的处理" class="headerlink" title="4.3.find_package 的处理"></a>4.3.find_package 的处理</h3><p> find_package这个命令，这个命令可以指定很多参数，比如指定版本，指定具体的模块等等。以 SFML 多媒体库为例，其包含了 network 模块，audio 模块，graphic 模块等等，但我很多时候只用到 graphic 模块，那么其他的模块对应的链接库不需要被链接，于是 CMake 脚本可以这么写：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 要求大版本号为2的SFML库的graphic模块</span></span><br><span class="line">find_package(SFML 2 COMPONENTS graphics REQUIRED)</span><br><span class="line"><span class="comment"># SFML提供的target名字为sfml-graphics</span></span><br><span class="line">target_link_libraries(MyEXE PRIVATE sfml-graphics)</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="5-使用-CMake-来编译"><a href="#5-使用-CMake-来编译" class="headerlink" title="5.使用 CMake 来编译"></a>5.使用 CMake 来编译</h3><p> CMake 生成好编译环境后，底层的 make, ninja, MSBuild 编译命令都是不一样的，但 CMake 提供了一个统一的方法进行编译：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">cmake --build .</span><br></pre></td></tr></tbody></table></figure>
-<p> 使用–buildflag，CMake 就会调用底层的编译命令，在跨平台时十分方便。<br> 对于 Visual Studio，其 Debug 和 Release 环境是基于 configuration 的，因此CMAKE_BUILD_TYPE变量无效，需要在 build 时指定：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">cmake --build . --config Release</span><br></pre></td></tr></tbody></table></figure>
-
-
-
-
-<ul>
-<li>参考链接:<br>cmake<br><a href="https://ukabuer.me/blog/more-modern-cmake/">https://ukabuer.me/blog/more-modern-cmake/</a><br>Makefile</li>
-</ul>
-<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
-      <categories>
-        <category>tool</category>
-        <category>2021</category>
-        <category>12</category>
-      </categories>
-      <tags>
-        <tag>cs</tag>
-        <tag>complier</tag>
-        <tag>cmake</tag>
+        <tag>实用教程</tag>
+        <tag>Another Tag</tag>
       </tags>
   </entry>
   <entry>
@@ -3300,6 +3205,114 @@ Linux 内核使用三个相关的数据结构来表示打开的文件
       <tags>
         <tag>实用教程</tag>
         <tag>Another Tag</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C/C++内存管理</title>
+    <url>/2021/10/07/2021/11/%E5%86%85%E5%AD%98/</url>
+    <content><![CDATA[<h2 id="一、内存"><a href="#一、内存" class="headerlink" title="一、内存"></a>一、内存</h2><p> 在计算机中，不同应用程序之间的内存是相互独立的，通常情况下不可以相互访问。</p>
+<span id="more"></span>
+
+<p>1、内存四区<br>从下到上为：代码区、数据区、堆区、栈区。<br>栈区：存储临时变量的区域，临时变量包括：局部变量、返回值、参数、返回地址。这些变量超出作用域自动弹出。超出栈大小将会栈溢出。栈从栈顶自上而下，最下端为0x0000。<br>堆区：比较大的内存区域，用于动态内存分配，由开放人员申请和释放，在程序结束时未释放，将会右系统自动回收。<br>数据区：主要存放全局变量、常量和静态变量；数据区又可以划分为：全局区和静态区。<br>代码区：主要纯粹可执行代码。属性为只读的。</p>
+<h2 id="二、malloc和free"><a href="#二、malloc和free" class="headerlink" title="二、malloc和free"></a>二、malloc和free</h2><p> 在 C 语言（不是 C++)中，malloc 和 free 是系统提供的函数，成对使用，用于从堆中分配和释放内存。malloc 的全称是 memory allocation 译为“动态内存分配”。</p>
+<ul>
+<li>参考链接：<br><a href="https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ">https://mp.weixin.qq.com/s/mgJXEnhgvGSY4uwMRzLZeQ</a></li>
+</ul>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2021</category>
+        <category>11</category>
+      </categories>
+      <tags>
+        <tag>Another Tag</tag>
+        <tag>Computer Science</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C/C++</title>
+    <url>/2021/12/07/2021/12/C++/</url>
+    <content><![CDATA[<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><ul>
+<li>开源 C++ 库列表<br><a href="https://zh.cppreference.com/w/cpp/links/libs">https://zh.cppreference.com/w/cpp/links/libs</a></li>
+<li>C 语言<br><a href="https://zh.cppreference.com/w/c/language">https://zh.cppreference.com/w/c/language</a></li>
+</ul>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2021</category>
+        <category>12</category>
+      </categories>
+      <tags>
+        <tag>c/c++</tag>
+        <tag>cs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CMake</title>
+    <url>/2021/12/07/2021/12/cmake/</url>
+    <content><![CDATA[<h2 id="1-cmake简述"><a href="#1-cmake简述" class="headerlink" title="1.cmake简述"></a>1.cmake简述</h2><p> CMake是跨平台编译管理工具,为第三方依赖和引入,创建编译系统,程序测试及安装.Cmake工具使用CMakeLists.txt文件,跨平台执行相同编译命令,生成对应平台的可执行程序或者链接库.</p>
+<span id="more"></span>
+
+<p> CMake工程简单例子</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">cmake_minimum_required(VERSION 3.12)</span><br><span class="line">project(myproj)</span><br><span class="line">find_package(Poco REQUIRED COMPONENTS Net Util)</span><br><span class="line">add_executable(MyExe)</span><br><span class="line">target_source(MyExe PRIVATE <span class="string">"main.cpp"</span>)</span><br><span class="line">target_link_library(MyExe PRIVATE Poco::Net PocoUtil)</span><br><span class="line"></span><br><span class="line">target_complie_definition(MyExe PRIVATE std_cxx_14)</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="2-Target-和围绕-Target-的配置"><a href="#2-Target-和围绕-Target-的配置" class="headerlink" title="2.Target 和围绕 Target 的配置"></a>2.Target 和围绕 Target 的配置</h2><p> C/C++工程通常都是为了生成可执行程序或者链接库，在现代 CMake 里他们被统称为<code>target</code>，创建命令分别是<code>add_library()</code>和<code>add_executable()</code>。其中链接库的类型又分为很多种，最常用的就是<code>SHARED</code>以及<code>STATIC</code>，在命令中加入关键词进行声明：add_library(MyLib SHARED)，第一个参数为target的名称，后续的配置都需要用到这个名字。<br> 指定target的源文件：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_source(MyLib PRVIATE <span class="string">"main.cpp"</span> <span class="string">"func.cpp"</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p> PRIVATE关键词用于描述参数的“应用范围”，此外还有INTERFACE和PUBLIC两种可能的值</p>
+<p> 较多的源文件，可以使用 CMake 的file命令进行遍历拿到全部的源文件</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">file(GLOB_RECURSE SRCS <span class="variable">${CMAKE_CURRENT_SOURCE_DIR}</span>/*.cpp)</span><br></pre></td></tr></tbody></table></figure>
+<p> 命令第一个参数GLOB_RECURSE表明递归的查找子文件夹，第二个参数SRCS则是存储结果的变量名，第三个参数为目标文件的匹配模式，找到符合条件的 cpp 文件后，他们的路径会以字符串数组的形式保存在 SRCS 变量中，使用方式如下：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_source(MyLib PRIVATE <span class="variable">${SRCS}</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p> 配置target时通常还需要指定头文件目录：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_include_directories(MyLib PRIVATE <span class="variable">${CMAKE_CURRENT_SOURCE_DIR}</span>/include/)</span><br></pre></td></tr></tbody></table></figure>
+<p> 编译时需要的语言特性：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_features(MyLib PRIVATE std_cxx_14)</span><br></pre></td></tr></tbody></table></figure>
+<p> 编译时的宏定义：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_definitions(MyLib PRIVATE LogLevel=3)</span><br></pre></td></tr></tbody></table></figure>
+<p> 参数想直接传给底层的编译器（比如 gcc, clang, cl），可以使用</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_options(MyLib PRIVATE -Werror -Wall -Wextra)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="3-Build-Specification-和-Usage-Requirement"><a href="#3-Build-Specification-和-Usage-Requirement" class="headerlink" title="3.Build Specification 和 Usage Requirement"></a>3.Build Specification 和 Usage Requirement</h2><p> C/C++通过 include 头文件的方式引入依赖，在动态或静态链接后可以调用依赖实现。一个可执行程序可能会依赖链接库，链接库也同样可能依赖其他的链接库<br> CMake 提供的解决方案是，在对 target 进行配置时，可以规定配置的类型，分为 build specification 和 usage requirement 两类，会影响配置的应用范围。Build specification 类型的配置仅在编译的时候需要满足，通过PRIVATE关键字声明；Usage requirement 类型的配置则是在使用时需要满足，即在其他项目里，使用本项目已编译好的 target 时需要满足，这种类型的配置使用INTERFACE关键词声明。在实际工程中，有很多配置在编译时以及被使用时都需要被满足的，这种配置通过PUBLIC关键词进行声明。</p>
+<p> 一个 library，在编译时静态链接了 Boost，在我们的实现文件中使用了 c++14 的特性，并用到了 Boost 的头文件和函数。随后我们对外发布了这个库，其中有头文件和预编译好的动态链接库。尽管我们的实现代码里用了 C++14，但在对外提供的头文件中只用到 C++03 的语法，也没有引入任何 Boost 的代码。这种情况下，当其他工程在使用我们的 library 时，其使用的编译器不需要开启 C++14 的支持，开发环境下也不需要安装 Boost。我们 library 的 CMake 配置中可以这么写：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_features(MyLib PRIVATE cxx_std_14)</span><br><span class="line">target_link_libraries(MyLib PRIVATE Boost::Format)</span><br></pre></td></tr></tbody></table></figure>
+<p> PRIVATE 说明 c++14 的支持只在编译时需要用到，Boost 库的链接也仅在编译时需要。但如果我们对外提供的头文件中也使用了 C++14，那么就需要使用 PUBLIC 修饰，改为：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">target_compile_features(MyLib PUBLIC cxx_std_14)</span><br><span class="line">target_link_libraries(MyLib PRIVATE Boost::Format)</span><br></pre></td></tr></tbody></table></figure>
+<p> 当 library 是 header-only 时，我们的工程是不需要单独编译的，因此也就没有 build specification，通过INTERFACE修饰配置即可</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">arget_compile_features(MyLib INTERFACE cxx_std_14)</span><br></pre></td></tr></tbody></table></figure>
+<p> Usage requirement 类型的配置，即通过INTERFACE或是PUBLIC修饰的配置是会传递的，比如 LibA 依赖 LibB 后，会继承 LibB 的 usage requirement，此后 LibC 依赖 LibB 时，LibA 和 libB 的 usage requirement 都会继承下来，</p>
+<h2 id="4-寻找和使用链接库"><a href="#4-寻找和使用链接库" class="headerlink" title="4.寻找和使用链接库"></a>4.寻找和使用链接库</h2><p> C/C++标准没有规范库的安装位置和安装形式，通过 CMake 提供的方案寻找依赖，不光可以定位到头文件目录和链接库路径，还能够获取到库的 usage requirement。<br> 在 CMake 中寻找第三方库的命令为find_package，其背后的工作方式有两种，一种基于 Config File 的查找，另一种则是基于 Find File 的查找。在执行find_package时，实际上 CMake 都是在找这两类文件，找到后从中获取关于库的信息。</p>
+<h3 id="4-1-通过-Config-file-找到依赖"><a href="#4-1-通过-Config-file-找到依赖" class="headerlink" title="4.1 通过 Config file 找到依赖"></a>4.1 通过 Config file 找到依赖</h3><p> Config File 是依赖的开发者提供的 cmake 脚本，通常会随预编译好的二进制一起发布，供下游的使用者使用。在 Config file 里，会对库里包含的 target 进行描述，说明版本信息以及头文件路径、链接库路径、编译选项等 usage requirement</p>
+<p> CMake 对 Config file 的命名是有规定的，对于find_package(ABC)这样一条命令，CMake 只会去寻找ABCConfig.cmake或是abc-config.cmake。CMake 默认寻找的路径和平台有关，在 Linux 下寻找路径包括/usr/lib/cmake以及/usr/lib/local/cmake，在这两个路径下可以发现大量的 Config File，一般在安装某个库时，其自带的 Config file 会被放到这里来。</p>
+<h3 id="4-2-通过-Find-file-找到依赖"><a href="#4-2-通过-Find-file-找到依赖" class="headerlink" title="4.2 通过 Find file 找到依赖"></a>4.2 通过 Find file 找到依赖</h3><p> 对于find_package(ABC)命令，如果 CMake 没有找到 Config file，他还会去试着寻找FindABC.cmake。Find file 在功能上和 Config file 相同，区别在于 Find file 是由其他人编写的，而非库的开发者。如果你使用的某个库没有提供 Config file，你可以去网上搜搜 Find file 或者自己写一个，然后加入到你的 CMake 工程中。</p>
+<p> CMake 官方为我们写好了很多 Find file，在CMake Documentation这一页面可以看到，OpenGL，OpenMP，SDL 这些知名的库官方都为我们写好了 Find 脚本，因此直接调用 find_package 命令即可。但由于库的安装位置并不是固定的，这些 Find 脚本不一定能找到库，此时根据 CMake 报错的提示设置对应变量即可，通常是需要提供安装路径，这样就可以通过 Find file 获取到库的 usage requirement。不论是 Config file 还是 Find file，其目的都不只是找到库这么简单，而是告诉 CMake 如何使用这个库。<br>库 CMake 官方也没有提供 Find file，这时候就要自己写了或者靠搜索了，写好后放到本项目的目录下，修改CMAKE_MODULE_PATH这个 CMAKE 变量：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">list(INSERT CMAKE_MODULE_PATH 0 <span class="variable">${CMAKE_SOURCE_DIR}</span>/cmake)</span><br></pre></td></tr></tbody></table></figure>
+<p> ${CMAKE_SOURCE_DIR}/cmake目录下的 Find file 就可以被 CMake 找到了。<br> 通过 CMake 的find_library和find_path两个命令就可以完成任务：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">find_library(MPI_LIBRARY</span><br><span class="line">  NAMES mpi</span><br><span class="line">  HINTS <span class="string">"<span class="variable">${CMAKE_PREFIX_PATH}</span>/lib"</span> <span class="variable">${MPI_LIB_PATH}</span></span><br><span class="line">  <span class="comment"># 如果默认路径没找到libmpi.so，还会去MPI_LIB_PATH找，下游使用者可以设置这个变量值</span></span><br><span class="line">)</span><br><span class="line">find_path(MPI_INCLUDE_DIR</span><br><span class="line">  NAMES mpi.h</span><br><span class="line">  PATHS <span class="string">"<span class="variable">${CMAKE_PREFIX_PATH}</span>/include"</span> <span class="variable">${MPI_INCLUDE_PATH}</span></span><br><span class="line">  <span class="comment"># 如果默认路径没找到mpi.h，还会去MPI_INCLUDE_PATH找，下游使用者可以设置这个变量值</span></span><br><span class="line">)</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="4-3-find-package-的处理"><a href="#4-3-find-package-的处理" class="headerlink" title="4.3.find_package 的处理"></a>4.3.find_package 的处理</h3><p> find_package这个命令，这个命令可以指定很多参数，比如指定版本，指定具体的模块等等。以 SFML 多媒体库为例，其包含了 network 模块，audio 模块，graphic 模块等等，但我很多时候只用到 graphic 模块，那么其他的模块对应的链接库不需要被链接，于是 CMake 脚本可以这么写：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 要求大版本号为2的SFML库的graphic模块</span></span><br><span class="line">find_package(SFML 2 COMPONENTS graphics REQUIRED)</span><br><span class="line"><span class="comment"># SFML提供的target名字为sfml-graphics</span></span><br><span class="line">target_link_libraries(MyEXE PRIVATE sfml-graphics)</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="5-使用-CMake-来编译"><a href="#5-使用-CMake-来编译" class="headerlink" title="5.使用 CMake 来编译"></a>5.使用 CMake 来编译</h3><p> CMake 生成好编译环境后，底层的 make, ninja, MSBuild 编译命令都是不一样的，但 CMake 提供了一个统一的方法进行编译：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">cmake --build .</span><br></pre></td></tr></tbody></table></figure>
+<p> 使用–buildflag，CMake 就会调用底层的编译命令，在跨平台时十分方便。<br> 对于 Visual Studio，其 Debug 和 Release 环境是基于 configuration 的，因此CMAKE_BUILD_TYPE变量无效，需要在 build 时指定：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">cmake --build . --config Release</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+
+<ul>
+<li>参考链接:<br>cmake<br><a href="https://ukabuer.me/blog/more-modern-cmake/">https://ukabuer.me/blog/more-modern-cmake/</a><br>Makefile</li>
+</ul>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>tool</category>
+        <category>2021</category>
+        <category>12</category>
+      </categories>
+      <tags>
+        <tag>cs</tag>
+        <tag>complier</tag>
+        <tag>cmake</tag>
       </tags>
   </entry>
   <entry>
