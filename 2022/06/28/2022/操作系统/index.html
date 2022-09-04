@@ -258,14 +258,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>11k</span>
+              <span>13k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>10 分钟</span>
+              <span>11 分钟</span>
             </span>
 
         </div>
@@ -546,7 +546,54 @@
 </ul>
 <ol start="3">
 <li>什么时候才必须要加锁呢？<br>如果两个进程访问了一个共享的数据结构，并且其中一个进程会更新共享的数据结构，那么就需要对于这个共享的数据结构加锁。<br>有没有可能两个进程同时acquire锁，然后同时修改数据？不会<br>可不可以在访问某个数据结构的时候，就获取所有相关联的数据结构的锁？但是这种方式最后会很快演进成big kernel lock</li>
+<li>锁有三种作用</li>
 </ol>
+<ul>
+<li>锁可以避免丢失更新</li>
+<li>锁可以打包多个操作，使它们具有原子性。</li>
+<li>锁可以维护共享数据结构的不变性。</li>
+</ul>
+<ol start="5">
+<li>一个死锁的最简单的场景就是：首先acquire一个锁，然后进入到critical section；在critical section中，再acquire同一个锁；第二个acquire必须要等到第一个acquire状态被release了才能继续执行，但是不继续执行的话又走不到第一个release，所以程序就一直卡在这了。这就是一个死锁。<br>同一个进程多次acquire同一个锁，就会触发一个panic。<br>相互acquuire对方锁，多个锁，你需要对锁进行排序，所有的操作都必须以相同的顺序获取锁。</li>
+<li>自旋锁<br>硬件指令。这个特殊的硬件指令会保证一次test-and-set操作的原子性。在RISC-V上，这个特殊的指令就是amoswap（atomic memory swap）<br>内存屏障指令</li>
+</ol>
+<br>
+
+<h2 id="11-Thread-switching"><a href="#11-Thread-switching" class="headerlink" title="11. Thread switching"></a>11. Thread switching</h2><h3 id="Q"><a href="#Q" class="headerlink" title="Q"></a>Q</h3><ol>
+<li><p>为什么计算机需要运行多线程？<br>计算机在同一时间不是只执行一个任务。需要执行分时复用的任务<br>线程可以让程序的结构变得简单<br>在多核CPU的计算机上多线程可以通过并行运算获得更快的处理速度</p>
+</li>
+<li><p>线程的状态包含了三个部分?</p>
+</li>
+</ol>
+<ul>
+<li>程序计数器（Program Counter），它表示当前线程执行指令的位置。</li>
+<li>保存变量的寄存器。</li>
+<li>程序的Stack,Stack记录了函数调用的记录，并反映了当前线程的执行点。</li>
+</ul>
+<ol start="3">
+<li>多线程的并行运行主要有两个策略：</li>
+</ol>
+<ul>
+<li>多核处理器上使用多个CPU，每个CPU都可以运行一个线程</li>
+<li>一个CPU在多个线程之间来回切换</li>
+</ul>
+<ol start="4">
+<li><p>所有的内核线程都共享了内核内存,每一个用户进程都有独立的内存地址空间。XV6中的用户线程之间没有共享内存，一个进程只有一个线程。Linux，允许在一个用户进程中包含多个线程</p>
+</li>
+<li><p>XV6线程调度<br>如何实现线程间的切换？<br>线程调度(Scheduling)? 停止一个线程的运行并启动另一个线程的过程。线程调度器（Scheduler）<br>线程切换时，需要保存并恢复线程的状态？<br>如何处理运算密集型线程（compute bound thread）？ 利用定时器中断<br>定时器中断会强制的将CPU控制权从用户进程给到内核，这里是pre-emptive scheduling，之后内核会代表用户进程（注，实际是内核中用户进程对应的内核线程会代表用户进程出让CPU），使用voluntary scheduling。</p>
+</li>
+<li><p>线程状态</p>
+</li>
+</ol>
+<ul>
+<li>RUNNING，线程当前正在某个CPU上运行</li>
+<li>RUNABLE，线程还没有在某个CPU上运行，但是一旦有空闲的CPU就可以运行</li>
+<li>SLEEPING，这节课我们不会介绍，下节课会重点介绍，这个状态意味着线程在等待一些I/O事件，它只会在I/O事件发生了之后运行</li>
+</ul>
+<ol start="6">
+<li>线程切换过程：<br>从一个用户进程切换到另一个用户进程，都需要从第一个用户进程接入到内核中，保存用户进程的状态并运行第一个用户进程的内核线程。  — 定时器中断<br>再从第一个用户进程的内核线程切换到第二个用户进程的内核线程。 — 让出CPU   swtch函数<br>之后，第二个用户进程的内核线程暂停自己，并恢复第二个用户进程的用户寄存器。<br>最后返回到第二个用户进程继续执行。</li>
+</ol>
+<p>swtch函数会保存用户进程P1对应内核线程的寄存器至context对象<br>schedulder函数<br>任何运行在CPU1上的进程，当它决定出让CPU，它都会切换到CPU1对应的调度器线程，并由调度器线程切换到下一个进程。<br>context保存在哪？<br>每一个内核线程都有一个context对象。但是内核线程实际上有两类。每一个用户进程有一个对应的内核线程，它的context对象保存在用户进程对应的proc结构体中。<br>出让CPU是由用户发起的还是由内核发起的？</p>
 <br>
 <br>
 
@@ -638,7 +685,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-OS-Organization-and-System-Calls"><span class="nav-text">3 OS Organization and System Calls</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Page-Table"><span class="nav-text">Page Table</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Armv8-A-Address-Translation"><span class="nav-text">Armv8-A Address Translation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DDI0487H-a-a-profile-architecture-reference-manual-pdf"><span class="nav-text">DDI0487H_a_a-profile_architecture_reference_manual.pdf</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#D5-2-6"><span class="nav-text">D5.2.6</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARM64%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5"><span class="nav-text">ARM64体系结构编程实践</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC14%E7%AB%A0-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text">第14章 内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1"><span class="nav-text">1</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Calling-conventions-and-stack-frames-RISC-V"><span class="nav-text">Calling conventions and stack frames RISC-V</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%EF%BC%8CRISV-V%E8%B0%83%E7%94%A8%E8%A7%84%E8%8C%83"><span class="nav-text">编译，RISV-V调用规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RISC-V%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-text">RISC-V寄存器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stack"><span class="nav-text">Stack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Struct"><span class="nav-text">Struct</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Isolation-amp-system-call-entry-exit-Rebort"><span class="nav-text">Isolation &amp; system call entry&#x2F;exit(Rebort)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Trap"><span class="nav-text">Trap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Page-faults-Frans"><span class="nav-text">Page faults(Frans)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interrupts"><span class="nav-text">Interrupts</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#11-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="nav-text">11 异常处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86"><span class="nav-text">12 中断处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec10-Multiprocessors-and-locking"><span class="nav-text">Lec10 Multiprocessors and locking</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-OS-Organization-and-System-Calls"><span class="nav-text">3 OS Organization and System Calls</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Page-Table"><span class="nav-text">Page Table</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Armv8-A-Address-Translation"><span class="nav-text">Armv8-A Address Translation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DDI0487H-a-a-profile-architecture-reference-manual-pdf"><span class="nav-text">DDI0487H_a_a-profile_architecture_reference_manual.pdf</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#D5-2-6"><span class="nav-text">D5.2.6</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARM64%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5"><span class="nav-text">ARM64体系结构编程实践</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC14%E7%AB%A0-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text">第14章 内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1"><span class="nav-text">1</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Calling-conventions-and-stack-frames-RISC-V"><span class="nav-text">Calling conventions and stack frames RISC-V</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%EF%BC%8CRISV-V%E8%B0%83%E7%94%A8%E8%A7%84%E8%8C%83"><span class="nav-text">编译，RISV-V调用规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RISC-V%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-text">RISC-V寄存器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stack"><span class="nav-text">Stack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Struct"><span class="nav-text">Struct</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Isolation-amp-system-call-entry-exit-Rebort"><span class="nav-text">Isolation &amp; system call entry&#x2F;exit(Rebort)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Trap"><span class="nav-text">Trap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Page-faults-Frans"><span class="nav-text">Page faults(Frans)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interrupts"><span class="nav-text">Interrupts</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#11-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="nav-text">11 异常处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86"><span class="nav-text">12 中断处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec10-Multiprocessors-and-locking"><span class="nav-text">Lec10 Multiprocessors and locking</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-Thread-switching"><span class="nav-text">11. Thread switching</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Q"><span class="nav-text">Q</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -705,12 +752,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">252k</span>
+    <span title="站点总字数">282k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:49</span>
+    <span title="站点阅读时长">4:16</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
