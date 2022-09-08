@@ -1,0 +1,4 @@
+baseURL: https://zhuangll.github.io/
+languageCode: zh-cn # en-us
+title: My first Blog
+theme: PaperMod # 主题名字，和themes文件夹下的一致
