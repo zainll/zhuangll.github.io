@@ -169,10 +169,10 @@ feed:
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: git
-  repo:  git@github.com:zhuangll/zhuangll.github.io.git # git仓库项目地址
-  branch: main # 分支
+#deploy:
+#  type: git
+#  repo:  git@github.com:zhuangll/zhuangll.github.io.git # git仓库项目地址
+#  branch: main # 分支
   #message: 自定义提交说明，这个字段可以没有
 
 backup:

@@ -9,9 +9,165 @@ tags:
     - Another Tag
 ---
 
-## 1.单调栈
+## 概述
+
+### 回溯法
+
+![20220620232325](https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220620232325.png)
+
+组合问题：N个数里面按一定规则找出k个数的集合
+切割问题：一个字符串按一定规则有几种切割方式
+子集问题：一个N个数的集合里有多少符合条件的子集
+排列问题：N个数按一定规则全排列，有几种排列方式
+棋盘问题：N皇后，解数独等等
+
+```c
+// 回溯函数模板返回值以及参数
+// 回溯函数终止条件
+// 回溯搜索的遍历过程
+void backtracking(参数) {
+    if (终止条件) {
+        存放结果;
+        return;
+    }
+
+    for (选择：本层集合中元素（树中节点孩子的数量就是集合的大小）) {
+        处理节点;
+        backtracking(路径，选择列表); // 递归
+        回溯，撤销处理结果
+    }
+}
+
+// 对于组合问题，什么时候需要startIndex呢？
+// 如果是一个集合来求组合的话，就需要startIndex
+// 如果是多个集合取组合，各个集合之间相互不影响，那么就不用startIndex
+
+// 树枝去重”和“树层去重”
+// 
+```
+
+### 单调栈
 
 <!--more-->
+
+```sh
+stk[N]
+stk[0] = ;
+top = 0 -1 ?
+for (i ) {
+    while (top >0 && 比较栈顶与nums[stk[i]]) { // 单调性
+    res[stk[top]] = ;
+    top--;
+    }
+    stk[++top] = i;
+}
+return res;
+```
+
+### 动态规划
+&ensp;动态规划步骤：
+&emsp;1.确定dp数组(dp table)以及下标的含义
+&emsp;2.确定递推公式
+&emsp;3.dp数组初始化
+&emsp;4.确定变量顺序
+&emsp;5.举例推导dp数组
+
+dp数组推导：以终为始，从后向前推导
+
+```sh
+# 斐波那契数列
+dp[i] = dp[i - 1] + dp[i - 2]
+
+for () {
+    n = dp[0] + dp[1];
+    dp[0] = dp[1];
+    dp[1] = n;
+}
+return dp[1];
+
+# 爬楼梯花费最小
+dp[i] = min(dp[i - 1], dp[i - 2]) + cost[i];
+
+# 方格路径
+for (int i = 1; i < m; i++) {
+    for (int j = 1; j < n; j++) {
+        if (obstacleGrid[i][j] == 1) // 障碍continue;
+        dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+    }
+}
+
+# 整数拆分
+for (int i = 3; i <= n ; i++) {
+    for (int j = 1; j < i - 1; j++) {
+        dp[i] = max(dp[i], max((i - j) * j, dp[i - j] * j));
+    }
+}
+
+# n个不同的节点求能组成多少个不同二叉搜索树。
+for (int i = 1; i <= n; i++) {
+    for (int j = 1; j <= i; j++) {
+        dp[i] += dp[j - 1] * dp[i - j];
+    }
+}
+
+```
+
+- 背包问题
+
+![![20220620232057](https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220620232057.png)](https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220620232057.png)
+
+```c
+// 01背包
+// weight数组的大小 就是物品个数
+for(int i = 1; i < weight.size(); i++) { // 遍历物品
+    for(int j = 0; j <= bagweight; j++) { // 遍历背包容量
+        if (j < weight[i]) dp[i][j] = dp[i - 1][j];
+        else dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - weight[i]] + value[i]);
+
+    }
+}
+
+for(int i = 0; i < weight.size(); i++) { // 遍历物品
+    for(int j = bagWeight; j >= weight[i]; j--) { // 遍历背包容量
+        dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);
+
+    }
+}
+
+// 开始 01背包
+for(int i = 0; i < nums.size(); i++) {
+    for(int j = target; j >= nums[i]; j--) { // 每一个元素一定是不可重复放入，所以从大到小遍历
+        dp[j] = max(dp[j], dp[j - nums[i]] + nums[i]);
+    }
+}
+
+for(int i = 0; i < weight.size(); i++) { // 遍历物品
+    for(int j = bagWeight; j >= weight[i]; j--) { // 遍历背包容量
+        dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);
+
+    }
+}
+
+// 求组合类问题的公式，都是类似这种：
+// 求装满背包有几种方法的情况下，递推公式一般为：
+dp[j] += dp[j - nums[i]]
+```
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## 1.单调栈
+
+
 
 ### 1.1 单调栈描述
 

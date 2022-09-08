@@ -33,6 +33,12 @@ ubuntu1804.exe config --default-user root
 # 更改默认登陆目录
 # list 中 Ubuntu-20.04 条目中添加
 "startingDirectory": "//wsl$/Ubuntu-20.04"
+
+# 以管理员权限运行cmd
+# 停止
+net stop LxssManager  
+# 启动
+net start LxssManager 
 ```
 
 ## ubuntu 换源
@@ -49,6 +55,17 @@ sudo apt-get upgrade
 
 ```
 参考链接：[ubuntu20.04更改国内镜像源](https://blog.csdn.net/qq_33706673/article/details/106869016)
+
+## ubuntu 显示
+
+https://ubuntuqa.com/article/8837.html
+
+https://www.csdn.net/tags/MtTaAgzsNjg5MTk4LWJsb2cO0O0O.html
+
+## vscode 使用wsl
+
+
+
 
 
 ## Read The Docs 环境搭建
@@ -92,6 +109,7 @@ git push -u origin main
 ## PowerShell
 
 winget search Microsoft.PowerShell
+winget install Microsoft.PowerShell
 
 - [Windows Powershell和Windows Terminal的区别](https://blog.csdn.net/The_Time_Runner/article/details/106038222)
 <br>
@@ -124,3 +142,20 @@ https://cget.readthedocs.io/en/latest/#
 
 
  Scoop 
+
+
+
+ python3 depix.py -p /mnt/e/code/Depix/images/20220407225617.jpg 
+
+ python3 depix.py -p images/20220407225617.jpg -s images/20220407225617_res.jpg
+
+
+ ## 图床
+
+
+ https://blog.csdn.net/qq_44314954/article/details/122951033
+
+
+ ![20220906000450](https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220906000450.png)
+
+ ![20220906000524](https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220906000524.png)

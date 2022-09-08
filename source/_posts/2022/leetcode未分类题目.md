@@ -16,6 +16,30 @@ https://programmercarl.com/
 https://mp.weixin.qq.com/s/AWsL7G89RtaHyHjRPNJENA
 
 
+双指针：
+- 快慢指针：去除指定(或重复)元素、移动零
+- 左右指针：
+- 滑动窗口：
+```c
+// 模板
+for () {
+    // 将新进来的右边的数据，计算进来
+    // 更新数据
+
+    // 判断窗口数据是否不满足要求了
+    while (窗口数据不满要求 && left < arrSize) {
+        // 移除left数据，更新窗口数据
+        left++;    
+    }
+    right++;
+}
+```
+
+
+
+
+
+
 <!--more-->
 
 ## 剑指offer II
@@ -28,8 +52,11 @@ https://mp.weixin.qq.com/s/AWsL7G89RtaHyHjRPNJENA
 ## leetcode基础题目
 
 
- 876,  674,   125   101   29   27  
+ 876,  674,   125   101   29   27  209
 
+- 经典题目：
+**59**
+**54**
 
 
 [3.无重复字符的最长子串](#3)  &emsp;&emsp;
@@ -37,21 +64,20 @@ https://mp.weixin.qq.com/s/AWsL7G89RtaHyHjRPNJENA
 
 ### 1.[两数之和](https://leetcode-cn.com/problems/two-sum/)
 
-> 思路：
+> 思路：两层遍历
 
 ```c
-int* twoSum(int* nums, int numsSize, int target, int* returnSize){
+int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
     int i, j;
     int *ret = (int *)malloc(sizeof(int) * 2);
-    for (i = 0; i < numsSize; i++)
-    {
+    for (i = 0; i < numsSize; i++) {
         int key = target - nums[i];
-        for (j = i + 1; j < numsSize; j++)
-            if (nums[j] == key)
-            {
+        for (j = i + 1; j < numsSize; j++) {
+            if (nums[j] == key) {
                 ret[0] = i;
                 ret[1] = j;
             }
+        }
     }
     *returnSize = 2;
     return ret;
@@ -60,7 +86,7 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize){
 
 ### 2.[两数相加](https://leetcode-cn.com/problems/add-two-numbers/)
 
-> 思路：
+> 思路：两个链表，判断链表是否为空or，求和不为空链表节点值，第一次添加头节点，之后添加到尾节点，注意处理进位
 
 ```c
 struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
@@ -100,7 +126,7 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
 ### <span id="3">3</span>.[无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
 
 
-> 思路：
+> 思路：双指针，前后快慢指针，table表标记字符是否出现过，right标记，left去除标记，求right-left最大值
 
 ```c
 int lengthOfLongestSubstring(char * s){
@@ -128,7 +154,7 @@ int lengthOfLongestSubstring(char * s){
 
 ### <span id="4">4</span>.[寻找两个正序数组的中位数](https://leetcode-cn.com/problems/median-of-two-sorted-arrays/)
 
-> 思路：
+> 思路：每个数组各自索引，判断大小移动索引，最后判断是奇数还是偶数
 
 ```c
 double findMedianSortedArrays(int* nums1, int nums1Size, int* nums2, int nums2Size){
@@ -159,20 +185,18 @@ double findMedianSortedArrays(int* nums1, int nums1Size, int* nums2, int nums2Si
 
 ### <span id="6">6</span>.[Z 字形变换](https://leetcode-cn.com/problems/zigzag-conversion/)
 
-> 思路：
+> 思路：计算位置？
 
 ```c
 char * convert(char * s, int numRows){
- uint16_t len = strlen(s);
+    uint16_t len = strlen(s);
 
-    if (len < numRows)
-    {
+    if (len < numRows) {
         numRows = len;
     }
-    char* out = calloc(len + 1, sizeof(char));
 
-    if (numRows < 2)
-    {
+    char* out = calloc(len + 1, sizeof(char));
+    if (numRows < 2) {
         memcpy(out, s, len + 1);
         return out;
     }
@@ -184,19 +208,16 @@ char * convert(char * s, int numRows){
     uint16_t delta = 0;
 
     // first row
-    while (i < len)
-    {
+    while (i < len) {
         out[o++] = s[i];
         i += rr;
     }
 
     // middle rows
-    for (uint16_t l = 1; l < max; l++)
-    {
+    for (uint16_t l = 1; l < max; l++) {
         i = l;
         delta = 2 * l;
-        while (i < len)
-        {
+        while (i < len) {
             out[o++] = s[i];
             delta = rr - delta;
             i += delta;
@@ -205,8 +226,7 @@ char * convert(char * s, int numRows){
 
     // last row
     i = max;
-    while (i < len)
-    {
+    while (i < len) {
         out[o++] = s[i];
         i += rr;
     }
@@ -217,7 +237,7 @@ char * convert(char * s, int numRows){
 
 ### <span id="7">7</span>.[整数反转](https://leetcode-cn.com/problems/reverse-integer/)
 
-> 思路：
+> 思路：(取余数)* 10，注意越界，INT_MAX / 10 && pop > 7
 
 ```c
 int reverse(int x){
@@ -282,45 +302,33 @@ int minusFlag = 0;
     long int result = 0;
     char numberBuffer[11];
     int counter = 0;
-    while (s[counter] == ' ')
-    {
+    while (s[counter] == ' ') {
         counter++;
     }
     s = &s[counter];
     counter = 0;
 
-    for (int i = 0; i < length; i++)
-    {
-        if (i == 0)
-        {
-            if (s[0] == '-')
-            {
+    for (int i = 0; i < length; i++) {
+        if (i == 0) {
+            if (s[0] == '-') {
                 minusFlag = 1;
                 i++;
-            }
-            else if (s[0] == '+')
-            {
+            } else if (s[0] == '+') {
                 i++;
             }
         }
-        if (counter > 10)
-        {
-            if (minusFlag)
-            {
+        if (counter > 10) {
+            if (minusFlag) {
                 return __INT_MAX__ * -1 - 1;
-            }
-            else
-            {
+            } else {
                 return __INT_MAX__;
             }
         }
 
-        if (s[i] < '0' || s[i] > '9')
-        {
+        if (s[i] < '0' || s[i] > '9') {
             break;
         }
-        if (counter == 0 && s[i] == '0')
-        {
+        if (counter == 0 && s[i] == '0') {
             continue;
         }
 
@@ -329,26 +337,19 @@ int minusFlag = 0;
     }
 
     int i = 0;
-    while (counter > 0)
-    {
-        if (minusFlag)
-        {
+    while (counter > 0) {
+        if (minusFlag) {
             result -= (numberBuffer[i] - '0') * pow(10.0, counter - 1);
-        }
-        else
-        {
+        } else {
             result += (numberBuffer[i] - '0') * pow(10.0, counter - 1);
         }
         i++;
         counter--;
     }
 
-    if (result > __INT_MAX__)
-    {
+    if (result > __INT_MAX__) {
         return __INT_MAX__;
-    }
-    else if (result < __INT_MAX__ * -1 - 1)
-    {
+    } else if (result < __INT_MAX__ * -1 - 1) {
         return __INT_MAX__ * -1 - 1;
     }
     return result;
@@ -357,7 +358,7 @@ int minusFlag = 0;
 
 ### <span id="9">9</span>.[回文数](https://leetcode-cn.com/problems/palindrome-number/)
 
-> 思路：
+> 思路：将每一位按序装入数组，遍历数组首尾是否相等 ;    递归
 
 ```c
 bool isPalindrome(int x)
@@ -385,14 +386,12 @@ bool isPalindrome(int x)
 
 ```c
 bool isPalindrome(int x){
-if (x < 0 || (x % 10 == 0 && x != 0))
-    {
+    if (x < 0 || (x % 10 == 0 && x != 0)) {
         return false;
     }
 
     int revertedNumber = 0;
-    while (x > revertedNumber)
-    {
+    while (x > revertedNumber) {
         revertedNumber = revertedNumber * 10 + x % 10;
         x /= 10;
     }
@@ -403,7 +402,7 @@ if (x < 0 || (x % 10 == 0 && x != 0))
 
 ### <span id="11">11</span>.[盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water/)
 
-> 思路：
+> 思路：双指针，头尾向中间
 
 ```c
 int maxArea(int* height, int heightSize)
@@ -453,18 +452,18 @@ int maxArea(int* height, int heightSize){
     int end = heightSize - 1;
     int res = 0;
 
-    while (start < end)
-    {
+    while (start < end) {
         // Calculate current area by taking minimum of two heights
         int currArea = (end - start) * fmin(height[start], height[end]);
 
         if (currArea > res)
             res = currArea;
 
-        if (height[start] < height[end])
+        if (height[start] < height[end]) {
             start = start + 1;
-        else
+        } else {
             end = end - 1;
+        }
     }
 
     return res;
@@ -652,12 +651,10 @@ int length;
     case 3:
         sprintf(s, "%s%s%s", getHundred(number[0]), getTen(number[1]),
                 getOne(number[2]));
-
         break;
 
     case 2:
         sprintf(s, "%s%s", getTen(number[0]), getOne(number[1]));
-
         break;
 
     case 1:
@@ -678,15 +675,11 @@ int length;
 ```c
 int romanToInt(char * s){
 int romanToInt = 0;
-    for (int i = 0; i < strlen(s); i++)
-    {
-        switch (s[i])
-        {
+    for (int i = 0; i < strlen(s); i++) {
+        switch (s[i]) {
         case 'I':
-            if (i + 1 < strlen(s))
-            {
-                if (s[i + 1] == 'V' || s[i + 1] == 'X')
-                {
+            if (i + 1 < strlen(s)) {
+                if (s[i + 1] == 'V' || s[i + 1] == 'X') {
                     romanToInt -= 1;
                     break;
                 }
@@ -697,10 +690,8 @@ int romanToInt = 0;
             romanToInt += 5;
             break;
         case 'X':
-            if (i + 1 < strlen(s))
-            {
-                if (s[i + 1] == 'L' || s[i + 1] == 'C')
-                {
+            if (i + 1 < strlen(s)) {
+                if (s[i + 1] == 'L' || s[i + 1] == 'C') {
                     romanToInt -= 10;
                     break;
                 }
@@ -711,10 +702,8 @@ int romanToInt = 0;
             romanToInt += 50;
             break;
         case 'C':
-            if (i + 1 < strlen(s))
-            {
-                if (s[i + 1] == 'D' || s[i + 1] == 'M')
-                {
+            if (i + 1 < strlen(s)) {
+                if (s[i + 1] == 'D' || s[i + 1] == 'M') {
                     romanToInt -= 100;
                     break;
                 }
@@ -737,17 +726,15 @@ int romanToInt = 0;
 
 ### <span id="20">20</span>.[有效的括号](https://leetcode-cn.com/problems/valid-parentheses/)
 
-> 思路：
+> 思路：配对判断
 
 ```c
-bool isValid(char * s){
- int i, k = 0, len = strlen(s);
+bool isValid(char * s) {
+    int i, k = 0, len = strlen(s);
     char *store = calloc(len, sizeof(char));
 
-    for (i = 0; s[i] != '\0'; i++)
-    {
-        switch (s[i])
-        {
+    for (i = 0; s[i] != '\0'; i++) {
+        switch (s[i]) {
         case '(':
         case '{':
         case '[':
@@ -775,12 +762,10 @@ out:
 
 ### <span id="21">21</span>.[合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
 
-> 思路：
+> 思路：先添加头，然后判断 l1 != NULL && l2 != NULL 添加谁
 
 ```c
-struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2)
-{
-
+struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2) {
     struct ListNode* head = NULL;
     struct ListNode* tmp = NULL;
 
@@ -825,7 +810,7 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2)
 ````
 
 ```c
-struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
+struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2) {
     struct ListNode *list = NULL;
     struct ListNode *tmp = NULL;
 
@@ -834,28 +819,20 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
     if (!l2)
         return l1;
 
-    if (l1 && l2)
-    {
-        if (l1->val < l2->val)
-        {
+    if (l1 && l2) {
+        if (l1->val < l2->val) {
             list = tmp = l1;
             l1 = l1->next;
-        }
-        else
-        {
+        } else {
             list = tmp = l2;
             l2 = l2->next;
         }
 
-        while (l1 && l2)
-        {
-            if (l1->val < l2->val)
-            {
+        while (l1 && l2) {
+            if (l1->val < l2->val) {
                 tmp->next = l1;
                 l1 = l1->next;
-            }
-            else
-            {
+            } else {
                 tmp->next = l2;
                 l2 = l2->next;
             }
@@ -891,11 +868,10 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
 
 ### <span id="24">24</span>.[两两交换链表中的节点](https://leetcode-cn.com/problems/swap-nodes-in-pairs/)
 
-> 思路：
+> 思路：递归；借助节点
 
 ```c
-struct ListNode* swapPairs(struct ListNode* head)
-{
+struct ListNode* swapPairs(struct ListNode* head) {
     if (head == NULL || head->next == NULL) {
         return head;
     }
@@ -908,7 +884,7 @@ struct ListNode* swapPairs(struct ListNode* head)
 ```
 
 ```c
-struct ListNode* swapPairs(struct ListNode* head){
+struct ListNode* swapPairs(struct ListNode* head) {
  if (!head || !head->next)
         return head;
     struct ListNode *tmp = head->next;
@@ -920,11 +896,10 @@ struct ListNode* swapPairs(struct ListNode* head){
 
 ### 26.[删除有序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)
 
-> 思路：
+> 思路：++
 
 ```c
-int removeDuplicates(int* nums, int numsSize)
-{
+int removeDuplicates(int* nums, int numsSize) {
     if(numsSize == 0) {
         return 0;
     }
@@ -942,10 +917,9 @@ int removeDuplicates(int* nums, int numsSize)
 
 
 ```c
-int removeDuplicates(int* nums, int numsSize){
+int removeDuplicates(int* nums, int numsSize) {
     int count = 0, i;
-    for (i = 1; i < numsSize; i++)
-    {
+    for (i = 1; i < numsSize; i++) {
         if (nums[i] == nums[i - 1])
             count++;
         else
@@ -996,21 +970,18 @@ int strStr(char * haystack, char * needle){
     if (hlen < nlen)
         return -1;
 
-    for (i = 0; i <= hlen - nlen; i++)
-    {
+    for (i = 0; i <= hlen - nlen; i++) {
         j = 0;
         if (haystack[i] != needle[j++])
             continue;
 
         k = i + 1;
-        for (; j < nlen; j++)
-        {
-            if (haystack[k] != needle[j])
-            {
+        for (; j < nlen; j++) {
+            if (haystack[k] != needle[j]) {
                 break;
-            }
-            else
+            } else {
                 k++;
+            }
         }
         if (j == nlen)
             return i;
@@ -1024,9 +995,8 @@ int strStr(char * haystack, char * needle){
 > 思路：
 
 ```c
-int divide(int dividend, int divisor)
-{
- int cnt = 0;
+int divide(int dividend, int divisor) {
+    int cnt = 0;
     int sign = 1;
     if ((dividend ^ divisor) < 0) { // 两数任意一个为负数
         sign = -1;
@@ -1080,8 +1050,7 @@ int divide(int dividend, int divisor){
     } else {
         divisor *= -1;
     }
-    while (dividend <= divisor)
-    {
+    while (dividend <= divisor) {
         long int tmp = 0;
         long int div = divisor;
         while (dividend <= div) {
@@ -1108,8 +1077,7 @@ int divide(int dividend, int divisor){
 > 思路：
 
 ```c
-int searchInsert(int* nums, int numsSize, int target)
-{
+int searchInsert(int* nums, int numsSize, int target) {
     int left = 0;
     int right = numsSize - 1;
     int mid;
@@ -1129,12 +1097,10 @@ int searchInsert(int* nums, int numsSize, int target)
 ```
 
 ```c
-int searchInsert(int* nums, int numsSize, int target){
-  int idx = numsSize - 1;
-    if (numsSize > 0)
-    {
-        if (target > nums[idx])
-        {
+int searchInsert(int* nums, int numsSize, int target) {
+    int idx = numsSize - 1;
+    if (numsSize > 0) {
+        if (target > nums[idx]) {
             return numsSize;
         }
         return searchInsert(nums, numsSize - 1, target);
@@ -1148,16 +1114,16 @@ int searchInsert(int* nums, int numsSize, int target){
 > 思路：
 
 ```c
-char * countAndSay(int n){
+char * countAndSay(int n) {
     char *p = (char *)malloc(5000);
     char *p1 = (char *)malloc(5000);
     p[0] = '1';
     p[1] = '\0';
-    for(int i = 1; i < n; ++i){
+    for(int i = 1; i < n; ++i) {
         int x = 0;
-        for(int j = 0; p[j]; ++j){
+        for(int j = 0; p[j]; ++j) {
             int y = 1; //计数器
-            while (p[j+1] && p[j] == p[j+1]){
+            while (p[j+1] && p[j] == p[j+1]) {
                 ++y;
                 ++j;
             }
@@ -1172,7 +1138,7 @@ char * countAndSay(int n){
 ```
 
 ```c
-char * countAndSay(int n){
+char * countAndSay(int n) {
  // Calculating the length of array
     double result = 1.0;
     for (int i = 0; i < n - 1; i++) {
@@ -1217,14 +1183,14 @@ char * countAndSay(int n){
 
 ### <span id="53">53</span>.[最大子数组和](https://leetcode-cn.com/problems/maximum-subarray/)
 
-> 思路：累加？
+> 思路：累加，动态规划
 
 ```c
-int maxcmp(int a, int b)
-{
+int maxcmp(int a, int b) {
     return a >= b ? a : b;
 }
-int maxSubArray(int* nums, int numsSize){
+
+int maxSubArray(int* nums, int numsSize) {
     int maxSoFar = nums[0];
     int maxEndingHere = nums[0];
     for (int i = 1; i < numsSize; i++) {
@@ -1237,14 +1203,11 @@ int maxSubArray(int* nums, int numsSize){
 
 ### <span id="66">66</span>.[加一](https://leetcode-cn.com/problems/plus-one/)
 
-> 思路：
+> 思路：判断是否发生进位，最后判断最高位是否进位
 
 ```c
-/**
- * Note: The returned array must be malloced, assume caller calls free().
- */
-int *plusOne(int *digits, int digitsSize, int *returnSize)
-{
+// The returned array must be malloced, assume caller calls free().
+int *plusOne(int *digits, int digitsSize, int *returnSize) {
     for (int i = digitsSize - 1; i >= 0; i--) {
         if (digits[i] < 9) {
             digits[i]++;
@@ -1266,7 +1229,7 @@ int *plusOne(int *digits, int digitsSize, int *returnSize)
 ```
 
 ```c
-int* plusOne(int* digits, int digitsSize, int* returnSize){
+int* plusOne(int* digits, int digitsSize, int* returnSize) {
    *returnSize = digitsSize;
    digits[digitsSize - 1] += 1;
    int carry = digits[digitsSize - 1] / 10;
@@ -1274,10 +1237,9 @@ int* plusOne(int* digits, int digitsSize, int* returnSize){
        digits[i] =  (carry + digits[i]) % 10;
        int t = carry;
        carry = (carry + digits[i]) / 10;
-       printf("carry = %d\n", carry);
-       
-       
+       printf("carry = %d\n", carry);       
    }
+
    if (carry == 1) {
        *returnSize = digitsSize + 1;
        int *res = malloc(sizeof(int) * (*returnSize));
@@ -1293,10 +1255,10 @@ int* plusOne(int* digits, int digitsSize, int* returnSize){
 
 ### <span id="82">82</span>.[删除排序链表中的重复元素 II](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/)
 
-> 思路：
+> 思路：递归，判断是否和下一个链表值相等
 
 ```c
-struct ListNode* deleteDuplicates(struct ListNode* head){
+struct ListNode* deleteDuplicates(struct ListNode* head) {
    /*  if (head == NULL) {
         return NULL;
     }
@@ -1329,7 +1291,7 @@ struct ListNode* deleteDuplicates(struct ListNode* head){
 
 ### 83.[删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/)
 
-> 思路：
+> 思路：判断相等，next = next->next
 
 ```c
 /* struct ListNode* deleteDuplicates(struct ListNode* head){
@@ -1358,8 +1320,7 @@ struct ListNode* deleteDuplicates(struct ListNode* head){
 
 } */
 
-struct ListNode* deleteDuplicates(struct ListNode* head)
-{
+struct ListNode* deleteDuplicates(struct ListNode* head) {
     struct ListNode* cur = head;
     while (cur && cur->next) {
         if (cur->val == cur->next->val) {
@@ -1381,28 +1342,20 @@ struct ListNode* deleteDuplicates(struct ListNode* head)
  * };
  */
 
-struct ListNode* deleteDuplicates(struct ListNode* head)
-{
-    if(head==NULL)
-    {
+struct ListNode* deleteDuplicates(struct ListNode* head) {
+    if (head == NULL) {
         return NULL;
-    }
-    else
-    {
+    } else {
         struct ListNode* s = head;
         struct ListNode* t = head->next;
-        while(t!=NULL)
-        {
-            if(s->val==t->val)
-            {
+        while (t != NULL) {
+            if (s->val == t->val) {
                 struct ListNode* y;
                 y=s->next;
                 s->next=t->next;
                 t=y->next;
                 free(y);
-            }
-            else
-            {
+            } else {
                 s=s->next;
                 t=t->next;
             }
@@ -1414,7 +1367,7 @@ struct ListNode* deleteDuplicates(struct ListNode* head)
 
 ### 84.[柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/)
 
-> 思路：
+> 思路：单调栈？
 
 ```c
 int largestRectangleArea(int* heights, int heightsSize){
@@ -1444,8 +1397,7 @@ int largestRectangleArea(int* heights, int heightsSize){
 
     return area; */
 
-
-  int* stack = (int*)malloc(sizeof(int) * (heightsSize + 2));
+    int* stack = (int*)malloc(sizeof(int) * (heightsSize + 2));
     int* nheights = (int*)malloc(sizeof(int) * (heightsSize + 2));
 
     for (int i = 0; i < heightsSize; i++) {
@@ -1461,7 +1413,7 @@ int largestRectangleArea(int* heights, int heightsSize){
         while (top > 0 && nheights[stack[top]] >= nheights[i]) {
             int h = nheights[stack[top]];
             int s = stack[top - 1];
-			int area =  nheights[stack[top]] * (i - s -1);
+            int area =  nheights[stack[top]] * (i - s -1);
             maxArea = fmax(maxArea, area);
             top--;
         }
@@ -1536,7 +1488,7 @@ int largestRectangleArea(int* heights, int heightsSize){
 
 ### <span id="94">94</span>.[二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)
 
-> 思路：
+> 思路：递归，中序，注意封装递归函数
 
 ```c
 /**
@@ -1571,7 +1523,7 @@ int* inorderTraversal(struct TreeNode* root, int* returnSize){
 
 ### 101.[对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/)
 
-> 思路：
+> 思路：递归判断，注意递归出口判断条件
 
 ```c
 bool checkSymmetric(struct TreeNode *left, struct TreeNode *right)
@@ -1603,13 +1555,11 @@ bool isSymmetric(struct TreeNode *root)
  *     struct TreeNode *right;
  * };
  */
-int maxval(int a, int b)
-{
+int maxval(int a, int b) {
     return a > b ? a : b;
 }
 
-int maxDepth(struct TreeNode *root)
-{
+int maxDepth(struct TreeNode *root) {
     if (root == NULL) {
         return 0;
     }
@@ -1618,20 +1568,18 @@ int maxDepth(struct TreeNode *root)
 ```
 
 ```c
-int max(int a, int b)
-{
+int max(int a, int b) {
     return a >= b ? a : b;
 }
 
-int height(struct TreeNode* root)
-{
+int height(struct TreeNode* root) {
     if (root == NULL) {
         return 1;
     }
     return 1 + max(height(root->left), height(root->right));
 }
 
-int maxDepth(struct TreeNode* root){
+int maxDepth(struct TreeNode* root) {
     if (root == NULL) {
         return 0;
     }
@@ -1643,7 +1591,7 @@ int maxDepth(struct TreeNode* root){
 
 ### <span id="108">108</span>.[将有序数组转换为二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/)
 
-> 思路：
+> 思路：递归处理从中间分左右两部分，先添加当前节点在递归。
 
 ```c
 /**
@@ -1679,7 +1627,7 @@ struct TreeNode* sortedArrayToBST(int* nums, int numsSize){
 
 ### <span id="109">109</span>.[有序链表转换二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-list-to-binary-search-tree/)
 
-> 思路：
+> 思路：先找到中间节点和尾节点，将中间节点添加到树上，递归处理中间节点前部和后部两部分，递归出口为找不着新节点
 
 ```c
 /**
@@ -1729,7 +1677,7 @@ struct TreeNode* sortedListToBST(struct ListNode* head){
 
 ### <span id="110">110</span>.[平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/)
 
-> 思路：分别求左右子树的深度height，比较左右深度差值。
+> 思路：分别求左右子树的深度height，比较左右深度差值。递归判断左右子树是否为平衡二叉树
 
 ```c
 /**
@@ -1770,7 +1718,7 @@ bool isBalanced(struct TreeNode* root){
 
 ### <span id="112">112</span>.[ 路径总和](https://leetcode-cn.com/problems/path-sum/submissions/)
 
-> 思路：递归：递归出口； 注意书判空
+> 思路：递归：左右子树 递归出口； 注意书判空
 
 ```c
 bool hasPathSum(struct TreeNode* root, int targetSum){
@@ -1788,7 +1736,7 @@ bool hasPathSum(struct TreeNode* root, int targetSum){
 
 ### <span id="121">121</span>.[买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
 
-> 思路：股票是连续收益的 maxcmp(0, maxCur + prices[i] - prices[i - 1])
+> 思路：动态规划，股票是连续收益的 maxcmp(0, maxCur + prices[i] - prices[i - 1])，收益累计
 
 ```c
 int maxcmp(int a, int b)
@@ -1801,7 +1749,7 @@ int maxProfit(int* prices, int pricesSize){
     for (int i = 1; i < pricesSize; i++) {
         maxCur = maxcmp(0, maxCur + prices[i] - prices[i - 1]);
         maxSoFar = maxcmp(maxSoFar, maxCur);
-         printf("i = %d\t maxCur = %d \t maxSoFar = %d\n", i, maxCur, maxSoFar);
+        printf("i = %d\t maxCur = %d \t maxSoFar = %d\n", i, maxCur, maxSoFar);
     }
     return maxSoFar;
 }
@@ -1809,7 +1757,7 @@ int maxProfit(int* prices, int pricesSize){
 
 ### 125.[验证回文串](https://leetcode-cn.com/problems/valid-palindrome/)
 
-> 思路：判断是否是字母和数字，库函数 isalnum; 注意库函数 isalpha 为判断是否为字母。
+> 思路：判断是否是字母和数字，库函数 isalnum; 注意库函数 isalpha 为判断是否为字母。头尾双指针，逼近中间，注意非数字字母忽略
 
 ```c
 bool isPalindrome(char * s){
@@ -1853,7 +1801,7 @@ int singleNumber(int* nums, int numsSize){
 
 ### 141.[环形链表](https://leetcode-cn.com/problems/linked-list-cycle/)
 
-> 思路：快慢双指针
+> 思路：快慢双指针，fast一次走两步，slow一次走一步，判断是否能相遇
 
 ```c
 bool hasCycle(struct ListNode *head) {
@@ -1872,7 +1820,7 @@ bool hasCycle(struct ListNode *head) {
 
 ### <span id="142">142</span>.[环形链表 II](https://leetcode-cn.com/problems/linked-list-cycle-ii/)
 
-> 思路：快慢双指针
+> 思路：快慢双指针，判断出环向后，从链表入口开始，和slow指针相同速度遍历，直到相遇
 
 ```c
 struct ListNode *detectCycle(struct ListNode *head) {
@@ -1929,7 +1877,7 @@ int findMin(int* nums, int numsSize){
 }
 ```
 
-### <span id="160">160</span>.[相交链表](https://leetcode-cn.com/problemset/all/?page=1&search=160)
+### <span id="160">160</span>.[相交链表](https://leetcode.cn/problems/intersection-of-two-linked-lists/)
 
 > 思路：
 一、
@@ -2225,6 +2173,64 @@ struct ListNode* reverseList(struct ListNode* head){
 }
 ```
 
+### <span id="209">209</span>.[长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/)
+
+> 思路：双指针：累加sum，判断sum，大于target，计算长度，减sum，移动left
+
+```c
+int minSubArrayLen(int target, int* nums, int numsSize){
+    int i = 0;
+    int sum = 0;
+    int len = INT_MAX;
+    
+    for (int j = 0; j < numsSize; j++) {
+        sum += nums[j];
+        if (sum < target) {
+            continue;
+        } else {
+            while (sum >= target) {
+                len = fmin(len,j-i+1);
+                sum -= nums[i];
+                i++;
+            }
+        }
+    }
+    
+    if (len==INT_MAX) {
+        len=0;
+    }
+    return len;
+}
+```
+
+```c
+int minSubArrayLen(int target, int* nums, int numsSize){
+    int left = 0;
+    int right = 0;
+    int sum = 0;
+    int len = INT_MAX;
+    while (right < numsSize) {
+        sum += nums[right];
+        right++;
+        if (sum < target) {
+            continue;
+        } else {
+            while (sum >= target) {
+                len = fmin(len,right-left);
+                sum -= nums[left];
+                left++;
+            }
+        }
+    }
+
+    if (len == INT_MAX) {
+        len = 0;
+    }
+    return len;
+}
+```
+
+
 ### 215.[数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/)
 
 > 思路：排序，第k个最大
@@ -2328,7 +2334,8 @@ struct TreeNode* invertTree(struct TreeNode* root){
 
 ### <span id="231">231</span>.[2的幂](https://leetcode-cn.com/problems/power-of-two/)
 
-> 思路：
+> 思路：一：累计除2，判断最后是否为1，即整除
+二、递归，判断对2取余
 
 ```c
 bool isPowerOfTwo(int n)
@@ -2389,7 +2396,7 @@ bool isPowerOfTwo(int n){
 
 > 思路；
 一、通过一个数组记录链表中的元素值，在判断数组是否是回文。
-二、翻转链表
+二、翻转链表后半部分
 
 ```c
 #define MAXSIZE 100000
@@ -3384,7 +3391,9 @@ bool isUnivalTree(struct TreeNode* root){
 
 ### 977.[有序数组的平方](https://leetcode-cn.com/problems/squares-of-a-sorted-array/submissions/)
 
-> 思路
+> 思路: 
+一、先平方，再排序
+二、双指针，左右指针比较绝对值大小，从后向前填充结果数组
 
 ```c
 int Cmp(const void* a,  const void* b)
@@ -3401,6 +3410,27 @@ int* sortedSquares(int* nums, int numsSize, int* returnSize){
         squareNum[i] = pow(nums[i], 2);
     }
     qsort(squareNum, numsSize, sizeof(int), Cmp);
+    return squareNum;
+}
+```
+
+```c
+int* sortedSquares(int* nums, int numsSize, int* returnSize){
+    int*  squareNum = (int *)malloc(sizeof(int) * numsSize);
+    *returnSize = numsSize;
+    int left = 0;
+    int right = numsSize - 1;
+    int i = numsSize - 1;
+    while (left < right) {
+        if (fabs(nums[left]) > nums[right]) {
+            squareNum[i--] = nums[left] * nums[left];
+            left++;
+        } else {
+            squareNum[i--] = nums[right] * nums[right];
+            right--;
+        }
+    }
+    squareNum[i] = nums[left] * nums[left];
     return squareNum;
 }
 ```

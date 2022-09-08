@@ -10,6 +10,14 @@ tags:
 ---
 
 
+## 编译工具
+
+- 各版本gcc  mingw  clang
+https://winlibs.com/
+https://github.com/brechtsanders/winlibs_mingw
+- MinGW-w64
+https://www.mingw-w64.org/changelog/
+
 ## GitHub Pages + Hexo使用及配置
 
 github上创建一个  username.github.io 的工程，username 必须为github的用户名
@@ -149,3 +157,14 @@ http://hardysimpson.github.io/zlog/UsersGuide-CN.html
 ## gdb
 
 https://leetcode-cn.com/circle/article/7mxorv
+
+
+
+## hugo
+
+
+https://blog.csdn.net/zhangbao_csdn/article/details/109536333
+
+
+
+![20220904165414](https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220904165414.png)
