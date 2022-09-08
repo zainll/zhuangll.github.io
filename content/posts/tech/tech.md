@@ -1,0 +1,7 @@
+---
+title: "Tech"
+---
+
+adda
+
+

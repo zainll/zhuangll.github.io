@@ -1,0 +1,7 @@
+---
+title: "Life"
+---
+
+
+
+adda
