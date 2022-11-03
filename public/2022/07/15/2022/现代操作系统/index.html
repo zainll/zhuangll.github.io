@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true,"b2t":false,"scrollpercent":true},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="[toc] 现代操作系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="现代操作系统">
+<meta property="og:url" content="http://example.com/2022/07/15/2022/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="liuz">
+<meta property="og:description" content="[toc] 现代操作系统">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718223909.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718232209.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718232859.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720005759.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720010310.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720012833.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720013227.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720231701.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220729231922.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220802000949.png">
+<meta property="article:published_time" content="2022-07-14T16:47:53.000Z">
+<meta property="article:modified_time" content="2022-07-14T16:53:53.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Another Tag">
+<meta property="article:tag" content="Computer Science">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718223909.png">
+
+<link rel="canonical" href="http://example.com/2022/07/15/2022/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>现代操作系统 | liuz</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="liuz" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">liuz</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/15/2022/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liuz">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          现代操作系统
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-07-15 00:47:53 / 修改时间：00:53:53" itemprop="dateCreated datePublished" datetime="2022-07-15T00:47:53+08:00">2022-07-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tool/" itemprop="url" rel="index"><span itemprop="name">tool</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tool/2022/" itemprop="url" rel="index"><span itemprop="name">2022</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>[toc]</p>
+<p>现代操作系统</p>
+<span id="more"></span>
+<h2 id="第1章-绪论"><a href="#第1章-绪论" class="headerlink" title="第1章 绪论"></a>第1章 绪论</h2><p>体系结构(指令集、存储组织、 I/0和总线结构)<br>操作系统的主要任务是记录哪个程序在使用什么资源，对资源请求进行分配、评估使用代价，并且为不同的程序和用户调解互相冲突的资沥请求。<br>资源管理包括两种不同方式实现多路复用(共享)资源：在时间上复用和在空间上复用<br>纸带程序-批处理程序-多道程序-分时系统<br>UNIX有两个主要的版本，即AT&amp;T System V和加州大学伯克利分校的BSD(Berkeley Software<br>Distribution)。UNIX的标准，称作POSJX, MS-DOS-Windows95<br>处理器：程序计数器(PC)、堆栈指针、程序状态字(PSW)：包含了条件码位(由比较指令设置)、CPU优先级、换式(用户态或内核态)，以及各种其他控制位</p>
+<p>从操作系统中获得服务，用户程序必须使用 系统调用 (sys call)以陷入内核井调用操作系统。 TRAP 指令把用户态切换成内核态，井启用操作系统</p>
+<p>虚拟内存机制:运行大于物理内存的程序，将程序放在磁盘上，而将主存作为缓存，用来保存最频繁使用的部<br>分程序。这种机制需要快速地映像内存地址，以便把程序生成的地址转换为有关字节在RAM 中的物理地址。这种映像由CPU 中的 个称为存储器管理单元 Memory Management Unit, MMU 的部件来完成<br>I/O设备一般包括两个部分：设备控制器和设备本身<br>启动计算机:基本输入输出系统((Basic Input Output System, BIOS)的程序。BIOS 内有底层l/0软件，包括读键盘、写屏幕、进行磁盘I/O 以及其他过程</p>
+<p>操作系统概念：进程<br>系统管理器授权每个进程使用一个给定的 UID(User IDentification)。每个被启动的进程都有启动该进程的用户UID 。子进程拥有与父进程一样的UID。用户可以是某个组的成员，每个组也有GID(Group IDentificalion)。UNIX中，有一个UID称为超级用户 (superuser) 或者Windows 中的管理员 (administrator)。<br>操作系统具有两种功能：为用户程序提供抽象和管理计箕机资源</p>
+<p><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718223909.png" alt="20220718223909"></p>
+<p>fork调用返回一个值，在子进程中该值为零，井且在父进程中等于子进程的进程标识符(Process IDeotifier, PID)<br>父进程执行waitpid 系统调用，它只是等待，直至子进程终止子进程必须执行用户的命令。通过使用execve 系统调用可以实现<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718232209.png" alt="20220718232209"></p>
+<p>虚拟机：KVM(针对Linux 内核)、VirtualBox、Hyper-V;模拟器,二进制翻译</p>
+<p>C语言<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220718232859.png" alt="20220718232859"></p>
+<p>操作系统有两种观点:资源管理观点和扩展的机器观点。在资源管理观点中，操作系统的任务是有效地管理系统的各个部分。在扩展的机器观点中，系统的任务是为用 提供比实际机器更便干运用的抽象。这些抽象包括进程、地址空间以及文件。<br>操作系统构建基本概念是进程、存储管理、I/O管理、文件管理和安全</p>
+<p><br></p>
+<h2 id="第2章-进程与线程"><a href="#第2章-进程与线程" class="headerlink" title="第2章 进程与线程"></a>第2章 进程与线程</h2><h3 id="2-1-进程"><a href="#2-1-进程" class="headerlink" title="2.1 进程"></a>2.1 进程</h3><p> 进程模型：包括程序计数器、寄存器和变量的当前值。<br> 进程创建4种事件：系统初始化、程序执行创建进程的系统调用、用户请求创建新进程、批处理作业的初始化。<br> Unix系统创建进程fork，系统调用创建一个与调用进程相同的副本。父进程与子进程有相同的内存映像。子进程执行execve或类似系统调用，以修改器内存映像并运行一个新程序。Win32中CreateProcess<br> 进程退出：正常退出、出错退出、严重错误和被其他进程杀死。Unix调用exit，Windows中ExitProcess。<br> 进程层次，Unix中进程和他所有子进程组成一个进程组。<br> 进程状态：运行态、就绪态、阻塞态，终止；进程调度。<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720005759.png" alt="20220720005759"><br> 进程表<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720010310.png" alt="20220720010310"><br> I/O类关联的是中断向量(interrup vector)的位置(靠近内存底部的固定区域)。</p>
+<h3 id="2-2-线程"><a href="#2-2-线程" class="headerlink" title="2.2 线程"></a>2.2 线程</h3><p> 线程：创建开销小、共享进程内存、切换开销小。线程有一样地址空间。<br> 每个计算都有一个被保存的状态，存在一个会发生且使得相关状态发生改变的事件集合，称为有限状态机。<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720012833.png" alt="20220720012833"><br> 线程创建 thread_create，线程退出thread_exit，等待线程退出 thread_join<br> POSIS线程pthread<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720013227.png" alt="20220720013227"><br> 有两种主要的方法实现线程包：在用户空间 中和在内核中<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220720231701.png" alt="20220720231701"></p>
+<h3 id="2-3-进程间通信IPC"><a href="#2-3-进程间通信IPC" class="headerlink" title="2.3 进程间通信IPC"></a>2.3 进程间通信IPC</h3><p> 竞争条件：两个或多个进程读写某些共享数据，而最后的结果取决于进程运行的精确时序。共享内存进行访问的程序片段称作临界区域。<br>使用互斥：屏蔽中断、锁变量、严格轮换、Peterson解法、TSL测试并加锁<br> 信号量：down和up，对信号量down橾作，则是检查其值是否大于0，若该值大千0, 则将其值减1 (即用掉一个保存的唤醒信号)井继续，若该值为0, 则进程将睡眠，而且此时down操作井未结束。up操作对信号量的值增1<br> 互斥量：处干两态之一的变量：解锁和加锁。快速用户区互斥量futex。一个futex 包含两个部分一个内核服务和一个用户库<br> 消息传递，进程间通信方法：send和receive</p>
+<h3 id="2-4-调度Scheduler"><a href="#2-4-调度Scheduler" class="headerlink" title="2.4 调度Scheduler"></a>2.4 调度Scheduler</h3><p> 1.进程行为：CPU密集型进程(计算密集型)和I/O密集型进程<br> 2.进程调度时机：1)创建新进程时调度父进程或子进程 2)进程退出时 3)进程阻塞在I/O和信号量上时 4)I/O中断时<br> 3.调度算法：非抢占式和抢占式<br> 4.三种运行环境：批处理、交互式和实时,批处理-非抢占式，交互式-抢占式，。大型计算中心关心三个指标：吞吐量、周转时间和CPU利用率。交互系统最小响应时间。<br> 5.批处理系统调度算法：1)先来先服务 2)最短作业优先 3)最短剩余时间优先<br> 6.交互式系统调度算法：1)轮转调度 轮询 时间片 2)优先级调度 3)多级队列 4)最短进程优先 5)公平分享调度<br> 7.实时系统调度：硬实时和软实时</p>
+<p> 8.策略与机制</p>
+<p> 9.线程调度：用户级线程和内核级线程之间的差别在于性能 用户级线程的线程切换需要少址的机器指令，而内核级线程垢要完整的上下文切换，修改内存映像，使亦速缓存失效，导致了若干数杂级的延迟</p>
+<p> 功耗管理、虚拟化、云计算和安全问题成为了新的热点主题。</p>
+<h3 id="2-5-小结"><a href="#2-5-小结" class="headerlink" title="2.5 小结"></a>2.5 小结</h3><p> 隐藏中断的影响，操作系统提供了 个井行执行串行进程的概念模型。进程可以动态地创建和终止、每个进程都有自己的地址空间。<br> 线程被独立调度并且有独立的栈，但是在一个进程中的所有线程共享一个地址空间。线程可以在用户态实现，也可以在内核态实现。<br> 进程之间通过进程间通信原语来交换信息，如信号众、管程和消息。进程可以处在运行、就绪或阻塞状态</p>
+<p><br></p>
+<h2 id="第3章-内存管理"><a href="#第3章-内存管理" class="headerlink" title="第3章 内存管理"></a>第3章 内存管理</h2><p> 分层存储器体系。存储管理器：操作系统种管理分层存储体系的部分。<br> 操作系统作为库实现的常见例子如流行的e-Cos操作系统。</p>
+<h3 id="3-1-存储抽象：地址空间"><a href="#3-1-存储抽象：地址空间" class="headerlink" title="3.1 存储抽象：地址空间"></a>3.1 存储抽象：地址空间</h3><p> 地址空间一个进程可用于寻址内存的一套地址集合<br> 交换技术：空闲进程存到存储磁盘上，运行进程存储到物理内存。</p>
+<p> 虚拟内存：每个程序用于自己的地址空间，空间分割位多个块，每块位一页或页面。页被映射到物理内存，运行程序时不是所有页都必须在内存中，程序引用不在物理内存中的地址空间时，操作系统将缺失部分装入到物理内存。<br> 内存管理单元MMU：把虚拟地址映射到物理内存地址。<br> 页表：虚拟地址：虚拟页号和偏移量<br> 保护位：三位读、写、可执行。页面使用情况：修改位和访问位。禁止高速缓存位。<br> TLB(转换检测缓冲区)：，将虚拟地址直接映射到物理地址。TLB硬件实现和软件管理，当一个页面访问在内存中而不在TLB中时，将产生软失效；当页面本身不在内存中(当然也不在TLB)时，将产生硬失效。<br> 多级页表</p>
+<p> 页表置换算法：最优页面置换算法、最近未使用页面置换算法、先进先出页面置换算法、<strong>最近最少使用页面置换算法LRU</strong><br> PDP-11 指令和数据设置分离的地址空间，分别称为I空间和D空间。进程表有两个指针：一个指向I空间页表，一个指向D空间页表。共享页面<br> 共享库 Windows中DLL，运行时共享，编译时共享：使用相对地址<br></p><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># unix  链接当前目录下的所有的.o(目标)文件，井扫描两个库：/usr/lib/libc.a和/usr/lib/libm.a 。</span></span><br><span class="line">Id•.o -le -Im </span><br></pre></td></tr></tbody></table></figure><br> 分页守护进程。分布式共享内存<p></p>
+<p> 操作系统在四个阶段处理分页相关工作：进程创建时，进程执行时，缺页中断时和进程终止时。</p>
+<h2 id="第4章-文件系统fs"><a href="#第4章-文件系统fs" class="headerlink" title="第4章 文件系统fs"></a>第4章 文件系统fs</h2><h3 id="4-1-文件和目录"><a href="#4-1-文件和目录" class="headerlink" title="4.1 文件和目录"></a>4.1 文件和目录</h3><p> MS-Dos Windows FAT16-&gt;FAT32-&gt;NTFS  linux ext3<br> 目录(directory)是管理文件系统结构的系统文件<br> 文件访问：顺序访问与随机访问<br> 文件属性<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220729231922.png" alt="20220729231922"></p>
+<p> 文件操作：create、delete、open、close、read、write、append、seek、get attributes、set attributes、rename<br> 目录：根目录<br>目录操作：create、delete、opendir、closedir、readdir、rename、link、unlink</p>
+<h3 id="4-2-文件系统实现"><a href="#4-2-文件系统实现" class="headerlink" title="4.2 文件系统实现"></a>4.2 文件系统实现</h3><p> 磁盘的0号扇区称为主引导记录(Master Boot Record MBR).在MBR结尾是分区表,给出每个分区的起始和结束地址。计算机引导时，BIOS读人并执行MBR，MBR读入他的第一个块是引导块。<br> 文件系统本身时一个有向无环图(DAG)。目录与该共享文件的联系称为链接(link)<br> 日志结构文件系统(Log-structured File System LFS)<br> 虚拟文件系统VFS  网络文件系统NFS</p>
+<p><br></p>
+<h2 id="第5章-输入-输出-I-O"><a href="#第5章-输入-输出-I-O" class="headerlink" title="第5章 输入/输出 I/O"></a>第5章 输入/输出 I/O</h2><p> I/O设备：块设备和字符设备。I/O设备控制器和设备本身。<br> CPU如何与设备的控制寄存器和数据缓冲区进行通信？<br> 第一种方法，每个控制寄存器被分配一个I/O端口(I/O port)号。所有I/O端口形成I/O端口空间(I/O port space)，普通用户不可访问。<br></p><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># I/O 指令</span></span><br><span class="line">IN REG, PORT</span><br><span class="line">OUT PORT, REG</span><br></pre></td></tr></tbody></table></figure><br> 第二种方法：将所有控制器映射到内存空间中，每个控制器被分配唯一的一个内存地址，称为内存映射I/O。内存映射不运行缓存。优点：1)C语言可编写驱动，访问控制器寄存器 2)隔离地址空间-&gt;阻止用户进程I/O操作 <p></p>
+<p> 直接存储器存取(DMA)<br><img src="https://raw.githubusercontent.com/zhuangll/PictureBed/main/blogs/pictures/20220802000949.png" alt="20220802000949"></p>
+<p> 中断信号使CPU停止当前正在做的工作井且开始做其他的事情。地址线上的数字被用做指向中断向量(interrupt vector)的表格的索引，以便读取一个新的程序计数器。<br> 将机器留在一个明确状态的中断称为精确中断</p>
+<ul>
+<li>PC程序计数器保存在一个已知的地方</li>
+<li>PC所指向的指令之前的所有指令已经完全执行</li>
+<li>PC所指向的指令之后的所有指令都没有执行</li>
+<li>PC所指向的指令的执行状态已知的<br> 不满足这些要求的中断称为不精确中断</li>
+</ul>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Another-Tag/" rel="tag"># Another Tag</a>
+              <a href="/tags/Computer-Science/" rel="tag"># Computer Science</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/06/28/2022/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="prev" title="操作系统">
+      <i class="fa fa-chevron-left"></i> 操作系统
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/07/22/2022/%E6%A0%91%E8%8E%93%E6%B4%BE/" rel="next" title="树莓派">
+      树莓派 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC1%E7%AB%A0-%E7%BB%AA%E8%AE%BA"><span class="nav-text">第1章 绪论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC2%E7%AB%A0-%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B"><span class="nav-text">第2章 进程与线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E8%BF%9B%E7%A8%8B"><span class="nav-text">2.1 进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E7%BA%BF%E7%A8%8B"><span class="nav-text">2.2 线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1IPC"><span class="nav-text">2.3 进程间通信IPC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-%E8%B0%83%E5%BA%A6Scheduler"><span class="nav-text">2.4 调度Scheduler</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-%E5%B0%8F%E7%BB%93"><span class="nav-text">2.5 小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC3%E7%AB%A0-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text">第3章 内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E5%AD%98%E5%82%A8%E6%8A%BD%E8%B1%A1%EF%BC%9A%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4"><span class="nav-text">3.1 存储抽象：地址空间</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC4%E7%AB%A0-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9Ffs"><span class="nav-text">第4章 文件系统fs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95"><span class="nav-text">4.1 文件和目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%AE%9E%E7%8E%B0"><span class="nav-text">4.2 文件系统实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC5%E7%AB%A0-%E8%BE%93%E5%85%A5-%E8%BE%93%E5%87%BA-I-O"><span class="nav-text">第5章 输入&#x2F;输出 I&#x2F;O</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
