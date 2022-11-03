@@ -10,5 +10,5 @@ cd public
 git status
 git add .
 git commit -m "iii"
-git push
+git push -u origin main --force
 
