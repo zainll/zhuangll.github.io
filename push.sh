@@ -6,4 +6,9 @@ git status
 git add .
 git commit -m "iii"
 git push
+cd public
+git status
+git add .
+git commit -m "iii"
+git push
 
