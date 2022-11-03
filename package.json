@@ -12,16 +12,19 @@
     "server:en": "hexo server --config _config.yml,_config-en.yml"
   },
   "hexo": {
-    "version": "5.4.0"
+    "version": "5.4.2"
   },
   "dependencies": {
     "clipboard": "^2.0.8",
     "eslint": "^8.3.0",
     "hexo": "^5.0.0",
     "hexo-asset-image": "^1.0.0",
-    "hexo-blog-encrypt": "^2.0.0",
+    "hexo-blog-encrypt": "^3.1.6",
     "hexo-deployer-git": "^3.0.0",
-    "hexo-encrypt": "^0.5.5",
+    "hexo-deployer-heroku": "^0.0.3",
+    "hexo-deployer-openshift": "^0.0.1",
+    "hexo-deployer-rsync": "^0.1.1",
+    "hexo-encrypt": "^0.1.1",
     "hexo-enhancer": "^1.0.10",
     "hexo-filter-github-emojis": "^3.0.4",
     "hexo-filter-mermaid-diagrams": "^1.0.5",
@@ -34,16 +37,16 @@
     "hexo-generator-sitemap": "^2.2.0",
     "hexo-generator-tag": "^1.0.0",
     "hexo-git-backup": "^0.1.3",
-    "hexo-markmap": "^1.0.2",
-    "hexo-renderer-ejs": "^1.0.0",
-    "hexo-renderer-marked": "^4.0.0",
-    "hexo-renderer-stylus": "^2.0.0",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-kramed": "^0.1.4",
+    "hexo-renderer-stylus": "^2.1.0",
     "hexo-server": "^2.0.0",
     "hexo-simple-mindmap": "^0.7.0",
-    "hexo-symbols-count-time": "^0.7.1",
+    "hexo-symbols-count-time": "^0.6.2",
     "hexo-tag-plantuml": "^1.0.0",
     "hexo-theme-landscape": "^0.0.3",
     "hexo-theme-next": "^8.8.0",
-    "hexo-wordcount": "^6.0.1"
+    "hexo-wordcount": "^6.0.1",
+    "highlight": "^0.2.4"
   }
 }
