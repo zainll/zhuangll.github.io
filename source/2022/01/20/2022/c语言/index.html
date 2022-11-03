@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true,"b2t":false,"scrollpercent":true},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="库函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c语言">
+<meta property="og:url" content="http://example.com/2022/01/20/2022/c%E8%AF%AD%E8%A8%80/index.html">
+<meta property="og:site_name" content="liuz">
+<meta property="og:description" content="库函数">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-19T16:47:53.000Z">
+<meta property="article:modified_time" content="2022-01-19T16:53:53.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Another Tag">
+<meta property="article:tag" content="Computer Science">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2022/01/20/2022/c%E8%AF%AD%E8%A8%80/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>c语言 | liuz</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="liuz" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">liuz</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/20/2022/c%E8%AF%AD%E8%A8%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liuz">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          c语言
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-01-20 00:47:53 / 修改时间：00:53:53" itemprop="dateCreated datePublished" datetime="2022-01-20T00:47:53+08:00">2022-01-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tool/" itemprop="url" rel="index"><span itemprop="name">tool</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tool/2022/" itemprop="url" rel="index"><span itemprop="name">2022</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="库函数"><a href="#库函数" class="headerlink" title="库函数"></a>库函数</h2><span id="more"></span>
+
+<h3 id="string-h"><a href="#string-h" class="headerlink" title="string.h"></a>string.h</h3><h4 id="strcpy-字符串复制函数"><a href="#strcpy-字符串复制函数" class="headerlink" title="strcpy 字符串复制函数"></a>strcpy 字符串复制函数</h4><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// strDestination 目的字符串；strSource 源字符串</span></span><br><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">strcpy</span><span class="params">(<span class="keyword">char</span>* strDestination, <span class="keyword">const</span> <span class="keyword">char</span>* strSource)</span></span>;</span><br><span class="line"><span class="comment">// strcpy() 会把 strSource 指向的字符串复制到 strDestination。</span></span><br><span class="line"><span class="comment">// 返回值：目的字符串，也即 strDestination。</span></span><br><span class="line">    <span class="keyword">char</span> dest[<span class="number">50</span>] = { <span class="number">0</span> };</span><br><span class="line">    <span class="keyword">char</span> src[<span class="number">50</span>] = { <span class="string">"http://c.biancheng.net"</span> };</span><br><span class="line">    <span class="built_in">strcpy</span>(dest, src);</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="strlen-求字符串长度"><a href="#strlen-求字符串长度" class="headerlink" title="strlen 求字符串长度"></a>strlen 求字符串长度</h4><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+
+<h4 id="strcspn-求字符串互补跨度-长度"><a href="#strcspn-求字符串互补跨度-长度" class="headerlink" title="strcspn 求字符串互补跨度(长度)"></a>strcspn 求字符串互补跨度(长度)</h4><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 回从字符串 str 开头算起，连续有几个字符都不在 reject 中；也就是说，str 中连续有几个字符和 reject 没有交集</span></span><br><span class="line"><span class="comment">// str 要检索的字符串</span></span><br><span class="line"><span class="comment">// reject 该字符串包含要在str中进行匹配的字符列表</span></span><br><span class="line"><span class="function"><span class="keyword">size_t</span> <span class="title">strcspn</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* str, <span class="keyword">const</span> <span class="keyword">char</span>* reject)</span></span>;</span><br><span class="line"><span class="comment">// 返回值：返回从字符串 str 开头算起，连续不在 reject 中的字符的个数；也可以理解为，str 中第一次出现 reject 中字符的位置。</span></span><br><span class="line"><span class="keyword">char</span> str[<span class="number">50</span>] = { <span class="string">"http://c.biancheng.net"</span> };</span><br><span class="line"><span class="keyword">char</span> keys[<span class="number">50</span>] = { <span class="string">"?.,:\"\'-!"</span> };</span><br><span class="line"><span class="keyword">int</span> i = <span class="built_in">strcspn</span>(str, keys);</span><br><span class="line"><span class="comment">// i = 4</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="strcmp-比较两个字符串"><a href="#strcmp-比较两个字符串" class="headerlink" title="strcmp 比较两个字符串"></a>strcmp 比较两个字符串</h4><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// strcmp() 会根据 ASCII 编码依次比较 str1 和 str2 的每一个字符，直到出现不到的字符，或者到达字符串末尾（遇见\0）</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">strcmp</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* str1, <span class="keyword">const</span> <span class="keyword">char</span>* str2)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> str1[<span class="number">50</span>] = { <span class="number">0</span> };</span><br><span class="line"><span class="keyword">char</span> str2[<span class="number">50</span>] = { <span class="number">0</span> };</span><br><span class="line"><span class="built_in">strcmp</span>(str1, str2)</span><br></pre></td></tr></tbody></table></figure>
+<p>返回值：</p>
+<ul>
+<li>如果返回值 &lt; 0，则表示 str1 小于 str2。</li>
+<li>如果返回值 &gt; 0，则表示 str2 小于 str1。</li>
+<li>如果返回值 = 0，则表示 str1 等于 str2。</li>
+</ul>
+<h4 id="strchr-字符查找函数"><a href="#strchr-字符查找函数" class="headerlink" title="strchr 字符查找函数"></a>strchr 字符查找函数</h4><ul>
+<li>strchr() 函数会依次检索字符串 str 中的每一个字符，直到遇见字符 c，或者到达字符串末尾（遇见\0）。<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// str 被查找的字符串</span></span><br><span class="line"><span class="comment">// c  要查找的字符</span></span><br><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">strchr</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* str, <span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *str = <span class="string">"http://c.biancheng.net/"</span>;</span><br><span class="line"><span class="keyword">int</span> c = <span class="string">'g'</span>;</span><br><span class="line"><span class="keyword">char</span> *p = <span class="built_in">strchr</span>(str, c);</span><br></pre></td></tr></tbody></table></figure>
+返回值：</li>
+<li>返回在字符串 str 中第一次出现字符 c 的位置，如果未找到该字符 c 则返回 NULL。</li>
+</ul>
+<h4 id="strcat-字符串拼接"><a href="#strcat-字符串拼接" class="headerlink" title="strcat 字符串拼接"></a>strcat 字符串拼接</h4><ul>
+<li>strcat() 函数把 strSource 所指向的字符串追加到 strDestination 所指向的字符串的结尾<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// strDestination 目的字符串</span></span><br><span class="line"><span class="comment">// strSource  源字符串</span></span><br><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">strcat</span><span class="params">(<span class="keyword">char</span>* strDestination, <span class="keyword">const</span> <span class="keyword">char</span>* strSource)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> str1[<span class="number">101</span>] = { <span class="number">0</span> };</span><br><span class="line"><span class="keyword">char</span> str2[<span class="number">50</span>] = { <span class="number">0</span> };</span><br><span class="line"><span class="built_in">strcat</span>(str1, str2);</span><br></pre></td></tr></tbody></table></figure>
+返回值：</li>
+<li>指向 strDestination 的指针。</li>
+</ul>
+<h3 id="ctype-h"><a href="#ctype-h" class="headerlink" title="ctype.h"></a>ctype.h</h3><h4 id="isupper-判断一个字符是否是大写字母"><a href="#isupper-判断一个字符是否是大写字母" class="headerlink" title="isupper 判断一个字符是否是大写字母"></a>isupper 判断一个字符是否是大写字母</h4><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// c</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isupper</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> str[] = <span class="string">"C++ Java Python C# Linux Golang Shell\n"</span>;</span><br><span class="line"><span class="keyword">int</span> re = <span class="built_in">isupper</span>(s[i]);</span><br></pre></td></tr></tbody></table></figure>
+<p>返回值：</p>
+<ul>
+<li>返回值为非 0（真）表示 c 是大写字母，返回值为 0（假）表示 c 不是大写字母。</li>
+</ul>
+<h4 id="islower-判断一个字符是否是小写字母"><a href="#islower-判断一个字符是否是小写字母" class="headerlink" title="islower 判断一个字符是否是小写字母"></a>islower 判断一个字符是否是小写字母</h4><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">islower</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> c = <span class="string">'a'</span>;</span><br><span class="line"><span class="keyword">int</span> re = <span class="built_in">islower</span>(c);</span><br></pre></td></tr></tbody></table></figure>
+
+
+<h4 id="isspace-判断一个字符是否是空白字符"><a href="#isspace-判断一个字符是否是空白字符" class="headerlink" title="isspace 判断一个字符是否是空白字符"></a>isspace 判断一个字符是否是空白字符</h4><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isspace</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">char</span> str[] = <span class="string">"Linux C++\tPython Shell\nC# Java\n"</span>;</span><br><span class="line"><span class="keyword">while</span> (str[i]) {</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">isspace</span>(s[i])) {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"c = %c "</span>, s[i]);</span><br><span class="line">    }</span><br><span class="line">    i++;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>空白字符：空格、水平制表符、换行符、垂直制表符、换页、回车<br>返回值：</li>
+<li>返回值为非 0（真）表示c是空白符，返回值为 0（假）表示c不是空白符。</li>
+</ul>
+<h4 id="isprint-判断一个字符是否是可打印字符"><a href="#isprint-判断一个字符是否是可打印字符" class="headerlink" title="isprint 判断一个字符是否是可打印字符"></a>isprint 判断一个字符是否是可打印字符</h4><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isprint</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">char</span> str[]=<span class="string">"C++ Java \n C# Python \t Shell Linux\n"</span>;</span><br><span class="line"><span class="keyword">while</span>(str[i]) {</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">isprint</span>(str[i])) <span class="built_in">putchar</span> (str[i]);</span><br><span class="line">    i++;</span><br><span class="line">}</span><br><span class="line"><span class="comment">// C++ Java  C# Python  Shell Linux</span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>可打印字符和控制字符是相对的，控制字符是指那些具有某种特殊功能、不会显示在屏幕上、不会占用字符位置的“特殊”字符。要检测一个字符是否是控制字符，请使用 iscntrl() 函数<br>返回值：</li>
+<li>返回值为非 0（真）表示 c 是可打印字符，返回值为 0（假）表示 c 不是可打印字符。</li>
+</ul>
+<h4 id="isgraph-判断一个字符是否是图形字符"><a href="#isgraph-判断一个字符是否是图形字符" class="headerlink" title="isgraph 判断一个字符是否是图形字符"></a>isgraph 判断一个字符是否是图形字符</h4><ul>
+<li>字符是图形字符，就是说这个字符需要在显示器上绘制出来，而空格、换行、Tab 缩进等字符只会占用输出的位置，不需要绘制。<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isgraph</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> c = <span class="string">'';</span></span><br><span class="line"><span class="string">int res = isgraph(c)</span></span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li>返回值为非 0（真）表示 c 是图形字符，返回值为 0（假）表示 c 不是图形字符。</li>
+</ul>
+<h4 id="iscntrl-判断一个字符是否为控制字符"><a href="#iscntrl-判断一个字符是否为控制字符" class="headerlink" title="iscntrl 判断一个字符是否为控制字符"></a>iscntrl 判断一个字符是否为控制字符</h4><ul>
+<li>“控制字符”是指那些具有某种特殊功能、不会显示在屏幕上、不会占用字符位置的特殊字符。默认情况下，C语言使用的是 ASCII 编码，控制字符的范围是0x00 (NUL) ~ 0x1f (US)，再加上最后的0x7f (DEL)，一共 33 个。<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">iscntrl</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> res = <span class="built_in">iscntrl</span>(c);</span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li>返回值为非 0（真）表示 c 是控制字符，返回值为 0（假）表示 c 不是控制字符。</li>
+</ul>
+<h4 id="isdigit-判断一个字符是否为数字"><a href="#isdigit-判断一个字符是否为数字" class="headerlink" title="isdigit  判断一个字符是否为数字"></a>isdigit  判断一个字符是否为数字</h4><ul>
+<li>isdigit() 函数用来判断一个字符是否是数字，也即 0~9。<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isdigit</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> s[<span class="number">50</span>] = {<span class="number">0</span>};</span><br><span class="line"><span class="keyword">int</span> res = <span class="built_in">isdigit</span>(s[i]);</span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li>返回值为非 0（真）表示 c 是数字，返回值为 0（假）表示 c 不是数字。</li>
+</ul>
+<h4 id="isalpha-判断一个字符是否是字母"><a href="#isalpha-判断一个字符是否是字母" class="headerlink" title="isalpha 判断一个字符是否是字母"></a>isalpha 判断一个字符是否是字母</h4><ul>
+<li>isalpha() 函数用来检测一个字符是否是字母，包括大写字母和小写字母。<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isalpha</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> str[] = <span class="string">"C++ Java C#"</span>;</span><br><span class="line"><span class="keyword">while</span> (str[i]) {</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">isalpha</span>(str[i])) {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%c is alphabetic\n"</span>, str[i]);</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%c is not alphabetic\n"</span>, str[i]);</span><br><span class="line">    }</span><br><span class="line">    i++;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li>回非 0（真）表示 c 是字母，返回 0（假）表示 c 不是字母。</li>
+</ul>
+<h4 id="isalnum-判断一个字符是否是字母或数字"><a href="#isalnum-判断一个字符是否是字母或数字" class="headerlink" title="isalnum 判断一个字符是否是字母或数字"></a>isalnum 判断一个字符是否是字母或数字</h4><ul>
+<li> isalnum() 函数用于判断一个字符是否是字母（包括大写字母和小写字母）或者数字（0~9）。<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isalnum</span><span class="params">(<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> str[] = <span class="string">"*http://c.biancheng.net is 7 years old"</span>;</span><br><span class="line"><span class="keyword">while</span> (str[i]) {</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">isalnum</span>(str[i])) n++;</span><br><span class="line">    i++;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li>返回非 0（真）表示 c 是字母或者数字，返回 0（假）表示 c 既不是数字也不是字母。</li>
+</ul>
+<h3 id="math-h"><a href="#math-h" class="headerlink" title="math.h"></a>math.h</h3><h4 id="ldexp"><a href="#ldexp" class="headerlink" title="ldexp"></a>ldexp</h4><p>返回x乘以2的exponent次方</p>
+<ul>
+<li>ldexp() 函数用来计算 x 乘以 2 的 exponent 次方（次幂）的值，也即返回 x * 2^exponent 的值。<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// x 双精度浮点数</span></span><br><span class="line"><span class="comment">// exponnent  2的指数</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">ldexp</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">int</span> exponent)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> f=<span class="number">0.964453</span>, n=<span class="number">7</span>;  <span class="comment">//为变量赋初值</span></span><br><span class="line"><span class="keyword">double</span> x = <span class="built_in">ldexp</span>(f, n);  <span class="comment">//求f * 2^n 的结果</span></span><br></pre></td></tr></tbody></table></figure>
+返回值：</li>
+<li>x*2^exponent 的计算结果</li>
+</ul>
+<h4 id="labs-求整数的绝对值-针对long类型"><a href="#labs-求整数的绝对值-针对long类型" class="headerlink" title="labs 求整数的绝对值(针对long类型)"></a>labs 求整数的绝对值(针对long类型)</h4><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">labs</span><span class="params">(<span class="keyword">long</span> n)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> m = <span class="number">11</span>;</span><br><span class="line"><span class="keyword">long</span> a = <span class="built_in">labs</span>(m); <span class="comment">// 求m的绝对值</span></span><br></pre></td></tr></tbody></table></figure>
+<p>返回值：</p>
+<ul>
+<li>参数n的绝对值</li>
+</ul>
+<h4 id="abs-求整数的绝对值"><a href="#abs-求整数的绝对值" class="headerlink" title="abs 求整数的绝对值"></a>abs 求整数的绝对值</h4><ul>
+<li>abs()函数用于求整数的绝对值<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">abs</span><span class="params">(<span class="keyword">int</span> n)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a = <span class="number">3</span>, b = <span class="number">-4</span>, c, d;  <span class="comment">//为变量赋初值</span></span><br><span class="line">c = <span class="built_in">abs</span>(a);  <span class="comment">//求a的绝对值</span></span><br><span class="line">d = <span class="built_in">abs</span>(b);  <span class="comment">//求b的绝对值</span></span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li>参数的绝对值</li>
+</ul>
+<h4 id="pow-求x的y次方的值"><a href="#pow-求x的y次方的值" class="headerlink" title="pow 求x的y次方的值"></a>pow 求x的y次方的值</h4><ul>
+<li> pow() 函数用来求 x 的 y 次方的值。<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// x 双精度数  y 双精度数</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">pow</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">double</span> y)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> x = <span class="number">4</span>, y = <span class="number">6</span>;  <span class="comment">//为变量赋初值</span></span><br><span class="line"><span class="keyword">double</span> result = <span class="built_in">pow</span>(x, y);  <span class="comment">//求a的b次方</span></span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li>x 的 y 次方的值。</li>
+</ul>
+<h4 id="frexp-提取浮点数的尾数和指数部分"><a href="#frexp-提取浮点数的尾数和指数部分" class="headerlink" title="frexp 提取浮点数的尾数和指数部分"></a>frexp 提取浮点数的尾数和指数部分</h4><ul>
+<li>rexp() 函数用来提取一个浮点数（小数）的指数部分和尾数部分。<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// x 要被计算的浮点数</span></span><br><span class="line"><span class="comment">// exponent  一个指向指数部分的指针</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">frexp</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">int</span>* exponent)</span></span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> <span class="built_in">exp</span>;</span><br><span class="line"><span class="keyword">double</span> mant = <span class="built_in">frexp</span>(<span class="number">19.625</span>, &amp;<span class="built_in">exp</span>);</span><br></pre></td></tr></tbody></table></figure>
+指数部分被存入参数 exponent 中，尾数部分被放入返回值中，最终 x = mantissa * 2 ^ exponent（mantissa 表示尾数）。<br>返回值</li>
+<li>浮点数 x 的尾数部分。</li>
+</ul>
+<h4 id="modf-提取浮点数的小数和整数部分"><a href="#modf-提取浮点数的小数和整数部分" class="headerlink" title="modf 提取浮点数的小数和整数部分"></a>modf 提取浮点数的小数和整数部分</h4><ul>
+<li>double modf(double x, double *intptr) 将提取浮点数 x 的整数部分和小数部分，整数部分被存入参数 intptr 中，小数部分被放入返回值中。<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// x 要被计算的浮点数</span></span><br><span class="line"><span class="comment">// 一个指向整数部分的指针</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">modf</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">double</span> *intptr)</span></span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> x=<span class="number">3.1415</span>, intpart;  <span class="comment">//为变量赋初值</span></span><br><span class="line"><span class="keyword">double</span> fractpart = <span class="built_in">modf</span>(x, &amp;intpart);  <span class="comment">//求3.1415的小数部分</span></span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li>x的小数部分</li>
+</ul>
+<h4 id="fmod-求x-y的余数-针对浮点数"><a href="#fmod-求x-y的余数-针对浮点数" class="headerlink" title="fmod 求x/y的余数(针对浮点数)"></a>fmod 求x/y的余数(针对浮点数)</h4><ul>
+<li>fmod()函数用于求x/y的余数，针对浮点数。<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">fmod</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">double</span> y)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> m=<span class="number">10.1</span>, n=<span class="number">3.1</span>;  <span class="comment">//为变量赋初值</span></span><br><span class="line"><span class="keyword">double</span> x = <span class="built_in">fmod</span>(m,n);  <span class="comment">//求m/n的余数</span></span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li>x/y的余数</li>
+</ul>
+<h4 id="log10-返回以10为底的对数"><a href="#log10-返回以10为底的对数" class="headerlink" title="log10 返回以10为底的对数"></a>log10 返回以10为底的对数</h4><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+
+<h4 id="log-返回x的自然对数"><a href="#log-返回x的自然对数" class="headerlink" title="log 返回x的自然对数"></a>log 返回x的自然对数</h4><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="ceil-求不小于x的最小整数"><a href="#ceil-求不小于x的最小整数" class="headerlink" title="ceil 求不小于x的最小整数"></a>ceil 求不小于x的最小整数</h4><ul>
+<li>ceil() 函数用于求不小于 x 的最小整数，也即向上取整。<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">ceil</span><span class="params">(<span class="keyword">double</span> x)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> m = <span class="number">6.123</span>;</span><br><span class="line"><span class="keyword">int</span> n = <span class="built_in">ceil</span>(m);  <span class="comment">//求不小于m的最小整数</span></span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li>不小于x的最小整数</li>
+</ul>
+<h4 id="floor-求不大于x的最大整数（向下取整）"><a href="#floor-求不大于x的最大整数（向下取整）" class="headerlink" title="floor 求不大于x的最大整数（向下取整）"></a>floor 求不大于x的最大整数（向下取整）</h4><ul>
+<li>floor() 函数用于求不大于 x 的最大整数，也即向下取整。<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">floor</span><span class="params">(<span class="keyword">double</span> x)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> m = <span class="number">6.123</span>;  <span class="comment">//为变量赋初值</span></span><br><span class="line"><span class="keyword">double</span> n = <span class="built_in">floor</span>(m);  <span class="comment">//求不大于m的最大整数</span></span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li>不大于x的最大整数</li>
+</ul>
+<h3 id="stdlib-h"><a href="#stdlib-h" class="headerlink" title="stdlib.h"></a>stdlib.h</h3><h4 id="ldiv-求两个数的商和余数"><a href="#ldiv-求两个数的商和余数" class="headerlink" title="ldiv 求两个数的商和余数"></a>ldiv 求两个数的商和余数</h4><ul>
+<li>ldiv() 函数用于求两个长整型数的商和余数。<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// numer 被除数  denom 除数</span></span><br><span class="line"><span class="function"><span class="keyword">ldiv_t</span> <span class="title">ldiv</span><span class="params">(<span class="keyword">long</span> <span class="keyword">int</span> numer, <span class="keyword">long</span> <span class="keyword">int</span> denom)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> x = <span class="number">234</span>, y = <span class="number">23</span>;  <span class="comment">//为变量赋初值</span></span><br><span class="line"><span class="keyword">ldiv_t</span> a = ldiv(x, y);  <span class="comment">//求234除以23的商和余数</span></span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li>ldiv_t 类型的商和余数<br>ldiv_t 是在 stdlib.h 头文件中定义的结构体，它有两个成员，分别是 quot 和 rem：quot 表示商，rem 表示余数。</li>
+</ul>
+<h4 id="div-求两个数的商和余数"><a href="#div-求两个数的商和余数" class="headerlink" title="div 求两个数的商和余数"></a>div 求两个数的商和余数</h4><ul>
+<li>div()函数用于求两个数的商和余数<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// numer 是被除数  denom 除数</span></span><br><span class="line"><span class="function"><span class="keyword">div_t</span> <span class="title">div</span><span class="params">(<span class="keyword">int</span> numer, <span class="keyword">int</span> denom)</span></span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> x = <span class="number">512</span>, y = <span class="number">28</span>;  <span class="comment">//为变量赋初值</span></span><br><span class="line"><span class="keyword">div_t</span> a = div(x, y);  <span class="comment">//求512除以28的商和余数</span></span><br></pre></td></tr></tbody></table></figure>
+返回值</li>
+<li><ul>
+<li>div_t 类型的商和余数</li>
+</ul>
+</li>
+</ul>
+<p>参考链接：<br><a target="_blank" rel="noopener" href="http://c.biancheng.net/c/ref/">http://c.biancheng.net/c/ref/</a></p>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Another-Tag/" rel="tag"># Another Tag</a>
+              <a href="/tags/Computer-Science/" rel="tag"># Computer Science</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/01/17/2022/%E5%89%91%E6%8C%87offer/" rel="prev" title="剑指offer">
+      <i class="fa fa-chevron-left"></i> 剑指offer
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/01/27/2022/%E8%AF%BB%E4%B9%A6%E9%9A%8F%E8%AE%B0/" rel="next" title="读书随记">
+      读书随记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%93%E5%87%BD%E6%95%B0"><span class="nav-text">库函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#string-h"><span class="nav-text">string.h</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#strcpy-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%8D%E5%88%B6%E5%87%BD%E6%95%B0"><span class="nav-text">strcpy 字符串复制函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#strlen-%E6%B1%82%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6"><span class="nav-text">strlen 求字符串长度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#strcspn-%E6%B1%82%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BA%92%E8%A1%A5%E8%B7%A8%E5%BA%A6-%E9%95%BF%E5%BA%A6"><span class="nav-text">strcspn 求字符串互补跨度(长度)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#strcmp-%E6%AF%94%E8%BE%83%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">strcmp 比较两个字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#strchr-%E5%AD%97%E7%AC%A6%E6%9F%A5%E6%89%BE%E5%87%BD%E6%95%B0"><span class="nav-text">strchr 字符查找函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#strcat-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5"><span class="nav-text">strcat 字符串拼接</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ctype-h"><span class="nav-text">ctype.h</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#isupper-%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E6%98%AF%E5%90%A6%E6%98%AF%E5%A4%A7%E5%86%99%E5%AD%97%E6%AF%8D"><span class="nav-text">isupper 判断一个字符是否是大写字母</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#islower-%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E6%98%AF%E5%90%A6%E6%98%AF%E5%B0%8F%E5%86%99%E5%AD%97%E6%AF%8D"><span class="nav-text">islower 判断一个字符是否是小写字母</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#isspace-%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E6%98%AF%E5%90%A6%E6%98%AF%E7%A9%BA%E7%99%BD%E5%AD%97%E7%AC%A6"><span class="nav-text">isspace 判断一个字符是否是空白字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#isprint-%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E6%98%AF%E5%90%A6%E6%98%AF%E5%8F%AF%E6%89%93%E5%8D%B0%E5%AD%97%E7%AC%A6"><span class="nav-text">isprint 判断一个字符是否是可打印字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#isgraph-%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E6%98%AF%E5%90%A6%E6%98%AF%E5%9B%BE%E5%BD%A2%E5%AD%97%E7%AC%A6"><span class="nav-text">isgraph 判断一个字符是否是图形字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#iscntrl-%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E6%98%AF%E5%90%A6%E4%B8%BA%E6%8E%A7%E5%88%B6%E5%AD%97%E7%AC%A6"><span class="nav-text">iscntrl 判断一个字符是否为控制字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#isdigit-%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E6%98%AF%E5%90%A6%E4%B8%BA%E6%95%B0%E5%AD%97"><span class="nav-text">isdigit  判断一个字符是否为数字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#isalpha-%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E6%98%AF%E5%90%A6%E6%98%AF%E5%AD%97%E6%AF%8D"><span class="nav-text">isalpha 判断一个字符是否是字母</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#isalnum-%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E6%98%AF%E5%90%A6%E6%98%AF%E5%AD%97%E6%AF%8D%E6%88%96%E6%95%B0%E5%AD%97"><span class="nav-text">isalnum 判断一个字符是否是字母或数字</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#math-h"><span class="nav-text">math.h</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ldexp"><span class="nav-text">ldexp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#labs-%E6%B1%82%E6%95%B4%E6%95%B0%E7%9A%84%E7%BB%9D%E5%AF%B9%E5%80%BC-%E9%92%88%E5%AF%B9long%E7%B1%BB%E5%9E%8B"><span class="nav-text">labs 求整数的绝对值(针对long类型)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#abs-%E6%B1%82%E6%95%B4%E6%95%B0%E7%9A%84%E7%BB%9D%E5%AF%B9%E5%80%BC"><span class="nav-text">abs 求整数的绝对值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pow-%E6%B1%82x%E7%9A%84y%E6%AC%A1%E6%96%B9%E7%9A%84%E5%80%BC"><span class="nav-text">pow 求x的y次方的值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#frexp-%E6%8F%90%E5%8F%96%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%B0%BE%E6%95%B0%E5%92%8C%E6%8C%87%E6%95%B0%E9%83%A8%E5%88%86"><span class="nav-text">frexp 提取浮点数的尾数和指数部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#modf-%E6%8F%90%E5%8F%96%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%B0%8F%E6%95%B0%E5%92%8C%E6%95%B4%E6%95%B0%E9%83%A8%E5%88%86"><span class="nav-text">modf 提取浮点数的小数和整数部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fmod-%E6%B1%82x-y%E7%9A%84%E4%BD%99%E6%95%B0-%E9%92%88%E5%AF%B9%E6%B5%AE%E7%82%B9%E6%95%B0"><span class="nav-text">fmod 求x&#x2F;y的余数(针对浮点数)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#log10-%E8%BF%94%E5%9B%9E%E4%BB%A510%E4%B8%BA%E5%BA%95%E7%9A%84%E5%AF%B9%E6%95%B0"><span class="nav-text">log10 返回以10为底的对数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#log-%E8%BF%94%E5%9B%9Ex%E7%9A%84%E8%87%AA%E7%84%B6%E5%AF%B9%E6%95%B0"><span class="nav-text">log 返回x的自然对数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ceil-%E6%B1%82%E4%B8%8D%E5%B0%8F%E4%BA%8Ex%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B4%E6%95%B0"><span class="nav-text">ceil 求不小于x的最小整数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#floor-%E6%B1%82%E4%B8%8D%E5%A4%A7%E4%BA%8Ex%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B4%E6%95%B0%EF%BC%88%E5%90%91%E4%B8%8B%E5%8F%96%E6%95%B4%EF%BC%89"><span class="nav-text">floor 求不大于x的最大整数（向下取整）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stdlib-h"><span class="nav-text">stdlib.h</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ldiv-%E6%B1%82%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%9A%84%E5%95%86%E5%92%8C%E4%BD%99%E6%95%B0"><span class="nav-text">ldiv 求两个数的商和余数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#div-%E6%B1%82%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%9A%84%E5%95%86%E5%92%8C%E4%BD%99%E6%95%B0"><span class="nav-text">div 求两个数的商和余数</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">282k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">4:16</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
